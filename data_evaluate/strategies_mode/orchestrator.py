@@ -1513,8 +1513,43 @@ class Orchestrator:
         app(f"  believe_entry_s30_bb_touch: {conditions.get('entry_s30_bb_touch', 'NONE')}")
         app(f"  believe_trigger_m1_direction_aligned: {_fmt_bool(conditions.get('trigger_m1_direction_aligned', False))}")
         app(f"  believe_context_m5_direction_aligned: {_fmt_bool(conditions.get('context_m5_direction_aligned', False))}")
-        app("")
-        return "\n".join(lines)
+
+        # Strategies payloads stay within the documented 99-line SSD contract.
+        # Keep every field consumed by Believe modules; verbose engine diagnostics
+        # remain available in the in-memory payload and logs.
+        allowed_prefixes = (
+            "ID:", "  timestamp:", "  symbol:", "  ai_model:",
+            "  expiry_minutes:", "  holding_period:", "  entry_timeframe:",
+            "  trigger_timeframe:", "  context_timeframe:",
+            "  s30_bias:", "  s30_open:", "  s30_high:", "  s30_low:",
+            "  s30_close:", "  s30_volume:", "  s30_ema5:", "  s30_ema10:",
+            "  s30_ema20:", "  s30_rsi:", "  s30_stoch_", "  s30_macd:",
+            "  s30_bb_percent_b:",
+            "    m1_bias:", "    m1_last_candle:", "    m1_ema5:", "    m1_ema20:",
+            "    m1_rsi:", "    m1_stoch_", "    m1_macd:",
+            "      m1_open:", "      m1_high:", "      m1_low:", "      m1_close:",
+            "      m1_volume:",
+            "    m5_bias:", "    m5_ema5:", "    m5_ema10:", "    m5_ema20:",
+            "    m5_ema50:", "    m5_bb_upper:", "    m5_bb_lower:",
+            "    m5_bb_width:", "    m5_rsi:", "    m5_stoch_", "    m5_macd:",
+            "    m5_adx:", "    m5_atr:", "    m5_support:", "    m5_resistance:",
+            "  m5_pa_pattern:", "  m5_pa_last_candle_bias:",
+            "  m5_pa_move_quality:", "  m5_pa_trap_alert:",
+            "  m5_pa_sr_interaction:", "  m5_pa_divergence_alert:",
+            "  m5_trend_direction:", "  m5_trend_type:", "  mtf_alignment_%:",
+            "  dl_", "  ai_confidence_score:", "  ai_suggested_",
+            "  believe_", "  extreme_believe_", "  ap_signal:", "  ns_signal:",
+        )
+        compact_lines = [
+            line for line in lines
+            if line.startswith(allowed_prefixes)
+        ]
+        if len(compact_lines) > 99:
+            raise RuntimeError(
+                f"FAIL-FAST: Strategies payload exceeds 99-line contract ({len(compact_lines)})"
+            )
+        compact_lines.extend([" "] * (99 - len(compact_lines)))
+        return "\n".join(compact_lines)
 
     def _save_txt_payload(self, symbol: str, formatted_payload: dict) -> str:
         meta = formatted_payload.get("supplementary_data", {}).get("meta", {})
