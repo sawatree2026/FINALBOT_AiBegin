@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSD0828090811",
+  "symbol": "EURUSD",
+  "action": "CALL",
+  "expiry_minutes": 2,
+  "confidence_score": 75,
+  "reason_th": "ราคากำลังทดสอบแนวรับล่างของกรอบ Sideway และ Stochastic ใน M5 อยู่ในเขต Oversold มีโอกาสเกิดการรีบาวด์ระยะสั้น"
+}

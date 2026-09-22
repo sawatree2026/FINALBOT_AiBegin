@@ -1,0 +1,71 @@
+timestamp,ID,symbol,action,confidence_score,expiry_minutes,engine_used,reason_th
+2026-09-20T00:25:01.832395,AUDJPYOTC0920002501,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ SIDEWAY_RANGE และมีความเสี่ยงสูง (HIGH risk) สัญญาณไม่ชัดเจนพอสำหรับการเข้าเทรด
+2026-09-20T00:26:15.011335,AUDJPYOTC0920002615,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีสัญญาณ Bull Trap ควรหลีกเลี่ยงการเข้าเทรด
+2026-09-20T00:27:03.523358,AUDJPYOTC0920002703,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยง Bull Trap รวมถึงการเคลื่อนไหวที่ไร้ทิศทางชัดเจน ควรออรอดz
+2026-09-20T00:28:01.826200,AUDJPYOTC0920002801,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยง Bull Trap บริเวณแนวต้าน จึงควรหลีกเลี่ยงการเข้าเทรด
+2026-09-20T00:29:02.944765,AUDJPYOTC0920002902,AUDJPY-OTC,PUT,75,5,AI (gemini-3.5-flash-lite),ราคาเข้าใกล้แนวต้าน M5 และเกิดสัญญาณ Bull Trap ในภาวะตลาดSideway จึงเลือกเปิดสัญญา PUT
+2026-09-20T00:30:09.477109,AUDJPYOTC0920003009,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และ M1 กำลังย่อตัวลง แม้เทรนด์หลักจะเป็น Bullish แต่ความเสี่ยงจากความผันผวนและสภาวะตลาดแบบไร้ทิศทางชัดเจนทำให้ควรอดทนรอ
+2026-09-20T00:31:01.859943,AUDJPYOTC0920003101,AUDJPY-OTC,PUT,75,5,AI (gemini-3.5-flash-lite),ราคาเข้าใกล้แนวต้าน M5 และ Stochastic อยู่ในเขต Overbought พร้อมเกิดแท่งเทียน M1 ปิดตัวเป็นลบในกรอบ Sideway Range
+2026-09-20T00:32:01.940601,AUDJPYOTC0920003201,AUDJPY-OTC,CALL,85,5,AI (gemini-3.5-flash-lite),โครงสร้างราคาและแนวโน้ม M5 และ M15 เป็นขาขึ้นสอดคล้องกัน พร้อมแรงส่งซื้อสนับสนุนจากโมเมนตัมระยะสั้น
+2026-09-20T00:33:03.086044,AUDJPYOTC0920003303,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),Stochastic ใน M1 และ M5 อยู่ในเขต Overbought สูงมาก ประกอบกับตลาดเป็น Sideway Range มีความเสี่ยงในการกลับตัวสูง
+2026-09-20T00:34:03.365681,AUDJPYOTC0920003403,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),Stochastic ใน M1 และ M5 อยู่ในเขต overbought สูงมาก เสี่ยงต่อการกลับตัวในภาวะ Sideway
+2026-09-20T00:35:03.648482,AUDJPYOTC0920003503,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),M1 RSI และ Stoch อยู่ในภาวะ Overbought สูงมาก ประกอบกับตลาดอยู่ในกรอบ Sideway จึงมีความเสี่ยงในการกลับตัวสูง
+2026-09-20T00:36:06.900833,AUDJPYOTC0920003606,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),RSI ใน M1 อยู่ในเขต Overbought สูงมากและมีความเสี่ยง Divergence ใน M5 จึงควรหลีกเลี่ยงการเข้าเทรด
+2026-09-20T00:37:07.003693,AUDJPYOTC0920003707,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงในการกลับตัวบริเวณแนวต้านประกอบกับสัญญาณ Divergence
+2026-09-20T00:38:07.576273,AUDJPYOTC0920003807,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),มีความเสี่ยงสูงจากสัญญาณ Bearish Divergence และความผันผวนในกรอบ sideway จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T00:39:03.835119,AUDJPYOTC0920003903,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),มีความเสี่ยงการกลับตัวจากสัญญาณ Bearish Divergence และ M5 Stoch อยู่ในเขต Overbought สูงเกินไป
+2026-09-20T00:40:08.560741,AUDJPYOTC0920004008,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงจากสัญญาณ Bearish Divergence จึงควรรอดูท่าที
+2026-09-20T00:41:06.506176,AUDJPYOTC0920004106,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),Stochastic อยู่ในเขต Overbought สูงมากและมีความเสี่ยง Bearish Divergence ประกอบกับความผันผวนสูง ควรหลีกเลี่ยงการเข้าเทรด
+2026-09-20T00:42:10.744620,AUDJPYOTC0920004210,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงจากสัญญาณ Bearish Divergence จึงควรรอดูท่าที
+2026-09-20T00:43:06.805758,AUDJPYOTC0920004306,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงจากสัญญาณ Bearish Divergence ระยะสั้น
+2026-09-20T00:44:08.687768,AUDJPYOTC0920004408,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะSidewayและมีความเสี่ยงสูงจากการเกิดBearish Divergence จึงควรรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T00:45:22.794737,AUDJPYOTC0920004522,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีความเสี่ยงสูงจากการเกิดรูปแบบ Evening Star รวมถึงสัญญาณ Divergence ฝั่งขาลง
+2026-09-20T00:46:10.466700,AUDJPYOTC0920004610,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),มีความเสี่ยงจากการกลับตัวระยะสั้นรูปแบบ Evening Star และสัญญาณ Divergence ฝั่งขาลง
+2026-09-20T00:47:04.728519,AUDJPYOTC0920004704,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),มีความเสี่ยงสูงจากการเกิดรูปแบบ Evening Star และสัญญาณ Divergence ฝั่งขาลงในกรอบ M5
+2026-09-20T00:48:10.886818,AUDJPYOTC0920004810,AUDJPY-OTC,WAIT,48,5,AI (gemini-3.5-flash-lite),มีความเสี่ยงสูงจากสัญญาณ Bearish Divergence และรูปแบบ Evening Star ในกรอบ M5 แม้แนวโน้มหลักจะเป็น Bullish จึงควรอดทนรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T00:49:12.338197,AUDJPYOTC0920004912,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีความเสี่ยงสูงจากรูปแบบ Evening Star พร้อมสัญญาณ Divergence ฝั่งขาลง
+2026-09-20T00:50:06.958642,AUDJPYOTC0920005006,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงในการเปลี่ยนเทรนด์ระยะสั้น ควรอารักขาความเสี่ยงและรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T00:51:18.376699,AUDJPYOTC0920005118,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),มีความเสี่ยงสูงจากสัญญาณเตือน Bull Trap และ Divergence ฝั่งขาลง
+2026-09-20T00:52:11.521549,AUDJPYOTC0920005211,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความเสี่ยงสูงและมีสัญญาณ Bull Trap พร้อมกับ Divergence ฝั่งขาลงใน M5 ควรอารักขาเงินทุนและรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T00:53:09.895991,AUDJPYOTC0920005309,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),มีความเสี่ยงจากสัญญาณ Bull Trap และ Divergence ฝั่งขาลงในกรอบ M5 ประกอบกับ M1 กำลังย่อตัว จึงควรหลีกเลี่ยง
+2026-09-20T00:54:06.075036,AUDJPYOTC0920005406,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีความเสี่ยงจากสัญญาณ Bull Trap ประกอบกับมีความขัดแย้งของ Momentum ระยะสั้น จึงควรหลีกเลี่ยงการเข้าเทรด
+2026-09-20T00:55:19.267846,AUDJPYOTC0920005519,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และมีความเสี่ยงสูงจากสัญญาณ Bull Trap จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T00:56:12.159202,AUDJPYOTC0920005612,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงจากสัญญาณ Bull Trap จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T00:57:04.865660,AUDJPYOTC0920005704,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ SIDEWAY_RANGE มีสัญญาณ Bull Trap และความเสี่ยงสูงควรหลีกเลี่ยง
+2026-09-20T00:58:10.944179,AUDJPYOTC0920005810,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และมีความเสี่ยงสูงจาก Bull Trap จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T00:59:12.130480,AUDJPYOTC0920005912,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ SIDEWAY_RANGE มีสัญญาณ Bull Trap และความเสี่ยงสูง จึงควรรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T01:00:08.921812,AUDJPYOTC0920010008,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range พร้อมสัญญาณเตือน Bull Trap และ Bearish Divergence จึงมีความเสี่ยงสูงเกินไปสำหรับการเข้าเทรด
+2026-09-20T01:16:01.892952,AUDJPYOTC0920011601,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และมีสัญญาณ Bearish Divergence ในกรอบเวลา M5 ประกอบกับความเสี่ยงสูง จึงควร wait
+2026-09-20T01:17:06.964424,AUDJPYOTC0920011706,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ราคาเข้าใกล้แนวต้านสำคัญ M5 และมีสัญญาณ Bearish Divergence ประกอบกับความเสี่ยงสูง จึงควรรอจังหวะ
+2026-09-20T01:18:01.985818,AUDJPYOTC0920011801,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงจากสัญญาณ Bearish Divergence ในกรอบเวลา M5 แม้แนวโน้มหลักจะเป็น Bullish
+2026-09-20T01:19:03.137645,AUDJPYOTC0920011903,AUDJPY-OTC,PUT,75,5,AI (gemini-3.5-flash-lite),RSI และ Stoch ใน M1 อยู่ในเขต Overbought สูงมาก ประกอบกับ M5 ชนแนวต้านและมี Bearish Divergence บ่งชี้โอกาสกลับตัวลง
+2026-09-20T01:20:09.873569,AUDJPYOTC0920012009,AUDJPY-OTC,WAIT,50,5,AI (gemini-3.5-flash-lite),RSI และ Stoch อยู่ในเขต Overbought สูงมากพร้อมความเสี่ยงในการกลับตัวสูง
+2026-09-20T01:21:01.861510,AUDJPYOTC0920012101,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),RSI และ Stoch อยู่ในเขต Overbought สูงมากพร้อมความเสี่ยงการกลับตัวในกรอบ Sideway
+2026-09-20T01:22:05.612169,AUDJPYOTC0920012205,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),RSI ใน M1 และ Stoch ใน M5 อยู่ในเขต Overbought สูงมาก ประกอบกับสภาวะตลาดเป็น Sideway Range มีความเสี่ยงในการกลับตัวสูง
+2026-09-20T01:23:06.838520,AUDJPYOTC0920012306,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงในการเปลี่ยนผ่านราคาควรรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T01:24:07.073201,AUDJPYOTC0920012407,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงในการเปลี่ยนผ่านสูง ประกอบกับ Stoch ใน M1 อยู่ในเขต Overbought จึงควรหลีกเลี่ยงการเข้าเทรด
+2026-09-20T01:25:04.656576,AUDJPYOTC0920012504,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ SIDEWAY_RANGE และมีความเสี่ยงในการเปลี่ยนผ่านสูงประกอบกับ Stoch อยู่ในเขต Overbought จึงควรรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T01:26:19.093068,AUDJPYOTC0920012619,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงในการกลับตัวสูงประกอบกับความผันผวนต่ำ ควรรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T01:27:12.117937,AUDJPYOTC0920012712,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงในการเปลี่ยนผ่านแนวโน้ม จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T01:28:12.666305,AUDJPYOTC0920012812,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงในการเปลี่ยนทิศทาง จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T01:29:05.201332,AUDJPYOTC0920012905,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงในการเปลี่ยนผ่านราคา จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T01:30:32.934446,AUDJPYOTC0920013032,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงในการเปลี่ยนผ่านสูง จึงควรอดทนรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T01:31:14.165793,AUDJPYOTC0920013114,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงในการเปลี่ยนผ่านเทรนด์ แนะนำให้รอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T03:49:01.867376,AUDJPYOTC0920034901,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งระหว่างกรอบเวลาและสภาพการเคลื่อนไหวที่ไร้ทิศทางชัดเจน
+2026-09-20T03:50:06.884842,AUDJPYOTC0920035006,AUDJPY-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),ราคาเข้าใกล้แนวรับ Bollinger Lower และมีสัญญาณ Bear Trap ประกอบกับ Stoch ใน M1 และ M5 อยู่ในเขต Oversold มีโอกาสรีบาวด์กลับขึ้นระยะสั้น
+2026-09-20T03:51:09.871660,AUDJPYOTC0920035109,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งระหว่างกรอบเวลาและมีความเสี่ยงสูงเนื่องจากสภาวะตลาดแบบไร้ทิศทางและราคาเคลื่อนไหวใกล้โซนแนวรับสำคัญ
+2026-09-20T03:52:01.792821,AUDJPYOTC0920035201,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งระหว่างกรอบเวลาหลักและโครงสร้างราคาที่ผันผวนสูง เสี่ยงต่อการเกิดสัญญาณหลอก
+2026-09-20T03:53:01.953354,AUDJPYOTC0920035301,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีความขัดแย้งของกรอบเวลา รวมถึงความเสี่ยงในการเปลี่ยนผ่านสูง จึงควรหลีกเลี่ยง
+2026-09-20T03:54:03.140430,AUDJPYOTC0920035403,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความขัดแย้งระหว่างกรอบเวลาสูงและสัญญาณราคาที่ไม่แน่นอน ควรรอให้ทิศทางชัดเจนกว่านี้
+2026-09-20T03:55:05.785252,AUDJPYOTC0920035505,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งสูงและมีความเสี่ยงจากสภาวะสะสมตัวแบบไร้ทิศทางชัดเจน
+2026-09-20T03:56:09.893792,AUDJPYOTC0920035609,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งระหว่างกรอบเวลาและมีความผันผวนสูง ความเสี่ยงมากเกินไป
+2026-09-20T03:57:13.345582,AUDJPYOTC0920035713,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของแนวโน้มระหว่าง M1 และ M5 รวมถึงความเสี่ยงระดับสูงทำให้ควรหลีกเลี่ยงการเทรด
+2026-09-20T03:58:16.827786,AUDJPYOTC0920035816,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของแนวโน้มระหว่าง M1 และ M5 รวมถึงความเสี่ยงระดับสูง ทำให้ควรหลีกเลี่ยงการเทรด
+2026-09-20T03:59:05.273008,AUDJPYOTC0920035905,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาหลักและสภาวะตลาดแบบไร้ทิศทางมีความเสี่ยงสูงเกินไป
+2026-09-20T04:00:15.805317,AUDJPYOTC0920040015,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาและสัญญาณความเสี่ยงสูงควรหลีกเลี่ยงการเทรด
+2026-09-20T04:01:46.228376,AUDJPYOTC0920040146,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),โครงสร้าง Multi-Timeframe ขัดแย้งกันระหว่าง M1 (Bullish) และ M15 (Bearish) รวมถึงความผันผวนแบบไร้ทิศทางชัดเจน
+2026-09-20T04:03:34.762277,AUDJPYOTC0920040334,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความขัดแย้งระหว่างแนวโน้มหลัก M15/M5 ที่เป็นขาลงกับบริบทสะสมราคาทำให้ความเสี่ยงสูงควรหลีกเลี่ยง
+2026-09-20T04:05:45.994587,AUDJPYOTC0920040545,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของแนวโน้มระหว่าง M15 ที่เป็นขาลงและบริบทตลาดที่เป็นการสะสมทำให้สัญญาณไม่ชัดเจน
+2026-09-20T04:08:56.804497,AUDJPYOTC0920040856,AUDJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),โครงสร้างตลาดมีความขัดแย้งระหว่าง M1 และ M5 รวมถึงความผันผวนต่ำและไร้ทิศทางที่ชัดเจน
+2026-09-20T04:15:00.204350,AUDJPYOTC0920041500,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความขัดแย้งระหว่างกรอบเวลา M1 ที่เป็นขาขึ้นและ M5/M15 ที่เป็นขาลง รวมถึงสภาพตลาดที่ผันผวนสูงและไม่มีทิศทางชัดเจน
+2026-09-20T04:24:17.955622,AUDJPYOTC0920042417,AUDJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),โครงสร้างตลาดมีความขัดแย้งระหว่าง M1 (Bullish) และ M5/M15 (Bearish) รวมถึงความผันผวนสูงและรูปแบบราคาไม่ชัดเจน

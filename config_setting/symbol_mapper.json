@@ -1,0 +1,20 @@
+{
+  "IQ_OPTION": {
+    "EURUSD-OTC": "EURUSD-OTC",
+    "GBPUSD-OTC": "GBPUSD-OTC",
+    "EURGBP-OTC": "EURGBP-OTC",
+    "GBPJPY-OTC": "GBPJPY-OTC"
+  },
+  "QUOTEX": {
+    "EURUSD-OTC": "EURUSD (OTC)",
+    "GBPUSD-OTC": "GBPUSD (OTC)",
+    "EURGBP-OTC": "EURGBP (OTC)",
+    "GBPJPY-OTC": "GBPJPY (OTC)"
+  },
+  "POCKET_OPTION": {
+    "EURUSD-OTC": "EUR/USD OTC",
+    "GBPUSD-OTC": "GBP/USD OTC",
+    "EURGBP-OTC": "EUR/GBP OTC",
+    "GBPJPY-OTC": "GBP/JPY OTC"
+  }
+}

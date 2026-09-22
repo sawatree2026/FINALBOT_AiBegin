@@ -1,0 +1,89 @@
+{
+  "_comment"                   : "FINALBOT Settings - Single Source of Truth",
+  "symbol_mode"                : "bot",
+  "max_symbols"                : 4,
+  "min_payout"                 : 84,
+  "active_mode"               : "strategies_mode",
+
+  "account": {
+    "account_type"             : "DEMO",
+    "iq_email"                 : "venuz20152565@gmail.com",
+    "iq_password"              : "2856101607mM@",
+    "stake_per_trade"          : 35,
+    "max_daily_profit"         : 1000,
+    "max_daily_loss"           : 500,
+    "max_daily_trades"         : 200,
+    "max_concurrent_orders"    : 100,
+    "max_consecutive_losses"   : 100,
+    "cooldown_minutes"         : 5
+  },
+
+  "ml_mode": {
+    "enabled"                  : true,
+    "model"                    : "CHRONOS_2_ONNX",
+    "min_confidence"           : 55,
+    "use_chronos"              : true,
+    "chronos2_model_path"      : "data_trade\\execution_gate\\chronos-2-onnx\\model.onnx"
+  },
+
+
+  "ai_mode": {
+    "enabled"                  : true,
+    "provider"                 : "GEMINI",
+    "primary_model"            : "gemini-3.5-flash-lite",
+    "primary_daily_limit"      : 500,
+    "secondary_model"          : "gemini-3.5-flash-lite",
+    "secondary_daily_limit"    : 0,
+    "gemini_api_key"           : "",
+    "deepseek_session_index"   : 1,
+    "timeout_seconds"          : 25,
+    "max_consecutive_failures" : 3,
+    "min_confidence"           : 55
+  },
+
+  "session": {
+    "trading_hours"            : "00.00-24.00",
+    "timezone"                 : "Asia/Bangkok"
+  },
+
+  "active_broker"              : "IQ_OPTION",
+
+  "data_feed": {
+    "enable_csv_export"        : true,
+    "csv_manager": {
+      "base_dir"              : "data_base/output_feed"
+    },
+    "data_adapter": {
+      "default_candle_count"   : 250,
+      "min_candle_count"       : 21,
+      "strategies_timeframes"  : ["S30", "M1", "M5"],
+      "strategies_enable_m15"  : false,
+      "m5_seconds"             : 300,
+      "m15_seconds"            : 900,
+      "s30_seconds"            : 30,
+      "retry_attempts"         : 0,
+      "retry_delay"            : 0
+    }
+  },
+
+  "data_evaluate": {
+    "enable_txt_export"        : true,
+    "output_dir"              : "data_base/output_evaluate",
+    "mode_output_dirs": {
+      "ml_mode": "data_base/output_evaluate/ml_mode",
+      "ai_mode": "data_base/output_evaluate/ai_mode",
+      "strategies_mode": "data_base/output_evaluate/strategies_mode"
+    }
+  },
+
+  "data_decision": {
+    "output_dir"              : "data_base/output_decision",
+    "ai_output_dir"           : "data_base/output_decision/ai_decision",
+    "strategies_output_dir"   : "data_base/output_decision/strategies_decision"
+  },
+
+  "data_trade": {
+    "enable_live_execution"    : true,
+    "trade_history_file"      : "data_base/output_trade/trades_history.csv"
+  }
+}

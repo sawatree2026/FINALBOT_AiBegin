@@ -1,0 +1,79 @@
+{
+  "symbol": "EURUSD",
+  "architecture": "Quant_Calibrated_Binary_LightGBM",
+  "created_at": "2026-09-03T15:49:57.286898+00:00",
+  "metrics": {
+    "test_samples": 4040,
+    "test_accuracy": 59.48,
+    "test_auc": 0.6203,
+    "test_logloss": 0.6716,
+    "gates": {
+      "conf_50": {
+        "trades": 4040,
+        "win_rate": 59.48
+      },
+      "conf_55": {
+        "trades": 2114,
+        "win_rate": 63.72
+      },
+      "conf_60": {
+        "trades": 1728,
+        "win_rate": 64.76
+      },
+      "conf_65": {
+        "trades": 1098,
+        "win_rate": 66.58
+      }
+    },
+    "best_iteration": 85,
+    "calibrated": true,
+    "calibration_method": "sigmoid"
+  },
+  "feature_importances": {
+    "m5_atr_norm": 8.45,
+    "price_return_pct": 7.63,
+    "atr_ratio_20": 6.33,
+    "bb_squeeze": 6.21,
+    "m5_upper_wick_ratio": 5.94,
+    "rsi_slope_3": 5.58,
+    "volume_ratio": 5.19,
+    "m5_lower_wick_ratio": 5.03,
+    "m5_adx": 4.95,
+    "macd_hist_slope_3": 4.48,
+    "m5_pa_body_strength": 3.93,
+    "m15_dist_to_sup": 3.26,
+    "ema_cross_signal": 3.22,
+    "m15_bias": 3.11,
+    "dist_to_resistance_20": 2.95,
+    "m5_macd": 2.91,
+    "m5_bb_pos": 2.83,
+    "m5_rsi": 2.79,
+    "m15_dist_to_res": 2.67,
+    "m5_stoch_k": 2.52,
+    "dist_to_support_20": 2.32,
+    "m5_stoch_d": 2.28,
+    "m5_macd_signal": 2.2,
+    "rejection": 1.65,
+    "hh_ll_score": 1.38,
+    "rsi_divergence": 0.08,
+    "snr_touch_score": 0.08
+  },
+  "hyperparameters": {
+    "objective": "binary",
+    "boosting_type": "gbdt",
+    "metric": "binary_logloss",
+    "learning_rate": 0.015,
+    "n_estimators": 1200,
+    "max_depth": 6,
+    "num_leaves": 31,
+    "min_child_samples": 45,
+    "subsample": 0.8,
+    "subsample_freq": 1,
+    "colsample_bytree": 0.75,
+    "reg_alpha": 0.25,
+    "reg_lambda": 0.5,
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "features_count": 27
+}

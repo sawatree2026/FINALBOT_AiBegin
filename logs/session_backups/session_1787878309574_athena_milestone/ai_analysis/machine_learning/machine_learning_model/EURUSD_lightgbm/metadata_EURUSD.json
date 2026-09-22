@@ -1,0 +1,77 @@
+{
+  "symbol": "EURUSD",
+  "created_at": "2026-08-27T14:40:56.478097+00:00",
+  "architecture": "Optimal_Weighted_Ensemble_XGB_30_LGB_70",
+  "metrics": {
+    "Architecture": "5. Optimal Weighted (XGB=0.30, LGB=0.70)",
+    "Accuracy": 51.77,
+    "Call_Win": 50.55,
+    "Put_Win": 53.04,
+    "Conf55_Win": 56.64,
+    "Conf55_Trades": 422,
+    "Conf60_Win": 77.27,
+    "Conf60_Trades": 22
+  },
+  "comparison_table": [
+    {
+      "Architecture": "1. XGB Only",
+      "Accuracy": 51.37,
+      "Call_Win": 50.55,
+      "Put_Win": 52.22,
+      "Conf55_Win": 57.72,
+      "Conf55_Trades": 499,
+      "Conf60_Win": 60.0,
+      "Conf60_Trades": 25
+    },
+    {
+      "Architecture": "2. LGB Only",
+      "Accuracy": 51.53,
+      "Call_Win": 49.84,
+      "Put_Win": 53.28,
+      "Conf55_Win": 55.74,
+      "Conf55_Trades": 427,
+      "Conf60_Win": 64.0,
+      "Conf60_Trades": 25
+    },
+    {
+      "Architecture": "3. Equal Voting (50-50)",
+      "Accuracy": 51.33,
+      "Call_Win": 50.47,
+      "Put_Win": 52.22,
+      "Conf55_Win": 57.51,
+      "Conf55_Trades": 433,
+      "Conf60_Win": 70.0,
+      "Conf60_Trades": 20
+    },
+    {
+      "Architecture": "4. Weighted (60-40)",
+      "Accuracy": 51.45,
+      "Call_Win": 50.71,
+      "Put_Win": 52.22,
+      "Conf55_Win": 58.11,
+      "Conf55_Trades": 444,
+      "Conf60_Win": 72.73,
+      "Conf60_Trades": 22
+    },
+    {
+      "Architecture": "5. Optimal Weighted (XGB=0.30, LGB=0.70)",
+      "Accuracy": 51.77,
+      "Call_Win": 50.55,
+      "Put_Win": 53.04,
+      "Conf55_Win": 56.64,
+      "Conf55_Trades": 422,
+      "Conf60_Win": 77.27,
+      "Conf60_Trades": 22
+    },
+    {
+      "Architecture": "6. Stacking Meta-Learner (LR)",
+      "Accuracy": 51.25,
+      "Call_Win": 53.54,
+      "Put_Win": 48.85,
+      "Conf55_Win": 52.45,
+      "Conf55_Trades": 1737,
+      "Conf60_Win": 54.2,
+      "Conf60_Trades": 1000
+    }
+  ]
+}

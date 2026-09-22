@@ -1,0 +1,8 @@
+{
+  "ID": "EURJPYOTC0831003245",
+  "symbol": "EURJPY-OTC",
+  "action": "CALL",
+  "expiry_minutes": 2,
+  "confidence_score": 75,
+  "reason_th": "ราคาเข้าใกล้แนวรับสำคัญและเกิดสัญญาณ Bullish Divergence ในขณะที่ตลาดอยู่ในช่วงสะสมตัว"
+}

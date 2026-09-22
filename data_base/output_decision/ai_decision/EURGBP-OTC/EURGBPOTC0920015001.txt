@@ -1,0 +1,8 @@
+{
+  "ID": "EURGBPOTC0920015001",
+  "symbol": "EURGBP-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 35,
+  "reason_th": "ตลาดมีความเสี่ยงสูงและสัญญาณความขัดแย้งของเทรดระยะสั้นยังไม่ชัดเจนเพียงพอ"
+}

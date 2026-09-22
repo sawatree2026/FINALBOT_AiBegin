@@ -1,0 +1,8 @@
+{
+  "ID": "GBPJPY0830044510",
+  "symbol": "GBPJPY",
+  "action": "CALL",
+  "expiry_minutes": 2,
+  "confidence_score": 75,
+  "reason_th": "ราคาลงมาทดสอบโซนแนวรับและเกิดสัญญาณ Bear Trap พร้อมแรงซื้อดันกลับจากแท่งเทียน Doji ที่มีไส้ล่างยาว"
+}

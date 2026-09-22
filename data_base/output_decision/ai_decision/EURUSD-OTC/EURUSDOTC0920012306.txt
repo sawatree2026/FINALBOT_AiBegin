@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920012306",
+  "symbol": "EURUSD-OTC",
+  "action": "PUT",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "โครงสร้างตลาดหลักและกรอบเวลา M5 สอดคล้องในทิศทางขาลงพร้อมเข้าสู่จุดกระจายตัวของ Smart Money"
+}

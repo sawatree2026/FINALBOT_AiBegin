@@ -1,0 +1,8 @@
+{
+  "ID": "USDCADOTC0920035201",
+  "symbol": "USDCAD-OTC",
+  "action": "PUT",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "M15 และ M5 มีแนวโน้มเป็นขาลงร่วมกัน พร้อมสัญญาณ Bearish Engulfing และ RSI อยู่ในเขตขายมากแต่ยังมีโมเมนตัมต่อเนื่อง"
+}

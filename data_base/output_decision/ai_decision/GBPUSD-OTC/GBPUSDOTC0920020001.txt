@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSDOTC0920020001",
+  "symbol": "GBPUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 40,
+  "reason_th": "ตลาดอยู่ในภาวะสะสมตัวและมีความขัดแย้งของกรอบเวลา M15 และ M5 รวมถึงมีสัญญาณเตือน Bull Trap จึงควรหลีกเลี่ยง"
+}

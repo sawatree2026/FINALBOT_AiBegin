@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920040146",
+  "symbol": "EURUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "กรอบเวลาระดับใหญ่ M5 และ M15 ยังเป็นแนวโน้มขาลง ขัดแย้งกับสัญญาณสะสมในระยะสั้น M1"
+}

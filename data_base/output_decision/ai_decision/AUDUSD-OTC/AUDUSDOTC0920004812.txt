@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920004812",
+  "symbol": "AUDUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 65,
+  "reason_th": "เกิดแท่งเทียน Hammer บริเวณแนวรับและมีสัญญาณ Bear Trap ในตลาดแบบ Sideway Range เหมาะกับการเปิด CALL เพื่อเก็งกำไรการรีบาวด์ระยะสั้น"
+}

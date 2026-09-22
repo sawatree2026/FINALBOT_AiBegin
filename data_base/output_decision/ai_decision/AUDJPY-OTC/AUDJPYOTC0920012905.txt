@@ -1,0 +1,8 @@
+{
+  "ID": "AUDJPYOTC0920012905",
+  "symbol": "AUDJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงในการเปลี่ยนผ่านราคา จึงควรหลีกเลี่ยงการเทรด"
+}

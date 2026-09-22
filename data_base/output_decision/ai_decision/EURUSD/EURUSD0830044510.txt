@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSD0830044510",
+  "symbol": "EURUSD",
+  "action": "WAIT",
+  "expiry_minutes": 1,
+  "confidence_score": 40,
+  "reason_th": "ตลาดอยู่ในภาวะสะสมตัวและมีความขัดแย้งของกรอบเวลา (MTF Alignment ต่ำเพียง 33%) พร้อมสัญญาณเตือน Stop Hunt ควรหลีกเลี่ยง"
+}

@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSDOTC0920035301",
+  "symbol": "GBPUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "แนวโน้มหลัก M15 และ M5 เป็นขาขึ้นชัดเจน ประกอบกับมีการสะสมราคาและทดสอบแนวรับเพื่อรอทะยานต่อ"
+}

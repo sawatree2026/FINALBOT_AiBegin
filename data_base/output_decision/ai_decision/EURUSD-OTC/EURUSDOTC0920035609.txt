@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920035609",
+  "symbol": "EURUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "โครงสร้างตลาดขัดแย้งกันระหว่าง M15 ขาลงและ M1 สะสมกำลังซื้อ จึงควรหลีกเลี่ยง"
+}

@@ -1,0 +1,8 @@
+{
+  "ID": "USDCHFOTC0830234537",
+  "symbol": "USDCHF-OTC",
+  "action": "CALL",
+  "expiry_minutes": 2,
+  "confidence_score": 65,
+  "reason_th": "ราคาอยู่ในโซนสะสมและยืนเหนือเส้น EMA ระยะสั้นได้ดี แม้ตลาดจะมีความผันผวนต่ำแต่แนวโน้มหลักยังเป็นขาขึ้น"
+}

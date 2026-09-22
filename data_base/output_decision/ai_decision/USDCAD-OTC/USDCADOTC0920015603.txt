@@ -1,0 +1,8 @@
+{
+  "ID": "USDCADOTC0920015603",
+  "symbol": "USDCAD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ความเสี่ยงสูงและมีการทดสอบจุด Pivot ประกอบกับความผันผวนและสภาวะการเปลี่ยนผ่านที่ไม่อำนวย"
+}

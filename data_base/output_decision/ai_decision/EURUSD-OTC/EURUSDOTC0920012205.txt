@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920012205",
+  "symbol": "EURUSD-OTC",
+  "action": "PUT",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "แนวโน้มหลักและโครงสร้างตลาด M15 และ M5 เป็นขาลง สอดคล้องกับการกระจายตัวของ Smart Money"
+}

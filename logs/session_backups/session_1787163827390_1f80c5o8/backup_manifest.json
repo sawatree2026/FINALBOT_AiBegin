@@ -1,0 +1,11 @@
+[
+  {
+    "timestamp": 1787163827391,
+    "type": "user_prompt",
+    "operation": "backup_user_prompt",
+    "sessionId": "session_1787163827390_1f80c5o8",
+    "taskContent": "Return a valid json with status ok",
+    "taskLength": 34,
+    "createdAt": "2026-08-19T18:23:47.391Z"
+  }
+]

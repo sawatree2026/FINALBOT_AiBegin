@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSDOTC0920015503",
+  "symbol": "GBPUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ตลาดอยู่ในภาวะ Sideway และมีสัญญาณความขัดแย้งของกรอบเวลาหลักกับความเสี่ยงสูงจาก Bull Trap จึงควรหลีกเลี่ยงการเทรด"
+}

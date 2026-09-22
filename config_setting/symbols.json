@@ -1,0 +1,14 @@
+{
+    "symbols": [
+        "AUDJPY-OTC",
+        "EURUSD-OTC",
+        "USDCAD-OTC",
+        "GBPUSD-OTC"
+    ],
+    "payouts": {
+        "AUDJPY-OTC": 86,
+        "EURUSD-OTC": 88,
+        "USDCAD-OTC": 86,
+        "GBPUSD-OTC": 87
+    }
+}

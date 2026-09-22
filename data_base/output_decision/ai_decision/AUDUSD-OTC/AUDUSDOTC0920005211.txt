@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920005211",
+  "symbol": "AUDUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "ตลาดอยู่ในช่วงสะสมพลังพร้อมรูปแบบ Morning Star และสัญญาณ Bear Trap สนับสนุนทิศทางขาขึ้นตาม M15"
+}

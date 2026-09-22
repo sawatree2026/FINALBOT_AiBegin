@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSD0828091117",
+  "symbol": "EURUSD",
+  "action": "CALL",
+  "expiry_minutes": 2,
+  "confidence_score": 75,
+  "reason_th": "ราคาเข้าใกล้แนวรับ Bollinger Band และ Stochastic อยู่ในเขต Oversold มีโอกาสเกิดการรีบาวด์ระยะสั้น"
+}

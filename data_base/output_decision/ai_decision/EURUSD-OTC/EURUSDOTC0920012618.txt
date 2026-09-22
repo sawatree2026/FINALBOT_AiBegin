@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920012618",
+  "symbol": "EURUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 40,
+  "reason_th": "ตลาดอยู่ในภาวะ distribution และไร้ทิศทางชัดเจน (Choppy) ประกอบกับความผันผวนต่ำ ควรอดทนรอสัญญาณที่ชัดเจนกว่านี้"
+}

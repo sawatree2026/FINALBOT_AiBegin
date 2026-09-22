@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920004610",
+  "symbol": "AUDUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 40,
+  "reason_th": "ตลาดอยู่ในภาวะSidewayและความสอดคล้องของหลายกรอบเวลาต่ำเกินไปควรหลีกเลี่ยง"
+}

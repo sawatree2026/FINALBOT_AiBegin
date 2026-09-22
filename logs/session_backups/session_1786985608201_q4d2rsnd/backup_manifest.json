@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": 1786985614433,
+    "type": "user_prompt",
+    "operation": "backup_user_prompt",
+    "sessionId": "session_1786985608201_q4d2rsnd",
+    "taskContent": "Return strictly JSON: {\\ symbol\\: \\EURUSD\\, \\action\\: \\WAIT\\, \\expiry_minutes\\: 1, \\confidence_score\\: 0, \\reason_th\\: \\test\\}",
+    "taskLength": 126,
+    "createdAt": "2026-08-17T16:53:28.201Z",
+    "updatedAt": "2026-08-17T16:53:34.433Z"
+  }
+]

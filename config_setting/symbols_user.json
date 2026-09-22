@@ -1,0 +1,40 @@
+{
+  "SET_A": [
+    "EURUSD",
+    "EURGBP",
+    "GBPUSD",
+    "USDJPY",
+    "EURJPY",
+    "AUDUSD",
+    "GBPJPY",
+    "USDCAD",
+    "AUDJPY",
+    "AUDCAD",
+    "GBPAUD",
+    "NZDUSD",
+    "EURAUD"
+  ],
+  "SET_B": [
+    "EURUSD-OTC",
+    "EURGBP-OTC",
+    "GBPUSD-OTC",
+    "EURJPY-OTC",
+    "AUDUSD-OTC",
+    "USDJPY-OTC",
+    "USDCHF-OTC",
+    "USDCAD-OTC",
+    "GBPJPY-OTC",
+    "AUDCAD-OTC",
+    "AUDCHF-OTC",
+    "AUDJPY-OTC",
+    "NZDUSD-OTC",
+    "CHFJPY-OTC",
+    "EURCHF-OTC",
+    "EURAUD-OTC",
+    "GBPAUD-OTC",
+    "EURTHB-OTC",
+    "USDBRL-OTC",
+    "USDTHB-OTC",
+    "CADJPY-OTC"
+  ]
+}

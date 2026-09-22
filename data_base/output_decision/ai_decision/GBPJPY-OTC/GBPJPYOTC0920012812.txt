@@ -1,0 +1,8 @@
+{
+  "ID": "GBPJPYOTC0920012812",
+  "symbol": "GBPJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "M1 RSI และ Stoch อยู่ในเขต Overbought สูงมาก ขณะที่ M15 มีแนวโน้มหลักเป็นขาลงและความสอดคล้องของ timeframe ต่ำเกินไป"
+}

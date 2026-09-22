@@ -1,0 +1,8 @@
+{
+  "ID": "EURJPYOTC0830235549",
+  "symbol": "EURJPY-OTC",
+  "action": "PUT",
+  "expiry_minutes": 3,
+  "confidence_score": 75,
+  "reason_th": "แนวโน้มหลักใน Timeframe M5 และ M15 เป็นขาลงชัดเจน ประกอบกับราคาปัจจุบันกำลังทดสอบแนวต้านและมีสัญญาณแรงขายกดดันต่อเนื่อง"
+}

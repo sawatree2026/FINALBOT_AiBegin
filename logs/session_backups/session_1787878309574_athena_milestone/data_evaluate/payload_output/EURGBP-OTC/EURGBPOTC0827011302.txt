@@ -1,0 +1,98 @@
+ID:EURGBPOTC0827011302
+meta:
+  timestamp: '2026-08-27T01:13:02.052817'
+  symbol: EURGBP-OTC
+  session: NY_AFTERNOON
+  m1_open: 0.855125
+  m1_age: 119453
+  m1_quality: FRESH
+  m5_open: 0.854765
+  m5_age: 359608
+  m5_quality: FRESH
+market_context:
+  state: ACCUMULATION
+  description: Smart money accumulation. Bullish bias, look for breakout.
+  volatility_regime: HIGH
+  news_impact: NONE_OTC
+  expected_volatility_%: 0.077
+timeframes:
+  m1:
+    m1_last_candle: BEARISH
+    m1_ema5: 0.855025
+    m1_ema20: 0.855099
+    m1_rsi: 44.58
+    m1_stoch_k: 39.27
+    m1_stoch_d: 39.16
+    m1_macd: -0.00011
+    m1_macd_signal: -0.000132
+    ohlcv:
+      open: 0.855125
+      high: 0.855245
+      low: 0.854925
+      close: 0.854965
+      volume: NONE_OTC
+  m5:
+    m5_bias: BEARISH
+    m5_ema5: 0.855142
+    m5_ema10: 0.855385
+    m5_ema20: 0.855935
+    m5_ema50: 0.856669
+    m5_bb_upper: 0.857724
+    m5_bb_lower: 0.854106
+    m5_bb_width: 0.003617
+    m5_rsi: 36.14
+    m5_stoch_k: 15.91
+    m5_stoch_d: 13.34
+    m5_macd: -0.000691
+    m5_macd_signal: -0.000647
+    m5_adx: 30.62
+    m5_atr: 0.000655
+    m5_support: 0.854785
+    m5_resistance: 0.855305
+    m5_pivot: 0.854985
+    ohlcv:
+      open: 0.854765
+      high: 0.855185
+      low: 0.854665
+      close: 0.855105
+      volume: NONE_OTC
+  m15:
+    m15_bias: BEARISH
+price_action:
+  m5_pa_pattern: NONE
+  m5_pa_last_candle_bias: BULLISH
+  m5_pa_body_strength: WEAK
+  m5_pa_wick_dominance: LOW_WICK
+  m5_pa_momentum_bias: BEARISH
+  m5_pa_move_quality: NOISY
+  m5_pa_trap_alert: BEAR_TRAP
+  m5_pa_sr_interaction: TESTING_PIVOT
+  m5_pa_divergence_alert: NONE
+  m5_pa_divergence_strength: 0
+  m5_pa_market_behavior: NEUTRAL
+  m5_pa_hesitation_score: 26
+  m5_pa_path_efficiency: FAIR
+volume:
+  m5_tick_volume: 1.0
+  m5_volume_momentum: NO_VOLUME_DATA
+  m5_volume_vs_average: 1.0
+analysis:
+  m5_trend_direction: NONE
+  m5_trend_type: CHOPPY
+  m5_trend_strength_score: 20
+  mtf_alignment_%: 66
+  m5_compression_quality_%: 0.0
+  m5_exhaustion_risk_%: 30
+  m5_bos_detected: false
+  mtf_conflict_score: 0
+  m5_trend_continuation_%: 55
+  m5_transition_risk: LOW
+  m5_persistence_score: 77
+decision_layer:
+  dl_tradeable: true
+  dl_stability_score: 66
+  dl_quality_score: 52
+  dl_risk_level: HIGH
+  ai_confidence_score: รอการวิเคราะห์จาก AI
+  ai_suggested_expiry_minutes: รอการวิเคราะห์จาก AI
+  ai_suggested_action: รอการวิเคราะห์จาก AI

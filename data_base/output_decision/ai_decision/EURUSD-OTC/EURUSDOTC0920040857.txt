@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920040857",
+  "symbol": "EURUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "M1 อยู่ในภาวะ Overbought สูงและเกิดความขัดแย้งกับแนวโน้มหลัก M15 ที่เป็นขาลง จึงควรหลีกเลี่ยงการเข้าเทรด"
+}

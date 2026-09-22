@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920035505",
+  "symbol": "EURUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 72,
+  "reason_th": "เกิดสัญญาณ Bear Trap ที่โซนแนวรับและมีการสะสมราคา Smart Money สนับสนุนโอกาสรีบาวด์ขึ้นในกรอบเวลา 5 นาที"
+}

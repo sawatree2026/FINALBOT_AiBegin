@@ -1,0 +1,15 @@
+timestamp,ID,symbol,action,confidence_score,expiry_minutes,engine_used,reason_th
+2026-08-26 18:07:02+00:00,EURGBPOTC0826180702,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:08:09+00:00,EURGBPOTC0826180809,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:09:02+00:00,EURGBPOTC0826180902,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:10:02+00:00,EURGBPOTC0826181002,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:11:08+00:00,EURGBPOTC0826181108,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:12:02+00:00,EURGBPOTC0826181202,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:13:02+00:00,EURGBPOTC0826181302,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:14:02+00:00,EURGBPOTC0826181402,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:15:12+00:00,EURGBPOTC0826181512,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:16:03+00:00,EURGBPOTC0826181603,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:17:03+00:00,EURGBPOTC0826181703,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:18:04+00:00,EURGBPOTC0826181804,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:19:02+00:00,EURGBPOTC0826181902,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:20:03+00:00,EURGBPOTC0826182003,EURGBP-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ

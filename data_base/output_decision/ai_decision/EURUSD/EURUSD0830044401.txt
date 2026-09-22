@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSD0830044401",
+  "symbol": "EURUSD",
+  "action": "WAIT",
+  "expiry_minutes": 1,
+  "confidence_score": 45,
+  "reason_th": "ข้อมูลมีความขัดแย้งระหว่าง Timeframe และรูปแบบราคาแสดงสัญญาณหลอก (Stop Hunt) ควรออรอดูสถานการณ์"
+}

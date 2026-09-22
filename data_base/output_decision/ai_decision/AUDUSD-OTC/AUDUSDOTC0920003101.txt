@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920003101",
+  "symbol": "AUDUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "แม้แนวโน้มหลักเป็นขาขึ้น แต่สัญญาณ M5 มีความเสี่ยง Bull Trap และรูปแบบ Doji แสดงความลังเลสูง ควรรอจังหวะที่ชัดเจนกว่านี้"
+}

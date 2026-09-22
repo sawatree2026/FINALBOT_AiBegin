@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920004106",
+  "symbol": "AUDUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "ราคาใน M1 อยู่ใกล้เขต Oversold (Stoch K ต่ำกว่า 10) และทดสอบแนวรับ M5 BB ล่าง มีโอกาสรีบาวด์กลับตัวระยะสั้น"
+}

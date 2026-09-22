@@ -1,0 +1,8 @@
+{
+  "ID": "EURJPYOTC0831004057",
+  "symbol": "EURJPY-OTC",
+  "action": "PUT",
+  "expiry_minutes": 3,
+  "confidence_score": 75,
+  "reason_th": "ราคาอยู่ใต้เส้น EMA และมีแนวโน้มหลักเป็นขาลงใน Timeframe M5 และ M15 ประกอบกับสัญญาณ Divergence ขาขึ้นที่อ่อนแรงทำให้มีโอกาสปรับตัวลงต่อตามเทรนด์"
+}

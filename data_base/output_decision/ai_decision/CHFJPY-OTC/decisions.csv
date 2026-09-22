@@ -1,0 +1,5 @@
+timestamp,ID,symbol,action,confidence_score,expiry_minutes,engine_used,reason_th
+2026-09-04T22:02:09.371787,CHFJPYOTC0904220209,CHFJPY-OTC,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T22:03:01.827911,CHFJPYOTC0904220301,CHFJPY-OTC,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T22:04:01.954546,CHFJPYOTC0904220401,CHFJPY-OTC,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T22:05:08.444958,CHFJPYOTC0904220508,CHFJPY-OTC,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ

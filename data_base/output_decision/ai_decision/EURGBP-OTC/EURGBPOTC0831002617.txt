@@ -1,0 +1,8 @@
+{
+  "ID": "EURGBPOTC0831002617",
+  "symbol": "EURGBP-OTC",
+  "action": "PUT",
+  "expiry_minutes": 2,
+  "confidence_score": 65,
+  "reason_th": "ราคาเข้าใกล้แนวต้านสำคัญและเกิดรูปแบบ Shooting Star ประกอบกับค่า Stochastic อยู่ในโซน Overbought สูงมาก จึงมีโอกาสเกิดการย่อตัวระยะสั้น"
+}

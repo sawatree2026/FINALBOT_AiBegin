@@ -1,0 +1,13 @@
+ID:EURUSD0828091201
+meta:
+  timestamp: '2026-08-28T09:12:01.862432'
+  symbol: EURUSD
+  engine_used: ML (DUAL_BRAIN)
+  model_mode: DUAL_BRAIN
+decision:
+  action: WAIT
+  confidence_score: 53.0
+  suggested_expiry_minutes: 5
+  stake: 35.0
+  tradeable: false
+  reason_th: "Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ"

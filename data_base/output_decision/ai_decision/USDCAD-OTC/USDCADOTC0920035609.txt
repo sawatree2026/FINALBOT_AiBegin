@@ -1,0 +1,8 @@
+{
+  "ID": "USDCADOTC0920035609",
+  "symbol": "USDCAD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 40,
+  "reason_th": "ตลาดมีความขัดแย้งระหว่างโครงสร้างสะสมตัวกับแนวโน้มหลักที่เป็นขาลงและความเสี่ยงสูง"
+}

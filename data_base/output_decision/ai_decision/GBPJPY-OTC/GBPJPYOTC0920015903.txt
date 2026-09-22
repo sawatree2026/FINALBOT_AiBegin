@@ -1,0 +1,8 @@
+{
+  "ID": "GBPJPYOTC0920015903",
+  "symbol": "GBPJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 40,
+  "reason_th": "ความเสี่ยงสูงและค่า RSI อยู่ในเขตซื้อมากเกินไป รอจังหวะย่อตัวหรือความชัดเจนเพิ่มขึ้น"
+}

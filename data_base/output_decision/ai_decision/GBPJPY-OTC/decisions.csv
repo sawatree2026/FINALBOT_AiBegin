@@ -1,0 +1,103 @@
+timestamp,ID,symbol,action,confidence_score,expiry_minutes,engine_used,reason_th
+2026-08-31T01:36:08.398558,GBPJPYOTC0831013608,GBPJPY-OTC,WAIT,56.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:37:02.563456,GBPJPYOTC0831013702,GBPJPY-OTC,WAIT,56.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:38:03.113990,GBPJPYOTC0831013803,GBPJPY-OTC,WAIT,56.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:39:03.301021,GBPJPYOTC0831013903,GBPJPY-OTC,WAIT,56.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:40:09.292086,GBPJPYOTC0831014009,GBPJPY-OTC,WAIT,69.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:40:14.225107,GBPJPYOTC0831014014,GBPJPY-OTC,WAIT,69.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:41:01.943864,GBPJPYOTC0831014101,GBPJPY-OTC,WAIT,69.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:41:03.255410,GBPJPYOTC0831014103,GBPJPY-OTC,WAIT,69.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:42:02.904070,GBPJPYOTC0831014202,GBPJPY-OTC,WAIT,69.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:42:03.385911,GBPJPYOTC0831014203,GBPJPY-OTC,WAIT,69.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:43:02.700553,GBPJPYOTC0831014302,GBPJPY-OTC,WAIT,69.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:43:03.264363,GBPJPYOTC0831014303,GBPJPY-OTC,WAIT,69.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:44:02.527688,GBPJPYOTC0831014402,GBPJPY-OTC,WAIT,69.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:44:03.167657,GBPJPYOTC0831014403,GBPJPY-OTC,WAIT,69.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:45:10.046042,GBPJPYOTC0831014510,GBPJPY-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:45:10.654670,GBPJPYOTC0831014510,GBPJPY-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:46:03.312612,GBPJPYOTC0831014603,GBPJPY-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:46:03.755104,GBPJPYOTC0831014603,GBPJPY-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:47:02.634987,GBPJPYOTC0831014702,GBPJPY-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:47:03.122702,GBPJPYOTC0831014703,GBPJPY-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:48:02.152248,GBPJPYOTC0831014802,GBPJPY-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:48:03.220237,GBPJPYOTC0831014803,GBPJPY-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:49:03.060555,GBPJPYOTC0831014903,GBPJPY-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:49:03.442128,GBPJPYOTC0831014903,GBPJPY-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:50:03.438871,GBPJPYOTC0831015003,GBPJPY-OTC,WAIT,75.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:50:03.912586,GBPJPYOTC0831015003,GBPJPY-OTC,WAIT,75.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:51:02.022319,GBPJPYOTC0831015102,GBPJPY-OTC,WAIT,75.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:51:03.080987,GBPJPYOTC0831015103,GBPJPY-OTC,WAIT,75.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:52:01.984881,GBPJPYOTC0831015201,GBPJPY-OTC,WAIT,75.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:52:03.160436,GBPJPYOTC0831015203,GBPJPY-OTC,WAIT,75.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:53:03.151923,GBPJPYOTC0831015303,GBPJPY-OTC,WAIT,75.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:54:02.044886,GBPJPYOTC0831015402,GBPJPY-OTC,WAIT,75.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:54:03.151216,GBPJPYOTC0831015403,GBPJPY-OTC,WAIT,75.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:55:03.101221,GBPJPYOTC0831015503,GBPJPY-OTC,WAIT,67.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:55:03.521639,GBPJPYOTC0831015503,GBPJPY-OTC,WAIT,67.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-09-20T00:25:01.836405,GBPJPYOTC0920002501,GBPJPY-OTC,PUT,85,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักทั้ง M5 และ M15 เป็นขาลงอย่างชัดเจน สอดคล้องกับสัญญาณ MACD และ RSI ที่ยังคงกดดันต่อเนื่อง
+2026-09-20T00:26:15.154385,GBPJPYOTC0920002615,GBPJPY-OTC,PUT,85,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักและ M5 เป็นขาลงอย่างชัดเจนพร้อมความสอดคล้องของ Multi-Timeframe 100%
+2026-09-20T00:27:03.586884,GBPJPYOTC0920002703,GBPJPY-OTC,PUT,85,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักและโครงสร้างราคาใน M5 และ M15 เป็นขาลงอย่างชัดเจน สอดคล้องกับการเคลื่อนที่กดต่ำลงต่อเนื่อง
+2026-09-20T00:28:01.831199,GBPJPYOTC0920002801,GBPJPY-OTC,PUT,85,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักและโครงสร้างราคาใน M5 และ M15 เป็นขาลงอย่างชัดเจนพร้อมความสอดคล้องของ Multi-Timeframe 100%
+2026-09-20T00:29:02.953765,GBPJPYOTC0920002902,GBPJPY-OTC,PUT,85,5,AI (gemini-3.5-flash-lite),แนวโน้มหลัก M15 และ M5 เป็นขาลงสอดคล้องกันพร้อมสัญญาณ Bearish Continuation ในเขตแนวต้าน
+2026-09-20T00:30:09.549110,GBPJPYOTC0920003009,GBPJPY-OTC,PUT,85,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักและ M5 เป็นขาลงอย่างชัดเจน สอดคล้องกับสัญญาณ MACD และ Stochastic ที่เตรียมกลับตัวลงต่อตามเทรนด์
+2026-09-20T00:31:01.871941,GBPJPYOTC0920003101,GBPJPY-OTC,PUT,85,5,AI (gemini-3.5-flash-lite),M15 และ M5 มีแนวโน้มหลักเป็นขาลงอย่างชัดเจน สอดคล้องกับสัญญาณ MACD และ RSI ในเขตขายมาก่อนหน้า
+2026-09-20T00:32:01.943658,GBPJPYOTC0920003201,GBPJPY-OTC,PUT,85,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักทุก Timeframe เป็นขาลงอย่างแข็งแกร่งและสอดคล้องกับสัญญาณ Bearish สอดรับกับการเข้าเทรด PUT
+2026-09-20T00:33:03.092045,GBPJPYOTC0920003303,GBPJPY-OTC,PUT,85,5,AI (gemini-3.5-flash-lite),เทรนด์หลักและโครงสร้าง Multi-Timeframe เป็นขาลงชัดเจน สอดคล้องกับสัญญาณกดลงตามทิศทางแนวโน้ม
+2026-09-20T00:34:03.333681,GBPJPYOTC0920003403,GBPJPY-OTC,PUT,85,5,AI (gemini-3.5-flash-lite),โครงสร้างราคาและแนวโน้มหลักทุก Timeframe สอดคล้องไปในทิศทางขาลงอย่างแข็งแกร่งตามสัญญาณ MTF Alignment
+2026-09-20T00:35:03.695994,GBPJPYOTC0920003503,GBPJPY-OTC,PUT,85,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักทั้ง M5 และ M15 เป็นขาลงอย่างแข็งแกร่งพร้อมสัญญาณบีบตัวของราคาต่อเนื่อง
+2026-09-20T00:36:07.033365,GBPJPYOTC0920003607,GBPJPY-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),เกิดสัญญาณ Bullish bias จากการสะสมราคาพร้อมรูปแบบ Bear Trap บริเวณแนวรับสำคัญ M5
+2026-09-20T00:37:06.755645,GBPJPYOTC0920003706,GBPJPY-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในช่วงสะสมราคา Smart money มี Bullish bias และเกิด Bear trap บริเวณแนวรับสำคัญพร้อมกลับตัวขึ้น
+2026-09-20T00:38:07.780698,GBPJPYOTC0920003807,GBPJPY-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมกำลังและเกิด Bear Trap บริเวณแนวรับสำคัญพร้อมสัญญาณ Bullish จาก M1 MACD ตัดขึ้น
+2026-09-20T00:39:03.790561,GBPJPYOTC0920003903,GBPJPY-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),บริบทตลาด M15 อยู่ในช่วงสะสมของ Smart Money ประกอบกับ M5 เกิดสัญญาณ Bear Trap ที่แนวรับและราคาเด้งกลับจาก Pivot
+2026-09-20T00:40:08.555442,GBPJPYOTC0920004008,GBPJPY-OTC,CALL,72,5,AI (gemini-3.5-flash-lite),เกิดสัญญาณ Bear Trap บริเวณแนวรับสำคัญพร้อมแรงซื้อกลับและ Stochastic ใน M1 อยู่ในเขต Oversold ที่พร้อมตัดขึ้น
+2026-09-20T00:41:06.701232,GBPJPYOTC0920004106,GBPJPY-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมกำลังและมีสัญญาณ Bear Trap บริเวณแนวรับสำคัญพร้อมโอกาสกลับตัวขึ้น
+2026-09-20T00:42:10.819690,GBPJPYOTC0920004210,GBPJPY-OTC,CALL,72,5,AI (gemini-3.5-flash-lite),ราคาติดแนวรับ M5 ร่วมกับสัญญาณ Bear Trap และ Stochastic ใน M1 อยู่ในเขต Overbought พร้อมดีดตัวกลับตามกรอบ Sideway
+2026-09-20T00:43:06.870286,GBPJPYOTC0920004306,GBPJPY-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในช่วงสะสมราคา มีสัญญาณ Bear Trap และทดสอบแนวรับ Pivot โดย M5 มี Lower Wick ยาวสนับสนุนการกลับตัวขึ้นระยะสั้น
+2026-09-20T00:44:08.690769,GBPJPYOTC0920004408,GBPJPY-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),Stochastic ใน M1 และ M5 อยู่ในเขต Oversold พร้อมสัญญาณ Bullish Trap และทดสอบแนวรับ Pivot ส่งสัญญาณการกลับตัวขึ้นระยะสั้น
+2026-09-20T00:45:23.624810,GBPJPYOTC0920004523,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงโดยที่สัญญาณยังไม่ชัดเจนเพียงพอ
+2026-09-20T00:46:11.087586,GBPJPYOTC0920004611,GBPJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงเนื่องจากสัญญาณขัดแย้งระหว่าง M1 และ M15
+2026-09-20T00:47:04.682760,GBPJPYOTC0920004704,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงเนื่องจากความขัดแย้งของเทรนด์ M5 และ M15
+2026-09-20T00:48:11.553360,GBPJPYOTC0920004811,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงแม้แนวโน้มหลักจะเป็นขาลง ควรรอจังหวะราคาที่ชัดเจนกว่านี้
+2026-09-20T00:49:12.541944,GBPJPYOTC0920004912,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงแม้แนวโน้มหลักจะเป็นขาลง จึงควรรอดูสถานการณ์
+2026-09-20T00:50:06.099321,GBPJPYOTC0920005006,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และมีความเสี่ยงสูง แม้กรอบเวลาหลักจะโน้มเอียงไปทางขาลงแต่สัญญาณยังไม่ชัดเจนพอ
+2026-09-20T00:51:18.583070,GBPJPYOTC0920005118,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),แม้บริบทหลักจะสะสมราคาแต่ M15 และ M5 ยังมีแนวโน้มขาลงกดทับและทดสอบแนวรับสำคัญทำให้ความเสี่ยงสูงควรหลีกเลี่ยง
+2026-09-20T00:52:11.615560,GBPJPYOTC0920005211,GBPJPY-OTC,PUT,85,5,AI (gemini-3.5-flash-lite),โครงสร้างราคาและแนวโน้มทุก Timeframe สอดคล้องไปในทิศทางขาลงอย่างแข็งแกร่งตามสัญญาณเทรนด์
+2026-09-20T00:53:10.292116,GBPJPYOTC0920005310,GBPJPY-OTC,PUT,85,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักทั้ง M5 และ M15 เป็นขาลงสอดคล้องกันพร้อมแรงส่งต่อเนื่อง
+2026-09-20T00:54:06.325219,GBPJPYOTC0920005406,GBPJPY-OTC,PUT,82,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักทั้ง M5 และ M15 เป็นขาลงอย่างชัดเจนพร้อมความสอดคล้องร้อยเปอร์เซ็นต์
+2026-09-20T00:55:19.866796,GBPJPYOTC0920005519,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงแม้ RSI จะอยู่ในเขต Oversold จึงควรอดทนรอสัญญาณที่ชัดเจนกว่านี้
+2026-09-20T00:56:11.987046,GBPJPYOTC0920005611,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ SIDEWAY_RANGE และมีความเสี่ยงสูง ควรหลีกเลี่ยงการเทรด
+2026-09-20T00:57:05.088236,GBPJPYOTC0920005705,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูง แม้ M5 มีแนวโน้มลงแต่โมเมนตัมอ่อนแรงและอยู่ใกล้แนวรับสำคัญ
+2026-09-20T00:58:10.852658,GBPJPYOTC0920005810,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงเนื่องจากความขัดแย้งของกรอบเวลาและสัญญาณที่ยังไม่ชัดเจน
+2026-09-20T00:59:12.181994,GBPJPYOTC0920005912,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ SIDEWAY_RANGE และมีความเสี่ยงสูง ควรหลีกเลี่ยงการเทรด
+2026-09-20T01:00:08.843283,GBPJPYOTC0920010008,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ SIDEWAY_RANGE และมีความเสี่ยงสูง แม้ว่าแนวโน้มหลักจะเป็นขาลงแต่โมเมนตัมไม่ชัดเจนพอ ควรอ่านทางเพื่อความปลอดภัย
+2026-09-20T01:16:01.897964,GBPJPYOTC0920011601,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งระหว่างแนวโน้มหลัก M15 และโครงสร้างตลาดที่ยังไม่มีทิศทางชัดเจน
+2026-09-20T01:17:06.995432,GBPJPYOTC0920011706,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาหลัก M15 เป็นขาลงขณะที่ M1 และ M5 พยายามปรับตัวขึ้น ทำให้มีความเสี่ยงสูง
+2026-09-20T01:18:01.976809,GBPJPYOTC0920011801,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาหลัก M15 เป็นขาลงแต่ M1/M5 มีความผันผวนและสัญญาณไม่ชัดเจน
+2026-09-20T01:19:03.149644,GBPJPYOTC0920011903,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาหลักกับM1ที่ RSI และ Stoch อยู่ในภาวะ Overbought สูงเกินไป
+2026-09-20T01:20:09.816560,GBPJPYOTC0920012009,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาหลักกับความเสี่ยงระดับสูงและสภาพตลาดที่ไร้ทิศทางชัดเจน
+2026-09-20T01:21:01.857510,GBPJPYOTC0920012101,GBPJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาหลักและโครงสร้างตลาดที่ผันผวนสูงทำให้มีความเสี่ยงในการเข้าเทรด
+2026-09-20T01:22:05.564174,GBPJPYOTC0920012205,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาหลักและภาวะตลาดที่ไร้ทิศทางชัดเจนมีความเสี่ยงสูง
+2026-09-20T01:23:06.752993,GBPJPYOTC0920012306,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งระหว่าง Timeframe สูงและสภาพตลาดที่ผันผวนสูงทำให้ความเสี่ยงมากเกินไป
+2026-09-20T01:24:07.153834,GBPJPYOTC0920012407,GBPJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาหลักและสภาวะตลาดที่มีความเสี่ยงสูงควรหลีกเลี่ยง
+2026-09-20T01:25:05.019110,GBPJPYOTC0920012505,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาหลัก M15 เป็นขาลงแต่ M5 เป็นขาขึ้น ร่วมกับความผันผวนสูงและสัญญาณไม่ชัดเจน
+2026-09-20T01:26:18.820923,GBPJPYOTC0920012618,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),M1 Stoch อยู่ในเขต Overbought สูงมากประกอบกับ M15 ยังคงมีมุมมองเป็นขาลง ทำให้มีความเสี่ยงในการกลับตัวสูง
+2026-09-20T01:27:12.248047,GBPJPYOTC0920012712,GBPJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาหลัก M15 เป็นขาลงในขณะที่ M1 และ M5 เป็นขาขึ้น และความผันผวนสูงทำให้มีความเสี่ยง
+2026-09-20T01:28:12.080605,GBPJPYOTC0920012812,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),M1 RSI และ Stoch อยู่ในเขต Overbought สูงมาก ขณะที่ M15 มีแนวโน้มหลักเป็นขาลงและความสอดคล้องของ timeframe ต่ำเกินไป
+2026-09-20T01:29:04.615035,GBPJPYOTC0920012904,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),M1 RSI และ Stoch อยู่ในภาวะ Overbought สูงมาก ประกอบกับ M15 ยังเป็นแนวโน้มขาลงและความขัดแย้งของ Timeframe สูง ควรรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T01:30:33.154699,GBPJPYOTC0920013033,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งระหว่าง Timeframe M15 ที่เป็นขาลงและ M5 ที่พยายามสะสมกำลัง ทำให้ความน่าจะเป็นต่ำเกินกว่าจะเข้าเทรด
+2026-09-20T01:31:13.208367,GBPJPYOTC0920013113,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาหลักกับโครงสร้างตลาดยังไม่ชัดเจนและมีความเสี่ยงสูง
+2026-09-20T01:32:04.660180,GBPJPYOTC0920013204,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งระหว่าง Timeframe สูงและต่ำ รวมถึงสภาพตลาดแบบ Accumulation ที่มีความผันผวนสูงและไม่มีทิศทางที่ชัดเจน
+2026-09-20T01:48:09.101744,GBPJPYOTC0920014809,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความเสี่ยงสูงและตลาดยังมีความผันผวนรุนแรง ควรอรอดูจังหวะความชัดเจนของราคาก่อน
+2026-09-20T01:49:03.285671,GBPJPYOTC0920014903,GBPJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความเสี่ยงสูงและตลาดยังมีความผันผวนจากภาวะสะสมตัว แนะนำให้รอสัญญาณชัดเจนกว่านี้
+2026-09-20T01:50:01.850863,GBPJPYOTC0920015001,GBPJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความเสี่ยงสูงและตลาดยังมีความผันผวนและสัญญาณขัดแย้งในกรอบเวลาสั้น
+2026-09-20T01:51:08.439030,GBPJPYOTC0920015108,GBPJPY-OTC,WAIT,48,5,AI (gemini-3.5-flash-lite),ความเสี่ยงสูงและค่า RSI อยู่ในเขตซื้อมากเกินไป(Overbought) ควรอดทนรอสัญญาณที่ชัดเจนกว่านี้
+2026-09-20T01:52:03.276805,GBPJPYOTC0920015203,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความเสี่ยงสูงและ RSI ใน M1 และ M5 อยู่ในเขต Overbought มากเกินไป อาจเกิดการพักตัว
+2026-09-20T01:53:01.876918,GBPJPYOTC0920015301,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),RSI และ Stoch ใน M1 และ M5 อยู่ในเขต Overbought สูงมาก ประกอบกับภาวะตลาดเป็น Sideway Range เสี่ยงสูงที่จะเกิดการกลับตัว
+2026-09-20T01:54:01.977640,GBPJPYOTC0920015401,GBPJPY-OTC,WAIT,48,5,AI (gemini-3.5-flash-lite),ความเสี่ยงสูงและ RSI ใน M1 อยู่ในเขตซื้อมากเกินไป (Overbought) ควรอดทนรอจังหวะที่เหมาะสม
+2026-09-20T01:55:03.611798,GBPJPYOTC0920015503,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความเสี่ยงสูงและความผันผวนรุนแรงประกอบกับสัญญาณ M1 เริ่มพักตัว แนะนำให้รอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T01:56:03.342691,GBPJPYOTC0920015603,GBPJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความเสี่ยงสูงและ RSI อยู่ในเขต Overbought พร้อมกับความผันผวนรุนแรง ควรอารักขาความเสี่ยงและรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T01:57:01.828932,GBPJPYOTC0920015701,GBPJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),RSI และ Stoch อยู่ในเขต Overbought สูง ประกอบกับความเสี่ยงสูงและความผันผวนผิดปกติ ควรรอจังหวะย่อตัว
+2026-09-20T01:58:02.910458,GBPJPYOTC0920015802,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความเสี่ยงสูงและความผันผวนเอ็กซ์ตรีม แม้ภาพรวมเป็นขาขึ้นแต่ RSI และ Stoch ใน M1 อยู่ในเขตซื้อมากเกินไปและเกิดการพักตัว
+2026-09-20T01:59:03.378726,GBPJPYOTC0920015903,GBPJPY-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความเสี่ยงสูงและค่า RSI อยู่ในเขตซื้อมากเกินไป รอจังหวะย่อตัวหรือความชัดเจนเพิ่มขึ้น
+2026-09-20T02:00:01.820806,GBPJPYOTC0920020001,GBPJPY-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความเสี่ยงสูงและ RSI ใน M1 และ M5 อยู่ในเขต Overbought ประกอบกับความผันผวนสูง จึงควรอดทนรอสัญญาณที่ชัดเจนกว่านี้
+2026-09-20T02:01:07.040337,GBPJPYOTC0920020107,GBPJPY-OTC,PUT,75,5,AI (gemini-3.5-flash-lite),ราคาชนแนวต้านสำคัญ M5 และ Stochastic อยู่ในเขต Overbought พร้อมเกิดสัญญาณ Rejection เหมาะแก่การเล่นรอบย่อตัวแบบ Mean Reversion

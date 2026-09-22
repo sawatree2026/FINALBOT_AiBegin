@@ -1,0 +1,98 @@
+ID:USDCHFOTC0826155510
+meta:
+  timestamp: '2026-08-26T15:55:10.489305'
+  symbol: USDCHF-OTC
+  session: LONDON_OPEN
+  m1_open: 0.810755
+  m1_age: 61515
+  m1_quality: FRESH
+  m5_open: 0.810665
+  m5_age: 302000
+  m5_quality: FRESH
+market_context:
+  state: DISTRIBUTION
+  description: Smart money distribution. Bearish bias, look for breakdown.
+  volatility_regime: LOW
+  news_impact: NONE_OTC
+  expected_volatility_%: 0.06
+timeframes:
+  m1:
+    m1_last_candle: BULLISH
+    m1_ema5: 0.810783
+    m1_ema20: 0.810691
+    m1_rsi: 56.66
+    m1_stoch_k: 72.62
+    m1_stoch_d: 77.45
+    m1_macd: 0.000075
+    m1_macd_signal: 0.000071
+    ohlcv:
+      open: 0.810755
+      high: 0.810875
+      low: 0.810715
+      close: 0.810805
+      volume: NONE_OTC
+  m5:
+    m5_bias: BULLISH
+    m5_ema5: 0.810659
+    m5_ema10: 0.810539
+    m5_ema20: 0.810294
+    m5_ema50: 0.809505
+    m5_bb_upper: 0.810896
+    m5_bb_lower: 0.80983
+    m5_bb_width: 0.001066
+    m5_rsi: 64.42
+    m5_stoch_k: 77.45
+    m5_stoch_d: 72.3
+    m5_macd: 0.000366
+    m5_macd_signal: 0.000389
+    m5_adx: 23.8
+    m5_atr: 0.000487
+    m5_support: 0.810632
+    m5_resistance: 0.810982
+    m5_pivot: 0.810808
+    ohlcv:
+      open: 0.810665
+      high: 0.810985
+      low: 0.810635
+      close: 0.810805
+      volume: NONE_OTC
+  m15:
+    m15_bias: BULLISH
+price_action:
+  m5_pa_pattern: NONE
+  m5_pa_last_candle_bias: BULLISH
+  m5_pa_body_strength: WEAK
+  m5_pa_wick_dominance: HIGH_UPPER_WICK
+  m5_pa_momentum_bias: NEUTRAL
+  m5_pa_move_quality: CHAOTIC
+  m5_pa_trap_alert: NONE
+  m5_pa_sr_interaction: TESTING_PIVOT
+  m5_pa_divergence_alert: BEARISH
+  m5_pa_divergence_strength: 90
+  m5_pa_market_behavior: NEUTRAL
+  m5_pa_hesitation_score: 43
+  m5_pa_path_efficiency: POOR
+volume:
+  m5_tick_volume: 1.0
+  m5_volume_momentum: NO_VOLUME_DATA
+  m5_volume_vs_average: 1.0
+analysis:
+  m5_trend_direction: UP
+  m5_trend_type: IMPULSIVE
+  m5_trend_strength_score: 80
+  mtf_alignment_%: 100
+  m5_compression_quality_%: 100.0
+  m5_exhaustion_risk_%: 30
+  m5_bos_detected: false
+  mtf_conflict_score: 0
+  m5_trend_continuation_%: 55
+  m5_transition_risk: LOW
+  m5_persistence_score: 73
+decision_layer:
+  dl_tradeable: true
+  dl_stability_score: 100
+  dl_quality_score: 38
+  dl_risk_level: MEDIUM
+  ai_confidence_score: รอการวิเคราะห์จาก AI
+  ai_suggested_expiry_minutes: รอการวิเคราะห์จาก AI
+  ai_suggested_action: รอการวิเคราะห์จาก AI

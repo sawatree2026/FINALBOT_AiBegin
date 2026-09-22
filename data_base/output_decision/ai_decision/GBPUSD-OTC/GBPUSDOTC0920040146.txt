@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSDOTC0920040146",
+  "symbol": "GBPUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 50,
+  "reason_th": "M5 RSI อยู่ในเขตซื้อมากเกินไปและมีความเสี่ยงสูงในการเปลี่ยนผ่านแนวโน้ม ควรรอจังหวะที่ชัดเจนกว่านี้"
+}

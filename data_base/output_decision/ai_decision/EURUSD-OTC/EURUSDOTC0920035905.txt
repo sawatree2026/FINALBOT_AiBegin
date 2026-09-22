@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920035905",
+  "symbol": "EURUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "มีความขัดแย้งระหว่างแนวโน้มหลัก M15 และ M5 ที่เป็นขาลง กับบริบทตลาด M1 ที่พยายามสะสมกำลังและกลับตัวขึ้น"
+}

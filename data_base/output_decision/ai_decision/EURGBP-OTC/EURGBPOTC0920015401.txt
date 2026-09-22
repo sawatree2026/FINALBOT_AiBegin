@@ -1,0 +1,8 @@
+{
+  "ID": "EURGBPOTC0920015401",
+  "symbol": "EURGBP-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "โครงสร้างราคาหลักเป็นขาขึ้นและอยู่ในโซนสะสมคำสั่งซื้อ สนับสนุนโอกาสปรับตัวขึ้นต่อตามกรอบเวลา M15 และ M5"
+}

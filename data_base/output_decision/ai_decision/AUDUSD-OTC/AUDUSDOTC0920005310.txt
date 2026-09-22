@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920005310",
+  "symbol": "AUDUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "ตลาดอยู่ในภาวะสะสมกำลังและมีสัญญาณ Bullish Bias ร่วมกับ Bear Trap และ Morning Star สนับสนุนทิศทางขาขึ้น"
+}

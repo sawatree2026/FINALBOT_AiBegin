@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920004210",
+  "symbol": "AUDUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "Stochastic ใน M1 Oversold อย่างรุนแรงและใกล้แนวรับ M5 BB Lower เหมาะแก่การทำ Mean-Reversion"
+}

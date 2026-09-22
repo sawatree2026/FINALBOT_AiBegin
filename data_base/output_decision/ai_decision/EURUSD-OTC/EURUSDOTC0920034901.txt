@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920034901",
+  "symbol": "EURUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "เกิดรูปแบบ Morning Star และสัญญาณ Bear Trap บริเวณแนวรับ M5 สนับสนุนการกลับตัวขึ้นระยะสั้น"
+}

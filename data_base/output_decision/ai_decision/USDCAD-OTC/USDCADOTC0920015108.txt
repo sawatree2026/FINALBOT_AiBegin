@@ -1,0 +1,8 @@
+{
+  "ID": "USDCADOTC0920015108",
+  "symbol": "USDCAD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 50,
+  "reason_th": "Stochastic อยู่ในเขต Overbought สูงและมีความเสี่ยงสูงจากการทดสอบแนวต้านในภาวะSideway"
+}

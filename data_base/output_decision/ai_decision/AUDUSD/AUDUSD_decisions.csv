@@ -1,0 +1,4 @@
+timestamp,ID,symbol,action,confidence_score,expiry_minutes,engine_used,reason_th
+2026-08-30T04:44:02.013270,AUDUSD0830044402,AUDUSD,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดมีความเสี่ยงจากสัญญาณ Bull Trap และความสอดคล้องของกรอบเวลาต่ำเกินไป
+2026-08-30T04:45:10.093835,AUDUSD0830044510,AUDUSD,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดมีความเสี่ยงจากสัญญาณ Bull Trap และความสอดคล้องของกรอบเวลาต่ำเกินไป
+2026-08-30T04:46:28.082658,AUDUSD0830044628,AUDUSD,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดมีความเสี่ยงจากสัญญาณ Bull Trap และความผันผวนสูงในกรอบสะสม จึงควรหลีกเลี่ยงการเข้าเทรด

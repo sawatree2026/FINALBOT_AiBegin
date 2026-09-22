@@ -1,0 +1,10 @@
+timestamp,ID,symbol,action,confidence_score,expiry_minutes,engine_used,reason_th
+2026-09-04T17:30:04.093359,USDJPY0904173004,USDJPY,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T17:31:18.890222,USDJPY0904173118,USDJPY,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T17:32:03.326837,USDJPY0904173203,USDJPY,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T17:33:03.308485,USDJPY0904173303,USDJPY,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T21:53:09.104256,USDJPY0904215309,USDJPY,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T22:02:09.381803,USDJPY0904220209,USDJPY,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T22:03:01.819906,USDJPY0904220301,USDJPY,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T22:04:02.030279,USDJPY0904220402,USDJPY,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T22:05:08.434958,USDJPY0904220508,USDJPY,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ

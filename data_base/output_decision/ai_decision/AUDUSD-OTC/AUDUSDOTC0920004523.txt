@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920004523",
+  "symbol": "AUDUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "ราคาเกิดรูปแบบ Hammer ที่แนวรับ Pivot และ Stoch M1 ตัดขึ้นจากเขต Oversold ในภาวะ Sideway Range"
+}

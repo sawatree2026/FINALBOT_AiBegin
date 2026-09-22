@@ -1,0 +1,8 @@
+{
+  "ID": "AUDJPYOTC0920035201",
+  "symbol": "AUDJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ตลาดมีความขัดแย้งระหว่างกรอบเวลาหลักและโครงสร้างราคาที่ผันผวนสูง เสี่ยงต่อการเกิดสัญญาณหลอก"
+}

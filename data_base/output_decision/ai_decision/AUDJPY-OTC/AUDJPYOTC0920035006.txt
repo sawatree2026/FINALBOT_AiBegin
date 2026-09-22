@@ -1,0 +1,8 @@
+{
+  "ID": "AUDJPYOTC0920035006",
+  "symbol": "AUDJPY-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "ราคาเข้าใกล้แนวรับ Bollinger Lower และมีสัญญาณ Bear Trap ประกอบกับ Stoch ใน M1 และ M5 อยู่ในเขต Oversold มีโอกาสรีบาวด์กลับขึ้นระยะสั้น"
+}

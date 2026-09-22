@@ -1,0 +1,73 @@
+===================================================================================================================
+  IQ OPTION 3D FOCUS ASSET SCANNER REPORT (บันทึกเมื่อ: 2026-09-04 21:13:04)
+  ตรวจสอบคู่เงินจาก symbols_user_config.txt ครบ 3 มิติ (Payout >= 84% + 7 Skills + 4 Edges + S/R)
+===================================================================================================================
+
+--- SET A: คู่เงินหลัก [13 คู่] ---
+  • EURUSD        | 🟢 Binary: 88%      | ⚪ Turbo: 86%       | ⚪ Digital: 87%     
+  • EURGBP        | 🟢 Binary: 87%      | ⚪ Turbo: 86%       | ⚪ Digital: 87%     
+  • GBPUSD        | 🟢 Binary: 87%      | ⚪ Turbo: 86%       | ⚪ Digital: 87%     
+  • USDJPY        | 🟢 Binary: 87%      | ⚪ Turbo: 86%       | ⚪ Digital: 80%     
+  • EURJPY        | 🟢 Binary: 87%      | ⚪ Turbo: 86%       | ⚪ Digital: 80%     
+  • AUDUSD        | 🟢 Binary: 87%      | ⚪ Turbo: 86%       | ⚪ Digital: 85%     
+  • GBPJPY        | 🟢 Binary: 87%      | ⚪ Turbo: 86%       | ⚪ Digital: 85%     
+  • USDCAD        | 🟢 Binary: 87%      | ⚪ Turbo: ปิด        | ⚪ Digital: 85%     
+  • AUDJPY        | 🟢 Binary: 87%      | ⚪ Turbo: 86%       | ⚪ Digital: 85%     
+  • AUDCAD        | 🟢 Binary: 87%      | ⚪ Turbo: 86%       | ⚪ Digital: 85%     
+  • GBPAUD        | 🟢 Binary: 87%      | ⚪ Turbo: 86%       | ⚪ Digital: 80%     
+  • NZDUSD        | 🟢 Binary: 87%      | ⚪ Turbo: 87%       | ⚪ Digital: 80%     
+  • EURAUD        | 🟢 Binary: 87%      | ⚪ Turbo: ปิด        | ⚪ Digital: 80%     
+
+--- SET B: คู่เงินสำรอง [21 คู่] ---
+  • EURUSD-OTC    | 🔴 Binary: ปิด       | ⚪ Turbo: ปิด        | ⚪ Digital: 82%     
+  • EURGBP-OTC    | 🔴 Binary: ปิด       | ⚪ Turbo: ปิด        | ⚪ Digital: 82%     
+  • GBPUSD-OTC    | 🔴 Binary: ปิด       | ⚪ Turbo: ปิด        | ⚪ Digital: 82%     
+  • EURJPY-OTC    | 🔴 Binary: ปิด       | ⚪ Turbo: ปิด        | ⚪ Digital: 82%     
+  • AUDUSD-OTC    | 🟡 Binary: 82%      | ⚪ Turbo: 82%       | ⚪ Digital: ปิด      
+  • USDJPY-OTC    | 🔴 Binary: ปิด       | ⚪ Turbo: ปิด        | ⚪ Digital: 83%     
+  • USDCHF-OTC    | 🔴 Binary: ปิด       | ⚪ Turbo: ปิด        | ⚪ Digital: 83%     
+  • USDCAD-OTC    | 🟡 Binary: 82%      | ⚪ Turbo: 82%       | ⚪ Digital: 85%     
+  • GBPJPY-OTC    | 🔴 Binary: ปิด       | ⚪ Turbo: ปิด        | ⚪ Digital: 85%     
+  • AUDCAD-OTC    | 🔴 Binary: ปิด       | ⚪ Turbo: ปิด        | ⚪ Digital: 83%     
+  • AUDCHF-OTC    | 🔴 Binary: ปิด       | ⚪ Turbo: 82%       | ⚪ Digital: 83%     
+  • AUDJPY-OTC    | 🔴 Binary: ปิด       | ⚪ Turbo: ปิด        | ⚪ Digital: 83%     
+  • NZDUSD-OTC    | 🟡 Binary: 82%      | ⚪ Turbo: 82%       | ⚪ Digital: ปิด      
+  • CHFJPY-OTC    | 🟡 Binary: 82%      | ⚪ Turbo: 82%       | ⚪ Digital: 85%     
+  • EURCHF-OTC    | 🟢 Binary: 86%      | ⚪ Turbo: 82%       | ⚪ Digital: 85%     
+  • EURAUD-OTC    | 🟡 Binary: 82%      | ⚪ Turbo: 82%       | ⚪ Digital: ปิด      
+  • GBPAUD-OTC    | 🟡 Binary: 82%      | ⚪ Turbo: 82%       | ⚪ Digital: 83%     
+  • EURTHB-OTC    | 🟢 Binary: 86%      | ⚪ Turbo: 82%       | ⚪ Digital: 83%     
+  • USDBRL-OTC    | 🔴 Binary: ปิด       | ⚪ Turbo: ปิด        | ⚪ Digital: 83%     
+  • USDTHB-OTC    | 🟢 Binary: 86%      | ⚪ Turbo: 82%       | ⚪ Digital: 85%     
+  • CADJPY-OTC    | 🟡 Binary: 82%      | ⚪ Turbo: ปิด        | ⚪ Digital: 85%     
+
+===================================================================================================================
+--- ตารางจัดอันดับคู่เงินน่าเทรด (Rank 1 - 12) ---
+  อันดับ 1: USDJPY          | คะแนน: 86.6/100   | Payout: 87%     | มีพื้นที่วิ่งโล่ง (Room to Run)         
+          └── วิเคราะห์: สัญญาณสวยมาก กราฟวิ่งคม เนื้อแน่น พื้นที่โล่ง, ผันผวนสุขภาพดี (Healthy), สวิงมีทิศทาง (Clean Swing)
+  อันดับ 2: EURJPY          | คะแนน: 66.0/100   | Payout: 87%     | มีพื้นที่วิ่งโล่ง (Room to Run)         
+          └── วิเคราะห์: สัญญาณดี กราฟมีทิศทาง ความผันผวนปกติ, กราฟนิ่งสนิท (Flatline), สวิงมีทิศทาง (Clean Swing)
+  อันดับ 3: EURUSD          | คะแนน: 60.0/100   | Payout: 88%     | มีพื้นที่วิ่งโล่ง (Room to Run)         
+          └── วิเคราะห์: สัญญาณปานกลาง มี Doji หรือไส้กวนบ้าง, กราฟนิ่งสนิท (Flatline), สวิงมีทิศทาง (Clean Swing)
+  อันดับ 4: GBPJPY          | คะแนน: 60.0/100   | Payout: 87%     | มีพื้นที่วิ่งโล่ง (Room to Run)         
+          └── วิเคราะห์: สัญญาณปานกลาง มี Doji หรือไส้กวนบ้าง, กราฟนิ่งสนิท (Flatline), ไซด์เวย์ไร้ทิศทาง (Chop Noise)
+  อันดับ 5: GBPAUD          | คะแนน: 59.8/100   | Payout: 87%     | มีพื้นที่วิ่งโล่ง (Room to Run)         
+          └── วิเคราะห์: สัญญาณปานกลาง มี Doji หรือไส้กวนบ้าง, กราฟนิ่งสนิท (Flatline), สวิงมีทิศทาง (Clean Swing)
+  อันดับ 6: AUDJPY          | คะแนน: 59.0/100   | Payout: 87%     | มีพื้นที่วิ่งโล่ง (Room to Run)         
+          └── วิเคราะห์: สัญญาณปานกลาง มี Doji หรือไส้กวนบ้าง, กราฟนิ่งสนิท (Flatline), สวิงมีทิศทาง (Clean Swing)
+  อันดับ 7: NZDUSD          | คะแนน: 58.7/100   | Payout: 87%     | มีพื้นที่วิ่งโล่ง (Room to Run)         
+          └── วิเคราะห์: สัญญาณปานกลาง มี Doji หรือไส้กวนบ้าง, กราฟนิ่งสนิท (Flatline), สวิงมีทิศทาง (Clean Swing)
+  อันดับ 8: AUDCAD          | คะแนน: 58.1/100   | Payout: 87%     | มีพื้นที่วิ่งโล่ง (Room to Run)         
+          └── วิเคราะห์: สัญญาณปานกลาง มี Doji หรือไส้กวนบ้าง, กราฟนิ่งสนิท (Flatline), สวิงมีทิศทาง (Clean Swing)
+  อันดับ 9: EURGBP          | คะแนน: 56.5/100   | Payout: 87%     | ระยะ S/R ปานกลาง                
+          └── วิเคราะห์: สัญญาณปานกลาง มี Doji หรือไส้กวนบ้าง, กราฟนิ่งสนิท (Flatline), สวิงมีทิศทาง (Clean Swing)
+  อันดับ 10: GBPUSD         | คะแนน: 53.5/100   | Payout: 87%     | มีพื้นที่วิ่งโล่ง (Room to Run)         
+          └── วิเคราะห์: สัญญาณปานกลาง มี Doji หรือไส้กวนบ้าง, กราฟนิ่งสนิท (Flatline), สวิงมีทิศทาง (Clean Swing)
+  อันดับ 11: USDCAD         | คะแนน: 53.5/100   | Payout: 87%     | มีพื้นที่วิ่งโล่ง (Room to Run)         
+          └── วิเคราะห์: สัญญาณปานกลาง มี Doji หรือไส้กวนบ้าง, กราฟนิ่งสนิท (Flatline), สวิงมีทิศทาง (Clean Swing)
+  อันดับ 12: AUDUSD         | คะแนน: 52.5/100   | Payout: 87%     | มีพื้นที่วิ่งโล่ง (Room to Run)         
+          └── วิเคราะห์: สัญญาณปานกลาง มี Doji หรือไส้กวนบ้าง, กราฟนิ่งสนิท (Flatline), สวิงมีทิศทาง (Clean Swing)
+
+===================================================================================================================
+🏆 สรุปผลคัดเลือก Top 4 คู่เงิน: USDJPY, EURJPY, EURUSD, GBPJPY
+===================================================================================================================

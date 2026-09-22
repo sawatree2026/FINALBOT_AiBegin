@@ -1,0 +1,98 @@
+ID:AUDUSDOTC0827034501
+meta:
+  timestamp: '2026-08-27T03:45:01.899463'
+  symbol: AUDUSD-OTC
+  session: NY_AFTERNOON
+  m1_open: 0.706915
+  m1_age: 119304
+  m1_quality: FRESH
+  m5_open: 0.707765
+  m5_age: 362021
+  m5_quality: FRESH
+market_context:
+  state: SIDEWAY_RANGE
+  description: Price ranging between clear levels. Suitable for mean-reversion strategies.
+  volatility_regime: NORMAL
+  news_impact: NONE_OTC
+  expected_volatility_%: 0.085
+timeframes:
+  m1:
+    m1_last_candle: BULLISH
+    m1_ema5: 0.707121
+    m1_ema20: 0.707475
+    m1_rsi: 42.77
+    m1_stoch_k: 18.6
+    m1_stoch_d: 10.45
+    m1_macd: -0.000244
+    m1_macd_signal: -0.000175
+    ohlcv:
+      open: 0.706915
+      high: 0.707285
+      low: 0.706835
+      close: 0.707275
+      volume: NONE_OTC
+  m5:
+    m5_bias: BEARISH
+    m5_ema5: 0.707706
+    m5_ema10: 0.707875
+    m5_ema20: 0.708081
+    m5_ema50: 0.708511
+    m5_bb_upper: 0.709087
+    m5_bb_lower: 0.707263
+    m5_bb_width: 0.001824
+    m5_rsi: 38.42
+    m5_stoch_k: 23.74
+    m5_stoch_d: 36.24
+    m5_macd: -0.00025
+    m5_macd_signal: -0.000199
+    m5_adx: 13.58
+    m5_atr: 0.0006
+    m5_support: 0.706922
+    m5_resistance: 0.707682
+    m5_pivot: 0.707388
+    ohlcv:
+      open: 0.707765
+      high: 0.707855
+      low: 0.707095
+      close: 0.707215
+      volume: NONE_OTC
+  m15:
+    m15_bias: BEARISH
+price_action:
+  m5_pa_pattern: NONE
+  m5_pa_last_candle_bias: BEARISH
+  m5_pa_body_strength: WEAK
+  m5_pa_wick_dominance: LOW_WICK
+  m5_pa_momentum_bias: BEARISH
+  m5_pa_move_quality: CHAOTIC
+  m5_pa_trap_alert: NONE
+  m5_pa_sr_interaction: TESTING_PIVOT
+  m5_pa_divergence_alert: NONE
+  m5_pa_divergence_strength: 0
+  m5_pa_market_behavior: NEUTRAL
+  m5_pa_hesitation_score: 20
+  m5_pa_path_efficiency: POOR
+volume:
+  m5_tick_volume: 1.0
+  m5_volume_momentum: NO_VOLUME_DATA
+  m5_volume_vs_average: 1.0
+analysis:
+  m5_trend_direction: DOWN
+  m5_trend_type: CHOPPY
+  m5_trend_strength_score: 40
+  mtf_alignment_%: 100
+  m5_compression_quality_%: 90.72
+  m5_exhaustion_risk_%: 30
+  m5_bos_detected: false
+  mtf_conflict_score: 0
+  m5_trend_continuation_%: 55
+  m5_transition_risk: MEDIUM
+  m5_persistence_score: 59
+decision_layer:
+  dl_tradeable: true
+  dl_stability_score: 100
+  dl_quality_score: 51
+  dl_risk_level: MEDIUM
+  ai_confidence_score: รอการวิเคราะห์จาก AI
+  ai_suggested_expiry_minutes: รอการวิเคราะห์จาก AI
+  ai_suggested_action: รอการวิเคราะห์จาก AI

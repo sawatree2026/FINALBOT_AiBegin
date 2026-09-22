@@ -1,0 +1,8 @@
+{
+  "ID": "EURGBPOTC0920015701",
+  "symbol": "EURGBP-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ตลาดอยู่ในภาวะSidewayและมีความเสี่ยงสูงเนื่องจากStochasticอยู่ในเขต Overbought และเข้าใกล้แนวต้าน"
+}

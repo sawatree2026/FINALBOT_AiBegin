@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920035109",
+  "symbol": "EURUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "เกิดสัญญาณ Bullish bias และ Bear Trap ที่แนวรับ M5 ประกอบกับมีการสะสมของ Smart Money สนับสนุนการกลับตัวขึ้น"
+}

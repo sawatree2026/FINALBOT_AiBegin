@@ -1,0 +1,8 @@
+{
+  "ID": "GBPJPYOTC0920012306",
+  "symbol": "GBPJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ความขัดแย้งระหว่าง Timeframe สูงและสภาพตลาดที่ผันผวนสูงทำให้ความเสี่ยงมากเกินไป"
+}

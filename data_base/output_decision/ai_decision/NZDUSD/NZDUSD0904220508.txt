@@ -1,0 +1,13 @@
+ID:NZDUSD0904220508
+meta:
+  timestamp: '2026-09-04T22:05:08.402954'
+  symbol: NZDUSD
+  engine_used: ML (DUAL_BRAIN)
+  model_mode: DUAL_BRAIN
+decision:
+  action: WAIT
+  confidence_score: 45.0
+  suggested_expiry_minutes: 5
+  stake: 35.0
+  tradeable: false
+  reason_th: "Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ"

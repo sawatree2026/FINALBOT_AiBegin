@@ -1,0 +1,8 @@
+{
+  "ID": "EURGBPOTC0920014809",
+  "symbol": "EURGBP-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ตลาดอยู่ในภาวะสะสมตัวและมีความเสี่ยงสูงจากสัญญาณ Bull Trap จึงควรหลีกเลี่ยง"
+}

@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920003807",
+  "symbol": "AUDUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ตลาดมีความผันผวนสูงและเกิดภาวะ Bull Trap ประกอบกับทิศทางขัดแย้งกันระหว่าง M5 และ M15"
+}

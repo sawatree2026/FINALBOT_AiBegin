@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920013204",
+  "symbol": "EURUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 40,
+  "reason_th": "ตลาดอยู่ในภาวะกระจายตัวและไร้ทิศทางชัดเจน ความขัดแย้งของกรอบเวลาหลักและสภาพตลาดแบบ CHAOTIC มีความเสี่ยงสูงเกินไป"
+}

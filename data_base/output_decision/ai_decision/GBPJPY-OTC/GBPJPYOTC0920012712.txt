@@ -1,0 +1,8 @@
+{
+  "ID": "GBPJPYOTC0920012712",
+  "symbol": "GBPJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 40,
+  "reason_th": "ความขัดแย้งของกรอบเวลาหลัก M15 เป็นขาลงในขณะที่ M1 และ M5 เป็นขาขึ้น และความผันผวนสูงทำให้มีความเสี่ยง"
+}

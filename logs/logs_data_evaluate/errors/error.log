@@ -1,0 +1,84 @@
+2026-08-19 21:42:50,849 | ERROR    | Error: Division by zero in RSI calculation (avg_loss contains 0)
+Traceback (most recent call last):
+  File "E:\FINALBOT_Begin\data_evaluate\orchestration\advanced_tools\divergence_analyzer.py", line 66, in _calculate_rsi
+    raise ValueError("Division by zero in RSI calculation (avg_loss contains 0)")
+ValueError: Division by zero in RSI calculation (avg_loss contains 0)
+2026-08-19 21:44:09,708 | ERROR    | Error: Division by zero in RSI calculation (avg_loss contains 0)
+Traceback (most recent call last):
+  File "E:\FINALBOT_Begin\data_evaluate\orchestration\advanced_tools\divergence_analyzer.py", line 66, in _calculate_rsi
+    raise ValueError("Division by zero in RSI calculation (avg_loss contains 0)")
+ValueError: Division by zero in RSI calculation (avg_loss contains 0)
+2026-08-19 23:06:04,051 | ERROR    | Error: Division by zero in RSI calculation (avg_loss contains 0)
+Traceback (most recent call last):
+  File "E:\FINALBOT_Begin\data_evaluate\orchestration\advanced_tools\divergence_analyzer.py", line 66, in _calculate_rsi
+    raise ValueError("Division by zero in RSI calculation (avg_loss contains 0)")
+ValueError: Division by zero in RSI calculation (avg_loss contains 0)
+2026-08-19 23:07:03,736 | ERROR    | Error: Division by zero in RSI calculation (avg_loss contains 0)
+Traceback (most recent call last):
+  File "E:\FINALBOT_Begin\data_evaluate\orchestration\advanced_tools\divergence_analyzer.py", line 66, in _calculate_rsi
+    raise ValueError("Division by zero in RSI calculation (avg_loss contains 0)")
+ValueError: Division by zero in RSI calculation (avg_loss contains 0)
+2026-08-28 08:15:04,359 | ERROR    | [Orchestrator] Evaluation failed for EURUSD: FAIL-FAST: CSV file not found for EURUSD M5 at data_base/feed_output/iq_option\EURUSD\EURUSD_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_Begin\data_evaluate\orchestrator.py", line 167, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_Begin\data_evaluate\orchestrator.py", line 212, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for EURUSD M5 at data_base/feed_output/iq_option\EURUSD\EURUSD_M5.csv
+2026-08-28 08:15:04,364 | ERROR    | [Orchestrator] Evaluation failed for EURUSD-OTC: FAIL-FAST: CSV file not found for EURUSD-OTC M5 at data_base/feed_output/iq_option\EURUSD-OTC\EURUSD-OTC_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_Begin\data_evaluate\orchestrator.py", line 167, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_Begin\data_evaluate\orchestrator.py", line 212, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for EURUSD-OTC M5 at data_base/feed_output/iq_option\EURUSD-OTC\EURUSD-OTC_M5.csv
+2026-08-28 08:15:45,124 | ERROR    | [Orchestrator] Evaluation failed for EURUSD-OTC: FAIL-FAST: CSV file not found for EURUSD-OTC M1 at data_feed/ohclv_output/iq_option\EURUSD-OTC\EURUSD-OTC_M1.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_Begin\data_evaluate\orchestrator.py", line 167, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_Begin\data_evaluate\orchestrator.py", line 212, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for EURUSD-OTC M1 at data_feed/ohclv_output/iq_option\EURUSD-OTC\EURUSD-OTC_M1.csv
+2026-08-28 08:15:48,419 | ERROR    | [Orchestrator] Evaluation failed for EURUSD: FAIL-FAST: CSV file not found for EURUSD M1 at data_feed/ohclv_output/iq_option\EURUSD\EURUSD_M1.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_Begin\data_evaluate\orchestrator.py", line 167, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_Begin\data_evaluate\orchestrator.py", line 212, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for EURUSD M1 at data_feed/ohclv_output/iq_option\EURUSD\EURUSD_M1.csv

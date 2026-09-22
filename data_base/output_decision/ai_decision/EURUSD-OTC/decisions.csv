@@ -1,0 +1,1225 @@
+timestamp,ID,symbol,action,confidence_score,expiry_minutes,engine_used,reason_th
+2026-08-26 18:07:02+00:00,EURUSDOTC0826180702,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:08:09+00:00,EURUSDOTC0826180809,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:09:02+00:00,EURUSDOTC0826180902,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:10:02+00:00,EURUSDOTC0826181002,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:11:08+00:00,EURUSDOTC0826181108,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:12:02+00:00,EURUSDOTC0826181202,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:13:02+00:00,EURUSDOTC0826181302,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:14:02+00:00,EURUSDOTC0826181402,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:15:12+00:00,EURUSDOTC0826181512,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:16:03+00:00,EURUSDOTC0826181603,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:17:03+00:00,EURUSDOTC0826181703,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:18:04+00:00,EURUSDOTC0826181804,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:19:02+00:00,EURUSDOTC0826181902,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:20:03+00:00,EURUSDOTC0826182003,EURUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-27 09:14:05+00:00,EURUSDOTC0827091405,EURUSD-OTC,WAIT,0.0,5,ML (B),"LightGBM ติดขัด: X has 5 features, but HistGradientBoostingClassifier is expecting 17 features as input."
+2026-08-27 09:15:09+00:00,EURUSDOTC0827091509,EURUSD-OTC,WAIT,0.0,5,ML (B),"LightGBM ติดขัด: X has 5 features, but HistGradientBoostingClassifier is expecting 17 features as input."
+2026-08-27 09:17:05+00:00,EURUSDOTC0827091705,EURUSD-OTC,WAIT,52.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 52% < 80%) ค่ะ
+2026-08-27 09:18:06+00:00,EURUSDOTC0827091806,EURUSD-OTC,WAIT,52.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 52% < 80%) ค่ะ
+2026-08-27 09:19:13+00:00,EURUSDOTC0827091913,EURUSD-OTC,WAIT,52.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 52% < 80%) ค่ะ
+2026-08-27 09:20:23+00:00,EURUSDOTC0827092023,EURUSD-OTC,WAIT,52.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 52% < 80%) ค่ะ
+2026-08-27 09:21:28+00:00,EURUSDOTC0827092128,EURUSD-OTC,WAIT,52.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 52% < 80%) ค่ะ
+2026-08-27 20:54:01+00:00,EURUSDOTC0827205401,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 20:55:04+00:00,EURUSDOTC0827205504,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 20:56:04+00:00,EURUSDOTC0827205604,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 20:57:02+00:00,EURUSDOTC0827205702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 20:58:02+00:00,EURUSDOTC0827205802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 20:59:02+00:00,EURUSDOTC0827205902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:00:01+00:00,EURUSDOTC0827210001,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:01:04+00:00,EURUSDOTC0827210104,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:02:01+00:00,EURUSDOTC0827210201,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:03:01+00:00,EURUSDOTC0827210301,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:04:02+00:00,EURUSDOTC0827210402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:05:01+00:00,EURUSDOTC0827210501,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:06:02+00:00,EURUSDOTC0827210602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:07:02+00:00,EURUSDOTC0827210702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:08:02+00:00,EURUSDOTC0827210802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:09:01+00:00,EURUSDOTC0827210901,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:10:01+00:00,EURUSDOTC0827211001,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:11:02+00:00,EURUSDOTC0827211102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:12:02+00:00,EURUSDOTC0827211202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:13:01+00:00,EURUSDOTC0827211301,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:14:02+00:00,EURUSDOTC0827211402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:15:01+00:00,EURUSDOTC0827211501,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:16:02+00:00,EURUSDOTC0827211602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:17:01+00:00,EURUSDOTC0827211701,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:18:01+00:00,EURUSDOTC0827211801,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:19:01+00:00,EURUSDOTC0827211901,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:20:02+00:00,EURUSDOTC0827212002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:21:02+00:00,EURUSDOTC0827212102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:22:02+00:00,EURUSDOTC0827212202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:23:01+00:00,EURUSDOTC0827212301,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:24:02+00:00,EURUSDOTC0827212402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:25:01+00:00,EURUSDOTC0827212501,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:26:02+00:00,EURUSDOTC0827212602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:27:01+00:00,EURUSDOTC0827212701,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:28:03+00:00,EURUSDOTC0827212803,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:29:01+00:00,EURUSDOTC0827212901,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:30:02+00:00,EURUSDOTC0827213002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:31:04+00:00,EURUSDOTC0827213104,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:32:01+00:00,EURUSDOTC0827213201,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:33:01+00:00,EURUSDOTC0827213301,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:34:03+00:00,EURUSDOTC0827213403,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:35:01+00:00,EURUSDOTC0827213501,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:36:02+00:00,EURUSDOTC0827213602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:37:03+00:00,EURUSDOTC0827213703,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:38:01+00:00,EURUSDOTC0827213801,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:39:01+00:00,EURUSDOTC0827213901,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:40:01+00:00,EURUSDOTC0827214001,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:41:02+00:00,EURUSDOTC0827214102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:42:02+00:00,EURUSDOTC0827214202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:43:01+00:00,EURUSDOTC0827214301,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:44:01+00:00,EURUSDOTC0827214401,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:45:02+00:00,EURUSDOTC0827214502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:46:02+00:00,EURUSDOTC0827214602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:47:01+00:00,EURUSDOTC0827214701,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:48:01+00:00,EURUSDOTC0827214801,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:49:01+00:00,EURUSDOTC0827214901,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:50:01+00:00,EURUSDOTC0827215001,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:51:02+00:00,EURUSDOTC0827215102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:52:01+00:00,EURUSDOTC0827215201,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:53:03+00:00,EURUSDOTC0827215303,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:54:01+00:00,EURUSDOTC0827215401,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:55:02+00:00,EURUSDOTC0827215502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:56:03+00:00,EURUSDOTC0827215603,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:57:01+00:00,EURUSDOTC0827215701,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:58:01+00:00,EURUSDOTC0827215801,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 21:59:03+00:00,EURUSDOTC0827215903,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:00:01+00:00,EURUSDOTC0827220001,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:01:02+00:00,EURUSDOTC0827220102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:02:03+00:00,EURUSDOTC0827220203,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:03:01+00:00,EURUSDOTC0827220301,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:04:01+00:00,EURUSDOTC0827220401,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:05:02+00:00,EURUSDOTC0827220502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:06:02+00:00,EURUSDOTC0827220602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:07:01+00:00,EURUSDOTC0827220701,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:08:03+00:00,EURUSDOTC0827220803,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:09:01+00:00,EURUSDOTC0827220901,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:10:01+00:00,EURUSDOTC0827221001,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:10:04+00:00,EURUSDOTC0827221004,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:11:04+00:00,EURUSDOTC0827221104,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:11:06+00:00,EURUSDOTC0827221106,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:12:01+00:00,EURUSDOTC0827221201,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:12:01+00:00,EURUSDOTC0827221201,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:13:01+00:00,EURUSDOTC0827221301,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:13:02+00:00,EURUSDOTC0827221302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:14:02+00:00,EURUSDOTC0827221402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:15:02+00:00,EURUSDOTC0827221502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:16:02+00:00,EURUSDOTC0827221602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:16:04+00:00,EURUSDOTC0827221604,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:17:01+00:00,EURUSDOTC0827221701,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:17:03+00:00,EURUSDOTC0827221703,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:18:01+00:00,EURUSDOTC0827221801,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:18:02+00:00,EURUSDOTC0827221802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:19:01+00:00,EURUSDOTC0827221901,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:20:02+00:00,EURUSDOTC0827222002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:21:02+00:00,EURUSDOTC0827222102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:22:01+00:00,EURUSDOTC0827222201,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:23:02+00:00,EURUSDOTC0827222302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:23:02+00:00,EURUSDOTC0827222302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:24:02+00:00,EURUSDOTC0827222402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:24:02+00:00,EURUSDOTC0827222402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:25:02+00:00,EURUSDOTC0827222502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:26:02+00:00,EURUSDOTC0827222602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:26:02+00:00,EURUSDOTC0827222602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:27:02+00:00,EURUSDOTC0827222702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:28:02+00:00,EURUSDOTC0827222802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:29:02+00:00,EURUSDOTC0827222902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:30:01+00:00,EURUSDOTC0827223001,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:30:02+00:00,EURUSDOTC0827223002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:31:02+00:00,EURUSDOTC0827223102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:31:02+00:00,EURUSDOTC0827223102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:32:02+00:00,EURUSDOTC0827223202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:32:02+00:00,EURUSDOTC0827223202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:33:02+00:00,EURUSDOTC0827223302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:33:02+00:00,EURUSDOTC0827223302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:34:02+00:00,EURUSDOTC0827223402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:35:01+00:00,EURUSDOTC0827223501,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:36:02+00:00,EURUSDOTC0827223602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:36:02+00:00,EURUSDOTC0827223602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:37:02+00:00,EURUSDOTC0827223702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:37:03+00:00,EURUSDOTC0827223703,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:38:01+00:00,EURUSDOTC0827223801,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:39:02+00:00,EURUSDOTC0827223902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:39:02+00:00,EURUSDOTC0827223902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:40:01+00:00,EURUSDOTC0827224001,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:40:04+00:00,EURUSDOTC0827224004,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:41:02+00:00,EURUSDOTC0827224102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:41:02+00:00,EURUSDOTC0827224102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:42:02+00:00,EURUSDOTC0827224202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:42:02+00:00,EURUSDOTC0827224202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:43:02+00:00,EURUSDOTC0827224302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:43:03+00:00,EURUSDOTC0827224303,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:44:01+00:00,EURUSDOTC0827224401,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:44:03+00:00,EURUSDOTC0827224403,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:45:01+00:00,EURUSDOTC0827224501,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:45:01+00:00,EURUSDOTC0827224501,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:46:02+00:00,EURUSDOTC0827224602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:47:01+00:00,EURUSDOTC0827224701,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:48:02+00:00,EURUSDOTC0827224802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:49:01+00:00,EURUSDOTC0827224901,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:50:02+00:00,EURUSDOTC0827225002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:50:02+00:00,EURUSDOTC0827225002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:51:02+00:00,EURUSDOTC0827225102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:51:02+00:00,EURUSDOTC0827225102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:52:02+00:00,EURUSDOTC0827225202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:53:02+00:00,EURUSDOTC0827225302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:53:02+00:00,EURUSDOTC0827225302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:53:03+00:00,EURUSDOTC0827225303,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 22:53:05+00:00,EURUSDOTC0827225305,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 22:54:02+00:00,EURUSDOTC0827225402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:54:02+00:00,EURUSDOTC0827225402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:54:03+00:00,EURUSDOTC0827225403,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 22:54:07+00:00,EURUSDOTC0827225407,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 22:54:10+00:00,EURUSDOTC0827225410,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 22:55:02+00:00,EURUSDOTC0827225502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 22:55:02+00:00,EURUSDOTC0827225502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:55:02+00:00,EURUSDOTC0827225502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:56:02+00:00,EURUSDOTC0827225602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:56:04+00:00,EURUSDOTC0827225604,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 22:57:02+00:00,EURUSDOTC0827225702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:57:02+00:00,EURUSDOTC0827225702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 22:57:02+00:00,EURUSDOTC0827225702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:57:02+00:00,EURUSDOTC0827225702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 22:57:02+00:00,EURUSDOTC0827225702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 22:58:02+00:00,EURUSDOTC0827225802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 22:59:02+00:00,EURUSDOTC0827225902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 22:59:02+00:00,EURUSDOTC0827225902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 22:59:02+00:00,EURUSDOTC0827225902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 22:59:02+00:00,EURUSDOTC0827225902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:00:02+00:00,EURUSDOTC0827230002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+�จ 39% < 80%) ค่ะ
+2026-08-27 23:00:02+00:00,EURUSDOTC0827230002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+�จ 39% < 80%) ค่ะ
+2026-08-27 23:01:02+00:00,EURUSDOTC0827230102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:01:02+00:00,EURUSDOTC0827230102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:01:04+00:00,EURUSDOTC0827230104,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:01:04+00:00,EURUSDOTC0827230104,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:02:02+00:00,EURUSDOTC0827230202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:02:02+00:00,EURUSDOTC0827230202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:02:02+00:00,EURUSDOTC0827230202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:03:02+00:00,EURUSDOTC0827230302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:03:02+00:00,EURUSDOTC0827230302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:03:02+00:00,EURUSDOTC0827230302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:03:02+00:00,EURUSDOTC0827230302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:03:02+00:00,EURUSDOTC0827230302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:04:02+00:00,EURUSDOTC0827230402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:04:02+00:00,EURUSDOTC0827230402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:04:02+00:00,EURUSDOTC0827230402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:04:02+00:00,EURUSDOTC0827230402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:04:03+00:00,EURUSDOTC0827230403,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:05:02+00:00,EURUSDOTC0827230502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:05:02+00:00,EURUSDOTC0827230502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:05:02+00:00,EURUSDOTC0827230502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:06:02+00:00,EURUSDOTC0827230602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:06:02+00:00,EURUSDOTC0827230602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:06:02+00:00,EURUSDOTC0827230602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:06:04+00:00,EURUSDOTC0827230604,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:07:02+00:00,EURUSDOTC0827230702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:07:02+00:00,EURUSDOTC0827230702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:07:02+00:00,EURUSDOTC0827230702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:07:02+00:00,EURUSDOTC0827230702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:08:02+00:00,EURUSDOTC0827230802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:08:02+00:00,EURUSDOTC0827230802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:08:02+00:00,EURUSDOTC0827230802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:08:02+00:00,EURUSDOTC0827230802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:08:03+00:00,EURUSDOTC0827230803,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:09:02+00:00,EURUSDOTC0827230902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:09:02+00:00,EURUSDOTC0827230902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:09:02+00:00,EURUSDOTC0827230902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:09:02+00:00,EURUSDOTC0827230902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:09:02+00:00,EURUSDOTC0827230902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:10:02+00:00,EURUSDOTC0827231002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:10:02+00:00,EURUSDOTC0827231002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:10:02+00:00,EURUSDOTC0827231002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:10:02+00:00,EURUSDOTC0827231002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:10:04+00:00,EURUSDOTC0827231004,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:11:02+00:00,EURUSDOTC0827231102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:11:02+00:00,EURUSDOTC0827231102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:11:02+00:00,EURUSDOTC0827231102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:11:02+00:00,EURUSDOTC0827231102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:11:02+00:00,EURUSDOTC0827231102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:12:02+00:00,EURUSDOTC0827231202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:12:02+00:00,EURUSDOTC0827231202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:12:02+00:00,EURUSDOTC0827231202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:12:02+00:00,EURUSDOTC0827231202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:12:03+00:00,EURUSDOTC0827231203,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:13:02+00:00,EURUSDOTC0827231302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:14:02+00:00,EURUSDOTC0827231402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:14:02+00:00,EURUSDOTC0827231402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:14:02+00:00,EURUSDOTC0827231402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:14:02+00:00,EURUSDOTC0827231402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:15:02+00:00,EURUSDOTC0827231502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:15:02+00:00,EURUSDOTC0827231502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:15:02+00:00,EURUSDOTC0827231502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:15:02+00:00,EURUSDOTC0827231502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:15:02+00:00,EURUSDOTC0827231502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:16:02+00:00,EURUSDOTC0827231602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:16:02+00:00,EURUSDOTC0827231602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:16:02+00:00,EURUSDOTC0827231602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:16:02+00:00,EURUSDOTC0827231602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:17:02+00:00,EURUSDOTC0827231702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:17:02+00:00,EURUSDOTC0827231702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:17:02+00:00,EURUSDOTC0827231702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:17:02+00:00,EURUSDOTC0827231702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:18:02+00:00,EURUSDOTC0827231802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:18:02+00:00,EURUSDOTC0827231802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:18:02+00:00,EURUSDOTC0827231802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:18:02+00:00,EURUSDOTC0827231802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:18:02+00:00,EURUSDOTC0827231802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:19:02+00:00,EURUSDOTC0827231902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:19:02+00:00,EURUSDOTC0827231902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:19:02+00:00,EURUSDOTC0827231902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:19:02+00:00,EURUSDOTC0827231902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:19:02+00:00,EURUSDOTC0827231902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:20:02+00:00,EURUSDOTC0827232002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:20:02+00:00,EURUSDOTC0827232002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:20:02+00:00,EURUSDOTC0827232002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:21:02+00:00,EURUSDOTC0827232102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:21:02+00:00,EURUSDOTC0827232102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:21:02+00:00,EURUSDOTC0827232102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:21:02+00:00,EURUSDOTC0827232102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:22:02+00:00,EURUSDOTC0827232202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:22:02+00:00,EURUSDOTC0827232202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:22:02+00:00,EURUSDOTC0827232202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:22:02+00:00,EURUSDOTC0827232202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:22:02+00:00,EURUSDOTC0827232202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:23:02+00:00,EURUSDOTC0827232302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:23:02+00:00,EURUSDOTC0827232302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:23:02+00:00,EURUSDOTC0827232302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:23:02+00:00,EURUSDOTC0827232302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:24:02+00:00,EURUSDOTC0827232402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:24:02+00:00,EURUSDOTC0827232402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:25:02+00:00,EURUSDOTC0827232502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+�จ 39% < 80%) ค่ะ
+2026-08-27 23:26:02+00:00,EURUSDOTC0827232602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:26:02+00:00,EURUSDOTC0827232602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:26:02+00:00,EURUSDOTC0827232602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:26:02+00:00,EURUSDOTC0827232602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:26:04+00:00,EURUSDOTC0827232604,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:27:02+00:00,EURUSDOTC0827232702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:27:02+00:00,EURUSDOTC0827232702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:28:02+00:00,EURUSDOTC0827232802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:28:02+00:00,EURUSDOTC0827232802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:28:02+00:00,EURUSDOTC0827232802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:28:02+00:00,EURUSDOTC0827232802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:29:02+00:00,EURUSDOTC0827232902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:29:02+00:00,EURUSDOTC0827232902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:29:03+00:00,EURUSDOTC0827232903,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:30:02+00:00,EURUSDOTC0827233002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:30:02+00:00,EURUSDOTC0827233002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:30:02+00:00,EURUSDOTC0827233002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:31:02+00:00,EURUSDOTC0827233102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:31:02+00:00,EURUSDOTC0827233102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:31:02+00:00,EURUSDOTC0827233102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:31:02+00:00,EURUSDOTC0827233102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:32:02+00:00,EURUSDOTC0827233202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:32:02+00:00,EURUSDOTC0827233202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:32:02+00:00,EURUSDOTC0827233202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:32:03+00:00,EURUSDOTC0827233203,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:33:02+00:00,EURUSDOTC0827233302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:33:02+00:00,EURUSDOTC0827233302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:33:03+00:00,EURUSDOTC0827233303,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:34:02+00:00,EURUSDOTC0827233402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:34:02+00:00,EURUSDOTC0827233402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:34:02+00:00,EURUSDOTC0827233402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:35:02+00:00,EURUSDOTC0827233502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:35:02+00:00,EURUSDOTC0827233502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:35:02+00:00,EURUSDOTC0827233502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:35:02+00:00,EURUSDOTC0827233502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:35:02+00:00,EURUSDOTC0827233502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:36:03+00:00,EURUSDOTC0827233603,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:36:03+00:00,EURUSDOTC0827233603,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:36:03+00:00,EURUSDOTC0827233603,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:36:03+00:00,EURUSDOTC0827233603,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:36:03+00:00,EURUSDOTC0827233603,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:37:02+00:00,EURUSDOTC0827233702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:37:02+00:00,EURUSDOTC0827233702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:37:02+00:00,EURUSDOTC0827233702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:37:02+00:00,EURUSDOTC0827233702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:38:02+00:00,EURUSDOTC0827233802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:38:02+00:00,EURUSDOTC0827233802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+�จ 39% < 80%) ค่ะ
+2026-08-27 23:38:02+00:00,EURUSDOTC0827233802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:38:02+00:00,EURUSDOTC0827233802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:39:02+00:00,EURUSDOTC0827233902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+�จ 39% < 80%) ค่ะ
+2026-08-27 23:39:03+00:00,EURUSDOTC0827233903,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:40:02+00:00,EURUSDOTC0827234002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:40:02+00:00,EURUSDOTC0827234002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:40:02+00:00,EURUSDOTC0827234002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:41:02+00:00,EURUSDOTC0827234102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:41:02+00:00,EURUSDOTC0827234102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:41:02+00:00,EURUSDOTC0827234102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:42:02+00:00,EURUSDOTC0827234202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:42:02+00:00,EURUSDOTC0827234202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:42:02+00:00,EURUSDOTC0827234202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:42:02+00:00,EURUSDOTC0827234202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:43:02+00:00,EURUSDOTC0827234302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+�จ 39% < 80%) ค่ะ
+2026-08-27 23:43:02+00:00,EURUSDOTC0827234302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:43:02+00:00,EURUSDOTC0827234302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:44:02+00:00,EURUSDOTC0827234402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:44:02+00:00,EURUSDOTC0827234402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:44:02+00:00,EURUSDOTC0827234402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:44:02+00:00,EURUSDOTC0827234402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:44:02+00:00,EURUSDOTC0827234402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:45:02+00:00,EURUSDOTC0827234502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:45:02+00:00,EURUSDOTC0827234502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+�จ 39% < 80%) ค่ะ
+2026-08-27 23:46:02+00:00,EURUSDOTC0827234602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:46:02+00:00,EURUSDOTC0827234602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:46:02+00:00,EURUSDOTC0827234602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:46:04+00:00,EURUSDOTC0827234604,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:46:04+00:00,EURUSDOTC0827234604,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:47:02+00:00,EURUSDOTC0827234702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:47:02+00:00,EURUSDOTC0827234702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:47:02+00:00,EURUSDOTC0827234702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:48:02+00:00,EURUSDOTC0827234802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:48:02+00:00,EURUSDOTC0827234802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:48:02+00:00,EURUSDOTC0827234802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:48:02+00:00,EURUSDOTC0827234802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:48:02+00:00,EURUSDOTC0827234802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:49:02+00:00,EURUSDOTC0827234902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:49:02+00:00,EURUSDOTC0827234902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:49:02+00:00,EURUSDOTC0827234902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:50:02+00:00,EURUSDOTC0827235002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:50:02+00:00,EURUSDOTC0827235002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:50:02+00:00,EURUSDOTC0827235002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:50:02+00:00,EURUSDOTC0827235002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:51:02+00:00,EURUSDOTC0827235102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:51:02+00:00,EURUSDOTC0827235102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:51:02+00:00,EURUSDOTC0827235102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:51:02+00:00,EURUSDOTC0827235102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:51:04+00:00,EURUSDOTC0827235104,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:52:02+00:00,EURUSDOTC0827235202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:52:02+00:00,EURUSDOTC0827235202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:52:02+00:00,EURUSDOTC0827235202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:52:02+00:00,EURUSDOTC0827235202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:53:02+00:00,EURUSDOTC0827235302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:53:02+00:00,EURUSDOTC0827235302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:53:02+00:00,EURUSDOTC0827235302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:53:02+00:00,EURUSDOTC0827235302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:54:02+00:00,EURUSDOTC0827235402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:54:02+00:00,EURUSDOTC0827235402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:54:02+00:00,EURUSDOTC0827235402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:54:02+00:00,EURUSDOTC0827235402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:54:02+00:00,EURUSDOTC0827235402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:55:02+00:00,EURUSDOTC0827235502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:56:02+00:00,EURUSDOTC0827235602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:56:02+00:00,EURUSDOTC0827235602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:56:02+00:00,EURUSDOTC0827235602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:56:02+00:00,EURUSDOTC0827235602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:56:02+00:00,EURUSDOTC0827235602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:57:02+00:00,EURUSDOTC0827235702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:57:02+00:00,EURUSDOTC0827235702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:58:02+00:00,EURUSDOTC0827235802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:58:02+00:00,EURUSDOTC0827235802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:58:02+00:00,EURUSDOTC0827235802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:59:02+00:00,EURUSDOTC0827235902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:59:02+00:00,EURUSDOTC0827235902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 23:59:02+00:00,EURUSDOTC0827235902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:59:02+00:00,EURUSDOTC0827235902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-27 23:59:02+00:00,EURUSDOTC0827235902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:00:02+00:00,EURUSDOTC0828000002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:00:02+00:00,EURUSDOTC0828000002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:00:02+00:00,EURUSDOTC0828000002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:00:02+00:00,EURUSDOTC0828000002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:01:02+00:00,EURUSDOTC0828000102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:01:02+00:00,EURUSDOTC0828000102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:01:02+00:00,EURUSDOTC0828000102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:02:02+00:00,EURUSDOTC0828000202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:02:02+00:00,EURUSDOTC0828000202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:02:02+00:00,EURUSDOTC0828000202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:02:02+00:00,EURUSDOTC0828000202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:02:02+00:00,EURUSDOTC0828000202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:03:02+00:00,EURUSDOTC0828000302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:03:02+00:00,EURUSDOTC0828000302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:03:02+00:00,EURUSDOTC0828000302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:04:02+00:00,EURUSDOTC0828000402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:04:02+00:00,EURUSDOTC0828000402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:04:02+00:00,EURUSDOTC0828000402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:04:02+00:00,EURUSDOTC0828000402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:04:02+00:00,EURUSDOTC0828000402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:05:02+00:00,EURUSDOTC0828000502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:05:02+00:00,EURUSDOTC0828000502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:05:02+00:00,EURUSDOTC0828000502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:05:02+00:00,EURUSDOTC0828000502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:05:04+00:00,EURUSDOTC0828000504,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:06:02+00:00,EURUSDOTC0828000602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:06:02+00:00,EURUSDOTC0828000602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:06:02+00:00,EURUSDOTC0828000602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:07:02+00:00,EURUSDOTC0828000702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:07:02+00:00,EURUSDOTC0828000702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:07:02+00:00,EURUSDOTC0828000702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:08:02+00:00,EURUSDOTC0828000802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:09:02+00:00,EURUSDOTC0828000902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:09:02+00:00,EURUSDOTC0828000902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:10:02+00:00,EURUSDOTC0828001002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:10:02+00:00,EURUSDOTC0828001002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:10:02+00:00,EURUSDOTC0828001002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:11:02+00:00,EURUSDOTC0828001102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:11:02+00:00,EURUSDOTC0828001102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:11:02+00:00,EURUSDOTC0828001102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:11:02+00:00,EURUSDOTC0828001102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+�จ 39% < 80%) ค่ะ
+2026-08-28 00:12:02+00:00,EURUSDOTC0828001202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:12:02+00:00,EURUSDOTC0828001202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:12:02+00:00,EURUSDOTC0828001202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:12:02+00:00,EURUSDOTC0828001202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:12:02+00:00,EURUSDOTC0828001202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:13:02+00:00,EURUSDOTC0828001302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:13:02+00:00,EURUSDOTC0828001302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:13:02+00:00,EURUSDOTC0828001302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:13:02+00:00,EURUSDOTC0828001302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:14:02+00:00,EURUSDOTC0828001402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:14:02+00:00,EURUSDOTC0828001402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:14:02+00:00,EURUSDOTC0828001402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:14:02+00:00,EURUSDOTC0828001402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:15:02+00:00,EURUSDOTC0828001502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:15:02+00:00,EURUSDOTC0828001502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:15:02+00:00,EURUSDOTC0828001502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:15:02+00:00,EURUSDOTC0828001502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:16:02+00:00,EURUSDOTC0828001602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:16:02+00:00,EURUSDOTC0828001602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:16:02+00:00,EURUSDOTC0828001602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:16:04+00:00,EURUSDOTC0828001604,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:17:02+00:00,EURUSDOTC0828001702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:17:02+00:00,EURUSDOTC0828001702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:17:02+00:00,EURUSDOTC0828001702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:17:02+00:00,EURUSDOTC0828001702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:18:02+00:00,EURUSDOTC0828001802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:18:02+00:00,EURUSDOTC0828001802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:18:02+00:00,EURUSDOTC0828001802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:18:02+00:00,EURUSDOTC0828001802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:19:02+00:00,EURUSDOTC0828001902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:19:02+00:00,EURUSDOTC0828001902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:20:02+00:00,EURUSDOTC0828002002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:20:02+00:00,EURUSDOTC0828002002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:20:04+00:00,EURUSDOTC0828002004,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:21:02+00:00,EURUSDOTC0828002102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:21:02+00:00,EURUSDOTC0828002102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:21:02+00:00,EURUSDOTC0828002102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:22:02+00:00,EURUSDOTC0828002202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:22:02+00:00,EURUSDOTC0828002202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:22:02+00:00,EURUSDOTC0828002202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:23:02+00:00,EURUSDOTC0828002302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:24:02+00:00,EURUSDOTC0828002402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:24:02+00:00,EURUSDOTC0828002402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:24:02+00:00,EURUSDOTC0828002402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:24:02+00:00,EURUSDOTC0828002402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:25:02+00:00,EURUSDOTC0828002502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:25:02+00:00,EURUSDOTC0828002502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:25:02+00:00,EURUSDOTC0828002502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:26:02+00:00,EURUSDOTC0828002602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:26:02+00:00,EURUSDOTC0828002602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:26:02+00:00,EURUSDOTC0828002602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:27:02+00:00,EURUSDOTC0828002702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:27:02+00:00,EURUSDOTC0828002702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:27:02+00:00,EURUSDOTC0828002702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:27:02+00:00,EURUSDOTC0828002702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:28:02+00:00,EURUSDOTC0828002802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:28:02+00:00,EURUSDOTC0828002802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:28:02+00:00,EURUSDOTC0828002802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:28:02+00:00,EURUSDOTC0828002802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:29:02+00:00,EURUSDOTC0828002902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:29:02+00:00,EURUSDOTC0828002902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:29:02+00:00,EURUSDOTC0828002902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:29:02+00:00,EURUSDOTC0828002902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:30:02+00:00,EURUSDOTC0828003002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:31:02+00:00,EURUSDOTC0828003102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:31:02+00:00,EURUSDOTC0828003102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:31:02+00:00,EURUSDOTC0828003102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:31:02+00:00,EURUSDOTC0828003102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:32:02+00:00,EURUSDOTC0828003202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:32:02+00:00,EURUSDOTC0828003202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:32:02+00:00,EURUSDOTC0828003202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:32:02+00:00,EURUSDOTC0828003202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:33:02+00:00,EURUSDOTC0828003302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:33:02+00:00,EURUSDOTC0828003302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:33:02+00:00,EURUSDOTC0828003302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:33:02+00:00,EURUSDOTC0828003302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:33:02+00:00,EURUSDOTC0828003302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:34:02+00:00,EURUSDOTC0828003402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:34:02+00:00,EURUSDOTC0828003402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:34:02+00:00,EURUSDOTC0828003402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:34:02+00:00,EURUSDOTC0828003402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:35:02+00:00,EURUSDOTC0828003502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:35:02+00:00,EURUSDOTC0828003502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:35:02+00:00,EURUSDOTC0828003502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:36:02+00:00,EURUSDOTC0828003602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:36:02+00:00,EURUSDOTC0828003602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:36:02+00:00,EURUSDOTC0828003602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:36:02+00:00,EURUSDOTC0828003602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:37:02+00:00,EURUSDOTC0828003702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:37:02+00:00,EURUSDOTC0828003702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:37:02+00:00,EURUSDOTC0828003702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:37:02+00:00,EURUSDOTC0828003702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:37:07+00:00,EURUSDOTC0828003707,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:38:02+00:00,EURUSDOTC0828003802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:39:02+00:00,EURUSDOTC0828003902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:39:02+00:00,EURUSDOTC0828003902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:39:02+00:00,EURUSDOTC0828003902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:39:02+00:00,EURUSDOTC0828003902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:39:02+00:00,EURUSDOTC0828003902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:40:02+00:00,EURUSDOTC0828004002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:40:02+00:00,EURUSDOTC0828004002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:40:02+00:00,EURUSDOTC0828004002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:40:02+00:00,EURUSDOTC0828004002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:40:02+00:00,EURUSDOTC0828004002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:40:02+00:00,EURUSDOTC0828004002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:41:02+00:00,EURUSDOTC0828004102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:41:02+00:00,EURUSDOTC0828004102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:41:02+00:00,EURUSDOTC0828004102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:41:02+00:00,EURUSDOTC0828004102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:41:02+00:00,EURUSDOTC0828004102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:41:04+00:00,EURUSDOTC0828004104,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:41:04+00:00,EURUSDOTC0828004104,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:42:02+00:00,EURUSDOTC0828004202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:42:02+00:00,EURUSDOTC0828004202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:42:02+00:00,EURUSDOTC0828004202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:42:02+00:00,EURUSDOTC0828004202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:42:02+00:00,EURUSDOTC0828004202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:42:02+00:00,EURUSDOTC0828004202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:42:02+00:00,EURUSDOTC0828004202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:43:02+00:00,EURUSDOTC0828004302,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:43:02+00:00,EURUSDOTC0828004302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:43:02+00:00,EURUSDOTC0828004302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:43:02+00:00,EURUSDOTC0828004302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:43:02+00:00,EURUSDOTC0828004302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:43:02+00:00,EURUSDOTC0828004302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:43:02+00:00,EURUSDOTC0828004302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:44:02+00:00,EURUSDOTC0828004402,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:44:02+00:00,EURUSDOTC0828004402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:44:02+00:00,EURUSDOTC0828004402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:44:02+00:00,EURUSDOTC0828004402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:44:02+00:00,EURUSDOTC0828004402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:44:02+00:00,EURUSDOTC0828004402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:44:02+00:00,EURUSDOTC0828004402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:44:02+00:00,EURUSDOTC0828004402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:44:04+00:00,EURUSDOTC0828004404,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:45:02+00:00,EURUSDOTC0828004502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:45:02+00:00,EURUSDOTC0828004502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:45:02+00:00,EURUSDOTC0828004502,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:45:02+00:00,EURUSDOTC0828004502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:45:02+00:00,EURUSDOTC0828004502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:45:02+00:00,EURUSDOTC0828004502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:45:04+00:00,EURUSDOTC0828004504,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:46:02+00:00,EURUSDOTC0828004602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:46:02+00:00,EURUSDOTC0828004602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:46:02+00:00,EURUSDOTC0828004602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:46:02+00:00,EURUSDOTC0828004602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:46:04+00:00,EURUSDOTC0828004604,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:46:04+00:00,EURUSDOTC0828004604,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:46:08+00:00,EURUSDOTC0828004608,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:46:08+00:00,EURUSDOTC0828004608,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:47:02+00:00,EURUSDOTC0828004702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:47:02+00:00,EURUSDOTC0828004702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:47:02+00:00,EURUSDOTC0828004702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:47:02+00:00,EURUSDOTC0828004702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:47:02+00:00,EURUSDOTC0828004702,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:47:02+00:00,EURUSDOTC0828004702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:47:02+00:00,EURUSDOTC0828004702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:47:02+00:00,EURUSDOTC0828004702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:48:02+00:00,EURUSDOTC0828004802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:48:02+00:00,EURUSDOTC0828004802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:48:02+00:00,EURUSDOTC0828004802,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:48:02+00:00,EURUSDOTC0828004802,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:48:02+00:00,EURUSDOTC0828004802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:48:02+00:00,EURUSDOTC0828004802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:48:02+00:00,EURUSDOTC0828004802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:48:02+00:00,EURUSDOTC0828004802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:49:02+00:00,EURUSDOTC0828004902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:49:02+00:00,EURUSDOTC0828004902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:49:02+00:00,EURUSDOTC0828004902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:49:02+00:00,EURUSDOTC0828004902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:49:02+00:00,EURUSDOTC0828004902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:49:02+00:00,EURUSDOTC0828004902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:49:02+00:00,EURUSDOTC0828004902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:49:02+00:00,EURUSDOTC0828004902,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:49:02+00:00,EURUSDOTC0828004902,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:50:02+00:00,EURUSDOTC0828005002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:50:02+00:00,EURUSDOTC0828005002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:50:02+00:00,EURUSDOTC0828005002,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:50:02+00:00,EURUSDOTC0828005002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:50:02+00:00,EURUSDOTC0828005002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:50:02+00:00,EURUSDOTC0828005002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:50:02+00:00,EURUSDOTC0828005002,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:50:02+00:00,EURUSDOTC0828005002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:51:02+00:00,EURUSDOTC0828005102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:51:02+00:00,EURUSDOTC0828005102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:51:02+00:00,EURUSDOTC0828005102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:51:02+00:00,EURUSDOTC0828005102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:51:02+00:00,EURUSDOTC0828005102,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:51:02+00:00,EURUSDOTC0828005102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:51:02+00:00,EURUSDOTC0828005102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:51:02+00:00,EURUSDOTC0828005102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:51:02+00:00,EURUSDOTC0828005102,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:52:02+00:00,EURUSDOTC0828005202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:52:02+00:00,EURUSDOTC0828005202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+�จ 39% < 80%) ค่ะ
+2026-08-28 00:52:02+00:00,EURUSDOTC0828005202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:52:02+00:00,EURUSDOTC0828005202,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:52:02+00:00,EURUSDOTC0828005202,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:52:02+00:00,EURUSDOTC0828005202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:52:02+00:00,EURUSDOTC0828005202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:52:02+00:00,EURUSDOTC0828005202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:53:02+00:00,EURUSDOTC0828005302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:53:02+00:00,EURUSDOTC0828005302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:53:02+00:00,EURUSDOTC0828005302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:53:02+00:00,EURUSDOTC0828005302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:53:02+00:00,EURUSDOTC0828005302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:53:02+00:00,EURUSDOTC0828005302,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:53:02+00:00,EURUSDOTC0828005302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:54:02+00:00,EURUSDOTC0828005402,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:54:02+00:00,EURUSDOTC0828005402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:54:02+00:00,EURUSDOTC0828005402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:54:02+00:00,EURUSDOTC0828005402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:54:02+00:00,EURUSDOTC0828005402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:54:02+00:00,EURUSDOTC0828005402,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:54:02+00:00,EURUSDOTC0828005402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:54:02+00:00,EURUSDOTC0828005402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:55:02+00:00,EURUSDOTC0828005502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:55:02+00:00,EURUSDOTC0828005502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:55:02+00:00,EURUSDOTC0828005502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:55:02+00:00,EURUSDOTC0828005502,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:55:02+00:00,EURUSDOTC0828005502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:55:02+00:00,EURUSDOTC0828005502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:55:02+00:00,EURUSDOTC0828005502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:55:02+00:00,EURUSDOTC0828005502,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:56:02+00:00,EURUSDOTC0828005602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:56:02+00:00,EURUSDOTC0828005602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:56:02+00:00,EURUSDOTC0828005602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:56:02+00:00,EURUSDOTC0828005602,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:56:02+00:00,EURUSDOTC0828005602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:56:02+00:00,EURUSDOTC0828005602,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:56:02+00:00,EURUSDOTC0828005602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:56:02+00:00,EURUSDOTC0828005602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:56:02+00:00,EURUSDOTC0828005602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:57:02+00:00,EURUSDOTC0828005702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:57:02+00:00,EURUSDOTC0828005702,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:57:02+00:00,EURUSDOTC0828005702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:57:02+00:00,EURUSDOTC0828005702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:57:02+00:00,EURUSDOTC0828005702,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:57:02+00:00,EURUSDOTC0828005702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:57:02+00:00,EURUSDOTC0828005702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:57:03+00:00,EURUSDOTC0828005703,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:58:02+00:00,EURUSDOTC0828005802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:58:02+00:00,EURUSDOTC0828005802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:58:02+00:00,EURUSDOTC0828005802,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:58:02+00:00,EURUSDOTC0828005802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:58:02+00:00,EURUSDOTC0828005802,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:58:02+00:00,EURUSDOTC0828005802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:58:02+00:00,EURUSDOTC0828005802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:58:02+00:00,EURUSDOTC0828005802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:59:02+00:00,EURUSDOTC0828005902,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:59:02+00:00,EURUSDOTC0828005902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:59:02+00:00,EURUSDOTC0828005902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:59:02+00:00,EURUSDOTC0828005902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 00:59:02+00:00,EURUSDOTC0828005902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 00:59:02+00:00,EURUSDOTC0828005902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:00:02+00:00,EURUSDOTC0828010002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:00:02+00:00,EURUSDOTC0828010002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:00:02+00:00,EURUSDOTC0828010002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:00:02+00:00,EURUSDOTC0828010002,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:00:02+00:00,EURUSDOTC0828010002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:00:02+00:00,EURUSDOTC0828010002,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:00:02+00:00,EURUSDOTC0828010002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:00:02+00:00,EURUSDOTC0828010002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:00:02+00:00,EURUSDOTC0828010002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:01:02+00:00,EURUSDOTC0828010102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:01:02+00:00,EURUSDOTC0828010102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:01:02+00:00,EURUSDOTC0828010102,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:01:02+00:00,EURUSDOTC0828010102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:01:02+00:00,EURUSDOTC0828010102,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:01:02+00:00,EURUSDOTC0828010102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:01:02+00:00,EURUSDOTC0828010102,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:01:02+00:00,EURUSDOTC0828010102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:02:02+00:00,EURUSDOTC0828010202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:02:02+00:00,EURUSDOTC0828010202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:02:02+00:00,EURUSDOTC0828010202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:02:02+00:00,EURUSDOTC0828010202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:02:02+00:00,EURUSDOTC0828010202,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:02:02+00:00,EURUSDOTC0828010202,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:02:02+00:00,EURUSDOTC0828010202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:02:02+00:00,EURUSDOTC0828010202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:02:02+00:00,EURUSDOTC0828010202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:03:02+00:00,EURUSDOTC0828010302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:03:02+00:00,EURUSDOTC0828010302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:03:02+00:00,EURUSDOTC0828010302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:03:02+00:00,EURUSDOTC0828010302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:03:02+00:00,EURUSDOTC0828010302,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:03:02+00:00,EURUSDOTC0828010302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:03:02+00:00,EURUSDOTC0828010302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:03:02+00:00,EURUSDOTC0828010302,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:03:02+00:00,EURUSDOTC0828010302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:04:02+00:00,EURUSDOTC0828010402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:04:02+00:00,EURUSDOTC0828010402,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:04:02+00:00,EURUSDOTC0828010402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:04:02+00:00,EURUSDOTC0828010402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:04:02+00:00,EURUSDOTC0828010402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:04:02+00:00,EURUSDOTC0828010402,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:04:02+00:00,EURUSDOTC0828010402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:05:02+00:00,EURUSDOTC0828010502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:05:02+00:00,EURUSDOTC0828010502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:05:02+00:00,EURUSDOTC0828010502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:05:02+00:00,EURUSDOTC0828010502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:05:02+00:00,EURUSDOTC0828010502,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:05:02+00:00,EURUSDOTC0828010502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:05:02+00:00,EURUSDOTC0828010502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:05:02+00:00,EURUSDOTC0828010502,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:06:02+00:00,EURUSDOTC0828010602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:06:02+00:00,EURUSDOTC0828010602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:06:02+00:00,EURUSDOTC0828010602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:06:02+00:00,EURUSDOTC0828010602,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:06:02+00:00,EURUSDOTC0828010602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:06:02+00:00,EURUSDOTC0828010602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:06:02+00:00,EURUSDOTC0828010602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:06:02+00:00,EURUSDOTC0828010602,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:07:02+00:00,EURUSDOTC0828010702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+ทันทีค่ะ
+2026-08-28 01:07:02+00:00,EURUSDOTC0828010702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:07:02+00:00,EURUSDOTC0828010702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:07:02+00:00,EURUSDOTC0828010702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:07:02+00:00,EURUSDOTC0828010702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:07:02+00:00,EURUSDOTC0828010702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:08:02+00:00,EURUSDOTC0828010802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:08:02+00:00,EURUSDOTC0828010802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:08:02+00:00,EURUSDOTC0828010802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:08:02+00:00,EURUSDOTC0828010802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:08:02+00:00,EURUSDOTC0828010802,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:08:02+00:00,EURUSDOTC0828010802,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:09:02+00:00,EURUSDOTC0828010902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:09:02+00:00,EURUSDOTC0828010902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:09:02+00:00,EURUSDOTC0828010902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:09:02+00:00,EURUSDOTC0828010902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:09:02+00:00,EURUSDOTC0828010902,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:09:02+00:00,EURUSDOTC0828010902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:09:02+00:00,EURUSDOTC0828010902,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:09:02+00:00,EURUSDOTC0828010902,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:09:02+00:00,EURUSDOTC0828010902,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:10:02+00:00,EURUSDOTC0828011002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:10:02+00:00,EURUSDOTC0828011002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:10:02+00:00,EURUSDOTC0828011002,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:10:02+00:00,EURUSDOTC0828011002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:10:02+00:00,EURUSDOTC0828011002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:10:02+00:00,EURUSDOTC0828011002,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:10:02+00:00,EURUSDOTC0828011002,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:10:02+00:00,EURUSDOTC0828011002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:10:02+00:00,EURUSDOTC0828011002,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:11:02+00:00,EURUSDOTC0828011102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:11:02+00:00,EURUSDOTC0828011102,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:11:02+00:00,EURUSDOTC0828011102,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:11:03+00:00,EURUSDOTC0828011103,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:11:03+00:00,EURUSDOTC0828011103,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:11:03+00:00,EURUSDOTC0828011103,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:11:03+00:00,EURUSDOTC0828011103,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:11:03+00:00,EURUSDOTC0828011103,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:12:02+00:00,EURUSDOTC0828011202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:12:02+00:00,EURUSDOTC0828011202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:12:02+00:00,EURUSDOTC0828011202,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:12:02+00:00,EURUSDOTC0828011202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:12:02+00:00,EURUSDOTC0828011202,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:12:02+00:00,EURUSDOTC0828011202,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:12:02+00:00,EURUSDOTC0828011202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:12:02+00:00,EURUSDOTC0828011202,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:13:02+00:00,EURUSDOTC0828011302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:13:02+00:00,EURUSDOTC0828011302,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:13:02+00:00,EURUSDOTC0828011302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:13:02+00:00,EURUSDOTC0828011302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:13:02+00:00,EURUSDOTC0828011302,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:13:02+00:00,EURUSDOTC0828011302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:13:02+00:00,EURUSDOTC0828011302,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:13:03+00:00,EURUSDOTC0828011303,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:14:02+00:00,EURUSDOTC0828011402,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:14:02+00:00,EURUSDOTC0828011402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:14:02+00:00,EURUSDOTC0828011402,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:14:02+00:00,EURUSDOTC0828011402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:14:02+00:00,EURUSDOTC0828011402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:14:02+00:00,EURUSDOTC0828011402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:14:02+00:00,EURUSDOTC0828011402,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:14:02+00:00,EURUSDOTC0828011402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:14:02+00:00,EURUSDOTC0828011402,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:15:02+00:00,EURUSDOTC0828011502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:15:02+00:00,EURUSDOTC0828011502,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:15:02+00:00,EURUSDOTC0828011502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:15:02+00:00,EURUSDOTC0828011502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:15:02+00:00,EURUSDOTC0828011502,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:15:02+00:00,EURUSDOTC0828011502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:15:02+00:00,EURUSDOTC0828011502,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:15:02+00:00,EURUSDOTC0828011502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:15:02+00:00,EURUSDOTC0828011502,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:16:02+00:00,EURUSDOTC0828011602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:16:02+00:00,EURUSDOTC0828011602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:16:02+00:00,EURUSDOTC0828011602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:16:02+00:00,EURUSDOTC0828011602,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:16:02+00:00,EURUSDOTC0828011602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:16:02+00:00,EURUSDOTC0828011602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:16:02+00:00,EURUSDOTC0828011602,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:16:03+00:00,EURUSDOTC0828011603,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:16:05+00:00,EURUSDOTC0828011605,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:16:09+00:00,EURUSDOTC0828011609,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:17:02+00:00,EURUSDOTC0828011702,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:17:02+00:00,EURUSDOTC0828011702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:17:02+00:00,EURUSDOTC0828011702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:17:02+00:00,EURUSDOTC0828011702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:17:02+00:00,EURUSDOTC0828011702,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:17:02+00:00,EURUSDOTC0828011702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:17:02+00:00,EURUSDOTC0828011702,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:17:02+00:00,EURUSDOTC0828011702,EURUSD-OTC,WAIT,39.0,5,ML (AB),Dual-Brain AB (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:17:02+00:00,EURUSDOTC0828011702,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:17:02+00:00,EURUSDOTC0828011702,EURUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-28 01:18:09+00:00,EURUSDOTC0828011809,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:19:05+00:00,EURUSDOTC0828011905,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28 01:20:01+00:00,EURUSDOTC0828012001,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T08:52:01.815599,EURUSDOTC0828085201,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T08:53:04.376673,EURUSDOTC0828085304,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T08:54:01.933019,EURUSDOTC0828085401,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T08:55:01.869064,EURUSDOTC0828085501,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T08:56:04.436252,EURUSDOTC0828085604,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T08:57:01.849266,EURUSDOTC0828085701,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T08:58:01.879317,EURUSDOTC0828085801,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T08:59:01.884328,EURUSDOTC0828085901,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:00:01.906946,EURUSDOTC0828090001,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:01:04.536963,EURUSDOTC0828090104,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:02:01.946537,EURUSDOTC0828090201,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:03:01.875230,EURUSDOTC0828090301,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:04:01.856101,EURUSDOTC0828090401,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:04:01.914577,EURUSDOTC0828090401,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:04:01.856101,EURUSDOTC0828090401,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),Stochastic ในกรอบ M1 และ M5 อยู่ในเขต Oversold ลึกและกำลังตัดขึ้นในภาวะตลาดแบบ Sideway Range ใกล้แนวรับสำคัญ
+2026-08-28T09:05:01.866267,EURUSDOTC0828090501,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:05:04.338398,EURUSDOTC0828090504,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:05:05.868398,EURUSDOTC0828090505,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),ราคาเข้าใกล้แนวรับ Bollinger Lower และ Stochastic อยู่ในเขต Oversold มีโอกาสเกิดการรีบาวด์ระยะสั้นในกรอบ Sideway
+2026-08-28T09:06:01.996592,EURUSDOTC0828090601,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:06:04.348591,EURUSDOTC0828090604,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:06:09.283349,EURUSDOTC0828090609,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),ราคาเข้าใกล้แนวรับและเส้น Bollinger Band ด้านล่างในภาวะSideway พร้อมสัญญาณStochastic Oversold สนับสนุนการรีบาวด์ระยะสั้น
+2026-08-28T09:07:01.871487,EURUSDOTC0828090701,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:07:01.871487,EURUSDOTC0828090701,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:07:09.989178,EURUSDOTC0828090709,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),ราคาเข้าใกล้แนวรับสำคัญ Bollinger Band ล่างและ Stoch M5 อยู่ในเขต Oversold มีโอกาสเกิดการรีบาวด์ระยะสั้น
+2026-08-28T09:08:01.896239,EURUSDOTC0828090801,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:08:12.707705,EURUSDOTC0828090812,EURUSD-OTC,CALL,78,2,AI (gemini-3.5-flash-lite),ราคาเข้าใกล้แนวรับ Bollinger Lower และ Stochastic อยู่ในเขต Oversold มีโอกาสเกิดการรีบาวด์ระยะสั้นตามกรอบ Sideway Range
+2026-08-28T09:09:01.822437,EURUSDOTC0828090901,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:09:01.896695,EURUSDOTC0828090901,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:09:13.974893,EURUSDOTC0828090913,EURUSD-OTC,CALL,78,2,AI (gemini-3.5-flash-lite),ราคาเข้าใกล้แนวรับ Bollinger Lower และ Stochastic Oversold ในภาวะตลาด Sideway เหมาะกับการเก็งกำไรการรีบาวด์ระยะสั้น
+2026-08-28T09:10:01.834681,EURUSDOTC0828091001,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:10:20.852126,EURUSDOTC0828091020,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),ราคาอยู่ในกรอบไซด์เวย์และทดสอบแนวรับสำคัญ พร้อมสัญญาณ Bear Trap และ Stoch Oversold ใน M5
+2026-08-28T09:11:01.904386,EURUSDOTC0828091101,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:11:15.199448,EURUSDOTC0828091115,EURUSD-OTC,CALL,78,2,AI (gemini-3.5-flash-lite),ราคาเกิดรูปแบบ Morning Star บริเวณแนวรับและทดสอบเส้นขอบล่าง Bollinger Bands สนับสนุนการรีบาวด์ระยะสั้น
+2026-08-28T09:12:01.854425,EURUSDOTC0828091201,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:12:01.854425,EURUSDOTC0828091201,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:12:23.286877,EURUSDOTC0828091223,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),เกิดสัญญาณ Morning Star บริเวณแนวรับ Pivot พร้อม Bullish Divergence และ Stochaistic Oversold สนับสนุนการกลับตัวขึ้นระยะสั้น
+2026-08-28T09:13:01.916296,EURUSDOTC0828091301,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:14:01.868256,EURUSDOTC0828091401,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:14:01.873251,EURUSDOTC0828091401,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:13:23.757709,EURUSDOTC0828091323,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),เกิดรูปแบบ Morning Star บริเวณแนวรับ Pivot พร้อมสัญญาณ Bear Trap และ Stochastic M5 อยู่ในเขต Oversold เหมาะกับการเทรด Reversion ขึ้นระยะสั้น
+2026-08-28T09:15:01.839443,EURUSDOTC0828091501,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:15:01.839443,EURUSDOTC0828091501,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:14:53.238764,EURUSDOTC0828091453,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),เกิดรูปแบบ Morning Star และสัญญาณ Bear Trap บริเวณแนวรับ Pivot ประกอบกับ M1 กำลังรีบาวด์ขึ้นในกรอบ Sideway
+2026-08-28T09:16:02.147849,EURUSDOTC0828091602,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:16:04.509714,EURUSDOTC0828091604,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:20:09.288298,EURUSDOTC0828092009,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-28T09:44:05.270981,EURUSDOTC0828094405,EURUSD-OTC,WAIT,39.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-30T14:33:10.546367,EURUSDOTC0830143310,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะSideway Rangeและความสอดคล้องของหลายไทม์เฟรมต่ำเกินไปจึงควรหลีกเลี่ยงการเทรด
+2026-08-30T14:34:02.695677,EURUSDOTC0830143402,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความขัดแย้งของกรอบเวลา M1 ที่ RSI และ Stoch อยู่ในเขต Overbought สูงเกินไป
+2026-08-30T14:34:08.964619,EURUSDOTC0830143408,EURUSD-OTC,PUT,75,2,AI (gemini-3.5-flash-lite),Stochastic ใน M1 อยู่ในเขต Overbought สูงมาก (K=86) และตลาดอยู่ในกรอบ Sideway จึงมีโอกาสปรับตัวลงระยะสั้น
+2026-08-30T14:35:10.122284,EURUSDOTC0830143510,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะSideway Range และStochastic ในM1อยู่ในเขต Overbought ฝั่งซื้ออาจหมดแรง
+2026-08-30T14:35:10.993851,EURUSDOTC0830143510,EURUSD-OTC,CALL,78,2,AI (gemini-3.5-flash-lite),ตลาดอยู่ในช่วงการสะสมพลังโดยมีเทรนด์หลักและโครงสร้าง Multi-Timeframe เป็นขาขึ้น หนุนด้วยค่า Stoch M1 ที่กำลังตัดกลับขึ้นและราคาพักตัวเหนือแนว Pivot
+2026-08-30T14:36:02.578922,EURUSDOTC0830143602,EURUSD-OTC,PUT,75,2,AI (gemini-3.5-flash-lite),Stochastic ใน M1 อยู่ในเขต Overbought สูงมากพร้อมเกิดภาวะ Divergence ระยะสั้นในกรอบ Sideway Range จึงคาดว่าราคาจะปรับตัวย่อลง
+2026-08-30T14:36:06.101626,EURUSDOTC0830143606,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),เทรนด์ฝั่ง M5 และ M15 เป็นขาขึ้นชัดเจน พร้อมความสอดคล้องของ Multi-Timeframe และ RSI M1 ที่ยังไม่ Overbought เกินไป
+2026-08-30T14:37:05.704600,EURUSDOTC0830143705,EURUSD-OTC,CALL,78,2,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมกำลังและมีแนวโน้มขาขึ้นในกรอบ M5 และ M15 พร้อมสัญญาณสนับสนุนจากทิศทาง EMA และ Stochastic ที่เริ่มฟื้นตัว
+2026-08-30T14:37:06.956189,EURUSDOTC0830143706,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),โครงสร้างตลาดภาพรวมเป็นขาขึ้นและอยู่ในโซนสะสมพลัง สนับสนุนการปรับตัวขึ้นต่อตามแนวโน้มหลัก
+2026-08-30T14:38:05.889120,EURUSDOTC0830143805,EURUSD-OTC,PUT,68,2,AI (gemini-3.5-flash-lite),Stochastic ใน M1 อยู่ในเขต Overbought และราคาชนแนวต้าน Pivot พร้อมเกิดแท่งเทียน Bearish ในกรอบ Sideway
+2026-08-30T14:38:25.618518,EURUSDOTC0830143825,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และ Stochastic ใน M1 อยู่ในเขต Overbought จึงควรรอดูท่าที
+2026-08-30T14:39:09.993919,EURUSDOTC0830143909,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),โครงสร้างตลาดหลักเป็นขาขึ้นและอยู่ในช่วงสะสมพลัง สนับสนุนโอกาสราคาปรับตัวขึ้นต่อตามเทรนด์ M5 และ M15
+2026-08-30T14:40:14.524766,EURUSDOTC0830144014,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะSideway Range และStochastic ในM1 อยู่ในเขต Overbought สูงเกินไป ควรอดทนรอจังหวะราคาเข้าสู่แนวรับหรือแนวต้านที่ชัดเจนกว่านี้
+2026-08-30T14:41:10.865631,EURUSDOTC0830144110,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะSideway RangeและมีการทดสอบแนวPivotประกอบกับStoch ใน M1 อยู่ในเขต Overbought จึงควรอดทนรอสัญญาณที่ชัดเจนกว่านี้
+2026-08-30T14:42:09.877522,EURUSDOTC0830144209,EURUSD-OTC,PUT,75,2,AI (gemini-3.5-flash-lite),Stochastic ใน M1 อยู่ในเขต Overbought สูงมากพร้อมเกิดภาวะ Price Ranging จึงคาดการณ์โอกาสปรับตัวลงระยะสั้น
+2026-08-30T14:43:10.146456,EURUSDOTC0830144310,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และ Stochastic ใน M1 อยู่ในเขต Overbought สูงมาก ควรอดทนรอสัญญาณที่ชัดเจนกว่านี้
+2026-08-30T14:40:34.425191,EURUSDOTC0830144034,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),เทรนด์ M5 และ M1 เป็นขาขึ้นอย่างสอดคล้อง พร้อมแรงซื้อต่อเนื่องสนับสนุนทิศทาง CALL
+2026-08-30T14:44:10.110429,EURUSDOTC0830144410,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะSideway Range และStochastic ใน M1 อยู่ในเขต Overbought สูงเกินไป ควรอดทนรอสัญญาณกลับตัวที่ชัดเจน
+2026-08-30T14:45:24.299022,EURUSDOTC0830144524,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีการเคลื่อนไหวแบบไร้ทิศทางชัดเจน ความเสี่ยงสูง ควรอารักขาเงินทุนและรอจังหวะที่เหมาะสม
+2026-08-30T14:46:28.704575,EURUSDOTC0830144628,EURUSD-OTC,CALL,78,2,AI (gemini-3.5-flash-lite),ราคาཕรีบวกทิศทาง Bullish สอดคล้องกับ M5 และ M1 ที่ยืนเหนือเส้น EMA พร้อมทดสอบแนวรับ Pivot พอดี
+2026-08-30T14:47:28.510355,EURUSDOTC0830144728,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะSideway Range และมีสัญญาณความขัดแย้งของStochasticในกรอบเวลาสั้นควรรอจังหวะที่ชัดเจนกว่านี้
+2026-08-30T14:50:16.413949,EURUSDOTC0830145016,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),Stochastic ใน M1 Oversold และ M5 มีแนวโน้ม Bullish สนับสนุนการรีบาวด์ขึ้นในกรอบ Sideway
+2026-08-30T14:54:35.897618,EURUSDOTC0830145435,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะSidewayและมีความผันผวนต่ำประกอบกับสัญญานฝั่งM1ยังไม่ชัดเจน ควรออรอดูก่อน
+2026-08-30T15:09:00.772743,EURUSDOTC0830150900,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความเก่า (Stale) รวมถึงความผันผวนต่ำ จึงควรหลีกเลี่ยงการเทรด
+2026-08-30T15:15:29.969854,EURUSDOTC0830151529,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในช่วงสะสมพลังและราคาเคลื่อนไหวแบบไร้ทิศทางชัดเจน (Choppy) ควรอดทนรอสัญญาณเบรกเอาท์ที่แท้จริง
+2026-08-30T15:27:24.632148,EURUSDOTC0830152724,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีการเคลื่อนไหวแบบไร้ทิศทางชัดเจน (Chaotic) ควรออรอดูสัญญาณ breakout ที่ชัดเจนกว่านี้
+2026-08-30T15:33:31.279406,EURUSDOTC0830153331,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและเคลื่อนไหวแบบไร้ทิศทางชัดเจน ประกอบกับคุณภาพข้อมูลเก่าและพฤติกรรมราคาผันผวนสูง จึงควรหลีกเลี่ยงการเข้าเทรด
+2026-08-30T15:35:46.602937,EURUSDOTC0830153546,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),ราคาอยู่ใกล้แนวรับและเส้น M5 EMA20 พร้อมสัญญาณ Stochastic ในเขต Oversold บน M1 สนับสนุนการรีบาวด์ขึ้นระยะสั้น
+2026-08-30T15:37:25.577277,EURUSDOTC0830153725,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลคุณภาพต่ำ (Stale) ความเสี่ยงสูงจึงควรรอจังหวะที่ชัดเจนกว่านี้
+2026-08-30T15:42:24.941618,EURUSDOTC0830154224,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความผันผวนต่ำพร้อมคุณภาพข้อมูลที่ไม่แน่นอน ควรออรอดin
+2026-08-30T15:51:09.585063,EURUSDOTC0830155109,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีพฤติกรรมการเคลื่อนไหวที่ไร้ทิศทางชัดเจน ควรหลีกเลี่ยงการเทรด
+2026-08-30T15:54:23.993010,EURUSDOTC0830155423,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความเก่า (Stale) รวมถึงความผันผวนต่ำ จึงควรอดทนรอสัญญาณที่ชัดเจนกว่านี้
+2026-08-30T15:52:58.854420,EURUSDOTC0830155258,EURUSD-OTC,CALL,72,2,AI (gemini-3.5-flash-lite),ราคาเคลื่อนตัวทดสอบแนวรับและเส้น M5 Support ประกอบกับ Stochastic ใน M1 อยู่ในเขต Oversold พร้อมดีดตัวกลับขึ้นตามแนวโน้มหลัก
+2026-08-30T16:02:34.943321,EURUSDOTC0830160234,EURUSD-OTC,CALL,68,2,AI (gemini-3.5-flash-lite),Stoch ใน M1 อยู่ในเขต Oversold และราคาทดสอบแนวรับ M5 ประกอบกับ bias หลักเป็น Bullish จึงคาดการณ์การรีบาวด์ระยะสั้น
+2026-08-30T16:10:09.818863,EURUSDOTC0830161009,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีการเคลื่อนไหวแบบไร้ทิศทางชัดเจน (Chaotic) ควรออรอดูจังหวะ
+2026-08-30T16:11:29.658563,EURUSDOTC0830161129,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความผันผวนต่ำประกอบกับสัญญาณขัดแย้งกันในกรอบเวลาสั้น ควรออรอดูสถานการณ์
+2026-08-30T15:59:50.421511,EURUSDOTC0830155950,EURUSD-OTC,CALL,65,2,AI (gemini-3.5-flash-lite),ราคา berada อยู่ใกล้แนวรับ M5 และ Stochastic ใน M1 อยู่ในเขต Oversold มีโอกาสเด้งกลับตัวระยะสั้นตามแนวโน้มหลัก Bullish
+2026-08-30T16:17:01.920220,EURUSDOTC0830161701,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความผันผวนต่ำประกอบกับสัญญาณโมเมนตัมไม่ชัดเจนควรรอจังหวะ
+2026-08-30T16:17:56.906581,EURUSDOTC0830161756,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีพฤติกรรมราคาแบบไร้ทิศทางชัดเจน ความเสี่ยงสูงเกินกว่าจะเข้าเทรด
+2026-08-30T16:19:51.954189,EURUSDOTC0830161951,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และราคาทดสอบแนวรับร่วมกับสัญญาณความผันผวนต่ำ จึงควรหลีกเลี่ยงการเทรด
+2026-08-30T16:22:57.221726,EURUSDOTC0830162257,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความผันผวนต่ำพร้อมคุณภาพข้อมูลที่ไม่แน่นอน ควรออรอด1
+2026-08-30T16:27:37.350450,EURUSDOTC0830162737,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและเคลื่อนไหวแบบไร้ทิศทางชัดเจน (Choppy) ควรอดทนรอดูการเบรกเอาต์
+2026-08-30T16:33:10.001260,EURUSDOTC0830163310,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),ราคาเคลื่อนไหวทดสอบระดับ Pivot และแนวรับ M5 ในภาวะ Sideway พร้อมสัญญาณ Stochastic ในเขต Oversold บน M1 สนับสนุนการรีบาวด์ขึ้นระยะสั้น
+2026-08-30T16:41:23.270474,EURUSDOTC0830164123,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),โครงสร้างตลาดหลักเป็นขาขึ้นและอยู่ในโซนสะสม สอดคล้องกับการทดสอบแนวรับ Pivot และ Stoch ใน M1 ที่อยู่ในเขต Oversold เตรียมดีดตัวกลับ
+2026-08-30T16:45:45.982048,EURUSDOTC0830164545,EURUSD-OTC,WAIT,45,2,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีคุณภาพข้อมูลที่เก่า (Stale) รวมถึงความผันผวนต่ำ จึงควรอดทนรอสัญญาณที่ชัดเจนกว่านี้
+2026-08-30T16:47:57.548322,EURUSDOTC0830164757,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีพฤติกรรมราคาแบบไร้ทิศทางชัดเจน (Choppy) ควรออรอดูสถานการณ์
+2026-08-30T16:53:10.664302,EURUSDOTC0830165310,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีคุณภาพข้อมูลที่ไม่แน่นอนสูง ควรรอจังหวะเข้าเทรดที่ชัดเจนกว่านี้
+2026-08-30T16:55:39.138723,EURUSDOTC0830165539,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความเก่า (Stale) ความเสี่ยงสูงจึงควรอดทนรอสัญญาณที่ชัดเจนกว่านี้
+2026-08-30T16:59:15.412859,EURUSDOTC0830165915,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความผันผวนต่ำพร้อมคุณภาพข้อมูลที่เก่า ควรรอความชัดเจนเพิ่มขึ้น
+2026-08-30T17:02:39.863073,EURUSDOTC0830170239,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะไซด์เวย์และมีราคาเคลื่อนไหวแบบไร้ทิศทางชัดเจน ความผันผวนต่ำ ควรหลีกเลี่ยงการเทรด
+2026-08-30T17:05:44.090593,EURUSDOTC0830170544,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีการเคลื่อนไหวแบบไร้ทิศทางชัดเจน ประกอบกับความผันผวนต่ำ ควรอดทนรอสัญญาณเบรกเอาท์
+2026-08-30T17:08:40.431471,EURUSDOTC0830170840,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),ราคาเคลื่อนไหวอยู่ใกล้แนวรับ Pivot พร้อมค่า Stoch ใน M1 ที่อยู่ในเขต Oversold สนับสนุนโอกาสรีบาวด์ขึ้นระยะสั้น
+2026-08-30T17:11:15.975057,EURUSDOTC0830171115,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความผันผวนต่ำพร้อมสัญญาณที่ไม่ชัดเจน ควรออรอดูสถานการณ์
+2026-08-30T17:12:29.448020,EURUSDOTC0830171229,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และข้อมูลมีความล้าสมัย จึงควรหลีกเลี่ยงการเทรด
+2026-08-30T17:16:56.488869,EURUSDOTC0830171656,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และมีคุณภาพข้อมูลที่ไม่นิ่งพอ รวมถึงสัญญาณโมเมนตัมไม่ชัดเจนควรหลีกเลี่ยง
+2026-08-30T17:20:09.199722,EURUSDOTC0830172009,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความเก่า (Stale) ความชัดเจนต่ำ ควรออรอดูสถานการณ์
+2026-08-30T17:21:24.041216,EURUSDOTC0830172124,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีพฤติกรรมการเคลื่อนไหวแบบไร้ทิศทางชัดเจน ความเสี่ยงสูงควรหลีกเลี่ยง
+2026-08-30T17:26:55.872343,EURUSDOTC0830172655,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีการเคลื่อนไหวแบบไร้ทิศทางชัดเจน ความผันผวนต่ำและราคาเคลื่อนไหวใกล้จุด Pivot ควรหลีกเลี่ยง
+2026-08-30T17:30:32.117478,EURUSDOTC0830173032,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความเก่า (Stale) รวมถึงความผันผวนต่ำ จึงควรหลีกเลี่ยงการเทรด
+2026-08-30T17:33:18.805435,EURUSDOTC0830173318,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลราคาค่อนข้างไร้ทิศทางชัดเจน ความเสี่ยงสูงควรอดทนรอสัญญาณที่ดีกว่า
+2026-08-30T17:37:10.877233,EURUSDOTC0830173710,EURUSD-OTC,CALL,68,2,AI (gemini-3.5-flash-lite),Stochastic ใน M1 Oversold และทดสอบแนวรับ M5 ประกอบกับเทรนด์หลัก M15 เป็นขาขึ้น จึงคาดการณ์โอกาสรีบาวด์ระยะสั้น
+2026-08-30T17:38:15.310411,EURUSDOTC0830173815,EURUSD-OTC,CALL,65,2,AI (gemini-3.5-flash-lite),ราคา berada ใกล้ระดับแนวรับ M5 และ Stochastic ใน M1 อยู่ในเขต Oversold มีโอกาสรีบาวด์ระยะสั้น
+2026-08-30T17:41:35.507672,EURUSDOTC0830174135,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความผันผวนต่ำประกอบกับสัญญาณขัดแย้งกัน ควรออรอดูสถานการณ์
+2026-08-30T17:42:14.060916,EURUSDOTC0830174214,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและเคลื่อนไหวแบบไร้ทิศทางชัดเจน ประกอบกับคุณภาพข้อมูลอยู่ในระดับ STALE จึงควรหลีกเลี่ยง
+2026-08-30T17:46:30.478409,EURUSDOTC0830174630,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีพฤติกรรมราคาแบบไร้ทิศทางชัดเจน (Chaotic) ควรออรอด1
+2026-08-30T17:48:17.080813,EURUSDOTC0830174817,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และข้อมูลมีความเก่า (STALE) ควรหลีกเลี่ยงการเทรด
+2026-08-30T17:51:58.773914,EURUSDOTC0830175158,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความผันผวนต่ำพร้อมสัญญาณที่ไม่ชัดเจน ควรออรอดูสถานการณ์
+2026-08-30T17:56:17.966350,EURUSDOTC0830175617,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความเก่า (Stale) รวมถึงความผันผวนต่ำ จึงควรหลีกเลี่ยงการเทรด
+2026-08-30T17:57:56.279895,EURUSDOTC0830175756,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความเก่า (Stale) ประกอบกับความผันผวนต่ำ จึงควรหลีกเลี่ยงการเทรด
+2026-08-30T18:01:06.762550,EURUSDOTC0830180106,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),Stochastic ใน M1 Oversold และ M5 Bias เป็น Bullish ร่วมกับการทดสอบแนวรับ Pivot ส่งสัญญาณรีบาวด์ระยะสั้น
+2026-08-30T18:04:30.329172,EURUSDOTC0830180430,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ SIDEWAY_RANGE และมีพฤติกรรมการเคลื่อนไหวแบบไร้ทิศทางชัดเจน (CHAOTIC) ควรหลีกเลี่ยงการเทรด
+2026-08-30T18:05:30.246766,EURUSDOTC0830180530,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะSideway Rangeและสภาพแวดล้อมมีความผันผวนต่ำประกอบกับสัญญาณมีความขัดแย้งกันสูงควรหลีกเลี่ยง
+2026-08-30T18:08:18.624245,EURUSDOTC0830180818,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีพฤติกรรมราคาแบบไร้ทิศทางชัดเจน ควรหลีกเลี่ยงการเทรด
+2026-08-30T18:11:24.700675,EURUSDOTC0830181124,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีพฤติกรรมราคาที่ผันผวนไร้ทิศทางชัดเจน ควรหลีกเลี่ยงการเทรด
+2026-08-30T18:12:54.154115,EURUSDOTC0830181254,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลราคาค่อนข้างเก่า (Stale) ควรออรอดูความชัดเจน
+2026-08-30T18:14:34.807303,EURUSDOTC0830181434,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีการเคลื่อนไหวแบบไร้ทิศทางชัดเจน (Chaotic) ควรออรอดูความชัดเจนของ Breakout
+2026-08-30T18:18:32.500652,EURUSDOTC0830181832,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความเก่า (Stale) รวมถึงความผันผวนต่ำ จึงควรหลีกเลี่ยงการเทรด
+2026-08-30T18:22:19.670446,EURUSDOTC0830182219,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความเก่า (Stale) ประกอบกับความผันผวนต่ำ ควรหลีกเลี่ยงการเทรด
+2026-08-30T18:27:53.494847,EURUSDOTC0830182753,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลคุณภาพต่ำ (STALE) พร้อมกับความผันผวนต่ำ จึงควรอดทนรอสัญญาณที่ชัดเจนกว่านี้
+2026-08-30T18:29:20.352215,EURUSDOTC0830182920,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และความเคลื่อนไหวไร้ทิศทางชัดเจน ควรอดทนรอดูสถานการณ์
+2026-08-30T18:31:16.379927,EURUSDOTC0830183116,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและเคลื่อนไหวไร้ทิศทางชัดเจน ความผันผวนต่ำและราคาอยู่ในโซนทดสอบแนวรับ ควรอดทนรอสัญญาณเบรกเอาท์ที่ชัดเจนกว่านี้
+2026-08-30T18:36:09.289052,EURUSDOTC0830183609,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความเก่า (Stale) ควรหลีกเลี่ยงการเทรด
+2026-08-30T18:37:11.625824,EURUSDOTC0830183711,EURUSD-OTC,CALL,65,2,AI (gemini-3.5-flash-lite),Stochastic ใน M1 Oversold ลึกและกำลังตัดขึ้นกลับตัวบริเวณแนวรับ M5
+2026-08-30T18:38:24.683820,EURUSDOTC0830183824,EURUSD-OTC,CALL,65,2,AI (gemini-3.5-flash-lite),ราคาเคลื่อนไหวใกล้แนวรับ M5 และ Stochastic ใน M1 อยู่ในเขต Oversold มีโอกาสรีบาวด์ระยะสั้น
+2026-08-30T18:42:41.861538,EURUSDOTC0830184241,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวแบบไร้ทิศทางชัดเจนและมีความผันผวนต่ำ ควรอดทนรอสัญญาณเบรกเอาท์ที่ชัดเจนก่อนเข้าเทรด
+2026-08-30T18:43:29.105188,EURUSDOTC0830184329,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความเก่า (STALE) ควรหลีกเลี่ยงการเทรด
+2026-08-30T18:44:32.180542,EURUSDOTC0830184432,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและเคลื่อนไหวแบบไร้ทิศทางชัดเจน ความผันผวนต่ำและราคาเคลื่อนตัวบริเวณแนวพิวโตร่วมกับแท่งเทียนไม่มีกำลัง
+2026-08-30T18:50:28.338166,EURUSDOTC0830185028,EURUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และข้อมูลมีความเสี่ยงสูงจากคุณภาพข้อมูลที่ไม่สดใหม่
+2026-08-30T18:51:09.992324,EURUSDOTC0830185109,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีพฤติกรรมราคาแบบไร้ทิศทางชัดเจน (Chaotic) ควรออรอด1
+2026-08-30T18:58:18.988148,EURUSDOTC0830185818,EURUSD-OTC,CALL,65,2,AI (gemini-3.5-flash-lite),Stochastic ใน M1 Oversold ลึกและ M5 Bias เป็น Bullish สนับสนุนการรีบาวด์ขึ้นระยะสั้น
+2026-08-30T19:03:04.409518,EURUSDOTC0830190304,EURUSD-OTC,CALL,65,2,AI (gemini-3.5-flash-lite),ราคาเคลื่อนไหวอยู่ใกล้แนวรับและเส้นค่าเฉลี่ยระยะสั้นในกรอบ Sideway โดย Stochastic ใน M1 อยู่ในเขต Oversold พร้อมเด้งกลับขึ้นไป
+2026-08-30T19:05:21.898916,EURUSDOTC0830190521,EURUSD-OTC,CALL,65,2,AI (gemini-3.5-flash-lite),ราคาอยู่ในกรอบไซด์เวย์และทดสอบแนวรับ M5 Stochastic อยู่ในเขต Oversold พร้อมเด้งกลับขึ้นตามเทรนด์หลัก
+2026-08-30T19:09:00.739397,EURUSDOTC0830190900,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และมีคุณภาพข้อมูลที่ไม่แน่นอน แนะนำให้รอสัญญาณที่ชัดเจนกว่านี้
+2026-08-30T19:12:54.977586,EURUSDOTC0830191254,EURUSD-OTC,CALL,68,2,AI (gemini-3.5-flash-lite),ราคาอยู่ในโซนแนวรับ M5 และ Stochastic ใน M1 Oversold มีโอกาสดีbound กลับตัวขึ้นระยะสั้น
+2026-08-30T19:20:28.567254,EURUSDOTC0830192028,EURUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),ราคาพักตัวลงมาทดสอบโซนแนวรับและเส้นค่าเฉลี่ยประกอบกับ Stochastic ใน M1 อยู่ในเขต Oversold พร้อมเด้งกลับตามเทรนด์หลักฝั่งซื้อ
+2026-08-30T19:23:13.424692,EURUSDOTC0830192313,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและความผันผวนต่ำประกอบกับข้อมูลราคาเก่าเกินไปควรหลีกเลี่ยง
+2026-08-30T19:25:55.535903,EURUSDOTC0830192555,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความเก่า (Stale) รวมถึงความผันผวนต่ำ จึงควรหลีกเลี่ยงการเทรด
+2026-08-30T19:28:34.686954,EURUSDOTC0830192834,EURUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และข้อมูลมีความผันผวนต่ำประกอบกับคุณภาพข้อมูลเป็น Stale จึงควรหลีกเลี่ยงการเทรด
+2026-08-30T19:33:07.682550,EURUSDOTC0830193307,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T19:38:32.539415,EURUSDOTC0830193832,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T19:45:57.853168,EURUSDOTC0830194557,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T19:47:16.132738,EURUSDOTC0830194716,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีแรงขายกดดันจากไส้เทียนด้านบน ทำให้สัญญาณขาดความชัดเจนในการเข้าเทรด
+2026-08-30T19:50:38.252557,EURUSDOTC0830195038,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำ ประกอบกับข้อมูลราคาที่ค่อนข้างนิ่งและขาดทิศทางที่ชัดเจน
+2026-08-30T19:54:57.990929,EURUSDOTC0830195457,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีแรงขายกดดันจากไส้เทียนด้านบน ทำให้สัญญาณขาดความชัดเจนในการเข้าเทรด
+2026-08-30T20:01:33.872547,EURUSDOTC0830200133,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีแรงขายกดดันจากไส้เทียนด้านบน ทำให้สัญญาณขาดความชัดเจนในการเข้าเทรด
+2026-08-30T20:04:22.358687,EURUSDOTC0830200422,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความผันผวนต่ำประกอบกับราคาเคลื่อนที่แบบไร้ทิศทางชัดเจนบริเวณจุด Pivot
+2026-08-30T20:08:16.902744,EURUSDOTC0830200816,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกัน จึงควรหลีกเลี่ยงการเข้าเทรด
+2026-08-30T20:10:31.553504,EURUSDOTC0830201031,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความผันผวนต่ำประกอบกับข้อมูลราคาที่ค่อนข้างนิ่งเกินไปทำให้ความเสี่ยงสูง
+2026-08-30T20:11:19.353234,EURUSDOTC0830201119,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีแรงกดดันจากไส้เทียนด้านบนสูง ทำให้ทิศทางราคาไม่ชัดเจนและมีความเสี่ยงสูง
+2026-08-30T20:13:24.156435,EURUSDOTC0830201324,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำมาก ประกอบกับสัญญาณทางเทคนิคขัดแย้งกันเองจึงควรหลีกเลี่ยงการเทรด
+2026-08-30T20:18:08.761791,EURUSDOTC0830201808,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความไม่แน่นอนสูงจากไส้เทียนด้านบน รวมถึงข้อมูลราคาที่ค่อนข้างนิ่งเกินไป
+2026-08-30T20:19:14.271780,EURUSDOTC0830201914,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำมาก ประกอบกับสัญญาณทางเทคนิคขัดแย้งกันเองในกรอบราคาแคบ
+2026-08-30T20:21:38.994434,EURUSDOTC0830202138,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีแรงขายกดดันจากไส้เทียนด้านบน ทำให้สัญญาณขาดความชัดเจนในการเข้าเทรด
+2026-08-30T20:23:34.117379,EURUSDOTC0830202334,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำ ประกอบกับข้อมูลราคาที่ค่อนข้างนิ่ง (Stale) ทำให้สัญญาณไม่มีความชัดเจนเพียงพอสำหรับการเข้าเทรด
+2026-08-30T20:24:14.286426,EURUSDOTC0830202414,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และราคาเคลื่อนไหวแบบไร้ทิศทาง (Chaotic) ประกอบกับข้อมูลราคาที่ค่อนข้างเก่า ทำให้ความเสี่ยงสูงเกินกว่าจะเข้าเทรด
+2026-08-30T20:31:07.802762,EURUSDOTC0830203107,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในกรอบราคาแคบ
+2026-08-30T20:32:48.850870,EURUSDOTC0830203248,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะสะสมและราคาแกว่งตัวในกรอบแคบ (Choppy) ประกอบกับสัญญาณทางเทคนิคขัดแย้งกันและไม่มีแรงส่งที่ชัดเจน
+2026-08-30T20:33:21.145999,EURUSDOTC0830203321,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีแรงขายกดดันจากไส้เทียนด้านบน ทำให้สัญญาณขาดความชัดเจนในการเข้าเทรด
+2026-08-30T20:42:28.204068,EURUSDOTC0830204228,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำมาก ประกอบกับสัญญาณทางเทคนิคขัดแย้งกันเองจึงควรหลีกเลี่ยงการเทรด
+2026-08-30T20:43:12.292278,EURUSDOTC0830204312,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะสะสมตัวและไร้ทิศทางที่ชัดเจนประกอบกับราคาเคลื่อนไหวแบบไม่มีนัยสำคัญในกรอบแคบ
+2026-08-30T20:49:15.334812,EURUSDOTC0830204915,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีแรงขายกดดันจากไส้เทียนด้านบน ทำให้สัญญาณขาดความชัดเจนในการเข้าเทรด
+2026-08-30T20:50:21.683656,EURUSDOTC0830205021,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะสะสมและราคาเคลื่อนที่แบบไร้ทิศทาง (Choppy) โดยมีแรงต้านจากไส้เทียนด้านบนและสัญญาณอินดิเคเตอร์ที่ไม่ชัดเจน
+2026-08-30T20:51:16.240467,EURUSDOTC0830205116,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T20:54:48.393980,EURUSDOTC0830205448,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีแรงขายกดดันจากไส้เทียนด้านบน ทำให้สัญญาณขาดความชัดเจนในการเข้าเทรด
+2026-08-30T20:55:11.160431,EURUSDOTC0830205511,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีแรงขายกดดันจากไส้เทียนด้านบน ทำให้สัญญาณขาดความชัดเจนในการเข้าเทรด
+2026-08-30T21:04:07.392587,EURUSDOTC0830210407,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีแรงขายกดดันจากไส้เทียนด้านบน ทำให้สัญญาณขาดความชัดเจนในการเข้าเทรด
+2026-08-30T21:14:38.225886,EURUSDOTC0830211438,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับข้อมูลราคาที่ค่อนข้างนิ่ง ทำให้ไม่มีสัญญาณยืนยันการเข้าเทรดที่ชัดเจน
+2026-08-30T21:15:14.464126,EURUSDOTC0830211514,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความผันผวนต่ำประกอบกับข้อมูลราคาที่ค่อนข้างนิ่งเกินไปทำให้ความเสี่ยงสูง
+2026-08-30T21:23:06.437932,EURUSDOTC0830212306,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณราคาที่ไม่มีทิศทางชัดเจนจึงควรเฝ้ารอจังหวะที่เหมาะสมกว่านี้
+2026-08-30T21:25:42.033946,EURUSDOTC0830212542,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะสะสมและไร้ทิศทางที่ชัดเจน ประกอบกับราคาเคลื่อนไหวแบบไม่มีวอลุ่มและมีความผันผวนต่ำ
+2026-08-30T21:29:25.870378,EURUSDOTC0830212925,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำมาก ประกอบกับสัญญาณทางเทคนิคมีความขัดแย้งกันในระยะสั้น
+2026-08-30T21:30:09.768318,EURUSDOTC0830213009,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T21:34:23.767669,EURUSDOTC0830213423,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T21:44:50.127750,EURUSDOTC0830214450,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำ ประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น จึงควรหลีกเลี่ยงการเข้าเทรด
+2026-08-30T21:45:57.459912,EURUSDOTC0830214557,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และราคาเคลื่อนไหวแบบไร้ทิศทาง (Chaotic) บริเวณจุด Pivot ทำให้สัญญาณขาดความชัดเจน
+2026-08-30T21:49:02.657826,EURUSDOTC0830214902,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T21:56:56.912445,EURUSDOTC0830215656,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะสะสมและราคาแกว่งตัวในกรอบแคบ (Choppy) ประกอบกับสัญญาณทางเทคนิคมีความขัดแย้งกันสูงและขาดแรงส่งที่ชัดเจน
+2026-08-30T22:00:15.674731,EURUSDOTC0830220015,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T22:06:00.221894,EURUSDOTC0830220600,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T22:09:32.814423,EURUSDOTC0830220932,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะสะสมและราคาเคลื่อนที่แบบไร้ทิศทาง (Choppy) โดยมีแรงขายกดดันจากไส้เทียนด้านบนและค่าความผันผวนต่ำเกินไป
+2026-08-30T22:12:44.201586,EURUSDOTC0830221244,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำ ประกอบกับสัญญาณจาก Stochastic ใน M1 อยู่ในเขต Oversold แต่ยังไม่มีแรงส่งที่ชัดเจนจึงควรเฝ้าระวัง
+2026-08-30T22:18:20.703431,EURUSDOTC0830221820,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T22:23:36.666914,EURUSDOTC0830222336,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะสะสมและราคาแกว่งตัวในกรอบแคบ (Choppy) ขาดแรงส่งที่ชัดเจนและมีสัญญาณการปฏิเสธราคาด้านบน
+2026-08-30T22:24:11.192670,EURUSDOTC0830222411,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และข้อมูลมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T22:25:28.828954,EURUSDOTC0830222528,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความไม่แน่นอนสูงจาก Price Action ที่มีไส้เทียนด้านบนยาวและโมเมนตัมที่อ่อนแรง
+2026-08-30T22:26:50.350133,EURUSDOTC0830222650,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีค่าความผันผวนต่ำมาก ประกอบกับข้อมูลราคาที่ค่อนข้างนิ่งและไม่มีทิศทางที่ชัดเจน
+2026-08-30T22:32:26.315391,EURUSDOTC0830223226,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคที่ขัดแย้งกันในกรอบเวลาสั้น
+2026-08-30T22:40:39.387717,EURUSDOTC0830224039,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความผันผวนต่ำประกอบกับข้อมูลราคาที่ค่อนข้างนิ่งเกินไปทำให้ความเสี่ยงสูง
+2026-08-30T22:42:29.186990,EURUSDOTC0830224229,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำมาก ประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในกรอบเวลาสั้น จึงควรหลีกเลี่ยงการเทรด
+2026-08-30T22:44:23.004040,EURUSDOTC0830224423,EURUSD-OTC,CALL,65,2,AI (gemini-3.1-flash-lite),ราคาเกาะตัวอยู่เหนือเส้น EMA20 ในกรอบ Sideway และกำลังทดสอบระดับ Pivot โดยมีแรงส่งจากแนวโน้มหลักใน M5 และ M15 ที่เป็นขาขึ้น
+2026-08-30T22:47:48.762520,EURUSDOTC0830224748,EURUSD-OTC,CALL,65,2,AI (gemini-3.1-flash-lite),ราคาประคองตัวเหนือเส้น EMA20 ในกรอบ Sideway และมีแรงซื้อกลับที่แนวรับ Pivot ทำให้มีโอกาสดีดตัวขึ้นในระยะสั้น
+2026-08-30T22:53:12.241136,EURUSDOTC0830225312,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะสะสมและราคาเคลื่อนไหวแบบไร้ทิศทาง (Choppy) ประกอบกับข้อมูลราคาที่ค่อนข้างเก่าและวอลุ่มต่ำเกินไป
+2026-08-30T22:54:10.798564,EURUSDOTC0830225410,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T22:59:50.662482,EURUSDOTC0830225950,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีแรงขายกดดันจากไส้เทียนด้านบน ทำให้สัญญาณขาดความชัดเจนในการเข้าเทรด
+2026-08-30T23:00:46.662139,EURUSDOTC0830230046,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความผันผวนต่ำประกอบกับข้อมูลราคาที่ค่อนข้างนิ่งเกินไปทำให้ความเสี่ยงสูง
+2026-08-30T23:02:38.439291,EURUSDOTC0830230238,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำ ประกอบกับข้อมูลราคาที่ค่อนข้างนิ่ง (Stale) ทำให้ความเสี่ยงในการเทรดสูงเกินไป
+2026-08-30T23:06:07.424647,EURUSDOTC0830230607,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความไม่แน่นอนสูงจากไส้เทียนด้านบน รวมถึงข้อมูลราคาที่ค่อนข้างนิ่งเกินไป
+2026-08-30T23:08:26.184842,EURUSDOTC0830230826,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และข้อมูลมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T23:12:42.217340,EURUSDOTC0830231242,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และราคาเคลื่อนไหวแบบไร้ทิศทางชัดเจนรอบจุด Pivot ทำให้ความเสี่ยงสูงเกินกว่าจะเข้าเทรด
+2026-08-30T23:17:47.507666,EURUSDOTC0830231747,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และข้อมูลมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในกรอบเวลาสั้น
+2026-08-30T23:20:17.132992,EURUSDOTC0830232017,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความไม่แน่นอนสูงจาก Price Action ที่มีไส้เทียนด้านบนยาวและโมเมนตัมที่อ่อนแรง
+2026-08-30T23:22:20.490557,EURUSDOTC0830232220,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และข้อมูลมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในกรอบราคาแคบ
+2026-08-30T23:26:16.548913,EURUSDOTC0830232616,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำมาก ประกอบกับข้อมูลราคาที่ค่อนข้างนิ่ง (Stale) ทำให้สัญญาณไม่มีความชัดเจนเพียงพอในการเข้าเทรด
+2026-08-30T23:28:00.093280,EURUSDOTC0830232800,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความผันผวนต่ำประกอบกับข้อมูลราคาที่ค่อนข้างนิ่ง ทำให้ขาดแรงส่งที่ชัดเจนในการเข้าเทรด
+2026-08-30T23:29:41.705174,EURUSDOTC0830232941,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับข้อมูลราคาที่ค่อนข้างนิ่งเกินไปทำให้ความเสี่ยงสูง
+2026-08-30T23:34:10.779647,EURUSDOTC0830233410,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำมาก ประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในกรอบราคาแคบๆ
+2026-08-30T23:35:39.921487,EURUSDOTC0830233539,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคที่ขัดแย้งกัน จึงควรหลีกเลี่ยงการเข้าเทรด
+2026-08-30T23:36:18.906284,EURUSDOTC0830233618,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับข้อมูลราคาที่ค่อนข้างนิ่งเกินไปทำให้ความเสี่ยงสูง
+2026-08-30T23:37:48.186057,EURUSDOTC0830233748,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และข้อมูลมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T23:40:44.279962,EURUSDOTC0830234044,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-30T23:42:06.144368,EURUSDOTC0830234206,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีแรงขายกดดันจาก Upper Wick ทำให้สัญญาณขาดความชัดเจนในการเข้าเทรด
+2026-08-30T23:45:37.199522,EURUSDOTC0830234537,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความผันผวนต่ำประกอบกับข้อมูลราคาที่ค่อนข้างนิ่งเกินไปทำให้ความเสี่ยงสูง
+2026-08-30T23:48:36.561942,EURUSDOTC0830234836,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับข้อมูลราคาที่ค่อนข้างนิ่งเกินไปทำให้ความเสี่ยงสูง
+2026-08-30T23:50:40.144226,EURUSDOTC0830235040,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับข้อมูลราคาไม่ชัดเจน (Stale) จึงควรหลีกเลี่ยงการเข้าเทรด
+2026-08-30T23:53:28.113930,EURUSDOTC0830235328,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับข้อมูลราคาที่ค่อนข้างนิ่ง ทำให้สัญญาณการเทรดไม่มีความชัดเจนเพียงพอ
+2026-08-30T23:55:48.526448,EURUSDOTC0830235548,EURUSD-OTC,CALL,65,2,AI (gemini-3.1-flash-lite),ราคาเกาะตัวอยู่เหนือเส้น EMA20 ในกรอบ Sideway และกำลังทดสอบแนวรับ Pivot ในสภาวะตลาดที่มีแรงส่งขาขึ้นในภาพรวม
+2026-08-30T23:58:29.332653,EURUSDOTC0830235829,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะสะสมและราคาเคลื่อนที่แบบไร้ทิศทาง (Choppy) ประกอบกับสัญญาณทางเทคนิคมีความขัดแย้งกันสูง
+2026-08-30T23:59:22.916985,EURUSDOTC0830235922,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคที่ขัดแย้งกันในระยะสั้น
+2026-08-31T00:02:10.697384,EURUSDOTC0831000210,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำมาก ประกอบกับสัญญาณทางเทคนิคขัดแย้งกันเองจึงควรหลีกเลี่ยงการเทรด
+2026-08-31T00:05:46.514186,EURUSDOTC0831000546,EURUSD-OTC,CALL,65,2,AI (gemini-3.1-flash-lite),ราคาเกาะตัวอยู่เหนือเส้น EMA20 ในกรอบ Sideway และกำลังทดสอบระดับ Pivot โดยมีแรงส่งจากแนวโน้มหลักใน M5 และ M15 ที่เป็นขาขึ้น
+2026-08-31T00:06:09.792270,EURUSDOTC0831000609,EURUSD-OTC,CALL,65,2,AI (gemini-3.1-flash-lite),ราคาอยู่เหนือเส้น EMA20 ในกรอบ Sideway และกำลังทดสอบระดับ Pivot โดยมีแรงส่งจากแนวโน้มหลักใน M5 และ M15 ที่เป็นขาขึ้น
+2026-08-31T00:08:15.579230,EURUSDOTC0831000815,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะสะสมและราคาแกว่งตัวในกรอบแคบ (Choppy) พร้อมสัญญาณความไม่แน่นอนสูงจากไส้เทียนด้านบน
+2026-08-31T00:10:25.014677,EURUSDOTC0831001025,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะสะสมและราคาเคลื่อนไหวแบบไร้ทิศทาง (Choppy) ประกอบกับสัญญาณทางเทคนิคมีความขัดแย้งกันสูง
+2026-08-31T00:12:31.579320,EURUSDOTC0831001231,EURUSD-OTC,CALL,65,2,AI (gemini-3.1-flash-lite),ราคาเกาะตัวอยู่เหนือเส้น EMA20 ในกรอบ Sideway และกำลังทดสอบระดับ Pivot ในทิศทางที่มีแรงส่งจากแนวโน้มขาขึ้นใน Timeframe ใหญ่
+2026-08-31T00:13:11.977483,EURUSDOTC0831001311,EURUSD-OTC,CALL,65,2,AI (gemini-3.1-flash-lite),ราคาอยู่เหนือเส้น EMA20 ในกรอบ Sideway และกำลังทดสอบแนวรับ Pivot โดยมีสัญญาณ Stochastic ใน M1 เริ่มฟื้นตัวจากเขต Oversold
+2026-08-31T00:18:12.991752,EURUSDOTC0831001812,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะสะสมตัวและมีความผันผวนต่ำ ประกอบกับสัญญาณจากอินดิเคเตอร์ยังไม่มีทิศทางที่ชัดเจนเพียงพอสำหรับการเข้าเทรด
+2026-08-31T00:22:07.509801,EURUSDOTC0831002207,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความไม่แน่นอนสูงจากไส้เทียนด้านบนและโมเมนตัมที่อ่อนแรง
+2026-08-31T00:25:53.492292,EURUSDOTC0831002553,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความผันผวนต่ำประกอบกับข้อมูลราคาที่ค่อนข้างนิ่งเกินไปจึงควรหลีกเลี่ยงการเทรด
+2026-08-31T00:26:17.747594,EURUSDOTC0831002617,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำมาก ประกอบกับข้อมูลราคาขาดความชัดเจนและมีแรงต้านจากไส้เทียนด้านบน
+2026-08-31T00:29:42.296858,EURUSDOTC0831002942,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำมาก ประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-31T00:32:46.909152,EURUSDOTC0831003246,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-31T00:34:42.159696,EURUSDOTC0831003442,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีความผันผวนต่ำประกอบกับสัญญาณทางเทคนิคขัดแย้งกันในระยะสั้น
+2026-08-31T00:37:37.897920,EURUSDOTC0831003737,EURUSD-OTC,CALL,65,2,AI (gemini-3.1-flash-lite),ราคาเกาะตัวอยู่เหนือเส้น EMA20 ในกรอบ Sideway และมีแรงส่งจากแนวโน้มหลักใน Timeframe ใหญ่ที่ยังเป็นขาขึ้น
+2026-08-31T00:40:55.181750,EURUSDOTC0831004055,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีแรงขายกดดันจากไส้เทียนด้านบน ทำให้สัญญาณขาดความชัดเจนในการเข้าเทรด
+2026-08-31T00:42:24.938995,EURUSDOTC0831004224,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะสะสมและราคาเคลื่อนที่แบบไร้ทิศทาง (Choppy) โดยมีแรงต้านจากไส้เทียนด้านบนและสัญญาณอินดิเคเตอร์ที่ไม่ชัดเจน
+2026-08-31T00:47:14.055915,EURUSDOTC0831004714,EURUSD-OTC,CALL,65,2,AI (gemini-3.1-flash-lite),ราคาอยู่เหนือเส้น EMA20 ในกรอบ Sideway และกำลังทดสอบแนวรับ Pivot โดยมีสัญญาณ Bullish Bias ในภาพรวม
+2026-08-31T00:49:58.188975,EURUSDOTC0831004958,EURUSD-OTC,CALL,65,2,AI (gemini-3.1-flash-lite),ราคาอยู่เหนือเส้น EMA20 ในกรอบ Sideway และกำลังทดสอบแนวรับ Pivot โดยมีแรงส่งจากแนวโน้มหลักใน M5 และ M15 ที่เป็นขาขึ้น
+2026-08-31T00:54:13.352845,EURUSDOTC0831005413,EURUSD-OTC,WAIT,45,1,AI (gemini-3.1-flash-lite),ตลาดอยู่ในสภาวะ Sideway และมีสัญญาณความไม่แน่นอนสูงจากไส้เทียนด้านบนและค่า Stoch ใน M1 ที่ต่ำเกินไป
+2026-08-31T01:36:08.280038,EURUSDOTC0831013608,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:37:02.585462,EURUSDOTC0831013702,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:38:03.067992,EURUSDOTC0831013803,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:39:03.411535,EURUSDOTC0831013903,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:40:09.440863,EURUSDOTC0831014009,EURUSD-OTC,WAIT,54.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:40:14.160580,EURUSDOTC0831014014,EURUSD-OTC,WAIT,54.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:41:01.941864,EURUSDOTC0831014101,EURUSD-OTC,WAIT,54.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:41:03.088871,EURUSDOTC0831014103,EURUSD-OTC,WAIT,54.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:42:02.897073,EURUSDOTC0831014202,EURUSD-OTC,WAIT,54.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:42:03.344911,EURUSDOTC0831014203,EURUSD-OTC,WAIT,54.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:43:02.731553,EURUSDOTC0831014302,EURUSD-OTC,WAIT,54.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:43:03.269558,EURUSDOTC0831014303,EURUSD-OTC,WAIT,54.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:44:02.564689,EURUSDOTC0831014402,EURUSD-OTC,WAIT,54.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:44:03.275412,EURUSDOTC0831014403,EURUSD-OTC,WAIT,54.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:45:10.094557,EURUSDOTC0831014510,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:45:10.672002,EURUSDOTC0831014510,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:46:03.245263,EURUSDOTC0831014603,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:46:03.565062,EURUSDOTC0831014603,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:47:02.732031,EURUSDOTC0831014702,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:47:03.114705,EURUSDOTC0831014703,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:48:02.223467,EURUSDOTC0831014802,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:48:03.180710,EURUSDOTC0831014803,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:49:03.158792,EURUSDOTC0831014903,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:49:03.471378,EURUSDOTC0831014903,EURUSD-OTC,WAIT,53.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:50:03.466657,EURUSDOTC0831015003,EURUSD-OTC,WAIT,52.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:50:04.017347,EURUSDOTC0831015004,EURUSD-OTC,WAIT,52.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:51:02.042318,EURUSDOTC0831015102,EURUSD-OTC,WAIT,52.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:51:03.128990,EURUSDOTC0831015103,EURUSD-OTC,WAIT,52.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:52:01.986880,EURUSDOTC0831015201,EURUSD-OTC,WAIT,52.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:52:03.270055,EURUSDOTC0831015203,EURUSD-OTC,WAIT,52.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:53:03.166999,EURUSDOTC0831015303,EURUSD-OTC,WAIT,52.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:54:02.046410,EURUSDOTC0831015402,EURUSD-OTC,WAIT,52.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:54:03.237784,EURUSDOTC0831015403,EURUSD-OTC,WAIT,52.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:55:03.095221,EURUSDOTC0831015503,EURUSD-OTC,WAIT,56.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:55:03.631152,EURUSDOTC0831015503,EURUSD-OTC,WAIT,56.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-20T00:25:01.828656,EURUSDOTC0920002501,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาและตลาดที่มีความผันผวนสูงแบบไร้ทิศทางชัดเจน ควรออรอดfor ความปลอดภัย
+2026-09-20T00:26:15.114859,EURUSDOTC0920002615,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),สภาวะตลาดมีความผันผวนสูงและขาดความชัดเจนของทิศทางหลัก M1 กับ M15 ขัดแย้งกัน
+2026-09-20T00:27:03.506358,EURUSDOTC0920002703,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและโครงสร้างราคาขัดแย้งกันระหว่างกรอบเวลา จึงควรหลีกเลี่ยง
+2026-09-20T00:28:01.829200,EURUSDOTC0920002801,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและโครงสร้างราคาขัดแย้งกันระหว่าง Timeframe ควรออรอดูสถานการณ์
+2026-09-20T00:29:02.947766,EURUSDOTC0920002902,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งกันของกรอบเวลาและสภาพวะราคาแบบกระจายตัว ความเสี่ยงสูงเกินไป
+2026-09-20T00:30:09.337038,EURUSDOTC0920003009,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและโครงสร้างราคาขัดแย้งกันระหว่างบริบทการกระจายตัวและแนวโน้มย่อย
+2026-09-20T00:31:01.865940,EURUSDOTC0920003101,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความเสี่ยงสูงและพฤติกรรมราคาผันผวนไม่มีทิศทางที่ชัดเจน
+2026-09-20T00:32:01.954375,EURUSDOTC0920003201,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),สภาวะตลาดมีความขัดแย้งระหว่างการกระจายตัวของ Smart Money และความผันผวนสูง เสี่ยงเกินไป
+2026-09-20T00:33:03.077603,EURUSDOTC0920003303,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ distribution และมีความเสี่ยงสูงเนื่องจากพฤติกรรมราคาแบบ chaotic ควรรอความชัดเจน
+2026-09-20T00:34:03.330683,EURUSDOTC0920003403,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะกระจายตัว (Distribution) และมีความผันผวนสูงมากพร้อมความขัดแย้งของกรอบเวลา จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T00:35:03.728000,EURUSDOTC0920003503,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและโครงสร้างราคาขัดแย้งกันระหว่างการกระจายตัวของ Smart Money กับแนวโน้มย่อย
+2026-09-20T00:36:07.299677,EURUSDOTC0920003607,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและราคาเคลื่อนไหวแบบไร้ทิศทางชัดเจน (Choppy) ประกอบกับการปฏิเสธแนวต้าน จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T00:37:06.760648,EURUSDOTC0920003706,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและโครงสร้างราคาอยู่ในภาวะสับสนเสี่ยงต่อการกลับตัว
+2026-09-20T00:38:07.686168,EURUSDOTC0920003807,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและโครงสร้างราคาอยู่ในภาวะกระจายตัว (Distribution) พร้อมสัญญาณความขัดแย้งของกรอบเวลาและความไม่แน่นอนของราคา
+2026-09-20T00:39:03.850113,EURUSDOTC0920003903,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีความผันผวนสูงแบบไร้ทิศทางชัดเจน ควรอดทนรอจังหวะ Breakout ที่สมบูรณ์กว่านี้
+2026-09-20T00:40:08.488150,EURUSDOTC0920004008,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ DISTRIBUTION และความผันผวนสูงแบบสับสน ขาดความชัดเจนในการเลือกทิศทาง
+2026-09-20T00:41:06.699231,EURUSDOTC0920004106,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งกันของกรอบเวลาและสภาวะราคาแบบกระจายตัว ความเสี่ยงสูงจึงควรรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T00:42:10.742616,EURUSDOTC0920004210,EURUSD-OTC,WAIT,35,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งกันของกรอบเวลาและราคาเคลื่อนไหวแบบไร้ทิศทางชัดเจน (Choppy) ควรหลีกเลี่ยง
+2026-09-20T00:43:06.389125,EURUSDOTC0920004306,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความผันผวนสูงแบบไร้ทิศทางชัดเจน ควรออรอบริเวณแนวรับแนวต้านสำคัญ
+2026-09-20T00:44:08.503392,EURUSDOTC0920004408,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งระหว่างโครงสร้างราคาหลักและสัญญาณระยะสั้น พร้อมภาวะความผันผวนสูงและทิศทางที่ไม่ชัดเจน
+2026-09-20T00:45:23.357518,EURUSDOTC0920004523,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งกันของกรอบเวลาและราคาเคลื่อนไหวแบบไร้ทิศทางชัดเจนควรหลีกเลี่ยง
+2026-09-20T00:46:10.296664,EURUSDOTC0920004610,EURUSD-OTC,WAIT,35,5,AI (gemini-3.5-flash-lite),โครงสร้างตลาดมีความขัดแย้งระหว่าง Timeframe และความผันผวนสูงทำให้ความน่าจะเป็นต่ำ
+2026-09-20T00:47:05.055533,EURUSDOTC0920004705,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความขัดแย้งของ Timeframe สูง ความเสี่ยงมากเกินไป
+2026-09-20T00:48:11.830108,EURUSDOTC0920004811,EURUSD-OTC,WAIT,35,5,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและไร้ทิศทางชัดเจน (Chaotic move และ MTF ขัดแย้งกัน) ควรอารักขาความเสี่ยงและรอจังหวะที่เหมาะสม
+2026-09-20T00:49:12.071476,EURUSDOTC0920004912,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งกันของกรอบเวลาหลักและโครงสร้างราคาไร้ทิศทางชัดเจน
+2026-09-20T00:50:06.769006,EURUSDOTC0920005006,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความขัดแย้งของ Timeframe สูง ความเสี่ยงมากเกินไป
+2026-09-20T00:51:18.218595,EURUSDOTC0920005118,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและโครงสร้างราคาไร้ทิศทางชัดเจน ความสอดคล้องของกรอบเวลามีน้อยเกินไป
+2026-09-20T00:52:11.775150,EURUSDOTC0920005211,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะกระจายตัวและมีความผันผวนสูงประกอบกับราคาเคลื่อนไหวอย่างไร้ทิศทางชัดเจนควรหลีกเลี่ยง
+2026-09-20T00:53:10.007528,EURUSDOTC0920005310,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะกระจายตัวแบบไร้ทิศทางและมีความผันผวนสูง ประกอบกับสัญญาณความขัดแย้งของราคาและ Bullish Divergence จึงควรอดทนรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T00:54:05.788425,EURUSDOTC0920005405,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและไร้ทิศทางชัดเจน ประกอบกับ M1 ทำ Oversold แต่อาจเกิด False breakout ควรรอความชัดเจนเพิ่ม
+2026-09-20T00:55:20.402555,EURUSDOTC0920005520,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),แม้แนวโน้มหลักเป็นขาลงแต่ RSI ใน M1 อยู่ในเขต oversold ลึกและมีความเสี่ยงจากสัญญาณ Bullish divergence ทำให้จังหวะเข้าเทรดมีความผันผวนสูง
+2026-09-20T00:56:12.020048,EURUSDOTC0920005612,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะกระจายตัวและมีความผันผวนสูง ประกอบกับสัญญาณทางเทคนิคมีความขัดแย้งและคุณภาพต่ำ จึงควรหลีกเลี่ยงการซื้อขาย
+2026-09-20T00:57:04.709457,EURUSDOTC0920005704,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะกระจายตัวและมีความผันผวนสูงประกอบกับ RSI ใน M1 อยู่ในเขต Oversold ลึกเสี่ยงต่อการกลับตัวชั่วคราว
+2026-09-20T00:58:11.070708,EURUSDOTC0920005811,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ distribution และความผันผวนสูงแบบไร้ทิศทางชัดเจน ควรหลีกเลี่ยงการเทรด
+2026-09-20T00:59:11.689316,EURUSDOTC0920005911,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะกระจายตัวและไร้ทิศทางชัดเจนประกอบกับความผันผวนสูง ควรหลีกเลี่ยงการเทรด
+2026-09-20T01:00:09.142857,EURUSDOTC0920010009,EURUSD-OTC,CALL,68,5,AI (gemini-3.5-flash-lite),RSI ใน M1 Oversold และราคาลงมาทดสอบแนวรับสำคัญประกอบกับมี Bullish Divergence ใน M5 จึงคาดการณ์โอกาสรีบาวด์ระยะสั้น
+2026-09-20T01:16:01.818425,EURUSDOTC0920011601,EURUSD-OTC,PUT,65,5,AI (gemini-3.5-flash-lite),แนวโน้มหลัก M15 และ M5 เป็นขาลงสอดคล้องกับบริบทการกระจายตัวของ Smart Money แม้จะมีแรงซื้อระยะสั้นแต่ยังมีโอกาสปรับตัวลดลงตามเทรนด์
+2026-09-20T01:17:06.907908,EURUSDOTC0920011706,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งระหว่างแนวโน้มหลักที่เป็นขาลงกับสัญญาณ Bullish Divergence ระยะสั้น ความเสี่ยงสูงจึงควรอดทนรอ
+2026-09-20T01:18:01.991818,EURUSDOTC0920011801,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะกระจายตัวและไร้ทิศทางชัดเจน ความสอดคล้องของหลายไทม์เฟรมต่ำเกินไป
+2026-09-20T01:19:03.132143,EURUSDOTC0920011903,EURUSD-OTC,PUT,75,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักและ M5 ยังคงเป็น Bearish สอดคล้องกับโครงสร้างตลาด Distribution พร้อมเข้าทำกำไรฝั่งขาย
+2026-09-20T01:20:09.838558,EURUSDOTC0920012009,EURUSD-OTC,PUT,68,5,AI (gemini-3.5-flash-lite),โครงสร้างราคาหลักและ M5/M15 มีแนวโน้มเป็นขาลงสอดคล้องกับภาวะการกระจายตัวของSmart Money
+2026-09-20T01:21:01.853504,EURUSDOTC0920012101,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),โครงสร้างตลาดมีความสับสนและคุณภาพการเคลื่อนไหวแบบไร้ทิศทางชัดเจน (Chaotic) ควรออรอดูความชัดเจน
+2026-09-20T01:22:05.332586,EURUSDOTC0920012205,EURUSD-OTC,PUT,75,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักและโครงสร้างตลาด M15 และ M5 เป็นขาลง สอดคล้องกับการกระจายตัวของ Smart Money
+2026-09-20T01:23:06.928044,EURUSDOTC0920012306,EURUSD-OTC,PUT,75,5,AI (gemini-3.5-flash-lite),โครงสร้างตลาดหลักและกรอบเวลา M5 สอดคล้องในทิศทางขาลงพร้อมเข้าสู่จุดกระจายตัวของ Smart Money
+2026-09-20T01:24:07.136835,EURUSDOTC0920012407,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ DISTRIBUTION และไร้ทิศทางชัดเจน ความสอดคล้องของกรอบเวลามีน้อยเกินไป
+2026-09-20T01:25:05.050627,EURUSDOTC0920012505,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะกระจายตัวและไร้ทิศทางชัดเจน ความสอดคล้องของหลายไทม์เฟรมต่ำเกินไป
+2026-09-20T01:26:18.788914,EURUSDOTC0920012618,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ distribution และไร้ทิศทางชัดเจน (Choppy) ประกอบกับความผันผวนต่ำ ควรอดทนรอสัญญาณที่ชัดเจนกว่านี้
+2026-09-20T01:27:12.101924,EURUSDOTC0920012712,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะกระจายตัวและมีความผันผวนไร้ทิศทางชัดเจน ควรออรอด2
+2026-09-20T01:28:12.842474,EURUSDOTC0920012812,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ distribution และมีความผันผวนแบบไร้ทิศทางชัดเจน (choppy) ควรหลีกเลี่ยงการเทรด
+2026-09-20T01:29:04.978025,EURUSDOTC0920012904,EURUSD-OTC,PUT,68,5,AI (gemini-3.5-flash-lite),โครงสร้างหลัก M15 และ M5 เป็นขาลง สอดคล้องกับภาวะการกระจายตัวของSmart Moneyและราคาชนแนวต้านย่อย
+2026-09-20T01:30:32.953335,EURUSDOTC0920013032,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งกันระหว่างกรอบเวลาหลักและระยะสั้น รวมถึงความผันผวนที่ไร้ทิศทางชัดเจน ควรงดออกออร์เดอร์
+2026-09-20T01:31:13.881228,EURUSDOTC0920013113,EURUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งระหว่างกรอบเวลาและสภาพการเคลื่อนไหวแบบไร้ทิศทางชัดเจน
+2026-09-20T03:49:01.886800,EURUSDOTC0920034901,EURUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),เกิดรูปแบบ Morning Star และสัญญาณ Bear Trap บริเวณแนวรับ M5 สนับสนุนการกลับตัวขึ้นระยะสั้น
+2026-09-20T03:50:06.977843,EURUSDOTC0920035006,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงจากความขัดแย้งของ Timeframe จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T03:51:09.910195,EURUSDOTC0920035109,EURUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),เกิดสัญญาณ Bullish bias และ Bear Trap ที่แนวรับ M5 ประกอบกับมีการสะสมของ Smart Money สนับสนุนการกลับตัวขึ้น
+2026-09-20T03:52:01.812076,EURUSDOTC0920035201,EURUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),ตรวจพบภาวะ Bear Trap ที่แนวรับสำคัญและสัญญาณ Bullish Divergence อ่อนๆ ประกอบกับรูปแบบแท่งเทียนมี Lower Wick ยาวสนับสนุนการกลับตัวขึ้นระยะสั้น
+2026-09-20T03:53:01.962354,EURUSDOTC0920035301,EURUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),เกิดสัญญาณ Bear Trap บริเวณแนวรับและมีการปฏิเสธราคาด้วยไส้เทียนล่างยาว ประกอบกับการสะสมของ Smart Money สนับสนุนโอกาสรีบาวด์ขึ้น
+2026-09-20T03:54:03.145419,EURUSDOTC0920035403,EURUSD-OTC,CALL,68,5,AI (gemini-3.5-flash-lite),เกิดสัญญาณ Bullish Trap และทดสอบแนวรับสำคัญประกอบกับบริบทสะสมราคาทำให้มีโอกาสรีบาวด์ขึ้นในกรอบเวลา 5 นาที
+2026-09-20T03:55:05.611153,EURUSDOTC0920035505,EURUSD-OTC,CALL,72,5,AI (gemini-3.5-flash-lite),เกิดสัญญาณ Bear Trap ที่โซนแนวรับและมีการสะสมราคา Smart Money สนับสนุนโอกาสรีบาวด์ขึ้นในกรอบเวลา 5 นาที
+2026-09-20T03:56:09.907053,EURUSDOTC0920035609,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),โครงสร้างตลาดขัดแย้งกันระหว่าง M15 ขาลงและ M1 สะสมกำลังซื้อ จึงควรหลีกเลี่ยง
+2026-09-20T03:57:12.105764,EURUSDOTC0920035712,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),โครงสร้างราคาขัดแย้งกันระหว่าง M15 ที่เป็นขาลงและบริบทตลาดที่เป็นการสะสมพลัง
+2026-09-20T03:58:16.966871,EURUSDOTC0920035816,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งระหว่างแนวโน้มหลัก M15/M5 ที่เป็นขาลงกับบริบทตลาด M1 ที่พยายามสะสมกำลังทำให้ความเสี่ยงสูงเกินไป
+2026-09-20T03:59:05.584827,EURUSDOTC0920035905,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),มีความขัดแย้งระหว่างแนวโน้มหลัก M15 และ M5 ที่เป็นขาลง กับบริบทตลาด M1 ที่พยายามสะสมกำลังและกลับตัวขึ้น
+2026-09-20T04:00:15.884115,EURUSDOTC0920040015,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),โครงสร้างตลาดมีความขัดแย้งระหว่างกรอบเวลาหลักและระยะสั้น รวมถึงความผันผวนสูงและพฤติกรรมราคาแบบไร้ทิศทางชัดเจน
+2026-09-20T04:01:46.502756,EURUSDOTC0920040146,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),กรอบเวลาระดับใหญ่ M5 และ M15 ยังเป็นแนวโน้มขาลง ขัดแย้งกับสัญญาณสะสมในระยะสั้น M1
+2026-09-20T04:03:34.298033,EURUSDOTC0920040334,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งระหว่างแนวโน้มหลัก M15 ที่เป็นขาลงกับบริบทการสะสมราคาทำให้ความเสี่ยงสูงควรรอความชัดเจน
+2026-09-20T04:05:45.386806,EURUSDOTC0920040545,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งระหว่างแนวโน้มหลัก M15/M5 ที่เป็นขาลงและบริบทสะสมราคาทำให้ความเสี่ยงสูงเกินไป
+2026-09-20T04:08:57.717630,EURUSDOTC0920040857,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),M1 อยู่ในภาวะ Overbought สูงและเกิดความขัดแย้งกับแนวโน้มหลัก M15 ที่เป็นขาลง จึงควรหลีกเลี่ยงการเข้าเทรด
+2026-09-20T04:15:00.390538,EURUSDOTC0920041500,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ความขัดแย้งของกรอบเวลาหลักและสภาวะตลาดแบบสะสมทำให้ความเสี่ยงสูงเกินไป
+2026-09-20T04:24:17.799328,EURUSDOTC0920042417,EURUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและมีการเคลื่อนไหวแบบไร้ทิศทางชัดเจน ความขัดแย้งของกรอบเวลาทำให้ความเสี่ยงสูงเกินไป

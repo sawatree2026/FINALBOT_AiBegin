@@ -1,0 +1,8 @@
+{
+  "ID": "GBPJPYOTC0920013033",
+  "symbol": "GBPJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ความขัดแย้งระหว่าง Timeframe M15 ที่เป็นขาลงและ M5 ที่พยายามสะสมกำลัง ทำให้ความน่าจะเป็นต่ำเกินกว่าจะเข้าเทรด"
+}

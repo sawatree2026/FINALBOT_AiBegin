@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSD0828090709",
+  "symbol": "EURUSD",
+  "action": "CALL",
+  "expiry_minutes": 2,
+  "confidence_score": 78,
+  "reason_th": "Stochastic ใน M1 และ M5 อยู่ในเขต Oversold พร้อมสัญญาณการกลับตัวบริเวณแนวรับและ Bollinger Band ล่างในตลาด Sideway"
+}

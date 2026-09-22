@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSDOTC0920015108",
+  "symbol": "GBPUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "Stochastic ใน M1 Oversold และอยู่ใกล้แนวรับล่างของกรอบ Sideway มีโอกาสรีบาวด์ระยะสั้น"
+}
