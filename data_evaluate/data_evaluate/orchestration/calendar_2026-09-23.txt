@@ -1,0 +1,138 @@
+[
+    {
+        "title": "API Weekly Statistical Bulletin",
+        "country": "USD",
+        "date": "2026-09-23T00:30:00+00:00",
+        "impact": "Low",
+        "forecast": "",
+        "previous": ""
+    },
+    {
+        "title": "Flash Manufacturing PMI",
+        "country": "AUD",
+        "date": "2026-09-23T03:00:00+00:00",
+        "impact": "Low",
+        "forecast": "",
+        "previous": "52.0"
+    },
+    {
+        "title": "Flash Services PMI",
+        "country": "AUD",
+        "date": "2026-09-23T03:00:00+00:00",
+        "impact": "Low",
+        "forecast": "",
+        "previous": "52.9"
+    },
+    {
+        "title": "Bank Holiday",
+        "country": "JPY",
+        "date": "2026-09-23T03:00:00+00:00",
+        "impact": "Holiday",
+        "forecast": "",
+        "previous": ""
+    },
+    {
+        "title": "French Flash Manufacturing PMI",
+        "country": "EUR",
+        "date": "2026-09-23T11:15:00+00:00",
+        "impact": "Medium",
+        "forecast": "50.9",
+        "previous": "51.5"
+    },
+    {
+        "title": "French Flash Services PMI",
+        "country": "EUR",
+        "date": "2026-09-23T11:15:00+00:00",
+        "impact": "Medium",
+        "forecast": "48.3",
+        "previous": "48.4"
+    },
+    {
+        "title": "German Flash Manufacturing PMI",
+        "country": "EUR",
+        "date": "2026-09-23T11:30:00+00:00",
+        "impact": "Medium",
+        "forecast": "54.1",
+        "previous": "54.1"
+    },
+    {
+        "title": "German Flash Services PMI",
+        "country": "EUR",
+        "date": "2026-09-23T11:30:00+00:00",
+        "impact": "Medium",
+        "forecast": "49.9",
+        "previous": "48.5"
+    },
+    {
+        "title": "Flash Manufacturing PMI",
+        "country": "EUR",
+        "date": "2026-09-23T12:00:00+00:00",
+        "impact": "Low",
+        "forecast": "52.6",
+        "previous": "52.8"
+    },
+    {
+        "title": "Flash Services PMI",
+        "country": "EUR",
+        "date": "2026-09-23T12:00:00+00:00",
+        "impact": "Low",
+        "forecast": "51.4",
+        "previous": "51.7"
+    },
+    {
+        "title": "Flash Manufacturing PMI",
+        "country": "GBP",
+        "date": "2026-09-23T12:30:00+00:00",
+        "impact": "Medium",
+        "forecast": "51.5",
+        "previous": "51.5"
+    },
+    {
+        "title": "Flash Services PMI",
+        "country": "GBP",
+        "date": "2026-09-23T12:30:00+00:00",
+        "impact": "Medium",
+        "forecast": "52.0",
+        "previous": "52.8"
+    },
+    {
+        "title": "German 30-y Bond Auction",
+        "country": "EUR",
+        "date": "2026-09-23T13:34:00+00:00",
+        "impact": "Low",
+        "forecast": "",
+        "previous": "3.90|2.4"
+    },
+    {
+        "title": "Flash Manufacturing PMI",
+        "country": "USD",
+        "date": "2026-09-23T17:45:00+00:00",
+        "impact": "Low",
+        "forecast": "53.6",
+        "previous": "53.2"
+    },
+    {
+        "title": "Flash Services PMI",
+        "country": "USD",
+        "date": "2026-09-23T17:45:00+00:00",
+        "impact": "Low",
+        "forecast": "55.8",
+        "previous": "56.8"
+    },
+    {
+        "title": "FOMC Member Barr Speaks",
+        "country": "USD",
+        "date": "2026-09-23T18:05:00+00:00",
+        "impact": "Low",
+        "forecast": "",
+        "previous": ""
+    },
+    {
+        "title": "Crude Oil Inventories",
+        "country": "USD",
+        "date": "2026-09-23T18:30:00+00:00",
+        "impact": "Low",
+        "forecast": "-0.6M",
+        "previous": "-0.6M"
+    }
+]
