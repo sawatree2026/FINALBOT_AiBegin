@@ -1,8 +1,0 @@
-{
-  "ID": "AUDUSD0830044402",
-  "symbol": "AUDUSD",
-  "action": "WAIT",
-  "expiry_minutes": 1,
-  "confidence_score": 45,
-  "reason_th": "ตลาดมีความเสี่ยงจากสัญญาณ Bull Trap และความสอดคล้องของกรอบเวลาต่ำเกินไป"
-}
