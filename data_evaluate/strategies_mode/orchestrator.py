@@ -874,8 +874,9 @@ class Orchestrator:
         close = pd.to_numeric(df["close"], errors="coerce")
         high = pd.to_numeric(df["high"], errors="coerce")
         low = pd.to_numeric(df["low"], errors="coerce")
-        ema5 = close.ewm(span=5, adjust=False).mean()
-        ema10 = close.ewm(span=10, adjust=False).mean()
+        # Believe contract: BB(20,2), Stochastic(13,10,3), and MA(3,6).
+        ema3 = close.ewm(span=3, adjust=False).mean()
+        ema6 = close.ewm(span=6, adjust=False).mean()
         ema20 = close.ewm(span=20, adjust=False).mean()
         middle = close.rolling(20).mean()
         std = close.rolling(20).std(ddof=0)
@@ -886,21 +887,32 @@ class Orchestrator:
         losses = (-delta.clip(upper=0)).rolling(14).mean()
         rs = gains / losses.replace(0, np.nan)
         rsi = (100 - (100 / (1 + rs))).fillna(50)
-        low14 = low.rolling(14).min()
-        high14 = high.rolling(14).max()
-        stoch_k = ((close - low14) / (high14 - low14).replace(0, np.nan) * 100).fillna(50)
+        low13 = low.rolling(13).min()
+        high13 = high.rolling(13).max()
+        raw_stoch = ((close - low13) / (high13 - low13).replace(0, np.nan) * 100).fillna(50)
+        stoch_k = raw_stoch.rolling(10).mean().fillna(raw_stoch)
         stoch_d = stoch_k.rolling(3).mean().fillna(stoch_k)
         macd = close.ewm(span=12, adjust=False).mean() - close.ewm(span=26, adjust=False).mean()
         macd_signal = macd.ewm(span=9, adjust=False).mean()
         last = lambda series, default=0.0: float(series.iloc[-1]) if pd.notna(series.iloc[-1]) else default
-        prev_fast, prev_slow = ema5.iloc[-2], ema10.iloc[-2]
-        curr_fast, curr_slow = ema5.iloc[-1], ema10.iloc[-1]
+        prev_fast, prev_slow = ema3.iloc[-2], ema6.iloc[-2]
+        curr_fast, curr_slow = ema3.iloc[-1], ema6.iloc[-1]
+        prev_k, prev_d = stoch_k.iloc[-2], stoch_d.iloc[-2]
+        curr_k, curr_d = stoch_k.iloc[-1], stoch_d.iloc[-1]
         golden_cross = prev_fast <= prev_slow and curr_fast > curr_slow
         death_cross = prev_fast >= prev_slow and curr_fast < curr_slow
+        stoch_cross_up = prev_k <= prev_d and curr_k > curr_d
+        stoch_cross_down = prev_k >= prev_d and curr_k < curr_d
+        stoch_cross_50_up = prev_k < 50 <= curr_k
+        stoch_cross_50_down = prev_k > 50 >= curr_k
+        stoch_tangled = bool((stoch_k.tail(3) - stoch_d.tail(3)).abs().max() < 2)
         return {
             "bias": "BULLISH" if last(close) >= last(ema20) else "BEARISH",
-            "ema5": last(ema5),
-            "ema10": last(ema10),
+            "ema3": last(ema3),
+            "ema6": last(ema6),
+            # Legacy aliases remain in the payload for existing consumers.
+            "ema5": last(ema3),
+            "ema10": last(ema6),
             "ema20": last(ema20),
             "bb_upper": last(upper),
             "bb_middle": last(middle),
@@ -915,10 +927,12 @@ class Orchestrator:
             "macd_signal": last(macd_signal),
             "macd_histogram": last(macd - macd_signal),
             "stoch_cross": (
-                "GOLDEN_CROSS" if last(stoch_k) > last(stoch_d)
-                else "DEATH_CROSS" if last(stoch_k) < last(stoch_d) else "NONE"
+                "GOLDEN_CROSS" if stoch_cross_up
+                else "DEATH_CROSS" if stoch_cross_down else "NONE"
             ),
-            "stoch_tangled": bool(abs(last(stoch_k) - last(stoch_d)) < 2),
+            "stoch_cross_50": "UP" if stoch_cross_50_up else "DOWN" if stoch_cross_50_down else "NONE",
+            "stoch_hook_confirmed": bool(stoch_cross_up or stoch_cross_down),
+            "stoch_tangled": stoch_tangled,
             "ma_cross": "GOLDEN_CROSS" if golden_cross else "DEATH_CROSS" if death_cross else "NONE",
             "ma_cross_confirmed": bool(golden_cross or death_cross),
         }
@@ -1019,9 +1033,9 @@ class Orchestrator:
         bullish_structure = trigger_direction in ("BULLISH", "UP", "UPTREND")
         bearish_structure = trigger_direction in ("BEARISH", "DOWN", "DOWNTREND")
 
-        hook_confirmed = (stoch_k >= stoch_d) and ((stoch_k >= 50 and bullish_structure) or (stoch_k <= 50 and bearish_structure))
-        kd_crossed = stoch_k >= stoch_d
-        crossed_50 = (stoch_k >= 50 and stoch_d < 50) or (stoch_k <= 50 and stoch_d > 50)
+        hook_confirmed = bool(s30.get("stoch_hook_confirmed", False))
+        kd_crossed = str(s30.get("stoch_cross", "NONE")).upper() != "NONE"
+        crossed_50 = str(s30.get("stoch_cross_50", "NONE")).upper() in {"UP", "DOWN"}
         is_surfing_extreme = (stoch_k <= 10 or stoch_k >= 90) and (stoch_d <= 20 or stoch_d >= 80)
 
         divergence_detected = bool(

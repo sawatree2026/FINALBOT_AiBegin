@@ -16,7 +16,8 @@ from . import (
     price_action,
     rsi,
     stochastic,
-    support_resistance_grid,
+    grid,
+    support_resistance,
 )
 
 def _read_fields(payload_path: str) -> Dict[str, str]:
@@ -77,7 +78,13 @@ def _secondary_conditions(fields: Dict[str, str], action: str) -> Dict[str, bool
     """Evaluate documentary confirmations without replacing Believe's core."""
     return {
         "price_action": price_action.evaluate(fields, action),
-        "grid_and_sr_clear": support_resistance_grid.evaluate(fields, action),
+        "grid_clear": grid.evaluate(fields, action),
+        "support_resistance_clear": support_resistance.evaluate(fields, action),
+        # Keep the legacy aggregate field for downstream consumers.
+        "grid_and_sr_clear": (
+            grid.evaluate(fields, action)
+            and support_resistance.evaluate(fields, action)
+        ),
         "divergence_aligned": divergence.evaluate(fields, action),
         "macd_aligned": macd.evaluate(fields, action),
         "rsi_safe": rsi.evaluate(fields, action),
@@ -116,6 +123,8 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
         if candidate in {"CALL", "PUT"}
         else {
             "price_action": False,
+            "grid_clear": False,
+            "support_resistance_clear": False,
             "grid_and_sr_clear": False,
             "divergence_aligned": False,
             "macd_aligned": False,
@@ -127,21 +136,19 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
     filters = {
         "grid_block": _bool(fields.get("believe_risk_grid_block")) is True,
         "gray_candle": _bool(fields.get("believe_risk_gray_candle")) is True,
+        "stoch_tangled": _bool(fields.get("believe_risk_sto_tangled", "")) is True,
         "trap": str(fields.get("believe_risk_trap_alert", "")).upper()
         not in {"", "NONE", "FALSE", "NO"},
         "room_to_run": _bool(fields.get("believe_risk_room_to_run_clear")),
     }
     filters_passed = not any(
-        (filters["grid_block"], filters["gray_candle"], filters["trap"])
+        (filters["grid_block"], filters["gray_candle"], filters["stoch_tangled"], filters["trap"])
     ) and filters["room_to_run"] is not False
+    # AP/NS, MACD, RSI, divergence, and price action are confirmations and
+    # diagnostics; Believe's entry contract is BB + STO + MA plus risk filters.
     action = (
         candidate
-        if (
-            directions_aligned
-            and all(core.values())
-            and all(secondary.values())
-            and filters_passed
-        )
+        if directions_aligned and all(core.values()) and filters_passed
         else "WAIT"
     )
     confidence = (

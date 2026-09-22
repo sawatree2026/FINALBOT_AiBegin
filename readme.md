@@ -136,15 +136,15 @@ Part boundaries are disk-only. DataFrames, payload dictionaries, and payload tex
 01:35:05 - Account: DEMO | Balance: $24.25
 01:35:05 - Economic Calendar loaded for today.
 01:35:11 - ML Brain connected successfully (Model: LIGHTGBM_CHRONOS)
-01:35:15 - Candle data validated (250 candles S30/M1/M5/M15): 4 pairs ready.
-01:35:15 - Awaiting next minute boundary for analysis cycle (Starts at 01:36:01)...
+01:35:15 - Candle data validated (250 candles S30/M1/M5): 4 pairs ready.
+01:35:15 - Awaiting next S30 boundary for analysis cycle (Starts at 01:35:31)...
 ```
 
 ---
 
 ## 🛡️ Strict System Disciplines (Core Rules)
 
-1. **Immutability of Part 1 & 2**: The `data_feed/` and `data_evaluate/` modules are 100% complete and **must not be modified**.
+1. **Part 1/2 contract**: `data_feed/` and `data_evaluate/` preserve the SSD boundary, timeframe contract, and 99-line payload schema; changes must remain compatible with those contracts.
 2. **Single Source of Truth (SSOT)**: No duplicate indicator calculations. All modules must reference the centralized `IndicatorStore`.
 3. **Single Gateway Authority**: Only the active mode's Part 2 `orchestrator.py` reads raw CSV files, and Part 3 reads the persisted payload through the mode's decision dispatcher.
 4. **99-Line Explicit Schema**: Prompt payload files must be **exactly 99 lines**, with a strict retention policy of the latest 30 files per asset.
