@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920005118",
+  "symbol": "AUDUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 78,
+  "reason_th": "โครงสร้างตลาดสะสมกำลังและมีสัญญาณ Bullish Divergence สนับสนุนทิศทางขาขึ้นตามกรอบเวลา M15"
+}

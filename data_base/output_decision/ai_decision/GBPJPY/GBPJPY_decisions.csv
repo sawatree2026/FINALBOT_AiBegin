@@ -1,0 +1,4 @@
+timestamp,ID,symbol,action,confidence_score,expiry_minutes,engine_used,reason_th
+2026-08-30T04:44:01.938724,GBPJPY0830044401,GBPJPY,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและราคากำลังทดสอบแนวรับสำคัญประกอบกับแท่งเทียนเป็นรูปแบบ Doji จึงควรหลีกเลี่ยงการเทรด
+2026-08-30T04:45:10.123874,GBPJPY0830044510,GBPJPY,CALL,75,2,AI (gemini-3.5-flash-lite),ราคาลงมาทดสอบโซนแนวรับและเกิดสัญญาณ Bear Trap พร้อมแรงซื้อดันกลับจากแท่งเทียน Doji ที่มีไส้ล่างยาว
+2026-08-30T04:46:27.800755,GBPJPY0830044627,GBPJPY,PUT,75,2,AI (gemini-3.5-flash-lite),โครงสร้างราคาและแนวโน้มหลักในทุก Timeframe เป็นขาลง (Bearish Bias) พร้อมสอดคล้องกับสัญญาณ MACD และค่าเฉลี่ยเคลื่อนที่

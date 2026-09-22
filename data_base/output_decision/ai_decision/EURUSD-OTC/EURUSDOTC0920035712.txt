@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920035712",
+  "symbol": "EURUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "โครงสร้างราคาขัดแย้งกันระหว่าง M15 ที่เป็นขาลงและบริบทตลาดที่เป็นการสะสมพลัง"
+}

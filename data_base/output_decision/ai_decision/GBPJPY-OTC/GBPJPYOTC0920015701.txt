@@ -1,0 +1,8 @@
+{
+  "ID": "GBPJPYOTC0920015701",
+  "symbol": "GBPJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 40,
+  "reason_th": "RSI และ Stoch อยู่ในเขต Overbought สูง ประกอบกับความเสี่ยงสูงและความผันผวนผิดปกติ ควรรอจังหวะย่อตัว"
+}

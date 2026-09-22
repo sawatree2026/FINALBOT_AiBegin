@@ -1,0 +1,8 @@
+{
+  "ID": "USDCADOTC0920015301",
+  "symbol": "USDCAD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "Stochastic ใน M1 ตัดลงและราคาอยู่ในกรอบ Sideway พร้อมความเสี่ยงการเปลี่ยนทิศทางสูง ควรรอดูก่อน"
+}

@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920035201",
+  "symbol": "EURUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "ตรวจพบภาวะ Bear Trap ที่แนวรับสำคัญและสัญญาณ Bullish Divergence อ่อนๆ ประกอบกับรูปแบบแท่งเทียนมี Lower Wick ยาวสนับสนุนการกลับตัวขึ้นระยะสั้น"
+}

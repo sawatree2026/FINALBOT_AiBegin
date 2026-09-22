@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSD0828090915",
+  "symbol": "EURUSD",
+  "action": "CALL",
+  "expiry_minutes": 2,
+  "confidence_score": 72,
+  "reason_th": "ราคาเข้าใกล้แนวรับ Bollinger Band ด้านล่างและเส้น Support ในภาวะ Sideway มีโอกาสรีบาวด์กลับตัวระยะสั้น"
+}

@@ -1,0 +1,28 @@
+Python 3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+= RESTART: E:\FINALBOT_Begin\runner.py
+17:29:17 - กำลังเชื่อมต่อโบรกเกอร์  | IQ Option
+17:29:20 - เชื่อมต่อ IQ Option สำเร็จ
+17:29:22 - ค้นหาและตรวจประเมินรายการสินทรัพย์ที่เหมาะสม
+17:29:24 - ส่งออกรายชื่อสินทรัพย์ที่เหมาะสมกับการเทรดแล้ว
+17:29:24 - ตรวจพบรายการสินทรัพย์ : EURUSD, EURGBP, GBPUSD, USDJPY
+17:29:24 - Time Sync : -0.631s
+17:29:24 - บัญชี DEMO | ยอดเงิน: $9908.30
+17:29:24 - ระบบรายงานข่าวเศรษฐกิจและการเงิน : วันศุกร์ ที่ 4 กันยายน 2569 : By Athena(Ai)
+17:29:26 - เชื่อมต่อสมองกล ML สำเร็จ (Model: PURE_LIGHTGBM [LightGBM + Chronos] พร้อมใช้งาน)
+17:29:26 - กำลังเตรียมข้อมูลสินทรัพย์ 4 รายการ : EURUSD, EURGBP, GBPUSD, USDJPY
+17:29:30 - ตรวจสอบข้อมูลแท่งเทียนสมบูรณ์ (M1/M5/M15 ครบ 250 แท่ง) : พร้อม 4 รายการ
+17:29:30 - เข้าสู่การวิเคราะห์สัญญาณในอีก 30.6 วินาที  (เริ่ม 17:30:01)
+17:30:04 - [EURUSD:1.16185] [EURGBP:0.85894] [GBPUSD:1.35265] [USDJPY:156.33500] :: TOTAL=$9908.30
+17:30:04 - [Bot Evaluate Market Complete 4 asset]
+17:30:10 - [AI Analysis] [EURGBP:WAIT(45%)] [USDJPY:WAIT(45%)] [GBPUSD:WAIT(45%)] [EURUSD:WAIT(55%)]
+17:31:18 - [EURUSD:1.16179] [EURGBP:0.85893] [GBPUSD:1.35263] [USDJPY:156.34100] :: TOTAL=$9908.30
+17:31:19 - [Bot Evaluate Market Complete 4 asset]
+17:31:19 - [AI Analysis] [USDJPY:WAIT(45%)] [EURGBP:WAIT(45%)] [EURUSD:WAIT(50%)] [GBPUSD:WAIT(45%)]
+17:32:03 - [EURUSD:1.16185] [EURGBP:0.85894] [GBPUSD:1.35267] [USDJPY:156.32000] :: TOTAL=$9908.30
+17:32:03 - [Bot Evaluate Market Complete 4 asset]
+17:32:03 - [AI Analysis] [GBPUSD:WAIT(45%)] [USDJPY:WAIT(45%)] [EURUSD:WAIT(50%)] [EURGBP:WAIT(45%)]
+17:33:03 - [EURUSD:1.16192] [EURGBP:0.85886] [GBPUSD:1.35285] [USDJPY:156.28750] :: TOTAL=$9908.30
+17:33:03 - [Bot Evaluate Market Complete 4 asset]
+17:33:03 - [AI Analysis] [USDJPY:WAIT(45%)] [EURGBP:WAIT(45%)] [GBPUSD:WAIT(45%)] [EURUSD:WAIT(50%)]

@@ -1,0 +1,205 @@
+timestamp,ID,symbol,action,confidence_score,expiry_minutes,engine_used,reason_th
+2026-08-26 18:36:05+00:00,AUDUSDOTC0826183605,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:37:01+00:00,AUDUSDOTC0826183701,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:38:01+00:00,AUDUSDOTC0826183801,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:39:01+00:00,AUDUSDOTC0826183901,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:40:06+00:00,AUDUSDOTC0826184006,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:41:03+00:00,AUDUSDOTC0826184103,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:42:03+00:00,AUDUSDOTC0826184203,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:43:01+00:00,AUDUSDOTC0826184301,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:44:02+00:00,AUDUSDOTC0826184402,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:45:01+00:00,AUDUSDOTC0826184501,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:46:04+00:00,AUDUSDOTC0826184604,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:47:03+00:00,AUDUSDOTC0826184703,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:49:03+00:00,AUDUSDOTC0826184903,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:50:03+00:00,AUDUSDOTC0826185003,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:51:05+00:00,AUDUSDOTC0826185105,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:52:05+00:00,AUDUSDOTC0826185205,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:53:03+00:00,AUDUSDOTC0826185303,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:54:01+00:00,AUDUSDOTC0826185401,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:55:02+00:00,AUDUSDOTC0826185502,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:56:03+00:00,AUDUSDOTC0826185603,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:57:01+00:00,AUDUSDOTC0826185701,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:58:01+00:00,AUDUSDOTC0826185801,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:59:02+00:00,AUDUSDOTC0826185902,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 19:00:08+00:00,AUDUSDOTC0826190008,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 19:01:01+00:00,AUDUSDOTC0826190101,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 19:02:01+00:00,AUDUSDOTC0826190201,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 19:03:03+00:00,AUDUSDOTC0826190303,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 19:04:02+00:00,AUDUSDOTC0826190402,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 19:05:02+00:00,AUDUSDOTC0826190502,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 19:06:03+00:00,AUDUSDOTC0826190603,AUDUSD-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 19:09:06+00:00,AUDUSDOTC0826190906,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 85%) ค่ะ
+2026-08-26 19:10:01+00:00,AUDUSDOTC0826191001,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 85%) ค่ะ
+2026-08-26 19:11:04+00:00,AUDUSDOTC0826191104,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 85%) ค่ะ
+2026-08-26 19:12:02+00:00,AUDUSDOTC0826191202,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 85%) ค่ะ
+2026-08-26 19:13:01+00:00,AUDUSDOTC0826191301,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 85%) ค่ะ
+2026-08-26 19:16:06+00:00,AUDUSDOTC0826191606,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:17:01+00:00,AUDUSDOTC0826191701,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:18:02+00:00,AUDUSDOTC0826191802,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:19:02+00:00,AUDUSDOTC0826191902,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:20:02+00:00,AUDUSDOTC0826192002,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:21:06+00:00,AUDUSDOTC0826192106,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:22:01+00:00,AUDUSDOTC0826192201,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:23:02+00:00,AUDUSDOTC0826192302,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:24:01+00:00,AUDUSDOTC0826192401,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:25:02+00:00,AUDUSDOTC0826192502,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:26:02+00:00,AUDUSDOTC0826192602,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:27:03+00:00,AUDUSDOTC0826192703,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:28:01+00:00,AUDUSDOTC0826192801,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:29:01+00:00,AUDUSDOTC0826192901,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:30:12+00:00,AUDUSDOTC0826193012,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:30:12+00:00,AUDUSDOTC0826193012,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:31:01+00:00,AUDUSDOTC0826193101,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:31:02+00:00,AUDUSDOTC0826193102,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:32:02+00:00,AUDUSDOTC0826193202,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:32:02+00:00,AUDUSDOTC0826193202,AUDUSD-OTC,WAIT,0.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 0% < 80%) ค่ะ
+2026-08-26 19:32:06+00:00,AUDUSDOTC0826193206,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 19:34:06+00:00,AUDUSDOTC0826193406,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 19:35:06+00:00,AUDUSDOTC0826193506,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 19:36:03+00:00,AUDUSDOTC0826193603,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 19:37:01+00:00,AUDUSDOTC0826193701,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 19:38:01+00:00,AUDUSDOTC0826193801,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 19:39:01+00:00,AUDUSDOTC0826193901,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 19:40:01+00:00,AUDUSDOTC0826194001,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 19:41:03+00:00,AUDUSDOTC0826194103,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 19:42:01+00:00,AUDUSDOTC0826194201,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 19:56:01+00:00,AUDUSDOTC0826195601,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 19:57:04+00:00,AUDUSDOTC0826195704,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 19:58:03+00:00,AUDUSDOTC0826195803,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 19:59:01+00:00,AUDUSDOTC0826195901,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 20:00:01+00:00,AUDUSDOTC0826200001,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 20:06:00+00:00,AUDUSDOTC0826200600,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 20:06:36+00:00,AUDUSDOTC0826200636,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:07:05+00:00,AUDUSDOTC0826200705,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:08:03+00:00,AUDUSDOTC0826200803,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:09:03+00:00,AUDUSDOTC0826200903,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:10:01+00:00,AUDUSDOTC0826201001,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:11:05+00:00,AUDUSDOTC0826201105,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:12:01+00:00,AUDUSDOTC0826201201,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:13:01+00:00,AUDUSDOTC0826201301,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:14:03+00:00,AUDUSDOTC0826201403,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:15:08+00:00,AUDUSDOTC0826201508,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:16:01+00:00,AUDUSDOTC0826201601,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:17:01+00:00,AUDUSDOTC0826201701,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:18:01+00:00,AUDUSDOTC0826201801,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:19:03+00:00,AUDUSDOTC0826201903,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:20:03+00:00,AUDUSDOTC0826202003,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:21:01+00:00,AUDUSDOTC0826202101,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:22:01+00:00,AUDUSDOTC0826202201,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:23:02+00:00,AUDUSDOTC0826202302,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:24:02+00:00,AUDUSDOTC0826202402,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:25:03+00:00,AUDUSDOTC0826202503,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:26:01+00:00,AUDUSDOTC0826202601,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:27:02+00:00,AUDUSDOTC0826202702,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:28:01+00:00,AUDUSDOTC0826202801,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:29:01+00:00,AUDUSDOTC0826202901,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:30:04+00:00,AUDUSDOTC0826203004,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:31:01+00:00,AUDUSDOTC0826203101,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:31:09+00:00,AUDUSDOTC0826203109,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:32:02+00:00,AUDUSDOTC0826203202,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:32:06+00:00,AUDUSDOTC0826203206,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:33:01+00:00,AUDUSDOTC0826203301,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:33:02+00:00,AUDUSDOTC0826203302,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:34:02+00:00,AUDUSDOTC0826203402,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:34:02+00:00,AUDUSDOTC0826203402,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:35:01+00:00,AUDUSDOTC0826203501,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:35:03+00:00,AUDUSDOTC0826203503,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:36:02+00:00,AUDUSDOTC0826203602,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:36:06+00:00,AUDUSDOTC0826203606,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:37:01+00:00,AUDUSDOTC0826203701,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:37:03+00:00,AUDUSDOTC0826203703,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:38:01+00:00,AUDUSDOTC0826203801,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:38:01+00:00,AUDUSDOTC0826203801,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:39:01+00:00,AUDUSDOTC0826203901,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:40:01+00:00,AUDUSDOTC0826204001,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:40:03+00:00,AUDUSDOTC0826204003,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:41:01+00:00,AUDUSDOTC0826204101,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:41:04+00:00,AUDUSDOTC0826204104,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:42:01+00:00,AUDUSDOTC0826204201,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 20:42:01+00:00,AUDUSDOTC0826204201,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:43:01+00:00,AUDUSDOTC0826204301,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:43:01+00:00,AUDUSDOTC0826204301,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:44:01+00:00,AUDUSDOTC0826204401,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:44:01+00:00,AUDUSDOTC0826204401,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:45:02+00:00,AUDUSDOTC0826204502,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:45:04+00:00,AUDUSDOTC0826204504,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:46:02+00:00,AUDUSDOTC0826204602,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:46:08+00:00,AUDUSDOTC0826204608,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-26 20:47:01+00:00,AUDUSDOTC0826204701,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-26 20:47:02+00:00,AUDUSDOTC0826204702,AUDUSD-OTC,WAIT,56.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 56% < 80%) ค่ะ
+2026-08-27 20:42:20+00:00,AUDUSDOTC0827204220,AUDUSD-OTC,WAIT,59.0,5,ML (A),Chronos: ทรงกราฟไซด์เวย์ไร้ทิศทางชัดเจน (ความมั่นใจ 59% < 80%) ค่ะ
+2026-08-27 20:42:24+00:00,AUDUSDOTC0827204224,AUDUSD-OTC,WAIT,39.0,5,ML (B),LightGBM: สภาวะตลาดยังไม่ชัดเจน (ความมั่นใจ 39% < 80%) ค่ะ
+2026-08-27 20:42:24+00:00,AUDUSDOTC0827204224,AUDUSD-OTC,WAIT,59.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (59%) แต่ Model B ให้ WAIT (39%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-27T03:47:01.855386,AUDUSDOTC0827034701,AUDUSD-OTC,PUT,88,3,AI (gemini-3.5-flash-lite),แนวโน้มขาลงชัดเจนและมีแรงขายต่อเนื่องจาก EMA
+2026-08-31T01:36:08.469076,AUDUSDOTC0831013608,AUDUSD-OTC,WAIT,56.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:37:02.574462,AUDUSDOTC0831013702,AUDUSD-OTC,WAIT,56.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:38:03.098995,AUDUSDOTC0831013803,AUDUSD-OTC,WAIT,56.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:39:03.303019,AUDUSDOTC0831013903,AUDUSD-OTC,WAIT,56.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:40:09.314090,AUDUSDOTC0831014009,AUDUSD-OTC,WAIT,59.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:40:14.230342,AUDUSDOTC0831014014,AUDUSD-OTC,WAIT,59.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:41:01.945864,AUDUSDOTC0831014101,AUDUSD-OTC,WAIT,59.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:41:03.107872,AUDUSDOTC0831014103,AUDUSD-OTC,WAIT,59.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:42:02.913082,AUDUSDOTC0831014202,AUDUSD-OTC,WAIT,59.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:42:03.422911,AUDUSDOTC0831014203,AUDUSD-OTC,WAIT,59.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:43:02.852186,AUDUSDOTC0831014302,AUDUSD-OTC,WAIT,59.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:43:03.360673,AUDUSDOTC0831014303,AUDUSD-OTC,WAIT,59.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:44:02.535689,AUDUSDOTC0831014402,AUDUSD-OTC,WAIT,59.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:44:03.089313,AUDUSDOTC0831014403,AUDUSD-OTC,WAIT,59.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-08-31T01:45:10.101559,AUDUSDOTC0831014510,AUDUSD-OTC,WAIT,60.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:45:10.814064,AUDUSDOTC0831014510,AUDUSD-OTC,WAIT,60.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:46:03.308105,AUDUSDOTC0831014603,AUDUSD-OTC,WAIT,60.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:46:03.553063,AUDUSDOTC0831014603,AUDUSD-OTC,WAIT,60.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:47:02.628986,AUDUSDOTC0831014702,AUDUSD-OTC,WAIT,60.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:47:03.117702,AUDUSDOTC0831014703,AUDUSD-OTC,WAIT,60.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:48:02.176248,AUDUSDOTC0831014802,AUDUSD-OTC,WAIT,60.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:48:03.286335,AUDUSDOTC0831014803,AUDUSD-OTC,WAIT,60.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:49:03.148792,AUDUSDOTC0831014903,AUDUSD-OTC,WAIT,60.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:49:03.460854,AUDUSDOTC0831014903,AUDUSD-OTC,WAIT,60.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:50:03.341988,AUDUSDOTC0831015003,AUDUSD-OTC,WAIT,64.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:50:03.920100,AUDUSDOTC0831015003,AUDUSD-OTC,WAIT,64.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:51:02.037320,AUDUSDOTC0831015102,AUDUSD-OTC,WAIT,64.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:51:03.095987,AUDUSDOTC0831015103,AUDUSD-OTC,WAIT,64.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:52:02.114617,AUDUSDOTC0831015202,AUDUSD-OTC,WAIT,64.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:52:03.201579,AUDUSDOTC0831015203,AUDUSD-OTC,WAIT,64.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:53:03.105928,AUDUSDOTC0831015303,AUDUSD-OTC,WAIT,64.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:54:02.057435,AUDUSDOTC0831015402,AUDUSD-OTC,WAIT,64.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:54:03.257287,AUDUSDOTC0831015403,AUDUSD-OTC,WAIT,64.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:55:03.088217,AUDUSDOTC0831015503,AUDUSD-OTC,WAIT,63.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-08-31T01:55:03.526636,AUDUSDOTC0831015503,AUDUSD-OTC,WAIT,63.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 2): LightGBM ให้ CALL แต่ Chronos ปฏิเสธ (WAIT) ➡️ ปัดตกเป็น WAIT ค่ะ
+2026-09-20T00:25:01.842090,AUDUSDOTC0920002501,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และมีความขัดแย้งของกรอบเวลาหลักกับระยะสั้น ความเสี่ยงสูงควรหลีกเลี่ยง
+2026-09-20T00:26:15.018336,AUDUSDOTC0920002615,AUDUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),โครงสร้างตลาดทุก Timeframe เป็น Bullish และเกิดการสะสมตัวพร้อมเบรกเอาท์ขึ้น
+2026-09-20T00:27:03.451837,AUDUSDOTC0920002703,AUDUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักและ M5 เป็น Bullish พร้อมการสะสมราคา สนับสนุนโอกาสปรับตัวขึ้นต่อ
+2026-09-20T00:28:01.834199,AUDUSDOTC0920002801,AUDUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),โครงสร้างตลาดหลักเป็นขาขึ้นและอยู่ในช่วงสะสมพลัง สนับสนุนโอกาสเบรกเอาท์ขึ้นต่อตาม M5 และ M15
+2026-09-20T00:29:02.958767,AUDUSDOTC0920002902,AUDUSD-OTC,CALL,78,5,AI (gemini-3.5-flash-lite),โครงสร้างราคาและแนวโน้มทุกกรอบเวลาสอดคล้องไปในทิศทางขาขึ้นพร้อมสัญญาณสะสมกำลังซื้อ
+2026-09-20T00:30:09.416573,AUDUSDOTC0920003009,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความเสี่ยงจากรูปแบบ Doji และสัญญาณเตือน Bull Trap ในกรอบเวลา M5 ควรออรอดูความชัดเจน
+2026-09-20T00:31:01.879938,AUDUSDOTC0920003101,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),แม้แนวโน้มหลักเป็นขาขึ้น แต่สัญญาณ M5 มีความเสี่ยง Bull Trap และรูปแบบ Doji แสดงความลังเลสูง ควรรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T00:32:01.936543,AUDUSDOTC0920003201,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),แม้แนวโน้มหลักจะเป็นขาขึ้นแต่เกิดสัญญาณเตือน Bull Trap และรูปแบบราคาเป็น Doji ความลังเลสูงจึงควรหลีกเลี่ยง
+2026-09-20T00:33:03.068593,AUDUSDOTC0920003303,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),มีสัญญาณเตือนภาวะ Bull Trap และความไร้ประสิทธิภาพของราคาในกรอบ M5 จึงควรหลีกเลี่ยงการเข้าเทรด
+2026-09-20T00:34:03.326678,AUDUSDOTC0920003403,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีความเสี่ยงจาก Bull Trap ประกอบกับแท่งเทียน M1 ปิดตัวเป็นลบ จึงควรรอดูสถานการณ์
+2026-09-20T00:35:03.759524,AUDUSDOTC0920003503,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีความเสี่ยงจาก Bull Trap ประกอบกับการเคลื่อนไหวที่ไร้ทิศทางชัดเจนในกรอบเวลา M1
+2026-09-20T00:36:07.146980,AUDUSDOTC0920003607,AUDUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งกันของกรอบเวลาและพฤติกรรมราคาแบบไร้ทิศทางชัดเจน ควรหลีกเลี่ยง
+2026-09-20T00:37:06.758644,AUDUSDOTC0920003706,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งกันของกรอบเวลาและเกิดสัญญาณ Bull Trap บริเวณแนวรับสำคัญ ควรรอความชัดเจนเพิ่มขึ้น
+2026-09-20T00:38:07.941663,AUDUSDOTC0920003807,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและเกิดภาวะ Bull Trap ประกอบกับทิศทางขัดแย้งกันระหว่าง M5 และ M15
+2026-09-20T00:39:03.837097,AUDUSDOTC0920003903,AUDUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งกันของกรอบเวลาและเกิดภาวะ Bull Trap จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T00:40:08.406555,AUDUSDOTC0920004008,AUDUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),Stochastic ใน M1 อยู่ในเขต Oversold อย่างมากและกำลังจะตัดขึ้น ประกอบกับราคาอยู่ใกล้แนวรับล่างของกรอบไซด์เวย์เหมาะกับการทำกำไรแบบ Mean-reversion
+2026-09-20T00:41:06.778980,AUDUSDOTC0920004106,AUDUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),ราคาใน M1 อยู่ใกล้เขต Oversold (Stoch K ต่ำกว่า 10) และทดสอบแนวรับ M5 BB ล่าง มีโอกาสรีบาวด์กลับตัวระยะสั้น
+2026-09-20T00:42:10.618300,AUDUSDOTC0920004210,AUDUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),Stochastic ใน M1 Oversold อย่างรุนแรงและใกล้แนวรับ M5 BB Lower เหมาะแก่การทำ Mean-Reversion
+2026-09-20T00:43:06.304599,AUDUSDOTC0920004306,AUDUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),Stoch M1 อยู่ในเขต Oversold อย่างมากและชนแนวรับ M5 เหมาะแก่การเทรดรีบาวด์ระยะสั้น
+2026-09-20T00:44:08.267181,AUDUSDOTC0920004408,AUDUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และมีความขัดแย้งของกรอบเวลาหลักกับระยะสั้น จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T00:45:23.718192,AUDUSDOTC0920004523,AUDUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),ราคาเกิดรูปแบบ Hammer ที่แนวรับ Pivot และ Stoch M1 ตัดขึ้นจากเขต Oversold ในภาวะ Sideway Range
+2026-09-20T00:46:10.729322,AUDUSDOTC0920004610,AUDUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะSidewayและความสอดคล้องของหลายกรอบเวลาต่ำเกินไปควรหลีกเลี่ยง
+2026-09-20T00:47:04.994005,AUDUSDOTC0920004704,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความขัดแย้งของกรอบเวลาหลักกับระยะสั้น ความเสี่ยงสูงเกินไปจึงควรรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T00:48:12.016637,AUDUSDOTC0920004812,AUDUSD-OTC,CALL,65,5,AI (gemini-3.5-flash-lite),เกิดแท่งเทียน Hammer บริเวณแนวรับและมีสัญญาณ Bear Trap ในตลาดแบบ Sideway Range เหมาะกับการเปิด CALL เพื่อเก็งกำไรการรีบาวด์ระยะสั้น
+2026-09-20T00:49:12.055477,AUDUSDOTC0920004912,AUDUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และความขัดแย้งของกรอบเวลาสูง ความเสี่ยงมากเกินไป
+2026-09-20T00:50:06.096320,AUDUSDOTC0920005006,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความขัดแย้งของ Timeframe สูง ความเสี่ยงมากเกินไป
+2026-09-20T00:51:18.455877,AUDUSDOTC0920005118,AUDUSD-OTC,CALL,78,5,AI (gemini-3.5-flash-lite),โครงสร้างตลาดสะสมกำลังและมีสัญญาณ Bullish Divergence สนับสนุนทิศทางขาขึ้นตามกรอบเวลา M15
+2026-09-20T00:52:11.807160,AUDUSDOTC0920005211,AUDUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในช่วงสะสมพลังพร้อมรูปแบบ Morning Star และสัญญาณ Bear Trap สนับสนุนทิศทางขาขึ้นตาม M15
+2026-09-20T00:53:10.864489,AUDUSDOTC0920005310,AUDUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมกำลังและมีสัญญาณ Bullish Bias ร่วมกับ Bear Trap และ Morning Star สนับสนุนทิศทางขาขึ้น
+2026-09-20T00:54:05.790430,AUDUSDOTC0920005405,AUDUSD-OTC,CALL,72,5,AI (gemini-3.5-flash-lite),โครงสร้างราคา M15 และ M5 มีความลำเอียงขาขึ้น พร้อมรูปแบบ Morning Star และสัญญาณ Bear Trap สนับสนุนการกลับตัวขึ้น
+2026-09-20T00:55:20.576599,AUDUSDOTC0920005520,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและไร้ทิศทางชัดเจน ความสอดคล้องของกรอบเวลาต่ำเกินไปจึงควรหลีกเลี่ยง
+2026-09-20T00:56:12.365252,AUDUSDOTC0920005612,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีความขัดแย้งของกรอบเวลาหลักกับระยะสั้น ความเสี่ยงสูงจึงควรหลีกเลี่ยง
+2026-09-20T00:57:04.802652,AUDUSDOTC0920005704,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และความสอดคล้องของกรอบเวลาต่ำเกินไปเพื่อความปลอดภัย
+2026-09-20T00:58:11.220756,AUDUSDOTC0920005811,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและความขัดแย้งของกรอบเวลาสูง ความเสี่ยงมากเกินไป ควรอทิศทางที่ชัดเจนกว่านี้
+2026-09-20T00:59:11.767843,AUDUSDOTC0920005911,AUDUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและไร้ทิศทางชัดเจน ความสอดคล้องของหลายกรอบเวลามีค่าน้อยเกินไป
+2026-09-20T01:00:08.540650,AUDUSDOTC0920010008,AUDUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และความขัดแย้งของกรอบเวลาสูง ความเสี่ยงมากเกินไป

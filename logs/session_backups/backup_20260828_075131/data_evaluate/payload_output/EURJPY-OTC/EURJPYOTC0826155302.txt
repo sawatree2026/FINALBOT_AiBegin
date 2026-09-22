@@ -1,0 +1,98 @@
+ID:EURJPYOTC0826155302
+meta:
+  timestamp: '2026-08-26T15:53:02.849032'
+  symbol: EURJPY-OTC
+  session: LONDON_OPEN
+  m1_open: 185.311705
+  m1_age: 61519
+  m1_quality: FRESH
+  m5_open: 185.391175
+  m5_age: 388845
+  m5_quality: FRESH
+market_context:
+  state: ACCUMULATION
+  description: Smart money accumulation. Bullish bias, look for breakout.
+  volatility_regime: HIGH
+  news_impact: NONE_OTC
+  expected_volatility_%: 0.068
+timeframes:
+  m1:
+    m1_last_candle: BEARISH
+    m1_ema5: 185.325597
+    m1_ema20: 185.393412
+    m1_rsi: 35.15
+    m1_stoch_k: 10.04
+    m1_stoch_d: 20.0
+    m1_macd: -0.04851
+    m1_macd_signal: -0.039024
+    ohlcv:
+      open: 185.311705
+      high: 185.311705
+      low: 185.281325
+      close: 185.298305
+      volume: NONE_OTC
+  m5:
+    m5_bias: BULLISH
+    m5_ema5: 185.429701
+    m5_ema10: 185.419297
+    m5_ema20: 185.356637
+    m5_ema50: 185.25053
+    m5_bb_upper: 185.670756
+    m5_bb_lower: 184.959612
+    m5_bb_width: 0.711144
+    m5_rsi: 53.62
+    m5_stoch_k: 55.78
+    m5_stoch_d: 62.8
+    m5_macd: 0.080056
+    m5_macd_signal: 0.07737
+    m5_adx: 22.44
+    m5_atr: 0.125432
+    m5_support: 185.322512
+    m5_resistance: 185.430382
+    m5_pivot: 185.369538
+    ohlcv:
+      open: 185.391175
+      high: 185.416565
+      low: 185.308695
+      close: 185.383355
+      volume: NONE_OTC
+  m15:
+    m15_bias: BULLISH
+price_action:
+  m5_pa_pattern: DOJI
+  m5_pa_last_candle_bias: BEARISH
+  m5_pa_body_strength: WEAK
+  m5_pa_wick_dominance: LOW_WICK
+  m5_pa_momentum_bias: NEUTRAL
+  m5_pa_move_quality: CHAOTIC
+  m5_pa_trap_alert: REJECTION
+  m5_pa_sr_interaction: TESTING_PIVOT
+  m5_pa_divergence_alert: NONE
+  m5_pa_divergence_strength: 0
+  m5_pa_market_behavior: NEUTRAL
+  m5_pa_hesitation_score: 16
+  m5_pa_path_efficiency: POOR
+volume:
+  m5_tick_volume: 1.0
+  m5_volume_momentum: NO_VOLUME_DATA
+  m5_volume_vs_average: 1.0
+analysis:
+  m5_trend_direction: NONE
+  m5_trend_type: CHOPPY
+  m5_trend_strength_score: 20
+  mtf_alignment_%: 33
+  m5_compression_quality_%: 27.94
+  m5_exhaustion_risk_%: 30
+  m5_bos_detected: false
+  mtf_conflict_score: 0
+  m5_trend_continuation_%: 65
+  m5_transition_risk: MEDIUM
+  m5_persistence_score: 76
+decision_layer:
+  dl_tradeable: true
+  dl_stability_score: 33
+  dl_quality_score: 52
+  dl_risk_level: MEDIUM
+  ai_confidence_score: รอการวิเคราะห์จาก AI
+  ai_suggested_expiry_minutes: รอการวิเคราะห์จาก AI
+  ai_suggested_action: รอการวิเคราะห์จาก AI

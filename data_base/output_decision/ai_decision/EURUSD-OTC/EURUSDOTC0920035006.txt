@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920035006",
+  "symbol": "EURUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงจากความขัดแย้งของ Timeframe จึงควรหลีกเลี่ยงการเทรด"
+}

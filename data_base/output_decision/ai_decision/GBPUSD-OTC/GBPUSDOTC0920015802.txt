@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSDOTC0920015802",
+  "symbol": "GBPUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 40,
+  "reason_th": "ตลาดอยู่ในภาวะ Sideway Range และมีความขัดแย้งของกรอบเวลาขนาดใหญ่ ความเสี่ยงสูงควรอดทนรอสัญญาณที่ชัดเจนกว่านี้"
+}

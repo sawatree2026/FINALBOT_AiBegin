@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSD0828091222",
+  "symbol": "EURUSD",
+  "action": "CALL",
+  "expiry_minutes": 2,
+  "confidence_score": 72,
+  "reason_th": "ราคาเข้าใกล้แนวรับ Bollinger Lower และ Stochastic อยู่ในเขต Oversold มีโอกาสเกิดการรีบาวด์ระยะสั้นตามกรอบ Sideway Range"
+}

@@ -1,0 +1,8 @@
+{
+  "ID": "GBPJPY0830044627",
+  "symbol": "GBPJPY",
+  "action": "PUT",
+  "expiry_minutes": 2,
+  "confidence_score": 75,
+  "reason_th": "โครงสร้างราคาและแนวโน้มหลักในทุก Timeframe เป็นขาลง (Bearish Bias) พร้อมสอดคล้องกับสัญญาณ MACD และค่าเฉลี่ยเคลื่อนที่"
+}

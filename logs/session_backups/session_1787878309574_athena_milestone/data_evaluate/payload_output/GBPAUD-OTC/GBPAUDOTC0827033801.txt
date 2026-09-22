@@ -1,0 +1,98 @@
+ID:GBPAUDOTC0827033801
+meta:
+  timestamp: '2026-08-27T03:38:01.836798'
+  symbol: GBPAUD-OTC
+  session: NY_AFTERNOON
+  m1_open: 1.870845
+  m1_age: 119603
+  m1_quality: FRESH
+  m5_open: 1.873885
+  m5_age: 362000
+  m5_quality: FRESH
+market_context:
+  state: ACCUMULATION
+  description: Smart money accumulation. Bullish bias, look for breakout.
+  volatility_regime: LOW
+  news_impact: NONE_OTC
+  expected_volatility_%: 0.09
+timeframes:
+  m1:
+    m1_last_candle: BEARISH
+    m1_ema5: 1.871316
+    m1_ema20: 1.872328
+    m1_rsi: 33.61
+    m1_stoch_k: 8.48
+    m1_stoch_d: 12.35
+    m1_macd: -0.000252
+    m1_macd_signal: 0.000138
+    ohlcv:
+      open: 1.870845
+      high: 1.870915
+      low: 1.870135
+      close: 1.870385
+      volume: NONE_OTC
+  m5:
+    m5_bias: BEARISH
+    m5_ema5: 1.872566
+    m5_ema10: 1.872414
+    m5_ema20: 1.872955
+    m5_ema50: 1.876421
+    m5_bb_upper: 1.874139
+    m5_bb_lower: 1.869734
+    m5_bb_width: 0.004405
+    m5_rsi: 40.27
+    m5_stoch_k: 77.31
+    m5_stoch_d: 85.39
+    m5_macd: -0.001137
+    m5_macd_signal: -0.001651
+    m5_adx: 31.5
+    m5_atr: 0.00169
+    m5_support: 1.870178
+    m5_resistance: 1.873248
+    m5_pivot: 1.872032
+    ohlcv:
+      open: 1.873885
+      high: 1.873885
+      low: 1.870815
+      close: 1.871395
+      volume: NONE_OTC
+  m15:
+    m15_bias: BEARISH
+price_action:
+  m5_pa_pattern: NONE
+  m5_pa_last_candle_bias: BEARISH
+  m5_pa_body_strength: WEAK
+  m5_pa_wick_dominance: HIGH_LOWER_WICK
+  m5_pa_momentum_bias: NEUTRAL
+  m5_pa_move_quality: CHAOTIC
+  m5_pa_trap_alert: BULL_TRAP
+  m5_pa_sr_interaction: TESTING_PIVOT
+  m5_pa_divergence_alert: NONE
+  m5_pa_divergence_strength: 0
+  m5_pa_market_behavior: NEUTRAL
+  m5_pa_hesitation_score: 20
+  m5_pa_path_efficiency: POOR
+volume:
+  m5_tick_volume: 1.0
+  m5_volume_momentum: NO_VOLUME_DATA
+  m5_volume_vs_average: 1.0
+analysis:
+  m5_trend_direction: DOWN
+  m5_trend_type: CHOPPY
+  m5_trend_strength_score: 100
+  mtf_alignment_%: 66
+  m5_compression_quality_%: 100.0
+  m5_exhaustion_risk_%: 30
+  m5_bos_detected: false
+  mtf_conflict_score: 100
+  m5_trend_continuation_%: 55
+  m5_transition_risk: MEDIUM
+  m5_persistence_score: 70
+decision_layer:
+  dl_tradeable: true
+  dl_stability_score: 66
+  dl_quality_score: 57
+  dl_risk_level: MEDIUM
+  ai_confidence_score: รอการวิเคราะห์จาก AI
+  ai_suggested_expiry_minutes: รอการวิเคราะห์จาก AI
+  ai_suggested_action: รอการวิเคราะห์จาก AI

@@ -1,0 +1,8 @@
+{
+  "ID": "GBPJPYOTC0920015301",
+  "symbol": "GBPJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "RSI และ Stoch ใน M1 และ M5 อยู่ในเขต Overbought สูงมาก ประกอบกับภาวะตลาดเป็น Sideway Range เสี่ยงสูงที่จะเกิดการกลับตัว"
+}

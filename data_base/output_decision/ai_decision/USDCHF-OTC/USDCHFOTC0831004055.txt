@@ -1,0 +1,8 @@
+{
+  "ID": "USDCHFOTC0831004055",
+  "symbol": "USDCHF-OTC",
+  "action": "CALL",
+  "expiry_minutes": 2,
+  "confidence_score": 65,
+  "reason_th": "แนวโน้มหลักเป็นขาขึ้นและราคากำลังทดสอบแนวรับสำคัญในสภาวะสะสมตัวของตลาด"
+}

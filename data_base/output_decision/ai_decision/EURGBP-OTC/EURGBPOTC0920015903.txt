@@ -1,0 +1,8 @@
+{
+  "ID": "EURGBPOTC0920015903",
+  "symbol": "EURGBP-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ตลาดอยู่ในภาวะสะสมตัวและมีความเสี่ยงสูงเนื่องจากความผันผวนและสภาวะราคาที่ยังไม่มีทิศทางชัดเจน"
+}

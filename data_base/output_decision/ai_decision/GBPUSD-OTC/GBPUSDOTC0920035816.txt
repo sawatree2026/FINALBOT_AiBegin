@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSDOTC0920035816",
+  "symbol": "GBPUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "M5 RSI และ Stoch อยู่ในเขต overbought สูงมาก ประกอบกับมีความเสี่ยงเรื่อง transition risk สูง ควรออรอดoจังหวะ"
+}

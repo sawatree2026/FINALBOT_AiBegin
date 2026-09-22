@@ -1,0 +1,8 @@
+{
+  "ID": "USDCADOTC0920035006",
+  "symbol": "USDCAD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 40,
+  "reason_th": "ตลาดอยู่ในภาวะ Sideway และมีความขัดแย้งของกรอบเวลาสูง ความเสี่ยงมากเกินไป"
+}

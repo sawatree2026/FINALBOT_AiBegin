@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSDOTC0920035505",
+  "symbol": "GBPUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 55,
+  "reason_th": "M5 มีภาวะ Overbought สูงและเกิดสัญญาณ Rejection ที่แนวต้าน ควรอดทนรอจังหวะย่อตัวเพื่อความปลอดภัย"
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "timestamp": 1788497341828,
+    "type": "user_prompt",
+    "operation": "backup_user_prompt",
+    "sessionId": "session_1788497341827_1w2d78ke",
+    "taskContent": "ตอบ JSON: {\\ test\\: 1}",
+    "taskLength": 22,
+    "createdAt": "2026-09-04T04:49:01.828Z"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSDOTC0920041501",
+  "symbol": "GBPUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 78,
+  "reason_th": "แนวโน้มหลักและ M5 เป็นขาขึ้นชัดเจน ประกอบกับราคาลงมาทดสอบโซนแนวรับและ Stoch ใน M1 อยู่ในเขต Oversold เตรียมดีดตัวกลับ"
+}

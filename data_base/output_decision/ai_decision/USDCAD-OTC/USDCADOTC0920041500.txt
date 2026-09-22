@@ -1,0 +1,8 @@
+{
+  "ID": "USDCADOTC0920041500",
+  "symbol": "USDCAD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "RSI ใน M1 และ M5 อยู่ในเขต Oversold จัด พร้อมโอกาสรีบาวด์ขึ้นทางเทคนิค"
+}

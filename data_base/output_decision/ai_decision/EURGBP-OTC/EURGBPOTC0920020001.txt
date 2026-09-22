@@ -1,0 +1,8 @@
+{
+  "ID": "EURGBPOTC0920020001",
+  "symbol": "EURGBP-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "โครงสร้างราคา M1 และ M15 มีแนวโน้ม Bullish ชัดเจน พร้อมกับการสะสมตัวของ Smart Money สนับสนุนการปรับตัวขึ้นต่อ"
+}

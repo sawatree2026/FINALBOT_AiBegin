@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSDOTC0920042418",
+  "symbol": "GBPUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 40,
+  "reason_th": "ตลาดมีความผันผวนสูงและโครงสร้างราคาขัดแย้งกันระหว่างกรอบเวลา M1 และ M15 ควรออรอดูความชัดเจน"
+}

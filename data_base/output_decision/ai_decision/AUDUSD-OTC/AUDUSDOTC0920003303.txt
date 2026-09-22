@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920003303",
+  "symbol": "AUDUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "มีสัญญาณเตือนภาวะ Bull Trap และความไร้ประสิทธิภาพของราคาในกรอบ M5 จึงควรหลีกเลี่ยงการเข้าเทรด"
+}

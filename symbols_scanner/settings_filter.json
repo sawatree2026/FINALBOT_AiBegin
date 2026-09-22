@@ -1,0 +1,9 @@
+{
+  "_comment": "FINALBOT Settings - Symbols Scanner Configuration",
+  "max_symbols": 4,
+  "account": {
+    "account_type": "DEMO",
+    "iq_email": "venuz20152565@gmail.com",
+    "iq_password": "2856101607mM@"
+  }
+}

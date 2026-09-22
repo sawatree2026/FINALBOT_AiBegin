@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920004306",
+  "symbol": "AUDUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "Stoch M1 อยู่ในเขต Oversold อย่างมากและชนแนวรับ M5 เหมาะแก่การเทรดรีบาวด์ระยะสั้น"
+}

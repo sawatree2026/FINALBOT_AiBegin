@@ -1,0 +1,8 @@
+{
+  "ID": "AUDJPYOTC0920012101",
+  "symbol": "AUDJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "RSI และ Stoch อยู่ในเขต Overbought สูงมากพร้อมความเสี่ยงการกลับตัวในกรอบ Sideway"
+}

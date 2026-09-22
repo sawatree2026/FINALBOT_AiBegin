@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920004008",
+  "symbol": "AUDUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 75,
+  "reason_th": "Stochastic ใน M1 อยู่ในเขต Oversold อย่างมากและกำลังจะตัดขึ้น ประกอบกับราคาอยู่ใกล้แนวรับล่างของกรอบไซด์เวย์เหมาะกับการทำกำไรแบบ Mean-reversion"
+}

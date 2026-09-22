@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSD0830044510",
+  "symbol": "GBPUSD",
+  "action": "WAIT",
+  "expiry_minutes": 1,
+  "confidence_score": 45,
+  "reason_th": "ข้อมูลตลาดมีความขัดแย้งกันและคุณภาพข้อมูลเก่าเกินไป (STALE) ควรอรอดูความชัดเจน"
+}

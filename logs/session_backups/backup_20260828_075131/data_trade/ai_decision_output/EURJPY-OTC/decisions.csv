@@ -1,0 +1,15 @@
+timestamp,ID,symbol,action,confidence_score,expiry_minutes,engine_used,reason_th
+2026-08-26 18:07:02+00:00,EURJPYOTC0826180702,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:08:09+00:00,EURJPYOTC0826180809,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:09:02+00:00,EURJPYOTC0826180902,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:10:02+00:00,EURJPYOTC0826181002,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:11:08+00:00,EURJPYOTC0826181108,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:12:02+00:00,EURJPYOTC0826181202,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:13:02+00:00,EURJPYOTC0826181302,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:14:02+00:00,EURJPYOTC0826181402,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:15:12+00:00,EURJPYOTC0826181512,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:16:03+00:00,EURJPYOTC0826181603,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:17:03+00:00,EURJPYOTC0826181703,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:18:04+00:00,EURJPYOTC0826181804,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:19:02+00:00,EURJPYOTC0826181902,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ
+2026-08-26 18:20:03+00:00,EURJPYOTC0826182003,EURJPY-OTC,WAIT,0.0,5,ML (AB),Dual-Brain AB ขัดแย้ง: Model A ให้ WAIT (0%) แต่ Model B ให้ WAIT (0%) ➡️ สั่ง WAIT เพื่อความปลอดภัยค่ะ

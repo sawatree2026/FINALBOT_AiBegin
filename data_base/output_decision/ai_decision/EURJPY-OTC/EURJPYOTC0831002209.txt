@@ -1,0 +1,8 @@
+{
+  "ID": "EURJPYOTC0831002209",
+  "symbol": "EURJPY-OTC",
+  "action": "PUT",
+  "expiry_minutes": 3,
+  "confidence_score": 75,
+  "reason_th": "แนวโน้มหลักใน M5 และ M15 เป็นขาลงชัดเจน ประกอบกับราคาอยู่ใต้เส้น EMA และมีการทดสอบแนวต้าน Pivot จึงมีโอกาสปรับตัวลงต่อ"
+}

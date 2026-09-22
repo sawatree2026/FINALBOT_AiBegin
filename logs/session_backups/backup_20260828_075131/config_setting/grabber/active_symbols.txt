@@ -1,0 +1,236 @@
+======================================================================
+  IQ OPTION ULTIMATE ASSET & MARKET REPORT (ดึงข้อมูลเมื่อ: 2026-08-26 03:19:29)
+  สินทรัพย์ทั้งหมดในระบบ: 631 | 🟢 พร้อมเทรดจริงทันที: 169 รายการ
+======================================================================
+
+======================================================================
+🟢 [หมวดที่ 1] สินทรัพย์ที่เปิดรับออเดอร์จริง 100% ณ วินาทีนี้ (169 รายการ):
+======================================================================
+
+--- 💱 สกุลเงินปกติ (Forex Standard) [0 คู่พร้อมเทรด] ---
+  (ขณะนี้ปิดให้บริการ)
+
+--- 🌐 สกุลเงิน OTC (Forex OTC) [84 คู่พร้อมเทรด] ---
+  • EURUSD-OTC         | Turbo: 87.0%  | Binary: 85.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • EURGBP-OTC         | Turbo: 87.0%  | Binary: 83.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • USDCHF-OTC         | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • EURJPY-OTC         | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • GBPUSD-OTC         | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • GBPJPY-OTC         | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • AUDCAD-OTC         | Turbo: 87.0%  | Binary: 85.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • AUDJPY-OTC         | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • AUDCHF-OTC         | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • HBARUSD-OTC        | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • MCDON-OTC          | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • COKE-OTC           | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • INTEL-OTC          | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • APPLE-OTC          | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • NZDUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDZAR-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDHKD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDINR-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • FB-OTC             | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • SpaceX-OTC         | Turbo: 84.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDCOP-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDCLP-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • AMZN/ALIBABA-OTC   | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • GS-OTC             | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDTHB-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • ALIBABA-OTC        | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • EURTHB-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDAED-OTC         | Turbo: 84.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • NVDA-OTC           | Turbo: 84.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • CHFJPY-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDPLN-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • GBPAUD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDDOP-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • HYPE-OTC           | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • OpenAI-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • SNAP-OTC           | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • EURCHF-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • EURAUD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDBDT-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDTRY-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDBRL-OTC         | Turbo: 84.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • BIDU-OTC           | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDARS-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • EURNZD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • KLARNA-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • GBPCHF-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • LUNA-OTC           | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • AUDNZD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • CADJPY-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • CADCHF-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • AMZN/EBAY-OTC      | Turbo: 84.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • JPM-OTC            | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • PENUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • EURCAD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • TESLA-OTC          | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • GOOGLE/MSFT-OTC    | Turbo: 85.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDIDR-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • GBPNZD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • AIG-OTC            | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDMYR-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • GBPCAD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • Anthropic-OTC      | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • NZDJPY-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDCAD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • NIKE-OTC           | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • WDC-OTC            | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • NZDCAD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDMXN-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • AUDUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • FWONA-OTC          | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • PLTR-OTC           | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • BCHUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDNGN-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • GOOGLE-OTC         | Turbo: 85.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDBOB-OTC         | Turbo: 82.0%  | Binary: 85.0%  | ช่องทางแนะนำ: BINARY (85.0%)
+  • USDPHP-OTC         | Turbo: 82.0%  | Binary: 85.0%  | ช่องทางแนะนำ: BINARY (85.0%)
+  • AMAZON-OTC         | Turbo: 82.0%  | Binary: 85.0%  | ช่องทางแนะนำ: BINARY (85.0%)
+  • USDVND-OTC         | Turbo: 82.0%  | Binary: 85.0%  | ช่องทางแนะนำ: BINARY (85.0%)
+  • USDJPY-OTC         | Turbo: ปิด    | Binary: 84.0%  | ช่องทางแนะนำ: BINARY (84.0%)
+  • CASINOS-OTC        | Turbo: 82.0%  | Binary: ปิด    | ช่องทางแนะนำ: TURBO (82.0%)
+  • MAGNIFICENT7-OTC   | Turbo: 82.0%  | Binary: ปิด    | ช่องทางแนะนำ: TURBO (82.0%)
+  • AIRLINES-OTC       | Turbo: 82.0%  | Binary: ปิด    | ช่องทางแนะนำ: TURBO (82.0%)
+  • CANNABIS-OTC       | Turbo: 82.0%  | Binary: ปิด    | ช่องทางแนะนำ: TURBO (82.0%)
+  • CARDANO-OTC        | Turbo: 82.0%  | Binary: ปิด    | ช่องทางแนะนำ: TURBO (82.0%)
+
+--- 📈 ดัชนีและกองทุน ETF (Indices & ETFs - 24 ชม.) [20 คู่พร้อมเทรด] ---
+  • USNDAQ100-OTC      | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • JAPAN225:N         | Turbo: 87.0%  | Binary: 87.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • JP225-OTC          | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • US2000:N           | Turbo: 85.0%  | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • FR40-OTC           | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • US30:N             | Turbo: 86.0%  | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • USNDAQ100:N        | Turbo: 86.0%  | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • Nvidia-op          | Turbo: ปิด    | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • USDSGD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • SP35-OTC           | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • US100/JP225-OTC    | Turbo: 84.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • HK33-OTC           | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USDSAR-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • EU50-OTC           | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • GER30-OTC          | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • US30-OTC           | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • UK100-OTC          | Turbo: 82.0%  | Binary: 85.0%  | ช่องทางแนะนำ: BINARY (85.0%)
+  • GER30/UK100-OTC    | Turbo: 84.0%  | Binary: 84.0%  | ช่องทางแนะนำ: TURBO (84.0%)
+  • SP500-OTC          | Turbo: 82.0%  | Binary: 83.0%  | ช่องทางแนะนำ: BINARY (83.0%)
+  • AUS200-OTC         | Turbo: 82.0%  | Binary: 83.0%  | ช่องทางแนะนำ: BINARY (83.0%)
+
+--- 🪙 คริปโตเคอเรนซี (Crypto) [33 คู่พร้อมเทรด] ---
+  • PENGUUSD-OTC       | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • RAYDIUMUSD-OTC     | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • FETUSD-OTC         | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • RENDERUSD-OTC      | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • SUIUSD-OTC         | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • LTCUSD-OTC         | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • ONDOUSD-OTC        | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • TAOUSD-OTC         | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • DYDXUSD-OTC        | Turbo: 87.0%  | Binary: 86.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • BTCUSD-op          | Turbo: ปิด    | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • BTCUSD-OTC-op      | Turbo: 87.0%  | Binary: ปิด    | ช่องทางแนะนำ: TURBO (87.0%)
+  • ETHUSD-op          | Turbo: ปิด    | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • SHIBUSD-OTC        | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • JUPUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • ATOMUSD-OTC        | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • ARBUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • LABUBUUSD-OTC      | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • TRUMPUSD-OTC       | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • SATSUSD-OTC        | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • WIFUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • JPYTHB-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • BONKUSD-OTC        | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • XRPUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • FARTCOINUSD-OTC    | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • SEIUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • DASHUSD-OTC        | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • EOSUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • DOTUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • PEPEUSD-OTC        | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • WLDUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • TRON-OTC           | Turbo: 82.0%  | Binary: ปิด    | ช่องทางแนะนำ: TURBO (82.0%)
+  • SOLUSD-OTC         | Turbo: 82.0%  | Binary: ปิด    | ช่องทางแนะนำ: TURBO (82.0%)
+  • ETHUSD-OTC         | Turbo: 82.0%  | Binary: ปิด    | ช่องทางแนะนำ: TURBO (82.0%)
+
+--- 🛢️ สินค้าโภคภัณฑ์ (Commodities - ทองคำ/น้ำมัน) [18 คู่พร้อมเทรด] ---
+  • XAU/XAG            | Turbo: 87.0%  | Binary: 88.0%  | ช่องทางแนะนำ: BINARY (88.0%)
+  • XAGUSD-op          | Turbo: 87.0%  | Binary: 87.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • XAUUSD-OTC         | Turbo: 87.0%  | Binary: 85.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • UKOUSD-op          | Turbo: 87.0%  | Binary: 87.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • USOUSD-op          | Turbo: 87.0%  | Binary: 87.0%  | ช่องทางแนะนำ: TURBO (87.0%)
+  • XAUUSD-op          | Turbo: 85.0%  | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • COFFEE-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • USOUSD-OTC         | Turbo: 84.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • COTTON-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • XAGUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • XNGUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • SUGAR-OTC          | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • XPTUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • UKOUSD-OTC         | Turbo: 84.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • XPDUSD-OTC         | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • COCOA-OTC          | Turbo: 82.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • XAU/XAG-OTC        | Turbo: 84.0%  | Binary: 86.0%  | ช่องทางแนะนำ: BINARY (86.0%)
+  • URANIUM-OTC        | Turbo: 82.0%  | Binary: ปิด    | ช่องทางแนะนำ: TURBO (82.0%)
+
+--- 🏢 หุ้นสหรัฐฯ (US Stocks) [6 คู่พร้อมเทรด] ---
+  • EXY                | Turbo: ปิด    | Binary: 88.0%  | ช่องทางแนะนำ: BINARY (88.0%)
+  • SPX/Gold           | Turbo: 87.0%  | Binary: 88.0%  | ช่องทางแนะนำ: BINARY (88.0%)
+  • DXY                | Turbo: ปิด    | Binary: 88.0%  | ช่องทางแนะนำ: BINARY (88.0%)
+  • BXY                | Turbo: ปิด    | Binary: 88.0%  | ช่องทางแนะนำ: BINARY (88.0%)
+  • AXY                | Turbo: ปิด    | Binary: 88.0%  | ช่องทางแนะนำ: BINARY (88.0%)
+  • USSPX500:N         | Turbo: 86.0%  | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+
+--- ⚡ สัญญาอนุพันธ์พิเศษ (Special -op Contracts) [8 คู่พร้อมเทรด] ---
+  • SpaceX-op          | Turbo: 80.0%  | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • Magnificent7-op    | Turbo: 86.0%  | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • APPLE-op           | Turbo: ปิด    | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • FACEBOOK-op        | Turbo: ปิด    | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • GOOGLE-op          | Turbo: ปิด    | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • AMAZON-op          | Turbo: ปิด    | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • MSFT-op            | Turbo: ปิด    | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+  • TESLA-op           | Turbo: ปิด    | Binary: 87.0%  | ช่องทางแนะนำ: BINARY (87.0%)
+
+======================================================================
+🟡 [หมวดที่ 2] สินทรัพย์ที่มี Payout แต่รอเวลาเปิดตลาด / Suspended (105 รายการ):
+======================================================================
+  • SPY                | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • IWM                | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • GDX                | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • XLK                | Payout ในระบบ: 86.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • XLE                | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • XLU                | Payout ในระบบ: 86.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • XLY                | Payout ในระบบ: 86.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • SQQQ               | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • SMH                | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • DIA                | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • TLT                | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • SDS                | Payout ในระบบ: 86.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • US30/JP225-OTC     | Payout ในระบบ: 85.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • IOTAUSD-OTC        | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • GRTUSD-OTC         | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • NZDCHF-OTC         | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • GBPUSD-op          | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • SNDK-OTC           | Payout ในระบบ: 86.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • USDNOK-OTC         | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • LINKUSD-OTC        | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • META/GOOGLE-OTC    | Payout ในระบบ: 86.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • USDJPY-op          | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • MELANIAUSD-OTC     | Payout ในระบบ: 86.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • EURTHB-op          | Payout ในระบบ: 86.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  • GBPCHF-op          | Payout ในระบบ: 87.0% | สถานะ: รอเปิดตลาดตามตารางเวลาโบรกเกอร์
+  ... และอีก 80 รายการ
+
+======================================================================
+📋 JSON Configuration Ready (คัดลอกใส่ settings.json ได้ทันที):
+======================================================================
+"symbols": [
+  "EXY",
+  "SPX/Gold",
+  "DXY",
+  "BXY",
+  "AXY",
+  "XAU/XAG",
+  "EURUSD-OTC",
+  "EURGBP-OTC"
+]

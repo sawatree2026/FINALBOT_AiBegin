@@ -1,0 +1,8 @@
+{
+  "ID": "EURJPYOTC0830234538",
+  "symbol": "EURJPY-OTC",
+  "action": "PUT",
+  "expiry_minutes": 2,
+  "confidence_score": 75,
+  "reason_th": "ราคาอยู่ในแนวโน้มขาลงใน Timeframe ใหญ่และกำลังทดสอบแนวต้านสำคัญโดยมีสัญญาณ Divergence สนับสนุนการกลับตัวลง"
+}

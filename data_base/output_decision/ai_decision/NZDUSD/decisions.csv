@@ -1,0 +1,5 @@
+timestamp,ID,symbol,action,confidence_score,expiry_minutes,engine_used,reason_th
+2026-09-04T22:02:09.387798,NZDUSD0904220209,NZDUSD,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T22:03:01.862898,NZDUSD0904220301,NZDUSD,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T22:04:02.047249,NZDUSD0904220402,NZDUSD,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ
+2026-09-04T22:05:08.402954,NZDUSD0904220508,NZDUSD,WAIT,45.0,5,ML (DUAL_BRAIN),Dual-Brain [LightGBM + Chronos] (ด่าน 1): LightGBM สั่ง WAIT ปัดตกทันทีค่ะ

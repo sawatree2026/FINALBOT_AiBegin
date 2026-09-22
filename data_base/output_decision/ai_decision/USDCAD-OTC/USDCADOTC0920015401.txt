@@ -1,0 +1,8 @@
+{
+  "ID": "USDCADOTC0920015401",
+  "symbol": "USDCAD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "แม้แนวโน้มหลักจะเป็นขาขึ้น แต่ M1 เพิ่งปิดแท่งแดงและมีความเสี่ยงสูงจากการเปลี่ยนผ่านของราคา"
+}

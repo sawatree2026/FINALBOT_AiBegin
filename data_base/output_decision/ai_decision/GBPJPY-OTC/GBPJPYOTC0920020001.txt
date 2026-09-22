@@ -1,0 +1,8 @@
+{
+  "ID": "GBPJPYOTC0920020001",
+  "symbol": "GBPJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ความเสี่ยงสูงและ RSI ใน M1 และ M5 อยู่ในเขต Overbought ประกอบกับความผันผวนสูง จึงควรอดทนรอสัญญาณที่ชัดเจนกว่านี้"
+}

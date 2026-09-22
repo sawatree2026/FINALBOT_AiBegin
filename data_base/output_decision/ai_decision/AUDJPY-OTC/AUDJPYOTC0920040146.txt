@@ -1,0 +1,8 @@
+{
+  "ID": "AUDJPYOTC0920040146",
+  "symbol": "AUDJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 40,
+  "reason_th": "โครงสร้าง Multi-Timeframe ขัดแย้งกันระหว่าง M1 (Bullish) และ M15 (Bearish) รวมถึงความผันผวนแบบไร้ทิศทางชัดเจน"
+}

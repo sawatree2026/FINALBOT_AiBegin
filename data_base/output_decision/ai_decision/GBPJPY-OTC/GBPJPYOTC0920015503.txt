@@ -1,0 +1,8 @@
+{
+  "ID": "GBPJPYOTC0920015503",
+  "symbol": "GBPJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ความเสี่ยงสูงและความผันผวนรุนแรงประกอบกับสัญญาณ M1 เริ่มพักตัว แนะนำให้รอจังหวะที่ชัดเจนกว่านี้"
+}

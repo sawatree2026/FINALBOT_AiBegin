@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920005520",
+  "symbol": "AUDUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ตลาดอยู่ในภาวะสะสมตัวและไร้ทิศทางชัดเจน ความสอดคล้องของกรอบเวลาต่ำเกินไปจึงควรหลีกเลี่ยง"
+}

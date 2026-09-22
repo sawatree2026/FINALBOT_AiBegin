@@ -1,0 +1,8 @@
+{
+  "ID": "AUDUSDOTC0920005405",
+  "symbol": "AUDUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 72,
+  "reason_th": "โครงสร้างราคา M15 และ M5 มีความลำเอียงขาขึ้น พร้อมรูปแบบ Morning Star และสัญญาณ Bear Trap สนับสนุนการกลับตัวขึ้น"
+}

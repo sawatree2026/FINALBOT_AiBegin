@@ -1,0 +1,8 @@
+{
+  "ID": "EURGBPOTC0831004958",
+  "symbol": "EURGBP-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 1,
+  "confidence_score": 45,
+  "reason_th": "ราคาเข้าใกล้แนวต้านสำคัญและเกิดรูปแบบ Shooting Star ในสภาวะตลาดที่ไม่มีทิศทางชัดเจน จึงควรเฝ้าระวังการกลับตัวก่อนตัดสินใจ"
+}

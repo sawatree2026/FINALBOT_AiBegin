@@ -1,0 +1,8 @@
+{
+  "ID": "USDCHFOTC0831004713",
+  "symbol": "USDCHF-OTC",
+  "action": "CALL",
+  "expiry_minutes": 2,
+  "confidence_score": 65,
+  "reason_th": "แนวโน้มหลักเป็นขาขึ้นและราคากำลังทดสอบระดับ Pivot ในสภาวะสะสมตัว มีโอกาสดีดตัวขึ้นตามเทรนด์ในระยะสั้น"
+}

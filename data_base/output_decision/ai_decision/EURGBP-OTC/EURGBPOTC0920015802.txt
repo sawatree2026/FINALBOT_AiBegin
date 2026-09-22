@@ -1,0 +1,8 @@
+{
+  "ID": "EURGBPOTC0920015802",
+  "symbol": "EURGBP-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูง ควรหลีกเลี่ยงการเทรด"
+}

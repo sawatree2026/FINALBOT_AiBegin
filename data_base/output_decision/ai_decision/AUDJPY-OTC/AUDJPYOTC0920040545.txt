@@ -1,0 +1,8 @@
+{
+  "ID": "AUDJPYOTC0920040545",
+  "symbol": "AUDJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 40,
+  "reason_th": "ความขัดแย้งของแนวโน้มระหว่าง M15 ที่เป็นขาลงและบริบทตลาดที่เป็นการสะสมทำให้สัญญาณไม่ชัดเจน"
+}

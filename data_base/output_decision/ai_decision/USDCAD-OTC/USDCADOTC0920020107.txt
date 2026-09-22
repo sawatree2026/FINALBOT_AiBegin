@@ -1,0 +1,8 @@
+{
+  "ID": "USDCADOTC0920020107",
+  "symbol": "USDCAD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ตลาดอยู่ในภาวะ Sideway Range และมีความเสี่ยงสูงจาก Bull Trap จึงควรหลีกเลี่ยงการเทรด"
+}

@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSDOTC0920034901",
+  "symbol": "GBPUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "RSI และ Stoch อยู่ในเขต Overbought สูงมากเสี่ยงต่อการกลับตัว"
+}

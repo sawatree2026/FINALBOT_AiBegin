@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSDOTC0920035713",
+  "symbol": "GBPUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "M5 RSI และ Stoch อยู่ในเขต Overbought สูง ประกอบกับ M1 เกิดแท่งเทียนกลับตัวและมีความเสี่ยงสูงในการเปลี่ยนเทรนด์ระยะสั้น"
+}

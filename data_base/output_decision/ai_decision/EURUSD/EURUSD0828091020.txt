@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSD0828091020",
+  "symbol": "EURUSD",
+  "action": "WAIT",
+  "expiry_minutes": 1,
+  "confidence_score": 45,
+  "reason_th": "ตลาดอยู่ในภาวะ Sideway Range และมีพฤติกรรมการเคลื่อนไหวแบบไร้ทิศทางชัดเจน ความเสี่ยงสูงควรอดทนรอสัญญาณที่ดีกว่า"
+}

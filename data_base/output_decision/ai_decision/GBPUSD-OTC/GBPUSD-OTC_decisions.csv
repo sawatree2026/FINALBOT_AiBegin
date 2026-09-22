@@ -1,0 +1,300 @@
+timestamp,action,expiry,confidence,ID
+2026-08-23 10:05:17+00:00,PUT,2,75,GBPUSDOTC0823100517
+2026-08-23 10:06:03+00:00,WAIT,1,45,GBPUSDOTC0823100603
+2026-08-23 10:07:03+00:00,CALL,2,75,GBPUSDOTC0823100703
+2026-08-23 10:08:03+00:00,PUT,2,78,GBPUSDOTC0823100803
+2026-08-23 10:09:03+00:00,PUT,2,75,GBPUSDOTC0823100903
+2026-08-23 10:10:03+00:00,PUT,2,65,GBPUSDOTC0823101003
+2026-08-23 10:11:03+00:00,WAIT,1,45,GBPUSDOTC0823101103
+2026-08-23 10:12:03+00:00,WAIT,1,45,GBPUSDOTC0823101203
+2026-08-23 10:13:02+00:00,PUT,2,68,GBPUSDOTC0823101302
+2026-08-23 10:14:03+00:00,PUT,2,75,GBPUSDOTC0823101403
+2026-08-23 10:15:11+00:00,CALL,2,85,GBPUSDOTC0823101511
+2026-08-23 10:16:03+00:00,CALL,2,82,GBPUSDOTC0823101603
+2026-08-23 10:17:03+00:00,PUT,2,75,GBPUSDOTC0823101703
+2026-08-23 10:18:03+00:00,CALL,2,75,GBPUSDOTC0823101803
+2026-08-23 10:19:03+00:00,WAIT,1,45,GBPUSDOTC0823101903
+2026-08-23 10:20:04+00:00,WAIT,1,45,GBPUSDOTC0823102004
+2026-08-23 10:21:03+00:00,WAIT,1,45,GBPUSDOTC0823102103
+2026-08-23 10:22:03+00:00,WAIT,1,45,GBPUSDOTC0823102203
+2026-08-23 10:23:03+00:00,WAIT,1,45,GBPUSDOTC0823102303
+2026-08-23 10:24:03+00:00,WAIT,1,45,GBPUSDOTC0823102403
+2026-08-23 10:25:04+00:00,WAIT,1,45,GBPUSDOTC0823102504
+2026-08-23 10:26:07+00:00,WAIT,1,45,GBPUSDOTC0823102607
+2026-08-23 10:27:03+00:00,WAIT,1,45,GBPUSDOTC0823102703
+2026-08-23 10:28:03+00:00,WAIT,1,45,GBPUSDOTC0823102803
+2026-08-23 10:29:02+00:00,WAIT,1,45,GBPUSDOTC0823102902
+2026-08-23 10:30:04+00:00,WAIT,1,45,GBPUSDOTC0823103004
+2026-08-23 10:31:03+00:00,WAIT,1,45,GBPUSDOTC0823103103
+2026-08-23 10:32:03+00:00,WAIT,1,45,GBPUSDOTC0823103203
+2026-08-23 10:33:03+00:00,WAIT,1,45,GBPUSDOTC0823103303
+2026-08-23 10:34:03+00:00,WAIT,1,45,GBPUSDOTC0823103403
+2026-08-23 10:35:03+00:00,WAIT,1,45,GBPUSDOTC0823103503
+2026-08-23 10:36:03+00:00,WAIT,1,45,GBPUSDOTC0823103603
+2026-08-23 10:37:03+00:00,WAIT,1,45,GBPUSDOTC0823103703
+2026-08-23 10:38:02+00:00,WAIT,1,45,GBPUSDOTC0823103802
+2026-08-23 10:39:03+00:00,WAIT,1,45,GBPUSDOTC0823103903
+2026-08-23 10:40:03+00:00,WAIT,1,40,GBPUSDOTC0823104003
+2026-08-23 10:41:03+00:00,WAIT,1,45,GBPUSDOTC0823104103
+2026-08-23 10:42:03+00:00,WAIT,1,45,GBPUSDOTC0823104203
+2026-08-23 10:43:03+00:00,WAIT,1,45,GBPUSDOTC0823104303
+2026-08-23 10:44:03+00:00,CALL,2,75,GBPUSDOTC0823104403
+2026-08-23 10:45:04+00:00,WAIT,1,45,GBPUSDOTC0823104504
+2026-08-23 10:46:03+00:00,WAIT,1,45,GBPUSDOTC0823104603
+2026-08-23 10:47:03+00:00,WAIT,1,45,GBPUSDOTC0823104703
+2026-08-23 10:48:03+00:00,WAIT,1,45,GBPUSDOTC0823104803
+2026-08-23 10:49:02+00:00,WAIT,1,35,GBPUSDOTC0823104902
+2026-08-23 10:50:04+00:00,WAIT,1,45,GBPUSDOTC0823105004
+2026-08-23 10:51:03+00:00,WAIT,1,45,GBPUSDOTC0823105103
+2026-08-23 11:07:10+00:00,WAIT,1,45,GBPUSDOTC0823110710
+2026-08-23 11:08:03+00:00,WAIT,1,45,GBPUSDOTC0823110803
+2026-08-23 11:09:03+00:00,WAIT,1,45,GBPUSDOTC0823110903
+2026-08-23 11:10:12+00:00,CALL,2,75,GBPUSDOTC0823111012
+2026-08-23 11:11:03+00:00,CALL,2,75,GBPUSDOTC0823111103
+2026-08-23 11:12:03+00:00,CALL,2,68,GBPUSDOTC0823111203
+2026-08-23 11:13:03+00:00,CALL,2,75,GBPUSDOTC0823111303
+2026-08-23 11:14:03+00:00,CALL,2,75,GBPUSDOTC0823111403
+2026-08-23 11:15:12+00:00,CALL,2,65,GBPUSDOTC0823111512
+2026-08-23 11:16:03+00:00,WAIT,1,45,GBPUSDOTC0823111603
+2026-08-23 11:17:03+00:00,WAIT,1,45,GBPUSDOTC0823111703
+2026-08-23 11:18:03+00:00,WAIT,1,45,GBPUSDOTC0823111803
+2026-08-23 11:19:03+00:00,PUT,3,65,GBPUSDOTC0823111903
+2026-08-23 11:20:04+00:00,CALL,2,68,GBPUSDOTC0823112004
+2026-08-23 11:21:03+00:00,CALL,2,72,GBPUSDOTC0823112103
+2026-08-23 11:22:03+00:00,CALL,3,65,GBPUSDOTC0823112203
+2026-08-23 11:23:03+00:00,CALL,3,65,GBPUSDOTC0823112303
+2026-08-23 11:24:03+00:00,PUT,3,65,GBPUSDOTC0823112403
+2026-08-23 11:25:03+00:00,CALL,2,78,GBPUSDOTC0823112503
+2026-08-23 11:26:03+00:00,CALL,3,78,GBPUSDOTC0823112603
+2026-08-23 11:27:03+00:00,CALL,3,78,GBPUSDOTC0823112703
+2026-08-30T14:33:10.530347,GBPUSDOTC0830143310,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งระหว่างกรอบเวลาและมีความเสี่ยงสูง ควรหลีกเลี่ยงการเทรด
+2026-08-30T14:34:02.788609,GBPUSDOTC0830143402,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดมีความเสี่ยงสูงและขาดความสอดคล้องในหลายกรอบเวลา ควรหลีกเลี่ยงการเทรด
+2026-08-30T14:34:09.103234,GBPUSDOTC0830143409,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดมีความเสี่ยงสูงและสัญญาณขัดแย้งกันระหว่างโครงสร้างสะสมราคาและแนวโน้มระยะสั้น
+2026-08-30T14:35:10.141275,GBPUSDOTC0830143510,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),สัญญาณความขัดแย้งระหว่าง M5 และ M15 ที่เป็นขาลงกับบริบทสะสมราคา ทำให้ความเสี่ยงสูงควรอดทนรอ
+2026-08-30T14:35:11.118084,GBPUSDOTC0830143511,GBPUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),Stochastic ใน M1 และ M5 อยู่ในเขต Oversold และเกิดแท่งเทียน Hammer ทดสอบแนวรับสำคัญ มีโอกาสรีบาวด์ระยะสั้น
+2026-08-30T14:36:02.692432,GBPUSDOTC0830143602,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีความขัดแย้งของกรอบเวลา M5 และ M15 จึงควรหลีกเลี่ยงการเทรด
+2026-08-30T14:36:06.382556,GBPUSDOTC0830143606,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),โครงสร้างตลาดมีความขัดแย้งกันระหว่าง M5 และ M15 รวมถึงความเสี่ยงในการเปลี่ยนเทรนด์สูง ควรออรอดfor สัญญาณที่ชัดเจนกว่านี้
+2026-08-30T14:37:05.718607,GBPUSDOTC0830143705,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีความขัดแย้งของไทม์เฟรมสูง ควรอดทนรอสัญญาณที่ชัดเจนกว่านี้
+2026-08-30T14:37:06.866487,GBPUSDOTC0830143706,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีความขัดแย้งของกรอบเวลา Multi-Timeframe รวมถึงความเสี่ยงสูง ควรอรอดูความชัดเจน
+2026-08-30T14:38:06.217669,GBPUSDOTC0830143806,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),โครงสร้างตลาดมีความขัดแย้งกันระหว่างกรอบเวลาและสัญญาณยังไม่ชัดเจนเพียงพอ
+2026-08-30T14:38:26.186752,GBPUSDOTC0830143826,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความขัดแย้งของกรอบเวลา Multi-Timeframe จึงควรหลีกเลี่ยงการเทรด
+2026-08-30T14:39:10.231644,GBPUSDOTC0830143910,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งกันระหว่างโครงสร้างสะสมราคาและแนวโน้มหลักที่เป็นขาลง รวมถึงความผันผวนต่ำ ควรอดทนรอสัญญาณที่ชัดเจนกว่านี้
+2026-08-30T14:40:15.022845,GBPUSDOTC0830144015,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและโครงสร้างราคาขัดแย้งกัน ควรหลีกเลี่ยงการเทรด
+2026-08-30T14:41:10.913158,GBPUSDOTC0830144110,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งกันของกรอบเวลาและมีความเสี่ยงสูงในการเปลี่ยนผ่านราคา
+2026-08-30T14:42:09.862497,GBPUSDOTC0830144209,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและโครงสร้างราคาขัดแย้งกัน ควรหลีกเลี่ยงการเทรด
+2026-08-30T14:43:10.512145,GBPUSDOTC0830144310,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งกันสูงระหว่าง timeframe และความเสี่ยงอยู่ในระดับสูง ควรหลีกเลี่ยง
+2026-08-30T14:40:34.966991,GBPUSDOTC0830144034,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะไร้ทิศทางและมีความเสี่ยงสูงเนื่องจากความขัดแย้งของกรอบเวลาและสัญญาณที่ยังไม่ชัดเจน
+2026-08-30T14:44:10.802597,GBPUSDOTC0830144410,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งกันของกรอบเวลาและมีความผันผวนสูง ควรหลีกเลี่ยงการเทรด
+2026-08-30T14:45:24.409582,GBPUSDOTC0830144524,GBPUSD-OTC,PUT,82,2,AI (gemini-3.5-flash-lite),Stochastic ใน M5 อยู่ในเขต Oversold และทิศทางแนวโน้มหลักยังคงเป็น Bearish สอดคล้องกับสัญญาณ Divergence เชิงลบ
+2026-08-30T14:46:29.333985,GBPUSDOTC0830144629,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดมีความขัดแย้งของเทรนด์และมีความเสี่ยงในการเปลี่ยนผ่านสูง ควรอารักขาความเสี่ยงและรอสัญญาณที่ชัดเจนกว่านี้
+2026-08-30T14:47:29.567576,GBPUSDOTC0830144729,GBPUSD-OTC,PUT,82,2,AI (gemini-3.5-flash-lite),โมเมนตัมฝั่งขาลงมีความต่อเนื่องชัดเจนและสอดคล้องกับโครงสร้างตลาดแบบ Multi-Timeframe ในทิศทาง BEARISH
+2026-08-30T14:50:17.425949,GBPUSDOTC0830145017,GBPUSD-OTC,PUT,82,2,AI (gemini-3.5-flash-lite),แนวโน้มหลักทุก Timeframe เป็นขาลงและ RSI อยู่ในเขต Oversold พร้อมกับสัญญาณ Bearish Divergence ที่แข็งแกร่ง
+2026-08-30T14:54:37.038939,GBPUSDOTC0830145437,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะความขัดแย้งของกรอบเวลาและไม่มีทิศทางที่ชัดเจน
+2026-08-30T15:09:00.565701,GBPUSDOTC0830150900,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ราคาเข้าใกล้แนวรับสำคัญและ RSI อยู่ในเขต Oversold จัด อาจเกิดการรีบาวด์สั้นๆ ควรออรอดูสถานการณ์
+2026-08-30T15:15:29.597804,GBPUSDOTC0830151529,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มขาลงจาก Multi-Timeframe และสัญญาณ Bearish Divergence ที่แข็งแกร่ง
+2026-08-30T15:27:25.409026,GBPUSDOTC0830152725,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างรุนแรงร่วมกับเทรนด์หลักที่เป็นขาลงและ Divergence เชิงลบสนับสนุนการปรับตัวลงต่อ
+2026-08-30T15:33:33.652056,GBPUSDOTC0830153333,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความล่าช้า (STALE) และ RSI อยู่ในเขต Oversold ลึกแต่ยังไม่มีสัญญาณกลับตัวที่ชัดเจน
+2026-08-30T15:35:48.220985,GBPUSDOTC0830153548,GBPUSD-OTC,PUT,75,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold พร้อมกับแนวโน้มหลักในทุก Timeframe เป็นขาลงและกำลังทดสอบแนวรับ
+2026-08-30T15:37:26.142686,GBPUSDOTC0830153726,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมาก พร้อมแนวโน้มขาลงที่สอดคล้องกันในทุก Timeframe
+2026-08-30T15:42:25.645756,GBPUSDOTC0830154225,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ราคาเข้าใกล้แนวรับสำคัญและ RSI อยู่ในเขต Oversold จัด อาจเกิดการรีบาวด์ระยะสั้น ควรอรอดูความชัดเจน
+2026-08-30T15:51:09.801579,GBPUSDOTC0830155109,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความเสี่ยงสูงและคุณภาพข้อมูลเก่าเกินไป (STALE) ควรอรอดูความชัดเจน
+2026-08-30T15:54:24.462991,GBPUSDOTC0830155424,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความเสี่ยงสูงและคุณภาพข้อมูลเก่าเกินไป (STALE) ควรหลีกเลี่ยงการเทรด
+2026-08-30T15:52:58.822302,GBPUSDOTC0830155258,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI ในเขต Oversold และทิศทางแนวโน้มหลักทั้ง M5 และ M15 เป็น Bearish สอดคล้องกับสัญญาณ Divergence ชัดเจน
+2026-08-30T16:02:35.576747,GBPUSDOTC0830160235,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stoch อยู่ในเขต Oversold พร้อมกับแนวโน้มหลัก M5 และ M15 เป็นขาลงสอดคล้องกัน
+2026-08-30T16:10:09.343557,GBPUSDOTC0830161009,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stoch อยู่ในเขต Oversold ทั้ง M1 และ M5 พร้อมแนวโน้มหลักเป็น Bearish และ Divergence ชัดเจนสนับสนุนการลงต่อ
+2026-08-30T16:11:30.666100,GBPUSDOTC0830161130,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความเสี่ยงสูงและคุณภาพข้อมูลเก่าเกินไป แนะนำให้รอดูสถานการณ์
+2026-08-30T15:59:51.222079,GBPUSDOTC0830155951,GBPUSD-OTC,PUT,75,2,AI (gemini-3.5-flash-lite),RSI และ Stoch อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มหลักที่เป็นขาลงและ Momentum เชิงลบ
+2026-08-30T16:17:01.683381,GBPUSDOTC0830161701,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างรุนแรง พร้อมกับทิศทางแนวโน้มหลักและ Momentum เป็นขาลงสอดคล้องกันทุก Timeframe
+2026-08-30T16:17:57.817241,GBPUSDOTC0830161757,GBPUSD-OTC,CALL,75,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างรุนแรง มีโอกาสเกิด Rebound ระยะสั้น
+2026-08-30T16:19:53.616713,GBPUSDOTC0830161953,GBPUSD-OTC,PUT,78,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มหลักที่เป็น Bearish และกำลังทดสอบแนวรับ
+2026-08-30T16:22:57.683518,GBPUSDOTC0830162257,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความเสี่ยงสูงและคุณภาพข้อมูลเก่าเกินไป แนะนำให้รอสัญญาณที่ชัดเจนกว่านี้
+2026-08-30T16:27:37.475565,GBPUSDOTC0830162737,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความเสี่ยงสูงและคุณภาพข้อมูลเก่าเกินไป (STALE) ควรอรอดูสถานการณ์
+2026-08-30T16:33:09.666066,GBPUSDOTC0830163309,GBPUSD-OTC,PUT,75,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มหลักที่เป็นขาลงและ Divergence เชิงลบ
+2026-08-30T16:41:23.283480,GBPUSDOTC0830164123,GBPUSD-OTC,PUT,78,2,AI (gemini-3.5-flash-lite),สัญญาณเทรนด์หลักเป็นขาลงชัดเจนและ RSI อยู่ในเขต Oversold ร่วมกับ Divergence สนับสนุนทิศทางขาลง
+2026-08-30T16:45:46.376840,GBPUSDOTC0830164546,GBPUSD-OTC,PUT,75,2,AI (gemini-3.5-flash-lite),สัญญาณ Multi-Timeframe เป็นขาลง RSI และ Stoch อยู่ในเขต Oversold ร่วมกับ Divergence ชัดเจนสนับสนุนโอกาสราคาปรับตัวลงต่อ
+2026-08-30T16:47:58.585159,GBPUSDOTC0830164758,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดเก่าเกินไปและมีความเสี่ยงสูงจากการทดสอบแนวรับสำคัญ
+2026-08-30T16:53:10.599429,GBPUSDOTC0830165310,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stoch อยู่ในเขต Oversold อย่างรุนแรงร่วมกับแนวโน้มหลัก M5 และ M15 ที่เป็นขาลงสนับสนุนแรงเทขายต่อ
+2026-08-30T16:55:40.242635,GBPUSDOTC0830165540,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold พร้อมกับแนวโน้มหลักในทุก Timeframe เป็นขาลงและ Bearish Divergence ที่แข็งแกร่ง
+2026-08-30T16:59:15.648570,GBPUSDOTC0830165915,GBPUSD-OTC,PUT,82,2,AI (gemini-3.5-flash-lite),สัญญาณเทรนด์ฝั่งขาลงสอดคล้องทุก Timeframe พร้อม RSI และ Stoch ที่อยู่ในเขต Oversold สนับสนุนโอกาสปรับตัวลงต่อเนื่องระยะสั้น
+2026-08-30T17:02:40.510688,GBPUSDOTC0830170240,GBPUSD-OTC,CALL,82,2,AI (gemini-3.5-flash-lite),RSI ใน M1 และ M5 อยู่ในเขต Oversold อย่างรุนแรงและราคาเข้าทดสอบแนวรับสำคัญ มีโอกาสเกิด Reversal ระยะสั้น
+2026-08-30T17:05:44.486556,GBPUSDOTC0830170544,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมาก ประกอบกับแนวโน้มหลักและทิศทางราคาเป็น Bearish สอดคล้องกันทุก Timeframe
+2026-08-30T17:08:41.014409,GBPUSDOTC0830170841,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความล่าช้าและคุณภาพต่ำ (STALE) ควรอรอดูความชัดเจนของราคาก่อน
+2026-08-30T17:11:16.924026,GBPUSDOTC0830171116,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความเสี่ยงสูงและคุณภาพข้อมูลเก่าเกินไป ควรอร่อยดูสถานการณ์ก่อน
+2026-08-30T17:12:30.500724,GBPUSDOTC0830171230,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ข้อมูลมีความล่าช้า (STALE) และ RSI อยู่ในเขต Oversold ลึกเสี่ยงต่อการกลับตัว
+2026-08-30T17:16:55.891724,GBPUSDOTC0830171655,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มขาลงที่สอดคล้องกันทุก timeframe
+2026-08-30T17:20:09.951125,GBPUSDOTC0830172009,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stoch อยู่ในเขต Oversold อย่างมาก พร้อมแนวโน้มฝั่ง Bearish ที่สอดคล้องกันทุก Timeframe
+2026-08-30T17:21:24.418333,GBPUSDOTC0830172124,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความล่าช้าและคุณภาพข้อมูลอยู่ในระดับ STALE ควรหลีกเลี่ยงการเทรด
+2026-08-30T17:26:56.716544,GBPUSDOTC0830172656,GBPUSD-OTC,PUT,78,2,AI (gemini-3.5-flash-lite),RSI ในกรอบ M1 และ M5 อยู่ในเขต Oversold อย่างมาก ประกอบกับแนวโน้มหลักเป็น Bearish และราคาอยู่ใกล้แนวรับสำคัญ มีโอกาสเกิด Continuation สั้นๆ
+2026-08-30T17:30:33.438801,GBPUSDOTC0830173033,GBPUSD-OTC,PUT,75,2,AI (gemini-3.5-flash-lite),โมเมนตัมฝั่งขาลงมีความต่อเนื่องชัดเจนโดย RSI อยู่ในเขต Oversold และสอดคล้องกับโครงสร้างตลาดแบบ Bearish
+2026-08-30T17:33:19.011504,GBPUSDOTC0830173319,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),สัญญาณเทรนด์ฝั่งขาลงมีความสอดคล้องทั้งใน M5 และ M15 พร้อมกับ RSI และ Stoch ที่อยู่ในเขต Oversold สนับสนุนโอกาสปรับตัวลงต่อ
+2026-08-30T17:37:11.660763,GBPUSDOTC0830173711,GBPUSD-OTC,PUT,82,2,AI (gemini-3.5-flash-lite),สัญญาณเทรนด์ฝั่งขาลงมีความสอดคล้องทั้งใน M1 และ M5 พร้อม RSI ที่ Oversold และแรงส่งราคาที่กดดันต่อเนื่อง
+2026-08-30T17:38:15.075396,GBPUSDOTC0830173815,GBPUSD-OTC,PUT,75,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold พร้อมเทรนด์ฝั่ง Bearish ที่สอดคล้องกันทุก Timeframe
+2026-08-30T17:41:35.539849,GBPUSDOTC0830174135,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความเสี่ยงสูงและคุณภาพข้อมูลเก่าเกินไป (STALE) ควรอรอดูสถานการณ์
+2026-08-30T17:42:13.922853,GBPUSDOTC0830174213,GBPUSD-OTC,PUT,78,2,AI (gemini-3.5-flash-lite),RSI ในเขต Oversold อย่างมากและแนวโน้มทุก Timeframe เป็น Bearish สนับสนุนโอกาสปรับตัวลงต่อระยะสั้น
+2026-08-30T17:46:31.250390,GBPUSDOTC0830174631,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),สัญญาณเทรนด์ฝั่งขาลงสอดคล้องทุก Timeframe พร้อม RSI และ Stochastic อยู่ในเขต Oversold สนับสนุนแรงขายต่อเนื่อง
+2026-08-30T17:48:16.812765,GBPUSDOTC0830174816,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI ใน M1 และ M5 อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มหลักที่เป็นขาลงและสัญญาณ Bearish Divergence ที่แข็งแกร่ง
+2026-08-30T17:51:59.012851,GBPUSDOTC0830175159,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความเสี่ยงสูงและสถานะข้อมูลเก่าเกินไป (STALE) ควรอรอดูความชัดเจน
+2026-08-30T17:56:19.296687,GBPUSDOTC0830175619,GBPUSD-OTC,WAIT,40,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความล่าช้า (STALE) และ RSI อยู่ในเขต Oversold ลึกเกินไป เสี่ยงต่อการกลับตัวฉับพลัน
+2026-08-30T17:57:57.000618,GBPUSDOTC0830175757,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มขาลงในทุก Timeframe และสัญญาณ Bearish Divergence ที่แข็งแกร่ง
+2026-08-30T18:01:06.262089,GBPUSDOTC0830180106,GBPUSD-OTC,PUT,78,2,AI (gemini-3.5-flash-lite),กราฟทุก Timeframe มีแนวโน้มเป็นขาลงและ RSI อยู่ในเขต Oversold พร้อมกับสัญญาณ Bearish Divergence ที่แข็งแกร่ง
+2026-08-30T18:04:30.534044,GBPUSDOTC0830180430,GBPUSD-OTC,PUT,78,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มหลักฝั่งขาลงและสัญญาณ Bearish Divergence ที่แข็งแกร่ง
+2026-08-30T18:05:31.073091,GBPUSDOTC0830180531,GBPUSD-OTC,PUT,82,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold พร้อมกับแนวโน้มหลักในทุก Timeframe เป็น Bearish และกำลังทดสอบแนวรับ
+2026-08-30T18:08:19.442991,GBPUSDOTC0830180819,GBPUSD-OTC,CALL,85,2,AI (gemini-3.5-flash-lite),RSI ในกรอบ M1 และ M5 อยู่ในเขต Oversold อย่างรุนแรง (ต่ำกว่า 22) และราคากำลังทดสอบแนวรับสำคัญประกอบกับมีสัญญาณ Divergence เชิงบวก
+2026-08-30T18:11:24.306910,GBPUSDOTC0830181124,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold พร้อมเทรนด์ฝั่งขาลงที่สอดคล้องกันในทุก Timeframe
+2026-08-30T18:12:54.314386,GBPUSDOTC0830181254,GBPUSD-OTC,PUT,78,2,AI (gemini-3.5-flash-lite),สัญญาณเทรนด์หลักเป็นขาลงและ RSI อยู่ในเขต Oversold ร่วมกับความสอดคล้องของ Multi-Timeframe สนับสนุนโอกาสปรับตัวลงต่อ
+2026-08-30T18:14:34.816296,GBPUSDOTC0830181434,GBPUSD-OTC,CALL,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างรุนแรง พร้อมทดสอบแนวรับสำคัญ มีโอกาสเกิด Rebound ระยะสั้น
+2026-08-30T18:18:33.140340,GBPUSDOTC0830181833,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI ในกรอบ M1 และ M5 อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มหลักที่เป็น Bearish สอดคล้องกันทุก Timeframe
+2026-08-30T18:22:19.371379,GBPUSDOTC0830182219,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI ในกรอบ M1 และ M5 อยู่ในเขต Oversold อย่างมาก พร้อมแนวโน้มฝั่งขาลงที่สอดคล้องกันทุก timeframe และกำลังทดสอบแนวรับ
+2026-08-30T18:27:54.440139,GBPUSDOTC0830182754,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมาก ประกอบกับแนวโน้มหลักทั้ง M5 และ M15 เป็นขาลงสอดคล้องกัน
+2026-08-30T18:29:21.328689,GBPUSDOTC0830182921,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ข้อมูลมีความล้าสมัย (STALE) และ RSI อยู่ในเขต Oversold ลึกแต่ความเสี่ยงสูงควรหลีกเลี่ยง
+2026-08-30T18:31:17.463993,GBPUSDOTC0830183117,GBPUSD-OTC,PUT,78,2,AI (gemini-3.5-flash-lite),แนวโน้มทุกกรอบเวลาเป็นขาลงและ RSI อยู่ในเขต Oversold สนับสนุนโอกาสปรับตัวลงต่อ
+2026-08-30T18:36:09.285546,GBPUSDOTC0830183609,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),สัญญาณเทรนด์ขาลงสอดคล้องกับ RSI ที่อยู่ในเขต Oversold และ Divergence ชัดเจน
+2026-08-30T18:37:12.994014,GBPUSDOTC0830183712,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI ใน M1 และ M5 อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มหลักที่เป็นขาลงและสัญญาณ Bearish Divergence ที่แข็งแกร่ง
+2026-08-30T18:38:24.980553,GBPUSDOTC0830183824,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมาก พร้อมกับแนวโน้มหลักและ Divergence ที่สนับสนุนฝั่งขาลง
+2026-08-30T18:42:42.617481,GBPUSDOTC0830184242,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stoch อยู่ในเขต Oversold อย่างรุนแรง พร้อมกับทิศทาง Multi-Timeframe เป็นขาลงและสอดคล้องกับ Bearish Divergence
+2026-08-30T18:43:28.492083,GBPUSDOTC0830184328,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มขาลงที่สอดคล้องกันในทุก Timeframe
+2026-08-30T18:44:32.896696,GBPUSDOTC0830184432,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold พร้อมกับแนวโน้มหลักในทุก Timeframe เป็นขาลงและกำลังทดสอบแนวรับ
+2026-08-30T18:50:28.446936,GBPUSDOTC0830185028,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มขาลงที่สอดคล้องกันในทุก Timeframe
+2026-08-30T18:51:10.511739,GBPUSDOTC0830185110,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold พร้อมกับแนวโน้มหลักในทุก Timeframe เป็นขาลงและกำลังทดสอบแนวรับสำคัญ
+2026-08-30T18:58:18.881499,GBPUSDOTC0830185818,GBPUSD-OTC,PUT,75,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มขาลงจากทุก Timeframe สนับสนุนโอกาสปรับตัวลงต่อ
+2026-08-30T19:03:05.278182,GBPUSDOTC0830190305,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),สัญญาณ RSI และ Stochastic อยู่ในเขต Oversold พร้อมกับแนวโน้มหลักในทุก Timeframe เป็นขาลงและกำลังทดสอบแนวรับ
+2026-08-30T19:05:22.483782,GBPUSDOTC0830190522,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),โครงสร้างราคาและอินดิเคเตอร์ทุก Timeframe สอดคล้องไปในทิศทางขาลงอย่างแข็งแกร่งพร้อมสัญญาณ Divergence
+2026-08-30T19:09:01.355938,GBPUSDOTC0830190901,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดเก่าเกินไปและ RSI อยู่ในเขต Oversold ลึกเกินไป เสี่ยงต่อการกลับตัว
+2026-08-30T19:12:56.020517,GBPUSDOTC0830191256,GBPUSD-OTC,PUT,78,2,AI (gemini-3.5-flash-lite),สัญญาณ RSI และ Stochastic ในเขต Oversold อย่างรุนแรงประกอบกับแนวโน้มหลัก M5 และ M15 เป็นขาลงและสอดคล้องกับ Bearish Divergence
+2026-08-30T19:20:29.453391,GBPUSDOTC0830192029,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความล่าช้า (STALE) และมีความเสี่ยงในการเปลี่ยนผ่านสูง ควรออรอดูก่อน
+2026-08-30T19:23:13.755568,GBPUSDOTC0830192313,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความล่าช้าและคุณภาพข้อมูลอยู่ในระดับ STALE จึงควรหลีกเลี่ยงการเข้าเทรด
+2026-08-30T19:25:56.685456,GBPUSDOTC0830192556,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold พร้อมกับแนวโน้มหลักในทุก Timeframe เป็นขาลงและยืนยันด้วยสัญญาณ Bearish Divergence
+2026-08-30T19:28:33.957320,GBPUSDOTC0830192833,GBPUSD-OTC,PUT,85,2,AI (gemini-3.5-flash-lite),RSI และ Stochastic อยู่ในเขต Oversold อย่างมากร่วมกับแนวโน้มหลักและ Divergence ฝั่งขาลงสนับสนุนการเทขายต่อ
+2026-08-30T19:33:09.582534,GBPUSDOTC0830193309,GBPUSD-OTC,WAIT,45,1,AI (gemini-3.5-flash-lite),ข้อมูลตลาดมีความขัดแย้งและคุณภาพข้อมูลเป็นแบบ Stale ควรหลีกเลี่ยงการเทรด
+2026-08-30T19:38:34.029246,GBPUSDOTC0830193834,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญพร้อมโมเมนตัมขาลงที่ยังคงแข็งแกร่ง
+2026-08-30T19:45:59.847830,GBPUSDOTC0830194559,GBPUSD-OTC,PUT,85,3,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T19:47:16.625785,GBPUSDOTC0830194716,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญประกอบกับสัญญาณ Momentum ขาลงที่แข็งแกร่งในทุก Timeframe
+2026-08-30T19:50:39.707546,GBPUSDOTC0830195039,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงต่อเนื่องตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่า 20 ประกอบกับแรงส่งจาก ADX ที่แข็งแกร่ง
+2026-08-30T19:54:57.428456,GBPUSDOTC0830195457,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe พร้อมสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-30T20:01:34.690050,GBPUSDOTC0830200134,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและโมเมนตัมขาลงยังคงแข็งแกร่งตามแนวโน้มหลักในทุก Timeframe
+2026-08-30T20:04:21.870435,GBPUSDOTC0830200421,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและโมเมนตัมขาลงยังคงแข็งแกร่งโดยทดสอบแนวรับสำคัญอย่างต่อเนื่อง
+2026-08-30T20:08:16.205507,GBPUSDOTC0830200816,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe พร้อมสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-30T20:10:31.887104,GBPUSDOTC0830201031,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe พร้อมสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-30T20:11:20.646954,GBPUSDOTC0830201120,GBPUSD-OTC,PUT,85,3,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe พร้อมสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-30T20:13:25.651311,GBPUSDOTC0830201325,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T20:18:08.461175,GBPUSDOTC0830201808,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T20:19:14.352782,GBPUSDOTC0830201914,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T20:21:40.258304,GBPUSDOTC0830202140,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe พร้อมสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-30T20:23:34.312490,GBPUSDOTC0830202334,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงต่อเนื่องตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่าระดับ 20 ประกอบกับแรงส่งของโมเมนตัมขาลงที่ชัดเจน
+2026-08-30T20:24:14.319434,GBPUSDOTC0830202414,GBPUSD-OTC,CALL,75,3,AI (gemini-3.1-flash-lite),ราคาเข้าใกล้โซนแนวรับสำคัญและ RSI อยู่ในภาวะ Oversold อย่างรุนแรงในทุก Timeframe มีโอกาสเกิดการดีดตัวกลับทางเทคนิค
+2026-08-30T20:31:07.722943,GBPUSDOTC0830203107,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T20:32:49.145111,GBPUSDOTC0830203249,GBPUSD-OTC,CALL,75,3,AI (gemini-3.1-flash-lite),ราคาเข้าใกล้โซน Oversold อย่างรุนแรงในทุก Timeframe และทดสอบแนวรับสำคัญ มีโอกาสเกิดการดีดตัวกลับระยะสั้น
+2026-08-30T20:33:21.723445,GBPUSDOTC0830203321,GBPUSD-OTC,PUT,85,3,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดยมีแรงส่งต่อเนื่องจาก RSI และ Stochastic ที่ต่ำกว่าระดับ 20
+2026-08-30T20:42:28.949956,GBPUSDOTC0830204228,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญในทิศทางขาลงโดยมีโมเมนตัมสนับสนุนจาก RSI และ Stochastic ที่ต่ำมาก
+2026-08-30T20:43:13.537927,GBPUSDOTC0830204313,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแรงส่งขาลงต่อเนื่องตามแนวโน้มหลัก โดย RSI และ Stochastic ยืนยันสัญญาณ Bearish Momentum
+2026-08-30T20:49:15.621271,GBPUSDOTC0830204915,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe พร้อมสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-30T20:50:22.459647,GBPUSDOTC0830205022,GBPUSD-OTC,CALL,75,3,AI (gemini-3.1-flash-lite),ราคาเข้าใกล้โซนแนวรับสำคัญและ RSI อยู่ในภาวะ Oversold อย่างรุนแรง มีโอกาสเกิดการดีดตัวกลับในระยะสั้น
+2026-08-30T20:51:16.619824,GBPUSDOTC0830205116,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T20:54:48.252447,GBPUSDOTC0830205448,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe พร้อมสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-30T20:55:11.645199,GBPUSDOTC0830205511,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในโซน Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญ ประกอบกับสัญญาณ Bearish Divergence ที่แข็งแกร่งและแนวโน้มขาลงในทุก Timeframe
+2026-08-30T21:04:07.643463,GBPUSDOTC0830210407,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงต่อเนื่องตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่าระดับ 20 ประกอบกับแรงส่งของโมเมนตัมขาลงที่ชัดเจน
+2026-08-30T21:14:37.961233,GBPUSDOTC0830211437,GBPUSD-OTC,CALL,75,2,AI (gemini-3.1-flash-lite),ราคาเข้าใกล้แนวรับสำคัญและ RSI อยู่ในภาวะ Oversold อย่างรุนแรง มีโอกาสเกิดการดีดตัวกลับระยะสั้น
+2026-08-30T21:15:14.193363,GBPUSDOTC0830211514,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),สัญญาณ RSI และ Stochastic อยู่ในภาวะ Oversold อย่างรุนแรงประกอบกับแนวโน้มหลักเป็นขาลงและกำลังทดสอบแนวรับสำคัญ
+2026-08-30T21:23:06.438934,GBPUSDOTC0830212306,GBPUSD-OTC,CALL,75,2,AI (gemini-3.1-flash-lite),ราคาเข้าใกล้โซน Oversold อย่างรุนแรงในทุก Timeframe และทดสอบแนวรับสำคัญ มีโอกาสเกิดการดีดตัวกลับระยะสั้น
+2026-08-30T21:25:42.487083,GBPUSDOTC0830212542,GBPUSD-OTC,CALL,75,3,AI (gemini-3.1-flash-lite),ราคาเข้าใกล้โซนแนวรับสำคัญและ RSI อยู่ในภาวะ Oversold อย่างรุนแรง มีโอกาสเกิดการดีดตัวกลับในระยะสั้น
+2026-08-30T21:29:26.043625,GBPUSDOTC0830212926,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในแนวโน้มขาลงที่ชัดเจนและ RSI/Stochastic อยู่ในเขต Oversold พร้อมสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-30T21:30:09.472103,GBPUSDOTC0830213009,GBPUSD-OTC,CALL,75,2,AI (gemini-3.1-flash-lite),ราคาเข้าใกล้โซนแนวรับสำคัญและ RSI อยู่ในภาวะ Oversold อย่างรุนแรง มีโอกาสเกิดการดีดตัวกลับในระยะสั้น
+2026-08-30T21:34:24.222549,GBPUSDOTC0830213424,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดยกำลังทดสอบแนวรับสำคัญที่ระดับ Pivot
+2026-08-30T21:44:52.124292,GBPUSDOTC0830214452,GBPUSD-OTC,CALL,75,2,AI (gemini-3.1-flash-lite),ราคาเข้าใกล้โซนแนวรับสำคัญและ RSI อยู่ในภาวะ Oversold อย่างรุนแรง มีโอกาสเกิดการดีดตัวกลับระยะสั้น
+2026-08-30T21:45:58.906342,GBPUSDOTC0830214558,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดยกำลังทดสอบแนวรับสำคัญและมีสัญญาณ Divergence สนับสนุนการลงต่อ
+2026-08-30T21:49:03.510027,GBPUSDOTC0830214903,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดยกำลังทดสอบแนวรับสำคัญและมีแรงส่งขาลงต่อเนื่อง
+2026-08-30T21:56:59.041923,GBPUSDOTC0830215659,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T22:00:16.962022,GBPUSDOTC0830220016,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T22:06:02.003696,GBPUSDOTC0830220602,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่า 20 พร้อมแรงส่งจาก Bearish Divergence
+2026-08-30T22:09:32.736991,GBPUSDOTC0830220932,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T22:12:44.820961,GBPUSDOTC0830221244,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T22:18:21.744612,GBPUSDOTC0830221821,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในโซน Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญในสภาวะเทรนด์ขาลงที่ชัดเจนจากทุก Timeframe
+2026-08-30T22:23:37.781891,GBPUSDOTC0830222337,GBPUSD-OTC,PUT,85,3,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่าระดับ 20 พร้อมแรงส่งจาก ADX ที่แข็งแกร่ง
+2026-08-30T22:24:11.582261,GBPUSDOTC0830222411,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงต่อเนื่องตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่าระดับ 20 พร้อมแรงส่งจาก Bearish Divergence ที่ชัดเจน
+2026-08-30T22:25:28.004791,GBPUSDOTC0830222528,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงที่ชัดเจนตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่าระดับ 20 พร้อมแรงส่งจาก Bearish Divergence
+2026-08-30T22:26:51.407401,GBPUSDOTC0830222651,GBPUSD-OTC,CALL,75,2,AI (gemini-3.1-flash-lite),ราคาเข้าสู่ภาวะ Oversold อย่างรุนแรงในทุก Timeframe และกำลังทดสอบแนวรับสำคัญ มีโอกาสเกิดการดีดตัวกลับระยะสั้น
+2026-08-30T22:32:25.799980,GBPUSDOTC0830223225,GBPUSD-OTC,CALL,75,3,AI (gemini-3.1-flash-lite),ราคาเข้าใกล้โซนแนวรับสำคัญและ RSI อยู่ในภาวะ Oversold อย่างรุนแรง มีโอกาสเกิดการดีดตัวกลับในระยะสั้น
+2026-08-30T22:40:38.604375,GBPUSDOTC0830224038,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในแนวโน้มขาลงที่ชัดเจนและ RSI เข้าสู่เขต Oversold อย่างรุนแรงพร้อมสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-30T22:42:29.811955,GBPUSDOTC0830224229,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดยกำลังทดสอบแนวรับสำคัญและมีแรงส่งขาลงต่อเนื่อง
+2026-08-30T22:44:23.377322,GBPUSDOTC0830224423,GBPUSD-OTC,PUT,85,3,AI (gemini-3.1-flash-lite),ราคาอยู่ในโซน Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญ ประกอบกับสัญญาณ Momentum ขาลงยังคงแข็งแกร่งในทุก Timeframe
+2026-08-30T22:47:49.637895,GBPUSDOTC0830224749,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญโดยมีแรงส่งขาลงต่อเนื่องจากทุก Timeframe
+2026-08-30T22:53:12.004112,GBPUSDOTC0830225312,GBPUSD-OTC,CALL,75,3,AI (gemini-3.1-flash-lite),ราคาเข้าใกล้โซนแนวรับสำคัญและ RSI อยู่ในภาวะ Oversold อย่างรุนแรง มีโอกาสเกิดการดีดตัวกลับในระยะสั้น
+2026-08-30T22:54:11.679765,GBPUSDOTC0830225411,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญพร้อมโมเมนตัมขาลงที่ยังคงแข็งแกร่งในทุก Timeframe
+2026-08-30T22:59:51.332727,GBPUSDOTC0830225951,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T23:00:46.460015,GBPUSDOTC0830230046,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดยกำลังทดสอบแนวรับสำคัญ
+2026-08-30T23:02:38.308508,GBPUSDOTC0830230238,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญในทิศทางขาลงต่อเนื่องตามสัญญาณ RSI และ Stochastic
+2026-08-30T23:06:08.752560,GBPUSDOTC0830230608,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญพร้อมโมเมนตัมขาลงที่ยังคงแข็งแกร่งในทุก Timeframe
+2026-08-30T23:08:27.631585,GBPUSDOTC0830230827,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญในขณะที่โมเมนตัมขาลงยังคงแข็งแกร่ง
+2026-08-30T23:12:42.930963,GBPUSDOTC0830231242,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดยกำลังทดสอบแนวรับสำคัญและมีสัญญาณ Divergence สนับสนุนการลงต่อ
+2026-08-30T23:17:47.701768,GBPUSDOTC0830231747,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแรงส่งขาลงต่อเนื่องตามแนวโน้มหลัก โดย RSI และ Stochastic ยืนยันโมเมนตัมขาลงที่ชัดเจน
+2026-08-30T23:20:17.653401,GBPUSDOTC0830232017,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T23:22:20.940534,GBPUSDOTC0830232220,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงต่อเนื่องตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่าระดับ 20 พร้อมแรงส่งจาก Bearish Divergence ที่แข็งแกร่ง
+2026-08-30T23:26:16.790856,GBPUSDOTC0830232616,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงต่อเนื่องตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่าระดับ 20 พร้อมแรงส่งจาก Bearish Divergence
+2026-08-30T23:28:00.488075,GBPUSDOTC0830232800,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe พร้อมสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-30T23:29:42.530404,GBPUSDOTC0830232942,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงที่ชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T23:34:11.095020,GBPUSDOTC0830233411,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-30T23:35:39.173958,GBPUSDOTC0830233539,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในแนวโน้มขาลงที่ชัดเจนและ RSI เข้าสู่เขต Oversold พร้อมสัญญาณ Momentum ที่ยังคงกดดันราคาให้ทดสอบแนวรับถัดไป
+2026-08-30T23:36:18.988824,GBPUSDOTC0830233618,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงต่อเนื่องตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่าระดับ 20 พร้อมแรงส่งจาก Bearish Divergence
+2026-08-30T23:37:48.235566,GBPUSDOTC0830233748,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงต่อเนื่องตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่าระดับ 20 พร้อมแรงส่งจาก Bearish Divergence
+2026-08-30T23:40:44.800387,GBPUSDOTC0830234044,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงต่อเนื่องตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่าระดับ 20 ประกอบกับแรงส่งของโมเมนตัมขาลงที่ยังคงแข็งแกร่ง
+2026-08-30T23:42:06.806428,GBPUSDOTC0830234206,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดยกำลังทดสอบแนวรับสำคัญและมีสัญญาณ Divergence สนับสนุนการลงต่อ
+2026-08-30T23:45:38.466899,GBPUSDOTC0830234538,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในโซน Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญในสภาวะตลาดขาลงต่อเนื่องตามสัญญาณ RSI และ Stochastic
+2026-08-30T23:48:36.753514,GBPUSDOTC0830234836,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในแนวโน้มขาลงที่ชัดเจนและ RSI เข้าเขต Oversold พร้อมสัญญาณ Bearish Divergence ที่แข็งแกร่ง
+2026-08-30T23:50:40.177223,GBPUSDOTC0830235040,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญภายใต้แรงกดดันขาลงที่ชัดเจนจากทุก Timeframe
+2026-08-30T23:53:29.663486,GBPUSDOTC0830235329,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในแนวโน้มขาลงที่ชัดเจนโดย RSI และ Stochastic อยู่ในเขต Oversold แต่ยังไม่มีสัญญาณการกลับตัวและกำลังทดสอบแนวรับสำคัญ
+2026-08-30T23:55:49.224056,GBPUSDOTC0830235549,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในโซน Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญ พร้อมสัญญาณ Bearish Momentum ที่แข็งแกร่งจาก RSI และ Stochastic
+2026-08-30T23:58:30.317676,GBPUSDOTC0830235830,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและโมเมนตัมขาลงยังคงแข็งแกร่งตามแนวโน้มหลักในทุก Timeframe
+2026-08-30T23:59:23.892765,GBPUSDOTC0830235923,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดยกำลังทดสอบแนวรับสำคัญและมีแรงส่งขาลงต่อเนื่อง
+2026-08-31T00:02:11.370800,GBPUSDOTC0831000211,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในแนวโน้มขาลงที่แข็งแกร่งพร้อมสัญญาณ RSI และ Stochastic ที่อยู่ในเขต Oversold แต่ยังไม่มีสัญญาณการกลับตัวชัดเจนและกำลังทดสอบแนวรับสำคัญ
+2026-08-31T00:05:46.849253,GBPUSDOTC0831000546,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญในขณะที่โมเมนตัมขาลงยังคงแข็งแกร่งตามสัญญาณ RSI และ Stochastic
+2026-08-31T00:06:09.982794,GBPUSDOTC0831000609,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและโมเมนตัมขาลงยังคงแข็งแกร่งตามแนวโน้มหลักในทุก Timeframe
+2026-08-31T00:08:15.576230,GBPUSDOTC0831000815,GBPUSD-OTC,CALL,75,2,AI (gemini-3.1-flash-lite),ราคาเข้าใกล้โซน Oversold อย่างรุนแรงในทุก Timeframe และกำลังทดสอบแนวรับสำคัญ มีโอกาสเกิดการดีดตัวกลับระยะสั้น
+2026-08-31T00:10:25.441330,GBPUSDOTC0831001025,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงต่อเนื่องตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่าระดับ 20 ประกอบกับแรงส่งของโมเมนตัมขาลงที่ชัดเจน
+2026-08-31T00:12:31.937845,GBPUSDOTC0831001231,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-31T00:13:12.293965,GBPUSDOTC0831001312,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและโมเมนตัมขาลงยังคงแข็งแกร่งโดยมีสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-31T00:18:13.894320,GBPUSDOTC0831001813,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญพร้อมโมเมนตัมขาลงที่ยังคงแข็งแกร่งในทุก Timeframe
+2026-08-31T00:22:08.154973,GBPUSDOTC0831002208,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe พร้อมสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-31T00:25:54.089253,GBPUSDOTC0831002554,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-31T00:26:18.202158,GBPUSDOTC0831002618,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในโซน Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญ ประกอบกับสัญญาณ Momentum ขาลงยังคงแข็งแกร่งในทุก Timeframe
+2026-08-31T00:29:42.226635,GBPUSDOTC0831002942,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงต่อเนื่องตามสัญญาณ RSI และ Stochastic ที่ต่ำกว่าระดับ 20 ประกอบกับแรงส่งขาลงที่ชัดเจนในทุก Timeframe
+2026-08-31T00:32:47.426021,GBPUSDOTC0831003247,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญพร้อมโมเมนตัมขาลงที่ยังคงแข็งแกร่ง
+2026-08-31T00:34:42.238207,GBPUSDOTC0831003442,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในแนวโน้มขาลงที่ชัดเจนโดย RSI และ Stochastic อยู่ในเขต Oversold แต่ยังไม่มีสัญญาณการกลับตัวและกำลังทดสอบแนวรับสำคัญ
+2026-08-31T00:37:37.847211,GBPUSDOTC0831003737,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและโมเมนตัมขาลงยังคงแข็งแกร่งโดยมีสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-31T00:40:56.028305,GBPUSDOTC0831004056,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและโมเมนตัมขาลงยังคงแข็งแกร่งตามแนวโน้มหลักในทุก Timeframe
+2026-08-31T00:42:25.585980,GBPUSDOTC0831004225,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและกำลังทดสอบแนวรับสำคัญ ประกอบกับสัญญาณ Momentum ขาลงยังคงแข็งแกร่งในทุก Timeframe
+2026-08-31T00:47:15.369756,GBPUSDOTC0831004715,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในสภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-31T00:49:58.502369,GBPUSDOTC0831004958,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและมีแนวโน้มขาลงชัดเจนในทุก Timeframe โดย RSI และ Stochastic ยืนยันแรงขายต่อเนื่อง
+2026-08-31T00:54:15.304380,GBPUSDOTC0831005415,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในแนวโน้มขาลงที่ชัดเจนและ RSI เข้าสู่เขต Oversold พร้อมสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-08-31T00:56:27.563903,GBPUSDOTC0831005627,GBPUSD-OTC,PUT,85,2,AI (gemini-3.1-flash-lite),ราคาอยู่ในภาวะ Oversold อย่างรุนแรงและโมเมนตัมขาลงยังคงแข็งแกร่งโดยมีสัญญาณ Divergence สนับสนุนการปรับตัวลงต่อ
+2026-09-20T01:48:09.025208,GBPUSDOTC0920014809,GBPUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะกระจายตัวและมีความผันผวนต่ำประกอบกับสัญญาณราคาค่อนข้างสับสน จึงควรอดทนรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T01:49:03.280690,GBPUSDOTC0920014903,GBPUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),โครงสร้างราคาหลักเป็นขาขึ้นและอยู่ในช่วงการสะสมตัวของ Smart money สนับสนุนการปรับตัวขึ้นต่อ
+2026-09-20T01:50:01.843863,GBPUSDOTC0920015001,GBPUSD-OTC,CALL,72,5,AI (gemini-3.5-flash-lite),M15 และ M5 มีแนวโน้มหลักเป็นขาขึ้นพร้อมรูปแบบการสะสมตัวของราคา สนับสนุนโอกาสปรับตัวขึ้นต่อ
+2026-09-20T01:51:08.444029,GBPUSDOTC0920015108,GBPUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),Stochastic ใน M1 Oversold และอยู่ใกล้แนวรับล่างของกรอบ Sideway มีโอกาสรีบาวด์ระยะสั้น
+2026-09-20T01:52:03.279794,GBPUSDOTC0920015203,GBPUSD-OTC,CALL,68,5,AI (gemini-3.5-flash-lite),Stochastic ใน M1 Oversold ลึกและเกิดสัญญาณ Bullish Reversion ในกรอบ Sideway Range
+2026-09-20T01:53:01.847912,GBPUSDOTC0920015301,GBPUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และมีความขัดแย้งของกรอบเวลาหลักกับระยะสั้น ความเสี่ยงสูงควรหลีกเลี่ยง
+2026-09-20T01:54:01.942640,GBPUSDOTC0920015401,GBPUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีความขัดแย้งของกรอบเวลาหลักกับระยะสั้น ความเสี่ยงสูงเกินไป
+2026-09-20T01:55:03.605807,GBPUSDOTC0920015503,GBPUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และมีสัญญาณความขัดแย้งของกรอบเวลาหลักกับความเสี่ยงสูงจาก Bull Trap จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T01:56:03.393219,GBPUSDOTC0920015603,GBPUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความขัดแย้งของ Timeframe รวมถึงสัญญาณ Bull Trap จึงควรหลีกเลี่ยงการเทรด
+2026-09-20T01:57:01.826936,GBPUSDOTC0920015701,GBPUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway และมีความขัดแย้งของกรอบเวลาหลักกับระยะสั้น ความเสี่ยงสูงจึงควรรอจังหวะ
+2026-09-20T01:58:02.921455,GBPUSDOTC0920015802,GBPUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความขัดแย้งของกรอบเวลาขนาดใหญ่ ความเสี่ยงสูงควรอดทนรอสัญญาณที่ชัดเจนกว่านี้
+2026-09-20T01:59:03.380728,GBPUSDOTC0920015903,GBPUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความขัดแย้งของกรอบเวลาสูง รวมถึงมีสัญญาณ Bull Trap ควรหลีกเลี่ยงการเทรด
+2026-09-20T02:00:01.814812,GBPUSDOTC0920020001,GBPUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะสะสมตัวและมีความขัดแย้งของกรอบเวลา M15 และ M5 รวมถึงมีสัญญาณเตือน Bull Trap จึงควรหลีกเลี่ยง
+2026-09-20T02:01:07.007333,GBPUSDOTC0920020107,GBPUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในภาวะ Sideway Range และมีความขัดแย้งของ Timeframe สูง ความเสี่ยงมากเกินไป
+2026-09-20T03:49:01.917810,GBPUSDOTC0920034901,GBPUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),RSI และ Stoch อยู่ในเขต Overbought สูงมากเสี่ยงต่อการกลับตัว
+2026-09-20T03:50:06.879246,GBPUSDOTC0920035006,GBPUSD-OTC,PUT,75,5,AI (gemini-3.5-flash-lite),Stochastic ใน M1 อยู่ในเขต Overbought และราคาชนแนวต้านสำคัญ M5 จึงคาดการณ์โอกาสย่อตัวลงในระยะสั้น
+2026-09-20T03:51:09.900306,GBPUSDOTC0920035109,GBPUSD-OTC,WAIT,55,5,AI (gemini-3.5-flash-lite),RSI ใน M1 และ M5 อยู่ในเขตซื้อมากเกินไปพร้อมความเสี่ยงจากการปฏิเสธราคาบริเวณแนวต้าน
+2026-09-20T03:52:01.795341,GBPUSDOTC0920035201,GBPUSD-OTC,WAIT,50,5,AI (gemini-3.5-flash-lite),RSI ใน M5 อยู่ในเขต Overbought สูงและมีการปฏิเสธราคาบริเวณแนวต้าน เสี่ยงต่อการพักตัว
+2026-09-20T03:53:01.948999,GBPUSDOTC0920035301,GBPUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),แนวโน้มหลัก M15 และ M5 เป็นขาขึ้นชัดเจน ประกอบกับมีการสะสมราคาและทดสอบแนวรับเพื่อรอทะยานต่อ
+2026-09-20T03:54:03.152418,GBPUSDOTC0920035403,GBPUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักและ M5 เป็นขาขึ้นชัดเจน กำลังทดสอบแนวรับและสะสมพลังเพื่อปรับตัวขึ้นต่อ
+2026-09-20T03:55:05.531933,GBPUSDOTC0920035505,GBPUSD-OTC,WAIT,55,5,AI (gemini-3.5-flash-lite),M5 มีภาวะ Overbought สูงและเกิดสัญญาณ Rejection ที่แนวต้าน ควรอดทนรอจังหวะย่อตัวเพื่อความปลอดภัย
+2026-09-20T03:56:10.434381,GBPUSDOTC0920035610,GBPUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),M5 RSI และ Stoch อยู่ในเขต Overbought สูง ประกอบกับเกิดแท่งเทียน Doji บริเวณแนวต้าน จึงมีความเสี่ยงสูงที่จะเกิดการพักตัว
+2026-09-20T03:57:13.219450,GBPUSDOTC0920035713,GBPUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),M5 RSI และ Stoch อยู่ในเขต Overbought สูง ประกอบกับ M1 เกิดแท่งเทียนกลับตัวและมีความเสี่ยงสูงในการเปลี่ยนเทรนด์ระยะสั้น
+2026-09-20T03:58:16.830515,GBPUSDOTC0920035816,GBPUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),M5 RSI และ Stoch อยู่ในเขต overbought สูงมาก ประกอบกับมีความเสี่ยงเรื่อง transition risk สูง ควรออรอดoจังหวะ
+2026-09-20T03:59:05.426783,GBPUSDOTC0920035905,GBPUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),RSI ใน M5 อยู่ในเขต Overbought สูงและเกิดความเสี่ยงในการเปลี่ยนผ่านเทรนด์สูง ควรหลีกเลี่ยงการเข้าเทรด
+2026-09-20T04:00:15.774129,GBPUSDOTC0920040015,GBPUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),M1 อยู่ในช่วงพักตัวและ M5 RSI เข้าเขต Overbought สูง ความเสี่ยงสูงจึงควรรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T04:01:46.103240,GBPUSDOTC0920040146,GBPUSD-OTC,WAIT,50,5,AI (gemini-3.5-flash-lite),M5 RSI อยู่ในเขตซื้อมากเกินไปและมีความเสี่ยงสูงในการเปลี่ยนผ่านแนวโน้ม ควรรอจังหวะที่ชัดเจนกว่านี้
+2026-09-20T04:03:34.764476,GBPUSDOTC0920040334,GBPUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),ตลาดอยู่ในช่วงพักตัวและมีความเสี่ยงสูงจากการทดสอบแนวต้าน M5 ประกอบกับ RSI ใน M5 อยู่ในเขต Overbought จึงควรรอดูท่าที
+2026-09-20T04:05:45.683734,GBPUSDOTC0920040545,GBPUSD-OTC,CALL,75,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักและ M5 เป็นขาขึ้นชัดเจน Stoch ใน M1 อยู่เขต Oversold พร้อมกลับตัวตามแรงซื้อสะสม
+2026-09-20T04:08:57.361490,GBPUSDOTC0920040857,GBPUSD-OTC,WAIT,45,5,AI (gemini-3.5-flash-lite),M5 RSI อยู่ในเขตซื้อมากเกินไปและมีความเสี่ยงสูงในการเปลี่ยนเทรนด์ระยะสั้น ควรออรอดูสถานการณ์
+2026-09-20T04:15:01.265992,GBPUSDOTC0920041501,GBPUSD-OTC,CALL,78,5,AI (gemini-3.5-flash-lite),แนวโน้มหลักและ M5 เป็นขาขึ้นชัดเจน ประกอบกับราคาลงมาทดสอบโซนแนวรับและ Stoch ใน M1 อยู่ในเขต Oversold เตรียมดีดตัวกลับ
+2026-09-20T04:24:18.205791,GBPUSDOTC0920042418,GBPUSD-OTC,WAIT,40,5,AI (gemini-3.5-flash-lite),ตลาดมีความผันผวนสูงและโครงสร้างราคาขัดแย้งกันระหว่างกรอบเวลา M1 และ M15 ควรออรอดูความชัดเจน

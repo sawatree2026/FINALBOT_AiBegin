@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920040334",
+  "symbol": "EURUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ความขัดแย้งระหว่างแนวโน้มหลัก M15 ที่เป็นขาลงกับบริบทการสะสมราคาทำให้ความเสี่ยงสูงควรรอความชัดเจน"
+}

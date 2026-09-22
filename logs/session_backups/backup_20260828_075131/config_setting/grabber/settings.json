@@ -1,0 +1,61 @@
+{
+  "_comment": "FINALBOT Settings - Single Source of Truth",
+  
+  "account": {
+    "account_type": "DEMO",
+    "trading_mode": "AI AUTO_BOT",
+    "iq_email": "venuz20152565@gmail.com",
+    "iq_password": "2856101607mM@",
+    "stake_per_trade": 35
+  },
+
+  "symbols": [
+    "AUDUSD-OTC",
+    "NZDUSD-OTC",
+    "GBPAUD-OTC",
+    "GBPCHF-OTC",
+    "EURAUD-OTC"
+  ],
+
+  "ai_mode": {
+    "enabled": true,
+    "primary_engine": "gemini",
+    "deepseek_session_index": 1,
+    "gemini_model": "gemini-3.5-flash-lite",
+    "timeout_seconds": 75,
+    "max_consecutive_failures": 3
+  },
+
+
+  "session": {
+    "trading_hours": "01.00-23.00",
+    "timezone": "Asia/Bangkok"
+  },
+
+  "active_broker": "IQ_OPTION",
+
+  "data_feed": {
+    "enable_csv_export": true,
+    "csv_manager": {
+      "base_dir": "data_base/csv/iq_option"
+    },
+    "data_adapter": {
+      "default_candle_count": 250,
+      "min_candle_count": 21,
+      "m5_seconds": 300,
+      "m15_seconds": 900,
+      "retry_attempts": 0,
+      "retry_delay": 0
+    }
+  },
+
+  "data_evaluate": {
+    "enable_txt_export": true,
+    "output_dir": "data_base/orchestrator"
+  },
+
+  "data_trade": {
+    "enable_live_execution": true,
+    "trade_history_file": "logs/logs_data_trade/trades_history.csv"
+  }
+}

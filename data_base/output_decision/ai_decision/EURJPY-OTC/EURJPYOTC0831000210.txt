@@ -1,0 +1,8 @@
+{
+  "ID": "EURJPYOTC0831000210",
+  "symbol": "EURJPY-OTC",
+  "action": "PUT",
+  "expiry_minutes": 3,
+  "confidence_score": 75,
+  "reason_th": "ราคาอยู่ในแนวโน้มขาลงตาม M5 และ M15 โดยมีสัญญาณ Divergence ขาขึ้นที่อ่อนแรงและราคาติดแนวต้าน Pivot จึงมีโอกาสปรับตัวลงต่อ"
+}

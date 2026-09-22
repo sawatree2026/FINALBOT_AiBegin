@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920041500",
+  "symbol": "EURUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ความขัดแย้งของกรอบเวลาหลักและสภาวะตลาดแบบสะสมทำให้ความเสี่ยงสูงเกินไป"
+}

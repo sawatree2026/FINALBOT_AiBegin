@@ -1,0 +1,8 @@
+{
+  "ID": "GBPUSDOTC0920040334",
+  "symbol": "GBPUSD-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ตลาดอยู่ในช่วงพักตัวและมีความเสี่ยงสูงจากการทดสอบแนวต้าน M5 ประกอบกับ RSI ใน M5 อยู่ในเขต Overbought จึงควรรอดูท่าที"
+}

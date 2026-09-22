@@ -1,0 +1,8 @@
+{
+  "ID": "AUDJPYOTC0920012504",
+  "symbol": "AUDJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 5,
+  "confidence_score": 45,
+  "reason_th": "ตลาดอยู่ในภาวะ SIDEWAY_RANGE และมีความเสี่ยงในการเปลี่ยนผ่านสูงประกอบกับ Stoch อยู่ในเขต Overbought จึงควรรอจังหวะที่ชัดเจนกว่านี้"
+}

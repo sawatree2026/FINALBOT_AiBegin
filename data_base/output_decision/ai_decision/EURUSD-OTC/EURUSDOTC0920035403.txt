@@ -1,0 +1,8 @@
+{
+  "ID": "EURUSDOTC0920035403",
+  "symbol": "EURUSD-OTC",
+  "action": "CALL",
+  "expiry_minutes": 5,
+  "confidence_score": 68,
+  "reason_th": "เกิดสัญญาณ Bullish Trap และทดสอบแนวรับสำคัญประกอบกับบริบทสะสมราคาทำให้มีโอกาสรีบาวด์ขึ้นในกรอบเวลา 5 นาที"
+}
