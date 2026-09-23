@@ -69,11 +69,10 @@ class StructuralMetrics:
         # ADX = Smooth DX
         adx = dx.ewm(alpha=1/period, adjust=False).mean()
         
-        # Fill NaN
-        adx = adx.fillna(0)
-        di_plus = di_plus.fillna(0)
-        di_minus = di_minus.fillna(0)
-        dx = dx.fillna(0)
+        # Zero-Mock: NaN at the last candle must fail, not be zeroed.
+        for _name, _s in (("adx", adx), ("di_plus", di_plus), ("di_minus", di_minus), ("dx", dx)):
+            if _s.iloc[-1] != _s.iloc[-1]:
+                raise ValueError(f"FAIL-FAST: {_name} is NaN at last candle - zero substitution is forbidden")
         
         return {
             'adx': round(adx.iloc[-1], 2),
@@ -131,4 +130,4 @@ class StructuralMetrics:
             box_tightness = round(ref_range / atr14, 2)
             return {'box_duration': box_dur, 'box_tightness': box_tightness}
         else:
-            return {'box_duration': 10, 'box_tightness': 2.5}
+            raise ValueError("FAIL-FAST: insufficient candles (<20) for box metrics - constant substitution is forbidden")

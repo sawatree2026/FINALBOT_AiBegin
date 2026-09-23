@@ -42,8 +42,10 @@ class ExecutorManager:
         self.broker_executor = BrokerExecutor()
         self.order_tracker = OrderTracker(money_manager=self.money_manager)
         self.audit_csv_path = os.path.join("data_base", "output_trade", "decision_gate_audit.csv")
-        from data_trade.execution_gate.chronos_dispatcher import ChronosDispatcher
-        self.chronos_dispatcher = ChronosDispatcher.get_instance(self.settings)
+        self.chronos_dispatcher = None
+        if str(self.settings.get("active_mode", "")).lower() != "strategies_mode":
+            from data_trade.execution_gate.chronos_dispatcher import ChronosDispatcher
+            self.chronos_dispatcher = ChronosDispatcher.get_instance(self.settings)
         self.min_gemini_confidence = float(
             self.settings.get("ai_mode", {}).get("min_confidence", 55)
         )
@@ -361,6 +363,10 @@ class ExecutorManager:
         self, tasks: List[Tuple[str, Optional[str], Optional[str], Any]]
     ) -> Dict[str, Dict[str, Any]]:
         """Run Gemini and Chronos on the same payload and require agreement."""
+        if self.chronos_dispatcher is None:
+            raise RuntimeError(
+                "FAIL-FAST: Chronos dispatcher is unavailable for non-strategy dispatch"
+            )
         dispatch_started = time.perf_counter()
         in_memory_count = sum(1 for _, _, payload_text, _ in tasks if payload_text is not None)
         dispatch_tasks = []

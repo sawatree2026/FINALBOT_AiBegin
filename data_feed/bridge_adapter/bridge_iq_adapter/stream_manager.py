@@ -108,7 +108,10 @@ class IQStreamManager:
                     df[col] = pd.to_numeric(df[col], errors="coerce")
 
                 if "volume" in df.columns:
-                    df["volume"] = pd.to_numeric(df["volume"], errors="coerce").fillna(0).astype('int64')
+                    _vol = pd.to_numeric(df["volume"], errors="coerce")
+                    if _vol.isna().any():
+                        raise ValueError("FAIL-FAST: stream volume contains non-numeric/NaN - zero substitution is forbidden")
+                    df["volume"] = _vol.astype('int64')
                 else:
                     df["volume"] = 0
 
@@ -126,7 +129,7 @@ class IQStreamManager:
     def update_with_streaming(self, api: Any, symbol: str, timeframe: str = 'M1', count: int = 200) -> pd.DataFrame:
         """
         Get latest candles using WebSocket streaming cache as Single Source of Truth,
-        with automatic streaming start and REST bootstrapping fallback.
+        with automatic streaming start. Zero-Tolerance: no REST bootstrap fallback.
         """
         # 1. First attempt to read from WebSocket cache
         cached_df = self.get_cached_candles(api, symbol, timeframe)
@@ -147,14 +150,6 @@ class IQStreamManager:
             if cached_df is not None and len(cached_df) >= 2:
                 return cached_df.tail(count)
 
-        # 4. If cache still not ready, bootstrap via REST fetcher
-        logger.warning(f"[FALLBACK] WebSocket failed for {symbol} ({timeframe}) — using REST API fallback")
-        fetcher = IQRestFetcher(self.timeout_sec)
-        rest_df = fetcher.fetch_candles(api, symbol, timeframe, count)
-        if rest_df is not None and not rest_df.empty:
-            logger.warning(f"[FALLBACK] REST fallback succeeded for {symbol} ({timeframe}) — {len(rest_df)} candles retrieved")
-            return rest_df.tail(count)
-
-        # 5. Fail-fast if REST fetch also returned empty
-        logger.error(f"[IQOPTION] WebSocket Cache and REST Bootstrap empty for {symbol} — Fail-Fast triggered")
-        raise RuntimeError(f"FAIL-FAST: Failed to obtain candles for {symbol}. Data connection unavailable.")
+        # 4. Zero-Tolerance: no REST bootstrap. An empty WebSocket cache is a hard failure.
+        logger.error(f"[IQOPTION] WebSocket cache empty for {symbol} ({timeframe}) after micro-poll - no fallback allowed")
+        raise RuntimeError(f"FAIL-FAST: WebSocket stream produced no candles for {symbol} ({timeframe}).")

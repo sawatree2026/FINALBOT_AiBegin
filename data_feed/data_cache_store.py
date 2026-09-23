@@ -220,16 +220,12 @@ class RAMCacheStore:
         if store_m1 is not None and not store_m1.empty and 'close' in store_m1.columns:
             return float(store_m1['close'].iloc[-1])
             
-        # 2. Fallback to completed candles if raw store is not yet initialized
-        candles = self._completed_candles.get(symbol)
-        if candles is None or 'M1' not in candles:
-            raise ValueError(f"FAIL-FAST: No M1 data in RAM for {symbol}")
-        
-        m1 = candles['M1']
-        if m1.empty or 'close' not in m1.columns:
-            raise ValueError(f"FAIL-FAST: M1 data empty or missing 'close' column for {symbol}")
-        
-        return float(m1['close'].iloc[-1])
+        # 2. Zero-Tolerance: the raw stream store is the only live price source.
+        #    Completed candles are historical and must never substitute for live price.
+        raise ValueError(
+            f"FAIL-FAST: no live M1 stream data in RAM for {symbol} - "
+            "substituting completed candles is forbidden"
+        )
     
     def check_warmup(self, symbol: str) -> bool:
         """

@@ -216,13 +216,19 @@ class DataFeedRunner:
         logger.info("[DataFeedRunner] Single-instance lock acquired: %s", lock_path)
 
     def _countdown_to_first_candle(self):
-        """Sleep directly until the first completed candle minute boundary (:01.500)."""
+        """Sleep until the next completed S30 boundary (:01.500 or :31.500)."""
         tz_thailand = timezone(timedelta(hours=7))
         now = datetime.now(tz_thailand)
 
-        target_time = now.replace(second=1, microsecond=500000)
-        if now >= target_time:
-            target_time += timedelta(minutes=1)
+        candidates = []
+        for second in (1, 31):
+            candidate = now.replace(second=second, microsecond=500000)
+            if candidate > now:
+                candidates.append(candidate)
+        if not candidates:
+            base = now + timedelta(minutes=1)
+            candidates.append(base.replace(second=1, microsecond=500000))
+        target_time = min(candidates)
 
         total_wait = (target_time - now).total_seconds()
         target_str = target_time.strftime("%H:%M:%S")
@@ -273,7 +279,7 @@ class DataFeedRunner:
             self._cycle_lock.release()
 
     def start(self):
-        """Main Loop: Runs strictly at each minute boundary (:01.500) and sleeps between intervals."""
+        """Main Loop: run after every completed 30-second S30 candle."""
         self._countdown_to_first_candle()
         tz_thailand = timezone(timedelta(hours=7))
 
@@ -281,11 +287,18 @@ class DataFeedRunner:
             try:
                 self.run_cycle()
 
-                # Sleep directly to next minute boundary (:01.500)
+                # Sleep directly to the next S30 boundary (:01.500 or :31.500).
                 now = datetime.now(tz_thailand)
-                target_time = now.replace(second=1, microsecond=500000)
-                if target_time <= now:
-                    target_time += timedelta(minutes=1)
+                next_minute = now.replace(second=0, microsecond=0)
+                candidates = []
+                for second in (1, 31):
+                    candidate = next_minute.replace(second=second, microsecond=500000)
+                    if candidate > now:
+                        candidates.append(candidate)
+                if not candidates:
+                    base = next_minute + timedelta(minutes=1)
+                    candidates.append(base.replace(second=1, microsecond=500000))
+                target_time = min(candidates)
 
                 sleep_seconds = max(0.5, (target_time - now).total_seconds())
                 time.sleep(sleep_seconds)

@@ -164,7 +164,9 @@ class CSVWriter:
                 if col in df_to_write.columns:
                     df_to_write[col] = df_to_write[col].round(self.decimal_places)
             if 'volume' in df_to_write.columns:
-                df_to_write['volume'] = df_to_write['volume'].fillna(0).round().astype('int64')
+                if df_to_write['volume'].isna().any():
+                    raise ValueError("FAIL-FAST: volume contains NaN - zero substitution is forbidden")
+                df_to_write['volume'] = df_to_write['volume'].round().astype('int64')
             if 'age' in df_to_write.columns:
                 df_to_write['age'] = df_to_write['age'].round().astype('int64')
             if 'quality' in df_to_write.columns:

@@ -143,7 +143,8 @@ class EnsembleVotingModel:
                 combined_probs += probs[:, :2] * weight
 
         row_sums = combined_probs.sum(axis=1, keepdims=True)
-        row_sums[row_sums == 0] = 1.0
+        if (row_sums == 0).any():
+            raise ValueError("FAIL-FAST: zero probability row-sum - 1.0 substitution is forbidden")
         return combined_probs / row_sums
 
     def predict(self, X: np.ndarray) -> np.ndarray:
@@ -303,29 +304,23 @@ class LightGBMEngine:
         self._ensure_model_loaded()
 
     def _ensure_model_loaded(self):
-        """Loads pre-trained models from machine_learning_model/ or creates fallback."""
+        """Loads the pre-trained model. Zero-Tolerance: a missing/corrupt model is a hard failure."""
         os.makedirs(MODEL_DIR, exist_ok=True)
-        if os.path.exists(MASTER_MODEL_FILE):
-            try:
-                with open(MASTER_MODEL_FILE, "rb") as f:
-                    self.master_model = pickle.load(f)
-                logger.info(f"[LightGBMEngine] Successfully loaded master model from {MASTER_MODEL_FILE}")
-                return
-            except Exception as e:
-                logger.warning(f"[LightGBMEngine] Master model read warning: {e}. Building calibrated baseline.")
-
-        self._build_calibrated_model()
+        if not os.path.exists(MASTER_MODEL_FILE):
+            raise RuntimeError(
+                f"FAIL-FAST: pre-trained model missing at {MASTER_MODEL_FILE} - "
+                "building a substitute model is forbidden"
+            )
+        try:
+            with open(MASTER_MODEL_FILE, "rb") as f:
+                self.master_model = pickle.load(f)
+            logger.info(f"[LightGBMEngine] Successfully loaded master model from {MASTER_MODEL_FILE}")
+        except Exception as e:
+            raise RuntimeError(f"FAIL-FAST: cannot load pre-trained model: {e}") from e
 
     def _build_calibrated_model(self):
-        """Builds a calibrated gradient boosting model tailored for Price Action & Rejection."""
-        try:
-            self.master_model = SimpleGBDTClassifier(n_trees=25, learning_rate=0.1)
-            with open(MASTER_MODEL_FILE, "wb") as f:
-                pickle.dump(self.master_model, f)
-            logger.info(f"[LightGBMEngine] Initialized calibrated baseline model at {MASTER_MODEL_FILE}")
-        except Exception as e:
-            logger.exception(f"[LightGBMEngine] Failed to initialize model: {e}")
-            raise RuntimeError(f"FAIL-FAST: Model initialization failed: {e}") from e
+        """Removed: synthesising a substitute model violates the No-Mock rule."""
+        raise RuntimeError("FAIL-FAST: substitute model construction is forbidden (No-Mock rule)")
 
     def get_symbol_model(self, symbol: str) -> Any:
         """Loads or retrieves symbol-specific model, falling back to master model."""
@@ -407,16 +402,16 @@ class LightGBMEngine:
             bb_pos = float(np.clip((close_p - bb_lower) / bb_range, 0.0, 1.0))
             bb_squeeze = float((bb_range / max(1e-9, bb_sma20)) * 100.0)
 
-            rsi_val = float(payload_dict.get("m5_rsi", payload_dict.get("m5_rsi_14", 50.0)))
+            rsi_val = float(payload_dict.get("m5_rsi", payload_dict.get("m5_rsi_14")))
             rsi_div_raw = str(payload_dict.get("m5_pa_divergence_alert", payload_dict.get("rsi_divergence", payload_dict.get("m5_rsi_div", "NONE")))).upper()
             rsi_div = 1.0 if "BULL" in rsi_div_raw else (-1.0 if "BEAR" in rsi_div_raw else 0.0)
 
-            stoch_k = float(payload_dict.get("m5_stoch_k", 50.0))
-            stoch_d = float(payload_dict.get("m5_stoch_d", 50.0))
-            macd_val = float(payload_dict.get("m5_macd", 0.0))
-            macd_sig = float(payload_dict.get("m5_macd_signal", 0.0))
+            stoch_k = float(payload_dict["m5_stoch_k"])
+            stoch_d = float(payload_dict["m5_stoch_d"])
+            macd_val = float(payload_dict["m5_macd"])
+            macd_sig = float(payload_dict["m5_macd_signal"])
 
-            atr_val = float(payload_dict.get("m5_atr", 0.0005))
+            atr_val = float(payload_dict["m5_atr"])
             atr_norm = float((atr_val / max(1e-9, close_p)) * 1000.0)
 
             ema9 = float(payload_dict.get("m5_ema9", payload_dict.get("m5_ema10", payload_dict.get("m5_ema5", close_p))))
@@ -424,16 +419,19 @@ class LightGBMEngine:
             ema_cross_signal = float(np.clip((ema9 - ema21) / max(1e-9, atr_val), -3.0, 3.0))
 
             wick_dom = str(payload_dict.get("m5_pa_wick_dominance", "")).upper()
-            lower_wick = float(payload_dict.get("m5_lower_wick_ratio", 0.5 if ("LOW" in wick_dom or "LOWER" in wick_dom) else 0.2))
-            upper_wick = float(payload_dict.get("m5_upper_wick_ratio", 0.5 if ("HIGH" in wick_dom or "UPPER" in wick_dom) else 0.2))
+            lower_wick = float(payload_dict["m5_lower_wick_ratio"])
+            upper_wick = float(payload_dict["m5_upper_wick_ratio"])
             
-            body_s_raw = payload_dict.get("m5_pa_body_strength", 0.5)
+            body_s_raw = payload_dict["m5_pa_body_strength"]
             if isinstance(body_s_raw, str):
-                body_strength = 0.8 if "STRONG" in body_s_raw.upper() else (0.2 if "WEAK" in body_s_raw.upper() else 0.5)
+                _BODY = {'STRONG': 0.8, 'MODERATE': 0.5, 'WEAK': 0.2}
+                if body_s_raw.upper() not in _BODY:
+                    raise ValueError(f"FAIL-FAST: unknown body_strength '{body_s_raw}' - neutral substitution is forbidden")
+                body_strength = _BODY[body_s_raw.upper()]
             elif isinstance(body_s_raw, (int, float)):
                 body_strength = float(body_s_raw)
             else:
-                body_strength = 0.5
+                raise ValueError(f"FAIL-FAST: body_strength has invalid type {type(body_s_raw).__name__}")
 
             rejection = 0.0
             if "LOW" in wick_dom or "LOWER" in wick_dom:

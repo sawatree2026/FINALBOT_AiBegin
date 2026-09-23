@@ -47,13 +47,14 @@ ML_17_FIELDS: List[str] = [
 
 
 def _to_float(val: Any, default: float = 0.0) -> float:
-    """Safe float conversion."""
-    if val is None:
-        return default
+    """Strict float conversion. The `default` argument is retained for signature
+    compatibility only and is NEVER used: missing/unparseable values must fail."""
+    if val is None or val == "":
+        raise ValueError("FAIL-FAST: ML feature value missing - default substitution is forbidden")
     try:
         return float(val)
-    except (ValueError, TypeError):
-        return default
+    except (ValueError, TypeError) as e:
+        raise ValueError(f"FAIL-FAST: ML feature value unparseable: {val!r}") from e
 
 
 def _to_int(val: Any, default: int = 0) -> int:
@@ -246,9 +247,9 @@ class MLDispatcher:
         features_17["m5_bb_width"] = _to_float(features_17.get("m5_bb_width"), max(1e-9, features_17["m5_bb_upper"] - features_17["m5_bb_lower"]))
 
         # 3. Oscillators & Indicators
-        features_17["m5_rsi"] = _to_float(features_17.get("m5_rsi", features_17.get("m5_rsi_14")), 50.0)
-        features_17["m5_stoch_k"] = _to_float(features_17.get("m5_stoch_k"), 50.0)
-        features_17["m5_stoch_d"] = _to_float(features_17.get("m5_stoch_d"), 50.0)
+        features_17["m5_rsi"] = _to_float(features_17.get("m5_rsi", features_17.get("m5_rsi_14")))
+        features_17["m5_stoch_k"] = _to_float(features_17.get("m5_stoch_k"))
+        features_17["m5_stoch_d"] = _to_float(features_17.get("m5_stoch_d"))
         features_17["m5_macd"] = _to_float(features_17.get("m5_macd"), 0.0)
         features_17["m5_macd_signal"] = _to_float(features_17.get("m5_macd_signal"), 0.0)
         features_17["m5_adx"] = _to_float(features_17.get("m5_adx"), 25.0)
@@ -263,7 +264,7 @@ class MLDispatcher:
         features_17["m5_ema21"] = _to_float(features_17.get("m5_ema21"), features_17["m5_ema20"])
 
         # 5. Price Action & Wicks
-        wick_dom = str(features_17.get("m5_pa_wick_dominance", "")).upper()
+        wick_dom = str(features_17["m5_pa_wick_dominance"]).upper()
         features_17["m5_pa_wick_dominance"] = wick_dom
 
         candle_range = max(1e-9, features_17["m5_high"] - features_17["m5_low"])
@@ -272,13 +273,13 @@ class MLDispatcher:
 
         features_17["m5_lower_wick_ratio"] = _to_float(features_17.get("m5_lower_wick_ratio"), calc_lower_wick)
         features_17["m5_upper_wick_ratio"] = _to_float(features_17.get("m5_upper_wick_ratio"), calc_upper_wick)
-        features_17["m5_pa_body_strength"] = str(features_17.get("m5_pa_body_strength", "MODERATE"))
-        features_17["m5_pa_divergence_alert"] = str(features_17.get("m5_pa_divergence_alert", "NONE")).upper()
+        features_17["m5_pa_body_strength"] = str(features_17["m5_pa_body_strength"])
+        features_17["m5_pa_divergence_alert"] = str(features_17["m5_pa_divergence_alert"]).upper()
 
         # 6. Trend & Support / Resistance
-        features_17["m15_bias"] = str(features_17.get("m15_bias", "NEUTRAL")).upper()
-        features_17["m5_bias"] = str(features_17.get("m5_bias", "NEUTRAL")).upper()
-        features_17["mtf_alignment_%"] = _to_float(features_17.get("mtf_alignment_%"), 50.0)
+        features_17["m15_bias"] = str(features_17["m15_bias"]).upper()
+        features_17["m5_bias"] = str(features_17["m5_bias"]).upper()
+        features_17["mtf_alignment_%"] = _to_float(features_17.get("mtf_alignment_%"))
         features_17["m5_support"] = _to_float(features_17.get("m5_support"), features_17["m5_bb_lower"])
         features_17["m5_resistance"] = _to_float(features_17.get("m5_resistance"), features_17["m5_bb_upper"])
         features_17["m5_pivot"] = _to_float(features_17.get("m5_pivot"), (features_17["m5_high"] + features_17["m5_low"] + features_17["m5_close"]) / 3.0)

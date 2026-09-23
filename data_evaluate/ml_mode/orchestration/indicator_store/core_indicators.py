@@ -12,7 +12,9 @@ class CoreIndicators:
     @staticmethod
     def calculate_bb(close_series: pd.Series, period: int, round_decimals: int, require_100: bool = False) -> dict:
         sma = close_series.rolling(window=period, min_periods=1).mean()
-        std = close_series.rolling(window=period, min_periods=1).std(ddof=0).fillna(0)
+        std = close_series.rolling(window=period, min_periods=1).std(ddof=0)
+        if std.iloc[-1] != std.iloc[-1]:
+            raise ValueError("FAIL-FAST: Bollinger std is NaN - zero substitution is forbidden")
         
         bb_upper = round((sma + 2 * std).iloc[-1], round_decimals)
         bb_lower = round((sma - 2 * std).iloc[-1], round_decimals)
@@ -34,7 +36,9 @@ class CoreIndicators:
     @staticmethod
     def calc_rsi_series(series: pd.Series, period: int = 14) -> pd.Series:
         delta = series.diff()
-        gain = (delta.where(delta > 0, 0)).ewm(alpha=1/period, adjust=False).mean().fillna(0)
+        gain = (delta.where(delta > 0, 0)).ewm(alpha=1/period, adjust=False).mean()
+        if gain.iloc[-1] != gain.iloc[-1]:
+            raise ValueError("FAIL-FAST: RSI gain is NaN - zero substitution is forbidden")
         loss = (-delta.where(delta < 0, 0)).ewm(alpha=1/period, adjust=False).mean().replace(0, 1e-9).fillna(1e-9)
         rs = gain / loss
         return 100 - (100 / (1 + rs))
