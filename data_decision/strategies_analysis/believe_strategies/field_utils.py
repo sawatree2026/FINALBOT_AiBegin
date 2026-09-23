@@ -35,6 +35,8 @@ def boolean(fields: Dict[str, str], key: str) -> bool:
 
 
 def aligned(signal: str, action: str) -> bool:
+    if action not in {"CALL", "PUT"}:
+        raise ValueError(f"Invalid Believe action: {action!r}")
     return (
         action == "CALL" and signal in {"BULLISH", "UP", "CALL", "BUY", "LONG"}
     ) or (

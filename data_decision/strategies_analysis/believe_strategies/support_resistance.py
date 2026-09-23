@@ -16,6 +16,7 @@ _BLOCKING_INTERACTIONS = {
 
 def evaluate(fields: Dict[str, str], action: str) -> bool:
     """Return False when support/resistance interaction blocks the action."""
-    del action
+    if action not in {"CALL", "PUT"}:
+        raise ValueError(f"Invalid Believe action: {action!r}")
     interaction = text(fields, "m5_pa_sr_interaction")
     return interaction not in _BLOCKING_INTERACTIONS

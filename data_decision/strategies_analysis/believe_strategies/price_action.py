@@ -6,6 +6,8 @@ from .field_utils import text
 
 
 def evaluate(fields: Dict[str, str], action: str) -> bool:
+    if action not in {"CALL", "PUT"}:
+        raise ValueError(f"Invalid Believe action: {action!r}")
     pattern = text(fields, "m5_pa_pattern")
     bias = text(fields, "m5_pa_last_candle_bias")
     bullish = {"ENGULFING_BULLISH", "HAMMER", "GR_UP", "BULLISH"}

@@ -21,27 +21,52 @@ from . import (
 )
 
 def _read_fields(payload_path: str) -> Dict[str, str]:
+    if not isinstance(payload_path, str) or not payload_path.strip():
+        raise ValueError("FAIL-FAST: Believe payload path must be a non-empty string")
     fields: Dict[str, str] = {}
     with open(payload_path, "r", encoding="utf-8") as handle:
-        for raw_line in handle:
-            line = raw_line.strip()
-            if not line or ":" not in line:
-                continue
-            key, value = line.split(":", 1)
-            fields[key.strip().lower()] = value.strip().strip("'\"")
+        lines = handle.read().splitlines()
+    if len(lines) != 99:
+        raise ValueError(
+            f"FAIL-FAST: Believe payload must contain exactly 99 lines, got {len(lines)}"
+        )
+    for line_number, raw_line in enumerate(lines, start=1):
+        line = raw_line.strip()
+        if not line:
+            continue
+        if ":" not in line:
+            raise ValueError(
+                f"FAIL-FAST: Malformed Believe payload line {line_number}: {raw_line!r}"
+            )
+        key, value = line.split(":", 1)
+        normalized_key = key.strip().lower()
+        if not normalized_key:
+            raise ValueError(f"FAIL-FAST: Empty Believe payload key on line {line_number}")
+        if normalized_key in fields:
+            raise ValueError(f"FAIL-FAST: Duplicate Believe payload field: {normalized_key}")
+        fields[normalized_key] = value.strip().strip("'\"")
     return fields
 
 
 def _direction(value: Any) -> Optional[str]:
-    text = str(value or "").upper()
+    text = str(value).strip().upper()
     if text in {"UP", "UPTREND", "BULLISH", "CALL", "BUY", "LONG"}:
         return "CALL"
     if text in {"DOWN", "DOWNTREND", "BEARISH", "PUT", "SELL", "SHORT"}:
         return "PUT"
+    if text in {"WAIT", "NONE", "NEUTRAL"}:
+        return "WAIT"
     return None
 
 
-def _bool(value: Any) -> Optional[bool]:
+def _required_direction(fields: Dict[str, str], key: str) -> str:
+    direction = _direction(fields[key])
+    if direction is None:
+        raise ValueError(f"Invalid Believe payload direction for {key}: {fields[key]!r}")
+    return direction
+
+
+def _bool(value: Any) -> bool:
     text = str(value or "").strip().upper()
     if text in {"TRUE", "1", "YES", "Y", "PASS", "PASSED"}:
         return True
@@ -59,7 +84,7 @@ def _number(value: Any) -> Optional[float]:
 
 def _require_fields(fields: Dict[str, str]) -> None:
     required = (
-        "s30_bias", "m1_bias", "m5_bias", "believe_direction",
+        "id", "s30_bias", "m1_bias", "m5_bias", "believe_direction",
         "believe_bb_percent_b", "believe_bb_touch",
         "believe_sto_k", "believe_sto_d", "believe_sto_zone",
         "believe_sto_cross", "believe_sto_hook_confirmed",
@@ -122,11 +147,13 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
     """Evaluate the complete disk-backed Believe rule set."""
     fields = _read_fields(payload_path)
     _require_fields(fields)
-    s30 = _direction(fields["s30_bias"])
-    m1 = _direction(fields["m1_bias"])
-    m5 = _direction(fields["m5_bias"])
-    believe = _direction(fields["believe_direction"])
-    candidate = believe if believe in {"CALL", "PUT"} else s30
+    s30 = _required_direction(fields, "s30_bias")
+    m1 = _required_direction(fields, "m1_bias")
+    m5 = _required_direction(fields, "m5_bias")
+    believe = _required_direction(fields, "believe_direction")
+    # WAIT is a valid canonical strategy result; it must never be replaced
+    # with a direction inferred from another field.
+    candidate = believe if believe in {"CALL", "PUT"} else "WAIT"
     directions_aligned = (
         candidate in {"CALL", "PUT"}
         and s30 == candidate

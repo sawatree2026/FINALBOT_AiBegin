@@ -874,6 +874,10 @@ class Orchestrator:
         std = close.rolling(20).std(ddof=0)
         upper = middle + 2 * std
         lower = middle - 2 * std
+        if pd.isna(upper.iloc[-1]) or pd.isna(lower.iloc[-1]):
+            raise ValueError("FAIL-FAST: Bollinger bands are NaN - %B is undefined")
+        if upper.iloc[-1] == lower.iloc[-1]:
+            raise ValueError("FAIL-FAST: Bollinger bands collapsed (upper == lower) - %B is undefined")
         delta = close.diff()
         gains = delta.clip(lower=0).rolling(14).mean()
         losses = (-delta.clip(upper=0)).rolling(14).mean()
@@ -909,8 +913,6 @@ class Orchestrator:
         stoch_cross_50_up = prev_k < 50 <= curr_k
         stoch_cross_50_down = prev_k > 50 >= curr_k
         stoch_tangled = bool((stoch_k.tail(3) - stoch_d.tail(3)).abs().max() < 2)
-        if last(upper) == last(lower):
-            raise ValueError("FAIL-FAST: Bollinger bands collapsed (upper == lower) - %B is undefined")
         bb_percent_b = round((last(close) - last(lower)) / (last(upper) - last(lower)), 6)
         adx_s30 = StructuralMetrics.calc_adx(high, low, close, 14)
         atr_s30 = StructuralMetrics.calculate_atr(high, low, close, 6, extended=True)
@@ -1004,17 +1006,16 @@ class Orchestrator:
         def _num(value):
             if value is None or value == "":
                 raise ValueError("FAIL-FAST: Believe indicator value missing - default substitution is forbidden")
-            return float(value)
+            result = float(value)
+            if not np.isfinite(result):
+                raise ValueError("FAIL-FAST: Believe indicator value is NaN/inf - default substitution is forbidden")
+            return result
 
         close = _num(s30.get("close"))
 
         # Believe is evaluated in the configured roles:
         # S30 entry, M1 trigger, M5 context.
-        upper = _num(s30.get("bb_upper"))
-        lower = _num(s30.get("bb_lower"))
-        if upper == lower:
-            raise ValueError("FAIL-FAST: S30 Bollinger bands collapsed - %B is undefined")
-        bb_pct_b = (close - lower) / (upper - lower)
+        bb_pct_b = _num(s30.get("bb_percent_b"))
         if not (0 <= bb_pct_b <= 1):
             raise ValueError(f"FAIL-FAST: S30 %B out of [0,1] ({bb_pct_b:.4f}) - clamping is forbidden")
 
