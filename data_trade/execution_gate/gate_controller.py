@@ -162,7 +162,7 @@ class ExecutionGate:
         m15 = cls._normalise_direction(find("m15_bias", "m15_direction", "primary_direction"))
         m5 = cls._normalise_direction(find("m5_bias", "m5_trend_direction", "m5_direction"))
         regime = str(find("m5_trend_type", "m5_regime", "regime") or "").upper().strip() or None
-        adx_raw = find("m5_adx", "adx")
+        adx_raw = find("m1_adx", "s30_adx", "m5_adx", "adx")
         try:
             adx = float(adx_raw) if adx_raw is not None else None
         except (TypeError, ValueError):

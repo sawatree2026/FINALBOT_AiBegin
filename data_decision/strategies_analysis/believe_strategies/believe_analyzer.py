@@ -71,7 +71,7 @@ def _require_fields(fields: Dict[str, str]) -> None:
         "m5_pa_sr_interaction", "m5_pa_divergence_alert",
         "s30_macd", "s30_macd_signal", "s30_macd_histogram", "s30_rsi",
         "ap_signal", "ns_signal", "believe_confidence",
-        "believe_status", "m5_trend_type", "m5_adx", "dl_risk_level",
+        "believe_status", "m5_trend_type", "m1_adx", "dl_risk_level",
         "m5_quality", "extreme_believe_active",
     )
     missing = [key for key in required if key not in fields or not fields[key].strip()]
@@ -210,7 +210,7 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
         "m1_bias": fields["m1_bias"],
         "m5_bias": fields["m5_bias"],
         "m5_regime": fields["m5_trend_type"],
-        "m5_adx": _number(fields["m5_adx"]),
+        "m1_adx": _number(fields["m1_adx"]),
         "risk_level": fields["dl_risk_level"],
         "data_quality": fields["m5_quality"],
         "extreme_believe_active": _bool(fields["extreme_believe_active"]),

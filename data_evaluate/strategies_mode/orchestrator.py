@@ -25,6 +25,7 @@ from datetime import datetime, timezone
 
 from monitoring.console_dashboard import ConsoleUI
 from data_evaluate.strategies_mode.orchestration.indicator_store.indicator_store import store
+from data_evaluate.strategies_mode.orchestration.indicator_store.structural_metrics import StructuralMetrics
 from data_evaluate.strategies_mode.orchestration.advanced_tools.advanced_tools_manager import AdvancedToolsManager
 
 from types import SimpleNamespace
@@ -511,40 +512,33 @@ class Orchestrator:
             'news_impact': 'NONE_OTC' if is_otc else _req(mc, 'news_impact'),
             'expected_volatility_%': _req(mc, 'expected_volatility_%'),
             
-            # --- M5 Indicators (18 fields) ---
+            # --- M5: trend + major support/resistance ONLY (per BOSS) ---
             'm5_bias': _req(m5, 'bias'),
-            'm5_ema5': _req(m5, 'ema5'),
-            'm5_ema10': _req(m5, 'ema10'),
-            'm5_ema20': _req(m5, 'ema20'),
-            'm5_ema50': _req(m5, 'ema50'),
-            'm5_bb_upper': _req(m5, 'bb_upper'),
-            'm5_bb_lower': _req(m5, 'bb_lower'),
-            'm5_bb_width': _req(m5, 'bb_width'),
-            'm5_rsi': _req(m5, 'rsi14'),
-            'm5_stoch_k': _req(m5, 'stoch_k'),
-            'm5_stoch_d': _req(m5, 'stoch_d'),
-            'm5_macd': _req(m5, 'macd'),
-            'm5_macd_signal': _req(m5, 'macd_signal'),
-            'm5_adx': _req(m5, 'adx'),
-            'm5_atr': _req(m5, 'atr14'),
             'm5_support': _req(m5, 'support'),
             'm5_resistance': _req(m5, 'resistance'),
             'm5_pivot': _req(m5, 'pivot'),
             
-            # --- M1 Indicators (8 fields) ---
+            # --- M1 Indicators (trigger timeframe carries the full set) ---
             'm1_bias': _req(m1, 'bias'),
             'm1_last_candle': 'BULLISH' if _req(p['ohlcv'], 'm1_close') > _req(p['ohlcv'], 'm1_open') else 'BEARISH',
             'm1_ema5': _req(m1, 'ema5'),
+            'm1_ema10': _req(m1, 'ema10'),
             'm1_ema20': _req(m1, 'ema20'),
+            'm1_ema50': _req(m1, 'ema50'),
+            'm1_bb_upper': _req(m1, 'bb_upper'),
+            'm1_bb_lower': _req(m1, 'bb_lower'),
+            'm1_bb_width': _req(m1, 'bb_width'),
+            'm1_bb_percent_b': _req(m1, 'bb_percent_b'),
             'm1_rsi': _req(m1, 'rsi14'),
             'm1_stoch_k': _req(m1, 'stoch_k'),
             'm1_stoch_d': _req(m1, 'stoch_d'),
             'm1_macd': _req(m1, 'macd'),
             'm1_macd_signal': _req(m1, 'macd_signal'),
+            'm1_adx': _req(m1, 'adx'),
+            'm1_atr': _req(m1, 'atr14'),
             
-            # --- M15 Compatibility Field (not calculated in strategies mode) ---
-            # Keep the legacy payload shape without fabricating M15 from M5.
-            'm15_bias': 'NOT_CALCULATED',
+            # --- M15: operation DISABLED by BOSS. Section/field retained, never computed. ---
+            'm15_bias': 'DISABLED',
             
             # --- Advanced Tools (Price Action & Volume) (16 fields) ---
             'pa_pattern': _req(pa, 'pattern'),
@@ -918,6 +912,8 @@ class Orchestrator:
         if last(upper) == last(lower):
             raise ValueError("FAIL-FAST: Bollinger bands collapsed (upper == lower) - %B is undefined")
         bb_percent_b = round((last(close) - last(lower)) / (last(upper) - last(lower)), 6)
+        adx_s30 = StructuralMetrics.calc_adx(high, low, close, 14)
+        atr_s30 = StructuralMetrics.calculate_atr(high, low, close, 6, extended=True)
 
         return {
             "bias": "BULLISH" if last(close) >= last(ema20) else "BEARISH",
@@ -938,6 +934,10 @@ class Orchestrator:
             "macd": last(macd),
             "macd_signal": last(macd_signal),
             "macd_histogram": last(macd - macd_signal),
+            "adx": adx_s30["adx"],
+            "atr14": atr_s30["atr14"],
+            "adx": adx_s30["adx"],
+            "atr14": atr_s30["atr14"],
             "stoch_cross": (
                 "GOLDEN_CROSS" if stoch_cross_up
                 else "DEATH_CROSS" if stoch_cross_down else "NONE"
@@ -1408,6 +1408,11 @@ class Orchestrator:
         app(f"  s30_macd_signal: {_fmt_num(s30_indicators.get('macd_signal', ''))}")
         app(f"  s30_macd_histogram: {_fmt_num(s30_indicators.get('macd_histogram', ''))}")
         app(f"  s30_bb_percent_b: {_fmt_num(s30_indicators.get('bb_percent_b', ''))}")
+        app(f"  s30_bb_upper: {_fmt_num(s30_indicators.get('bb_upper', ''))}")
+        app(f"  s30_bb_lower: {_fmt_num(s30_indicators.get('bb_lower', ''))}")
+        app(f"  s30_bb_width: {_fmt_num(s30_indicators.get('bb_width', ''))}")
+        app(f"  s30_adx: {_fmt_num(s30_indicators.get('adx', ''))}")
+        app(f"  s30_atr: {_fmt_num(s30_indicators.get('atr14', ''))}")
         app("market_context:")
         app(f"  mtf_state: {core.get('state', '')}")
         app(f"  mtf_description: {core.get('description', '')}")
@@ -1419,12 +1424,20 @@ class Orchestrator:
         app(f"    m1_bias: {core.get('m1_bias', '')}")
         app(f"    m1_last_candle: {core.get('m1_last_candle', '')}")
         app(f"    m1_ema5: {_fmt_num(core.get('m1_ema5', ''))}")
+        app(f"    m1_ema10: {_fmt_num(core.get('m1_ema10', ''))}")
         app(f"    m1_ema20: {_fmt_num(core.get('m1_ema20', ''))}")
+        app(f"    m1_ema50: {_fmt_num(core.get('m1_ema50', ''))}")
+        app(f"    m1_bb_upper: {_fmt_num(core.get('m1_bb_upper', ''))}")
+        app(f"    m1_bb_lower: {_fmt_num(core.get('m1_bb_lower', ''))}")
+        app(f"    m1_bb_width: {_fmt_num(core.get('m1_bb_width', ''))}")
+        app(f"    m1_bb_percent_b: {_fmt_num(core.get('m1_bb_percent_b', ''))}")
         app(f"    m1_rsi: {_fmt_num(core.get('m1_rsi', ''))}")
         app(f"    m1_stoch_k: {_fmt_num(core.get('m1_stoch_k', ''))}")
         app(f"    m1_stoch_d: {_fmt_num(core.get('m1_stoch_d', ''))}")
         app(f"    m1_macd: {_fmt_num(core.get('m1_macd', ''))}")
         app(f"    m1_macd_signal: {_fmt_num(core.get('m1_macd_signal', ''))}")
+        app(f"    m1_adx: {_fmt_num(core.get('m1_adx', ''))}")
+        app(f"    m1_atr: {_fmt_num(core.get('m1_atr', ''))}")
         app("    ohlcv:")
         app(f"      m1_open: {_fmt_num(m1_ohlcv.get('open', ''))}")
         app(f"      m1_high: {_fmt_num(m1_ohlcv.get('high', ''))}")
@@ -1432,32 +1445,14 @@ class Orchestrator:
         app(f"      m1_close: {_fmt_num(m1_ohlcv.get('close', ''))}")
         app(f"      m1_volume: {m1_ohlcv.get('volume', '')}")
         app("  m5:")
+        # M5 is limited to trend + major support/resistance (per BOSS).
         app(f"    m5_bias: {core.get('m5_bias', '')}")
-        app(f"    m5_ema5: {_fmt_num(core.get('m5_ema5', ''))}")
-        app(f"    m5_ema10: {_fmt_num(core.get('m5_ema10', ''))}")
-        app(f"    m5_ema20: {_fmt_num(core.get('m5_ema20', ''))}")
-        app(f"    m5_ema50: {_fmt_num(core.get('m5_ema50', ''))}")
-        app(f"    m5_bb_upper: {_fmt_num(core.get('m5_bb_upper', ''))}")
-        app(f"    m5_bb_lower: {_fmt_num(core.get('m5_bb_lower', ''))}")
-        app(f"    m5_bb_width: {_fmt_num(core.get('m5_bb_width', ''))}")
-        app(f"    m5_rsi: {_fmt_num(core.get('m5_rsi', ''))}")
-        app(f"    m5_stoch_k: {_fmt_num(core.get('m5_stoch_k', ''))}")
-        app(f"    m5_stoch_d: {_fmt_num(core.get('m5_stoch_d', ''))}")
-        app(f"    m5_macd: {_fmt_num(core.get('m5_macd', ''))}")
-        app(f"    m5_macd_signal: {_fmt_num(core.get('m5_macd_signal', ''))}")
-        app(f"    m5_adx: {_fmt_num(core.get('m5_adx', ''))}")
-        app(f"    m5_atr: {_fmt_num(core.get('m5_atr', ''))}")
         app(f"    m5_support: {_fmt_num(core.get('m5_support', ''))}")
         app(f"    m5_resistance: {_fmt_num(core.get('m5_resistance', ''))}")
         app(f"    m5_pivot: {_fmt_num(core.get('m5_pivot', ''))}")
-        app("    ohlcv:")
-        app(f"      m5_open: {_fmt_num(m5_ohlcv.get('open', ''))}")
-        app(f"      m5_high: {_fmt_num(m5_ohlcv.get('high', ''))}")
-        app(f"      m5_low: {_fmt_num(m5_ohlcv.get('low', ''))}")
-        app(f"      m5_close: {_fmt_num(m5_ohlcv.get('close', ''))}")
-        app(f"      m5_volume: {m5_ohlcv.get('volume', '')}")
+        # M15 operation disabled; section retained.
         app("  m15:")
-        app(f"    m15_bias: {core.get('m15_bias', 'NOT_CALCULATED')}")
+        app(f"    m15_bias: {core.get('m15_bias', 'DISABLED')}")
         app("price_action:")
         app(f"  m5_pa_pattern: {core.get('pa_pattern', '')}")
         app(f"  m5_pa_last_candle_bias: {core.get('pa_last_candle_bias', '')}")

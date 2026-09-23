@@ -169,6 +169,14 @@ class IndicatorStore:
 
         # Believe-specific M1 context.
         m1.update(CoreIndicators.calculate_bb(close_m1, 20, Config.ROUND_DECIMALS, require_100=True))
+        if m1['bb_upper'] == m1['bb_lower']:
+            raise ValueError("FAIL-FAST: M1 Bollinger bands collapsed - %B is undefined")
+        m1['bb_percent_b'] = round(
+            (close_m1.iloc[-1] - m1['bb_lower']) / (m1['bb_upper'] - m1['bb_lower']),
+            Config.ROUND_DECIMALS,
+        )
+        m1.update(StructuralMetrics.calc_adx(high_m1, low_m1, close_m1, Config.ADX_PERIOD))
+        m1.update(StructuralMetrics.calculate_atr(high_m1, low_m1, close_m1, Config.ROUND_DECIMALS, extended=True))
 
         # RSI (14)
         m1['rsi14'] = CoreIndicators.calc_rsi(close_m1, 14)
