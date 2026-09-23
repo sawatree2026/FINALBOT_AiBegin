@@ -40,7 +40,11 @@ class DecisionManager:
         processed = []
         for symbol in symbols:
             payload_path = self._latest_payload(symbol)
-            if not payload_path or payload_path in self._processed:
+            if not payload_path:
+                raise FileNotFoundError(
+                    f"FAIL-FAST: No current evaluation payload for {symbol}"
+                )
+            if payload_path in self._processed:
                 continue
             self.process_payload_file(symbol, payload_path)
             self._processed.add(payload_path)

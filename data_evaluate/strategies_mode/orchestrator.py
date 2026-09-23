@@ -27,7 +27,8 @@ from monitoring.console_dashboard import ConsoleUI
 from data_evaluate.strategies_mode.orchestration.indicator_store.indicator_store import store
 from data_evaluate.strategies_mode.orchestration.indicator_store.structural_metrics import StructuralMetrics
 from data_evaluate.strategies_mode.orchestration.advanced_tools.advanced_tools_manager import AdvancedToolsManager
-from data_evaluate.strategies_mode.orchestration.advanced_tools.bollinger_percent import calculate_bollinger_percent
+from data_evaluate.strategies_mode.orchestration.advanced_tools.bollinger_percent import assemble_bollinger_percent
+from data_evaluate.strategies_mode.orchestration.advanced_tools.stochastic import assemble_stochastic
 
 from types import SimpleNamespace
 # Import 5 Engines and Classifier
@@ -264,10 +265,25 @@ class Orchestrator:
 
         # ── 2. Basic Indicators (indicator_store.py) ────────────────────
         try:
-            store.calculate_all(symbol, candles_dict, forming_data=None)
+            store.calculate_all(
+                symbol,
+                candles_dict,
+                forming_data=None,
+                include_m5_stochastic=False,
+            )
             basic_payload = store.get_payload(symbol)
             final_payload.update(basic_payload) # merge m1, m5, ohlcv
-            final_payload['s30'].update(basic_payload.get('s30', {}))
+            s30_payload = dict(basic_payload['s30'])
+            s30_bollinger_base = s30_payload.pop('bollinger_percent_base')
+            s30_stochastic_base = s30_payload.pop('stochastic_base')
+            s30_payload.update(
+                self._calculate_believe_indicators(
+                    candles_dict['S30'],
+                    s30_bollinger_base,
+                    s30_stochastic_base,
+                )
+            )
+            final_payload['s30'] = s30_payload
         except Exception as e:
             raise
 
@@ -535,9 +551,6 @@ class Orchestrator:
             'm1_stoch_d': _req(m1, 'stoch_d'),
             'm1_macd': _req(m1, 'macd'),
             'm1_macd_signal': _req(m1, 'macd_signal'),
-            'm1_macd_histogram': _req(m1, 'macd_hist'),
-            'm1_divergence_type': _req(m1, 'divergence_type'),
-            'm1_divergence_peak_count': _req(m1, 'divergence_peak_count'),
             'm1_adx': _req(m1, 'adx'),
             'm1_atr': _req(m1, 'atr14'),
             
@@ -863,18 +876,29 @@ class Orchestrator:
         logger.error(f"[ORCHESTRATOR ERROR] {msg}")
 
     @staticmethod
-    def _calculate_believe_indicators(df: pd.DataFrame) -> Dict[str, Any]:
+    def _calculate_believe_indicators(
+        df: pd.DataFrame,
+        s30_bollinger_base: Dict[str, Any],
+        s30_stochastic_base: Dict[str, Any],
+    ) -> Dict[str, Any]:
         """Calculate the S30-only indicator snapshot required by Believe."""
         if df is None or len(df) < 20:
             raise ValueError("FAIL-FAST: S30 requires at least 20 candles for Believe indicators")
         close = pd.to_numeric(df["close"], errors="coerce")
         high = pd.to_numeric(df["high"], errors="coerce")
         low = pd.to_numeric(df["low"], errors="coerce")
-        bollinger = calculate_bollinger_percent(close, period=41, std_dev=2.0)
-        # Believe contract: BB %B(41,2), Stochastic(13,10,3), and MA(3,6).
+        # Believe contract: BB(20,2), Stochastic(13,10,3), and MA(3,6).
         ema3 = close.ewm(span=3, adjust=False).mean()
         ema6 = close.ewm(span=6, adjust=False).mean()
         ema20 = close.ewm(span=20, adjust=False).mean()
+        bollinger_percent = assemble_bollinger_percent(
+            close=float(s30_bollinger_base["close"]),
+            middle=float(s30_bollinger_base["middle"]),
+            std=float(s30_bollinger_base["std"]),
+            period=int(s30_bollinger_base["period"]),
+            std_dev=float(s30_bollinger_base["std_dev"]),
+        )
+        stochastic = assemble_stochastic(s30_stochastic_base)
         delta = close.diff()
         gains = delta.clip(lower=0).rolling(14).mean()
         losses = (-delta.clip(upper=0)).rolling(14).mean()
@@ -882,17 +906,6 @@ class Orchestrator:
         rsi = 100 - (100 / (1 + rs))
         if pd.isna(rsi.iloc[-1]):
             raise ValueError("FAIL-FAST: RSI is NaN - neutral substitution is forbidden")
-        low13 = low.rolling(13).min()
-        high13 = high.rolling(13).max()
-        raw_stoch = (close - low13) / (high13 - low13).replace(0, np.nan) * 100
-        if pd.isna(raw_stoch.iloc[-1]):
-            raise ValueError("FAIL-FAST: raw Stochastic is NaN - neutral substitution is forbidden")
-        stoch_k = raw_stoch.rolling(10).mean()
-        if pd.isna(stoch_k.iloc[-1]):
-            raise ValueError("FAIL-FAST: Stochastic %K is NaN - neutral substitution is forbidden")
-        stoch_d = stoch_k.rolling(3).mean()
-        if pd.isna(stoch_d.iloc[-1]):
-            raise ValueError("FAIL-FAST: Stochastic %D is NaN - neutral substitution is forbidden")
         macd = close.ewm(span=12, adjust=False).mean() - close.ewm(span=26, adjust=False).mean()
         macd_signal = macd.ewm(span=9, adjust=False).mean()
         def last(series):
@@ -901,18 +914,8 @@ class Orchestrator:
             return float(series.iloc[-1])
         prev_fast, prev_slow = ema3.iloc[-2], ema6.iloc[-2]
         curr_fast, curr_slow = ema3.iloc[-1], ema6.iloc[-1]
-        prev_k, prev_d = stoch_k.iloc[-2], stoch_d.iloc[-2]
-        curr_k, curr_d = stoch_k.iloc[-1], stoch_d.iloc[-1]
         golden_cross = prev_fast <= prev_slow and curr_fast > curr_slow
         death_cross = prev_fast >= prev_slow and curr_fast < curr_slow
-        stoch_cross_up = prev_k <= prev_d and curr_k > curr_d
-        stoch_cross_down = prev_k >= prev_d and curr_k < curr_d
-        stoch_cross_50_up = prev_k < 50 <= curr_k
-        stoch_cross_50_down = prev_k > 50 >= curr_k
-        stoch_tangled = bool((stoch_k.tail(3) - stoch_d.tail(3)).abs().max() < 2)
-        if last(upper) == last(lower):
-            raise ValueError("FAIL-FAST: Bollinger bands collapsed (upper == lower) - %B is undefined")
-        bb_percent_b = round((last(close) - last(lower)) / (last(upper) - last(lower)), 6)
         adx_s30 = StructuralMetrics.calc_adx(high, low, close, 14)
         atr_s30 = StructuralMetrics.calculate_atr(high, low, close, 6, extended=True)
 
@@ -924,26 +927,26 @@ class Orchestrator:
             "ema5": last(ema3),
             "ema10": last(ema6),
             "ema20": last(ema20),
-            "bb_upper": bollinger.upper,
-            "bb_middle": bollinger.middle,
-            "bb_lower": bollinger.lower,
-            "bb_percent_b": round(bollinger.percent_b, 6),
-            "bb_width": bollinger.width,
+            "bb_upper": round(bollinger_percent.upper, 6),
+            "bb_middle": round(bollinger_percent.middle, 6),
+            "bb_lower": round(bollinger_percent.lower, 6),
+            "bb_percent_b": round(bollinger_percent.percent_b, 6),
+            "bb_width": round(bollinger_percent.width, 6),
             "rsi": round(last(rsi), 2),
-            "stoch_k": round(last(stoch_k), 2),
-            "stoch_d": round(last(stoch_d), 2),
+            "stoch_k": round(stochastic.k, 2),
+            "stoch_d": round(stochastic.d, 2),
             "macd": last(macd),
             "macd_signal": last(macd_signal),
             "macd_histogram": last(macd - macd_signal),
             "adx": adx_s30["adx"],
             "atr14": atr_s30["atr14"],
-            "stoch_cross": (
-                "GOLDEN_CROSS" if stoch_cross_up
-                else "DEATH_CROSS" if stoch_cross_down else "NONE"
-            ),
-            "stoch_cross_50": "UP" if stoch_cross_50_up else "DOWN" if stoch_cross_50_down else "NONE",
-            "stoch_hook_confirmed": bool(stoch_cross_up or stoch_cross_down),
-            "stoch_tangled": stoch_tangled,
+            "adx": adx_s30["adx"],
+            "atr14": atr_s30["atr14"],
+            "stoch_zone": stochastic.zone,
+            "stoch_cross": stochastic.cross,
+            "stoch_cross_50": stochastic.cross_50,
+            "stoch_hook_confirmed": stochastic.hook_confirmed,
+            "stoch_tangled": stochastic.tangled,
             "ma_cross": "GOLDEN_CROSS" if golden_cross else "DEATH_CROSS" if death_cross else "NONE",
             "ma_cross_confirmed": bool(golden_cross or death_cross),
         }
@@ -1003,21 +1006,26 @@ class Orchestrator:
         def _num(value):
             if value is None or value == "":
                 raise ValueError("FAIL-FAST: Believe indicator value missing - default substitution is forbidden")
-            return float(value)
+            result = float(value)
+            if not np.isfinite(result):
+                raise ValueError("FAIL-FAST: Believe indicator value is NaN/inf - default substitution is forbidden")
+            return result
 
         close = _num(s30.get("close"))
 
         # Believe is evaluated in the configured roles:
         # S30 entry, M1 trigger, M5 context.
         bb_pct_b = _num(s30.get("bb_percent_b"))
+        if not (0 <= bb_pct_b <= 1):
+            raise ValueError(f"FAIL-FAST: S30 %B out of [0,1] ({bb_pct_b:.4f}) - clamping is forbidden")
 
         stoch_k = _num(s30.get("stoch_k"))
         stoch_d = _num(s30.get("stoch_d"))
-        rsi = _num(m1.get("rsi14"))
-        macd = _num(m1.get("macd"))
-        macd_signal = _num(m1.get("macd_signal"))
-        ema_fast = _num(s30.get("ema3"))
-        ema_slow = _num(s30.get("ema6"))
+        rsi = _num(s30.get("rsi"))
+        macd = _num(s30.get("macd"))
+        macd_signal = _num(s30.get("macd_signal"))
+        ema_fast = _num(s30.get("ema5"))
+        ema_slow = _num(s30.get("ema10"))
         ema20 = _num(s30.get("ema20"))
         trigger_direction = str(m1.get("bias") or "").upper()
         context_direction = str(m5.get("bias") or "").upper()
@@ -1042,33 +1050,25 @@ class Orchestrator:
         crossed_50 = str(s30.get("stoch_cross_50", "NONE")).upper() in {"UP", "DOWN"}
         is_surfing_extreme = (stoch_k <= 10 or stoch_k >= 90) and (stoch_d <= 20 or stoch_d >= 80)
 
-        divergence_type = str(m1.get("divergence_type") or "NONE").upper()
-        divergence_detected = divergence_type in {"BULLISH", "BEARISH"}
-        divergence_peak_count = int(m1.get("divergence_peak_count", 0))
+        divergence_detected = bool(
+            price_action.get("divergence_alert") in ("BULLISH", "BEARISH")
+            or bool(market_state.get("divergence_detected"))
+        )
+        divergence_type = str(price_action.get("divergence_alert") or market_state.get("divergence_type") or "NONE").upper()
+        if divergence_type == "NONE" and bullish_structure:
+            divergence_type = "BULLISH"
+        if divergence_type == "NONE" and bearish_structure:
+            divergence_type = "BEARISH"
 
         ma_cross = str(s30.get("ma_cross", "NONE")).upper()
         ma_confirmed = bool(s30.get("ma_cross_confirmed", False))
-        ma_aligned = ma_confirmed or (
-            ema_fast > ema_slow if bullish_structure else ema_fast < ema_slow
-        )
-        bb_confirmed = bb_pct_b <= 0 if bullish_structure else bb_pct_b >= 1
+        bb_confirmed = bb_pct_b <= 0.15 if bullish_structure else bb_pct_b >= 0.85
         stochastic_confirmed = (
-            (stoch_k <= 10 and hook_confirmed and crossed_50
-             and str(s30.get("stoch_cross", "NONE")).upper() == "UP")
-            if bullish_structure
-            else (stoch_k >= 90 and hook_confirmed and crossed_50
-                  and str(s30.get("stoch_cross", "NONE")).upper() == "DOWN")
-        )
-        macd_confirmed = (
-            macd < 0 and macd >= macd_signal
-            if bullish_structure
-            else macd > 0 and macd <= macd_signal
+            stoch_k <= 10 if bullish_structure else stoch_k >= 90
         )
         grid = self._build_grid_payload(payload)
         risk_filter_ok = (
             not grid["blocked"]
-            and str(payload.get("market_context", {}).get("news_impact", "")).upper()
-            not in {"HIGH", "RED", "IMPACT_HIGH"}
             and not bool(price_action.get("trap_alert") in ("TRAP", "GRID_BLOCK"))
             and not bool(price_action.get("pattern") in ("DOJI", "GRAY_DOJI"))
         )
@@ -1083,9 +1083,9 @@ class Orchestrator:
             bullish_score += 0.25
         if stochastic_extreme == "OVERBOUGHT_90" and bearish_structure:
             bearish_score += 0.25
-        if bb_pct_b <= 0 and bullish_structure:
+        if bb_pct_b <= 0.20 and bullish_structure:
             bullish_score += 0.15
-        if bb_pct_b >= 1 and bearish_structure:
+        if bb_pct_b >= 0.80 and bearish_structure:
             bearish_score += 0.15
         if rsi < 30 and bullish_structure:
             bullish_score += 0.15
@@ -1104,28 +1104,8 @@ class Orchestrator:
             bullish_score += 0.05
             bearish_score += 0.05
 
-        bullish_signal = (
-            bullish_score >= 0.60
-            and bullish_structure
-            and bb_confirmed
-            and stochastic_confirmed
-            and ma_aligned
-            and divergence_detected
-            and divergence_type == "BULLISH"
-            and divergence_peak_count in {2, 3}
-            and macd_confirmed
-        )
-        bearish_signal = (
-            bearish_score >= 0.60
-            and bearish_structure
-            and bb_confirmed
-            and stochastic_confirmed
-            and ma_aligned
-            and divergence_detected
-            and divergence_type == "BEARISH"
-            and divergence_peak_count in {2, 3}
-            and macd_confirmed
-        )
+        bullish_signal = bullish_score >= 0.60 and bullish_structure
+        bearish_signal = bearish_score >= 0.60 and bearish_structure
         if bullish_signal and bearish_signal:
             bullish_signal = bullish_score > bearish_score
             bearish_signal = bearish_score > bullish_score
@@ -1146,8 +1126,8 @@ class Orchestrator:
             "context_bias": context_direction or "UNKNOWN",
             "close_price": close,
             "indicators_raw": {
-                "ema3": ema_fast,
-                "sma6": ema_slow,
+                "ema3": float(s30.get("ema5", 0.0) or 0.0),
+                "sma6": float(s30.get("ema10", 0.0) or 0.0),
                 "bb_pct_b": round(bb_pct_b, 6),
                 "stoch13_k": round(stoch_k, 2),
                 "stoch13_d": round(stoch_d, 2),
@@ -1163,8 +1143,8 @@ class Orchestrator:
                     "is_confirmed_bar_close": ma_confirmed,
                 },
                 "bb_state": {
-                    "touched_lower_0": bb_pct_b <= 0,
-                    "touched_upper_1": bb_pct_b >= 1,
+                    "touched_lower_0": bb_pct_b <= 0.15,
+                    "touched_upper_1": bb_pct_b >= 0.85,
                 },
                 "stochastic_state": {
                     "touched_extreme_10_or_90": stochastic_extreme,
@@ -1186,11 +1166,8 @@ class Orchestrator:
             "extreme_combination_extras": {
                 "divergence_detected": divergence_detected,
                 "divergence_type": divergence_type,
-                "divergence_source": "STOCH",
-                "divergence_peak_count": divergence_peak_count,
+                "divergence_source": "RSI_OR_STOCH" if abs(rsi - 50) > 0 else "NONE",
                 "macd_side_of_zero": "BELOW_ZERO" if macd < 0 else "ABOVE_ZERO",
-                "m1_macd_below_zero": macd < 0,
-                "m1_macd_above_zero": macd > 0,
             },
             "risk_and_market_filters": {
                 "grid_filter": grid,
@@ -1202,8 +1179,8 @@ class Orchestrator:
             },
             "decision_conditions": {
                 "entry_s30_bb_touch": (
-                    "LOWER_0" if bb_pct_b <= 0
-                    else "UPPER_1" if bb_pct_b >= 1 else "NONE"
+                    "LOWER_0" if bb_pct_b <= 0.15
+                    else "UPPER_1" if bb_pct_b >= 0.85 else "NONE"
                 ),
                 "trigger_m1_direction_aligned": (
                     (bullish_structure and context_direction == "BULLISH")
@@ -1212,15 +1189,6 @@ class Orchestrator:
                 "context_m5_direction_aligned": (
                     context_direction in ("BULLISH", "BEARISH")
                     and context_direction == trigger_direction
-                ),
-                "room_to_run_clear": not grid["blocked"],
-                "m1_divergence_required": divergence_detected
-                and divergence_type == ("BULLISH" if bullish_structure else "BEARISH")
-                and divergence_peak_count in {2, 3},
-                "m1_macd_required": (
-                    macd < 0 and macd >= macd_signal
-                    if bullish_structure
-                    else macd > 0 and macd <= macd_signal
                 ),
                 "holding_period_minutes": 5,
             },
@@ -1469,9 +1437,6 @@ class Orchestrator:
         app(f"    m1_stoch_d: {_fmt_num(core.get('m1_stoch_d', ''))}")
         app(f"    m1_macd: {_fmt_num(core.get('m1_macd', ''))}")
         app(f"    m1_macd_signal: {_fmt_num(core.get('m1_macd_signal', ''))}")
-        app(f"    m1_macd_histogram: {_fmt_num(core.get('m1_macd_histogram', ''))}")
-        app(f"    m1_divergence_type: {core.get('m1_divergence_type', '')}")
-        app(f"    m1_divergence_peak_count: {core.get('m1_divergence_peak_count', '')}")
         app(f"    m1_adx: {_fmt_num(core.get('m1_adx', ''))}")
         app(f"    m1_atr: {_fmt_num(core.get('m1_atr', ''))}")
         app("    ohlcv:")
@@ -1578,11 +1543,9 @@ class Orchestrator:
             "  s30_bias:", "  s30_open:", "  s30_high:", "  s30_low:",
             "  s30_close:", "  s30_volume:", "  s30_ema5:", "  s30_ema10:",
             "  s30_ema20:", "  s30_rsi:", "  s30_stoch_", "  s30_macd:",
-            "  s30_macd_histogram:",
             "  s30_bb_percent_b:",
             "    m1_bias:", "    m1_last_candle:", "    m1_ema5:", "    m1_ema20:",
             "    m1_rsi:", "    m1_stoch_", "    m1_macd:",
-            "    m1_macd_histogram:", "    m1_divergence_",
             "      m1_open:", "      m1_high:", "      m1_low:", "      m1_close:",
             "      m1_volume:",
             "    m5_bias:", "    m5_ema5:", "    m5_ema10:", "    m5_ema20:",

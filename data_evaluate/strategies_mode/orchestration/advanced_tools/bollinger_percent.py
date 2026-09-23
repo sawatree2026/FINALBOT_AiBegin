@@ -1,19 +1,14 @@
-"""Pure in-memory Bollinger %B calculation."""
+from dataclasses import dataclass
 
-import math
-from numbers import Real
-from typing import NamedTuple
-
-import pandas as pd
+import numpy as np
 
 
 DEFAULT_PERIOD = 41
 DEFAULT_STD_DEV = 2.0
 
 
-class BollingerPercentResult(NamedTuple):
-    """Latest Bollinger values for one close series."""
-
+@dataclass(frozen=True)
+class BollingerPercentResult:
     middle: float
     upper: float
     lower: float
@@ -22,51 +17,49 @@ class BollingerPercentResult(NamedTuple):
     close: float
 
 
-def calculate_bollinger_percent(
-    close_series: pd.Series,
+def assemble_bollinger_percent(
+    close: float,
+    middle: float,
+    std: float,
     period: int = DEFAULT_PERIOD,
     std_dev: float = DEFAULT_STD_DEV,
 ) -> BollingerPercentResult:
-    """Calculate the latest SMA Bollinger %B value from in-memory closes."""
-    if not isinstance(close_series, pd.Series):
-        raise TypeError("FAIL-FAST: close_series must be a pandas Series")
-    if not isinstance(period, int) or isinstance(period, bool) or period <= 0:
-        raise ValueError("FAIL-FAST: Bollinger period must be a positive integer")
-    if not isinstance(std_dev, Real) or isinstance(std_dev, bool):
+    """Assemble %B from S30 basis values produced by IndicatorStore."""
+    if period != DEFAULT_PERIOD:
+        raise ValueError("FAIL-FAST: S30 Bollinger %B requires period 41")
+    if not isinstance(std_dev, (int, float)) or isinstance(std_dev, bool):
         raise TypeError("FAIL-FAST: Bollinger standard deviation must be numeric")
-    if not math.isfinite(float(std_dev)) or float(std_dev) <= 0:
+    if not np.isfinite(float(std_dev)) or float(std_dev) <= 0:
         raise ValueError("FAIL-FAST: Bollinger standard deviation must be finite and positive")
-    if close_series.empty:
-        raise ValueError("FAIL-FAST: close series is empty")
-    if not pd.api.types.is_numeric_dtype(close_series.dtype):
-        raise TypeError("FAIL-FAST: close series must contain numeric values")
-    if len(close_series) < period:
-        raise ValueError(f"FAIL-FAST: need at least {period} closes for Bollinger %B")
-
-    close = close_series.astype("float64")
-    if close.isna().any() or not bool(close.map(math.isfinite).all()):
-        raise ValueError("FAIL-FAST: close series contains NaN or infinite values")
-
-    window = close.tail(period)
-    middle = float(window.mean())
-    std = float(window.std(ddof=0))
-    upper = middle + (float(std_dev) * std)
-    lower = middle - (float(std_dev) * std)
-    width = upper - lower
-    if not math.isfinite(upper) or not math.isfinite(lower) or not math.isfinite(width):
-        raise ValueError("FAIL-FAST: Bollinger bands contain NaN or infinite values")
+    if float(std_dev) != DEFAULT_STD_DEV:
+        raise ValueError("FAIL-FAST: S30 Bollinger %B requires standard deviation 2")
+    values = (float(close), float(middle), float(std))
+    if not all(np.isfinite(value) for value in values):
+        raise ValueError("FAIL-FAST: Bollinger basis contains NaN/inf")
+    latest_close, latest_middle, latest_std = values
+    latest_upper = latest_middle + (float(std_dev) * latest_std)
+    latest_lower = latest_middle - (float(std_dev) * latest_std)
+    width = latest_upper - latest_lower
+    if not all(np.isfinite(value) for value in (
+        latest_middle,
+        latest_upper,
+        latest_lower,
+        latest_close,
+        width,
+    )):
+        raise ValueError("FAIL-FAST: Bollinger values contain NaN/inf")
     if width <= 0:
-        raise ValueError("FAIL-FAST: Bollinger band width is zero or collapsed")
+        raise ValueError("FAIL-FAST: Bollinger band width is zero - %B is undefined")
 
-    latest_close = float(close.iloc[-1])
-    percent_b = (latest_close - lower) / width
-    if not math.isfinite(percent_b):
-        raise ValueError("FAIL-FAST: Bollinger %B is NaN or infinite")
+    percent_b = (latest_close - latest_lower) / width
+    if not np.isfinite(percent_b):
+        raise ValueError("FAIL-FAST: Bollinger %B is NaN/inf")
+
     return BollingerPercentResult(
-        middle=middle,
-        upper=upper,
-        lower=lower,
+        middle=latest_middle,
+        upper=latest_upper,
+        lower=latest_lower,
         width=width,
-        percent_b=percent_b,
+        percent_b=float(percent_b),
         close=latest_close,
     )

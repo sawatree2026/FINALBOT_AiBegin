@@ -6,6 +6,8 @@ from .field_utils import boolean, number, text
 
 
 def evaluate(fields: Dict[str, str], action: str) -> bool:
+    if action not in {"CALL", "PUT"}:
+        raise ValueError(f"Invalid Believe action: {action!r}")
     k = number(fields, "believe_sto_k")
     d = number(fields, "believe_sto_d")
     zone = text(fields, "believe_sto_zone")
