@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 
 import numpy as np
-import pandas as pd
 
 
 DEFAULT_PERIOD = 41
@@ -18,37 +17,28 @@ class BollingerPercentResult:
     close: float
 
 
-def calculate_bollinger_percent(
-    close_series: pd.Series,
+def assemble_bollinger_percent(
+    close: float,
+    middle: float,
+    std: float,
     period: int = DEFAULT_PERIOD,
     std_dev: float = DEFAULT_STD_DEV,
 ) -> BollingerPercentResult:
-    """Calculate SMA Bollinger %B from one in-memory close series."""
-    if not isinstance(close_series, pd.Series):
-        raise TypeError("FAIL-FAST: close_series must be a pandas Series")
-    if not isinstance(period, int) or isinstance(period, bool) or period <= 0:
-        raise ValueError("FAIL-FAST: Bollinger period must be a positive integer")
+    """Assemble %B from S30 basis values produced by IndicatorStore."""
+    if period != DEFAULT_PERIOD:
+        raise ValueError("FAIL-FAST: S30 Bollinger %B requires period 41")
     if not isinstance(std_dev, (int, float)) or isinstance(std_dev, bool):
         raise TypeError("FAIL-FAST: Bollinger standard deviation must be numeric")
     if not np.isfinite(float(std_dev)) or float(std_dev) <= 0:
         raise ValueError("FAIL-FAST: Bollinger standard deviation must be finite and positive")
-    if len(close_series) < period:
-        raise ValueError(f"FAIL-FAST: need at least {period} candles for Bollinger %B")
-
-    close = pd.to_numeric(close_series, errors="coerce")
-    values = close.to_numpy(dtype=float)
-    if not np.isfinite(values).all():
-        raise ValueError("FAIL-FAST: close series contains NaN/inf")
-
-    middle = close.rolling(window=period, min_periods=period).mean()
-    std = close.rolling(window=period, min_periods=period).std(ddof=0)
-    upper = middle + (float(std_dev) * std)
-    lower = middle - (float(std_dev) * std)
-
-    latest_middle = float(middle.iloc[-1])
-    latest_upper = float(upper.iloc[-1])
-    latest_lower = float(lower.iloc[-1])
-    latest_close = float(close.iloc[-1])
+    if float(std_dev) != DEFAULT_STD_DEV:
+        raise ValueError("FAIL-FAST: S30 Bollinger %B requires standard deviation 2")
+    values = (float(close), float(middle), float(std))
+    if not all(np.isfinite(value) for value in values):
+        raise ValueError("FAIL-FAST: Bollinger basis contains NaN/inf")
+    latest_close, latest_middle, latest_std = values
+    latest_upper = latest_middle + (float(std_dev) * latest_std)
+    latest_lower = latest_middle - (float(std_dev) * latest_std)
     width = latest_upper - latest_lower
     if not all(np.isfinite(value) for value in (
         latest_middle,

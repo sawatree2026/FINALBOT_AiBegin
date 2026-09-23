@@ -72,12 +72,40 @@ class CoreIndicators:
 
     @staticmethod
     def calculate_stochastic(close_series: pd.Series, high_series: pd.Series, low_series: pd.Series) -> dict:
-        low_min = low_series.rolling(window=13, min_periods=1).min()
-        high_max = high_series.rolling(window=13, min_periods=1).max()
-        stoch_k_raw = 100 * (close_series - low_min) / (high_max - low_min + 1e-9)
-        stoch_k = stoch_k_raw.rolling(window=10, min_periods=1).mean()
-        stoch_d = stoch_k.rolling(window=3, min_periods=1).mean()
+        snapshot = CoreIndicators.calculate_stochastic_snapshot(
+            close_series, high_series, low_series
+        )
         return {
-            'stoch_k': round(stoch_k.iloc[-1], 2),
-            'stoch_d': round(stoch_d.iloc[-1], 2)
+            'stoch_k': round(snapshot['k'], 2),
+            'stoch_d': round(snapshot['d'], 2),
         }
+
+    @staticmethod
+    def calculate_stochastic_snapshot(
+        close_series: pd.Series,
+        high_series: pd.Series,
+        low_series: pd.Series,
+        period_k: int = 13,
+        smoothing: int = 10,
+        period_d: int = 3,
+    ) -> dict:
+        if len(close_series) < period_k + smoothing + period_d - 2:
+            raise ValueError("FAIL-FAST: insufficient candles for Stochastic K/D")
+        low_min = low_series.rolling(window=period_k, min_periods=period_k).min()
+        high_max = high_series.rolling(window=period_k, min_periods=period_k).max()
+        range_size = high_max - low_min
+        if range_size.iloc[-1] <= 0 or pd.isna(range_size.iloc[-1]):
+            raise ValueError("FAIL-FAST: Stochastic high-low range is zero/NaN")
+        raw_k = 100 * (close_series - low_min) / range_size
+        smooth_k = raw_k.rolling(window=smoothing, min_periods=smoothing).mean()
+        d_line = smooth_k.rolling(window=period_d, min_periods=period_d).mean()
+        values = {
+            'k': smooth_k.iloc[-1],
+            'd': d_line.iloc[-1],
+            'previous_k': smooth_k.iloc[-2],
+            'previous_d': d_line.iloc[-2],
+            'recent_gap': (smooth_k.tail(3) - d_line.tail(3)).abs().max(),
+        }
+        if any(pd.isna(value) for value in values.values()):
+            raise ValueError("FAIL-FAST: Stochastic K/D contains NaN")
+        return {key: float(value) for key, value in values.items()}

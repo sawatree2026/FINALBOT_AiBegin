@@ -27,7 +27,8 @@ from monitoring.console_dashboard import ConsoleUI
 from data_evaluate.strategies_mode.orchestration.indicator_store.indicator_store import store
 from data_evaluate.strategies_mode.orchestration.indicator_store.structural_metrics import StructuralMetrics
 from data_evaluate.strategies_mode.orchestration.advanced_tools.advanced_tools_manager import AdvancedToolsManager
-from data_evaluate.strategies_mode.orchestration.advanced_tools.bollinger_percent import calculate_bollinger_percent
+from data_evaluate.strategies_mode.orchestration.advanced_tools.bollinger_percent import assemble_bollinger_percent
+from data_evaluate.strategies_mode.orchestration.advanced_tools.stochastic import assemble_stochastic
 
 from types import SimpleNamespace
 # Import 5 Engines and Classifier
@@ -247,7 +248,6 @@ class Orchestrator:
             'close': float(s30_last['close']),
             'volume': float(s30_last.get('volume', 0.0) or 0.0),
         }
-        final_payload['s30'].update(self._calculate_believe_indicators(candles_dict['S30']))
         # ── 0.1 Timeframe Synchronization (REMOVED) ───────────────────────
         # Note: Timeframe sync is strictly prohibited in Part 2 per specs.
         # Strategies mode evaluates only the independent S30, M1 and M5 inputs.
@@ -265,9 +265,25 @@ class Orchestrator:
 
         # ── 2. Basic Indicators (indicator_store.py) ────────────────────
         try:
-            store.calculate_all(symbol, candles_dict, forming_data=None)
+            store.calculate_all(
+                symbol,
+                candles_dict,
+                forming_data=None,
+                include_m5_stochastic=False,
+            )
             basic_payload = store.get_payload(symbol)
             final_payload.update(basic_payload) # merge m1, m5, ohlcv
+            s30_payload = dict(basic_payload['s30'])
+            s30_bollinger_base = s30_payload.pop('bollinger_percent_base')
+            s30_stochastic_base = s30_payload.pop('stochastic_base')
+            s30_payload.update(
+                self._calculate_believe_indicators(
+                    candles_dict['S30'],
+                    s30_bollinger_base,
+                    s30_stochastic_base,
+                )
+            )
+            final_payload['s30'] = s30_payload
         except Exception as e:
             raise
 
@@ -860,7 +876,11 @@ class Orchestrator:
         logger.error(f"[ORCHESTRATOR ERROR] {msg}")
 
     @staticmethod
-    def _calculate_believe_indicators(df: pd.DataFrame) -> Dict[str, Any]:
+    def _calculate_believe_indicators(
+        df: pd.DataFrame,
+        s30_bollinger_base: Dict[str, Any],
+        s30_stochastic_base: Dict[str, Any],
+    ) -> Dict[str, Any]:
         """Calculate the S30-only indicator snapshot required by Believe."""
         if df is None or len(df) < 20:
             raise ValueError("FAIL-FAST: S30 requires at least 20 candles for Believe indicators")
@@ -871,14 +891,14 @@ class Orchestrator:
         ema3 = close.ewm(span=3, adjust=False).mean()
         ema6 = close.ewm(span=6, adjust=False).mean()
         ema20 = close.ewm(span=20, adjust=False).mean()
-        middle = close.rolling(20).mean()
-        std = close.rolling(20).std(ddof=0)
-        upper = middle + 2 * std
-        lower = middle - 2 * std
-        if pd.isna(upper.iloc[-1]) or pd.isna(lower.iloc[-1]):
-            raise ValueError("FAIL-FAST: Bollinger bands are NaN - %B is undefined")
-        if upper.iloc[-1] == lower.iloc[-1]:
-            raise ValueError("FAIL-FAST: Bollinger bands collapsed (upper == lower) - %B is undefined")
+        bollinger_percent = assemble_bollinger_percent(
+            close=float(s30_bollinger_base["close"]),
+            middle=float(s30_bollinger_base["middle"]),
+            std=float(s30_bollinger_base["std"]),
+            period=int(s30_bollinger_base["period"]),
+            std_dev=float(s30_bollinger_base["std_dev"]),
+        )
+        stochastic = assemble_stochastic(s30_stochastic_base)
         delta = close.diff()
         gains = delta.clip(lower=0).rolling(14).mean()
         losses = (-delta.clip(upper=0)).rolling(14).mean()
@@ -886,17 +906,6 @@ class Orchestrator:
         rsi = 100 - (100 / (1 + rs))
         if pd.isna(rsi.iloc[-1]):
             raise ValueError("FAIL-FAST: RSI is NaN - neutral substitution is forbidden")
-        low13 = low.rolling(13).min()
-        high13 = high.rolling(13).max()
-        raw_stoch = (close - low13) / (high13 - low13).replace(0, np.nan) * 100
-        if pd.isna(raw_stoch.iloc[-1]):
-            raise ValueError("FAIL-FAST: raw Stochastic is NaN - neutral substitution is forbidden")
-        stoch_k = raw_stoch.rolling(10).mean()
-        if pd.isna(stoch_k.iloc[-1]):
-            raise ValueError("FAIL-FAST: Stochastic %K is NaN - neutral substitution is forbidden")
-        stoch_d = stoch_k.rolling(3).mean()
-        if pd.isna(stoch_d.iloc[-1]):
-            raise ValueError("FAIL-FAST: Stochastic %D is NaN - neutral substitution is forbidden")
         macd = close.ewm(span=12, adjust=False).mean() - close.ewm(span=26, adjust=False).mean()
         macd_signal = macd.ewm(span=9, adjust=False).mean()
         def last(series):
@@ -905,16 +914,8 @@ class Orchestrator:
             return float(series.iloc[-1])
         prev_fast, prev_slow = ema3.iloc[-2], ema6.iloc[-2]
         curr_fast, curr_slow = ema3.iloc[-1], ema6.iloc[-1]
-        prev_k, prev_d = stoch_k.iloc[-2], stoch_d.iloc[-2]
-        curr_k, curr_d = stoch_k.iloc[-1], stoch_d.iloc[-1]
         golden_cross = prev_fast <= prev_slow and curr_fast > curr_slow
         death_cross = prev_fast >= prev_slow and curr_fast < curr_slow
-        stoch_cross_up = prev_k <= prev_d and curr_k > curr_d
-        stoch_cross_down = prev_k >= prev_d and curr_k < curr_d
-        stoch_cross_50_up = prev_k < 50 <= curr_k
-        stoch_cross_50_down = prev_k > 50 >= curr_k
-        stoch_tangled = bool((stoch_k.tail(3) - stoch_d.tail(3)).abs().max() < 2)
-        bb_percent_b = round((last(close) - last(lower)) / (last(upper) - last(lower)), 6)
         adx_s30 = StructuralMetrics.calc_adx(high, low, close, 14)
         atr_s30 = StructuralMetrics.calculate_atr(high, low, close, 6, extended=True)
 
@@ -926,14 +927,14 @@ class Orchestrator:
             "ema5": last(ema3),
             "ema10": last(ema6),
             "ema20": last(ema20),
-            "bb_upper": last(upper),
-            "bb_middle": last(middle),
-            "bb_lower": last(lower),
-            "bb_percent_b": bb_percent_b,
-            "bb_width": last(upper) - last(lower),
+            "bb_upper": round(bollinger_percent.upper, 6),
+            "bb_middle": round(bollinger_percent.middle, 6),
+            "bb_lower": round(bollinger_percent.lower, 6),
+            "bb_percent_b": round(bollinger_percent.percent_b, 6),
+            "bb_width": round(bollinger_percent.width, 6),
             "rsi": round(last(rsi), 2),
-            "stoch_k": round(last(stoch_k), 2),
-            "stoch_d": round(last(stoch_d), 2),
+            "stoch_k": round(stochastic.k, 2),
+            "stoch_d": round(stochastic.d, 2),
             "macd": last(macd),
             "macd_signal": last(macd_signal),
             "macd_histogram": last(macd - macd_signal),
@@ -941,13 +942,11 @@ class Orchestrator:
             "atr14": atr_s30["atr14"],
             "adx": adx_s30["adx"],
             "atr14": atr_s30["atr14"],
-            "stoch_cross": (
-                "GOLDEN_CROSS" if stoch_cross_up
-                else "DEATH_CROSS" if stoch_cross_down else "NONE"
-            ),
-            "stoch_cross_50": "UP" if stoch_cross_50_up else "DOWN" if stoch_cross_50_down else "NONE",
-            "stoch_hook_confirmed": bool(stoch_cross_up or stoch_cross_down),
-            "stoch_tangled": stoch_tangled,
+            "stoch_zone": stochastic.zone,
+            "stoch_cross": stochastic.cross,
+            "stoch_cross_50": stochastic.cross_50,
+            "stoch_hook_confirmed": stochastic.hook_confirmed,
+            "stoch_tangled": stochastic.tangled,
             "ma_cross": "GOLDEN_CROSS" if golden_cross else "DEATH_CROSS" if death_cross else "NONE",
             "ma_cross_confirmed": bool(golden_cross or death_cross),
         }
