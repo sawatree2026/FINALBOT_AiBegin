@@ -58,6 +58,10 @@ class ExecutionGate:
         engine_used = str(ai_decision.get("engine_used", "AI_ENGINE"))
         agreement_valid = bool(ai_decision.get("agreement_valid", True))
         evidence = self._extract_evidence(payload, ai_decision)
+        # BOSS: in strategies_mode the higher-timeframe context is M5 (M15 is disabled).
+        is_strategies = str(ai_decision.get("mode", "")).lower().startswith("strategies")
+        htf_direction = evidence["m5_direction"] if is_strategies else evidence["m15_direction"]
+        htf_label = "M5" if is_strategies else "M15"
         rejection_reasons: List[str] = []
 
         if action == "WAIT":
@@ -73,8 +77,8 @@ class ExecutionGate:
                 )
             if not agreement_valid:
                 rejection_reasons.append("Gemini/Chronos disagreement")
-            if evidence["m15_direction"] is None:
-                rejection_reasons.append("Missing M15 primary direction")
+            if htf_direction is None:
+                rejection_reasons.append(f"Missing {htf_label} primary direction")
             if evidence["m5_direction"] is None:
                 rejection_reasons.append("Missing M5 confirmation direction")
             if evidence["regime"] is None:
@@ -91,16 +95,16 @@ class ExecutionGate:
                 rejection_reasons.append("Stale or low-quality market data")
             if evidence["regime"] == "CHOPPY":
                 rejection_reasons.append("CHOPPY regime")
-            if evidence["m15_direction"] and evidence["m5_direction"]:
-                if evidence["m15_direction"] != evidence["m5_direction"]:
-                    rejection_reasons.append("M15/M5 direction conflict")
-                elif action != ("CALL" if evidence["m15_direction"] == "UP" else "PUT"):
-                    rejection_reasons.append("Counter-trend action is disabled")
+            if htf_direction and evidence["m5_direction"]:
+                if htf_direction != evidence["m5_direction"]:
+                    rejection_reasons.append(f"{htf_label}/M5 direction conflict")
+                elif action != ("CALL" if htf_direction == "UP" else "PUT"):
+                    rejection_reasons.append(f"Counter-{htf_label}-context action is disabled")
 
         approved = action in ("CALL", "PUT") and not rejection_reasons
         if approved:
             approved_reason = reason_th or (
-                f"Approved {action}: M15 {evidence['m15_direction']} + "
+                f"Approved {action}: {htf_label} {htf_direction} + "
                 f"M5 {evidence['m5_direction']} trend confirmation"
             )
             rejection_reasons = []
@@ -123,6 +127,8 @@ class ExecutionGate:
             "rejection_reasons": rejection_reasons,
             "m15_direction": evidence["m15_direction"],
             "m5_direction": evidence["m5_direction"],
+            "context_timeframe": htf_label,
+            "htf_direction": htf_direction,
             "m5_regime": evidence["regime"],
             "m5_adx": evidence["adx"],
             "risk_level": evidence["risk"],
