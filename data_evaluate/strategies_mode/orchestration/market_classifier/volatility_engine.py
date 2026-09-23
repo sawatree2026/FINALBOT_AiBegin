@@ -97,9 +97,8 @@ class VolatilityEngine(BaseEngine):
         """Calculate Bollinger Bands squeeze ratio and Compression Squeeze Quality score using precomputed SSOT values"""
         try:
             if historical_bbw_sma == 0 or np.isnan(historical_bbw_sma):
-                bbw_compression_ratio = 1.0
-            else:
-                bbw_compression_ratio = round(float(current_bbw / historical_bbw_sma), 4)
+                raise ValueError("FAIL-FAST: historical BBW SMA is zero/NaN - compression ratio is undefined")
+            bbw_compression_ratio = round(float(current_bbw / historical_bbw_sma), 4)
                 
             # Compute quality 0-100: lower ratio & lower atr_pct = higher quality squeeze
             quality = 100.0

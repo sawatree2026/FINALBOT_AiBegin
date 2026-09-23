@@ -241,10 +241,8 @@ class Orchestrator:
         is_otc = "OTC" in symbol.upper()
         if is_otc:
             candles_dict = {k: v.copy() for k, v in candles_dict.items()}
-            for tf in ['M1', 'M5', 'M15']:
-                if tf in candles_dict and not candles_dict[tf].empty:
-                    # Modify in place safely
-                    candles_dict[tf].loc[:, 'volume'] = 1.0
+            # Zero-Mock: OTC candles keep their truthful (zero) volume.
+            # OTC is handled downstream via the is_otc flag, never via fabricated volume.
 
         # ── 1. Save OHLCV CSV ───────────────────────────────────────────
         # ย้ายไปเซฟตอนจบ process_cycle เพื่อให้ได้ข้อมูลครบทุกตัว
@@ -386,12 +384,12 @@ class Orchestrator:
                 # downstream AI, strategy, and classifier logic can treat OTC as "not applicable" without
                 # introducing a zero-bias or misleading numeric signal.
                 if 'm5' in final_payload and isinstance(final_payload['m5'], dict):
-                    final_payload['m5']['volume'] = 1.0
-                    final_payload['m5']['volume_ratio'] = 1.0
+                    final_payload['m5']['volume'] = 'NONE_OTC'
+                    final_payload['m5']['volume_ratio'] = 'NONE_OTC'
                     final_payload['m5']['volume_trend'] = 'NO_VOLUME_DATA'
                 if 'm1' in final_payload and isinstance(final_payload['m1'], dict):
-                    final_payload['m1']['volume'] = 1.0
-                    final_payload['m1']['volume_ratio'] = 1.0
+                    final_payload['m1']['volume'] = 'NONE_OTC'
+                    final_payload['m1']['volume_ratio'] = 'NONE_OTC'
 
             final_payload['market_context'] = {
                 'state': final_payload['market_state'],
@@ -850,33 +848,28 @@ class Orchestrator:
         market_state = payload.get("market_state_full", {}) or {}
         ohlcv = payload.get("ohlcv", {}) or {}
 
-        def _num(value, default=0.0):
-            try:
-                if value is None or value == "":
-                    return float(default)
-                return float(value)
-            except (TypeError, ValueError):
-                return float(default)
+        def _num(value):
+            if value is None or value == "":
+                raise ValueError("FAIL-FAST: Believe indicator value missing - default substitution is forbidden")
+            return float(value)
 
-        try:
-            close = _num(ohlcv.get("m5_close", m5.get("close", 0.0)))
-        except Exception:
-            close = 0.0
-
-        upper = _num(m5.get("bb_upper"), 0.0)
-        lower = _num(m5.get("bb_lower"), 0.0)
-        bb_pct_b = 0.5 if upper == lower else (close - lower) / (upper - lower)
+        close = _num(ohlcv.get("m5_close", m5.get("close")))
+        upper = _num(m5.get("bb_upper"))
+        lower = _num(m5.get("bb_lower"))
+        if upper == lower:
+            raise ValueError("FAIL-FAST: Bollinger bands collapsed - %B is undefined")
+        bb_pct_b = (close - lower) / (upper - lower)
         if not (0 <= bb_pct_b <= 1):
-            bb_pct_b = 0.5
+            raise ValueError(f"FAIL-FAST: %B out of [0,1] ({bb_pct_b:.4f}) - clamping is forbidden")
 
-        stoch_k = _num(m5.get("stoch_k", m5.get("stoch13_k", 50.0)), 50.0)
-        stoch_d = _num(m5.get("stoch_d", m5.get("stoch13_d", 50.0)), 50.0)
-        rsi = _num(m5.get("rsi14", m1.get("rsi14", 50.0)), 50.0)
-        macd = _num(m5.get("macd", 0.0), 0.0)
-        macd_signal = _num(m5.get("macd_signal", 0.0), 0.0)
-        ema_fast = _num(m5.get("ema5", m5.get("ema_fast", 0.0)), 0.0)
-        ema_slow = _num(m5.get("ema10", m5.get("ema_slow", 0.0)), 0.0)
-        ema20 = _num(m5.get("ema20", 0.0), 0.0)
+        stoch_k = _num(m5.get("stoch_k", m5.get("stoch13_k")))
+        stoch_d = _num(m5.get("stoch_d", m5.get("stoch13_d")))
+        rsi = _num(m5.get("rsi14"))
+        macd = _num(m5.get("macd"))
+        macd_signal = _num(m5.get("macd_signal"))
+        ema_fast = _num(m5.get("ema5", m5.get("ema_fast")))
+        ema_slow = _num(m5.get("ema10", m5.get("ema_slow")))
+        ema20 = _num(m5.get("ema20"))
         trend_direction = str(payload.get("analysis", {}).get("trend_direction") or payload.get("market_state") or "").upper()
 
         ma_fast_above_slow = ema_fast >= ema_slow

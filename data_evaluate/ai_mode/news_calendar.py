@@ -572,7 +572,9 @@ def check_news_impact(symbol: str = "EURUSD") -> str:
     with _NEWS_LOCK:
         if symbol not in _PRECALCULATED_NEWS:
             update_all_news_impact([symbol])
-        return _PRECALCULATED_NEWS.get(symbol, 'LOW')
+        if symbol not in _PRECALCULATED_NEWS:
+            raise ValueError(f"FAIL-FAST: no pre-calculated news impact for {symbol} - 'LOW' substitution is forbidden")
+        return _PRECALCULATED_NEWS[symbol]
 
 # ─────────────────────────────────────────
 #  MAIN CLI

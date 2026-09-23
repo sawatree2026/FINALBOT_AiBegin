@@ -168,12 +168,15 @@ class MarketStateClassifier(BaseEngine):
         htf_direction = mtf_data['htf_direction']
         
         # Payload Data
-        volume_ratio = 1.0 if is_otc else m5['volume_ratio']
-        volume_surge = volume_ratio > 1.5
+        volume_ratio = None if is_otc else m5['volume_ratio']
+        volume_surge = bool(volume_ratio is not None and volume_ratio > 1.5)
         
         # Noise level from move_quality
         move_quality = pa['move_quality']
-        noise_level = 0.2 if move_quality == 'CLEAN_TRENDING' else 0.8 if move_quality == 'NOISY' else 0.5
+        _NOISE_BY_QUALITY = {'CLEAN_TRENDING': 0.2, 'NOISY': 0.8}
+        if move_quality not in _NOISE_BY_QUALITY:
+            raise ValueError(f"FAIL-FAST: unknown move_quality '{move_quality}' - neutral noise substitution is forbidden")
+        noise_level = _NOISE_BY_QUALITY[move_quality]
         
         rsi_extreme_bull = rsi > 75
         rsi_extreme_bear = rsi < 25
@@ -345,10 +348,9 @@ class MarketStateClassifier(BaseEngine):
         score += (breakout_prob / 100) * 25
         score += (1 if bos_detected else 0) * 15
         # Volume factor
-        if not is_otc:
+        if not is_otc and volume_ratio is not None:
             score += min(1.0, volume_ratio / 1.5) * 10
-        else:
-            score += 10  # full volume credit for OTC
+        # OTC: no volume credit at all (unknown volume is not healthy volume)
         # Boosts
         if bbw < 0.04:
             score += 15
@@ -383,10 +385,9 @@ class MarketStateClassifier(BaseEngine):
         # ----- ACCUMULATION -----
         score = min(1.0, wick_lower_ratio * 2) * 35
         # Volume factor
-        if not is_otc:
+        if not is_otc and volume_ratio is not None:
             score += min(1.0, volume_ratio / 1.2) * 25
-        else:
-            score += 25
+        # OTC: no volume credit (unknown volume is not healthy volume)
         score += ((100 - trend_strength) / 100) * 20
         score += (1 if structure_type in ['RANGING', 'CORRECTIVE'] else 0) * 20
         # Boosts
@@ -403,10 +404,9 @@ class MarketStateClassifier(BaseEngine):
         
         # ----- DISTRIBUTION -----
         score = min(1.0, wick_upper_ratio * 2) * 35
-        if not is_otc:
+        if not is_otc and volume_ratio is not None:
             score += min(1.0, volume_ratio / 1.2) * 25
-        else:
-            score += 25
+        # OTC: no volume credit (unknown volume is not healthy volume)
         score += ((100 - trend_strength) / 100) * 20
         score += (1 if structure_type in ['RANGING', 'CORRECTIVE'] else 0) * 20
         # Boosts
@@ -590,7 +590,7 @@ class MarketStateClassifier(BaseEngine):
         
         # Adjust based on volume
         volume_ratio = m['volume_ratio']
-        if volume_ratio < 0.5:
+        if volume_ratio is not None and volume_ratio < 0.5:
             quality = max(0, quality - 20)
             
         # Incorporate regime quality (weighted 50% base, 50% statistical regime quality)

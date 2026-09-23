@@ -188,27 +188,3 @@ class BrokerExecutor:
             f"after {max_retries} attempts: {error_reason}"
         )
 
-    def _try_digital_v2(self, api: Any, symbol: str, action: str, stake: float, duration: int) -> tuple:
-        """Helper to safely execute Digital Option V2 orders with strict timeout and no hanging."""
-        import threading
-
-        result = [False, None]
-
-        def _worker():
-            try:
-                if hasattr(api, "buy_digital_spot"):
-                    clean_sym = symbol.replace("-OTC", "").upper()
-                    s, oid = api.buy_digital_spot(clean_sym, float(stake), action, int(duration))
-                    if s and oid and (isinstance(oid, int) or str(oid).isdigit()):
-                        result[0] = True
-                        result[1] = str(oid)
-            except Exception as e:
-                logger.debug(f"[BrokerExecutor] Digital fallback worker error: {e}")
-
-        th = threading.Thread(target=_worker, daemon=True)
-        th.start()
-        th.join(timeout=3.0)
-
-        if result[0]:
-            return True, result[1]
-        return False, None

@@ -18,9 +18,9 @@ class BrokerFactory:
     @staticmethod
     def create_raw_broker(config: Dict[str, Any]) -> IDataSource:
         """Instantiates the underlying low-level broker adapter."""
-        active_broker = "IQ_OPTION"  # Default fallback
-        if "active_broker" in config and config["active_broker"]:
-            active_broker = str(config["active_broker"]).upper()
+        if "active_broker" not in config or not config["active_broker"]:
+            raise ValueError("FAIL-FAST: config missing 'active_broker' - defaulting to IQ_OPTION is forbidden")
+        active_broker = str(config["active_broker"]).upper()
         
         logger.info(f"[BrokerFactory] Initializing raw broker adapter for: {active_broker}")
         
@@ -31,8 +31,7 @@ class BrokerFactory:
         elif active_broker == "POCKET_OPTION":
             return PocketAdapter(config=config)
         else:
-            logger.warning(f"[BrokerFactory] Unknown broker '{active_broker}', falling back to IQ_OPTION")
-            return IQOptionAdapter(config=config)
+            raise ValueError(f"FAIL-FAST: unsupported active_broker '{active_broker}' - silent fallback to IQ_OPTION is forbidden")
 
     @staticmethod
     def create_broker(config: Dict[str, Any]) -> Any:

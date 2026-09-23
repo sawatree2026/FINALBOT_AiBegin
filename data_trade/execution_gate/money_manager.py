@@ -91,19 +91,11 @@ class MoneyManager:
                             tokens = rest[1:-1].split("]:[")
                             if len(tokens) >= 8:
                                 result_status = tokens[6].strip().upper()
-                                try:
-                                    profit_val = float(tokens[7].strip())
-                                except (ValueError, TypeError):
-                                    profit_val = 0.0
+                                profit_val = float(tokens[7].strip())
                         else:
-                            # Fallback if comma separated
-                            csv_parts = [p.strip() for p in rest.split(",")]
-                            if len(csv_parts) >= 7:
-                                result_status = csv_parts[6].upper()
-                                try:
-                                    profit_val = float(csv_parts[7])
-                                except (ValueError, TypeError):
-                                    profit_val = 0.0
+                            raise ValueError(
+                                f"FAIL-FAST: unrecognised trade-history line format: {line_str!r}"
+                            )
 
                         if ts.startswith(today_str):
                             today_trades += 1

@@ -255,10 +255,8 @@ class Orchestrator:
         is_otc = "OTC" in symbol.upper()
         if is_otc:
             candles_dict = {k: v.copy() for k, v in candles_dict.items()}
-            for tf in ['S30', 'M1', 'M5']:
-                if tf in candles_dict and not candles_dict[tf].empty:
-                    # Modify in place safely
-                    candles_dict[tf].loc[:, 'volume'] = 1.0
+            # Zero-Mock: OTC candles keep their truthful (zero) volume.
+            # OTC is handled downstream via the is_otc flag, never via fabricated volume.
 
         # ── 1. Save OHLCV CSV ───────────────────────────────────────────
         # ย้ายไปเซฟตอนจบ process_cycle เพื่อให้ได้ข้อมูลครบทุกตัว
@@ -400,12 +398,12 @@ class Orchestrator:
                 # downstream AI, strategy, and classifier logic can treat OTC as "not applicable" without
                 # introducing a zero-bias or misleading numeric signal.
                 if 'm5' in final_payload and isinstance(final_payload['m5'], dict):
-                    final_payload['m5']['volume'] = 1.0
-                    final_payload['m5']['volume_ratio'] = 1.0
+                    final_payload['m5']['volume'] = 'NONE_OTC'
+                    final_payload['m5']['volume_ratio'] = 'NONE_OTC'
                     final_payload['m5']['volume_trend'] = 'NO_VOLUME_DATA'
                 if 'm1' in final_payload and isinstance(final_payload['m1'], dict):
-                    final_payload['m1']['volume'] = 1.0
-                    final_payload['m1']['volume_ratio'] = 1.0
+                    final_payload['m1']['volume'] = 'NONE_OTC'
+                    final_payload['m1']['volume_ratio'] = 'NONE_OTC'
 
             final_payload['market_context'] = {
                 'state': final_payload['market_state'],
@@ -757,11 +755,11 @@ class Orchestrator:
         try:
             if state_data and 'metrics' in state_data:
                 m = state_data['metrics']
-                overall = m.get('regime_quality_score', 50)
+                overall = m['regime_quality_score']
                 rq_res = {
-                    'consistency_score': m.get('consistency_score', 50),
-                    'cleanliness_score': m.get('cleanliness_score', 50),
-                    'directionality_score': m.get('directionality_score', 50),
+                    'consistency_score': m['consistency_score'],
+                    'cleanliness_score': m['cleanliness_score'],
+                    'directionality_score': m['directionality_score'],
                     'overall_quality': overall,
                     'is_tradeable_regime': overall >= 60,
                     'confidence': min(100, overall + 10)
@@ -886,15 +884,26 @@ class Orchestrator:
         gains = delta.clip(lower=0).rolling(14).mean()
         losses = (-delta.clip(upper=0)).rolling(14).mean()
         rs = gains / losses.replace(0, np.nan)
-        rsi = (100 - (100 / (1 + rs))).fillna(50)
+        rsi = 100 - (100 / (1 + rs))
+        if pd.isna(rsi.iloc[-1]):
+            raise ValueError("FAIL-FAST: RSI is NaN - neutral substitution is forbidden")
         low13 = low.rolling(13).min()
         high13 = high.rolling(13).max()
-        raw_stoch = ((close - low13) / (high13 - low13).replace(0, np.nan) * 100).fillna(50)
-        stoch_k = raw_stoch.rolling(10).mean().fillna(raw_stoch)
-        stoch_d = stoch_k.rolling(3).mean().fillna(stoch_k)
+        raw_stoch = (close - low13) / (high13 - low13).replace(0, np.nan) * 100
+        if pd.isna(raw_stoch.iloc[-1]):
+            raise ValueError("FAIL-FAST: raw Stochastic is NaN - neutral substitution is forbidden")
+        stoch_k = raw_stoch.rolling(10).mean()
+        if pd.isna(stoch_k.iloc[-1]):
+            raise ValueError("FAIL-FAST: Stochastic %K is NaN - neutral substitution is forbidden")
+        stoch_d = stoch_k.rolling(3).mean()
+        if pd.isna(stoch_d.iloc[-1]):
+            raise ValueError("FAIL-FAST: Stochastic %D is NaN - neutral substitution is forbidden")
         macd = close.ewm(span=12, adjust=False).mean() - close.ewm(span=26, adjust=False).mean()
         macd_signal = macd.ewm(span=9, adjust=False).mean()
-        last = lambda series, default=0.0: float(series.iloc[-1]) if pd.notna(series.iloc[-1]) else default
+        def last(series):
+            if pd.isna(series.iloc[-1]):
+                raise ValueError("FAIL-FAST: indicator value is NaN - default substitution is forbidden")
+            return float(series.iloc[-1])
         prev_fast, prev_slow = ema3.iloc[-2], ema6.iloc[-2]
         curr_fast, curr_slow = ema3.iloc[-1], ema6.iloc[-1]
         prev_k, prev_d = stoch_k.iloc[-2], stoch_d.iloc[-2]
@@ -906,6 +915,10 @@ class Orchestrator:
         stoch_cross_50_up = prev_k < 50 <= curr_k
         stoch_cross_50_down = prev_k > 50 >= curr_k
         stoch_tangled = bool((stoch_k.tail(3) - stoch_d.tail(3)).abs().max() < 2)
+        if last(upper) == last(lower):
+            raise ValueError("FAIL-FAST: Bollinger bands collapsed (upper == lower) - %B is undefined")
+        bb_percent_b = round((last(close) - last(lower)) / (last(upper) - last(lower)), 6)
+
         return {
             "bias": "BULLISH" if last(close) >= last(ema20) else "BEARISH",
             "ema3": last(ema3),
@@ -917,8 +930,7 @@ class Orchestrator:
             "bb_upper": last(upper),
             "bb_middle": last(middle),
             "bb_lower": last(lower),
-            "bb_percent_b": round((last(close) - last(lower)) / (last(upper) - last(lower)), 6)
-            if last(upper) != last(lower) else 0.5,
+            "bb_percent_b": bb_percent_b,
             "bb_width": last(upper) - last(lower),
             "rsi": round(last(rsi), 2),
             "stoch_k": round(last(stoch_k), 2),
@@ -989,32 +1001,31 @@ class Orchestrator:
         market_state = payload.get("market_state_full", {}) or {}
         ohlcv = payload.get("ohlcv", {}) or {}
 
-        def _num(value, default=0.0):
-            try:
-                if value is None or value == "":
-                    return float(default)
-                return float(value)
-            except (TypeError, ValueError):
-                return float(default)
+        def _num(value):
+            if value is None or value == "":
+                raise ValueError("FAIL-FAST: Believe indicator value missing - default substitution is forbidden")
+            return float(value)
 
-        close = _num(s30.get("close", 0.0))
+        close = _num(s30.get("close"))
 
         # Believe is evaluated in the configured roles:
         # S30 entry, M1 trigger, M5 context.
-        upper = _num(s30.get("bb_upper"), 0.0)
-        lower = _num(s30.get("bb_lower"), 0.0)
-        bb_pct_b = 0.5 if upper == lower else (close - lower) / (upper - lower)
+        upper = _num(s30.get("bb_upper"))
+        lower = _num(s30.get("bb_lower"))
+        if upper == lower:
+            raise ValueError("FAIL-FAST: S30 Bollinger bands collapsed - %B is undefined")
+        bb_pct_b = (close - lower) / (upper - lower)
         if not (0 <= bb_pct_b <= 1):
-            bb_pct_b = 0.5
+            raise ValueError(f"FAIL-FAST: S30 %B out of [0,1] ({bb_pct_b:.4f}) - clamping is forbidden")
 
-        stoch_k = _num(s30.get("stoch_k", 50.0), 50.0)
-        stoch_d = _num(s30.get("stoch_d", 50.0), 50.0)
-        rsi = _num(s30.get("rsi"), 50.0)
-        macd = _num(s30.get("macd"), 0.0)
-        macd_signal = _num(s30.get("macd_signal"), 0.0)
-        ema_fast = _num(s30.get("ema5"), 0.0)
-        ema_slow = _num(s30.get("ema10"), 0.0)
-        ema20 = _num(s30.get("ema20"), 0.0)
+        stoch_k = _num(s30.get("stoch_k"))
+        stoch_d = _num(s30.get("stoch_d"))
+        rsi = _num(s30.get("rsi"))
+        macd = _num(s30.get("macd"))
+        macd_signal = _num(s30.get("macd_signal"))
+        ema_fast = _num(s30.get("ema5"))
+        ema_slow = _num(s30.get("ema10"))
+        ema20 = _num(s30.get("ema20"))
         trigger_direction = str(m1.get("bias") or "").upper()
         context_direction = str(m5.get("bias") or "").upper()
 
@@ -1346,6 +1357,19 @@ class Orchestrator:
         else:
             ai_model = "NONE"
 
+        def _req_core(key):
+            if key not in core or core[key] is None or core[key] == "":
+                raise ValueError(f"FAIL-FAST: core_analysis field missing: {key}")
+            return core[key]
+
+        def _req_nested(d, *path):
+            cur = d
+            for key in path:
+                if not isinstance(cur, dict) or key not in cur or cur[key] is None:
+                    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+                cur = cur[key]
+            return cur
+
         lines = []
         app = lines.append
         app(f"ID:{prompt_id}")
@@ -1443,11 +1467,11 @@ class Orchestrator:
         app(f"  m5_pa_move_quality: {core.get('pa_move_quality', '')}")
         app(f"  m5_pa_trap_alert: {core.get('pa_trap_alert', '')}")
         app(f"  m5_pa_sr_interaction: {core.get('pa_sr_interaction', '')}")
-        app(f"  m5_pa_divergence_alert: {core.get('pa_divergence_alert', 'NONE')}")
+        app(f"  m5_pa_divergence_alert: {_req_core('pa_divergence_alert')}")
         app(f"  m5_pa_divergence_strength: {core.get('pa_divergence_strength', 0)}")
-        app(f"  m5_pa_market_behavior: {core.get('pa_market_behavior', 'NEUTRAL')}")
-        app(f"  m5_pa_hesitation_score: {core.get('pa_hesitation_score', 50)}")
-        app(f"  m5_pa_path_efficiency: {core.get('pa_path_efficiency', 'FAIR')}")
+        app(f"  m5_pa_market_behavior: {_req_core('pa_market_behavior')}")
+        app(f"  m5_pa_hesitation_score: {_req_core('pa_hesitation_score')}")
+        app(f"  m5_pa_path_efficiency: {_req_core('pa_path_efficiency')}")
         app("volume:")
         app(f"  m5_tick_volume: {_fmt_num(core.get('vol_tick_volume', ''))}")
         app(f"  m5_volume_momentum: {core.get('vol_momentum', '')}")
@@ -1460,10 +1484,10 @@ class Orchestrator:
         app(f"  m5_compression_quality_%: {core.get('eng_volatility_compression_quality', '')}")
         app(f"  m5_exhaustion_risk_%: {core.get('eng_strength_exhaustion_risk', '')}")
         app(f"  m5_bos_detected: {_fmt_bool(core.get('eng_structure_bos_detected', ''))}")
-        app(f"  mtf_conflict_score: {core.get('eng_indicator_conflict_score', 0)}")
-        app(f"  m5_trend_continuation_%: {core.get('eng_trend_continuation_%', 50)}")
-        app(f"  m5_transition_risk: {core.get('eng_regime_transition_risk', 'LOW')}")
-        app(f"  m5_persistence_score: {core.get('eng_momentum_persistence_score', 50)}")
+        app(f"  mtf_conflict_score: {_req_core('eng_indicator_conflict_score')}")
+        app(f"  m5_trend_continuation_%: {_req_core('eng_trend_continuation_%')}")
+        app(f"  m5_transition_risk: {_req_core('eng_regime_transition_risk')}")
+        app(f"  m5_persistence_score: {_req_core('eng_momentum_persistence_score')}")
         app("decision_layer:")
         app(f"  dl_tradeable: {_fmt_bool(core.get('dl_tradeable', ''))}")
         app(f"  dl_stability_score: {core.get('dl_stability_score', '')}")
@@ -1494,25 +1518,25 @@ class Orchestrator:
         app(f"  believe_bb_touch: {'LOWER' if bb_state.get('touched_lower_0') else 'UPPER' if bb_state.get('touched_upper_1') else 'NONE'}")
         app(f"  believe_sto_k: {_fmt_num(believe.get('indicators_raw', {}).get('stoch13_k', ''))}")
         app(f"  believe_sto_d: {_fmt_num(believe.get('indicators_raw', {}).get('stoch13_d', ''))}")
-        app(f"  believe_sto_zone: {sto_state.get('touched_extreme_10_or_90', 'MID')}")
+        app(f"  believe_sto_zone: {_req_nested(sto_state, 'touched_extreme_10_or_90')}")
         app(f"  believe_sto_cross: {('UP' if sto_state.get('kd_crossed') and believe.get('trigger_bias') in ('BULLISH', 'UP', 'UPTREND') else 'DOWN' if sto_state.get('kd_crossed') and believe.get('trigger_bias') in ('BEARISH', 'DOWN', 'DOWNTREND') else 'NONE')}")
         app(f"  believe_sto_hook_confirmed: {_fmt_bool(sto_state.get('hook_confirmed', False))}")
         app(f"  believe_sto_cross_50: {_fmt_bool(sto_state.get('crossed_50', False))}")
         app(f"  believe_ma_fast: {_fmt_num(believe.get('indicators_raw', {}).get('ema3', ''))}")
         app(f"  believe_ma_slow: {_fmt_num(believe.get('indicators_raw', {}).get('sma6', ''))}")
-        app(f"  believe_ma_cross: {trigger.get('ma_crossover', {}).get('cross_direction', 'FLAT')}")
-        app(f"  believe_ma_cross_confirmed: {_fmt_bool(trigger.get('ma_crossover', {}).get('is_confirmed_bar_close', False))}")
-        app(f"  believe_risk_grid_block: {_fmt_bool(grid.get('is_blocked_by_grid', grid.get('blocked', False)))}")
-        app(f"  believe_risk_gray_candle: {_fmt_bool(risk.get('candle_safety', {}).get('is_gray_doji', False))}")
+        app(f"  believe_ma_cross: {_req_nested(trigger, 'ma_crossover', 'cross_direction')}")
+        app(f"  believe_ma_cross_confirmed: {_fmt_bool(_req_nested(trigger, 'ma_crossover', 'is_confirmed_bar_close'))}")
+        app(f"  believe_risk_grid_block: {_fmt_bool(_req_nested(grid, 'blocked'))}")
+        app(f"  believe_risk_gray_candle: {_fmt_bool(_req_nested(risk, 'candle_safety', 'is_gray_doji'))}")
         app(f"  believe_risk_sto_tangled: {_fmt_bool(s30_indicators.get('stoch_tangled', False))}")
         app(f"  believe_risk_trap_alert: {core.get('pa_trap_alert', 'NONE')}")
-        app(f"  believe_risk_room_to_run_clear: {_fmt_bool(believe.get('decision_conditions', {}).get('room_to_run_clear', True))}")
-        app(f"  ap_signal: {supp.get('ap_confirmation', {}).get('signal', 'AP_NEUTRAL')}")
-        app(f"  ns_signal: {supp.get('ns_confirmation', {}).get('signal', 'NS_NEUTRAL')}")
+        app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+        app(f"  ap_signal: {_req_nested(supp, 'ap_confirmation', 'signal')}")
+        app(f"  ns_signal: {_req_nested(supp, 'ns_confirmation', 'signal')}")
         conditions = believe.get("decision_conditions", {}) or {}
-        app(f"  believe_entry_s30_bb_touch: {conditions.get('entry_s30_bb_touch', 'NONE')}")
-        app(f"  believe_trigger_m1_direction_aligned: {_fmt_bool(conditions.get('trigger_m1_direction_aligned', False))}")
-        app(f"  believe_context_m5_direction_aligned: {_fmt_bool(conditions.get('context_m5_direction_aligned', False))}")
+        app(f"  believe_entry_s30_bb_touch: {_req_nested(conditions, 'entry_s30_bb_touch')}")
+        app(f"  believe_trigger_m1_direction_aligned: {_fmt_bool(_req_nested(conditions, 'trigger_m1_direction_aligned'))}")
+        app(f"  believe_context_m5_direction_aligned: {_fmt_bool(_req_nested(conditions, 'context_m5_direction_aligned'))}")
 
         # Strategies payloads stay within the documented 99-line SSD contract.
         # Keep every field consumed by Believe modules; verbose engine diagnostics
