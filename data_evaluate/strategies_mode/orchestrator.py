@@ -1450,9 +1450,8 @@ class Orchestrator:
         app(f"    m5_support: {_fmt_num(core.get('m5_support', ''))}")
         app(f"    m5_resistance: {_fmt_num(core.get('m5_resistance', ''))}")
         app(f"    m5_pivot: {_fmt_num(core.get('m5_pivot', ''))}")
-        # M15 operation disabled; section retained.
-        app("  m15:")
-        app(f"    m15_bias: {core.get('m15_bias', 'DISABLED')}")
+        # M15 operation disabled by BOSS: not emitted on the payload at all.
+        # (The internal core_analysis key is retained; only the output is hidden.)
         app("price_action:")
         app(f"  m5_pa_pattern: {core.get('pa_pattern', '')}")
         app(f"  m5_pa_last_candle_bias: {core.get('pa_last_candle_bias', '')}")
