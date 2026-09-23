@@ -551,8 +551,11 @@ class Orchestrator:
             'm1_stoch_d': _req(m1, 'stoch_d'),
             'm1_macd': _req(m1, 'macd'),
             'm1_macd_signal': _req(m1, 'macd_signal'),
+            'm1_macd_histogram': _req(m1, 'macd_hist'),
             'm1_adx': _req(m1, 'adx'),
             'm1_atr': _req(m1, 'atr14'),
+            'm1_divergence_type': _req(m1, 'divergence_type'),
+            'm1_divergence_peak_count': _req(m1, 'divergence_peak_count'),
             
             # --- M15: operation DISABLED by BOSS. Section/field retained, never computed. ---
             'm15_bias': 'DISABLED',
@@ -1437,8 +1440,11 @@ class Orchestrator:
         app(f"    m1_stoch_d: {_fmt_num(core.get('m1_stoch_d', ''))}")
         app(f"    m1_macd: {_fmt_num(core.get('m1_macd', ''))}")
         app(f"    m1_macd_signal: {_fmt_num(core.get('m1_macd_signal', ''))}")
+        app(f"    m1_macd_histogram: {_fmt_num(core.get('m1_macd_histogram', ''))}")
         app(f"    m1_adx: {_fmt_num(core.get('m1_adx', ''))}")
         app(f"    m1_atr: {_fmt_num(core.get('m1_atr', ''))}")
+        app(f"    m1_divergence_type: {core.get('m1_divergence_type', '')}")
+        app(f"    m1_divergence_peak_count: {core.get('m1_divergence_peak_count', '')}")
         app("    ohlcv:")
         app(f"      m1_open: {_fmt_num(m1_ohlcv.get('open', ''))}")
         app(f"      m1_high: {_fmt_num(m1_ohlcv.get('high', ''))}")
@@ -1545,7 +1551,8 @@ class Orchestrator:
             "  s30_ema20:", "  s30_rsi:", "  s30_stoch_", "  s30_macd:",
             "  s30_bb_percent_b:",
             "    m1_bias:", "    m1_last_candle:", "    m1_ema5:", "    m1_ema20:",
-            "    m1_rsi:", "    m1_stoch_", "    m1_macd:",
+            "    m1_rsi:", "    m1_stoch_", "    m1_macd:", "    m1_macd_histogram:",
+            "    m1_divergence_type:", "    m1_divergence_peak_count:",
             "      m1_open:", "      m1_high:", "      m1_low:", "      m1_close:",
             "      m1_volume:",
             "    m5_bias:", "    m5_ema5:", "    m5_ema10:", "    m5_ema20:",
