@@ -27,6 +27,7 @@ from monitoring.console_dashboard import ConsoleUI
 from data_evaluate.strategies_mode.orchestration.indicator_store.indicator_store import store
 from data_evaluate.strategies_mode.orchestration.indicator_store.structural_metrics import StructuralMetrics
 from data_evaluate.strategies_mode.orchestration.advanced_tools.advanced_tools_manager import AdvancedToolsManager
+from data_evaluate.strategies_mode.orchestration.advanced_tools.bollinger_percent import calculate_bollinger_percent
 
 from types import SimpleNamespace
 # Import 5 Engines and Classifier
