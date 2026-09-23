@@ -26,6 +26,7 @@ from datetime import datetime, timezone
 from monitoring.console_dashboard import ConsoleUI
 from data_evaluate.strategies_mode.orchestration.indicator_store.indicator_store import store
 from data_evaluate.strategies_mode.orchestration.advanced_tools.advanced_tools_manager import AdvancedToolsManager
+from data_evaluate.strategies_mode.orchestration.advanced_tools.bollinger_percent import calculate_bollinger_percent
 
 from types import SimpleNamespace
 # Import 5 Engines and Classifier
@@ -874,13 +875,10 @@ class Orchestrator:
         close = pd.to_numeric(df["close"], errors="coerce")
         high = pd.to_numeric(df["high"], errors="coerce")
         low = pd.to_numeric(df["low"], errors="coerce")
+        bollinger = calculate_bollinger_percent(close, period=41, std_dev=2.0)
         ema5 = close.ewm(span=5, adjust=False).mean()
         ema10 = close.ewm(span=10, adjust=False).mean()
         ema20 = close.ewm(span=20, adjust=False).mean()
-        middle = close.rolling(20).mean()
-        std = close.rolling(20).std(ddof=0)
-        upper = middle + 2 * std
-        lower = middle - 2 * std
         delta = close.diff()
         gains = delta.clip(lower=0).rolling(14).mean()
         losses = (-delta.clip(upper=0)).rolling(14).mean()
@@ -902,12 +900,11 @@ class Orchestrator:
             "ema5": last(ema5),
             "ema10": last(ema10),
             "ema20": last(ema20),
-            "bb_upper": last(upper),
-            "bb_middle": last(middle),
-            "bb_lower": last(lower),
-            "bb_percent_b": round((last(close) - last(lower)) / (last(upper) - last(lower)), 6)
-            if last(upper) != last(lower) else 0.5,
-            "bb_width": last(upper) - last(lower),
+            "bb_upper": bollinger.upper,
+            "bb_middle": bollinger.middle,
+            "bb_lower": bollinger.lower,
+            "bb_percent_b": round(bollinger.percent_b, 6),
+            "bb_width": bollinger.width,
             "rsi": round(last(rsi), 2),
             "stoch_k": round(last(stoch_k), 2),
             "stoch_d": round(last(stoch_d), 2),
