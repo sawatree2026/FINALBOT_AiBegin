@@ -6,8 +6,9 @@ from .field_utils import number
 
 
 def evaluate(fields: Dict[str, str], action: str) -> bool:
-    macd = number(fields, "s30_macd")
-    signal = number(fields, "s30_macd_signal")
-    histogram = number(fields, "s30_macd_histogram")
-    aligned = macd >= signal if action == "CALL" else macd <= signal
-    return aligned and (histogram >= 0 if action == "CALL" else histogram <= 0)
+    macd = number(fields, "m1_macd")
+    signal = number(fields, "m1_macd_signal")
+    histogram = number(fields, "m1_macd_histogram")
+    if action == "CALL":
+        return macd < 0 and macd >= signal and histogram >= 0
+    return macd > 0 and macd <= signal and histogram <= 0

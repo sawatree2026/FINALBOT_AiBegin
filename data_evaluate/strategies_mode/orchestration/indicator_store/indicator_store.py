@@ -43,6 +43,61 @@ class IndicatorStore:
         self._data: Dict[str, Dict[str, Any]] = {}
         self._lock = threading.Lock()
 
+    @staticmethod
+    def calculate_s30_believe_indicators(df_s30: pd.DataFrame) -> Dict[str, Any]:
+        """Calculate the S30 entry indicators used by Believe in one SSOT."""
+        if df_s30 is None or df_s30.empty or len(df_s30) < 60:
+            raise ValueError("FAIL-FAST: insufficient S30 candles for Believe indicators")
+        required = {"open", "high", "low", "close"}
+        missing = required.difference(df_s30.columns)
+        if missing:
+            raise ValueError(f"FAIL-FAST: missing S30 columns: {sorted(missing)}")
+        close = pd.to_numeric(df_s30["close"], errors="coerce")
+        high = pd.to_numeric(df_s30["high"], errors="coerce")
+        low = pd.to_numeric(df_s30["low"], errors="coerce")
+        if close.isna().any() or high.isna().any() or low.isna().any():
+            raise ValueError("FAIL-FAST: S30 OHLC contains NaN")
+        ema3 = close.ewm(span=3, adjust=False).mean()
+        ema6 = close.ewm(span=6, adjust=False).mean()
+        ema20 = close.ewm(span=20, adjust=False).mean()
+        bb = CoreIndicators.calculate_bb(close, 41, Config.ROUND_DECIMALS)
+        bb_width = float(bb["bb_upper"] - bb["bb_lower"])
+        if bb_width <= 0:
+            raise ValueError("FAIL-FAST: S30 Bollinger width is zero")
+        stoch = CoreIndicators.calculate_stochastic_snapshot(close, high, low)
+        macd_line, macd_signal, macd_hist = CoreIndicators.calc_macd_series(close)
+        previous_fast, current_fast = float(ema3.iloc[-2]), float(ema3.iloc[-1])
+        previous_slow, current_slow = float(ema6.iloc[-2]), float(ema6.iloc[-1])
+        return {
+            "bias": "BULLISH" if close.iloc[-1] >= ema20.iloc[-1] else "BEARISH",
+            "ema3": round(float(current_fast), Config.ROUND_DECIMALS),
+            "ema6": round(float(current_slow), Config.ROUND_DECIMALS),
+            "ema5": round(float(current_fast), Config.ROUND_DECIMALS),
+            "ema10": round(float(current_slow), Config.ROUND_DECIMALS),
+            "ema20": round(float(ema20.iloc[-1]), Config.ROUND_DECIMALS),
+            "bb_upper": bb["bb_upper"],
+            "bb_middle": round(float(close.tail(41).mean()), Config.ROUND_DECIMALS),
+            "bb_lower": bb["bb_lower"],
+            "bb_width": round(bb_width, Config.ROUND_DECIMALS),
+            "bb_percent_b": round(
+                (float(close.iloc[-1]) - bb["bb_lower"]) / bb_width, 6
+            ),
+            "rsi": CoreIndicators.calc_rsi(close, 14),
+            "macd": round(float(macd_line.iloc[-1]), Config.ROUND_DECIMALS),
+            "macd_signal": round(float(macd_signal.iloc[-1]), Config.ROUND_DECIMALS),
+            "macd_histogram": round(float(macd_hist.iloc[-1]), Config.ROUND_DECIMALS),
+            **stoch,
+            "ma_cross": (
+                "GOLDEN_CROSS" if previous_fast <= previous_slow and current_fast > current_slow
+                else "DEATH_CROSS" if previous_fast >= previous_slow and current_fast < current_slow
+                else "NONE"
+            ),
+            "ma_cross_confirmed": bool(
+                (previous_fast <= previous_slow and current_fast > current_slow)
+                or (previous_fast >= previous_slow and current_fast < current_slow)
+            ),
+        }
+
     # ========================
     # LAYER 1: RAW INDICATORS (คำนวณจาก OHLCV)
     # ========================
@@ -186,6 +241,33 @@ class IndicatorStore:
 
         # Stochastic (14, 3, 3)
         m1.update(CoreIndicators.calculate_stochastic(close_m1, high_m1, low_m1))
+        midpoint = max(10, len(close_m1) // 2)
+        first_price_low = float(low_m1.iloc[-2 * midpoint:-midpoint].min())
+        second_price_low = float(low_m1.iloc[-midpoint:].min())
+        first_price_high = float(high_m1.iloc[-2 * midpoint:-midpoint].max())
+        second_price_high = float(high_m1.iloc[-midpoint:].max())
+        first_stoch_low = float(
+            CoreIndicators.calculate_stochastic(
+                close_m1.iloc[-2 * midpoint:-midpoint],
+                high_m1.iloc[-2 * midpoint:-midpoint],
+                low_m1.iloc[-2 * midpoint:-midpoint],
+            )["stoch_k"]
+        )
+        second_stoch_low = float(m1["stoch_k"])
+        first_stoch_high = float(
+            100 - CoreIndicators.calculate_stochastic(
+                close_m1.iloc[-2 * midpoint:-midpoint],
+                high_m1.iloc[-2 * midpoint:-midpoint],
+                low_m1.iloc[-2 * midpoint:-midpoint],
+            )["stoch_k"]
+        )
+        second_stoch_high = float(100 - m1["stoch_k"])
+        m1["divergence_type"] = (
+            "BULLISH" if second_price_low < first_price_low and second_stoch_low > first_stoch_low
+            else "BEARISH" if second_price_high > first_price_high and second_stoch_high > first_stoch_high
+            else "NONE"
+        )
+        m1["divergence_peak_count"] = 2 if m1["divergence_type"] != "NONE" else 0
 
         # ATR (14) - Removed as not used by any engine
         # m1.update(StructuralMetrics.calculate_atr(high_m1, low_m1, close_m1, Config.ADX_PERIOD, Config.ROUND_DECIMALS))
@@ -355,7 +437,7 @@ class IndicatorStore:
     # ========================
     # PROCESS PAIR (หลัก)
     # ========================
-    def process_pair(self, symbol: str, df_m1: pd.DataFrame, df_m5: pd.DataFrame, df_m15: Optional[pd.DataFrame] = None, forming_data: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    def process_pair(self, symbol: str, df_m1: pd.DataFrame, df_m5: pd.DataFrame, df_m15: Optional[pd.DataFrame] = None, forming_data: Optional[Dict[str, Any]] = None, df_s30: Optional[pd.DataFrame] = None) -> Dict[str, Any]:
         """
         ขั้นตอนหลัก: คำนวณ Layer 1 (Raw Indicators) จาก DataFrame
         """
@@ -363,6 +445,8 @@ class IndicatorStore:
         
         # คำนวณ Raw Indicators
         raw = self.calculate_raw_indicators(df_m1, df_m5, df_m15, forming_data, symbol=symbol)
+        if df_s30 is not None:
+            raw["s30"] = self.calculate_s30_believe_indicators(df_s30)
         
         # บันทึกลง Store
         self.set_raw(symbol, raw)
@@ -374,12 +458,13 @@ class IndicatorStore:
         df_m1 = candles_dict['M1']
         df_m5 = candles_dict['M5']
         df_m15 = candles_dict.get('M15')
+        df_s30 = candles_dict.get('S30')
         
         if df_m1 is None or df_m5 is None or df_m1.empty or df_m5.empty:
             logger.error(f"Missing M1 or M5 data for {symbol} in calculate_all")
             raise Exception(f"Missing M1 or M5 data for {symbol}")
 
-        return self.process_pair(symbol, df_m1, df_m5, df_m15, forming_data)
+        return self.process_pair(symbol, df_m1, df_m5, df_m15, forming_data, df_s30)
 
     # ========================
     # CLEANUP

@@ -247,7 +247,6 @@ class Orchestrator:
             'close': float(s30_last['close']),
             'volume': float(s30_last.get('volume', 0.0) or 0.0),
         }
-        final_payload['s30'].update(self._calculate_believe_indicators(candles_dict['S30']))
         # ── 0.1 Timeframe Synchronization (REMOVED) ───────────────────────
         # Note: Timeframe sync is strictly prohibited in Part 2 per specs.
         # Strategies mode evaluates only the independent S30, M1 and M5 inputs.
@@ -268,6 +267,7 @@ class Orchestrator:
             store.calculate_all(symbol, candles_dict, forming_data=None)
             basic_payload = store.get_payload(symbol)
             final_payload.update(basic_payload) # merge m1, m5, ohlcv
+            final_payload['s30'].update(basic_payload.get('s30', {}))
         except Exception as e:
             raise
 
@@ -535,6 +535,9 @@ class Orchestrator:
             'm1_stoch_d': _req(m1, 'stoch_d'),
             'm1_macd': _req(m1, 'macd'),
             'm1_macd_signal': _req(m1, 'macd_signal'),
+            'm1_macd_histogram': _req(m1, 'macd_hist'),
+            'm1_divergence_type': _req(m1, 'divergence_type'),
+            'm1_divergence_peak_count': _req(m1, 'divergence_peak_count'),
             'm1_adx': _req(m1, 'adx'),
             'm1_atr': _req(m1, 'atr14'),
             
@@ -1006,21 +1009,15 @@ class Orchestrator:
 
         # Believe is evaluated in the configured roles:
         # S30 entry, M1 trigger, M5 context.
-        upper = _num(s30.get("bb_upper"))
-        lower = _num(s30.get("bb_lower"))
-        if upper == lower:
-            raise ValueError("FAIL-FAST: S30 Bollinger bands collapsed - %B is undefined")
-        bb_pct_b = (close - lower) / (upper - lower)
-        if not (0 <= bb_pct_b <= 1):
-            raise ValueError(f"FAIL-FAST: S30 %B out of [0,1] ({bb_pct_b:.4f}) - clamping is forbidden")
+        bb_pct_b = _num(s30.get("bb_percent_b"))
 
         stoch_k = _num(s30.get("stoch_k"))
         stoch_d = _num(s30.get("stoch_d"))
-        rsi = _num(s30.get("rsi"))
-        macd = _num(s30.get("macd"))
-        macd_signal = _num(s30.get("macd_signal"))
-        ema_fast = _num(s30.get("ema5"))
-        ema_slow = _num(s30.get("ema10"))
+        rsi = _num(m1.get("rsi14"))
+        macd = _num(m1.get("macd"))
+        macd_signal = _num(m1.get("macd_signal"))
+        ema_fast = _num(s30.get("ema3"))
+        ema_slow = _num(s30.get("ema6"))
         ema20 = _num(s30.get("ema20"))
         trigger_direction = str(m1.get("bias") or "").upper()
         context_direction = str(m5.get("bias") or "").upper()
@@ -1045,25 +1042,33 @@ class Orchestrator:
         crossed_50 = str(s30.get("stoch_cross_50", "NONE")).upper() in {"UP", "DOWN"}
         is_surfing_extreme = (stoch_k <= 10 or stoch_k >= 90) and (stoch_d <= 20 or stoch_d >= 80)
 
-        divergence_detected = bool(
-            price_action.get("divergence_alert") in ("BULLISH", "BEARISH")
-            or bool(market_state.get("divergence_detected"))
-        )
-        divergence_type = str(price_action.get("divergence_alert") or market_state.get("divergence_type") or "NONE").upper()
-        if divergence_type == "NONE" and bullish_structure:
-            divergence_type = "BULLISH"
-        if divergence_type == "NONE" and bearish_structure:
-            divergence_type = "BEARISH"
+        divergence_type = str(m1.get("divergence_type") or "NONE").upper()
+        divergence_detected = divergence_type in {"BULLISH", "BEARISH"}
+        divergence_peak_count = int(m1.get("divergence_peak_count", 0))
 
         ma_cross = str(s30.get("ma_cross", "NONE")).upper()
         ma_confirmed = bool(s30.get("ma_cross_confirmed", False))
-        bb_confirmed = bb_pct_b <= 0.15 if bullish_structure else bb_pct_b >= 0.85
+        ma_aligned = ma_confirmed or (
+            ema_fast > ema_slow if bullish_structure else ema_fast < ema_slow
+        )
+        bb_confirmed = bb_pct_b <= 0 if bullish_structure else bb_pct_b >= 1
         stochastic_confirmed = (
-            stoch_k <= 10 if bullish_structure else stoch_k >= 90
+            (stoch_k <= 10 and hook_confirmed and crossed_50
+             and str(s30.get("stoch_cross", "NONE")).upper() == "UP")
+            if bullish_structure
+            else (stoch_k >= 90 and hook_confirmed and crossed_50
+                  and str(s30.get("stoch_cross", "NONE")).upper() == "DOWN")
+        )
+        macd_confirmed = (
+            macd < 0 and macd >= macd_signal
+            if bullish_structure
+            else macd > 0 and macd <= macd_signal
         )
         grid = self._build_grid_payload(payload)
         risk_filter_ok = (
             not grid["blocked"]
+            and str(payload.get("market_context", {}).get("news_impact", "")).upper()
+            not in {"HIGH", "RED", "IMPACT_HIGH"}
             and not bool(price_action.get("trap_alert") in ("TRAP", "GRID_BLOCK"))
             and not bool(price_action.get("pattern") in ("DOJI", "GRAY_DOJI"))
         )
@@ -1078,9 +1083,9 @@ class Orchestrator:
             bullish_score += 0.25
         if stochastic_extreme == "OVERBOUGHT_90" and bearish_structure:
             bearish_score += 0.25
-        if bb_pct_b <= 0.20 and bullish_structure:
+        if bb_pct_b <= 0 and bullish_structure:
             bullish_score += 0.15
-        if bb_pct_b >= 0.80 and bearish_structure:
+        if bb_pct_b >= 1 and bearish_structure:
             bearish_score += 0.15
         if rsi < 30 and bullish_structure:
             bullish_score += 0.15
@@ -1099,8 +1104,28 @@ class Orchestrator:
             bullish_score += 0.05
             bearish_score += 0.05
 
-        bullish_signal = bullish_score >= 0.60 and bullish_structure
-        bearish_signal = bearish_score >= 0.60 and bearish_structure
+        bullish_signal = (
+            bullish_score >= 0.60
+            and bullish_structure
+            and bb_confirmed
+            and stochastic_confirmed
+            and ma_aligned
+            and divergence_detected
+            and divergence_type == "BULLISH"
+            and divergence_peak_count in {2, 3}
+            and macd_confirmed
+        )
+        bearish_signal = (
+            bearish_score >= 0.60
+            and bearish_structure
+            and bb_confirmed
+            and stochastic_confirmed
+            and ma_aligned
+            and divergence_detected
+            and divergence_type == "BEARISH"
+            and divergence_peak_count in {2, 3}
+            and macd_confirmed
+        )
         if bullish_signal and bearish_signal:
             bullish_signal = bullish_score > bearish_score
             bearish_signal = bearish_score > bullish_score
@@ -1121,8 +1146,8 @@ class Orchestrator:
             "context_bias": context_direction or "UNKNOWN",
             "close_price": close,
             "indicators_raw": {
-                "ema3": float(s30.get("ema5", 0.0) or 0.0),
-                "sma6": float(s30.get("ema10", 0.0) or 0.0),
+                "ema3": ema_fast,
+                "sma6": ema_slow,
                 "bb_pct_b": round(bb_pct_b, 6),
                 "stoch13_k": round(stoch_k, 2),
                 "stoch13_d": round(stoch_d, 2),
@@ -1138,8 +1163,8 @@ class Orchestrator:
                     "is_confirmed_bar_close": ma_confirmed,
                 },
                 "bb_state": {
-                    "touched_lower_0": bb_pct_b <= 0.15,
-                    "touched_upper_1": bb_pct_b >= 0.85,
+                    "touched_lower_0": bb_pct_b <= 0,
+                    "touched_upper_1": bb_pct_b >= 1,
                 },
                 "stochastic_state": {
                     "touched_extreme_10_or_90": stochastic_extreme,
@@ -1161,8 +1186,11 @@ class Orchestrator:
             "extreme_combination_extras": {
                 "divergence_detected": divergence_detected,
                 "divergence_type": divergence_type,
-                "divergence_source": "RSI_OR_STOCH" if abs(rsi - 50) > 0 else "NONE",
+                "divergence_source": "STOCH",
+                "divergence_peak_count": divergence_peak_count,
                 "macd_side_of_zero": "BELOW_ZERO" if macd < 0 else "ABOVE_ZERO",
+                "m1_macd_below_zero": macd < 0,
+                "m1_macd_above_zero": macd > 0,
             },
             "risk_and_market_filters": {
                 "grid_filter": grid,
@@ -1174,8 +1202,8 @@ class Orchestrator:
             },
             "decision_conditions": {
                 "entry_s30_bb_touch": (
-                    "LOWER_0" if bb_pct_b <= 0.15
-                    else "UPPER_1" if bb_pct_b >= 0.85 else "NONE"
+                    "LOWER_0" if bb_pct_b <= 0
+                    else "UPPER_1" if bb_pct_b >= 1 else "NONE"
                 ),
                 "trigger_m1_direction_aligned": (
                     (bullish_structure and context_direction == "BULLISH")
@@ -1184,6 +1212,15 @@ class Orchestrator:
                 "context_m5_direction_aligned": (
                     context_direction in ("BULLISH", "BEARISH")
                     and context_direction == trigger_direction
+                ),
+                "room_to_run_clear": not grid["blocked"],
+                "m1_divergence_required": divergence_detected
+                and divergence_type == ("BULLISH" if bullish_structure else "BEARISH")
+                and divergence_peak_count in {2, 3},
+                "m1_macd_required": (
+                    macd < 0 and macd >= macd_signal
+                    if bullish_structure
+                    else macd > 0 and macd <= macd_signal
                 ),
                 "holding_period_minutes": 5,
             },
@@ -1432,6 +1469,9 @@ class Orchestrator:
         app(f"    m1_stoch_d: {_fmt_num(core.get('m1_stoch_d', ''))}")
         app(f"    m1_macd: {_fmt_num(core.get('m1_macd', ''))}")
         app(f"    m1_macd_signal: {_fmt_num(core.get('m1_macd_signal', ''))}")
+        app(f"    m1_macd_histogram: {_fmt_num(core.get('m1_macd_histogram', ''))}")
+        app(f"    m1_divergence_type: {core.get('m1_divergence_type', '')}")
+        app(f"    m1_divergence_peak_count: {core.get('m1_divergence_peak_count', '')}")
         app(f"    m1_adx: {_fmt_num(core.get('m1_adx', ''))}")
         app(f"    m1_atr: {_fmt_num(core.get('m1_atr', ''))}")
         app("    ohlcv:")
@@ -1538,9 +1578,11 @@ class Orchestrator:
             "  s30_bias:", "  s30_open:", "  s30_high:", "  s30_low:",
             "  s30_close:", "  s30_volume:", "  s30_ema5:", "  s30_ema10:",
             "  s30_ema20:", "  s30_rsi:", "  s30_stoch_", "  s30_macd:",
+            "  s30_macd_histogram:",
             "  s30_bb_percent_b:",
             "    m1_bias:", "    m1_last_candle:", "    m1_ema5:", "    m1_ema20:",
             "    m1_rsi:", "    m1_stoch_", "    m1_macd:",
+            "    m1_macd_histogram:", "    m1_divergence_",
             "      m1_open:", "      m1_high:", "      m1_low:", "      m1_close:",
             "      m1_volume:",
             "    m5_bias:", "    m5_ema5:", "    m5_ema10:", "    m5_ema20:",

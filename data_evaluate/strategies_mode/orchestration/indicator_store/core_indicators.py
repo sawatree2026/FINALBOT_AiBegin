@@ -81,3 +81,51 @@ class CoreIndicators:
             'stoch_k': round(stoch_k.iloc[-1], 2),
             'stoch_d': round(stoch_d.iloc[-1], 2)
         }
+
+    @staticmethod
+    def calculate_stochastic_snapshot(
+        close_series: pd.Series,
+        high_series: pd.Series,
+        low_series: pd.Series,
+        k_period: int = 13,
+        smoothing: int = 10,
+        d_period: int = 3,
+    ) -> dict:
+        """Return the complete Believe stochastic snapshot without defaults."""
+        if len(close_series) < k_period + smoothing + d_period - 2:
+            raise ValueError("FAIL-FAST: insufficient candles for stochastic snapshot")
+        lowest = low_series.rolling(k_period, min_periods=k_period).min()
+        highest = high_series.rolling(k_period, min_periods=k_period).max()
+        span = highest - lowest
+        if span.iloc[-1] == 0 or pd.isna(span.iloc[-1]):
+            raise ValueError("FAIL-FAST: stochastic range is zero or undefined")
+        raw = 100 * (close_series - lowest) / span
+        k = raw.rolling(smoothing, min_periods=smoothing).mean()
+        d = k.rolling(d_period, min_periods=d_period).mean()
+        if pd.isna(k.iloc[-1]) or pd.isna(d.iloc[-1]):
+            raise ValueError("FAIL-FAST: stochastic snapshot is undefined")
+        previous_k = float(k.iloc[-2])
+        previous_d = float(d.iloc[-2])
+        current_k = float(k.iloc[-1])
+        current_d = float(d.iloc[-1])
+        return {
+            "stoch_k": round(current_k, 2),
+            "stoch_d": round(current_d, 2),
+            "stoch_prev_k": round(previous_k, 2),
+            "stoch_prev_d": round(previous_d, 2),
+            "stoch_cross": (
+                "UP" if previous_k <= previous_d and current_k > current_d
+                else "DOWN" if previous_k >= previous_d and current_k < current_d
+                else "NONE"
+            ),
+            "stoch_cross_50": (
+                "UP" if previous_k < 50 <= current_k
+                else "DOWN" if previous_k > 50 >= current_k
+                else "NONE"
+            ),
+            "stoch_hook_confirmed": bool(
+                (previous_k <= previous_d and current_k > current_d)
+                or (previous_k >= previous_d and current_k < current_d)
+            ),
+            "stoch_tangled": bool((k.tail(3) - d.tail(3)).abs().max() < 2),
+        }
