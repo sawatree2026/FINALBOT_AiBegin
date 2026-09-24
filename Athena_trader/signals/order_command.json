@@ -1,0 +1,8 @@
+{
+  "action": "PUT",
+  "symbol": "EURUSD-op",
+  "strategy": "BELIEVE",
+  "duration": 5,
+  "reason": "เข้าเงื่อนไข Believe PUT: BB%แตะแนวบน + STO Hook Down ต่ำกว่า 90 + MA 3 ตัด MA 6 ลง",
+  "timestamp": 1790233770
+}

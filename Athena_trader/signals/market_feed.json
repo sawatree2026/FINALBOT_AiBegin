@@ -1,23 +1,23 @@
 {
   "symbol": "EURJPY-op",
-  "current_time": 1790233680,
-  "close_price": 180.4525,
+  "current_time": 1790233770,
+  "close_price": 180.416,
   "indicators": {
-    "bb_pct_b": 1.1525,
-    "sto_k": 89.21,
-    "sto_d": 88.89,
-    "prev_sto_k": 89.58,
-    "ma_fast_3": 180.444003,
-    "ma_slow_6": 180.4305,
-    "rsi_14": 85.05,
-    "macd_line": 0.0152,
-    "macd_signal": 0.007621
+    "bb_pct_b": 0.7645,
+    "sto_k": 77.88,
+    "sto_d": 82.66,
+    "prev_sto_k": 82.88,
+    "ma_fast_3": 180.423032,
+    "ma_slow_6": 180.43475,
+    "rsi_14": 59.4,
+    "macd_line": 0.014572,
+    "macd_signal": 0.01133
   },
   "euf_levels": {
     "resistances": [
+      180.374,
       180.391,
-      180.4235,
-      180.438
+      180.4235
     ],
     "supports": [
       180.3525,
