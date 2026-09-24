@@ -1,0 +1,35 @@
+{
+  "symbol": "GBPJPY-op",
+  "current_time": 1790233680,
+  "close_price": 209.847,
+  "indicators": {
+    "bb_pct_b": 0.9548,
+    "sto_k": 70.88,
+    "sto_d": 68.16,
+    "prev_sto_k": 68.94,
+    "ma_fast_3": 209.845019,
+    "ma_slow_6": 209.838333,
+    "rsi_14": 68.79,
+    "macd_line": 0.009338,
+    "macd_signal": 0.004834
+  },
+  "euf_levels": {
+    "resistances": [
+      209.8495,
+      209.851,
+      209.868
+    ],
+    "supports": [
+      209.7735,
+      209.807
+    ]
+  },
+  "decision": {
+    "action": "WAIT",
+    "strategy": "BELIEVE",
+    "confidence": 0.0,
+    "expiry_minutes": 5,
+    "reason": "พบแท่งเทียนสีเทา/โดจิ ตลาดลังเลตามกฎข้อห้าม",
+    "is_valid": false
+  }
+}
