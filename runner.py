@@ -253,7 +253,12 @@ class DataFeedRunner:
 
             ingest_started = time.perf_counter()
             ingest_result = self.data_feed.ingest_cycle(self.symbols)
-            ready_symbols = list(ingest_result.get("ready_symbols", []))
+            if isinstance(ingest_result, dict) and "ready_symbols" in ingest_result:
+                ready_symbols = list(ingest_result["ready_symbols"])
+            elif isinstance(ingest_result, dict):
+                ready_symbols = [s for s, p in ingest_result.items() if p is not None]
+            else:
+                ready_symbols = list(ingest_result or [])
             if not ready_symbols:
                 raise RuntimeError("FAIL-FAST: No symbols produced fresh S30/M1/M5 CSV files")
             ingest_elapsed = time.perf_counter() - ingest_started

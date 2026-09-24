@@ -8,7 +8,7 @@ from typing import Any, Dict, Optional
 
 from . import (
     ap,
-    bollinger_band,
+    bollinger_percent as bollinger_band,
     divergence,
     macd,
     moving_average,

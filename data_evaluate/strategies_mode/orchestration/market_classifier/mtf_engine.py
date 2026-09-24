@@ -40,7 +40,8 @@ class MTFEngine(BaseEngine):
                     raise ValueError(f"FAIL-FAST: Insufficient {tf} candles (minimum 50 required)")
             
             directions = {}
-            for tf, df in candles_dict.items():
+            for tf in required_timeframes:
+                df = candles_dict.get(tf)
                 if df is None or len(df) < 50:
                     raise ValueError(f"FAIL-FAST: Invalid {tf} data - insufficient candles")
                 # Pass timeframe payload to _tf_direction for SSOT compliance

@@ -57,7 +57,7 @@
       "default_candle_count"   : 250,
       "min_candle_count"       : 21,
       "strategies_timeframes"  : ["S30", "M1", "M5"],
-      "strategies_enable_m15"  : false,
+      "strategies_enable_m15"  : true,
       "m5_seconds"             : 300,
       "m15_seconds"            : 900,
       "s30_seconds"            : 30,

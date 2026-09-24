@@ -82,3 +82,131 @@ Traceback (most recent call last):
   File "E:\FINALBOT_Begin\data_evaluate\orchestrator.py", line 212, in process_cycle
     raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
 FileNotFoundError: FAIL-FAST: CSV file not found for EURUSD M1 at data_feed/ohclv_output/iq_option\EURUSD\EURUSD_M1.csv
+2026-09-24 21:17:44,538 | ERROR    | [Orchestrator] Evaluation failed for AUDJPY: FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 160, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 320, in process_cycle
+    self._run_engines_parallel(symbol, final_payload, candles_dict)
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 676, in _run_engines_parallel
+    results[label] = future.result()
+                     ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestration\market_classifier\mtf_engine.py", line 49, in analyze
+    directions[tf] = self._tf_direction(df, tf_payload)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestration\market_classifier\mtf_engine.py", line 113, in _tf_direction
+    raise ValueError("FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine")
+ValueError: FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine
+2026-09-24 21:17:44,591 | ERROR    | [Orchestrator] Evaluation failed for AUDCAD: FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 160, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 320, in process_cycle
+    self._run_engines_parallel(symbol, final_payload, candles_dict)
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 676, in _run_engines_parallel
+    results[label] = future.result()
+                     ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestration\market_classifier\mtf_engine.py", line 49, in analyze
+    directions[tf] = self._tf_direction(df, tf_payload)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestration\market_classifier\mtf_engine.py", line 113, in _tf_direction
+    raise ValueError("FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine")
+ValueError: FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine
+2026-09-24 21:17:44,592 | ERROR    | [Orchestrator] Evaluation failed for USDJPY: FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 160, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 320, in process_cycle
+    self._run_engines_parallel(symbol, final_payload, candles_dict)
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 676, in _run_engines_parallel
+    results[label] = future.result()
+                     ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestration\market_classifier\mtf_engine.py", line 49, in analyze
+    directions[tf] = self._tf_direction(df, tf_payload)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestration\market_classifier\mtf_engine.py", line 113, in _tf_direction
+    raise ValueError("FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine")
+ValueError: FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine
+2026-09-24 21:17:44,593 | ERROR    | [Orchestrator] Evaluation failed for NZDUSD: FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 160, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 320, in process_cycle
+    self._run_engines_parallel(symbol, final_payload, candles_dict)
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 676, in _run_engines_parallel
+    results[label] = future.result()
+                     ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestration\market_classifier\mtf_engine.py", line 49, in analyze
+    directions[tf] = self._tf_direction(df, tf_payload)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestration\market_classifier\mtf_engine.py", line 113, in _tf_direction
+    raise ValueError("FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine")
+ValueError: FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine

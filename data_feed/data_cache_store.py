@@ -243,7 +243,7 @@ class RAMCacheStore:
         if not isinstance(symbol, str):
             raise TypeError("symbol must be a string")
         
-        reqs = {"M1": 250, "M5": 250, "M15": 250}
+        reqs = {"M1": 250, "M5": 250}
         candles = self._completed_candles.get(symbol)
         
         if candles is None:
