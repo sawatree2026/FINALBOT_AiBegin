@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": 1790233779,
+    "symbol": "EURUSD-op",
+    "action": "PUT",
+    "amount": 35.0,
+    "order_id": 14290508541,
+    "status": "OPEN",
+    "strategy": "BELIEVE",
+    "reason": "เข้าเงื่อนไข Believe PUT: BB%แตะแนวบน + STO Hook Down ต่ำกว่า 90 + MA 3 ตัด MA 6 ลง"
+  },
+  {
+    "timestamp": 1790235408,
+    "symbol": "GBPJPY-op",
+    "action": "CALL",
+    "amount": 35.0,
+    "order_id": 14290543620,
+    "status": "OPEN",
+    "strategy": "BELIEVE",
+    "reason": "เข้าเงื่อนไข Believe CALL: BB%แตะแนวล่าง + STO Hook Up เหนือ 10 + MA 3 ตัด MA 6 ขึ้น"
+  },
+  {
+    "timestamp": 1790235410,
+    "symbol": "EURJPY-op",
+    "action": "CALL",
+    "amount": 35.0,
+    "order_id": 14290543640,
+    "status": "OPEN",
+    "strategy": "BELIEVE",
+    "reason": "เข้าเงื่อนไข Believe CALL: BB%แตะแนวล่าง + STO Hook Up เหนือ 10 + MA 3 ตัด MA 6 ขึ้น"
+  }
+]
