@@ -1,28 +1,27 @@
 {
-  "symbol": "EURJPY-op",
+  "symbol": "GBPJPY-op",
   "current_time": 1790233770,
-  "close_price": 180.416,
+  "close_price": 209.7595,
   "indicators": {
-    "bb_pct_b": 0.7645,
-    "sto_k": 77.88,
-    "sto_d": 82.66,
-    "prev_sto_k": 82.88,
-    "ma_fast_3": 180.423032,
-    "ma_slow_6": 180.43475,
-    "rsi_14": 59.4,
-    "macd_line": 0.014572,
-    "macd_signal": 0.01133
+    "bb_pct_b": 0.0066,
+    "sto_k": 58.1,
+    "sto_d": 63.6,
+    "prev_sto_k": 63.68,
+    "ma_fast_3": 209.78694,
+    "ma_slow_6": 209.820583,
+    "rsi_14": 38.65,
+    "macd_line": 0.001324,
+    "macd_signal": 0.004814
   },
   "euf_levels": {
     "resistances": [
-      180.374,
-      180.391,
-      180.4235
+      209.838,
+      209.8495,
+      209.851
     ],
     "supports": [
-      180.3525,
-      180.364,
-      180.4005
+      209.7735,
+      209.807
     ]
   },
   "decision": {
