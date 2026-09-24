@@ -1,0 +1,99 @@
+ID:USDCAD0924214307
+  timestamp: '2026-09-24T21:43:07.402312'
+  symbol: USDCAD
+  ai_model: STRATEGY_BELIEVE
+  expiry_minutes: 5
+  holding_period: 5m
+  entry_timeframe: S30
+  trigger_timeframe: M1
+  context_timeframe: M5
+  s30_bias: BEARISH
+  s30_open: 1.413635
+  s30_high: 1.41366
+  s30_low: 1.41356
+  s30_close: 1.413585
+  s30_volume: 102.0
+  s30_ema5: 1.413616
+  s30_ema10: 1.413661
+  s30_ema20: 1.413754
+  s30_rsi: 39.57
+  s30_stoch_k: 33.36
+  s30_stoch_d: 34.62
+  s30_macd: -0.000052
+  s30_bb_percent_b: 0.018238
+    m1_bias: BEARISH
+    m1_last_candle: BULLISH
+    m1_ema5: 1.413672
+    m1_ema20: 1.413768
+    m1_rsi: 43.72
+    m1_stoch_k: 38.98
+    m1_stoch_d: 47.67
+    m1_macd: -0.000015
+      m1_open: 1.41358
+      m1_high: 1.41366
+      m1_low: 1.413555
+      m1_close: 1.413585
+      m1_volume: 200
+    m5_bias: BULLISH
+    m5_support: 1.413722
+    m5_resistance: 1.414077
+  m5_pa_pattern: NONE
+  m5_pa_last_candle_bias: BULLISH
+  m5_pa_move_quality: NOISY
+  m5_pa_trap_alert: REJECTION
+  m5_pa_sr_interaction: TESTING_PIVOT
+  m5_pa_divergence_alert: NONE
+  m5_trend_direction: UP
+  m5_trend_type: CHOPPY
+  mtf_alignment_%: 50
+  dl_tradeable: true
+  dl_stability_score: 50
+  dl_quality_score: 55
+  dl_risk_level: HIGH
+  ai_confidence_score: รอการวิเคราะห์จาก AI
+  ai_suggested_expiry_minutes: รอการวิเคราะห์จาก AI
+  ai_suggested_action: รอการวิเคราะห์จาก AI
+  believe_status: watch
+  believe_direction: WAIT
+  believe_confidence: LOW
+  believe_score: 0.4
+  extreme_believe_active: false
+  extreme_believe_setup: BASE_BELIEVE
+  believe_entry_timeframe: S30
+  believe_trigger_timeframe: M1
+  believe_context_timeframe: M5
+  believe_bb_percent_b: 0.018238
+  believe_bb_touch: LOWER
+  believe_sto_k: 33.36
+  believe_sto_d: 34.62
+  believe_sto_zone: MID
+  believe_sto_cross: DOWN
+  believe_sto_hook_confirmed: true
+  believe_sto_cross_50: false
+  believe_ma_fast: 1.413616
+  believe_ma_slow: 1.413661
+  believe_ma_cross: DEATH_CROSS
+  believe_ma_cross_confirmed: false
+  believe_risk_grid_block: true
+  believe_risk_gray_candle: false
+  believe_risk_sto_tangled: true
+  believe_risk_trap_alert: REJECTION
+  believe_risk_room_to_run_clear: false
+  ap_signal: AP_NEUTRAL
+  ns_signal: NS_NEUTRAL
+  believe_entry_s30_bb_touch: LOWER_0
+  believe_trigger_m1_direction_aligned: false
+  believe_context_m5_direction_aligned: false
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

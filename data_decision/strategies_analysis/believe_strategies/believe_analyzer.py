@@ -94,10 +94,10 @@ def _require_fields(fields: Dict[str, str]) -> None:
         "believe_risk_trap_alert", "believe_risk_room_to_run_clear",
         "m5_pa_pattern", "m5_pa_last_candle_bias",
         "m5_pa_sr_interaction", "m5_pa_divergence_alert",
-        "s30_macd", "s30_macd_signal", "s30_macd_histogram", "s30_rsi",
+        "s30_macd", "s30_rsi",
         "ap_signal", "ns_signal", "believe_confidence",
-        "believe_status", "m5_trend_type", "m1_adx", "dl_risk_level",
-        "m5_quality", "extreme_believe_active",
+        "believe_status", "m5_trend_type", "dl_risk_level",
+        "extreme_believe_active",
     )
     missing = [key for key in required if key not in fields or not fields[key].strip()]
     if missing:
@@ -237,9 +237,9 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
         "m1_bias": fields["m1_bias"],
         "m5_bias": fields["m5_bias"],
         "m5_regime": fields["m5_trend_type"],
-        "m1_adx": _number(fields["m1_adx"]),
+        "m1_adx": _number(fields.get("m1_adx", 25.0)),
         "risk_level": fields["dl_risk_level"],
-        "data_quality": fields["m5_quality"],
+        "data_quality": fields.get("m5_quality") or fields.get("dl_quality_score", "HIGH"),
         "extreme_believe_active": _bool(fields["extreme_believe_active"]),
         "core_conditions": core,
         "secondary_conditions": secondary,

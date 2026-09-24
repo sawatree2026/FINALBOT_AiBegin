@@ -210,3 +210,308 @@ Traceback (most recent call last):
   File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestration\market_classifier\mtf_engine.py", line 113, in _tf_direction
     raise ValueError("FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine")
 ValueError: FAIL-FAST: Missing ema20/ema50 in payload_tf for MTFEngine
+2026-09-24 21:32:37,920 | ERROR    | Orchestrator failed to save txt payload for EURGBP: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-24 21:32:37,922 | ERROR    | Orchestrator failed to save txt payload for USDCAD: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-24 21:32:37,951 | ERROR    | [Orchestrator] Evaluation failed for EURGBP: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 160, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-24 21:32:37,960 | ERROR    | Orchestrator failed to save txt payload for NZDUSD: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-24 21:32:37,962 | ERROR    | [Orchestrator] Evaluation failed for USDCAD: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 160, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-24 21:32:37,966 | ERROR    | [Orchestrator] Evaluation failed for GBPUSD: [market_state_classifier] Computation failed: FAIL-FAST: unknown move_quality 'CHAOTIC' - neutral noise substitution is forbidden
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestration\base_engine.py", line 63, in analyze
+    result = self._analyze(payload, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestration\market_classifier\market_state_classifier.py", line 101, in _analyze
+    metrics = self._compute_metrics(payload, trend_data, strength_data,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestration\market_classifier\market_state_classifier.py", line 178, in _compute_metrics
+    raise ValueError(f"FAIL-FAST: unknown move_quality '{move_quality}' - neutral noise substitution is forbidden")
+ValueError: FAIL-FAST: unknown move_quality 'CHAOTIC' - neutral noise substitution is forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 160, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 352, in process_cycle
+    state_data = self.classifier.analyze(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestration\base_engine.py", line 65, in analyze
+    raise ComputationError(f"[{self.ENGINE_NAME}] Computation failed: {e}") from e
+data_evaluate.strategies_mode.exceptions.ComputationError: [market_state_classifier] Computation failed: FAIL-FAST: unknown move_quality 'CHAOTIC' - neutral noise substitution is forbidden
+2026-09-24 21:32:37,967 | ERROR    | [Orchestrator] Evaluation failed for NZDUSD: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 160, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-24 21:35:19,669 | ERROR    | Orchestrator failed to save txt payload for USDCAD: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-24 21:35:19,691 | ERROR    | Orchestrator failed to save txt payload for USDJPY: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-24 21:35:19,694 | ERROR    | [Orchestrator] Evaluation failed for USDCAD: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 160, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-24 21:35:19,729 | ERROR    | Orchestrator failed to save txt payload for EURUSD: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-24 21:35:19,752 | ERROR    | [Orchestrator] Evaluation failed for USDJPY: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 160, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-24 21:35:19,761 | ERROR    | Orchestrator failed to save txt payload for AUDUSD: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-24 21:35:19,763 | ERROR    | [Orchestrator] Evaluation failed for EURUSD: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 160, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-24 21:35:19,765 | ERROR    | [Orchestrator] Evaluation failed for AUDUSD: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 160, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 463, in process_cycle
+    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1580, in _save_txt_payload
+    formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1528, in _format_core_analysis_output
+    app(f"  believe_risk_room_to_run_clear: {_fmt_bool(_req_nested(believe, 'decision_conditions', 'room_to_run_clear'))}")
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
+    raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
+ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear

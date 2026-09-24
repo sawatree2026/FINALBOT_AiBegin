@@ -173,7 +173,7 @@ class MarketStateClassifier(BaseEngine):
         
         # Noise level from move_quality
         move_quality = pa['move_quality']
-        _NOISE_BY_QUALITY = {'CLEAN_TRENDING': 0.2, 'NOISY': 0.8}
+        _NOISE_BY_QUALITY = {'CLEAN_TRENDING': 0.2, 'NORMAL': 0.5, 'NOISY': 0.8, 'CHAOTIC': 1.0}
         if move_quality not in _NOISE_BY_QUALITY:
             raise ValueError(f"FAIL-FAST: unknown move_quality '{move_quality}' - neutral noise substitution is forbidden")
         noise_level = _NOISE_BY_QUALITY[move_quality]
