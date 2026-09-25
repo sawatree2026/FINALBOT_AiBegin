@@ -108,7 +108,11 @@ class Orchestrator:
         except Exception as e:
             raise
 
-        self.orchestrator_log_dir = _all_cfg.get("data_evaluate", {}).get("output_dir", os.path.join("data_base", "output_evaluate"))
+        raw_eval_dir = _all_cfg.get("data_evaluate", {}).get("output_dir", os.path.join("data_base", "output_evaluate"))
+        if not raw_eval_dir.replace("\\", "/").endswith("strategies_mode"):
+            self.orchestrator_log_dir = os.path.join(raw_eval_dir, "strategies_mode")
+        else:
+            self.orchestrator_log_dir = raw_eval_dir
         os.makedirs(self.orchestrator_log_dir, exist_ok=True)
 
         # ── News Calendar (Part 2 Commander of News Calendar) ───────────
@@ -189,289 +193,384 @@ class Orchestrator:
                 "FAIL-FAST: Part 1 -> Part 2 candle transfer through RAM is prohibited; "
                 "process_cycle must read CSV files from data_base/output_feed"
             )
-        
-        # Load directly from CSV files on disk if candles_dict is not provided (Decoupled Part 1 -> Part 2)
+
         from config_setting.config_loader import get_csv_manager_config
         base_dir = get_csv_manager_config().get("base_dir", os.path.join("data_base", "output_feed"))
         candles_dict = {}
-        for tf in ["S30", "M1", "M5"]:
+        for tf in ["S30", "M1", "M15", "M5"]:
             file_path = os.path.join(base_dir, symbol, f"{symbol}_{tf}.csv")
             if not os.path.exists(file_path):
-                raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
-                
+                if tf in ("M15", "M5") and ("M15" in candles_dict or "M5" in candles_dict):
+                    continue
+                if tf not in ("M15", "M5"):
+                    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+                continue
+
             df_tf = pd.read_csv(file_path)
             if df_tf is None or df_tf.empty:
-                raise ValueError(f"FAIL-FAST: Empty CSV file for {symbol} {tf} at {file_path}")
-                
+                continue
+
             if 'timestamp' in df_tf.columns:
                 df_tf['timestamp'] = pd.to_datetime(df_tf['timestamp'], utc=True)
                 df_tf.set_index('timestamp', drop=False, inplace=True)
             elif not isinstance(df_tf.index, pd.DatetimeIndex):
                 df_tf.index = pd.to_datetime(df_tf.index, utc=True)
-                
+
             df_tf.sort_index(ascending=True, inplace=True)
-            age_seconds = (pd.Timestamp.now(tz="UTC") - df_tf.index[-1]).total_seconds()
-            max_age = {"S30": 120, "M1": 180, "M5": 600}[tf]
-            if age_seconds > max_age:
-                raise ValueError(
-                    f"FAIL-FAST: Stale {tf} CSV for {symbol}: age={age_seconds:.1f}s > {max_age}s"
-                )
             candles_dict[tf] = df_tf
 
-        if not isinstance(candles_dict, dict):
-            raise TypeError(f"FAIL-FAST: candles_dict must be provided as a dictionary for {symbol}")
-            
-        for tf in ["S30", "M1", "M5"]:
+        for tf in ["S30", "M1"]:
             if tf not in candles_dict or candles_dict[tf] is None or candles_dict[tf].empty:
                 raise ValueError(f"FAIL-FAST: Missing or empty {tf} data for {symbol}")
-                
-        # Warm-up Candle Lookback Check (Fail-Fast) - 250 candles per timeframe
-        min_required_candles = {
-            'S30': 250,
-            'M1': 250,
-            'M5': 250,
-        }
-        for tf, min_req in min_required_candles.items():
-            df_tf = candles_dict.get(tf)
-            if df_tf is None or len(df_tf) < min_req:
-                raise ValueError(f"FAIL-FAST: Insufficient {tf} warm-up candles on disk (got {len(df_tf) if df_tf is not None else 0}, minimum {min_req} required)")
 
-        final_payload = {
-            'symbol': symbol,
-            'timestamp': datetime.now().isoformat()
-        }
-        s30_last = candles_dict['S30'].iloc[-1]
-        final_payload['s30'] = {
-            'open': float(s30_last['open']),
-            'high': float(s30_last['high']),
-            'low': float(s30_last['low']),
-            'close': float(s30_last['close']),
-            'volume': float(s30_last.get('volume', 0.0) or 0.0),
-        }
-        # ── 0.1 Timeframe Synchronization (REMOVED) ───────────────────────
-        # Note: Timeframe sync is strictly prohibited in Part 2 per specs.
-        # Strategies mode evaluates only the independent S30, M1 and M5 inputs.
+        # Single-Pass Calculation
+        payload = self._calculate_single_pass(symbol, candles_dict)
 
+        # Save TXT Payload
+        txt_filepath = self._save_txt_payload(symbol, payload)
+        payload['txt_filepath'] = txt_filepath
+        self.last_payload = payload
+        self.latest_payloads[symbol] = payload
+        return payload
 
-        # ── 0. Handle OTC Volume ────────────────────────────────────────
-        is_otc = "OTC" in symbol.upper()
-        if is_otc:
-            candles_dict = {k: v.copy() for k, v in candles_dict.items()}
-            # Zero-Mock: OTC candles keep their truthful (zero) volume.
-            # OTC is handled downstream via the is_otc flag, never via fabricated volume.
+    def _calculate_single_pass(
+        self,
+        symbol: str,
+        candles_dict: Dict[str, pd.DataFrame]
+    ) -> Dict[str, Any]:
+        s30 = candles_dict['S30']
+        m1 = candles_dict['M1']
+        m15 = candles_dict.get('M15')
+        if m15 is None or m15.empty:
+            m15 = candles_dict.get('M5')
 
-        # ── 1. Save OHLCV CSV ───────────────────────────────────────────
-        # ย้ายไปเซฟตอนจบ process_cycle เพื่อให้ได้ข้อมูลครบทุกตัว
+        is_jpy = "JPY" in symbol.upper()
+        pip_scale = 100.0 if is_jpy else 10000.0
+        decimals = 3 if is_jpy else 5
 
-        # ── 2. Basic Indicators (indicator_store.py) ────────────────────
-        try:
-            store.calculate_all(
-                symbol,
-                candles_dict,
-                forming_data=None,
-                include_m5_stochastic=False,
-            )
-            basic_payload = store.get_payload(symbol)
-            final_payload.update(basic_payload) # merge m1, m5, ohlcv
-            s30_payload = dict(basic_payload['s30'])
-            s30_bollinger_base = s30_payload.pop('bollinger_percent_base')
-            s30_stochastic_base = s30_payload.pop('stochastic_base')
-            s30_payload.update(
-                self._calculate_believe_indicators(
-                    candles_dict['S30'],
-                    s30_bollinger_base,
-                    s30_stochastic_base,
-                )
-            )
-            final_payload['s30'] = s30_payload
-        except Exception as e:
-            raise
+        # 1. Meta
+        last_s30 = s30.iloc[-1]
+        ts_val = last_s30.name if isinstance(last_s30.name, pd.Timestamp) else pd.to_datetime(last_s30.get('timestamp', datetime.now(timezone.utc)))
+        ts_str = ts_val.strftime("%Y-%m-%d %H:%M:%S")
+        clean_sym = symbol.replace('-', '').replace('_', '')
+        prompt_id = f"{clean_sym}{ts_val.strftime('%m%d%H%M%S')}"
 
-        # ── 3. Advanced Tools ───────────────────────────────────────────
-        try:
-            df_m5 = candles_dict['M5']
-            if isinstance(df_m5, pd.DataFrame) and not df_m5.empty:
-                advanced_data = self.advanced_tools.analyze_all(symbol, basic_payload, df_m5)
-                final_payload.update(advanced_data)
-                final_payload['m5'] = advanced_data['m5']
-                final_payload['price_action'] = advanced_data['price_action']
-                final_payload['advanced_signals'] = advanced_data['advanced_signals']
-        except Exception as e:
-            raise
+        utc_h = datetime.now(timezone.utc).hour
+        if 0 <= utc_h < 7:
+            session = "ASIA"
+        elif 7 <= utc_h < 13:
+            session = "LONDON"
+        elif 13 <= utc_h < 21:
+            session = "NEW_YORK"
+        else:
+            session = "PACIFIC"
 
-        # ── 4. 5 Engines in parallel ────────────────────────────────────
-        try:
-            # Zero Tolerance validation before running engines
-            if not candles_dict:
-                raise ValueError("FAIL-FAST: Missing candles_dict for engine execution")
-            for tf in ['S30', 'M1', 'M5']:
-                if tf not in candles_dict or candles_dict[tf] is None or candles_dict[tf].empty:
-                    raise ValueError(f"FAIL-FAST: Invalid {tf} data in candles_dict")
-                if len(candles_dict[tf]) < 50:
-                    raise ValueError(f"FAIL-FAST: Insufficient {tf} candles (minimum 50 required)")
-            
-            # Validate basic payload structure
-            required_payload_fields = ['m5', 'm1', 'ohlcv', 'price_action']
-            for field in required_payload_fields:
-                if field not in final_payload or final_payload[field] is None:
-                    raise ValueError(f"FAIL-FAST: Missing required payload field: {field}")
-            
-            trend_data, strength_data, volatility_data, structure_data, mtf_data = \
-                self._run_engines_parallel(symbol, final_payload, candles_dict)
-                
-            final_payload['analysis'] = {
-                'trend_direction': trend_data['direction'],
-                'trend_strength': trend_data['strength'],
-                'trend_type': trend_data['type'],
-                'volatility_regime': volatility_data['regime']
-            }
-            final_payload['engines'] = {
-                'trend': trend_data,
-                'strength': strength_data,
-                'volatility': volatility_data,
-                'structure': structure_data,
-                'mtf': mtf_data
-            }
-        except Exception as e:
-            raise
+        # 2. S30 Basics
+        o = round(float(last_s30['open']), decimals)
+        h = round(float(last_s30['high']), decimals)
+        l = round(float(last_s30['low']), decimals)
+        c = round(float(last_s30['close']), decimals)
+        bias = "BULLISH" if c > o else ("BEARISH" if c < o else "NEUTRAL")
+        candle_range = max(h - l, 1e-9)
+        body_range = abs(c - o)
+        is_doji = (body_range / candle_range) < 0.10
+        is_gray = body_range < (candle_range * 0.05) or (c == o)
 
-        # ── 5. Market State Classifier ──────────────────────────────────
-        state_data = None
-        try:
-            if not self.classifier:
-                raise ValueError("FAIL-FAST: MarketStateClassifier not initialized")
-                
-            # Zero Tolerance validation before classification
-            if not isinstance(final_payload, dict):
-                raise ValueError("FAIL-FAST: final_payload must be a dictionary")
-            if not trend_data or not strength_data or not volatility_data or not structure_data or not mtf_data:
-                raise ValueError("FAIL-FAST: Missing engine data for classification")
-            if not candles_dict:
-                raise ValueError("FAIL-FAST: Missing candles_dict for classification")
-                
-            state_data = self.classifier.analyze(
-                payload=final_payload,
-                symbol=symbol,
-                trend_data=trend_data,
-                strength_data=strength_data,
-                volatility_data=volatility_data,
-                structure_data=structure_data,
-                mtf_data=mtf_data,
-                candles_dict=candles_dict
-            )
-            
-            # Validate state_data structure
-            if not isinstance(state_data, dict):
-                raise ValueError("FAIL-FAST: MarketStateClassifier returned non-dict")
-            if 'state' not in state_data or state_data['state'] is None:
-                raise ValueError("FAIL-FAST: MarketStateClassifier missing required field: state")
-                
-            final_payload['market_state'] = state_data['state']
-            final_payload['market_state_full'] = state_data
-        except Exception as e:
-            raise
+        # 3. BB(41, 2.0)
+        close_series = s30['close'].astype(float)
+        high_series = s30['high'].astype(float)
+        low_series = s30['low'].astype(float)
 
-        # ── 5.05 10 Supplementary Engines Execution ─────────────────────
-        try:
-            supp_engines = self._run_supplementary_engines(
-                symbol=symbol,
-                payload=final_payload,
-                candles_dict=candles_dict,
-                trend_data=trend_data,
-                strength_data=strength_data,
-                volatility_data=volatility_data,
-                structure_data=structure_data,
-                mtf_data=mtf_data,
-                state_data=state_data
-            )
-            final_payload['supplementary_engines'] = supp_engines
-        except Exception as e:
-            logger.exception(f"Error running supplementary engines for {symbol}: {e}")
-            traceback.print_exc()
-            raise
+        bb_period = 41
+        bb_std_dev = 2.0
+        bb_mid_s = close_series.rolling(bb_period).mean()
+        bb_std_s = close_series.rolling(bb_period).std(ddof=0)
+        bb_upper_val = bb_mid_s.iloc[-1] + bb_std_dev * bb_std_s.iloc[-1]
+        bb_middle_val = bb_mid_s.iloc[-1]
+        bb_lower_val = bb_mid_s.iloc[-1] - bb_std_dev * bb_std_s.iloc[-1]
+        bb_width_val = bb_upper_val - bb_lower_val
+        bb_pct_b = (c - bb_lower_val) / (bb_width_val + 1e-9)
 
-        # ── 5.1 Append Group B specific fields ──────────────────────────
-        try:
-            m5_data = final_payload['m5']
-            atr = m5_data['atr14']
-            close_price = final_payload['m5']['close']
-            try:
-                import math
-                if isinstance(close_price, (int, float)) and close_price > 0 and not math.isnan(close_price):
-                    expected_vol = round((atr / close_price) * 100, 3)
-                else:
-                    raise ValueError("Failed to calculate expected_vol: close_price invalid")
-            except (ZeroDivisionError, ValueError, TypeError) as e:
-                raise ValueError("Failed to calculate expected_vol") from e
+        bb_touch = "NONE"
+        if h >= bb_upper_val or c >= bb_upper_val:
+            bb_touch = "UPPER"
+        elif l <= bb_lower_val or c <= bb_lower_val:
+            bb_touch = "LOWER"
+        elif abs(c - bb_middle_val) < (bb_width_val * 0.05):
+            bb_touch = "MIDDLE"
 
-            vol_ratio = 1.0 if is_otc else m5_data.get('volume_ratio', 1.0)
-            if is_otc:
-                effective_news_impact = 'NONE_OTC'
+        # 4. Stochastic (14, 3, 3)
+        low_min = low_series.rolling(14).min()
+        high_max = high_series.rolling(14).max()
+        raw_k = 100.0 * (close_series - low_min) / (high_max - low_min + 1e-9)
+        sto_k_s = raw_k.rolling(3).mean()
+        sto_d_s = sto_k_s.rolling(3).mean()
+
+        sto_k_val = round(float(sto_k_s.iloc[-1]), 2)
+        sto_d_val = round(float(sto_d_s.iloc[-1]), 2)
+        prev_k = float(sto_k_s.iloc[-2]) if len(sto_k_s) > 1 else sto_k_val
+        prev_d = float(sto_d_s.iloc[-2]) if len(sto_d_s) > 1 else sto_d_val
+
+        if sto_k_val <= 10.0:
+            sto_zone = "OVERSOLD_10"
+        elif sto_k_val <= 20.0:
+            sto_zone = "OVERSOLD_20"
+        elif sto_k_val >= 90.0:
+            sto_zone = "OVERBOUGHT_90"
+        elif sto_k_val >= 80.0:
+            sto_zone = "OVERBOUGHT_80"
+        else:
+            sto_zone = "NEUTRAL"
+
+        if prev_k <= prev_d and sto_k_val > sto_d_val:
+            sto_cross = "GOLDEN_CROSS"
+        elif prev_k >= prev_d and sto_k_val < sto_d_val:
+            sto_cross = "DEATH_CROSS"
+        else:
+            sto_cross = "NONE"
+
+        sto_cross_50 = (prev_k < 50.0 and sto_k_val >= 50.0) or (prev_k > 50.0 and sto_k_val <= 50.0)
+        if len(sto_k_s) >= 3:
+            p2_k = float(sto_k_s.iloc[-3])
+            sto_hook_confirmed = (p2_k > prev_k and sto_k_val > prev_k and prev_k < 20.0) or (p2_k < prev_k and sto_k_val < prev_k and prev_k > 80.0)
+        else:
+            sto_hook_confirmed = False
+        sto_tangled = abs(sto_k_val - sto_d_val) < 1.5
+
+        # 5. Moving Averages (EMA 3, EMA 6)
+        ma_fast_s = close_series.ewm(span=3, adjust=False).mean()
+        ma_slow_s = close_series.ewm(span=6, adjust=False).mean()
+        ma_fast_val = round(float(ma_fast_s.iloc[-1]), decimals)
+        ma_slow_val = round(float(ma_slow_s.iloc[-1]), decimals)
+        p_fast = float(ma_fast_s.iloc[-2]) if len(ma_fast_s) > 1 else ma_fast_val
+        p_slow = float(ma_slow_s.iloc[-2]) if len(ma_slow_s) > 1 else ma_slow_val
+
+        if p_fast <= p_slow and ma_fast_val > ma_slow_val:
+            ma_cross = "GOLDEN_CROSS"
+        elif p_fast >= p_slow and ma_fast_val < ma_slow_val:
+            ma_cross = "DEATH_CROSS"
+        else:
+            ma_cross = "NONE"
+        ma_cross_confirmed = (ma_cross != "NONE") or (ma_fast_val > ma_slow_val and bias == "BULLISH") or (ma_fast_val < ma_slow_val and bias == "BEARISH")
+
+        # 6. MACD (12, 26, 9)
+        ema12 = close_series.ewm(span=12, adjust=False).mean()
+        ema26 = close_series.ewm(span=26, adjust=False).mean()
+        macd_line = ema12 - ema26
+        signal_line = macd_line.ewm(span=9, adjust=False).mean()
+        hist = macd_line - signal_line
+
+        macd_val = round(float(macd_line.iloc[-1]), 5)
+        macd_sig_val = round(float(signal_line.iloc[-1]), 5)
+        macd_hist_val = round(float(hist.iloc[-1]), 5)
+        p_macd = float(macd_line.iloc[-2]) if len(macd_line) > 1 else macd_val
+        p_sig = float(signal_line.iloc[-2]) if len(signal_line) > 1 else macd_sig_val
+
+        if p_macd <= p_sig and macd_val > macd_sig_val:
+            macd_cross = "BULLISH"
+        elif p_macd >= p_sig and macd_val < macd_sig_val:
+            macd_cross = "BEARISH"
+        else:
+            macd_cross = "NONE"
+        macd_zero_cross = "ABOVE" if macd_val >= 0 else "BELOW"
+
+        # 7. RSI (14)
+        delta = close_series.diff()
+        gain = delta.clip(lower=0).rolling(14).mean()
+        loss = (-delta.clip(upper=0)).rolling(14).mean()
+        rs = gain / (loss.replace(0, np.nan) + 1e-9)
+        rsi_s = 100.0 - (100.0 / (1.0 + rs))
+        rsi_val = round(float(rsi_s.iloc[-1]), 2)
+        p_rsi = float(rsi_s.iloc[-2]) if len(rsi_s) > 1 else rsi_val
+        rsi_zone = "OVERSOLD" if rsi_val <= 30.0 else ("OVERBOUGHT" if rsi_val >= 70.0 else "NEUTRAL")
+        rsi_cross_50 = (p_rsi < 50.0 and rsi_val >= 50.0) or (p_rsi > 50.0 and rsi_val <= 50.0)
+
+        # 8. SR
+        sr_trend = "BULLISH" if c >= bb_middle_val else "BEARISH"
+        sr_type = "GR_UP" if sr_trend == "BULLISH" else "GR_DOWN"
+        recent_lows = low_series.tail(30)
+        recent_highs = high_series.tail(30)
+        below_c = recent_lows[recent_lows < c]
+        above_c = recent_highs[recent_highs > c]
+        sr_nearest_supp = round(float(below_c.max()), decimals) if not below_c.empty else round(l, decimals)
+        sr_nearest_res = round(float(above_c.min()), decimals) if not above_c.empty else round(h, decimals)
+        tol = 2.0 / pip_scale
+        supp_touches = int(((low_series.tail(30) - sr_nearest_supp).abs() <= tol).sum())
+        res_touches = int(((high_series.tail(30) - sr_nearest_res).abs() <= tol).sum())
+        sr_tested_count = max(supp_touches, res_touches, 1)
+        sr_quality = "HIGH" if sr_tested_count >= 2 else "MEDIUM"
+        dist_supp_pips = (c - sr_nearest_supp) * pip_scale
+        dist_res_pips = (sr_nearest_res - c) * pip_scale
+        sr_block_ahead = (bias == "BULLISH" and dist_res_pips < 1.0) or (bias == "BEARISH" and dist_supp_pips < 1.0)
+
+        # 9. PA
+        pa_body_strength = round(body_range / candle_range, 2)
+        pa_doji = is_doji
+        pa_gray_candle = is_gray
+        if len(s30) >= 2:
+            prev_candle = s30.iloc[-2]
+            p_o = float(prev_candle['open'])
+            p_c = float(prev_candle['close'])
+            if c > o and p_c < p_o and c >= p_o and o <= p_c:
+                pa_pattern = "ENGULFING_BULLISH"
+            elif c < o and p_c > p_o and o >= p_c and c <= p_o:
+                pa_pattern = "ENGULFING_BEARISH"
+            elif (min(o, c) - l) > 2.0 * body_range and (h - max(o, c)) < body_range:
+                pa_pattern = "PINBAR_BULLISH"
+            elif (h - max(o, c)) > 2.0 * body_range and (min(o, c) - l) < body_range:
+                pa_pattern = "PINBAR_BEARISH"
+            elif is_doji:
+                pa_pattern = "DOJI"
             else:
-                effective_news_impact = news_impact if news_impact is not None else check_news_impact(symbol)
+                pa_pattern = "MOMENTUM_BEARISH" if bias == "BEARISH" else "MOMENTUM_BULLISH"
+        else:
+            pa_pattern = "NONE"
 
-            if is_otc:
-                # OTC pairs do not have reliable news and volume from the regular market calendar.
-                # We preserve the structural fields but mark them explicitly and use neutral values so
-                # downstream AI, strategy, and classifier logic can treat OTC as "not applicable" without
-                # introducing a zero-bias or misleading numeric signal.
-                if 'm5' in final_payload and isinstance(final_payload['m5'], dict):
-                    final_payload['m5']['volume'] = 'NONE_OTC'
-                    final_payload['m5']['volume_ratio'] = 'NONE_OTC'
-                    final_payload['m5']['volume_trend'] = 'NO_VOLUME_DATA'
-                if 'm1' in final_payload and isinstance(final_payload['m1'], dict):
-                    final_payload['m1']['volume'] = 'NONE_OTC'
-                    final_payload['m1']['volume_ratio'] = 'NONE_OTC'
+        # 10. Divergence
+        div_alert = "NONE"
+        div_type = "NONE"
+        div_source = "NONE"
+        div_peak = 2
+        if len(close_series) >= 20:
+            c_last = close_series.iloc[-1]
+            c_prev_low = close_series.iloc[-15:-5].min()
+            c_prev_high = close_series.iloc[-15:-5].max()
+            sto_last = sto_k_val
+            sto_prev_low = sto_k_s.iloc[-15:-5].min()
+            sto_prev_high = sto_k_s.iloc[-15:-5].max()
+            if c_last < c_prev_low and sto_last > sto_prev_low:
+                div_alert = "STO_BULLISH"
+                div_type = "REGULAR"
+                div_source = "STO"
+            elif c_last > c_prev_high and sto_last < sto_prev_high:
+                div_alert = "STO_BEARISH"
+                div_type = "REGULAR"
+                div_source = "STO"
 
-            final_payload['market_context'] = {
-                'state': final_payload['market_state'],
-                'description': state_data['description'] if state_data else 'NONE',
-                'breakout_prob': state_data.get('breakout_prob', 0) if state_data else 0,
-                'reversal_prob': state_data.get('reversal_prob', 0) if state_data else 0,
-                'volatility_regime': final_payload['analysis']['volatility_regime'],
-                'news_impact': effective_news_impact,
-                'expected_volatility_%': expected_vol,
-                'recent_ai_memory': list(self.ai_memory)
-            }
+        # 11. M1 Grid
+        m1_last = m1.iloc[-1]
+        m1_c = round(float(m1_last['close']), decimals)
+        grid_step = 5.0 / pip_scale
+        grid_below = np.floor(m1_c / grid_step) * grid_step
+        grid_above = grid_below + grid_step
+        grid_dist_above_pips = round((grid_above - m1_c) * pip_scale, 1)
+        grid_dist_below_pips = round((m1_c - grid_below) * pip_scale, 1)
+        grid_block_ahead = (bias == "BULLISH" and grid_dist_above_pips < 1.0) or (bias == "BEARISH" and grid_dist_below_pips < 1.0)
+        grid_breakout_confirmed = (m1_c >= grid_above or m1_c <= grid_below)
 
-            final_payload['decision_layer'] = {
-                'tradeable': state_data['tradeable'] if state_data else True,
-                'stability_score': state_data['metrics']['alignment_score'] if state_data else 50,
-                'quality_score': state_data['quality_score'] if state_data else 50,
-                'risk_level': state_data['risk_level'] if state_data else 'MEDIUM',
-                'confidence_score': "รอการวิเคราะห์จาก AI",
-                'suggested_expiry_minutes': "รอการวิเคราะห์จาก AI",
-                'suggested_action': "รอการวิเคราะห์จาก AI"
-            }
+        # 12. M15 Window
+        if m15 is not None and not m15.empty:
+            window_candles = m15.tail(15)
+            doji_cnt = 0
+            gray_cnt = 0
+            for _, w_row in window_candles.iterrows():
+                w_o, w_h, w_l, w_c = float(w_row['open']), float(w_row['high']), float(w_row['low']), float(w_row['close'])
+                w_rng = max(w_h - w_l, 1e-9)
+                w_bdy = abs(w_c - w_o)
+                if (w_bdy / w_rng) < 0.10:
+                    doji_cnt += 1
+                if w_bdy < (w_rng * 0.05) or (w_c == w_o):
+                    gray_cnt += 1
+            doji_present = doji_cnt > 0
+            gray_present = gray_cnt > 0
+            win_clear = (doji_cnt == 0 and gray_cnt == 0)
+        else:
+            doji_cnt = 0
+            gray_cnt = 0
+            doji_present = False
+            gray_present = False
+            win_clear = True
 
-            final_payload = self._enrich_believe_analysis(final_payload)
-        except Exception as e:
-            raise
-
-        # ── 5.5 Deduplicate Payload ──────────────────────────────────────
-        try:
-            final_payload = self._deduplicate_payload(final_payload)
-        except Exception as e:
-            raise
-
-        # ── 6. Format Payload ───────────────────────────────────────────
-        try:
-            formatted_payload = self._format_payload(final_payload)
-
-            if self.enable_txt_export:
-                try:
-                    txt_filepath = self._save_txt_payload(symbol, formatted_payload)
-                    formatted_payload['txt_filepath'] = txt_filepath
-                except Exception as e:
-                    logger.exception(f"Orchestrator failed to save txt payload for {symbol}: {e}")
-                    raise
-                
-            self.last_payload = formatted_payload
-            self.latest_payloads[symbol] = formatted_payload
-            store.clear_symbol(symbol)  # Clean up memory leak
-            return formatted_payload
-        except Exception as e:
-            raise
+        bool_str = lambda b: "TRUE" if b else "FALSE"
+        raw_lines = [
+            f"ID:{prompt_id}",
+            "meta:",
+            f"  timestamp: {ts_str}",
+            f"  symbol: {symbol}",
+            f"  session: {session}",
+            f"  mode: strategies",
+            f"  expiry_minutes: 3",
+            f"  holding_period: 3m",
+            "",
+            "s30:",
+            f"  open: {o:.{decimals}f}",
+            f"  high: {h:.{decimals}f}",
+            f"  low: {l:.{decimals}f}",
+            f"  close: {c:.{decimals}f}",
+            f"  bias: {bias}",
+            f"  is_doji: {bool_str(is_doji)}",
+            f"  is_gray_candle: {bool_str(is_gray)}",
+            f"  bb_percent_period: {bb_period}",
+            f"  bb_percent_std_dev: {bb_std_dev:.1f}",
+            "  bb_percent_ma_type: SMA",
+            "  bb_percent_source: close",
+            f"  bb_percent_upper: {bb_upper_val:.{decimals}f}",
+            f"  bb_percent_middle: {bb_middle_val:.{decimals}f}",
+            f"  bb_percent_lower: {bb_lower_val:.{decimals}f}",
+            f"  bb_percent_width: {bb_width_val:.{decimals}f}",
+            f"  bb_percent_b: {bb_pct_b:.2f}",
+            f"  bb_percent_touch: {bb_touch}",
+            f"  sto_k: {sto_k_val:.2f}",
+            f"  sto_d: {sto_d_val:.2f}",
+            f"  sto_zone: {sto_zone}",
+            f"  sto_cross: {sto_cross}",
+            f"  sto_cross_50: {bool_str(sto_cross_50)}",
+            f"  sto_hook_confirmed: {bool_str(sto_hook_confirmed)}",
+            f"  sto_tangled: {bool_str(sto_tangled)}",
+            f"  ma_fast: {ma_fast_val:.{decimals}f}",
+            f"  ma_slow: {ma_slow_val:.{decimals}f}",
+            f"  ma_cross: {ma_cross}",
+            f"  ma_cross_confirmed: {bool_str(ma_cross_confirmed)}",
+            f"  macd: {macd_val:.5f}",
+            f"  macd_signal: {macd_sig_val:.5f}",
+            f"  macd_histogram: {macd_hist_val:.5f}",
+            f"  macd_cross: {macd_cross}",
+            f"  macd_zero_cross: {macd_zero_cross}",
+            f"  rsi: {rsi_val:.2f}",
+            f"  rsi_zone: {rsi_zone}",
+            f"  rsi_cross_50: {bool_str(rsi_cross_50)}",
+            f"  sr_trend: {sr_trend}",
+            f"  sr_type: {sr_type}",
+            f"  sr_nearest_support: {sr_nearest_supp:.{decimals}f}",
+            f"  sr_nearest_resistance: {sr_nearest_res:.{decimals}f}",
+            f"  sr_tested_count: {sr_tested_count}",
+            f"  sr_quality: {sr_quality}",
+            f"  sr_block_ahead: {bool_str(sr_block_ahead)}",
+            f"  pa_pattern: {pa_pattern}",
+            f"  pa_body_strength: {pa_body_strength:.2f}",
+            f"  pa_doji: {bool_str(pa_doji)}",
+            f"  pa_gray_candle: {bool_str(pa_gray_candle)}",
+            f"  divergence_alert: {div_alert}",
+            f"  divergence_type: {div_type}",
+            f"  divergence_source: {div_source}",
+            f"  divergence_peak: {div_peak}",
+            "",
+            "m1:",
+            f"  grid_timeframe: M1",
+            f"  grid_current_price: {m1_c:.{decimals}f}",
+            f"  grid_nearest_above: {grid_above:.{decimals}f}",
+            f"  grid_nearest_below: {grid_below:.{decimals}f}",
+            f"  grid_distance_to_above_pips: {grid_dist_above_pips:.1f}",
+            f"  grid_distance_to_below_pips: {grid_dist_below_pips:.1f}",
+            f"  grid_block_ahead: {bool_str(grid_block_ahead)}",
+            f"  grid_breakout_confirmed: {bool_str(grid_breakout_confirmed)}",
+            "",
+            "m15_window:",
+            f"  doji_count: {doji_cnt}",
+            f"  gray_candle_count: {gray_cnt}",
+            f"  doji_present: {bool_str(doji_present)}",
+            f"  gray_candle_present: {bool_str(gray_present)}",
+            f"  window_clear: {bool_str(win_clear)}",
+        ]
+        raw_text = "\n".join(raw_lines)
+        return {
+            "ID": prompt_id,
+            "raw_payload_text": raw_text,
+            "meta": {"timestamp": ts_str, "symbol": symbol, "session": session, "mode": "strategies"},
+            "s30": {"open": o, "high": h, "low": l, "close": c, "bias": bias},
+            "m1": {"grid_current_price": m1_c},
+            "m15_window": {"window_clear": win_clear}
+        }
 
     def export_txt_payload(self, symbol: Optional[str] = None) -> Optional[str]:
         """
@@ -1572,14 +1671,17 @@ class Orchestrator:
         return "\n".join(compact_lines)
 
     def _save_txt_payload(self, symbol: str, formatted_payload: dict) -> str:
-        meta = formatted_payload.get("supplementary_data", {}).get("meta", {})
-        timestamp_str = str(meta.get("timestamp", datetime.now().strftime("%Y-%m-%dT%H:%M:%S")))
-        ts_clean = timestamp_str.replace('-', '').replace(':', '').replace('T', '').replace('.', '')[:14]
-        time_part = ts_clean[4:14]
-        prompt_id = f"{symbol.replace('-', '').replace('_', '')}{time_part}"
-        
-        formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
-        
+        if "raw_payload_text" in formatted_payload:
+            formatted_output = formatted_payload["raw_payload_text"]
+            prompt_id = formatted_payload.get("ID", f"{symbol.replace('-', '').replace('_', '')}")
+        else:
+            meta = formatted_payload.get("supplementary_data", {}).get("meta", {})
+            timestamp_str = str(meta.get("timestamp", datetime.now().strftime("%Y-%m-%dT%H:%M:%S")))
+            ts_clean = timestamp_str.replace('-', '').replace(':', '').replace('T', '').replace('.', '')[:14]
+            time_part = ts_clean[4:14]
+            prompt_id = f"{symbol.replace('-', '').replace('_', '')}{time_part}"
+            formatted_output = self._format_core_analysis_output(formatted_payload, prompt_id)
+
         filename = f"{prompt_id}.txt"
         symbol_dir = os.path.join(self.orchestrator_log_dir, symbol)
         os.makedirs(symbol_dir, exist_ok=True)
@@ -1588,7 +1690,6 @@ class Orchestrator:
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(formatted_output)
 
-        # Retention policy: Keep at most 30 latest prompt files per symbol
         try:
             txt_files = sorted(
                 [os.path.join(symbol_dir, f) for f in os.listdir(symbol_dir) if f.endswith('.txt')],
