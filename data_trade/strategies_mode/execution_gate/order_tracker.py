@@ -30,10 +30,15 @@ logger = logging.getLogger("OrderTracker")
 class OrderTracker:
     """Tracks order lifecycle and persists historical trade logs."""
 
-    def __init__(self, money_manager: Optional[Any] = None):
+    def __init__(self, money_manager: Optional[Any] = None, config: Optional[Dict[str, Any]] = None):
         self.money_manager = money_manager
-        self.history_dir = os.path.join("data_base", "trade_result")
-        self.history_file = os.path.join(self.history_dir, "trades_history.csv")
+        self.config = config or {}
+        active_mode = str(self.config.get("active_mode", "strategies_mode")).lower()
+        self.history_dir = os.path.join("data_base", active_mode, "output_trade")
+        self.history_file = self.config.get("data_trade", {}).get(
+            "trade_history_file",
+            os.path.join(self.history_dir, "trades_history.csv")
+        )
         self._ensure_csv_file(self.history_file)
         
         self.executor = concurrent.futures.ThreadPoolExecutor(

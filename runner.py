@@ -110,6 +110,15 @@ class DataFeedRunner:
         self.active_mode = selected_mode
         self.settings["active_mode"] = selected_mode
 
+        mode_root = os.path.join("data_base", self.active_mode)
+        self.settings.setdefault("data_feed", {}).setdefault("csv_manager", {})["base_dir"] = os.path.join(mode_root, "output_feed")
+        self.settings.setdefault("data_evaluate", {})["output_dir"] = os.path.join(mode_root, "output_evaluate")
+        self.settings.setdefault("data_decision", {})["output_dir"] = os.path.join(mode_root, "output_decision")
+        self.settings["data_decision"]["strategies_output_dir"] = os.path.join(mode_root, "output_decision")
+        self.settings["data_decision"]["ai_output_dir"] = os.path.join(mode_root, "output_decision")
+        self.settings["data_decision"]["ml_output_dir"] = os.path.join(mode_root, "output_decision")
+        self.settings.setdefault("data_trade", {})["trade_history_file"] = os.path.join(mode_root, "output_trade", "trades_history.csv")
+
         self.account_type = self.settings.get("account", {}).get("account_type", "PRACTICE")
 
         # 1. Initialize Part 1 Commander (DataAdapter via BrokerFactory)

@@ -50,8 +50,9 @@ class ExecutorManager:
         self.execution_gate = ExecutionGate(config=self.settings)
         self.money_manager = MoneyManager(config=self.settings)
         self.broker_executor = BrokerExecutor()
-        self.order_tracker = OrderTracker(money_manager=self.money_manager)
-        self.audit_csv_path = os.path.join("data_base", "output_trade", "decision_gate_audit.csv")
+        self.order_tracker = OrderTracker(money_manager=self.money_manager, config=self.settings)
+        active_mode = str(self.settings.get("active_mode", "strategies_mode")).lower()
+        self.audit_csv_path = os.path.join("data_base", active_mode, "output_trade", "decision_gate_audit.csv")
         self.chronos_dispatcher = None
         if str(self.settings.get("active_mode", "")).lower() != "strategies_mode":
             try:
@@ -86,26 +87,17 @@ class ExecutorManager:
         """Consume Part 3 decision JSON files from SSD and execute approved decisions."""
         active_mode = str(self.settings.get("active_mode", "ml_mode")).lower()
         decision_cfg = self.settings.get("data_decision", {})
-        ai_root = decision_cfg.get(
-            "ai_output_dir", os.path.join("data_base", "output_decision", "ai_decision")
-        )
-        strategy_root = decision_cfg.get(
-            "strategies_output_dir",
-            os.path.join("data_base", "output_decision", "strategies_decision"),
-        )
-        ml_root = decision_cfg.get(
-            "ml_output_dir", os.path.join("data_base", "output_decision", "ml_decision")
-        )
+        mode_root = os.path.join("data_base", active_mode, "output_decision")
+        ai_root = decision_cfg.get("ai_output_dir", mode_root)
+        strategy_root = decision_cfg.get("strategies_output_dir", mode_root)
+        ml_root = decision_cfg.get("ml_output_dir", mode_root)
         for symbol in symbols:
-            ai_path = self._latest_decision_file(ai_root, symbol)
-            strategy_path = self._latest_decision_file(strategy_root, symbol)
-            ml_path = self._latest_decision_file(ml_root, symbol)
             if active_mode == "strategies_mode":
-                selected_path = strategy_path
+                selected_path = self._latest_decision_file(strategy_root, symbol) or self._latest_decision_file(mode_root, symbol)
             elif active_mode == "ml_mode":
-                selected_path = ml_path
+                selected_path = self._latest_decision_file(ml_root, symbol) or self._latest_decision_file(mode_root, symbol)
             else:
-                selected_path = ai_path
+                selected_path = self._latest_decision_file(ai_root, symbol) or self._latest_decision_file(mode_root, symbol)
             if not selected_path:
                 continue
             decision_key = f"{active_mode}:{selected_path}:{os.path.getmtime(selected_path)}"
@@ -134,15 +126,22 @@ class ExecutorManager:
 
     @staticmethod
     def _latest_decision_file(root: str, symbol: str) -> Optional[str]:
-        symbol_dir = os.path.join(root, symbol)
-        if not os.path.isdir(symbol_dir):
-            return None
-        files = [
-            os.path.join(symbol_dir, name)
-            for name in os.listdir(symbol_dir)
-            if name.endswith(".json") and os.path.isfile(os.path.join(symbol_dir, name))
+        candidates = [
+            os.path.join(root, symbol),
+            os.path.join(root, "strategies_decision", symbol),
+            os.path.join(root, "ai_decision", symbol),
+            os.path.join(root, "ml_decision", symbol),
         ]
-        return max(files, key=os.path.getmtime) if files else None
+        for symbol_dir in candidates:
+            if os.path.isdir(symbol_dir):
+                files = [
+                    os.path.join(symbol_dir, name)
+                    for name in os.listdir(symbol_dir)
+                    if name.endswith(".json") and os.path.isfile(os.path.join(symbol_dir, name))
+                ]
+                if files:
+                    return max(files, key=os.path.getmtime)
+        return None
 
 
     def on_orchestrator_payload_saved(
