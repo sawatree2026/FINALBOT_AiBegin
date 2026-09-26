@@ -36,7 +36,26 @@ def load_settings(reload: bool = False) -> Dict[str, Any]:
         path = _find_settings_file()
         with open(path, "r", encoding="utf-8") as f:
             _CACHE = json.load(f)
+        _apply_env_overrides(_CACHE)
     return _CACHE
+
+
+def _apply_env_overrides(settings: Dict[str, Any]) -> None:
+    """FIX 2026-09-26 (Audit F-6b): secret ต้องมาจาก environment เท่านั้น
+    settings.json เก็บได้แค่ค่าว่าง - environment variable ชนะเสมอ"""
+    try:
+        from dotenv import load_dotenv  # type: ignore
+        load_dotenv()
+    except Exception:
+        pass
+    account = settings.setdefault("account", {})
+    if os.environ.get("IQ_EMAIL"):
+        account["iq_email"] = os.environ["IQ_EMAIL"]
+    if os.environ.get("IQ_PASSWORD"):
+        account["iq_password"] = os.environ["IQ_PASSWORD"]
+    ai_cfg = settings.setdefault("ai_mode", {})
+    if os.environ.get("GEMINI_API_KEY"):
+        ai_cfg["gemini_api_key"] = os.environ["GEMINI_API_KEY"]
 
 
 #  Convenience getters 

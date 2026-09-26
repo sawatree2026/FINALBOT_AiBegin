@@ -55,10 +55,17 @@ class ExecutorManager:
         self.audit_csv_path = os.path.join("data_base", active_mode, "output_trade", "decision_gate_audit.csv")
         self.chronos_dispatcher = None
         if str(self.settings.get("active_mode", "")).lower() != "strategies_mode":
+            # FIX 2026-09-26 (Audit F-2): ไม่กลืน exception เงียบๆ อีกต่อไป
+            # โหมดูล chronos_dispatcher ยังไม่มีอยู่ใน repo -> ประกาศชัดด้วย warning
+            # และปล่อยให้ ml_mode fail-fast ที่ชั้น MLDispatcher (onnx missing) ตามกฎ zero-fallback
             try:
                 from data_trade.ml_mode.execution_gate.chronos_dispatcher import ChronosDispatcher
                 self.chronos_dispatcher = ChronosDispatcher.get_instance(self.settings)
-            except Exception:
+            except ModuleNotFoundError:
+                logger.warning(
+                    "[ExecutorManager] ChronosDispatcher module not present in repo - "
+                    "ml dual-brain agreement is DISABLED until data_trade/ml_mode/execution_gate/ lands"
+                )
                 self.chronos_dispatcher = None
         self.min_gemini_confidence = float(
             self.settings.get("ai_mode", {}).get("min_confidence", 55)

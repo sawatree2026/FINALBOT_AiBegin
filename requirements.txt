@@ -1,0 +1,12 @@
+# FINALBOT_AiBegin — dependency ที่ import จริงใน source (สแกนเมื่อ 2026-09-26)
+# ยังไม่ pin เวอร์ชัน: บอสควร pin จาก environment ที่รันอยู่จริง (python 3.11/3.12)
+iqoptionapi
+pandas
+numpy
+lightgbm
+google-generativeai
+python-dotenv
+PyYAML
+requests
+beautifulsoup4
+onnxruntime
