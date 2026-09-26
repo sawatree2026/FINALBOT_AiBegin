@@ -1,0 +1,78 @@
+ID:EURUSDOTC0926071430
+meta:
+  timestamp: 2026-09-26 07:14:30
+  symbol: EURUSD-OTC
+  session: LONDON
+  mode: strategies
+  expiry_minutes: 3
+  holding_period: 3m
+
+s30:
+  open: 1.13762
+  high: 1.13790
+  low: 1.13758
+  close: 1.13759
+  bias: BEARISH
+  is_doji: TRUE
+  is_gray_candle: FALSE
+  bb_percent_period: 41
+  bb_percent_std_dev: 2.0
+  bb_percent_ma_type: SMA
+  bb_percent_source: close
+  bb_percent_upper: 1.13994
+  bb_percent_middle: 1.13827
+  bb_percent_lower: 1.13659
+  bb_percent_width: 0.00334
+  bb_percent_b: 0.30
+  bb_percent_touch: NONE
+  sto_k: 62.34
+  sto_d: 74.53
+  sto_zone: NEUTRAL
+  sto_cross: NONE
+  sto_cross_50: FALSE
+  sto_hook_confirmed: FALSE
+  sto_tangled: FALSE
+  ma_fast: 1.13765
+  ma_slow: 1.13766
+  ma_cross: DEATH_CROSS
+  ma_cross_confirmed: TRUE
+  macd: -0.00020
+  macd_signal: -0.00030
+  macd_histogram: 0.00010
+  macd_cross: NONE
+  macd_zero_cross: BELOW
+  rsi: 50.69
+  rsi_zone: NEUTRAL
+  rsi_cross_50: TRUE
+  sr_trend: BEARISH
+  sr_type: GR_DOWN
+  sr_nearest_support: 1.13758
+  sr_nearest_resistance: 1.13760
+  sr_tested_count: 12
+  sr_quality: HIGH
+  sr_block_ahead: TRUE
+  pa_pattern: PINBAR_BEARISH
+  pa_body_strength: 0.09
+  pa_doji: TRUE
+  pa_gray_candle: FALSE
+  divergence_alert: NONE
+  divergence_type: NONE
+  divergence_source: NONE
+  divergence_peak: 2
+
+m1:
+  grid_timeframe: M1
+  grid_current_price: 1.13759
+  grid_nearest_above: 1.13800
+  grid_nearest_below: 1.13750
+  grid_distance_to_above_pips: 4.1
+  grid_distance_to_below_pips: 0.9
+  grid_block_ahead: TRUE
+  grid_breakout_confirmed: FALSE
+
+m15_window:
+  doji_count: 3
+  gray_candle_count: 2
+  doji_present: TRUE
+  gray_candle_present: TRUE
+  window_clear: FALSE

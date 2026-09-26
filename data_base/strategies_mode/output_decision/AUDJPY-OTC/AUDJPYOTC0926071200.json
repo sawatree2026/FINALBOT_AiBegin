@@ -1,0 +1,20 @@
+{
+  "ID": "AUDJPYOTC0926071200",
+  "symbol": "AUDJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 3,
+  "confidence_score": 0.0,
+  "engine_used": "STRATEGY_BELIEVE",
+  "bias": "BULLISH",
+  "ma_cross": "NONE",
+  "sto_zone": "OVERBOUGHT_90",
+  "bb_touch": "NONE",
+  "window_clear": false,
+  "conditions_met": false,
+  "reason_th": "รอสัญญาณ Believe: ยังไม่ครบเงื่อนไขจุดเข้า (BB/Stochastic/MA)",
+  "payload_id": "AUDJPYOTC0926071200",
+  "payload_filepath": "E:\\FINALBOT_AiBegin\\data_base\\strategies_mode\\output_evaluate\\AUDJPY-OTC\\AUDJPYOTC0926071200.txt",
+  "source_part": "data_evaluate",
+  "mode": "strategies_mode",
+  "written_at": 1790406757.0982203
+}

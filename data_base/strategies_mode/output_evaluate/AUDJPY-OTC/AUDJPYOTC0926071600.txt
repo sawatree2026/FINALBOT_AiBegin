@@ -1,0 +1,78 @@
+ID:AUDJPYOTC0926071600
+meta:
+  timestamp: 2026-09-26 07:16:00
+  symbol: AUDJPY-OTC
+  session: LONDON
+  mode: strategies
+  expiry_minutes: 3
+  holding_period: 3m
+
+s30:
+  open: 114.102
+  high: 114.106
+  low: 114.035
+  close: 114.075
+  bias: BEARISH
+  is_doji: FALSE
+  is_gray_candle: FALSE
+  bb_percent_period: 41
+  bb_percent_std_dev: 2.0
+  bb_percent_ma_type: SMA
+  bb_percent_source: close
+  bb_percent_upper: 114.494
+  bb_percent_middle: 114.273
+  bb_percent_lower: 114.052
+  bb_percent_width: 0.442
+  bb_percent_b: 0.05
+  bb_percent_touch: LOWER
+  sto_k: 19.84
+  sto_d: 32.91
+  sto_zone: OVERSOLD_20
+  sto_cross: NONE
+  sto_cross_50: FALSE
+  sto_hook_confirmed: FALSE
+  sto_tangled: FALSE
+  ma_fast: 114.115
+  ma_slow: 114.160
+  ma_cross: NONE
+  ma_cross_confirmed: TRUE
+  macd: -0.04425
+  macd_signal: -0.03672
+  macd_histogram: -0.00753
+  macd_cross: NONE
+  macd_zero_cross: BELOW
+  rsi: 47.29
+  rsi_zone: NEUTRAL
+  rsi_cross_50: FALSE
+  sr_trend: BEARISH
+  sr_type: GR_DOWN
+  sr_nearest_support: 114.035
+  sr_nearest_resistance: 114.106
+  sr_tested_count: 1
+  sr_quality: MEDIUM
+  sr_block_ahead: FALSE
+  pa_pattern: MOMENTUM_BEARISH
+  pa_body_strength: 0.38
+  pa_doji: FALSE
+  pa_gray_candle: FALSE
+  divergence_alert: STO_BULLISH
+  divergence_type: REGULAR
+  divergence_source: STO
+  divergence_peak: 2
+
+m1:
+  grid_timeframe: M1
+  grid_current_price: 114.101
+  grid_nearest_above: 114.150
+  grid_nearest_below: 114.100
+  grid_distance_to_above_pips: 4.9
+  grid_distance_to_below_pips: 0.1
+  grid_block_ahead: TRUE
+  grid_breakout_confirmed: FALSE
+
+m15_window:
+  doji_count: 1
+  gray_candle_count: 0
+  doji_present: TRUE
+  gray_candle_present: FALSE
+  window_clear: FALSE

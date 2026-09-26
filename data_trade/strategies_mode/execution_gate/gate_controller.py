@@ -79,38 +79,40 @@ class ExecutionGate:
                 rejection_reasons.append(
                     f"Confidence below threshold ({confidence_score:.1f}% < {self.min_confidence:.0f}%)"
                 )
-            if not agreement_valid:
-                rejection_reasons.append("Gemini/Chronos disagreement")
-            if htf_direction is None:
-                rejection_reasons.append(f"Missing {htf_label} primary direction")
-            if evidence["m5_direction"] is None:
-                rejection_reasons.append("Missing M5 confirmation direction")
-            if evidence["regime"] is None:
-                rejection_reasons.append("Missing M5 regime evidence")
-            if evidence["adx"] is None:
-                rejection_reasons.append("Missing M5 ADX evidence")
-            elif evidence["adx"] < self.MIN_ADX:
-                rejection_reasons.append(f"Low ADX ({evidence['adx']:.2f} < {self.MIN_ADX:.0f})")
-            if evidence["risk"] is None:
-                rejection_reasons.append("Missing risk evidence")
-            elif evidence["risk"] in {"HIGH", "CRITICAL", "EXTREME"}:
-                rejection_reasons.append(f"High risk ({evidence['risk']})")
-            if evidence["quality_bad"]:
-                rejection_reasons.append("Stale or low-quality market data")
-            if evidence["regime"] == "CHOPPY":
-                rejection_reasons.append("CHOPPY regime")
-            if htf_direction and evidence["m5_direction"]:
-                if htf_direction != evidence["m5_direction"]:
-                    rejection_reasons.append(f"{htf_label}/M5 direction conflict")
-                elif action != ("CALL" if htf_direction == "UP" else "PUT"):
-                    rejection_reasons.append(f"Counter-{htf_label}-context action is disabled")
+            if is_strategies:
+                if not bool(ai_decision.get("conditions_met", True)):
+                    rejection_reasons.append("Believe entry conditions not met")
+            else:
+                if not agreement_valid:
+                    rejection_reasons.append("Gemini/Chronos disagreement")
+                if htf_direction is None:
+                    rejection_reasons.append(f"Missing {htf_label} primary direction")
+                if evidence["m5_direction"] is None:
+                    rejection_reasons.append("Missing M5 confirmation direction")
+                if evidence["regime"] is None:
+                    rejection_reasons.append("Missing M5 regime evidence")
+                if evidence["adx"] is None:
+                    rejection_reasons.append("Missing M5 ADX evidence")
+                elif evidence["adx"] < self.MIN_ADX:
+                    rejection_reasons.append(f"Low ADX ({evidence['adx']:.2f} < {self.MIN_ADX:.0f})")
+                if evidence["risk"] is None:
+                    rejection_reasons.append("Missing risk evidence")
+                elif evidence["risk"] in {"HIGH", "CRITICAL", "EXTREME"}:
+                    rejection_reasons.append(f"High risk ({evidence['risk']})")
+                if evidence["quality_bad"]:
+                    rejection_reasons.append("Stale or low-quality market data")
+                if evidence["regime"] == "CHOPPY":
+                    rejection_reasons.append("CHOPPY regime")
+                if htf_direction and evidence["m5_direction"]:
+                    if htf_direction != evidence["m5_direction"]:
+                        rejection_reasons.append(f"{htf_label}/M5 direction conflict")
+                    elif action != ("CALL" if htf_direction == "UP" else "PUT"):
+                        rejection_reasons.append(f"Counter-{htf_label}-context action is disabled")
 
         approved = action in ("CALL", "PUT") and not rejection_reasons
         if approved:
-            approved_reason = reason_th or (
-                f"Approved {action}: {htf_label} {htf_direction} + "
-                f"M5 {evidence['m5_direction']} trend confirmation"
-            )
+            default_txt = f"Approved {action} (Strategy Believe)" if is_strategies else f"Approved {action}: {htf_label} {htf_direction} + M5 {evidence['m5_direction']} trend confirmation"
+            approved_reason = reason_th or default_txt
             rejection_reasons = []
         else:
             approved_reason = "; ".join(rejection_reasons) + " — WAIT"

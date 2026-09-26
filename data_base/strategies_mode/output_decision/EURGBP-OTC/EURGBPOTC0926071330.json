@@ -1,0 +1,20 @@
+{
+  "ID": "EURGBPOTC0926071330",
+  "symbol": "EURGBP-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 3,
+  "confidence_score": 0.0,
+  "engine_used": "STRATEGY_BELIEVE",
+  "bias": "BEARISH",
+  "ma_cross": "NONE",
+  "sto_zone": "OVERBOUGHT_80",
+  "bb_touch": "MIDDLE",
+  "window_clear": false,
+  "conditions_met": false,
+  "reason_th": "รอสัญญาณ Believe: ยังไม่ครบเงื่อนไขจุดเข้า (BB/Stochastic/MA)",
+  "payload_id": "EURGBPOTC0926071330",
+  "payload_filepath": "E:\\FINALBOT_AiBegin\\data_base\\strategies_mode\\output_evaluate\\EURGBP-OTC\\EURGBPOTC0926071330.txt",
+  "source_part": "data_evaluate",
+  "mode": "strategies_mode",
+  "written_at": 1790406842.1223512
+}

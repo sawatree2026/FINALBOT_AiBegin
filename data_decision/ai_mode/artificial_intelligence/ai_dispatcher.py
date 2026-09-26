@@ -49,7 +49,7 @@ class SystemPrompt:
     """
 
     MAX_RETENTION_FILES = 30
-    AI_DECISION_OUTPUT_BASE_DIR = os.path.join("data_base", "output_decision", "ai_decision")
+    AI_DECISION_OUTPUT_BASE_DIR = os.path.join("data_base", "ai_mode", "output_decision")
     _CHANNEL_POOL: Optional[Any] = None
 
     # ── BOSS ORDER: Disable JSON decision file write ──────────────────────

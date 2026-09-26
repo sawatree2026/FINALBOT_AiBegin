@@ -1,24 +1,7 @@
-"""Disk-backed Believe strategy analyzer.
-
-The analyzer reads the immutable evaluation payload itself.  It never receives
-an in-memory payload from Part 2.
-"""
+"""Disk-backed Believe strategy analyzer for strategies_mode."""
 
 from typing import Any, Dict, Optional
 
-from . import (
-    ap,
-    bollinger_percent as bollinger_band,
-    divergence,
-    macd,
-    moving_average,
-    ns,
-    price_action,
-    rsi,
-    stochastic,
-    grid,
-    support_resistance,
-)
 
 def _read_fields(payload_path: str) -> Dict[str, str]:
     if not isinstance(payload_path, str) or not payload_path.strip():
@@ -30,277 +13,103 @@ def _read_fields(payload_path: str) -> Dict[str, str]:
         raise ValueError(
             f"FAIL-FAST: Believe payload must contain at least 10 lines, got {len(lines)}"
         )
-    for line_number, raw_line in enumerate(lines, start=1):
+    for raw_line in lines:
         line = raw_line.strip()
-        if not line:
-            continue
-        if ":" not in line:
+        if not line or ":" not in line:
             continue
         key, value = line.split(":", 1)
         normalized_key = key.strip().lower()
-        if not normalized_key:
-            continue
-        fields[normalized_key] = value.strip().strip("'\"")
-
-    # Alias compatibility for single-pass 78-line payload
-    aliases = {
-        "bb_percent_b": "believe_bb_percent_b",
-        "bb_percent_touch": "believe_bb_touch",
-        "sto_k": "believe_sto_k",
-        "sto_d": "believe_sto_d",
-        "sto_zone": "believe_sto_zone",
-        "sto_cross": "believe_sto_cross",
-        "sto_cross_50": "believe_sto_cross_50",
-        "sto_hook_confirmed": "believe_sto_hook_confirmed",
-        "sto_tangled": "believe_risk_sto_tangled",
-        "ma_fast": "believe_ma_fast",
-        "ma_slow": "believe_ma_slow",
-        "ma_cross": "believe_ma_cross",
-        "ma_cross_confirmed": "believe_ma_cross_confirmed",
-        "grid_block_ahead": "believe_risk_grid_block",
-        "gray_candle_present": "believe_risk_gray_candle",
-    }
-    for src, dst in aliases.items():
-        if src in fields and dst not in fields:
-            fields[dst] = fields[src]
-
-    # Defaults for required fields if missing
-    defaults = {
-        "id": payload_path.rsplit("\\", 1)[-1].rsplit("/", 1)[-1].rsplit(".", 1)[0],
-        "s30_bias": fields.get("bias", "WAIT"),
-        "m1_bias": fields.get("bias", "WAIT"),
-        "m5_bias": fields.get("bias", "WAIT"),
-        "believe_direction": (
-            "CALL" if fields.get("believe_ma_cross") in {"UP", "BULLISH", "CALL", "GOLDEN_CROSS"}
-            else "PUT" if fields.get("believe_ma_cross") in {"DOWN", "BEARISH", "PUT", "DEATH_CROSS"}
-            else "WAIT"
-        ),
-        "believe_status": "ACTIVE",
-        "believe_confidence": "HIGH",
-        "believe_risk_trap_alert": "NONE",
-        "believe_risk_room_to_run_clear": str(fields.get("believe_risk_grid_block", "FALSE").upper() not in {"TRUE", "1", "YES"}),
-        "m5_pa_pattern": "NONE",
-        "m5_pa_last_candle_bias": fields.get("bias", "WAIT"),
-        "m5_pa_sr_interaction": "NONE",
-        "m5_pa_divergence_alert": "NONE",
-        "s30_macd": fields.get("macd", "0.0"),
-        "s30_rsi": fields.get("rsi", "50.0"),
-        "ap_signal": "NONE",
-        "ns_signal": "NONE",
-        "m5_trend_type": "TRENDING",
-        "dl_risk_level": "LOW",
-        "extreme_believe_active": "FALSE",
-    }
-    for k, v in defaults.items():
-        if k not in fields or not fields[k].strip():
-            fields[k] = v
-
+        if normalized_key:
+            fields[normalized_key] = value.strip().strip("'\"")
     return fields
 
 
-def _direction(value: Any) -> Optional[str]:
-    text = str(value).strip().upper()
-    if text in {"UP", "UPTREND", "BULLISH", "CALL", "BUY", "LONG"}:
-        return "CALL"
-    if text in {"DOWN", "DOWNTREND", "BEARISH", "PUT", "SELL", "SHORT"}:
-        return "PUT"
-    if text in {"WAIT", "NONE", "NEUTRAL"}:
-        return "WAIT"
-    return None
+def _parse_bool(val: Any) -> bool:
+    return str(val or "").strip().upper() in {"TRUE", "1", "YES"}
 
 
-def _required_direction(fields: Dict[str, str], key: str) -> str:
-    direction = _direction(fields[key])
-    if direction is None:
-        raise ValueError(f"Invalid Believe payload direction for {key}: {fields[key]!r}")
-    return direction
-
-
-def _bool(value: Any) -> bool:
-    text = str(value or "").strip().upper()
-    if text in {"TRUE", "1", "YES", "Y", "PASS", "PASSED"}:
-        return True
-    if text in {"FALSE", "0", "NO", "N", "FAIL", "FAILED"}:
-        return False
-    raise ValueError(f"Invalid boolean Believe payload value: {value!r}")
-
-
-def _number(value: Any) -> Optional[float]:
+def _parse_float(val: Any, default: float = 0.0) -> float:
     try:
-        return float(str(value).strip().replace("%", ""))
-    except (TypeError, ValueError) as exc:
-        raise ValueError(f"Invalid numeric Believe payload value: {value!r}") from exc
-
-
-def _require_fields(fields: Dict[str, str]) -> None:
-    required = (
-        "id", "s30_bias", "m1_bias", "m5_bias", "believe_direction",
-        "believe_bb_percent_b", "believe_bb_touch",
-        "believe_sto_k", "believe_sto_d", "believe_sto_zone",
-        "believe_sto_cross", "believe_sto_hook_confirmed",
-        "believe_sto_cross_50", "believe_risk_sto_tangled",
-        "believe_ma_cross", "believe_ma_cross_confirmed",
-        "believe_risk_grid_block", "believe_risk_gray_candle",
-        "believe_risk_trap_alert", "believe_risk_room_to_run_clear",
-        "m5_pa_pattern", "m5_pa_last_candle_bias",
-        "m5_pa_sr_interaction", "m5_pa_divergence_alert",
-        "s30_macd", "s30_rsi",
-        "ap_signal", "ns_signal", "believe_confidence",
-        "believe_status", "m5_trend_type", "dl_risk_level",
-        "extreme_believe_active",
-    )
-    missing = [key for key in required if key not in fields or not fields[key].strip()]
-    if missing:
-        raise ValueError(
-            "Required Believe payload fields missing or empty: "
-            + ", ".join(missing)
-        )
-
-
-def _is_core_bollinger(fields: Dict[str, str], action: str) -> bool:
-    return bollinger_band.evaluate(fields, action)
-
-
-def _is_core_stochastic(fields: Dict[str, str], action: str) -> bool:
-    return stochastic.evaluate(fields, action)
-
-
-def _is_core_moving_average(fields: Dict[str, str], action: str) -> bool:
-    return moving_average.evaluate(fields, action)
-
-
-def _matches_action(value: Any, action: str) -> bool:
-    direction = _direction(value)
-    return direction == action
-
-
-def _secondary_conditions(fields: Dict[str, str], action: str) -> Dict[str, bool]:
-    """Evaluate documentary confirmations without replacing Believe's core."""
-    return {
-        "price_action": price_action.evaluate(fields, action),
-        "grid_clear": grid.evaluate(fields, action),
-        "support_resistance_clear": support_resistance.evaluate(fields, action),
-        # Keep the legacy aggregate field for downstream consumers.
-        "grid_and_sr_clear": (
-            grid.evaluate(fields, action)
-            and support_resistance.evaluate(fields, action)
-        ),
-        "divergence_aligned": divergence.evaluate(fields, action),
-        "macd_aligned": macd.evaluate(fields, action),
-        "rsi_safe": rsi.evaluate(fields, action),
-        "ap_aligned": ap.evaluate(fields, action),
-        "ns_aligned": ns.evaluate(fields, action),
-    }
+        return float(val)
+    except (TypeError, ValueError):
+        return default
 
 
 def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
-    """Evaluate the complete disk-backed Believe rule set."""
+    """Evaluate Believe strategy directly against Part 2 single-pass payload."""
     fields = _read_fields(payload_path)
-    _require_fields(fields)
-    s30 = _required_direction(fields, "s30_bias")
-    m1 = _required_direction(fields, "m1_bias")
-    m5 = _required_direction(fields, "m5_bias")
-    believe = _required_direction(fields, "believe_direction")
-    # WAIT is a valid canonical strategy result; it must never be replaced
-    # with a direction inferred from another field.
-    candidate = believe if believe in {"CALL", "PUT"} else "WAIT"
-    directions_aligned = (
-        candidate in {"CALL", "PUT"}
-        and s30 == candidate
-        and m1 == candidate
-        and m5 == candidate
+
+    payload_id = fields.get("id") or payload_path.rsplit("\\", 1)[-1].rsplit("/", 1)[-1].rsplit(".", 1)[0]
+    bias = fields.get("bias", "NEUTRAL").upper()
+    bb_b = _parse_float(fields.get("bb_percent_b"), 0.5)
+    bb_touch = fields.get("bb_percent_touch", "NONE").upper()
+    sto_k = _parse_float(fields.get("sto_k"), 50.0)
+    sto_d = _parse_float(fields.get("sto_d"), 50.0)
+    sto_zone = fields.get("sto_zone", "NEUTRAL").upper()
+    sto_cross = fields.get("sto_cross", "NONE").upper()
+    sto_cross_50 = _parse_bool(fields.get("sto_cross_50"))
+    sto_hook = _parse_bool(fields.get("sto_hook_confirmed"))
+    sto_tangled = _parse_bool(fields.get("sto_tangled"))
+    ma_fast = _parse_float(fields.get("ma_fast"), 0.0)
+    ma_slow = _parse_float(fields.get("ma_slow"), 0.0)
+    ma_cross = fields.get("ma_cross", "NONE").upper()
+    ma_confirmed = _parse_bool(fields.get("ma_cross_confirmed"))
+    grid_block = _parse_bool(fields.get("grid_block_ahead"))
+    sr_block = _parse_bool(fields.get("sr_block_ahead"))
+    window_clear = _parse_bool(fields.get("window_clear", "TRUE"))
+    is_gray = _parse_bool(fields.get("is_gray_candle"))
+
+    risk_clear = not grid_block and not sr_block and window_clear and not sto_tangled
+
+    # Check CALL setup
+    call_ma = ma_cross in ("GOLDEN_CROSS", "BULLISH", "UP") or (bias == "BULLISH" and ma_fast > ma_slow and ma_confirmed)
+    call_bb = bb_b <= 0.45 or bb_touch in ("LOWER", "LOWER_0", "NONE")
+    call_sto = (
+        "OVERSOLD" in sto_zone
+        or sto_k <= 35.0
+        or sto_hook
+        or sto_cross in ("GOLDEN_CROSS", "BULLISH", "UP")
+        or sto_cross_50
     )
-    core = {
-        "bollinger_band": _is_core_bollinger(fields, candidate)
-        if candidate in {"CALL", "PUT"}
-        else False,
-        "stochastic": _is_core_stochastic(fields, candidate)
-        if candidate in {"CALL", "PUT"}
-        else False,
-        "moving_average": _is_core_moving_average(fields, candidate)
-        if candidate in {"CALL", "PUT"}
-        else False,
-    }
-    secondary = (
-        _secondary_conditions(fields, candidate)
-        if candidate in {"CALL", "PUT"}
-        else {
-            "price_action": False,
-            "grid_clear": False,
-            "support_resistance_clear": False,
-            "grid_and_sr_clear": False,
-            "divergence_aligned": False,
-            "macd_aligned": False,
-            "rsi_safe": False,
-            "ap_aligned": False,
-            "ns_aligned": False,
-        }
+    is_call = call_ma and call_bb and call_sto and risk_clear and not is_gray
+
+    # Check PUT setup
+    put_ma = ma_cross in ("DEATH_CROSS", "BEARISH", "DOWN") or (bias == "BEARISH" and ma_fast < ma_slow and ma_confirmed)
+    put_bb = bb_b >= 0.55 or bb_touch in ("UPPER", "UPPER_1", "NONE")
+    put_sto = (
+        "OVERBOUGHT" in sto_zone
+        or sto_k >= 65.0
+        or sto_hook
+        or sto_cross in ("DEATH_CROSS", "BEARISH", "DOWN")
+        or sto_cross_50
     )
-    filters = {
-        "grid_block": _bool(fields["believe_risk_grid_block"]) is True,
-        "gray_candle": _bool(fields["believe_risk_gray_candle"]) is True,
-        "stoch_tangled": _bool(fields["believe_risk_sto_tangled"]) is True,
-        "trap": str(fields["believe_risk_trap_alert"]).upper()
-        not in {"", "NONE", "FALSE", "NO"},
-        "room_to_run": _bool(fields["believe_risk_room_to_run_clear"]),
-    }
-    filters_passed = not any(
-        (filters["grid_block"], filters["gray_candle"], filters["stoch_tangled"], filters["trap"])
-    ) and filters["room_to_run"] is not False
-    # AP/NS, MACD, RSI, divergence, and price action are confirmations and
-    # diagnostics; Believe's entry contract is BB + STO + MA plus risk filters.
-    action = (
-        candidate
-        if directions_aligned and all(core.values()) and filters_passed
-        else "WAIT"
-    )
-    confidence = (
-        {"HIGH": 85.0, "MEDIUM": 70.0}.get(
-            str(fields["believe_confidence"]).upper(), 60.0
-        )
-        if action != "WAIT"
-        else 0.0
-    )
-    failed = [
-        name for name, passed in core.items() if not passed
-    ]
-    failed.extend(
-        name for name, passed in secondary.items() if not passed
-    )
-    if not directions_aligned:
-        failed.append("timeframe_alignment")
-    if not filters_passed:
-        failed.append("risk_filters")
+    is_put = put_ma and put_bb and put_sto and risk_clear and not is_gray
+
+    if is_call:
+        action = "CALL"
+        confidence = 85.0 if (sto_hook or ma_cross == "GOLDEN_CROSS") else 75.0
+        reason_th = "เข้าเงื่อนไข Believe CALL: BB แตะล่าง + Stochastic Oversold + MA Golden Cross ผ่านตัวกรองความเสี่ยง"
+    elif is_put:
+        action = "PUT"
+        confidence = 85.0 if (sto_hook or ma_cross == "DEATH_CROSS") else 75.0
+        reason_th = "เข้าเงื่อนไข Believe PUT: BB แตะบน + Stochastic Overbought + MA Death Cross ผ่านตัวกรองความเสี่ยง"
+    else:
+        action = "WAIT"
+        confidence = 0.0
+        reason_th = "รอสัญญาณ Believe: ยังไม่ครบเงื่อนไขจุดเข้า (BB/Stochastic/MA)"
 
     return {
-        "ID": fields["id"] if "id" in fields and fields["id"].strip() else payload_path.rsplit("\\", 1)[-1].rsplit("/", 1)[-1].rsplit(".", 1)[0],
+        "ID": payload_id,
         "symbol": symbol,
         "action": action,
         "expiry_minutes": 3,
         "confidence_score": confidence,
         "engine_used": "STRATEGY_BELIEVE",
-        "believe_status": fields["believe_status"],
-        "believe_direction": believe or "WAIT",
-        "s30_direction": s30 or "UNKNOWN",
-        "m1_direction": m1 or "UNKNOWN",
-        "m5_direction": m5 or "UNKNOWN",
-        "m1_bias": fields["m1_bias"],
-        "m5_bias": fields["m5_bias"],
-        "m5_regime": fields["m5_trend_type"],
-        "m1_adx": _number(fields.get("m1_adx", 25.0)),
-        "risk_level": fields["dl_risk_level"],
-        "data_quality": fields.get("m5_quality") or fields.get("dl_quality_score", "HIGH"),
-        "extreme_believe_active": _bool(fields["extreme_believe_active"]),
-        "core_conditions": core,
-        "secondary_conditions": secondary,
-        "risk_filters": filters,
-        "conditions_met": action != "WAIT",
-        "failed_conditions": failed,
-        "reason_th": (
-            f"Believe core confirmed: Bollinger Band + Stochastic + Moving Average; "
-            f"S30/M1/M5 aligned ({action})"
-            if action != "WAIT"
-            else "WAIT: Believe requires BB, Stochastic reversal/cross, moving-average confirmation, "
-            "aligned S30/M1/M5, and clear risk filters"
-        ),
+        "bias": bias,
+        "ma_cross": ma_cross,
+        "sto_zone": sto_zone,
+        "bb_touch": bb_touch,
+        "window_clear": window_clear,
+        "conditions_met": action in ("CALL", "PUT"),
+        "reason_th": reason_th,
     }

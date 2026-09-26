@@ -71,7 +71,7 @@ class MLDispatcher:
     """Master ML Pipeline Dispatcher (Reads disk payload and extracts 17 ML features)."""
 
     _INSTANCE: Optional["MLDispatcher"] = None
-    AI_DECISION_OUTPUT_BASE_DIR = os.path.join("data_base", "output_decision", "ai_decision")
+    AI_DECISION_OUTPUT_BASE_DIR = os.path.join("data_base", "ml_mode", "output_decision")
 
     def __init__(self, config: Optional[Dict[str, Any]] = None):
         self.settings = config or load_settings(reload=False)
