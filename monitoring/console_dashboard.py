@@ -334,9 +334,9 @@ class ConsoleUI:
     @staticmethod
     def show_data_prep_result(ready_count, not_ready_count=0):
         if not_ready_count > 0:
-            thai_console_log(f"ตรวจสอบข้อมูลแท่งเทียนสมบูรณ์ (M1/M5/M15 ครบ 250 แท่ง) : พร้อม {ready_count} รายการ (ไม่สมบูรณ์ {not_ready_count} รายการ)")
+            thai_console_log(f"ตรวจสอบข้อมูลแท่งเทียนสมบูรณ์ (S30/M1/M5 ครบ 250 แท่ง จาก IQ Option จริง) : พร้อม {ready_count} รายการ (ไม่สมบูรณ์ {not_ready_count} รายการ)")
         else:
-            thai_console_log(f"ตรวจสอบข้อมูลแท่งเทียนสมบูรณ์ (M1/M5/M15 ครบ 250 แท่ง) : พร้อม {ready_count} รายการ")
+            thai_console_log(f"ตรวจสอบข้อมูลแท่งเทียนสมบูรณ์ (S30/M1/M5 ครบ 250 แท่ง จาก IQ Option จริง) : พร้อม {ready_count} รายการ")
 
     @staticmethod
     def show_mode_summary(stake, profit_pct, loss_pct, max_conc, trade_hours):

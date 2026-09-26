@@ -197,14 +197,10 @@ class Orchestrator:
         from config_setting.config_loader import get_csv_manager_config
         base_dir = get_csv_manager_config().get("base_dir", os.path.join("data_base", "output_feed"))
         candles_dict = {}
-        for tf in ["S30", "M1", "M15", "M5"]:
+        for tf in ["S30", "M1", "M5", "M15"]:
             file_path = os.path.join(base_dir, symbol, f"{symbol}_{tf}.csv")
             if not os.path.exists(file_path):
-                if tf in ("M15", "M5") and ("M15" in candles_dict or "M5" in candles_dict):
-                    continue
-                if tf not in ("M15", "M5"):
-                    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
-                continue
+                raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
 
             df_tf = pd.read_csv(file_path)
             if df_tf is None or df_tf.empty:
@@ -241,8 +237,6 @@ class Orchestrator:
         s30 = candles_dict['S30']
         m1 = candles_dict['M1']
         m15 = candles_dict.get('M15')
-        if m15 is None or m15.empty:
-            m15 = candles_dict.get('M5')
 
         is_jpy = "JPY" in symbol.upper()
         pip_scale = 100.0 if is_jpy else 10000.0
@@ -475,11 +469,7 @@ class Orchestrator:
             gray_present = gray_cnt > 0
             win_clear = (doji_cnt == 0 and gray_cnt == 0)
         else:
-            doji_cnt = 0
-            gray_cnt = 0
-            doji_present = False
-            gray_present = False
-            win_clear = True
+            raise ValueError(f"[DataEvaluate] FAIL-FAST: {symbol} has missing or insufficient M15 candles for m15_window")
 
         bool_str = lambda b: "TRUE" if b else "FALSE"
         raw_lines = [

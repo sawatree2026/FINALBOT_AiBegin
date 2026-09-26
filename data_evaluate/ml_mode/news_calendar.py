@@ -64,8 +64,7 @@ IMPACT_MAP = {
 # ─────────────────────────────────────────
 #  CONFIG & PATH RESOLUTION
 # ─────────────────────────────────────────
-BASE_DIR = Path(__file__).resolve().parent.parent
-OUTPUT_DIR = BASE_DIR / "data_evaluate" / "orchestration"
+OUTPUT_DIR = Path(__file__).resolve().parent / "orchestration"
 FF_URL = "https://www.forexfactory.com/calendar"
 
 HEADERS = {

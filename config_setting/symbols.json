@@ -1,14 +1,14 @@
 {
     "symbols": [
-        "GBPJPY",
-        "USDCAD",
-        "NZDUSD",
-        "GBPAUD"
+        "GBPJPY-OTC",
+        "USDCAD-OTC",
+        "AUDJPY-OTC",
+        "AUDUSD-OTC"
     ],
     "payouts": {
-        "GBPJPY": 87,
-        "USDCAD": 87,
-        "NZDUSD": 87,
-        "GBPAUD": 87
+        "GBPJPY-OTC": 86,
+        "USDCAD-OTC": 86,
+        "AUDJPY-OTC": 86,
+        "AUDUSD-OTC": 86
     }
 }

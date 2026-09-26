@@ -21,14 +21,17 @@ from typing import Optional, List, Dict, Any
 
 from monitoring.console_dashboard import ConsoleUI, logger, setup_logging, disable_quick_edit
 from config_setting.config_loader import load_settings, get_symbols
-from data_feed.bridge_adapter.broker_factory import BrokerFactory
-from data_feed.data_adapter import DataAdapter
-from data_evaluate.mode_loader import (
-    mode_output_dir,
+from config_setting.mode_loader import (
+    normalize_mode,
     normalize_evaluate_mode,
-    load_orchestrator_class,
+    load_broker_adapter,
+    load_data_feed,
+    load_orchestrator,
+    load_decision_manager,
+    load_executor_manager,
+    mode_output_dir,
 )
-from data_decision.decision_manager import DecisionManager
+
 
 setup_logging()
 disable_quick_edit()
@@ -111,7 +114,7 @@ class DataFeedRunner:
 
         # 1. Initialize Part 1 Commander (DataAdapter via BrokerFactory)
         ConsoleUI.show_connection_attempt()
-        self.data_feed: DataAdapter = BrokerFactory.create_broker(config=self.settings)
+        self.data_feed = load_data_feed(self.active_mode, self.settings)
         if not self.data_feed.connected:
             ConsoleUI.show_connection_failed()
             os._exit(1)
@@ -154,11 +157,10 @@ class DataFeedRunner:
             raise RuntimeError("FAIL-FAST: Failed to get balance from broker API") from e
 
         # 5. Initialize the mode-specific Part 2 Orchestrator.
-        orchestrator_class = load_orchestrator_class(self.active_mode)
         self.settings["data_evaluate"]["output_dir"] = mode_output_dir(
             self.settings, self.active_mode
         )
-        self.orchestrator = orchestrator_class(self.settings)
+        self.orchestrator = load_orchestrator(self.active_mode, self.settings)
 
         # 5.1 Pre-warm and Test AI / ML Connections
         ml_enabled = self.active_mode == "ml_mode"
@@ -186,10 +188,12 @@ class DataFeedRunner:
 
         # 5.2 Initialize Part 3 DecisionManager and Part 4 Trade Manager.
         # Parts exchange only durable files on SSD; no payload listener is registered.
-        self.decision_manager = DecisionManager(self.settings)
-        from data_trade.executor_manager import ExecutorManager
-        self.executor_manager = ExecutorManager(self.settings)
-        self.executor_manager._broker_adapter = self.data_feed._broker
+        self.decision_manager = load_decision_manager(self.active_mode, self.settings)
+        self.executor_manager = load_executor_manager(
+            self.active_mode,
+            self.settings,
+            broker_adapter=getattr(self.data_feed, "_broker", None)
+        )
 
         # 6. Part 1 Commander: Historical Data Warm-Up (250 candles for M1, M5, M15)
         ConsoleUI.show_data_prep_start(self.symbols)
@@ -201,19 +205,48 @@ class DataFeedRunner:
         """Prevent two runner processes from fetching the same market simultaneously."""
         lock_path = os.path.join("logs", "runner.lock")
         os.makedirs(os.path.dirname(lock_path), exist_ok=True)
-        lock_file = open(lock_path, "a+", encoding="ascii")
-        lock_file.seek(0)
+        if not os.path.exists(lock_path) or os.path.getsize(lock_path) == 0:
+            try:
+                with open(lock_path, "wb") as f:
+                    f.write(b"1")
+            except Exception:
+                pass
         try:
-            lock_file.write("1")
-            lock_file.flush()
-            msvcrt.locking(lock_file.fileno(), msvcrt.LK_NBLCK, 1)
-        except OSError as exc:
-            lock_file.close()
+            lock_file = open(lock_path, "r+b", buffering=0)
+            if os.name == "nt":
+                import msvcrt
+                msvcrt.locking(lock_file.fileno(), msvcrt.LK_NBLCK, 1)
+            else:
+                import fcntl
+                fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            self._runner_lock_file = lock_file
+            import atexit
+            atexit.register(self._release_single_instance_lock)
+            logger.info("[DataFeedRunner] Single-instance lock acquired: %s", lock_path)
+        except Exception:
+            try:
+                if 'lock_file' in locals() and lock_file:
+                    lock_file.close()
+            except Exception:
+                pass
             raise RuntimeError(
-                f"FAIL-FAST: Another runner.py instance is already active ({lock_path})"
-            ) from exc
-        self._runner_lock_file = lock_file
-        logger.info("[DataFeedRunner] Single-instance lock acquired: %s", lock_path)
+                f"FAIL-FAST: Another runner.py instance is already active ({lock_path}). Please close existing process first."
+            ) from None
+
+    def _release_single_instance_lock(self) -> None:
+        if getattr(self, "_runner_lock_file", None):
+            try:
+                if os.name == "nt":
+                    import msvcrt
+                    self._runner_lock_file.seek(0)
+                    msvcrt.locking(self._runner_lock_file.fileno(), msvcrt.LK_UNLCK, 1)
+            except Exception:
+                pass
+            try:
+                self._runner_lock_file.close()
+            except Exception:
+                pass
+            self._runner_lock_file = None
 
     def _countdown_to_first_candle(self):
         """Sleep until the next completed S30 boundary (:01.500 or :31.500)."""
