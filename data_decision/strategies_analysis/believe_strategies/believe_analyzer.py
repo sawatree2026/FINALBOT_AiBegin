@@ -94,7 +94,10 @@ def _require_fields(fields: Dict[str, str]) -> None:
         "believe_risk_trap_alert", "believe_risk_room_to_run_clear",
         "m5_pa_pattern", "m5_pa_last_candle_bias",
         "m5_pa_sr_interaction", "m5_pa_divergence_alert",
-        "s30_macd", "s30_rsi",
+        "s30_macd", "s30_macd_signal", "s30_macd_histogram", "s30_rsi",
+        "m1_macd", "m1_macd_signal", "m1_macd_histogram",
+        "m1_divergence_type", "m1_divergence_peak_count",
+        "m1_adx",
         "ap_signal", "ns_signal", "believe_confidence",
         "believe_status", "m5_trend_type", "dl_risk_level",
         "extreme_believe_active",
@@ -201,7 +204,13 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
     # diagnostics; Believe's entry contract is BB + STO + MA plus risk filters.
     action = (
         candidate
-        if directions_aligned and all(core.values()) and filters_passed
+        if (
+            directions_aligned
+            and all(core.values())
+            and secondary["divergence_aligned"]
+            and secondary["macd_aligned"]
+            and filters_passed
+        )
         else "WAIT"
     )
     confidence = (

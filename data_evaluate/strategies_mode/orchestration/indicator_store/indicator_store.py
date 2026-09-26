@@ -220,6 +220,38 @@ class IndicatorStore:
         # Stochastic (14, 3, 3)
         m1.update(CoreIndicators.calculate_stochastic(close_m1, high_m1, low_m1))
 
+        # M1 is the only timeframe allowed to provide Believe divergence.
+        # Compare two completed swing windows; no inferred direction is used
+        # when the price/STO relationship is not divergent.
+        raw_k = (
+            (close_m1 - low_m1.rolling(13, min_periods=13).min())
+            / (high_m1.rolling(13, min_periods=13).max()
+               - low_m1.rolling(13, min_periods=13).min())
+            * 100
+        )
+        smooth_k = raw_k.rolling(10, min_periods=10).mean()
+        if smooth_k.iloc[-1:].isna().any():
+            raise ValueError("FAIL-FAST: M1 STO series is not warmed up for divergence")
+        window = 20
+        previous = slice(-(window * 2), -window)
+        current = slice(-window, None)
+        previous_low = float(low_m1.iloc[previous].min())
+        current_low = float(low_m1.iloc[current].min())
+        previous_high = float(high_m1.iloc[previous].max())
+        current_high = float(high_m1.iloc[current].max())
+        previous_k_low = float(smooth_k.iloc[previous].min())
+        current_k_low = float(smooth_k.iloc[current].min())
+        previous_k_high = float(smooth_k.iloc[previous].max())
+        current_k_high = float(smooth_k.iloc[current].max())
+        bullish_divergence = current_low < previous_low and current_k_low > previous_k_low
+        bearish_divergence = current_high > previous_high and current_k_high < previous_k_high
+        m1['divergence_type'] = (
+            'BULLISH' if bullish_divergence
+            else 'BEARISH' if bearish_divergence
+            else 'NONE'
+        )
+        m1['divergence_peak_count'] = 2 if (bullish_divergence or bearish_divergence) else 0
+
         # ATR (14) - Removed as not used by any engine
         # m1.update(StructuralMetrics.calculate_atr(high_m1, low_m1, close_m1, Config.ADX_PERIOD, Config.ROUND_DECIMALS))
 
