@@ -22,7 +22,10 @@ from typing import Dict, Any, Optional, List, Tuple
 from datetime import datetime, timezone, timedelta
 
 from config_setting.config_loader import load_settings
-from data_decision.ai_analysis.artificial_intelligence.ai_dispatcher import SystemPrompt
+try:
+    from data_decision.ai_mode.artificial_intelligence.ai_dispatcher import SystemPrompt
+except ImportError:
+    SystemPrompt = None
 try:
     from .execution_gate.gate_controller import ExecutionGate
     from .execution_gate.money_manager import MoneyManager
@@ -51,8 +54,11 @@ class ExecutorManager:
         self.audit_csv_path = os.path.join("data_base", "output_trade", "decision_gate_audit.csv")
         self.chronos_dispatcher = None
         if str(self.settings.get("active_mode", "")).lower() != "strategies_mode":
-            from data_trade.execution_gate.chronos_dispatcher import ChronosDispatcher
-            self.chronos_dispatcher = ChronosDispatcher.get_instance(self.settings)
+            try:
+                from data_trade.ml_mode.execution_gate.chronos_dispatcher import ChronosDispatcher
+                self.chronos_dispatcher = ChronosDispatcher.get_instance(self.settings)
+            except Exception:
+                self.chronos_dispatcher = None
         self.min_gemini_confidence = float(
             self.settings.get("ai_mode", {}).get("min_confidence", 55)
         )
@@ -87,10 +93,19 @@ class ExecutorManager:
             "strategies_output_dir",
             os.path.join("data_base", "output_decision", "strategies_decision"),
         )
+        ml_root = decision_cfg.get(
+            "ml_output_dir", os.path.join("data_base", "output_decision", "ml_decision")
+        )
         for symbol in symbols:
             ai_path = self._latest_decision_file(ai_root, symbol)
             strategy_path = self._latest_decision_file(strategy_root, symbol)
-            selected_path = strategy_path if active_mode == "strategies_mode" else ai_path
+            ml_path = self._latest_decision_file(ml_root, symbol)
+            if active_mode == "strategies_mode":
+                selected_path = strategy_path
+            elif active_mode == "ml_mode":
+                selected_path = ml_path
+            else:
+                selected_path = ai_path
             if not selected_path:
                 continue
             decision_key = f"{active_mode}:{selected_path}:{os.path.getmtime(selected_path)}"
@@ -390,7 +405,7 @@ class ExecutorManager:
             dispatch_tasks.append((symbol, filepath, payload_text, payload))
 
         try:
-            from data_decision.ai_analysis.artificial_intelligence.ai_dispatcher import SystemPrompt
+            from data_decision.ai_mode.artificial_intelligence.ai_dispatcher import SystemPrompt
             gemini = SystemPrompt.process_ai_decisions_concurrent([
                 (symbol, filepath, payload_text)
                 for symbol, filepath, payload_text, _ in dispatch_tasks
@@ -524,11 +539,13 @@ class ExecutorManager:
         }
 
         action = str(ai_decision.get("action", "WAIT")).upper().strip()
-        expiry_minutes = int(ai_decision.get("expiry_minutes", 3))
-        if expiry_minutes != 3:
+        is_strategies = str(ai_decision.get("mode", "")).lower().startswith("strategies")
+        expected_expiry = 3 if is_strategies else 5
+        expiry_minutes = int(ai_decision.get("expiry_minutes", expected_expiry))
+        if expiry_minutes != expected_expiry:
             raise ValueError(
                 f"FAIL-FAST: Invalid Binary Options expiry {expiry_minutes}; "
-                "Strategy requires exactly 3 minutes"
+                f"Mode requires exactly {expected_expiry} minutes"
             )
         confidence_score = float(ai_decision.get("confidence_score", 0.0))
         reason_th = str(

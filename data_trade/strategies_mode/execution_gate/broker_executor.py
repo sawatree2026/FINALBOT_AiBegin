@@ -78,10 +78,10 @@ class BrokerExecutor:
         if norm_action not in ("CALL", "PUT"):
             raise ValueError(f"FAIL-FAST: Invalid action '{action}', must be 'CALL' or 'PUT'")
 
-        if expiry_minutes != 5:
+        if expiry_minutes not in (1, 2, 3, 4, 5):
             raise ValueError(
                 f"FAIL-FAST: Invalid expiry_minutes '{expiry_minutes}', "
-                "M5 Binary Options strategy requires exactly 5 minutes"
+                "Binary Options strategy requires duration between 1 and 5 minutes"
             )
 
         if not isinstance(stake, (int, float)) or stake <= 0:

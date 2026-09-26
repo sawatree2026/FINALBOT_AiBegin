@@ -1,0 +1,78 @@
+ID:GBPJPYOTC0926060230
+meta:
+  timestamp: 2026-09-26 06:02:30
+  symbol: GBPJPY-OTC
+  session: ASIA
+  mode: strategies
+  expiry_minutes: 3
+  holding_period: 3m
+
+s30:
+  open: 212.167
+  high: 212.194
+  low: 212.136
+  close: 212.189
+  bias: BULLISH
+  is_doji: FALSE
+  is_gray_candle: FALSE
+  bb_percent_period: 41
+  bb_percent_std_dev: 2.0
+  bb_percent_ma_type: SMA
+  bb_percent_source: close
+  bb_percent_upper: 212.469
+  bb_percent_middle: 212.285
+  bb_percent_lower: 212.102
+  bb_percent_width: 0.368
+  bb_percent_b: 0.24
+  bb_percent_touch: NONE
+  sto_k: 38.83
+  sto_d: 31.13
+  sto_zone: NEUTRAL
+  sto_cross: NONE
+  sto_cross_50: FALSE
+  sto_hook_confirmed: FALSE
+  sto_tangled: FALSE
+  ma_fast: 212.175
+  ma_slow: 212.171
+  ma_cross: GOLDEN_CROSS
+  ma_cross_confirmed: TRUE
+  macd: -0.03199
+  macd_signal: -0.02707
+  macd_histogram: -0.00492
+  macd_cross: NONE
+  macd_zero_cross: BELOW
+  rsi: 39.92
+  rsi_zone: NEUTRAL
+  rsi_cross_50: FALSE
+  sr_trend: BEARISH
+  sr_type: GR_DOWN
+  sr_nearest_support: 212.179
+  sr_nearest_resistance: 212.191
+  sr_tested_count: 6
+  sr_quality: HIGH
+  sr_block_ahead: TRUE
+  pa_pattern: MOMENTUM_BULLISH
+  pa_body_strength: 0.38
+  pa_doji: FALSE
+  pa_gray_candle: FALSE
+  divergence_alert: NONE
+  divergence_type: NONE
+  divergence_source: NONE
+  divergence_peak: 2
+
+m1:
+  grid_timeframe: M1
+  grid_current_price: 212.189
+  grid_nearest_above: 212.200
+  grid_nearest_below: 212.150
+  grid_distance_to_above_pips: 1.1
+  grid_distance_to_below_pips: 3.9
+  grid_block_ahead: FALSE
+  grid_breakout_confirmed: FALSE
+
+m15_window:
+  doji_count: 0
+  gray_candle_count: 0
+  doji_present: FALSE
+  gray_candle_present: FALSE
+  window_clear: TRUE

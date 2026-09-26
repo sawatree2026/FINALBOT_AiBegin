@@ -108,8 +108,12 @@ class Orchestrator:
         except Exception as e:
             raise
 
-        raw_eval_dir = _all_cfg.get("data_evaluate", {}).get("output_dir", os.path.join("data_base", "output_evaluate"))
-        if not raw_eval_dir.replace("\\", "/").endswith("strategies_mode"):
+        raw_eval_dir = _all_cfg.get("data_evaluate", {}).get(
+            "output_dir", os.path.join("data_base", "strategies_mode", "output_evaluate")
+        )
+        if "strategies_mode" in raw_eval_dir.replace("\\", "/").split("/") or raw_eval_dir.replace("\\", "/").endswith("output_evaluate"):
+            self.orchestrator_log_dir = raw_eval_dir
+        elif not raw_eval_dir.replace("\\", "/").endswith("strategies_mode"):
             self.orchestrator_log_dir = os.path.join(raw_eval_dir, "strategies_mode")
         else:
             self.orchestrator_log_dir = raw_eval_dir
@@ -195,7 +199,9 @@ class Orchestrator:
             )
 
         from config_setting.config_loader import get_csv_manager_config
-        base_dir = get_csv_manager_config().get("base_dir", os.path.join("data_base", "output_feed"))
+        base_dir = get_csv_manager_config().get("base_dir", os.path.join("data_base", "strategies_mode", "output_feed"))
+        if not os.path.isdir(base_dir) and os.path.isdir(os.path.join("data_base", "strategies_mode", "output_feed")):
+            base_dir = os.path.join("data_base", "strategies_mode", "output_feed")
         candles_dict = {}
         for tf in ["S30", "M1", "M5", "M15"]:
             file_path = os.path.join(base_dir, symbol, f"{symbol}_{tf}.csv")

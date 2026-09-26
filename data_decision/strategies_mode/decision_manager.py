@@ -7,7 +7,6 @@ import time
 from typing import Any, Dict, Iterable, Optional
 
 from config_setting.config_loader import load_settings
-from data_decision.ai_analysis.artificial_intelligence.ai_dispatcher import SystemPrompt
 from data_decision.strategies_mode.believe_strategies.believe_analyzer import analyze_payload_file
 from config_setting.mode_loader import mode_output_dir, normalize_evaluate_mode
 
@@ -21,19 +20,12 @@ class DecisionManager:
         self.settings = config or load_settings(reload=False)
         self.active_mode = normalize_evaluate_mode(self.settings.get("active_mode", "ml_mode"))
         self.evaluate_dir = mode_output_dir(self.settings, self.active_mode)
+        mode_root = os.path.join("data_base", self.active_mode, "output_decision")
         decision_cfg = self.settings.get("data_decision", {})
-        self.decision_dir = decision_cfg.get(
-            "output_dir", os.path.join("data_base", "output_decision")
-        )
-        self.ai_dir = decision_cfg.get(
-            "ai_output_dir", os.path.join(self.decision_dir, "ai_decision")
-        )
-        self.ml_dir = decision_cfg.get(
-            "ml_output_dir", os.path.join(self.decision_dir, "ml_decision")
-        )
-        self.strategy_dir = decision_cfg.get(
-            "strategies_output_dir", os.path.join(self.decision_dir, "strategies_decision")
-        )
+        self.decision_dir = decision_cfg.get("output_dir", mode_root)
+        self.ai_dir = decision_cfg.get("ai_output_dir", mode_root)
+        self.ml_dir = decision_cfg.get("ml_output_dir", mode_root)
+        self.strategy_dir = decision_cfg.get("strategies_output_dir", mode_root)
         self._processed: set[str] = set()
 
     def process_latest(self, symbols: Iterable[str]) -> list[str]:
@@ -55,16 +47,17 @@ class DecisionManager:
         if not os.path.isfile(payload_path):
             raise FileNotFoundError(f"FAIL-FAST: Evaluation payload not found: {payload_path}")
 
-        if self.active_mode == "ai_mode":
+        if self.active_mode == "strategies_mode":
+            decision = analyze_payload_file(symbol, payload_path)
+            root = self.strategy_dir
+        elif self.active_mode == "ai_mode":
+            from data_decision.ai_mode.artificial_intelligence.ai_dispatcher import SystemPrompt
             decision = SystemPrompt.process_ai_decision(
                 symbol=symbol, prompt_filepath=payload_path
             )
             root = self.ai_dir
-        elif self.active_mode == "strategies_mode":
-            decision = analyze_payload_file(symbol, payload_path)
-            root = self.strategy_dir
         else:
-            from data_decision.ai_analysis.machine_learning.ml_dispatcher import MLDispatcher
+            from data_decision.ai_mode.machine_learning.ml_dispatcher import MLDispatcher
             decision = MLDispatcher.get_instance(self.settings).process_payload_file(
                 symbol, prompt_filepath=payload_path
             )
@@ -86,7 +79,11 @@ class DecisionManager:
     def _latest_payload(self, symbol: str) -> Optional[str]:
         symbol_dir = os.path.join(self.evaluate_dir, symbol)
         if not os.path.isdir(symbol_dir):
-            return None
+            nested_dir = os.path.join(self.evaluate_dir, self.active_mode, symbol)
+            if os.path.isdir(nested_dir):
+                symbol_dir = nested_dir
+            else:
+                return None
         files = [
             os.path.join(symbol_dir, name)
             for name in os.listdir(symbol_dir)

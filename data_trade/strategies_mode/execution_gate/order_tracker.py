@@ -19,7 +19,10 @@ import concurrent.futures
 from typing import Dict, Any, Optional, List
 from datetime import datetime, timezone, timedelta
 
-from data_trade.execution_gate.broker_executor import resolve_api
+try:
+    from .broker_executor import resolve_api
+except ImportError:
+    from data_trade.strategies_mode.execution_gate.broker_executor import resolve_api
 
 logger = logging.getLogger("OrderTracker")
 

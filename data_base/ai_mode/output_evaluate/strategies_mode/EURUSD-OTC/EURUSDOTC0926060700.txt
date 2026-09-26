@@ -1,0 +1,78 @@
+ID:EURUSDOTC0926060700
+meta:
+  timestamp: 2026-09-26 06:07:00
+  symbol: EURUSD-OTC
+  session: ASIA
+  mode: strategies
+  expiry_minutes: 3
+  holding_period: 3m
+
+s30:
+  open: 1.13861
+  high: 1.13877
+  low: 1.13840
+  close: 1.13862
+  bias: BULLISH
+  is_doji: TRUE
+  is_gray_candle: TRUE
+  bb_percent_period: 41
+  bb_percent_std_dev: 2.0
+  bb_percent_ma_type: SMA
+  bb_percent_source: close
+  bb_percent_upper: 1.13849
+  bb_percent_middle: 1.13727
+  bb_percent_lower: 1.13605
+  bb_percent_width: 0.00244
+  bb_percent_b: 1.05
+  bb_percent_touch: UPPER
+  sto_k: 94.47
+  sto_d: 93.74
+  sto_zone: OVERBOUGHT_90
+  sto_cross: NONE
+  sto_cross_50: FALSE
+  sto_hook_confirmed: TRUE
+  sto_tangled: TRUE
+  ma_fast: 1.13857
+  ma_slow: 1.13835
+  ma_cross: NONE
+  ma_cross_confirmed: TRUE
+  macd: 0.00040
+  macd_signal: 0.00030
+  macd_histogram: 0.00010
+  macd_cross: NONE
+  macd_zero_cross: ABOVE
+  rsi: 62.96
+  rsi_zone: NEUTRAL
+  rsi_cross_50: FALSE
+  sr_trend: BULLISH
+  sr_type: GR_UP
+  sr_nearest_support: 1.13853
+  sr_nearest_resistance: 1.13877
+  sr_tested_count: 3
+  sr_quality: HIGH
+  sr_block_ahead: FALSE
+  pa_pattern: DOJI
+  pa_body_strength: 0.03
+  pa_doji: TRUE
+  pa_gray_candle: TRUE
+  divergence_alert: NONE
+  divergence_type: NONE
+  divergence_source: NONE
+  divergence_peak: 2
+
+m1:
+  grid_timeframe: M1
+  grid_current_price: 1.13864
+  grid_nearest_above: 1.13900
+  grid_nearest_below: 1.13850
+  grid_distance_to_above_pips: 3.6
+  grid_distance_to_below_pips: 1.4
+  grid_block_ahead: FALSE
+  grid_breakout_confirmed: FALSE
+
+m15_window:
+  doji_count: 1
+  gray_candle_count: 1
+  doji_present: TRUE
+  gray_candle_present: TRUE
+  window_clear: FALSE

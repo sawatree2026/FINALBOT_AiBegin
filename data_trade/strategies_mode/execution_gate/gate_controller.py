@@ -7,7 +7,10 @@ Guards final execution with the configured confidence threshold and Gemini/Chron
 import logging
 import re
 from typing import Dict, Any, Optional, List
-from data_trade.payload_sanitizer import sanitize_payload, sanitize_payload_text
+try:
+    from ..payload_sanitizer import sanitize_payload, sanitize_payload_text
+except ImportError:
+    from data_trade.strategies_mode.payload_sanitizer import sanitize_payload, sanitize_payload_text
 
 logger = logging.getLogger("ExecutionGate")
 
@@ -68,8 +71,9 @@ class ExecutionGate:
             rejection_reasons.append("No trade signal")
         elif action not in ("CALL", "PUT"):
             rejection_reasons.append(f"Invalid signal ({action})")
-        if expiry_minutes != 5:
-            rejection_reasons.append(f"Expiry must be 5 minutes (received {raw_expiry!r})")
+        expected_expiry = 3 if is_strategies else 5
+        if expiry_minutes != expected_expiry:
+            rejection_reasons.append(f"Expiry must be {expected_expiry} minutes (received {raw_expiry!r})")
         if action in ("CALL", "PUT"):
             if confidence_score < self.min_confidence:
                 rejection_reasons.append(

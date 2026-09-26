@@ -1,0 +1,78 @@
+ID:USDCADOTC0926060430
+meta:
+  timestamp: 2026-09-26 06:04:30
+  symbol: USDCAD-OTC
+  session: ASIA
+  mode: strategies
+  expiry_minutes: 3
+  holding_period: 3m
+
+s30:
+  open: 1.34942
+  high: 1.34987
+  low: 1.34903
+  close: 1.34909
+  bias: BEARISH
+  is_doji: FALSE
+  is_gray_candle: FALSE
+  bb_percent_period: 41
+  bb_percent_std_dev: 2.0
+  bb_percent_ma_type: SMA
+  bb_percent_source: close
+  bb_percent_upper: 1.35151
+  bb_percent_middle: 1.34902
+  bb_percent_lower: 1.34653
+  bb_percent_width: 0.00497
+  bb_percent_b: 0.51
+  bb_percent_touch: MIDDLE
+  sto_k: 49.70
+  sto_d: 60.31
+  sto_zone: NEUTRAL
+  sto_cross: NONE
+  sto_cross_50: TRUE
+  sto_hook_confirmed: FALSE
+  sto_tangled: FALSE
+  ma_fast: 1.34950
+  ma_slow: 1.34974
+  ma_cross: NONE
+  ma_cross_confirmed: TRUE
+  macd: 0.00034
+  macd_signal: 0.00043
+  macd_histogram: -0.00009
+  macd_cross: NONE
+  macd_zero_cross: ABOVE
+  rsi: 55.63
+  rsi_zone: NEUTRAL
+  rsi_cross_50: FALSE
+  sr_trend: BULLISH
+  sr_type: GR_UP
+  sr_nearest_support: 1.34908
+  sr_nearest_resistance: 1.34910
+  sr_tested_count: 5
+  sr_quality: HIGH
+  sr_block_ahead: TRUE
+  pa_pattern: MOMENTUM_BEARISH
+  pa_body_strength: 0.39
+  pa_doji: FALSE
+  pa_gray_candle: FALSE
+  divergence_alert: NONE
+  divergence_type: NONE
+  divergence_source: NONE
+  divergence_peak: 2
+
+m1:
+  grid_timeframe: M1
+  grid_current_price: 1.34909
+  grid_nearest_above: 1.34950
+  grid_nearest_below: 1.34900
+  grid_distance_to_above_pips: 4.1
+  grid_distance_to_below_pips: 0.9
+  grid_block_ahead: TRUE
+  grid_breakout_confirmed: FALSE
+
+m15_window:
+  doji_count: 0
+  gray_candle_count: 0
+  doji_present: FALSE
+  gray_candle_present: FALSE
+  window_clear: TRUE

@@ -51,7 +51,7 @@
   "data_feed": {
     "enable_csv_export"        : true,
     "csv_manager": {
-      "base_dir"              : "data_base/output_feed"
+      "base_dir"              : "data_base/strategies_mode/output_feed"
     },
     "data_adapter": {
       "default_candle_count"   : 250,
@@ -68,22 +68,23 @@
 
   "data_evaluate": {
     "enable_txt_export"        : true,
-    "output_dir"              : "data_base/output_evaluate",
+    "output_dir"              : "data_base/strategies_mode/output_evaluate",
     "mode_output_dirs": {
-      "ml_mode": "data_base/output_evaluate/ml_mode",
-      "ai_mode": "data_base/output_evaluate/ai_mode",
-      "strategies_mode": "data_base/output_evaluate/strategies_mode"
+      "ml_mode": "data_base/ml_mode/output_evaluate",
+      "ai_mode": "data_base/ai_mode/output_evaluate",
+      "strategies_mode": "data_base/strategies_mode/output_evaluate"
     }
   },
 
   "data_decision": {
-    "output_dir"              : "data_base/output_decision",
-    "ai_output_dir"           : "data_base/output_decision/ai_decision",
-    "strategies_output_dir"   : "data_base/output_decision/strategies_decision"
+    "output_dir"              : "data_base/strategies_mode/output_decision",
+    "ai_output_dir"           : "data_base/ai_mode/output_decision",
+    "ml_output_dir"           : "data_base/ml_mode/output_decision",
+    "strategies_output_dir"   : "data_base/strategies_mode/output_decision"
   },
 
   "data_trade": {
     "enable_live_execution"    : true,
-    "trade_history_file"      : "data_base/output_trade/trades_history.csv"
+    "trade_history_file"      : "data_base/strategies_mode/output_trade/trades_history.csv"
   }
 }

@@ -1,0 +1,59 @@
+{
+  "ID": "GBPJPYOTC0926052930",
+  "symbol": "GBPJPY-OTC",
+  "action": "WAIT",
+  "expiry_minutes": 3,
+  "confidence_score": 0.0,
+  "engine_used": "STRATEGY_BELIEVE",
+  "believe_status": "ACTIVE",
+  "believe_direction": "CALL",
+  "s30_direction": "CALL",
+  "m1_direction": "CALL",
+  "m5_direction": "CALL",
+  "m1_bias": "BULLISH",
+  "m5_bias": "BULLISH",
+  "m5_regime": "TRENDING",
+  "m1_adx": 25.0,
+  "risk_level": "LOW",
+  "data_quality": "HIGH",
+  "extreme_believe_active": false,
+  "core_conditions": {
+    "bollinger_band": true,
+    "stochastic": false,
+    "moving_average": true
+  },
+  "secondary_conditions": {
+    "price_action": true,
+    "grid_clear": false,
+    "support_resistance_clear": true,
+    "grid_and_sr_clear": false,
+    "divergence_aligned": true,
+    "macd_aligned": false,
+    "rsi_safe": true,
+    "ap_aligned": false,
+    "ns_aligned": false
+  },
+  "risk_filters": {
+    "grid_block": true,
+    "gray_candle": false,
+    "stoch_tangled": false,
+    "trap": false,
+    "room_to_run": false
+  },
+  "conditions_met": false,
+  "failed_conditions": [
+    "stochastic",
+    "grid_clear",
+    "grid_and_sr_clear",
+    "macd_aligned",
+    "ap_aligned",
+    "ns_aligned",
+    "risk_filters"
+  ],
+  "reason_th": "WAIT: Believe requires BB, Stochastic reversal/cross, moving-average confirmation, aligned S30/M1/M5, and clear risk filters",
+  "payload_id": "GBPJPYOTC0926052930",
+  "payload_filepath": "E:\\FINALBOT_AiBegin\\data_base\\output_evaluate\\strategies_mode\\GBPJPY-OTC\\GBPJPYOTC0926052930.txt",
+  "source_part": "data_evaluate",
+  "mode": "strategies_mode",
+  "written_at": 1790400604.239091
+}
