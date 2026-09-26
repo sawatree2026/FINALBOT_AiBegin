@@ -1193,6 +1193,7 @@ class Orchestrator:
                     context_direction in ("BULLISH", "BEARISH")
                     and context_direction == trigger_direction
                 ),
+                "room_to_run_clear": not bool(grid.get("blocked", False)),
                 "holding_period_minutes": 5,
             },
         }

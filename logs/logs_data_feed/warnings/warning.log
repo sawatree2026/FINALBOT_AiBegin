@@ -9406,3 +9406,15 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'data
 2026-09-23 06:35:01,522 | WARNING  | [DataAdapter] Ingest for USDCAD-OTC returned no price: Warmup check failed after update
 2026-09-23 06:35:01,522 | WARNING  | [DataAdapter] Ingest for AUDUSD-OTC returned no price: Warmup check failed after update
 2026-09-23 06:35:01,522 | WARNING  | [DataAdapter] Ingest for AUDJPY-OTC returned no price: Warmup check failed after update
+2026-09-24 21:06:33,013 | WARNING  | [USDJPY] Insufficient M15 data in RAM: has 0, required >= 250
+2026-09-24 21:06:33,015 | WARNING  | [DataAdapter] Ingest for USDJPY returned no price: Warmup check failed after update
+2026-09-24 21:06:34,235 | WARNING  | [NZDUSD] Insufficient M15 data in RAM: has 0, required >= 250
+2026-09-24 21:06:34,239 | WARNING  | [DataAdapter] Ingest for NZDUSD returned no price: Warmup check failed after update
+2026-09-24 21:06:35,463 | WARNING  | [GBPJPY] Insufficient M15 data in RAM: has 0, required >= 250
+2026-09-24 21:06:35,487 | WARNING  | [DataAdapter] Ingest for GBPJPY returned no price: Warmup check failed after update
+2026-09-24 21:06:36,526 | WARNING  | [USDCAD] Insufficient M15 data in RAM: has 0, required >= 250
+2026-09-24 21:06:36,528 | WARNING  | [DataAdapter] Ingest for USDCAD returned no price: Warmup check failed after update
+2026-09-24 21:43:07,895 | WARNING  | [PayloadSanitizer] LEGACY_DECISION_LAYER_STRIPPED reason_code=LEGACY_DECISION_FIELDS source=execution-gate
+2026-09-24 21:43:07,904 | WARNING  | [PayloadSanitizer] LEGACY_DECISION_LAYER_STRIPPED reason_code=LEGACY_DECISION_FIELDS source=execution-gate
+2026-09-24 21:43:07,913 | WARNING  | [PayloadSanitizer] LEGACY_DECISION_LAYER_STRIPPED reason_code=LEGACY_DECISION_FIELDS source=execution-gate
+2026-09-24 21:43:07,923 | WARNING  | [PayloadSanitizer] LEGACY_DECISION_LAYER_STRIPPED reason_code=LEGACY_DECISION_FIELDS source=execution-gate

@@ -1,0 +1,36 @@
+{
+  "symbol": "EURUSD-op",
+  "current_time": 1790237430,
+  "close_price": 1.139505,
+  "indicators": {
+    "bb_pct_b": 0.3165,
+    "sto_k": 51.52,
+    "sto_d": 58.59,
+    "prev_sto_k": 58.43,
+    "ma_fast_3": 1.139558,
+    "ma_slow_6": 1.139645,
+    "rsi_14": 40.43,
+    "macd_line": 5.3e-05,
+    "macd_signal": 8.1e-05
+  },
+  "euf_levels": {
+    "resistances": [
+      1.139805,
+      1.13987,
+      1.13992
+    ],
+    "supports": [
+      1.139335,
+      1.139565,
+      1.13967
+    ]
+  },
+  "decision": {
+    "action": "WAIT",
+    "strategy": "NONE",
+    "confidence": 0.0,
+    "expiry_minutes": 5,
+    "reason": "ยังไม่เข้าครบองค์ประกอบเงื่อนไข",
+    "is_valid": false
+  }
+}

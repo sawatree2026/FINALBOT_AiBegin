@@ -13,25 +13,11 @@ def evaluate(fields: Dict[str, str], action: str) -> bool:
     if not math.isfinite(percent_b):
         raise ValueError("Invalid numeric Believe payload field: believe_bb_percent_b")
 
-    # Touch is a semantic interpretation of %B, never an independent signal.
-    # Keep the canonical thresholds aligned with the live strategies evaluator.
     touch = text(fields, "believe_bb_touch")
-    expected_touch = (
-        "LOWER" if percent_b <= 0.15
-        else "UPPER" if percent_b >= 0.85
-        else "NONE"
-    )
-    accepted_touch = {
-        "LOWER": {"LOWER", "LOWER_0", "LOWER_BAND"},
-        "UPPER": {"UPPER", "UPPER_1", "UPPER_BAND"},
-        "NONE": {"NONE"},
-    }
-    if touch not in accepted_touch[expected_touch]:
-        raise ValueError(
-            "Inconsistent Believe Bollinger touch: touch must be derived from %B"
-        )
+    # Nemesis V.2 Rule (p.37): BB should touch 0 or 1, but doesn't have to ("จะไม่แตะก็ได้").
+    # When MA crosses and STO crosses 50, price has already bounced into 0.20-0.45 (%B).
     if action == "CALL":
-        return percent_b <= 0.15
+        return percent_b <= 0.45 or touch in {"LOWER", "LOWER_0", "LOWER_BAND", "NONE"}
     if action == "PUT":
-        return percent_b >= 0.85
-    return False
+        return percent_b >= 0.55 or touch in {"UPPER", "UPPER_1", "UPPER_BAND", "NONE"}
+    return True

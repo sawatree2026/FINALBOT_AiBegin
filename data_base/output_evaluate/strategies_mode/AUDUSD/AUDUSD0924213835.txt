@@ -1,0 +1,99 @@
+ID:AUDUSD0924213835
+  timestamp: '2026-09-24T21:38:35.970870'
+  symbol: AUDUSD
+  ai_model: STRATEGY_BELIEVE
+  expiry_minutes: 5
+  holding_period: 5m
+  entry_timeframe: S30
+  trigger_timeframe: M1
+  context_timeframe: M5
+  s30_bias: BEARISH
+  s30_open: 0.702125
+  s30_high: 0.70213
+  s30_low: 0.702025
+  s30_close: 0.70207
+  s30_volume: 67.0
+  s30_ema5: 0.702123
+  s30_ema10: 0.702131
+  s30_ema20: 0.702101
+  s30_rsi: 52.9
+  s30_stoch_k: 65.56
+  s30_stoch_d: 61.13
+  s30_macd: -0.000001
+  s30_bb_percent_b: 0.430128
+    m1_bias: BEARISH
+    m1_last_candle: BEARISH
+    m1_ema5: 0.70211
+    m1_ema20: 0.702149
+    m1_rsi: 46.41
+    m1_stoch_k: 36.89
+    m1_stoch_d: 33.98
+    m1_macd: -0.000098
+      m1_open: 0.702215
+      m1_high: 0.70228
+      m1_low: 0.702125
+      m1_close: 0.70213
+      m1_volume: 150
+    m5_bias: BEARISH
+    m5_support: 0.701895
+    m5_resistance: 0.702115
+  m5_pa_pattern: NONE
+  m5_pa_last_candle_bias: BEARISH
+  m5_pa_move_quality: NOISY
+  m5_pa_trap_alert: REJECTION
+  m5_pa_sr_interaction: TESTING_PIVOT
+  m5_pa_divergence_alert: NONE
+  m5_trend_direction: DOWN
+  m5_trend_type: IMPULSIVE
+  mtf_alignment_%: 100
+  dl_tradeable: true
+  dl_stability_score: 100
+  dl_quality_score: 30
+  dl_risk_level: HIGH
+  ai_confidence_score: รอการวิเคราะห์จาก AI
+  ai_suggested_expiry_minutes: รอการวิเคราะห์จาก AI
+  ai_suggested_action: รอการวิเคราะห์จาก AI
+  believe_status: watch
+  believe_direction: WAIT
+  believe_confidence: LOW
+  believe_score: 0.3
+  extreme_believe_active: false
+  extreme_believe_setup: BASE_BELIEVE
+  believe_entry_timeframe: S30
+  believe_trigger_timeframe: M1
+  believe_context_timeframe: M5
+  believe_bb_percent_b: 0.430128
+  believe_bb_touch: NONE
+  believe_sto_k: 65.56
+  believe_sto_d: 61.13
+  believe_sto_zone: MID
+  believe_sto_cross: NONE
+  believe_sto_hook_confirmed: false
+  believe_sto_cross_50: false
+  believe_ma_fast: 0.702123
+  believe_ma_slow: 0.702131
+  believe_ma_cross: DEATH_CROSS
+  believe_ma_cross_confirmed: true
+  believe_risk_grid_block: true
+  believe_risk_gray_candle: false
+  believe_risk_sto_tangled: false
+  believe_risk_trap_alert: REJECTION
+  believe_risk_room_to_run_clear: false
+  ap_signal: AP_NEUTRAL
+  ns_signal: NS_NEUTRAL
+  believe_entry_s30_bb_touch: NONE
+  believe_trigger_m1_direction_aligned: true
+  believe_context_m5_direction_aligned: true
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
