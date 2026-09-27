@@ -123,24 +123,12 @@ def _number(value: Any) -> Optional[float]:
 
 def _require_fields(fields: Dict[str, str]) -> None:
     required = (
-        "id", "s30_bias", "m1_bias", "m5_bias", "believe_direction",
+        "id", "s30_bias", "believe_direction",
         "believe_bb_percent_b", "believe_bb_touch",
         "believe_sto_k", "believe_sto_d", "believe_sto_zone",
         "believe_sto_cross", "believe_sto_hook_confirmed",
-        "believe_sto_cross_50", "believe_risk_sto_tangled",
         "believe_ma_cross", "believe_ma_cross_confirmed",
-        "believe_risk_grid_block", "believe_risk_gray_candle",
-        "believe_risk_trap_alert", "believe_risk_room_to_run_clear",
-        "m5_pa_pattern", "m5_pa_last_candle_bias",
-        "m5_pa_sr_interaction", "m5_pa_divergence_alert",
-        "s30_macd", "s30_macd_signal", "s30_macd_histogram", "s30_rsi",
-        "ap_signal", "ns_signal", "believe_confidence",
-        "believe_status", "m5_trend_type", "dl_risk_level",
-        "extreme_believe_active",
-        # FIX 2026-09-26 (Audit F-3): บังคับฟิลด์ที่เคยถูกประดิษฐ์ค่าแทน
-        "believe_risk_trap_alert", "m5_pa_pattern", "m5_pa_last_candle_bias",
-        "m5_pa_sr_interaction", "m5_pa_divergence_alert",
-        "m1_adx", "m5_quality",
+        "believe_risk_grid_block",
     )
     missing = [key for key in required if key not in fields or not fields[key].strip()]
     if missing:
