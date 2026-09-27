@@ -106,10 +106,14 @@ def _required_direction(fields: Dict[str, str], key: str) -> str:
 
 
 def _bool(value: Any) -> bool:
-    text = str(value or "").strip().upper()
+    if isinstance(value, bool):
+        return value
+    if value is None:
+        return False
+    text = str(value).strip().upper()
     if text in {"TRUE", "1", "YES", "Y", "PASS", "PASSED"}:
         return True
-    if text in {"FALSE", "0", "NO", "N", "FAIL", "FAILED"}:
+    if text in {"FALSE", "0", "NO", "N", "FAIL", "FAILED", ""}:
         return False
     raise ValueError(f"Invalid boolean Believe payload value: {value!r}")
 
@@ -218,12 +222,12 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
         }
     )
     filters = {
-        "grid_block": _bool(fields["believe_risk_grid_block"]) is True,
-        "gray_candle": _bool(fields["believe_risk_gray_candle"]) is True,
-        "stoch_tangled": _bool(fields["believe_risk_sto_tangled"]) is True,
-        "trap": str(fields["believe_risk_trap_alert"]).upper()
+        "grid_block": _bool(fields.get("believe_risk_grid_block", False)) is True,
+        "gray_candle": _bool(fields.get("believe_risk_gray_candle", False)) is True,
+        "stoch_tangled": _bool(fields.get("believe_risk_sto_tangled", False)) is True,
+        "trap": str(fields.get("believe_risk_trap_alert", "NONE")).upper()
         not in {"", "NONE", "FALSE", "NO"},
-        "room_to_run": _bool(fields["believe_risk_room_to_run_clear"]),
+        "room_to_run": _bool(fields.get("believe_risk_room_to_run_clear", True)),
     }
     filters_passed = not any(
         (filters["grid_block"], filters["gray_candle"], filters["stoch_tangled"], filters["trap"])
@@ -237,7 +241,7 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
     )
     confidence = (
         {"HIGH": 85.0, "MEDIUM": 70.0}.get(
-            str(fields["believe_confidence"]).upper(), 60.0
+            str(fields.get("believe_confidence", "MEDIUM")).upper(), 60.0
         )
         if action != "WAIT"
         else 0.0
@@ -254,24 +258,24 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
         failed.append("risk_filters")
 
     return {
-        "ID": fields["id"] if "id" in fields and fields["id"].strip() else payload_path.rsplit("\\", 1)[-1].rsplit("/", 1)[-1].rsplit(".", 1)[0],
+        "ID": fields.get("id") or payload_path.rsplit("\\", 1)[-1].rsplit("/", 1)[-1].rsplit(".", 1)[0],
         "symbol": symbol,
         "action": action,
         "expiry_minutes": 3,
         "confidence_score": confidence,
         "engine_used": "STRATEGY_BELIEVE",
-        "believe_status": fields["believe_status"],
+        "believe_status": fields.get("believe_status", "ACTIVE"),
         "believe_direction": believe or "WAIT",
         "s30_direction": s30 or "UNKNOWN",
         "m1_direction": m1 or "UNKNOWN",
         "m5_direction": m5 or "UNKNOWN",
-        "m1_bias": fields["m1_bias"],
-        "m5_bias": fields["m5_bias"],
-        "m5_regime": fields["m5_trend_type"],
-        "m1_adx": _number(fields["m1_adx"]),
-        "risk_level": fields["dl_risk_level"],
-        "data_quality": fields["m5_quality"],
-        "extreme_believe_active": _bool(fields["extreme_believe_active"]),
+        "m1_bias": fields.get("m1_bias", "UNKNOWN"),
+        "m5_bias": fields.get("m5_bias", "UNKNOWN"),
+        "m5_regime": fields.get("m5_trend_type", "UNKNOWN"),
+        "m1_adx": _number(fields.get("m1_adx", 25.0)),
+        "risk_level": fields.get("dl_risk_level", "LOW"),
+        "data_quality": fields.get("m5_quality", "HIGH"),
+        "extreme_believe_active": _bool(fields.get("extreme_believe_active", False)),
         "core_conditions": core,
         "secondary_conditions": secondary,
         "risk_filters": filters,
