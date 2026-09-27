@@ -69,8 +69,8 @@ FINALBOT_AiBegin/
 ├── agent.md                     # Athena operating rules (project governance)
 ├── config_setting/              # settings.json (SSOT), symbols.json, mode_loader.py, config_loader.py
 ├── symbols_scanner/             # [Phase 0] pre-trade screening & ranking
-├── data_feed/                   # [Part 1] broker ingestion & validation
-├── data_evaluate/               # [Part 2] strategies_mode / ai_mode / ml_mode orchestrators
+├── data_feed/                   # [Part 1] รายโหมด: strategies_mode/ · ai_mode/ (ยังไม่มี ml_mode/)
+├── data_evaluate/               # [Part 2] รายโหมด: strategies_mode/ · ai_mode/ · ml_mode/ + mode_loader.py
 ├── data_decision/               # [Part 3] strategies_mode (Believe) / ai_mode (Gemini + ML)
 ├── data_trade/                  # [Part 4] strategies_mode/executor_manager + execution_gate/*
 ├── data_base/                   # per-mode outputs: output_feed / output_evaluate / output_decision / output_trade
