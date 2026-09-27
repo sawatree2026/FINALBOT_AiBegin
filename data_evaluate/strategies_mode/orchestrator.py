@@ -203,7 +203,7 @@ class Orchestrator:
         if not os.path.isdir(base_dir) and os.path.isdir(os.path.join("data_base", "strategies_mode", "output_feed")):
             base_dir = os.path.join("data_base", "strategies_mode", "output_feed")
         candles_dict = {}
-        for tf in ["S30", "M1", "M15"]:
+        for tf in ["S30", "M1", "M5", "M15"]:
             file_path = os.path.join(base_dir, symbol, f"{symbol}_{tf}.csv")
             if not os.path.exists(file_path):
                 raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
@@ -221,7 +221,7 @@ class Orchestrator:
             df_tf.sort_index(ascending=True, inplace=True)
             candles_dict[tf] = df_tf
 
-        for tf in ["S30", "M1", "M15"]:
+        for tf in ["S30", "M1"]:
             if tf not in candles_dict or candles_dict[tf] is None or candles_dict[tf].empty:
                 raise ValueError(f"FAIL-FAST: Missing or empty {tf} data for {symbol}")
 
@@ -291,27 +291,19 @@ class Orchestrator:
         bb_width_val = bb_upper_val - bb_lower_val
         bb_pct_b = (c - bb_lower_val) / (bb_width_val + 1e-9)
 
-        bb_upper_series = bb_mid_s + bb_std_dev * bb_std_s
-        bb_lower_series = bb_mid_s - bb_std_dev * bb_std_s
-        recent_h = high_series.tail(3)
-        recent_l = low_series.tail(3)
-        recent_upper = bb_upper_series.tail(3)
-        recent_lower = bb_lower_series.tail(3)
-
-        if (recent_h >= recent_upper).any() or h >= bb_upper_val or c >= bb_upper_val or bb_pct_b >= 1.0:
+        bb_touch = "NONE"
+        if h >= bb_upper_val or c >= bb_upper_val:
             bb_touch = "UPPER"
-        elif (recent_l <= recent_lower).any() or l <= bb_lower_val or c <= bb_lower_val or bb_pct_b <= 0.0:
+        elif l <= bb_lower_val or c <= bb_lower_val:
             bb_touch = "LOWER"
         elif abs(c - bb_middle_val) < (bb_width_val * 0.05):
             bb_touch = "MIDDLE"
-        else:
-            bb_touch = "NONE"
 
-        # 4. Stochastic (13, 10, 3)
-        low_min = low_series.rolling(13).min()
-        high_max = high_series.rolling(13).max()
+        # 4. Stochastic (14, 3, 3)
+        low_min = low_series.rolling(14).min()
+        high_max = high_series.rolling(14).max()
         raw_k = 100.0 * (close_series - low_min) / (high_max - low_min + 1e-9)
-        sto_k_s = raw_k.rolling(10).mean()
+        sto_k_s = raw_k.rolling(3).mean()
         sto_d_s = sto_k_s.rolling(3).mean()
 
         sto_k_val = round(float(sto_k_s.iloc[-1]), 2)
@@ -361,10 +353,10 @@ class Orchestrator:
             ma_cross = "NONE"
         ma_cross_confirmed = (ma_cross != "NONE") or (ma_fast_val > ma_slow_val and bias == "BULLISH") or (ma_fast_val < ma_slow_val and bias == "BEARISH")
 
-        # 6. MACD (15, 35, 9)
-        ema_fast = close_series.ewm(span=15, adjust=False).mean()
-        ema_slow = close_series.ewm(span=35, adjust=False).mean()
-        macd_line = ema_fast - ema_slow
+        # 6. MACD (12, 26, 9)
+        ema12 = close_series.ewm(span=12, adjust=False).mean()
+        ema26 = close_series.ewm(span=26, adjust=False).mean()
+        macd_line = ema12 - ema26
         signal_line = macd_line.ewm(span=9, adjust=False).mean()
         hist = macd_line - signal_line
 
@@ -504,14 +496,16 @@ class Orchestrator:
             f"  bias: {bias}",
             f"  is_doji: {bool_str(is_doji)}",
             f"  is_gray_candle: {bool_str(is_gray)}",
-            f"  bb_period: {bb_period}",
-            f"  bb_std_dev: {bb_std_dev:.1f}",
-            f"  bb_upper: {bb_upper_val:.{decimals}f}",
-            f"  bb_middle: {bb_middle_val:.{decimals}f}",
-            f"  bb_lower: {bb_lower_val:.{decimals}f}",
-            f"  bb_width: {bb_width_val:.{decimals}f}",
+            f"  bb_percent_period: {bb_period}",
+            f"  bb_percent_std_dev: {bb_std_dev:.1f}",
+            "  bb_percent_ma_type: SMA",
+            "  bb_percent_source: close",
+            f"  bb_percent_upper: {bb_upper_val:.{decimals}f}",
+            f"  bb_percent_middle: {bb_middle_val:.{decimals}f}",
+            f"  bb_percent_lower: {bb_lower_val:.{decimals}f}",
+            f"  bb_percent_width: {bb_width_val:.{decimals}f}",
             f"  bb_percent_b: {bb_pct_b:.2f}",
-            f"  bb_touch: {bb_touch}",
+            f"  bb_percent_touch: {bb_touch}",
             f"  sto_k: {sto_k_val:.2f}",
             f"  sto_d: {sto_d_val:.2f}",
             f"  sto_zone: {sto_zone}",
@@ -1020,6 +1014,29 @@ class Orchestrator:
         adx_s30 = StructuralMetrics.calc_adx(high, low, close, 14)
         atr_s30 = StructuralMetrics.calculate_atr(high, low, close, 6, extended=True)
 
+        # ── NEMESIS V2 p.37/p.49 (FIX 2026-09-27): setup-window touch events ─────────
+        # หน้าต่าง 10 แท่ง S30 (= 5 นาที) ตรวจเหตุการณ์ "แตะก่อนเสมอ":
+        # BB% แตะ 0/1 และ STO แตะ 10/90 + การโผล่ออกจากเส้นตามทิศ
+        _win = 10
+        _low13 = low.rolling(13).min()
+        _high13 = high.rolling(13).max()
+        _raw_k = (close - _low13) / (_high13 - _low13).replace(0, np.nan) * 100
+        _k_s = _raw_k.rolling(10).mean()
+        _mid = close.rolling(20).mean()
+        _sd = close.rolling(20).std(ddof=0)
+        _pb_s = (close - _mid) / (2 * _sd).replace(0, np.nan)
+        _k_w = _k_s.tail(_win).dropna()
+        _pb_w = _pb_s.tail(_win).dropna()
+        if len(_k_w) < _win or len(_pb_w) < _win:
+            raise ValueError("FAIL-FAST: insufficient S30 history for Believe setup window")
+        _k_prev, _k_now = float(_k_s.iloc[-2]), float(_k_s.iloc[-1])
+        sto_touch_low = bool((_k_w <= 10).any())
+        sto_touch_high = bool((_k_w >= 90).any())
+        bb_touch_low = bool((_pb_w <= 0).any())
+        bb_touch_high = bool((_pb_w >= 1).any())
+        sto_emerged_up = bool(sto_touch_low and _k_now > _k_prev and _k_now > 10)
+        sto_emerged_dn = bool(sto_touch_high and _k_now < _k_prev and _k_now < 90)
+
         return {
             "bias": "BULLISH" if last(close) >= last(ema20) else "BEARISH",
             "ema3": last(ema3),
@@ -1050,6 +1067,12 @@ class Orchestrator:
             "stoch_tangled": stochastic.tangled,
             "ma_cross": "GOLDEN_CROSS" if golden_cross else "DEATH_CROSS" if death_cross else "NONE",
             "ma_cross_confirmed": bool(golden_cross or death_cross),
+            "sto_touch_low": sto_touch_low,
+            "sto_touch_high": sto_touch_high,
+            "bb_touch_low": bb_touch_low,
+            "bb_touch_high": bb_touch_high,
+            "sto_emerged_up": sto_emerged_up,
+            "sto_emerged_dn": sto_emerged_dn,
         }
 
     @staticmethod
@@ -1613,6 +1636,12 @@ class Orchestrator:
         app(f"  believe_context_timeframe: {believe.get('context_timeframe', 'M5')}")
         app(f"  believe_bb_percent_b: {_fmt_num(believe.get('indicators_raw', {}).get('bb_pct_b', ''))}")
         app(f"  believe_bb_touch: {'LOWER' if bb_state.get('touched_lower_0') else 'UPPER' if bb_state.get('touched_upper_1') else 'NONE'}")
+        app(f"  believe_bb_touch_low: {_fmt_bool(s30_indicators.get('bb_touch_low', False))}")
+        app(f"  believe_bb_touch_high: {_fmt_bool(s30_indicators.get('bb_touch_high', False))}")
+        app(f"  believe_sto_touch_low: {_fmt_bool(s30_indicators.get('sto_touch_low', False))}")
+        app(f"  believe_sto_touch_high: {_fmt_bool(s30_indicators.get('sto_touch_high', False))}")
+        app(f"  believe_sto_emerged_up: {_fmt_bool(s30_indicators.get('sto_emerged_up', False))}")
+        app(f"  believe_sto_emerged_dn: {_fmt_bool(s30_indicators.get('sto_emerged_dn', False))}")
         app(f"  believe_sto_k: {_fmt_num(believe.get('indicators_raw', {}).get('stoch13_k', ''))}")
         app(f"  believe_sto_d: {_fmt_num(believe.get('indicators_raw', {}).get('stoch13_d', ''))}")
         app(f"  believe_sto_zone: {_req_nested(sto_state, 'touched_extreme_10_or_90')}")
