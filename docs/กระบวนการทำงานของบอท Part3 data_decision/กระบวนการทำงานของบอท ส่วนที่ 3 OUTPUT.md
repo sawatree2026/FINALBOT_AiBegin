@@ -62,9 +62,11 @@ data_decision/
 ## 💎 เส้นทาง strategies → Believe (NEMESIS)
 
 ### สัญญา payload ที่ analyzer ตรวจ (สถานะ ณ commit `a179f32`)
-**Pre-check 13 fields** (`_require_fields`): `id, s30_bias, believe_direction,
+**Pre-check 19 fields** (`_require_fields`): `id, s30_bias, believe_direction,
 believe_bb_percent_b, believe_bb_touch, believe_sto_k/d/zone/cross/hook_confirmed,
-believe_ma_cross, believe_ma_cross_confirmed, believe_risk_grid_block`
+believe_ma_cross, believe_ma_cross_confirmed, believe_risk_grid_block` +
+**setup-window touch events 6 ตัว** (`believe_bb_touch_low/high`, `believe_sto_touch_low/high`,
+`believe_sto_emerged_up/dn`) ซึ่ง Part 2 ตรวจในหน้าต่าง 10 แท่ง S30
 
 **การอ่านปลายน้ำยังเข้ม (fail-fast) แม้ไม่อยู่ใน pre-check:** `m1_adx`, `m5_quality`
 (`fields[...]` ตรง → KeyError ถ้าขาด) · `believe_risk_gray_candle/trap_alert/room_to_run_clear`
@@ -85,8 +87,8 @@ action      = candidate ถ้า (aligned AND core ครบ AND filters ผ่
 confidence  = HIGH→85 · MEDIUM→70 · อื่น→60   (WAIT→0)
 expiry      = 3 นาที  (strategies)   # ⚠️ ต่างจาก readme เก่าที่เขียน 5 — ดู DOC_AUDIT M-8
 ```
-- **core #1 BB %B:** CALL ผ่านเมื่อ `%B ≤ 0.45` หรือ touch ∈ {LOWER,…,NONE} · PUT เมื่อ `%B ≥ 0.55` หรือ touch ∈ {UPPER,…,NONE}
-- **core #2 STO:** `(extreme OR reversal)` และไม่ tangled · extreme = zone OVERSOLD/"10"/`min(k,d)≤35` (CALL) หรือ OVERBOUGHT/"90"/`max(k,d)≥65` (PUT)
+- **core #1 BB %B (p.37/p.49):** CALL ผ่านเมื่อ **แตะเส้น 0 ในหน้าต่าง setup 10 แท่ง S30** (`believe_bb_touch_low`) หรือแตะขณะนั้น · PUT กลับด้าน
+- **core #2 STO (p.37):** ต้อง **แตะ 10/90 ในหน้าต่าง setup** + **โผล่ออกมา/หักหัว** + **%K ข้าม 50** และไม่ tangled (ขาดข้อใด = ไม่ผ่าน)
 - **core #3 MA:** `believe_ma_cross` ∈ {GOLDEN_CROSS/UP/…} และ `believe_ma_cross_confirmed = TRUE`
   (เส้นเร็ว EMA 3 · เส้นช้า **SMA 6** — ตรงตาม E-BOOK V2 น.38 ตั้งแต่ commit `a179f32`)
 - secondary (price_action, grid_clear, support_resistance_clear, divergence, macd, rsi, ap, ns) = **confirmation/วินิจฉัยเท่านั้น ไม่บังคับเข้า**

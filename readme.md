@@ -181,13 +181,13 @@ main.py / runner.py
 
 | # | Indicator | Settings จริง | เงื่อนไข CALL | เงื่อนไข PUT |
 |---|-----------|----------|----------------|----------------|
-| 1 | **Bollinger Band %B** | 20, 2σ | `%B ≤ 0.45` หรือ touch LOWER/NONE | `%B ≥ 0.55` หรือ touch UPPER/NONE |
-| 2 | **Stochastic** | 13-10-3 · เส้น 10/90 | extreme (zone OVERSOLD/10 หรือ `min(k,d) ≤ 35`) **OR** reversal (hook/cross50) | extreme (OVERBOUGHT/90 หรือ `max(k,d) ≥ 65`) **OR** reversal · และต้องไม่ tangled |
+| 1 | **Bollinger Band %B** | 20, 2σ | **แตะเส้น 0 ภายในหน้าต่าง setup** (10 แท่ง S30) หรือแตะขณะนั้น | **แตะเส้น 1 ภายในหน้าต่าง setup** หรือแตะขณะนั้น |
+| 2 | **Stochastic** | 13-10-3 · เส้น 10/90 | **แตะ 10** ในหน้าต่าง + โผล่ขึ้น/หักหัวขึ้น + %K > 50 | **แตะ 90** ในหน้าต่าง + โผล่ลง/หักหัวลง + %K < 50 · ห้าม tangled |
 | 3 | **MA Crossover** | EMA 3 (แดง) vs **SMA 6** (เขียว) | ตัดขึ้น + confirmed | ตัดลง + confirmed |
 
-> 📚 **ต่างจาก E-BOOK อย่างไร:** เล่ม V2 น.38 แสดง BB period **41** และบังคับ "BB/STO ต้องแตะเส้น 0/1 · 90/10"
-> — โค้ดปัจจุบันใช้ BB 20 และผ่อนปรนเป็น 0.45/0.55 · ≤35/≥65 (ประเด็นเปิด F-4)
-> · ส่วน MA ช้าถูกแก้เป็น **SMA 6** ตรงตามเล่มแล้ว (commit `a179f32`)
+> 📚 **ตรงตาม E-BOOK V2 p.37/p.49 แล้ว** (แก้ 2026-09-27): การ "แตะ" ของ BB/STO ถูกตรวจเป็น**เหตุการณ์ในหน้าต่าง setup**
+> (10 แท่ง S30 ≈ 5 นาที) ตามคำว่า "แตะ**ก่อน**เสมอ" — ไม่ใช่ค่าขณะเข้า ซึ่งดีดกลับมากลางแถบแล้ว
+> · คงต่างเล่มเพียง BB period **20 vs 41** (น.38) — ประเด็นเปิด F-4 · MA ช้า = **SMA 6** ตรงเล่มแล้ว
 
 ### Risk filters (บังคับทุกข้อ)
 1. ห้ามมีเส้นกริด (S/R) ขวางข้างหน้า (`believe_risk_grid_block`)
@@ -199,9 +199,10 @@ main.py / runner.py
 `S30 == M1 == M5 == candidate` มิฉะนั้น `WAIT` · secondary conditions
 (price action, divergence, MACD, RSI, AP, NS) เป็น confirmation/วินิจฉัย ไม่บังคับเข้า
 
-### 🔀 EXTREME level
-ผสม Divergence (AP/NS: STO/RSI) + MACD เทียบเส้น 0 ก่อน แล้วหาจุดเข้าด้วย Believe
-(ในโค้ด: `extreme_believe_active` = diagnostic)
+### 🔀 EXTREME level (NEMESIS V2 p.50)
+ให้น้ำหนัก **divergence (STO/RSI) นำก่อน** แล้วค่อยหาจุดเข้าด้วย Believe ·
+ในโค้ด: `extreme_believe_active = divergence_aligned AND MACD ถูกฝั่งเทียบเส้น 0`
+(CALL → MACD < 0 · PUT → MACD > 0 ตาม AP/NS caution #2) · เมื่อ extreme → confidence ≥ 85
 
 ---
 
