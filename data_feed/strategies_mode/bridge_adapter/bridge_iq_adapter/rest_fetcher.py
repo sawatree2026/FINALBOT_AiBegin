@@ -159,9 +159,10 @@ class IQRestFetcher:
         # Sanity check: reject obviously broken price feeds
         median_close = float(df["close"].median())
         is_jpy = "JPY" in symbol.upper()
-        if is_jpy and not (50.0 <= median_close <= 300.0):
-            raise ValueError(f"{symbol} median {median_close} out of JPY range")
-        if not is_jpy and not (0.3 <= median_close <= 10.0):
+        is_high_denom = is_jpy or any(c in symbol.upper() for c in ("THB", "INR", "RUB", "BRL"))
+        if is_high_denom and not (0.3 <= median_close <= 300.0):
+            raise ValueError(f"{symbol} median {median_close} out of range")
+        elif not is_high_denom and not (0.3 <= median_close <= 10.0):
             raise ValueError(f"{symbol} median {median_close} out of FX range")
 
         res = df[["timestamp", "open", "high", "low", "close", "volume"]].set_index("timestamp")
