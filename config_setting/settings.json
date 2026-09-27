@@ -52,11 +52,9 @@
       "strategies_timeframes": [
         "S30",
         "M1",
-        "M5",
         "M15"
       ],
       "strategies_enable_m15": true,
-      "m5_seconds": 300,
       "m15_seconds": 900,
       "s30_seconds": 30,
       "retry_attempts": 0,

@@ -302,7 +302,7 @@ class DataFeedRunner:
             else:
                 ready_symbols = list(ingest_result or [])
             if not ready_symbols:
-                raise RuntimeError("FAIL-FAST: No symbols produced fresh S30/M1/M5 CSV files")
+                raise RuntimeError("FAIL-FAST: No symbols produced fresh S30/M1/M15 CSV files")
             ingest_elapsed = time.perf_counter() - ingest_started
 
             logger.info(

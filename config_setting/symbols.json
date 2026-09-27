@@ -1,14 +1,14 @@
 {
     "symbols": [
-        "EURTHB-OTC",
-        "USDBRL-OTC",
-        "NZDUSD-OTC",
+        "USDCAD-OTC",
+        "AUDJPY-OTC",
+        "AUDCHF-OTC",
         "GBPJPY-OTC"
     ],
     "payouts": {
-        "EURTHB-OTC": 86,
-        "USDBRL-OTC": 86,
-        "NZDUSD-OTC": 87,
+        "USDCAD-OTC": 86,
+        "AUDJPY-OTC": 86,
+        "AUDCHF-OTC": 86,
         "GBPJPY-OTC": 86
     }
 }

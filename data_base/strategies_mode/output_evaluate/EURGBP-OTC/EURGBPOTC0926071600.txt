@@ -15,30 +15,28 @@ s30:
   bias: BULLISH
   is_doji: FALSE
   is_gray_candle: FALSE
-  bb_percent_period: 41
-  bb_percent_std_dev: 2.0
-  bb_percent_ma_type: SMA
-  bb_percent_source: close
-  bb_percent_upper: 0.85412
-  bb_percent_middle: 0.85332
-  bb_percent_lower: 0.85252
-  bb_percent_width: 0.00160
+  bb_period: 41
+  bb_std_dev: 2.0
+  bb_upper: 0.85412
+  bb_middle: 0.85332
+  bb_lower: 0.85252
+  bb_width: 0.00160
   bb_percent_b: 0.26
-  bb_percent_touch: NONE
-  sto_k: 17.38
-  sto_d: 18.40
-  sto_zone: OVERSOLD_20
+  bb_touch: NONE
+  sto_k: 55.98
+  sto_d: 61.31
+  sto_zone: NEUTRAL
   sto_cross: NONE
   sto_cross_50: FALSE
-  sto_hook_confirmed: TRUE
-  sto_tangled: TRUE
+  sto_hook_confirmed: FALSE
+  sto_tangled: FALSE
   ma_fast: 0.85291
-  ma_slow: 0.85297
+  ma_slow: 0.85301
   ma_cross: NONE
   ma_cross_confirmed: FALSE
-  macd: -0.00010
-  macd_signal: -0.00009
-  macd_histogram: -0.00001
+  macd: -0.00014
+  macd_signal: -0.00013
+  macd_histogram: -0.00000
   macd_cross: NONE
   macd_zero_cross: BELOW
   rsi: 49.62

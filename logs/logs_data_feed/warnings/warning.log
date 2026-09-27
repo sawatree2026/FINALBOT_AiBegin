@@ -9422,3 +9422,11 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'data
 2026-09-25 18:19:33,694 | WARNING  | [BrokerExecutor] Binary/Turbo Route rejected (Attempt 2/3) -> Symbol: EURJPY, Action: CALL, Reason: Cannot purchase an option (the asset is not available at the moment).
 2026-09-25 18:19:34,933 | WARNING  | [BrokerExecutor] Binary/Turbo Route rejected (Attempt 3/3) -> Symbol: EURJPY, Action: CALL, Reason: Cannot purchase an option (the asset is not available at the moment).
 2026-09-27 15:15:16,195 | WARNING  | [DataAdapter] Warmup for USDTHB-OTC failed: USDTHB-OTC median 33.604805 out of FX range
+2026-09-27 15:52:32,931 | WARNING  | [EURGBP-OTC] Insufficient M5 data in RAM: has 0, required >= 250
+2026-09-27 15:52:32,979 | WARNING  | [DataAdapter] Ingest for EURGBP-OTC returned no price: Warmup check failed after update
+2026-09-27 15:52:34,308 | WARNING  | [GBPJPY-OTC] Insufficient M5 data in RAM: has 0, required >= 250
+2026-09-27 15:52:34,309 | WARNING  | [DataAdapter] Ingest for GBPJPY-OTC returned no price: Warmup check failed after update
+2026-09-27 15:52:35,509 | WARNING  | [EURUSD-OTC] Insufficient M5 data in RAM: has 0, required >= 250
+2026-09-27 15:52:35,556 | WARNING  | [DataAdapter] Ingest for EURUSD-OTC returned no price: Warmup check failed after update
+2026-09-27 15:52:36,600 | WARNING  | [GBPUSD-OTC] Insufficient M5 data in RAM: has 0, required >= 250
+2026-09-27 15:52:36,602 | WARNING  | [DataAdapter] Ingest for GBPUSD-OTC returned no price: Warmup check failed after update

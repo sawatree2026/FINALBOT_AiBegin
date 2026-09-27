@@ -203,7 +203,7 @@ class Orchestrator:
         if not os.path.isdir(base_dir) and os.path.isdir(os.path.join("data_base", "strategies_mode", "output_feed")):
             base_dir = os.path.join("data_base", "strategies_mode", "output_feed")
         candles_dict = {}
-        for tf in ["S30", "M1", "M5", "M15"]:
+        for tf in ["S30", "M1", "M15"]:
             file_path = os.path.join(base_dir, symbol, f"{symbol}_{tf}.csv")
             if not os.path.exists(file_path):
                 raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
@@ -221,7 +221,7 @@ class Orchestrator:
             df_tf.sort_index(ascending=True, inplace=True)
             candles_dict[tf] = df_tf
 
-        for tf in ["S30", "M1"]:
+        for tf in ["S30", "M1", "M15"]:
             if tf not in candles_dict or candles_dict[tf] is None or candles_dict[tf].empty:
                 raise ValueError(f"FAIL-FAST: Missing or empty {tf} data for {symbol}")
 
@@ -299,11 +299,11 @@ class Orchestrator:
         elif abs(c - bb_middle_val) < (bb_width_val * 0.05):
             bb_touch = "MIDDLE"
 
-        # 4. Stochastic (14, 3, 3)
-        low_min = low_series.rolling(14).min()
-        high_max = high_series.rolling(14).max()
+        # 4. Stochastic (13, 10, 3)
+        low_min = low_series.rolling(13).min()
+        high_max = high_series.rolling(13).max()
         raw_k = 100.0 * (close_series - low_min) / (high_max - low_min + 1e-9)
-        sto_k_s = raw_k.rolling(3).mean()
+        sto_k_s = raw_k.rolling(10).mean()
         sto_d_s = sto_k_s.rolling(3).mean()
 
         sto_k_val = round(float(sto_k_s.iloc[-1]), 2)
@@ -353,10 +353,10 @@ class Orchestrator:
             ma_cross = "NONE"
         ma_cross_confirmed = (ma_cross != "NONE") or (ma_fast_val > ma_slow_val and bias == "BULLISH") or (ma_fast_val < ma_slow_val and bias == "BEARISH")
 
-        # 6. MACD (12, 26, 9)
-        ema12 = close_series.ewm(span=12, adjust=False).mean()
-        ema26 = close_series.ewm(span=26, adjust=False).mean()
-        macd_line = ema12 - ema26
+        # 6. MACD (15, 35, 9)
+        ema_fast = close_series.ewm(span=15, adjust=False).mean()
+        ema_slow = close_series.ewm(span=35, adjust=False).mean()
+        macd_line = ema_fast - ema_slow
         signal_line = macd_line.ewm(span=9, adjust=False).mean()
         hist = macd_line - signal_line
 
@@ -496,16 +496,14 @@ class Orchestrator:
             f"  bias: {bias}",
             f"  is_doji: {bool_str(is_doji)}",
             f"  is_gray_candle: {bool_str(is_gray)}",
-            f"  bb_percent_period: {bb_period}",
-            f"  bb_percent_std_dev: {bb_std_dev:.1f}",
-            "  bb_percent_ma_type: SMA",
-            "  bb_percent_source: close",
-            f"  bb_percent_upper: {bb_upper_val:.{decimals}f}",
-            f"  bb_percent_middle: {bb_middle_val:.{decimals}f}",
-            f"  bb_percent_lower: {bb_lower_val:.{decimals}f}",
-            f"  bb_percent_width: {bb_width_val:.{decimals}f}",
+            f"  bb_period: {bb_period}",
+            f"  bb_std_dev: {bb_std_dev:.1f}",
+            f"  bb_upper: {bb_upper_val:.{decimals}f}",
+            f"  bb_middle: {bb_middle_val:.{decimals}f}",
+            f"  bb_lower: {bb_lower_val:.{decimals}f}",
+            f"  bb_width: {bb_width_val:.{decimals}f}",
             f"  bb_percent_b: {bb_pct_b:.2f}",
-            f"  bb_percent_touch: {bb_touch}",
+            f"  bb_touch: {bb_touch}",
             f"  sto_k: {sto_k_val:.2f}",
             f"  sto_d: {sto_d_val:.2f}",
             f"  sto_zone: {sto_zone}",
