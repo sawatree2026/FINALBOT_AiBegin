@@ -236,26 +236,58 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
     filters_passed = not any(
         (filters["grid_block"], filters["gray_candle"], filters["stoch_tangled"], filters["trap"])
     ) and filters["room_to_run"] is not False
-    # AP/NS, MACD, RSI, divergence, and price action are confirmations and
-    # diagnostics; Believe's entry contract is BB + STO + MA plus risk filters.
-    action = (
-        candidate
-        if directions_aligned and all(core.values()) and filters_passed
-        else "WAIT"
+
+    # 1. Extreme Combination (Nemesis V.2 p.50-52)
+    # Primary driver: Divergence + MACD 0-line alignment, then trigger with Believe (STO + MA)
+    div_alert = str(fields.get("divergence_alert", "NONE")).upper()
+    has_bullish_div = ("BULLISH" in div_alert or "STO_BULLISH" in div_alert or "RSI_BULLISH" in div_alert)
+    has_bearish_div = ("BEARISH" in div_alert or "STO_BEARISH" in div_alert or "RSI_BEARISH" in div_alert)
+    has_divergence = (has_bullish_div and candidate == "CALL") or (has_bearish_div and candidate == "PUT")
+
+    macd_val = _number(fields.get("macd", fields.get("s30_macd", 0.0))) or 0.0
+    macd_zero_aligned = (macd_val <= 0.0002 if candidate == "CALL" else macd_val >= -0.0002)
+
+    is_extreme = (
+        directions_aligned
+        and filters_passed
+        and has_divergence
+        and macd_zero_aligned
+        and core["stochastic"]
+        and core["moving_average"]
     )
-    confidence = (
-        {"HIGH": 85.0, "MEDIUM": 70.0}.get(
-            str(fields.get("believe_confidence", "MEDIUM")).upper(), 60.0
-        )
-        if action != "WAIT"
-        else 0.0
+
+    # 2. Pure Believe (Nemesis V.2 p.37, 49)
+    # Core: BB% 0/1 touch + STO 10/90 reversal + MA crossover + Risk Filters
+    is_pure = (
+        directions_aligned
+        and filters_passed
+        and all(core.values())
     )
+
+    if is_extreme:
+        action = candidate
+        engine_used = "STRATEGY_BELIEVE_EXTREME"
+        confidence = 88.0
+        reason_th = f"Believe Extreme confirmed: Divergence ({div_alert}) + MACD 0-line + Believe trigger (MA/STO) ({action})"
+    elif is_pure:
+        action = candidate
+        engine_used = "STRATEGY_BELIEVE_PURE"
+        confidence = 75.0
+        reason_th = f"Believe Pure confirmed: BB% touch (1/0) + STO 10/90 + MA EMA3/SMA6 cross ({action})"
+    else:
+        action = "WAIT"
+        engine_used = "STRATEGY_BELIEVE"
+        confidence = 0.0
+        reason_th = "WAIT: Conditions not met for Believe Pure (BB 0/1 + STO 10/90 + MA) or Extreme (Divergence + MACD + Believe)"
+
     failed = [
         name for name, passed in core.items() if not passed
     ]
-    failed.extend(
-        name for name, passed in secondary.items() if not passed
-    )
+    if not is_extreme:
+        if not has_divergence:
+            failed.append("divergence_extreme")
+        if not macd_zero_aligned:
+            failed.append("macd_zero_line_extreme")
     if not directions_aligned:
         failed.append("timeframe_alignment")
     if not filters_passed:
@@ -267,7 +299,7 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
         "action": action,
         "expiry_minutes": 3,
         "confidence_score": confidence,
-        "engine_used": "STRATEGY_BELIEVE",
+        "engine_used": engine_used,
         "believe_status": fields.get("believe_status", "ACTIVE"),
         "believe_direction": believe or "WAIT",
         "s30_direction": s30 or "UNKNOWN",
@@ -279,17 +311,12 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
         "m1_adx": _number(fields.get("m1_adx", 25.0)),
         "risk_level": fields.get("dl_risk_level", "LOW"),
         "data_quality": fields.get("m5_quality", "HIGH"),
-        "extreme_believe_active": _bool(fields.get("extreme_believe_active", False)),
+        "extreme_believe_active": is_extreme,
+        "pure_believe_active": is_pure,
         "core_conditions": core,
         "secondary_conditions": secondary,
         "risk_filters": filters,
         "conditions_met": action != "WAIT",
         "failed_conditions": failed,
-        "reason_th": (
-            f"Believe core confirmed: Bollinger Band + Stochastic + Moving Average; "
-            f"S30 entry confirmed ({action})"
-            if action != "WAIT"
-            else "WAIT: Believe requires BB, Stochastic reversal/cross, moving-average confirmation, "
-            "and clear risk filters"
-        ),
+        "reason_th": reason_th,
     }

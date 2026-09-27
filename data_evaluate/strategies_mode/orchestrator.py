@@ -319,12 +319,13 @@ class Orchestrator:
         prev_k = float(sto_k_s.iloc[-2]) if len(sto_k_s) > 1 else sto_k_val
         prev_d = float(sto_d_s.iloc[-2]) if len(sto_d_s) > 1 else sto_d_val
 
-        if sto_k_val <= 10.0:
+        recent_k_5 = sto_k_s.tail(5)
+        if (recent_k_5 <= 10.0).any() or sto_k_val <= 10.0:
             sto_zone = "OVERSOLD_10"
+        elif (recent_k_5 >= 90.0).any() or sto_k_val >= 90.0:
+            sto_zone = "OVERBOUGHT_90"
         elif sto_k_val <= 20.0:
             sto_zone = "OVERSOLD_20"
-        elif sto_k_val >= 90.0:
-            sto_zone = "OVERBOUGHT_90"
         elif sto_k_val >= 80.0:
             sto_zone = "OVERBOUGHT_80"
         else:
@@ -338,11 +339,11 @@ class Orchestrator:
             sto_cross = "NONE"
 
         sto_cross_50 = (prev_k < 50.0 and sto_k_val >= 50.0) or (prev_k > 50.0 and sto_k_val <= 50.0)
-        if len(sto_k_s) >= 3:
-            p2_k = float(sto_k_s.iloc[-3])
-            sto_hook_confirmed = (p2_k > prev_k and sto_k_val > prev_k and prev_k < 20.0) or (p2_k < prev_k and sto_k_val < prev_k and prev_k > 80.0)
-        else:
-            sto_hook_confirmed = False
+        # Nemesis V.2 p.37, 44: STO emerges from 10/90 and hooks
+        sto_hook_confirmed = (
+            (sto_k_val > prev_k and (prev_k <= 15.0 or (recent_k_5 <= 10.0).any())) or
+            (sto_k_val < prev_k and (prev_k >= 85.0 or (recent_k_5 >= 90.0).any()))
+        )
         sto_tangled = abs(sto_k_val - sto_d_val) < 1.5
 
         # 5. Moving Averages (EMA 3, SMA 6)
@@ -434,7 +435,7 @@ class Orchestrator:
         else:
             pa_pattern = "NONE"
 
-        # 10. Divergence
+        # 10. Divergence (Nemesis V.2 p.50: STO and RSI Divergence)
         div_alert = "NONE"
         div_type = "NONE"
         div_source = "NONE"
@@ -446,14 +447,39 @@ class Orchestrator:
             sto_last = sto_k_val
             sto_prev_low = sto_k_s.iloc[-15:-5].min()
             sto_prev_high = sto_k_s.iloc[-15:-5].max()
-            if c_last < c_prev_low and sto_last > sto_prev_low:
+            rsi_last = rsi_val
+            rsi_prev_low = rsi_s.iloc[-15:-5].min()
+            rsi_prev_high = rsi_s.iloc[-15:-5].max()
+
+            sto_bull = (c_last < c_prev_low and sto_last > sto_prev_low)
+            sto_bear = (c_last > c_prev_high and sto_last < sto_prev_high)
+            rsi_bull = (c_last < c_prev_low and rsi_last > rsi_prev_low)
+            rsi_bear = (c_last > c_prev_high and rsi_last < rsi_prev_high)
+
+            if sto_bull and rsi_bull:
+                div_alert = "STO_RSI_BULLISH"
+                div_type = "REGULAR"
+                div_source = "STO_AND_RSI"
+            elif sto_bull:
                 div_alert = "STO_BULLISH"
                 div_type = "REGULAR"
                 div_source = "STO"
-            elif c_last > c_prev_high and sto_last < sto_prev_high:
+            elif rsi_bull:
+                div_alert = "RSI_BULLISH"
+                div_type = "REGULAR"
+                div_source = "RSI"
+            elif sto_bear and rsi_bear:
+                div_alert = "STO_RSI_BEARISH"
+                div_type = "REGULAR"
+                div_source = "STO_AND_RSI"
+            elif sto_bear:
                 div_alert = "STO_BEARISH"
                 div_type = "REGULAR"
                 div_source = "STO"
+            elif rsi_bear:
+                div_alert = "RSI_BEARISH"
+                div_type = "REGULAR"
+                div_source = "RSI"
 
         # 11. M1 Grid
         m1_last = m1.iloc[-1]
