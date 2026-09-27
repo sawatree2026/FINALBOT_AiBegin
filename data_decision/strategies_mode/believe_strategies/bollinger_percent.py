@@ -14,10 +14,9 @@ def evaluate(fields: Dict[str, str], action: str) -> bool:
         raise ValueError("Invalid numeric Believe payload field: believe_bb_percent_b")
 
     touch = text(fields, "believe_bb_touch")
-    # Nemesis V.2 Rule (p.37): BB should touch 0 or 1, but doesn't have to ("จะไม่แตะก็ได้").
-    # When MA crosses and STO crosses 50, price has already bounced into 0.20-0.45 (%B).
+    # Nemesis Believe Rule: CALL must touch 0 (Lower Band), PUT must touch 1 (Upper Band)
     if action == "CALL":
-        return percent_b <= 0.45 or touch in {"LOWER", "LOWER_0", "LOWER_BAND", "NONE"}
+        return percent_b <= 0.0 or touch in {"LOWER", "LOWER_0", "LOWER_BAND"}
     if action == "PUT":
-        return percent_b >= 0.55 or touch in {"UPPER", "UPPER_1", "UPPER_BAND", "NONE"}
-    return True
+        return percent_b >= 1.0 or touch in {"UPPER", "UPPER_1", "UPPER_BAND"}
+    return False

@@ -291,13 +291,21 @@ class Orchestrator:
         bb_width_val = bb_upper_val - bb_lower_val
         bb_pct_b = (c - bb_lower_val) / (bb_width_val + 1e-9)
 
-        bb_touch = "NONE"
-        if h >= bb_upper_val or c >= bb_upper_val:
+        bb_upper_series = bb_mid_s + bb_std_dev * bb_std_s
+        bb_lower_series = bb_mid_s - bb_std_dev * bb_std_s
+        recent_h = high_series.tail(3)
+        recent_l = low_series.tail(3)
+        recent_upper = bb_upper_series.tail(3)
+        recent_lower = bb_lower_series.tail(3)
+
+        if (recent_h >= recent_upper).any() or h >= bb_upper_val or c >= bb_upper_val or bb_pct_b >= 1.0:
             bb_touch = "UPPER"
-        elif l <= bb_lower_val or c <= bb_lower_val:
+        elif (recent_l <= recent_lower).any() or l <= bb_lower_val or c <= bb_lower_val or bb_pct_b <= 0.0:
             bb_touch = "LOWER"
         elif abs(c - bb_middle_val) < (bb_width_val * 0.05):
             bb_touch = "MIDDLE"
+        else:
+            bb_touch = "NONE"
 
         # 4. Stochastic (13, 10, 3)
         low_min = low_series.rolling(13).min()
