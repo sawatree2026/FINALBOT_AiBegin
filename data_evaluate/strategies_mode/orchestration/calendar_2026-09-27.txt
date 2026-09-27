@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Monetary Policy Meeting Minutes",
+        "country": "JPY",
+        "date": "2026-09-27T23:50:00+00:00",
+        "impact": "Low",
+        "forecast": "",
+        "previous": ""
+    },
+    {
+        "title": "SPPI y/y",
+        "country": "JPY",
+        "date": "2026-09-27T23:50:00+00:00",
+        "impact": "Low",
+        "forecast": "3.6%",
+        "previous": "3.6%"
+    }
+]

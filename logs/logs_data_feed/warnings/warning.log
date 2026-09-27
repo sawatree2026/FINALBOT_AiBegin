@@ -9421,3 +9421,4 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'data
 2026-09-25 18:19:32,450 | WARNING  | [BrokerExecutor] Binary/Turbo Route rejected (Attempt 1/3) -> Symbol: EURJPY, Action: CALL, Reason: Cannot purchase an option (the asset is not available at the moment).
 2026-09-25 18:19:33,694 | WARNING  | [BrokerExecutor] Binary/Turbo Route rejected (Attempt 2/3) -> Symbol: EURJPY, Action: CALL, Reason: Cannot purchase an option (the asset is not available at the moment).
 2026-09-25 18:19:34,933 | WARNING  | [BrokerExecutor] Binary/Turbo Route rejected (Attempt 3/3) -> Symbol: EURJPY, Action: CALL, Reason: Cannot purchase an option (the asset is not available at the moment).
+2026-09-27 15:15:16,195 | WARNING  | [DataAdapter] Warmup for USDTHB-OTC failed: USDTHB-OTC median 33.604805 out of FX range
