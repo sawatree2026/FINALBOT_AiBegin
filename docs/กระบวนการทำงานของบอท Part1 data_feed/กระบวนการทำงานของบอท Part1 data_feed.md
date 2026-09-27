@@ -1,5 +1,12 @@
 # 📥 FINALBOT — กระบวนการทำงานของบอท ส่วนที่ 1: INPUT (Data Feed System)
 
+> 🔄 **ตรวจทาน 2026-09-27 (commit `9de348b`):** ตั้งแต่ commit `cf8a4c2` เป็นต้นมา Part 1 ถูกจัดเป็น**รายโหมด**:
+> `data_feed/strategies_mode/` และ `data_feed/ai_mode/` (แต่ละโฟลเดอร์มี `bridge_adapter/`, `data_adapter.py`,
+> `csv_*.py`, `data_processor.py`, `data_validator.py`, `data_cache_store.py`, `exceptions.py` ครบชุด)
+> · **ยังไม่มี `data_feed/ml_mode/`** — ml_mode ใช้ชุดของ ai_mode หรือไม่ก็ fail-fast (ต้องยืนยันตอนรัน)
+> · เส้นทางในตารางด้านล่างเป็นชื่อ**สัมพันธ์ภายในโฟลเดอร์โหมด** (เช่น `strategies_mode/bridge_adapter/broker_factory.py`)
+> · หลักการทั้งหมด (zero-tolerance, 8-col schema, time-sync) ยังเดิม
+
 > 📅 **เอกสารฉบับนี้ตรวจสอบเทียบบรรทัดต่อบรรทัดกับ source code จริง ณ commit `a603b52` (22 ก.ย. 2026)**
 > ทุกตัวเลข ทุก path ทุกชื่อฟังก์ชันในเอกสารนี้ มีเลขบรรทัดกำกับไว้ให้ตรวจย้อนกลับได้เสมอ
 > หากโค้ดกับเอกสารขัดกัน ให้ยึด **โค้ด** เป็นหลัก แล้วกลับมาแก้เอกสารนี้

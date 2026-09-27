@@ -61,18 +61,19 @@ data_decision/
 
 ## 💎 เส้นทาง strategies → Believe (NEMESIS)
 
-### สัญญา payload ที่ analyzer บังคับ (42 fields — **ขาดตัวเดียว raise**)
-`id, s30_bias, m1_bias, m5_bias, believe_direction, believe_bb_percent_b, believe_bb_touch,
-believe_sto_k/d/zone/cross/hook_confirmed/cross_50, believe_risk_sto_tangled,
-believe_ma_cross, believe_ma_cross_confirmed, believe_risk_grid_block/gray_candle/trap_alert/room_to_run_clear,
-m5_pa_pattern/last_candle_bias/sr_interaction/divergence_alert,
-s30_macd, s30_macd_signal, s30_macd_histogram, s30_rsi, ap_signal, ns_signal,
-believe_confidence, believe_status, m5_trend_type, dl_risk_level, extreme_believe_active,
-m1_adx, m5_quality`
+### สัญญา payload ที่ analyzer ตรวจ (สถานะ ณ commit `a179f32`)
+**Pre-check 13 fields** (`_require_fields`): `id, s30_bias, believe_direction,
+believe_bb_percent_b, believe_bb_touch, believe_sto_k/d/zone/cross/hook_confirmed,
+believe_ma_cross, believe_ma_cross_confirmed, believe_risk_grid_block`
 
-> 🔒 **FIX 2026-09-26:** analyzer **ไม่มีค่า default ประดิษฐ์** อีกต่อไป
-> (เดิมเคยแต่ง `believe_confidence="HIGH"`, `dl_risk_level="LOW"`, `m1_adx=25.0` ฯลฯ)
-> — ฟิลด์ขาด = fail-fast ตามวินัย Zero-Mock
+**การอ่านปลายน้ำยังเข้ม (fail-fast) แม้ไม่อยู่ใน pre-check:** `m1_adx`, `m5_quality`
+(`fields[...]` ตรง → KeyError ถ้าขาด) · `believe_risk_gray_candle/trap_alert/room_to_run_clear`
+(`_bool()` raise ถ้าค่าไม่ใช่ TRUE/FALSE) · ตัวเลขทุกตัวผ่าน `_number()` ที่ raise เมื่อแปลงไม่ได้
+
+> 🔒 **FIX 2026-09-26 (คงอยู่):** defaults dict เหลือเพียงการ derive ที่ไม่แต่งข้อมูล
+> (id จากชื่อไฟล์ · bias alias · believe_direction จาก ma_cross · room_to_run จาก grid_block)
+> — **ไม่มี** ค่าประดิษฐ์แบบ `believe_confidence="HIGH"` / `dl_risk_level="LOW"` / `m1_adx=25.0` อีก
+> ⚠️ commit `a179f32` ย่อ pre-check list ลง (จาก 42) — การขาดฟิลด์จึงไประเบิดที่ชั้นอ่านปลายน้ำแทน
 
 ### การตัดสินใจ
 ```
@@ -87,6 +88,7 @@ expiry      = 3 นาที  (strategies)   # ⚠️ ต่างจาก read
 - **core #1 BB %B:** CALL ผ่านเมื่อ `%B ≤ 0.45` หรือ touch ∈ {LOWER,…,NONE} · PUT เมื่อ `%B ≥ 0.55` หรือ touch ∈ {UPPER,…,NONE}
 - **core #2 STO:** `(extreme OR reversal)` และไม่ tangled · extreme = zone OVERSOLD/"10"/`min(k,d)≤35` (CALL) หรือ OVERBOUGHT/"90"/`max(k,d)≥65` (PUT)
 - **core #3 MA:** `believe_ma_cross` ∈ {GOLDEN_CROSS/UP/…} และ `believe_ma_cross_confirmed = TRUE`
+  (เส้นเร็ว EMA 3 · เส้นช้า **SMA 6** — ตรงตาม E-BOOK V2 น.38 ตั้งแต่ commit `a179f32`)
 - secondary (price_action, grid_clear, support_resistance_clear, divergence, macd, rsi, ap, ns) = **confirmation/วินิจฉัยเท่านั้น ไม่บังคับเข้า**
 
 ### Decision JSON (ตัวอย่างฟิลด์)
