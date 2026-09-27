@@ -337,9 +337,9 @@ class Orchestrator:
             sto_hook_confirmed = False
         sto_tangled = abs(sto_k_val - sto_d_val) < 1.5
 
-        # 5. Moving Averages (EMA 3, EMA 6)
+        # 5. Moving Averages (EMA 3, SMA 6)
         ma_fast_s = close_series.ewm(span=3, adjust=False).mean()
-        ma_slow_s = close_series.ewm(span=6, adjust=False).mean()
+        ma_slow_s = close_series.rolling(6).mean()
         ma_fast_val = round(float(ma_fast_s.iloc[-1]), decimals)
         ma_slow_val = round(float(ma_slow_s.iloc[-1]), decimals)
         p_fast = float(ma_fast_s.iloc[-2]) if len(ma_fast_s) > 1 else ma_fast_val
