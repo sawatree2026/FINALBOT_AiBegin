@@ -515,3 +515,147 @@ Traceback (most recent call last):
   File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 1370, in _req_nested
     raise ValueError(f"FAIL-FAST: believe field missing: {'.'.join(path)}")
 ValueError: FAIL-FAST: believe field missing: decision_conditions.room_to_run_clear
+2026-09-27 17:45:50,539 | ERROR    | [Orchestrator] Evaluation failed for USDCAD-OTC: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+2026-09-27 17:46:02,394 | ERROR    | [Orchestrator] Evaluation failed for USDCAD-OTC: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+2026-09-27 17:46:31,995 | ERROR    | [Orchestrator] Evaluation failed for USDCAD-OTC: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+2026-09-27 17:47:02,667 | ERROR    | [Orchestrator] Evaluation failed for USDCAD-OTC: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+2026-09-27 17:47:31,989 | ERROR    | [Orchestrator] Evaluation failed for USDCAD-OTC: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+2026-09-27 17:48:02,933 | ERROR    | [Orchestrator] Evaluation failed for USDCAD-OTC: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+2026-09-27 17:48:32,039 | ERROR    | [Orchestrator] Evaluation failed for USDCAD-OTC: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+2026-09-27 17:49:02,643 | ERROR    | [Orchestrator] Evaluation failed for USDCAD-OTC: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+2026-09-27 17:49:32,312 | ERROR    | [Orchestrator] Evaluation failed for USDCAD-OTC: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv

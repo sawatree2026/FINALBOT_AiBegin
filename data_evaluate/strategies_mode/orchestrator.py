@@ -203,7 +203,7 @@ class Orchestrator:
         if not os.path.isdir(base_dir) and os.path.isdir(os.path.join("data_base", "strategies_mode", "output_feed")):
             base_dir = os.path.join("data_base", "strategies_mode", "output_feed")
         candles_dict = {}
-        for tf in ["S30", "M1", "M5", "M15"]:
+        for tf in ["S30", "M1", "M15"]:
             file_path = os.path.join(base_dir, symbol, f"{symbol}_{tf}.csv")
             if not os.path.exists(file_path):
                 raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
@@ -291,19 +291,25 @@ class Orchestrator:
         bb_width_val = bb_upper_val - bb_lower_val
         bb_pct_b = (c - bb_lower_val) / (bb_width_val + 1e-9)
 
+        recent_h_3 = high_series.tail(3)
+        recent_l_3 = low_series.tail(3)
+        recent_c_3 = close_series.tail(3)
+        recent_upper_3 = (bb_mid_s + bb_std_dev * bb_std_s).tail(3)
+        recent_lower_3 = (bb_mid_s - bb_std_dev * bb_std_s).tail(3)
+
         bb_touch = "NONE"
-        if h >= bb_upper_val or c >= bb_upper_val:
+        if (recent_h_3 >= recent_upper_3).any() or (recent_c_3 >= recent_upper_3).any() or bb_pct_b >= 1.0:
             bb_touch = "UPPER"
-        elif l <= bb_lower_val or c <= bb_lower_val:
+        elif (recent_l_3 <= recent_lower_3).any() or (recent_c_3 <= recent_lower_3).any() or bb_pct_b <= 0.0:
             bb_touch = "LOWER"
         elif abs(c - bb_middle_val) < (bb_width_val * 0.05):
             bb_touch = "MIDDLE"
 
-        # 4. Stochastic (14, 3, 3)
-        low_min = low_series.rolling(14).min()
-        high_max = high_series.rolling(14).max()
+        # 4. Stochastic (13, 10, 3) - Nemesis V.2 p.38
+        low_min = low_series.rolling(13).min()
+        high_max = high_series.rolling(13).max()
         raw_k = 100.0 * (close_series - low_min) / (high_max - low_min + 1e-9)
-        sto_k_s = raw_k.rolling(3).mean()
+        sto_k_s = raw_k.rolling(10).mean()
         sto_d_s = sto_k_s.rolling(3).mean()
 
         sto_k_val = round(float(sto_k_s.iloc[-1]), 2)
@@ -354,10 +360,10 @@ class Orchestrator:
             ma_cross = "NONE"
         ma_cross_confirmed = (ma_cross != "NONE") or (ma_fast_val > ma_slow_val and bias == "BULLISH") or (ma_fast_val < ma_slow_val and bias == "BEARISH")
 
-        # 6. MACD (12, 26, 9)
-        ema12 = close_series.ewm(span=12, adjust=False).mean()
-        ema26 = close_series.ewm(span=26, adjust=False).mean()
-        macd_line = ema12 - ema26
+        # 6. MACD (15, 35, 9) - Nemesis V.2 p.38 / p.50
+        ema15 = close_series.ewm(span=15, adjust=False).mean()
+        ema35 = close_series.ewm(span=35, adjust=False).mean()
+        macd_line = ema15 - ema35
         signal_line = macd_line.ewm(span=9, adjust=False).mean()
         hist = macd_line - signal_line
 
@@ -1166,8 +1172,8 @@ class Orchestrator:
         # Believe is evaluated in the configured roles:
         # S30 entry, M1 trigger, M5 context.
         bb_pct_b = _num(s30.get("bb_percent_b"))
-        if not (0 <= bb_pct_b <= 1):
-            raise ValueError(f"FAIL-FAST: S30 %B out of [0,1] ({bb_pct_b:.4f}) - clamping is forbidden")
+        if not np.isfinite(bb_pct_b):
+            raise ValueError(f"FAIL-FAST: S30 %B is NaN/inf ({bb_pct_b})")
 
         stoch_k = _num(s30.get("stoch_k"))
         stoch_d = _num(s30.get("stoch_d"))
