@@ -12,7 +12,9 @@
 - 🏗️ **4-Stage Quantitative Pipeline**: immutable data ingestion, centralized indicator evaluation, mode-specific decision-making, and strict execution gating.
 - 🧠 **Dual-Brain Analysis**: on-device ML (`LightGBM` + `Chronos-2 ONNX`) or Cloud Generative AI (`Google Gemini`) or rule-based **Believe (NEMESIS)** — one mode per process.
 - 🛡️ **Institutional Risk Management**: Execution Gate (16 rejection checks) + Money Manager (7 risk gates), fixed stake, daily limits, confidence ≥ 55%, and strict fail-fast validation.
-- 🔐 **Env-only secrets**: `IQ_EMAIL`, `IQ_PASSWORD`, `GEMINI_API_KEY` come from `.env` — `settings.json` keeps them blank.
+- 🔐 **Env-only secrets**: `config_loader` ให้ environment (`.env`) ชนะ `settings.json` เสมอ
+  > 🚨 **สถานะจริง 2026-09-27:** commit `a179f32` ใส่ค่า credential จริงกลับเข้าไปใน `settings.json` อีกครั้ง
+  > → ถือว่า**รั่วซ้ำ** ต้อง rotate ทันที และรอการเคาะว่าจะ blank อีกหรือไม่ (ประเด็น F-6b reopen)
 - ⚡ **Sub-Second Execution**: time-synced to the millisecond; entries fire at S30 candle boundaries.
 
 ---
@@ -94,7 +96,8 @@ FINALBOT_AiBegin/
    ```powershell
    copy .env.example .env     # แล้วเติม IQ_EMAIL / IQ_PASSWORD / GEMINI_API_KEY
    ```
-   `config_setting/settings.json` เก็บค่าเหล่านี้เป็นค่าว่างโดยเจตนา
+   `config_loader._apply_env_overrides()` ให้ค่าจาก env ชนะ `settings.json`
+   ⚠️ ณ commit `a179f32` มีค่าจริงค้างใน `settings.json` — อย่าเชื่อไฟล์นั้นว่าเป็นแหล่ง secret และต้อง rotate
 2. ปรับ `settings.json` สำหรับ: active mode · risk parameters (stake, daily limits) ·
    target payout (default 84) · broker account (`DEMO`/`PRACTICE`/`REAL`) ·
    `data_trade.enable_live_execution` (ปิด = fail-fast error ไม่ใช่ signal-only)
@@ -180,11 +183,11 @@ main.py / runner.py
 |---|-----------|----------|----------------|----------------|
 | 1 | **Bollinger Band %B** | 20, 2σ | `%B ≤ 0.45` หรือ touch LOWER/NONE | `%B ≥ 0.55` หรือ touch UPPER/NONE |
 | 2 | **Stochastic** | 13-10-3 · เส้น 10/90 | extreme (zone OVERSOLD/10 หรือ `min(k,d) ≤ 35`) **OR** reversal (hook/cross50) | extreme (OVERBOUGHT/90 หรือ `max(k,d) ≥ 65`) **OR** reversal · และต้องไม่ tangled |
-| 3 | **MA Crossover** | EMA 3 (แดง) vs EMA 6 (เขียว) | ตัดขึ้น + confirmed | ตัดลง + confirmed |
+| 3 | **MA Crossover** | EMA 3 (แดง) vs **SMA 6** (เขียว) | ตัดขึ้น + confirmed | ตัดลง + confirmed |
 
-> 📚 **ต่างจาก E-BOOK อย่างไร:** เล่ม V2 น.38 แสดง BB period **41** และ MA ช้า **SMA 6** และบังคับ
-> "BB/STO ต้องแตะเส้น 0/1 · 90/10" — โค้ดปัจจุบันใช้ 20/EMA6 และผ่อนปรนเป็น 0.45/0.55 · ≤35/≥65
-> (บันทึกเป็นประเด็นเปิด F-4 ในรายงาน audit ของ AI session — ยังรอการเคาะจากบอส)
+> 📚 **ต่างจาก E-BOOK อย่างไร:** เล่ม V2 น.38 แสดง BB period **41** และบังคับ "BB/STO ต้องแตะเส้น 0/1 · 90/10"
+> — โค้ดปัจจุบันใช้ BB 20 และผ่อนปรนเป็น 0.45/0.55 · ≤35/≥65 (ประเด็นเปิด F-4)
+> · ส่วน MA ช้าถูกแก้เป็น **SMA 6** ตรงตามเล่มแล้ว (commit `a179f32`)
 
 ### Risk filters (บังคับทุกข้อ)
 1. ห้ามมีเส้นกริด (S/R) ขวางข้างหน้า (`believe_risk_grid_block`)
