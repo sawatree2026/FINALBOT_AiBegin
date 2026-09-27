@@ -1,6 +1,11 @@
 # 📊 FINALBOT — กระบวนการทำงานของบอท ส่วนที่ 2: PROCESS (Data Evaluate System)
 
-> 📅 **เอกสารฉบับนี้เขียนใหม่ทั้งหมด โดยตรวจเทียบบรรทัดต่อบรรทัดกับ source code จริง ณ commit `0990519` (22 ก.ย. 2026)**
+> 📅 เขียนเทียบ commit `0990519` · 🔄 **ตรวจทานซ้ำ 2026-09-26 เทียบ commit `e709349`** — แก้จุดที่ล้าสมัยแล้ว (ค้นหา `🔄 2026-09-26`)
+>
+> **สรุปสถานะปัจจุบันของ `strategies_mode`:** payload = **99 บรรทัดพอดี** (whitelist กรองจาก ~133 บรรทัดที่ formatter เขียน · รอด ~90 · pad ให้ครบ)
+> · **M15 ถูกดึงและบังคับมี** สำหรับ `m15_window` (`settings.strategies_enable_m15=true` + FAIL-FAST ที่ `orchestrator.py:478`)
+> แต่ **ไม่ emit บล็อก `m15:` ลง payload** (ยัง DISABLED ตามคำสั่งเดิม) · **expiry = 3 นาที**
+> · เงื่อนไข BB/STO จริงอยู่ที่ Part 3 (`bollinger_percent.py`, `stochastic.py`) — ดูเอกสาร Part 3
 > เอกสารชุดเดิม (ซึ่งมีเนื้อหาซ้ำกันทั้ง Part 2/3/4) ถูกลบและแทนที่ด้วยฉบับนี้
 > ทุกตัวเลข ทุก path ทุกชื่อฟังก์ชัน มี `ไฟล์:บรรทัด` กำกับไว้ให้ตรวจย้อนกลับได้เสมอ
 > หากโค้ดกับเอกสารขัดกัน ให้ยึด **โค้ด** เป็นหลัก แล้วกลับมาแก้เอกสารนี้
@@ -23,7 +28,7 @@
 │   <SYM>_S30.csv                │ L2 5 Tier-1 Engines  (parallel)  │   <mode>/<SYM>/<ID>.txt          │
 │   <SYM>_M1.csv                 │ L3 10 Advanced Tools             │                                  │
 │   <SYM>_M5.csv                 │ L4 MarketStateClassifier         │ • 99 บรรทัด  (ai_mode/ml_mode)   │
-│   [<SYM>_M15.csv]              │ L5 9 Supplementary Modules       │ • 114 บรรทัด (strategies_mode)   │
+│   [<SYM>_M15.csv]              │ L5 9 Supplementary Modules       │ • 99 บรรทัด (strategies_mode) 🔄 │
 │                                │ L6 Believe (strategies เท่านั้น)  │ • retention 30 ไฟล์/คู่เงิน      │
 │ ปฏิทินข่าว (Part 2 เป็นเจ้าของ) │ L7 Deduplicate + Format          │                                  │
 │                                │ L8 Serialize → .txt              │ + RAM: store.clear_symbol()      │
@@ -73,17 +78,15 @@
 | TF ที่อ่านจากดิสก์ (`:189, 210, 250, 283`) | `["M1","M5","M15"]` | `["S30","M1","M5"]` |
 | `min_required_candles` (`:216-218`) | `M1:250, M5:250, M15:250` | `S30:250, M1:250, M5:250` |
 | บล็อก S30 (`:229-236`) | *(ไม่มี)* | เพิ่ม `final_payload['s30'] = {open, high, low, close, volume}` จากแท่ง S30 ล่าสุด |
-| M15 alias (`:237-239`) | *(ไม่มี)* | `candles_dict.setdefault('M15', candles_dict['M5'])` |
+| ~~M15 alias~~ 🔄 2026-09-26 | *(ไม่มี)* | **alias ถูกลบแล้ว** (commit `b7c15b8`) · ปัจจุบัน M15 ถูก**ดึงและตรวจ**เพื่อ `m15_window` (`:206,245,461-478`) แต่ไม่ emit ลง payload |
 | `_format_payload` (`:491, 529, 613`) | — | เพิ่ม `s30 = _req(p,'s30')`, `'m1_bias'`, และ `ohlcv.s30` |
 | `_enrich_believe_analysis` (`:855-989`) | อ่าน indicator จาก **M5** | อ่าน indicator จาก **M1** ทั้งหมด (bb, stoch, rsi, macd, ema5/10/20) |
 | `believe_payload` (`:981-985`) | `"timeframe": payload.get("timeframe","M5")` | `"timeframe":"M1"`, `entry_timeframe:"S30"`, `context_timeframe:"M5"`, `holding_period_minutes:5`, `analysis_window:"5 x M1 candles"` |
-| payload `.txt` (`:1168, 1218-1225, 1234, 1314-1322`) | 100 `app()` = **99 บรรทัด** | 115 `app()` = **114 บรรทัด** (เพิ่มบล็อก `s30:` 7 บรรทัด, `m1_bias` 1 บรรทัด, `believe_strategy:` 7 บรรทัด) |
+| payload `.txt` (`:1168, 1218-1225, 1234, 1314-1322`) | 100 `app()` = **99 บรรทัด** | 🔄 2026-09-26: formatter เขียน ~133 บรรทัด → กรองด้วย whitelist `allowed_prefixes` (`:1635-1655`) → **99 บรรทัดพอดี** (เกิน = raise · ไม่ครบ = pad) |
 
-> ⚠️ **M15 ปลอมใน strategies_mode** — `orchestrator.py:237-239` ทำ `candles_dict.setdefault('M15', candles_dict['M5'])`
-> ทำให้ `m15_bias` ใน payload **คือค่าที่คำนวณจากแท่ง M5** ไม่ใช่ M15 จริง
-> comment เหนือบรรทัดนั้นเขียนว่า *"without presenting M5 as an independent M15 feed"* และ comment ถัดไประบุว่า
-> *"Timeframe sync is strictly prohibited in Part 2 … Data from M1, M5, M15 must remain independent"* — **ขัดกับการกระทำของตัวเอง**
-> ผลกระทบต่อเนื่องไปถึง Part 4: เกตข้อ "M15/M5 direction conflict" จะไม่มีวันเป็นจริง (ดู [`readme.md` หมวด P2](../../readme.md))
+> ✅ 🔄 2026-09-26 — **บั๊ก "M15 ปลอม" ถูกแก้แล้ว** (commit `b7c15b8`/`659b212`): ไม่มีการ alias M15 จาก M5 อีก
+> และ commit ต่อมา (`41b3235`) เพิ่มการดึง M15 จริงสำหรับ `m15_window` โดยยัง**ไม่ emit** บล็อก `m15:` ลง payload
+> → เกต Part 4 ใช้ **M5 เป็น higher-TF context** ใน strategies_mode (commit `2328c93`)
 
 ---
 
@@ -225,7 +228,7 @@ class Config:
 |:--:|:---|:---|
 | M1 | `None` / empty / `len < 250` | `FAIL-FAST: Insufficient M1 warm-up candles (minimum 250 required)` |
 | M5 |เหมือน M1 | `FAIL-FAST: Insufficient M5 warm-up candles (minimum 250 required)` |
-| M15 | **strategies:** ตรวจเฉพาะเมื่อ `is not None` • **ml/ai:** `None` ก็ raise | `FAIL-FAST: Insufficient M15 warm-up candles (minimum 250 required)` |
+| M15 🔄 2026-09-26 | **strategies: ดึงและบังคับมี** (FAIL-FAST ที่ `:478` หากไม่พอ) แต่ไม่คำนวณ indicator และไม่ emit · **ml/ai:** `None` ก็ raise | `FAIL-FAST: … missing or insufficient M15 candles for m15_window` |
 
 ### Indicator ที่คำนวณจริงต่อ timeframe
 
@@ -612,7 +615,7 @@ believe / ap_confirmation / ns_confirmation / extreme_believe / belief_summary
 > `strategies_mode` (โหมดที่ active อยู่ปัจจุบัน) ให้ **114 บรรทัด**
 > และ docstring ของ `evaluate_cycle()` (`:136`) เขียนว่า *"writes 100-line prompt payload"* ซึ่งไม่ตรงทั้งคู่
 
-### โครงสร้างไฟล์ (strategies_mode — 114 บรรทัด)
+### โครงสร้างไฟล์ (strategies_mode — 🔄 99 บรรทัดพอดี; บล็อกด้านล่างเป็นภาพรวมหมวดหมู่)
 
 ```yaml
 ID:EURGBPOTC0920015903          # ← บรรทัดเดียวที่ไม่มี space หลัง ':'
@@ -627,10 +630,10 @@ timeframes:
   m1:                           #  10 บรรทัด: m1_bias ★, m1_last_candle, ema5, ema20, rsi,
                                 #    stoch_k, stoch_d, macd, macd_signal
     ohlcv:                      #   6 บรรทัด: m1_open/high/low/close/volume
-  m5:                           #  19 บรรทัด: m5_bias, ema5/10/20/50, bb_upper/lower/width, rsi,
-                                #    stoch_k/d, macd/signal, adx, atr, support, resistance, pivot
+  m5:                           #  🔄 2026-09-26: เหลือ 4 Fields: m5_bias, m5_support, m5_resistance, m5_pivot
+                                #    (indicator ที่เหลือย้ายไป M1 ตั้งแต่ commit b7c15b8) + m5_quality
     ohlcv:                      #   6 บรรทัด: m5_open/high/low/close/volume
-  m15:                          #   2 บรรทัด: m15_bias  ← strategies_mode = ค่าจาก M5 (ดู M15 ปลอม)
+  # m15:  🔄 2026-09-26: บล็อกนี้ไม่ถูก emit อีกต่อไป (M15 DISABLED บน payload)
 price_action:                   #  14 บรรทัด: m5_pa_*
 volume:                         #   4 บรรทัด: m5_tick_volume, m5_volume_momentum, m5_volume_vs_average
 analysis:                       #  12 บรรทัด: m5_trend_direction/type/strength_score, mtf_alignment_%,
@@ -866,7 +869,7 @@ OUTPUT_DIR = BASE_DIR / "data_evaluate" / "orchestration"  # = data_evaluate/<mo
 ### ส่งให้ Part 3
 | สิ่งที่ส่ง | ทางไหน |
 |:---|:---|
-| Prompt Payload | **ไฟล์ `.txt`** `data_base/output_evaluate/<mode>/<SYM>/<ID>.txt` (99 หรือ 114 บรรทัด) |
+| Prompt Payload | **ไฟล์ `.txt`** `data_base/<mode>/output_evaluate/<SYM>/<ID>.txt` (**99 บรรทัดพอดีทุกโหมด** 🔄 2026-09-26) |
 | ผู้มีสิทธิ์อ่าน | `believe_analyzer.py` (strategies) / `SystemPrompt` ใน `ai_dispatcher.py` (ai) / `MLDispatcher` (ml) — ผ่าน `DecisionManager.process_latest()` |
 | สิ่งที่ **ไม่** ส่ง | `ap_confirmation`, `ns_confirmation`, `believe` รายละเอียดเต็ม, ผล supplementary engines ส่วนใหญ่ — อยู่แค่ใน RAM แล้วถูกทิ้ง |
 

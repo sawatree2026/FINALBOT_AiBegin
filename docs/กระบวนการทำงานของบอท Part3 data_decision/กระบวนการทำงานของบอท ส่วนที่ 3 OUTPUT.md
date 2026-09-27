@@ -1,76 +1,127 @@
-# 🎯 FINALBOT - กระบวนการทำงานของบอท ส่วนที่ 3 & 4: OUTPUT (AI Analysis & Trade Execution)
+# 🧠 FINALBOT — กระบวนการทำงานของบอท ส่วนที่ 3: DECISION
 
-## 📌 ภาพรวมสถาปัตยกรรม (Overview)
-ส่วนงานที่ 3 & 4 (**AI/ML Analysis & Trade Execution**) คือ **"ระบบสมองกลตัดสินใจขั้นสุดท้ายและการบริหารจัดการคำสั่งซื้อขายจริง"** มีหน้าที่รับไฟล์ Prompt Payload มาตรฐาน 99 บรรทัด (.txt) จากส่วนงานที่ 2 (PROCESS) ผ่าน Single Gateway Read Authority เพื่อให้โมเดล Machine Learning และ Cloud AI วิเคราะห์ตัดสินใจเลือกทิศทาง (CALL / PUT / WAIT), กำหนดเวลาหมดอายุ (Expiry 1-5 นาที), คำนวณคะแนนความมั่นใจ (Confidence Score 0-100%) และส่งสัญญาณเข้าสู่ 24 Execution Gates และ Money Management ก่อนยิงคำสั่งซื้อขายจริงสู่โบรกเกอร์
+> ✅ **ตรวจทานและเขียนใหม่ให้ตรงโค้ดจริง ณ commit `e709349`** (2026-09-26)
+> โครงสร้างไฟล์/ฟังก์ชัน/ฟิลด์ทุกจุดอ้างอิงจาก source จริง — หากโค้ดกับเอกสารขัดกัน ให้ยึดโค้ดแล้วแก้เอกสารนี้
 
 ---
 
-## 🏗️ โครงสร้างขอบเขตงานส่วนที่ 3 และ 4 (Workflow Pipeline)
+## 🎯 หน้าที่
 
-```mermaid
-flowchart TD
-    A[data_base/orchestrator/*.txt] -->|Single Gateway Read| B[ml_dispatcher.py / ai_dispatcher.py]
-    
-    subgraph Part_3_AI_ML [Part 3: AI & ML Analysis]
-        B --> C1[Dual Brain ML: LightGBM + Chronos]
-        B --> C2[Cloud AI: Google Gemini Flash Lite / DeepSeek]
-        C1 & C2 --> D[Synthesize Signal: Action, Expiry 1-5m, Confidence 0-100%]
-    end
-    
-    subgraph Part_4_Trade_Gate [Part 4: Data Trade & 24 Gates]
-        D --> E[Money Manager: Daily Loss & Fixed 35 THB]
-        E --> F{Gate Controller: 24 Execution Gates}
-        F -->|Confidence >= 60% & CALL/PUT| G[Broker Executor]
-        F -->|Confidence < 60% or WAIT| H[Standby & Log]
-        
-        G --> I1[Binary / Turbo Route]
-        G -->|Fallback if closed| I2[Digital Options V2 Route]
-        
-        I1 & I2 --> J[Order Tracker & Live Result Logging]
-    end
+อ่าน **Payload 99 บรรทัด** (`.txt`) ที่ Part 2 เขียนบนดิสก์ → วิเคราะห์ตาม `active_mode` →
+เขียน **Decision JSON** ลงโฟลเดอร์ของโหมดนั้นให้ Part 4 มาอ่าน
+**ห้ามส่ง payload object/text ข้าม Part ผ่าน RAM** (boundary = ดิสก์เท่านั้น)
+
+```
+data_base/<mode>/output_evaluate/<SYMBOL>/<ID>.txt        ← อ่าน
+                    ↓  เลือก engine ตาม active_mode
+data_base/<mode>/output_decision/<mode>_decision/…json    ← เขียน  (ดูตารางโหมดด้านล่าง)
 ```
 
 ---
 
-## 📋 หน้าที่หลักของแต่ละโมดูล
+## 🗂️ โครงสร้างไฟล์จริง (ใหม่)
 
-### 1. Part 3: AI & ML Analysis (`ai_analysis/`)
-* **Single Gateway Read Authority (Rule 8):**
-  - `ml_dispatcher.py` (สำหรับ Machine Learning) และ `ai_dispatcher.py` (สำหรับ Cloud AI) เป็น 2 โมดูลเดียวที่ได้รับสิทธิ์อ่านไฟล์ 99 บรรทัดจากดิสก์
-* **Machine Learning Engine (`ai_analysis/machine_learning/`):**
-  - `machine_lightgbm.py`: โมเดล Gradient Boosting สำหรับจัดกลุ่มสัญญาณเทรด
-  - `machine_chronos.py`: โมเดล Amazon Chronos Time-series วิเคราะห์แนวโน้มราคาอนาคต
-  - `dual_brain.py`: รวมพลังโมเดลคู่ (Ensemble) เพื่อความแม่นยำสูงสุด
-* **Cloud Generative AI Engine (`ai_analysis/artificial_intelligence/`):**
-  - `gemini_bridge.py`: ตัวเชื่อมต่อ Google Gemini API (Candidate Models: Flash Lite)
-  - `deepseek_bridge.py`: ตัวเชื่อมต่อ DeepSeek API
-* **มาตรฐานการส่งออกผลลัพธ์ (Output Contract):**
-  ```json
-  {
-    "symbol": "EURUSD",
-    "action": "CALL",
-    "expiry_minutes": 3,
-    "confidence_score": 78.5,
-    "reason_th": "แนวโน้ม M5 ขาขึ้นชัดเจน ร่วมกับ M1 Pullback แตะ EMA20 และ RSI เริ่มดีดตัว"
-  }
-  ```
-
-### 2. Part 4: Data Trade & Execution Gate (`data_trade/`)
-* **Money Management (`money_manager.py`):**
-  - ล็อกขนาดเงินลงทุนต่อไม้คงที่ตามนโยบายความเสี่ยง (Fixed Stake 35 THB)
-  - ควบคุมขีดจำกัดขาดทุนสูงสุดรายวัน (Daily Loss Circuit Breaker)
-* **24 Execution Gates Controller (`gate_controller.py`):**
-  - ด่านหัวใจชี้ขาด (The Ultimate Execution Gate): **หาก Confidence Score >= 60.0% และเป็น CALL / PUT ➡️ อนุมัติยิงออเดอร์ทันที 100%**
-* **Broker Executor (`broker_executor.py`):**
-  - เส้นทางหลัก: Binary/Turbo Option บน IQ Option
-  - เส้นทางสำรอง: Digital Option V2 Fallback อัตโนมัติเมื่อ Binary ปิดทำการ
-* **Order Tracker (`order_tracker.py`):**
-  - ติดตามผลลัพธ์การเทรดแบบ Asynchronous เมื่อครบอายุสัญญา (WIN / LOSE / TIE) และบันทึกลง Log รายวินาที
+```
+data_decision/
+├── strategies_mode/
+│   ├── decision_manager.py            ← DecisionManager (coordinator)
+│   └── believe_strategies/
+│       ├── believe_analyzer.py          analyze_payload_file() — จุดเข้าหลัก
+│       ├── bollinger_percent.py         core #1 (BB %B)
+│       ├── stochastic.py                core #2
+│       ├── moving_average.py            core #3
+│       ├── grid.py · support_resistance.py · price_action.py
+│       ├── divergence.py · macd.py · rsi.py · ap.py · ns.py
+│       └── field_utils.py               strict reader (fail-fast)
+└── ai_mode/
+    ├── artificial_intelligence/  ai_dispatcher.py (SystemPrompt) · gemini_bridge.py · deepseek_bridge.py
+    └── machine_learning/         ml_dispatcher.py · dual_brain.py · machine_lightgbm.py ·
+                                  machine_chronos.py · feature_extractor.py ·
+                                  machine_learning_model/EURUSD_lightgbm/
+```
+> การ route ทั้ง 4 Part ทำผ่าน **`config_setting/mode_loader.py`** (central dispatcher) —
+> `normalize_mode()` รับ alias (`strategies|ml|ai`) และ `load_executor_manager()` ผูก Part 4
 
 ---
 
-## 🛡️ กฎวินัยและความปลอดภัย (Strict Rules)
-1. **Part 1 & Part 2 Immutability Rule (Rule 18):** ห้ามแตะต้องโค้ดใน `data_feed/` และ `data_evaluate/` เด็ดขาด 100% พัฒนาต่อยอดได้เฉพาะ Part 3 และ Part 4 เท่านั้น
-2. **Single Gateway Read Authority (Rule 8):** การอ่านไฟล์ Prompt 99 บรรทัดต้องทำผ่าน Dispatcher เท่านั้น
-3. **Strict 99-Line Compatibility:** สัญญาณทั้งหมดต้องอ้างอิงจากฟิลด์มาตรฐาน 99 บรรทัดที่มี Prefix ครบถ้วน
-4. **Foreground Live Verification:** ทดสอบผ่าน `runner.py` และตรวจ Log รายวินาทีจริงเสมอ
+## 🔀 Routing ตามโหมด (`decision_manager.py`)
+
+| `active_mode` | Engine | โฟลเดอร์ decision |
+|---|---|---|
+| `strategies_mode` ⭐ | `believe_analyzer.analyze_payload_file()` | `data_base/strategies_mode/output_decision/strategies_decision/` |
+| `ai_mode` | `SystemPrompt.process_ai_decision()` | `…/ai_decision/` |
+| `ml_mode` | `MLDispatcher.get_instance().process_payload_file()` | `…/ml_decision/` |
+
+- เลือก payload ล่าสุดจาก mtime (`_latest_payload`) · **ไม่มี payload = `raise FileNotFoundError` (fail-fast)**
+- กันประมวลผลซ้ำด้วย `self._processed`
+- เขียนแบบ atomic: `.tmp` → `flush` → `os.fsync` → `os.replace`
+- Metadata ที่เติมเสมอ: `payload_id`, `payload_filepath` (abspath), `source_part="data_evaluate"`, `mode`, `written_at`
+
+---
+
+## 💎 เส้นทาง strategies → Believe (NEMESIS)
+
+### สัญญา payload ที่ analyzer บังคับ (42 fields — **ขาดตัวเดียว raise**)
+`id, s30_bias, m1_bias, m5_bias, believe_direction, believe_bb_percent_b, believe_bb_touch,
+believe_sto_k/d/zone/cross/hook_confirmed/cross_50, believe_risk_sto_tangled,
+believe_ma_cross, believe_ma_cross_confirmed, believe_risk_grid_block/gray_candle/trap_alert/room_to_run_clear,
+m5_pa_pattern/last_candle_bias/sr_interaction/divergence_alert,
+s30_macd, s30_macd_signal, s30_macd_histogram, s30_rsi, ap_signal, ns_signal,
+believe_confidence, believe_status, m5_trend_type, dl_risk_level, extreme_believe_active,
+m1_adx, m5_quality`
+
+> 🔒 **FIX 2026-09-26:** analyzer **ไม่มีค่า default ประดิษฐ์** อีกต่อไป
+> (เดิมเคยแต่ง `believe_confidence="HIGH"`, `dl_risk_level="LOW"`, `m1_adx=25.0` ฯลฯ)
+> — ฟิลด์ขาด = fail-fast ตามวินัย Zero-Mock
+
+### การตัดสินใจ
+```
+candidate   = believe_direction (CALL/PUT) มิฉะนั้น WAIT   # WAIT เป็นผลถูกต้อง ไม่ถูกแทนด้วยทิศอื่น
+aligned     = s30 == m1 == m5 == candidate
+core        = bollinger_percent AND stochastic AND moving_average      # ต้องผ่านครบ
+filters     = ไม่ grid_block · ไม่ gray_candle · ไม่ stoch_tangled · ไม่ trap · room_to_run ไม่ False
+action      = candidate ถ้า (aligned AND core ครบ AND filters ผ่าน) มิฉะนั้น WAIT
+confidence  = HIGH→85 · MEDIUM→70 · อื่น→60   (WAIT→0)
+expiry      = 3 นาที  (strategies)   # ⚠️ ต่างจาก readme เก่าที่เขียน 5 — ดู DOC_AUDIT M-8
+```
+- **core #1 BB %B:** CALL ผ่านเมื่อ `%B ≤ 0.45` หรือ touch ∈ {LOWER,…,NONE} · PUT เมื่อ `%B ≥ 0.55` หรือ touch ∈ {UPPER,…,NONE}
+- **core #2 STO:** `(extreme OR reversal)` และไม่ tangled · extreme = zone OVERSOLD/"10"/`min(k,d)≤35` (CALL) หรือ OVERBOUGHT/"90"/`max(k,d)≥65` (PUT)
+- **core #3 MA:** `believe_ma_cross` ∈ {GOLDEN_CROSS/UP/…} และ `believe_ma_cross_confirmed = TRUE`
+- secondary (price_action, grid_clear, support_resistance_clear, divergence, macd, rsi, ap, ns) = **confirmation/วินิจฉัยเท่านั้น ไม่บังคับเข้า**
+
+### Decision JSON (ตัวอย่างฟิลด์)
+`ID, symbol, action, expiry_minutes, confidence_score, engine_used="STRATEGY_BELIEVE",
+believe_status, believe_direction, s30/m1/m5_direction, m1_bias, m5_bias, m5_regime, m1_adx,
+risk_level, data_quality, extreme_believe_active, core_conditions{}, secondary_conditions{},
+risk_filters{}, conditions_met, failed_conditions[], reason_th` + metadata ข้างต้น
+
+---
+
+## 🤖 เส้นทาง ai_mode (Cloud AI)
+
+- `ai_dispatcher.SystemPrompt` อ่าน payload 99 บรรทัดจากดิสก์ → ส่ง Gemini (`primary_model` ใน settings)
+- **API key มาจาก environment เท่านั้น** (`GEMINI_API_KEY` ผ่าน `.env`) — `settings.json` เก็บค่าว่าง
+- key ว่าง/bridge ล่ม = **fail-fast ชัดเจน** (ไม่มีการ fallback โมเดล)
+- เขียนเพิ่ม: `data_trade/ai_output/<SYMBOL>/decision_<SYM>_<TS>.json` + CSV audit
+- ⚠️ ยังใช้งานจริงไม่ได้จนกว่าบอสตั้ง `GEMINI_API_KEY`
+
+## 🧠 เส้นทาง ml_mode (Dual-Brain)
+
+- `MLDispatcher` (singleton) → LightGBM + Chronos-2 ONNX → `agreement_valid`
+- ⚠️ ยังใช้งานจริงไม่ได้จนกว่ามีไฟล์ `chronos-2-onnx/model.onnx` (fail-fast ตอนสร้าง engine)
+
+---
+
+## 🛡️ กฎที่เกี่ยวข้อง
+
+| กฎ | เนื้อหา |
+|---|---|
+| Single Gateway | อ่าน payload ผ่าน dispatcher/analyzer ของโหมดเท่านั้น |
+| SSOT | ห้ามคำนวณ indicator ซ้ำ — อ่านจาก payload |
+| Zero-Mock / Fail-Fast | ฟิลด์ขาด/ผิดชนิด = raise · ห้ามค่าแทน |
+| Immutability | ห้าม mutate dict ที่รับมา |
+| Mode routing | เขียน decision ลงโฟลเดอร์โหมดตัวเองเท่านั้น |
+
+📎 ดูเพิ่ม: [ส่วนที่ 4 EXECUTION](../กระบวนการทำงานของบอท%20Part4%20data_trade/กระบวนการทำงานของบอท%20Part4%20data_trade.md) ·
+[ส่วนที่ 2 PROCESS](../กระบวนการทำงานของบอท%20Part2%20data_evaluate/กระบวนการทำงานของบอท%20Part2%20data_evaluate.md) ·
+รายการตรวจทาน: `DOC_AUDIT_2026-09-24.md` (อยู่ในคลังเอกสารของ AI session)

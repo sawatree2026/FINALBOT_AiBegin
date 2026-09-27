@@ -99,7 +99,7 @@ _TF_SECONDS = {'S30':30, 'M1':60, 'M5':300, 'M15':900, 'M30':1800, 'M60':3600, '
 
 - จำกัดขนาดด้วย `.tail(250)` ทุกครั้งทั้งใน `process_candle_refresh` (`data_processor.py:235`) และ `CSVWriter.write` (`csv_writer.py:153, 160`)
 - `merge_candles()` เก็บ buffer `max_candles + 10` = 260 แท่งใน raw store (`data_processor.py:102`, เรียกจาก `process_candle_refresh:221-227`)
-- `get_latest_close(symbol)` อ่าน `_store_m1` ก่อน (ได้ราคา live รวมแท่งกำลังฟอร์ม) ถ้าไม่มีจึง fallback ไป `_completed_candles['M1']` (`data_cache_store.py:201-230`)
+- `get_latest_close(symbol)` อ่าน `_store_m1` **เท่านั้น** — ไม่มีข้อมูล live ใน RAM = `raise ValueError("FAIL-FAST: no live M1 stream data in RAM … substituting completed candles is forbidden")` (`data_cache_store.py:218-229`) · 🔄 แก้ไข 2026-09-26: fallback ไป completed candles **ถูกลบแล้ว** (commit `3a1153c`)
 
 ### 3. Thread-Safe Asynchronous I/O
 
@@ -240,11 +240,11 @@ FINALBOT_Begin/
 | 12 | `data_feed/csv_time_sync.py` | `TimeSyncManager` (Singleton) | `sync_server_time`, `start_time_sync_thread`, `get_broker_epoch`, `calculate_time_block` |
 | 13 | `data_feed/exceptions.py` | 4 คลาส | `DataFeedError` → `ValidationError` / `DataFeedConnectionError` / `DataGapError` |
 | 14 | `bridge_adapter/abstract_class.py` | `IDataSource(ABC)` | `connect`, `disconnect`, `is_connected`, `connected`, `get_open_symbols`, `get_candles`, `start_stream`, `get_server_timestamp`, `get_balance` |
-| 15 | `bridge_adapter/broker_factory.py` | `BrokerFactory` | `create_raw_broker()` เลือกตาม `active_broker` (default/fallback = IQ_OPTION) • `create_broker()` ประกอบ TimeSyncManager + DataAdapter |
+| 15 | `bridge_adapter/broker_factory.py` | `BrokerFactory` | `create_raw_broker()` เลือกตาม `active_broker` — **ไม่มี default**: key หาย/ว่าง = `raise ValueError("…defaulting to IQ_OPTION is forbidden")` (`broker_factory.py:21-22`) • `create_broker()` ประกอบ TimeSyncManager + DataAdapter |
 | 16 | `bridge_iq_adapter/bridge_iq_adapter.py` | `IQOptionAdapter` | Facade รวม Connection + REST + Stream • `get_multi_timeframe` • `get_symbols` (อ่านจาก config) |
 | 17 | `bridge_iq_adapter/connection.py` | `IQConnectionManager` | login `IQ_Option(email,password)` → `api.connect()` → `change_balance("PRACTICE"\|"REAL")` • `get_balance` • `get_server_timestamp` • `ensure_connected` |
 | 18 | `bridge_iq_adapter/rest_fetcher.py` | `IQRestFetcher` | `_CANDLES_LOCK` (global) + `ThreadPoolExecutor(10)` + hard timeout 8s + normalize + Zero Tolerance validations |
-| 19 | `bridge_iq_adapter/stream_manager.py` | `IQStreamManager` | `start_stream` → `api.start_candles_stream(ACTIVE, size, maxdict)` • `get_cached_candles` • `update_with_streaming` (micro-poll 20ms/200ms → REST bootstrap → fail-fast) |
+| 19 | `bridge_iq_adapter/stream_manager.py` | `IQStreamManager` | `start_stream` → `api.start_candles_stream(ACTIVE, size, maxdict)` • `get_cached_candles` • `update_with_streaming` (micro-poll 20ms/200ms) — **ไม่มี REST bootstrap fallback**: WebSocket cache ว่าง = hard fail-fast (`stream_manager.py:132,153`) |
 | 20 | `monitoring/console_dashboard.py` | `setup_logging`, `ConsoleUI`, `thai_console_log`, `disable_quick_edit` | 5 file handlers + console ผ่าน `print()` |
 | 21 | `bridge_quotex_adapter/`, `bridge_pocket_adapter/` | `QuotexAdapter`, `PocketAdapter` | Skeleton 59 บรรทัด — เมธอดส่วนใหญ่ `raise NotImplementedError` |
 
@@ -564,6 +564,12 @@ return completed, block_changed
 | ถ้า error | `logger.exception` + `time.sleep(5.0)` แล้ววนต่อ | `:121-123` |
 
 Console แสดง: `Time Sync : -0.631s` (`console_dashboard.py:281-282`)
+
+---
+
+## 🔒 Single-Instance Lock
+
+`runner.py` ล็อกไฟล์ `logs/runner.lock` ด้วย `msvcrt` (Windows) หรือ `fcntl` (POSIX) — รันได้ทั้ง 2 แพลตฟอร์ม
 
 ---
 

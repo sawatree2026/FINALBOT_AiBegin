@@ -1,67 +1,80 @@
 # 🚀 FINAL_BOT — Intelligent Automated Trading System
 
 > **FINALBOT** is an institutional-grade automated binary options trading system driven by a **4-Stage Quantitative Pipeline**, **Pre-Trade 3D Asset Screening**, and a **Dual-Brain Machine Learning & Cloud AI** analysis engine.
+>
+> ✅ **เอกสารฉบับนี้ตรวจทานให้ตรงโค้ดจริง ณ commit `e709349` (2026-09-26)** — ทุกตัวเลข/เส้นทาง/พารามิเตอร์อ้างอิงจาก source
 
 ---
 
 ## 🌟 Key Features
 
-- 🎯 **Pre-Trade 3D Asset Screening**: Scans 34 focused currency pairs, filtering for Payout $\ge$ 84%, analyzing 7 Quant Skills + 4 Binary-Specific Edges, and calculating Support/Resistance "Room-to-Run" across 4 timeframes.
-- 🏗️ **4-Stage Quantitative Pipeline**: Immutable data ingestion, centralized indicator evaluation, AI/ML decision-making, and strict execution gating.
-- 🧠 **Dual-Brain Analysis**: Switch seamlessly between on-device Machine Learning (`LightGBM` + `Amazon Chronos`) and Cloud Generative AI (`Google Gemini Flash Lite`).
-- 🛡️ **Institutional Risk Management**: 24-point Execution Gate, fixed stake management, daily loss limits, and strict fail-fast validation.
-- ⚡ **Sub-Second Execution**: Time-synced to the millisecond, ensuring precise entry at candle boundaries.
+- 🎯 **Pre-Trade 3D Asset Screening**: scans 34 focused currency pairs, filters for Payout ≥ 84%, analyzes 7 Quant Skills + 4 Binary-Specific Edges, and calculates Support/Resistance "Room-to-Run" across timeframes.
+- 🏗️ **4-Stage Quantitative Pipeline**: immutable data ingestion, centralized indicator evaluation, mode-specific decision-making, and strict execution gating.
+- 🧠 **Dual-Brain Analysis**: on-device ML (`LightGBM` + `Chronos-2 ONNX`) or Cloud Generative AI (`Google Gemini`) or rule-based **Believe (NEMESIS)** — one mode per process.
+- 🛡️ **Institutional Risk Management**: Execution Gate (16 rejection checks) + Money Manager (7 risk gates), fixed stake, daily limits, confidence ≥ 55%, and strict fail-fast validation.
+- 🔐 **Env-only secrets**: `IQ_EMAIL`, `IQ_PASSWORD`, `GEMINI_API_KEY` come from `.env` — `settings.json` keeps them blank.
+- ⚡ **Sub-Second Execution**: time-synced to the millisecond; entries fire at S30 candle boundaries.
 
 ---
 
 ## 🏛️ System Architecture
 
-The system is divided into a **Pre-Trade Screening Phase (Phase 0)** and a **4-Part Live Trading Loop**:
-
 | Phase / Part | Module | Core Responsibility | Status |
 |:---|:---|:---|:---:|
-| **Phase 0** | `symbols_scanner/` | Scans 34 pairs → Filters Payout $\ge$ 84% → Analyzes 7 Skills + 4 Edges + S/R → Ranks and saves Top 4 to `symbols.json`. | 🔒 **Complete** |
-| **Part 1** | `data_feed/` | Connects to broker (IQ Option) → Syncs server time → Fetches/validates the active mode's candles → Writes `data_base/output_feed`. | 🔒 **Immutable** |
-| **Part 2** | `data_evaluate/` | Computes indicators via centralized `IndicatorStore` (SSOT) → Runs 10 Advanced Tools & 6 Tier Engines → Generates a strict 99-line Prompt Payload (`.txt`). | 🔒 **Immutable** |
-| **Part 3** | `data_decision/` | Reads the selected mode's Payload from disk → Runs strategies, Gemini, or ML analysis → Writes a mode-specific Decision JSON. | 🛠️ **Active Dev** |
-| **Part 4** | `data_trade/` | Validates Money Management rules → Passes through 24 Execution Gates (Confidence $\ge$ 60% required) → Executes order via `broker_executor.py` → Tracks results. | 🛠️ **Active Dev** |
+| **Phase 0** | `symbols_scanner/` | Scan 34 pairs → Payout ≥ 84% → 7 Skills + 4 Edges + S/R → rank Top-N to `symbols.json` | 🔒 Complete |
+| **Part 1** | `data_feed/` | Connect IQ Option → sync server time → fetch/validate the mode's candles → write `data_base/<mode>/output_feed` | 🔒 Immutable |
+| **Part 2** | `data_evaluate/<mode>/` | Compute indicators via centralized `IndicatorStore` (SSOT) → run engines/tools → write the **99-line payload** `.txt` | 🔒 Contract-locked |
+| **Part 3** | `data_decision/<mode>/` | Read payload from disk → Believe / Gemini / ML analysis → write mode-specific Decision JSON | 🛠️ Active Dev |
+| **Part 4** | `data_trade/strategies_mode/` | Mode-matched decision read → Execution Gate → Money Manager → Broker Executor → Order Tracker | 🛠️ Active Dev |
 
-### Mode-Specific Timeframes
+> 🧭 **Central dispatcher:** `config_setting/mode_loader.py` normalizes the mode alias and loads the
+> mode-specific orchestrator + executor for all 4 Parts (single source of truth for mode routing).
 
-The evaluation modes use separate data contracts. One process runs one selected mode at a time; changing mode changes the analysis path and the candle timeframes that must be prepared.
+### Mode-Specific Timeframes & Contracts
 
-| Mode | Required timeframes | Role |
+| Mode | Required timeframes | Role / notes |
 |:---|:---|:---|
-| `strategies_mode` | **S30, M1, M5** | Rule-based strategies; M15 is not fetched or calculated. The legacy `m15_bias` payload field remains as `NOT_CALCULATED` for schema compatibility only. |
-| `ai_mode` | **M15** plus the timeframes required by the AI prompt | Cloud AI analysis with M15 as the primary higher-timeframe context. |
-| `ml_mode` | **M15** plus the timeframes required by the ML/Chronos model | Machine-learning analysis with M15 as the higher-timeframe context. |
+| `strategies_mode` | **S30, M1, M5** (+ **M15 fetched** for the `m15_window` check) | Rule-based Believe · S30=Entry, M1=Trigger, M5=Context · **M15 is never emitted on the payload** (`m15:` section disabled) · **expiry = 3 นาที** |
+| `ai_mode` | M1, M5, **M15** | Cloud Gemini analysis · expiry = 5 นาที |
+| `ml_mode` | M1, M5, **M15** | LightGBM + Chronos · expiry = 5 นาที |
 
-Do not mix a timeframe from another mode into the current mode's payload. `strategies_mode` is intentionally separated from `ai_mode` and `ml_mode`; it is not merely a different decision engine over the same candle set.
+Do not mix a timeframe from another mode into the current mode's payload.
 
-The durable mode routing is:
+### Durable mode routing (disk-only boundaries)
 
-`runner.py → data_feed/output_feed → data_evaluate/<mode>/output_evaluate/<mode> → data_decision/<mode>/output_decision/<mode> → data_trade`
+```text
+runner.py → data_feed → data_base/<mode>/output_feed/<SYMBOL>/<SYMBOL>_<TF>.csv
+          → data_evaluate/<mode> → data_base/<mode>/output_evaluate/<SYMBOL>/<ID>.txt   (99 lines)
+          → data_decision/<mode> → data_base/<mode>/output_decision/<mode>_decision/<SYMBOL>/<ID>.json
+          → data_trade (mode-matched) → gate → money → broker → order tracker
+          → data_base/<mode>/output_trade/trades_history.csv
+```
 
-Decision files are written to `strategies_decision`, `ai_decision`, or `ml_decision` according to the active mode. Part 4 selects only the matching directory, then reads the referenced Payload from disk for the final gate.
+Part boundaries are **disk-only**: DataFrames/payloads never cross Parts through RAM.
+A missing file, invalid mode, missing broker connection, or disabled live execution stops the cycle explicitly.
 
 ---
 
 ## 🗂️ Project Directory Structure
 
 ```text
-FINALBOT_Begin/
+FINALBOT_AiBegin/
 ├── main.py                      # System entry point
-├── runner.py                    # Core loop controller (PureAIRunner), time-synced execution
-├── .env                         # Environment variables & API Keys (Do not commit)
-├── config_setting/              # Centralized configuration (settings.json, symbols.json)
-├── symbols_scanner/             # [Phase 0] Pre-trade asset screening & ranking engine
-├── data_feed/                   # [Part 1] Broker data ingestion & validation (Immutable)
-├── data_evaluate/               # [Part 2] Indicator computation & payload generation (Immutable)
-├── data_decision/              # [Part 3] Strategies, ML/Chronos, and Cloud AI dispatchers
-├── data_trade/                  # [Part 4] Risk management, execution gates, and order tracking
-├── data_base/                   # Output storage (OHLCV CSVs, 99-line payloads, trade history)
-├── logs/                        # Second-by-second execution and error logs
-└── docs/                        # Comprehensive system documentation and architecture specs
+├── runner.py                    # Core loop controller (DataFeedRunner), S30-boundary execution
+├── requirements.txt             # Python dependencies (import-scanned)
+├── .env.example                 # Template — copy to .env and fill real secrets (never commit .env)
+├── .gitignore                   # Keeps .env / logs / data_base / backups out of git
+├── agent.md                     # Athena operating rules (project governance)
+├── config_setting/              # settings.json (SSOT), symbols.json, mode_loader.py, config_loader.py
+├── symbols_scanner/             # [Phase 0] pre-trade screening & ranking
+├── data_feed/                   # [Part 1] broker ingestion & validation
+├── data_evaluate/               # [Part 2] strategies_mode / ai_mode / ml_mode orchestrators
+├── data_decision/               # [Part 3] strategies_mode (Believe) / ai_mode (Gemini + ML)
+├── data_trade/                  # [Part 4] strategies_mode/executor_manager + execution_gate/*
+├── data_base/                   # per-mode outputs: output_feed / output_evaluate / output_decision / output_trade
+├── athena_traderist/            # ⚠️ parallel Athena experiment (state files only — see audit F-8)
+├── logs/                        # second-by-second execution & error logs
+└── docs/                        # Part 1-4 docs + `strategies nemesis/` (E-BOOK V1/V2)
 ```
 
 ---
@@ -69,58 +82,52 @@ FINALBOT_Begin/
 ## ⚙️ Getting Started
 
 ### 1. Prerequisites
-- Python 3.10+
-- IQ Option Account (Demo or Live)
-- Required Python packages (e.g., `iqoptionapi`, `lightgbm`, `pandas`, `numpy`, `google-generativeai`, `ta-lib`)
+- Python 3.10+ (repo มี `.pyc` ของ 3.11/3.12 — ควร pin ให้ตรงเครื่องที่รัน)
+- IQ Option account (**DEMO/PRACTICE** recommended)
+- `pip install -r requirements.txt`
+  (imports จริง: `iqoptionapi`, `pandas`, `numpy`, `lightgbm`, `google-generativeai`,
+  `python-dotenv`, `PyYAML`, `requests`, `beautifulsoup4`, `onnxruntime`)
+- Single-instance lock ใช้ `msvcrt` บน Windows และ `fcntl` บน POSIX
 
 ### 2. Configuration
-1. Set broker credentials in the process environment; never commit them:
-   - `IQ_EMAIL`
-   - `IQ_PASSWORD`
-2. Review and adjust `config_setting/settings.json` for:
-   - Active mode (`strategies_mode`, `ai_mode`, or `ml_mode`)
-   - Risk parameters (Fixed stake amount, daily loss limits)
-   - Target payout percentage (default: 84%)
-   - Broker account (`DEMO`/`PRACTICE` for broker-connected dry operation, or `REAL`)
-   - `data_trade.enable_live_execution=true`; disabling it is a fail-fast error, not signal-only/mock execution.
+1. **Secrets ผ่าน environment เท่านั้น:**
+   ```powershell
+   copy .env.example .env     # แล้วเติม IQ_EMAIL / IQ_PASSWORD / GEMINI_API_KEY
+   ```
+   `config_setting/settings.json` เก็บค่าเหล่านี้เป็นค่าว่างโดยเจตนา
+2. ปรับ `settings.json` สำหรับ: active mode · risk parameters (stake, daily limits) ·
+   target payout (default 84) · broker account (`DEMO`/`PRACTICE`/`REAL`) ·
+   `data_trade.enable_live_execution` (ปิด = fail-fast error ไม่ใช่ signal-only)
 
-### 3. Running the System
+### 3. Running
 
-**Step 1: Run the Asset Scanner (Phase 0)**  
-*(This will generate the top 4 ranked pairs in `config_setting/symbols.json`)*
+**Step 1 — Phase 0 scanner**
 ```bash
 python symbols_scanner/main_filter.py
 python symbols_scanner/secondary_filter.py
 ```
 
-**Step 2: Start the Live Trading Loop**
+**Step 2 — live loop (one mode per process)**
 ```bash
 python runner.py --mode strategies
 # or: python runner.py --mode ai
 # or: python runner.py --mode ml
 ```
 
-The selected mode is process-wide for the complete cycle. `runner.py` passes only symbols between coordinators; each Part reads the previous Part's durable files from disk. The broker adapter is the real configured adapter (`IQ_OPTION` by default); no mock, fake broker, simulated order, or signal-only execution path is permitted.
+The broker adapter is the real configured adapter (`IQ_OPTION`); no mock, fake broker,
+simulated order, or signal-only execution path is permitted.
 
 ### End-to-End Flow
 
 ```text
 main.py / runner.py
   -> BrokerFactory -> real IQ Option adapter (DEMO/PRACTICE or REAL)
-  -> Part 1 data_feed
-       -> data_base/output_feed/<SYMBOL>/<SYMBOL>_<TIMEFRAME>.csv
-  -> Part 2 data_evaluate/<active_mode>
-       -> data_base/output_evaluate/<active_mode>/<SYMBOL>/<ID>.txt
-  -> Part 3 data_decision
-       -> strategies_decision, ai_decision, or ml_decision/<SYMBOL>/<ID>.json
-  -> Part 4 data_trade
-       -> mode-matched decision JSON
-       -> Payload filepath from JSON
-       -> ExecutionGate -> MoneyManager -> BrokerExecutor -> real broker order
-       -> OrderTracker / trade history
+  -> Part 1 data_feed -> data_base/<mode>/output_feed/<SYMBOL>/<SYMBOL>_<TF>.csv
+  -> Part 2 orchestrator (<mode>) -> data_base/<mode>/output_evaluate/<SYMBOL>/<ID>.txt   (99 lines)
+  -> Part 3 (<mode>) -> data_base/<mode>/output_decision/<mode>_decision/<SYMBOL>/<ID>.json
+  -> Part 4 (mode-matched) -> ExecutionGate -> MoneyManager -> BrokerExecutor -> OrderTracker
+  -> data_base/<mode>/output_trade/trades_history.csv
 ```
-
-Part boundaries are disk-only. DataFrames, payload dictionaries, and payload text may exist inside one Part while it is processing, but they must not be passed to another Part. A missing file, invalid mode, missing broker connection, or disabled live execution stops the cycle explicitly.
 
 ---
 
@@ -136,7 +143,7 @@ Part boundaries are disk-only. DataFrames, payload dictionaries, and payload tex
 01:35:05 - Account: DEMO | Balance: $24.25
 01:35:05 - Economic Calendar loaded for today.
 01:35:11 - ML Brain connected successfully (Model: LIGHTGBM_CHRONOS)
-01:35:15 - Candle data validated (250 candles S30/M1/M5): 4 pairs ready.
+01:35:15 - Candle data validated (250 candles): pairs ready.
 01:35:15 - Awaiting next S30 boundary for analysis cycle (Starts at 01:35:31)...
 ```
 
@@ -144,55 +151,67 @@ Part boundaries are disk-only. DataFrames, payload dictionaries, and payload tex
 
 ## 🛡️ Strict System Disciplines (Core Rules)
 
-1. **Part 1/2 contract**: `data_feed/` and `data_evaluate/` preserve the SSD boundary, timeframe contract, and 99-line payload schema; changes must remain compatible with those contracts.
-2. **Single Source of Truth (SSOT)**: No duplicate indicator calculations. All modules must reference the centralized `IndicatorStore`.
-3. **Single Gateway Authority**: Only the active mode's Part 2 `orchestrator.py` reads raw CSV files, and Part 3 reads the persisted payload through the mode's decision dispatcher.
-4. **99-Line Explicit Schema**: Prompt payload files must be **exactly 99 lines**, with a strict retention policy of the latest 30 files per asset.
-5. **Background Process Rule**: Always test via `runner.py` in an open terminal. **Never** leave the process running hidden in the background. Kill it immediately after testing.
+1. **Part 1/2 contract**: `data_feed/` และ `data_evaluate/` รักษา SSD boundary, timeframe contract และ
+   payload schema 99 บรรทัด — การแก้ใด ๆ ต้องคงสัญญาเหล่านี้
+2. **99-line payload**: serializer กรองด้วย whitelist `allowed_prefixes` → เกิน 99 = fail-fast · ไม่ครบ = pad
+3. **Single Source of Truth**: indicator ทั้งหมดคำนวณผ่าน `IndicatorStore` เท่านั้น
+4. **Single Gateway Authority**: orchestrator ของโหมดอ่าน CSV ดิบ · Part 3 อ่าน payload จากดิสก์ ·
+   Part 4 อ่าน decision ของโหมดตัวเองเท่านั้น
+5. **Zero-Mock / Zero-Fallback**: ข้อมูลขาด = raise · ห้ามค่าประมาณ ค่าเก่า หรือโมเดลแทน
+6. **Env-only secrets**: ห้าม commit ค่า secret ลงไฟล์ใด ๆ
+7. **Background Process Rule**: เทสต์ผ่าน `runner.py` แบบ foreground ใน terminal ที่มองเห็น และ kill ทันทีเมื่อจบ
 
 ---
 
 ## 📈 Trading Strategy — Believe (NEMESIS)
 
-**Believe** คือกลยุทธ์หลักที่บอทใช้ในการตัดสินใจเข้าออเดอร์ ออกแบบโดย NEMESIS TRADER
+**Believe** คือกลยุทธ์หลักของ `strategies_mode` ออกแบบโดย NEMESIS TRADER
+(อ้างอิง E-BOOK V1/V2 ใน `docs/strategies nemesis/`)
 
-Part 2 writes the Believe payload with the fixed roles `S30 = Entry`, `M1 = Trigger`,
-and `M5 = Context`, with a fixed five-minute holding period. The payload includes
-separate S30 indicators, M1/M5 evidence, divergence and candle-risk fields, and
-grid candidates for all three timeframes. It never calculates or fetches M15 in
-`strategies_mode`; the legacy M15 compatibility field is `NOT_CALCULATED`.
-
-| รายการ | ค่า |
+| รายการ | ค่าจริงในโค้ด |
 |:---|:---|
-| **Candle TF** | S30 (30 วินาที) — Primary signal chart |
-| **Expiry / ถือครอง** | 5 นาที |
-| **TF ที่ใช้ในระบบ** | S30 (Entry), M1 (Trigger), M5 (Context) |
+| Candle TF | **S30** = Entry · **M1** = Trigger · **M5** = Context |
+| Expiry / ถือครอง | **3 นาที** (strategies) · gate บังคับค่านี้ · ai/ml = 5 นาที |
+| รอบวิเคราะห์ | ทุก S30 boundary (30 วินาที) |
 
-### 🔢 Indicators (Core — 3 ตัวบังคับ)
+### Indicators (core 3 ตัว — ต้องผ่านครบ)
 
-| # | Indicator | Settings | เงื่อนไขเข้า CALL | เงื่อนไขเข้า PUT |
-|---|-----------|----------|-----------------|----------------|
-| 1 | **Bollinger Band %B** | Period 20, StdDev 2 | BB% แตะเส้น 0 (ล่าง) | BB% แตะเส้น 1 (บน) |
-| 2 | **Stochastic** | **13-10-3**, เส้น 10/90 | STO โผล่ขึ้นจากเส้น 10, hook up, ข้าม 50 | STO โผล่ลงจากเส้น 90, hook down, ข้าม 50 |
-| 3 | **MA Crossover** | Fast (แดง) vs Slow (เขียว) | เส้นแดงตัดเขียวขึ้น | เส้นแดงตัดเขียวลง |
+| # | Indicator | Settings จริง | เงื่อนไข CALL | เงื่อนไข PUT |
+|---|-----------|----------|----------------|----------------|
+| 1 | **Bollinger Band %B** | 20, 2σ | `%B ≤ 0.45` หรือ touch LOWER/NONE | `%B ≥ 0.55` หรือ touch UPPER/NONE |
+| 2 | **Stochastic** | 13-10-3 · เส้น 10/90 | extreme (zone OVERSOLD/10 หรือ `min(k,d) ≤ 35`) **OR** reversal (hook/cross50) | extreme (OVERBOUGHT/90 หรือ `max(k,d) ≥ 65`) **OR** reversal · และต้องไม่ tangled |
+| 3 | **MA Crossover** | EMA 3 (แดง) vs EMA 6 (เขียว) | ตัดขึ้น + confirmed | ตัดลง + confirmed |
 
-### 🛑 Risk Filters (บังคับทุกข้อ)
-1. ห้ามมีเส้นกริด (Support/Resistance) ขวางข้างหน้า
-2. ห้ามมีแท่งเทียนสีเทา (Gray/Doji candle)
-3. STO ห้ามพันกัน (ห้าม tangled)
+> 📚 **ต่างจาก E-BOOK อย่างไร:** เล่ม V2 น.38 แสดง BB period **41** และ MA ช้า **SMA 6** และบังคับ
+> "BB/STO ต้องแตะเส้น 0/1 · 90/10" — โค้ดปัจจุบันใช้ 20/EMA6 และผ่อนปรนเป็น 0.45/0.55 · ≤35/≥65
+> (บันทึกเป็นประเด็นเปิด F-4 ในรายงาน audit ของ AI session — ยังรอการเคาะจากบอส)
 
-### 🔀 เทคนิคผสมผสาน (EXTREME level)
-ผสม Divergence จาก AP/NS (STO/RSI) + MACD ข้ามเส้น 0 ก่อน แล้วหาจุดเข้าด้วย Believe
+### Risk filters (บังคับทุกข้อ)
+1. ห้ามมีเส้นกริด (S/R) ขวางข้างหน้า (`believe_risk_grid_block`)
+2. ห้ามมีแท่งเทียนสีเทา/โดจิ (`believe_risk_gray_candle`)
+3. STO ห้ามพันกัน (`believe_risk_sto_tangled`)
+4. (เพิ่มในโค้ด) ไม่มี trap alert · room-to-run ผ่าน
+
+### Multi-TF alignment
+`S30 == M1 == M5 == candidate` มิฉะนั้น `WAIT` · secondary conditions
+(price action, divergence, MACD, RSI, AP, NS) เป็น confirmation/วินิจฉัย ไม่บังคับเข้า
+
+### 🔀 EXTREME level
+ผสม Divergence (AP/NS: STO/RSI) + MACD เทียบเส้น 0 ก่อน แล้วหาจุดเข้าด้วย Believe
+(ในโค้ด: `extreme_believe_active` = diagnostic)
 
 ---
 
 ## 📚 Documentation
 
-For deep dives into specific components, refer to the `docs/` directory:
-- [กระบวนการทำงานของบอท ส่วนที่ 1 INPUT](docs/กระบวนการทำงานของบอท%20ส่วนที่%201%20INPUT/กระบวนการทำงานของบอท%20ส่วนที่%201%20INPUT.md)
-- [กระบวนการทำงานของบอท ส่วนที่ 2 PROCESS](docs/กระบวนการทำงานของบอท%20ส่วนที่%202%20PROCESS/7_กระบวนการทำงานของบอท%20ส่วนที่%202%20PROCESS.md)
-- [กระบวนการทำงานของบอท ส่วนที่ 3 OUTPUT](docs/กระบวนการทำงานของบอท%20ส่วนที่%203%20OUTPUT/กระบวนการทำงานของบอท%20ส่วนที่%203%20OUTPUT.md)
-- [Model Critique & Roadmap](docs/MODEL_CRITIQUE_AND_ROADMAP.md)
+- [ส่วนที่ 1 INPUT — `data_feed/`](docs/กระบวนการทำงานของบอท%20Part1%20data_feed/กระบวนการทำงานของบอท%20Part1%20data_feed.md)
+- [ส่วนที่ 2 PROCESS — `data_evaluate/`](docs/กระบวนการทำงานของบอท%20Part2%20data_evaluate/กระบวนการทำงานของบอท%20Part2%20data_evaluate.md)
+- [ส่วนที่ 3 DECISION — `data_decision/`](docs/กระบวนการทำงานของบอท%20Part3%20data_decision/กระบวนการทำงานของบอท%20ส่วนที่%203%20OUTPUT.md)
+- [ส่วนที่ 4 EXECUTION — `data_trade/`](docs/กระบวนการทำงานของบอท%20Part4%20data_trade/กระบวนการทำงานของบอท%20Part4%20data_trade.md)
+- [E-BOOK NEMESIS V1/V2 + indicator scripts](docs/strategies%20nemesis/)
+
+> 🔧 ลิงก์ชุดเดิมชี้ไปยังโฟลเดอร์ที่ไม่มีอยู่จริง (`…ส่วนที่ 1 INPUT/` ฯลฯ) และ `docs/MODEL_CRITIQUE_AND_ROADMAP.md`
+> ไม่เคยมีใน repo — แก้ไขแล้วในการตรวจทาน 2026-09-26
 
 ---
 > **⚠️ Disclaimer**: This system is for educational and quantitative research purposes. Trading binary options carries a high level of risk and may not be suitable for all investors. Always test thoroughly in a DEMO environment before deploying real capital.
