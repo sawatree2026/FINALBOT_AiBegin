@@ -1234,9 +1234,7 @@ class Orchestrator:
         # Believe is evaluated in the configured roles:
         # S30 entry, M1 trigger, M5 context.
         bb_pct_b = _num(s30.get("bb_percent_b"))
-        if not (0 <= bb_pct_b <= 1):
-            raise ValueError(f"FAIL-FAST: S30 %B out of [0,1] ({bb_pct_b:.4f}) - clamping is forbidden")
-
+        # %B สามารถทะลุ 0 หรือ 1 ได้เมื่อราคาทะลุขอบนอก (ไม่ควรบล็อกด้วย ValueError)
         stoch_k = _num(s30.get("stoch_k"))
         stoch_d = _num(s30.get("stoch_d"))
         rsi = _num(s30.get("rsi"))
@@ -1324,8 +1322,8 @@ class Orchestrator:
 
         # ปลดล็อกระบบคะแนนและใช้ข้อมูลตั้งต้นจากหน้าต่าง setup (10 แท่ง) 
         # เพื่อเปิดทางให้ Part 3 ทำงานต่อ
-        bullish_signal = bullish_structure and (bb_touch_low or sto_touch_low)
-        bearish_signal = bearish_structure and (bb_touch_high or sto_touch_high)
+        bullish_signal = bullish_structure and (s30.get("bb_touch_low", False) or s30.get("sto_touch_low", False))
+        bearish_signal = bearish_structure and (s30.get("bb_touch_high", False) or s30.get("sto_touch_high", False))
 
         if bullish_signal and bearish_signal:
             bullish_signal = False
