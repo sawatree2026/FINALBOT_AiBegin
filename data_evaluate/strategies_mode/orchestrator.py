@@ -203,7 +203,7 @@ class Orchestrator:
         if not os.path.isdir(base_dir) and os.path.isdir(os.path.join("data_base", "strategies_mode", "output_feed")):
             base_dir = os.path.join("data_base", "strategies_mode", "output_feed")
         candles_dict = {}
-        for tf in ["S30", "M1", "M15"]:
+        for tf in ["S30", "M1", "M5", "M15"]:
             file_path = os.path.join(base_dir, symbol, f"{symbol}_{tf}.csv")
             if not os.path.exists(file_path):
                 raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
@@ -291,26 +291,19 @@ class Orchestrator:
         bb_width_val = bb_upper_val - bb_lower_val
         bb_pct_b = (c - bb_lower_val) / (bb_width_val + 1e-9)
 
-        recent_win = min(10, len(close_series))
-        recent_h = high_series.tail(recent_win)
-        recent_l = low_series.tail(recent_win)
-        recent_c = close_series.tail(recent_win)
-        recent_upper = (bb_mid_s + bb_std_dev * bb_std_s).tail(recent_win)
-        recent_lower = (bb_mid_s - bb_std_dev * bb_std_s).tail(recent_win)
-
         bb_touch = "NONE"
-        if (recent_h >= recent_upper).any() or (recent_c >= recent_upper).any() or bb_pct_b >= 1.0:
+        if h >= bb_upper_val or c >= bb_upper_val:
             bb_touch = "UPPER"
-        elif (recent_l <= recent_lower).any() or (recent_c <= recent_lower).any() or bb_pct_b <= 0.0:
+        elif l <= bb_lower_val or c <= bb_lower_val:
             bb_touch = "LOWER"
         elif abs(c - bb_middle_val) < (bb_width_val * 0.05):
             bb_touch = "MIDDLE"
 
-        # 4. Stochastic (13, 10, 3) - Nemesis V.2 p.38
-        low_min = low_series.rolling(13).min()
-        high_max = high_series.rolling(13).max()
+        # 4. Stochastic (14, 3, 3)
+        low_min = low_series.rolling(14).min()
+        high_max = high_series.rolling(14).max()
         raw_k = 100.0 * (close_series - low_min) / (high_max - low_min + 1e-9)
-        sto_k_s = raw_k.rolling(10).mean()
+        sto_k_s = raw_k.rolling(3).mean()
         sto_d_s = sto_k_s.rolling(3).mean()
 
         sto_k_val = round(float(sto_k_s.iloc[-1]), 2)
@@ -318,13 +311,12 @@ class Orchestrator:
         prev_k = float(sto_k_s.iloc[-2]) if len(sto_k_s) > 1 else sto_k_val
         prev_d = float(sto_d_s.iloc[-2]) if len(sto_d_s) > 1 else sto_d_val
 
-        recent_k_5 = sto_k_s.tail(5)
-        if (recent_k_5 <= 10.0).any() or sto_k_val <= 10.0:
+        if sto_k_val <= 10.0:
             sto_zone = "OVERSOLD_10"
-        elif (recent_k_5 >= 90.0).any() or sto_k_val >= 90.0:
-            sto_zone = "OVERBOUGHT_90"
         elif sto_k_val <= 20.0:
             sto_zone = "OVERSOLD_20"
+        elif sto_k_val >= 90.0:
+            sto_zone = "OVERBOUGHT_90"
         elif sto_k_val >= 80.0:
             sto_zone = "OVERBOUGHT_80"
         else:
@@ -338,11 +330,11 @@ class Orchestrator:
             sto_cross = "NONE"
 
         sto_cross_50 = (prev_k < 50.0 and sto_k_val >= 50.0) or (prev_k > 50.0 and sto_k_val <= 50.0)
-        # Nemesis V.2 p.37, 44: STO emerges from 10/90 and hooks
-        sto_hook_confirmed = (
-            (sto_k_val > prev_k and (prev_k <= 15.0 or (recent_k_5 <= 10.0).any())) or
-            (sto_k_val < prev_k and (prev_k >= 85.0 or (recent_k_5 >= 90.0).any()))
-        )
+        if len(sto_k_s) >= 3:
+            p2_k = float(sto_k_s.iloc[-3])
+            sto_hook_confirmed = (p2_k > prev_k and sto_k_val > prev_k and prev_k < 20.0) or (p2_k < prev_k and sto_k_val < prev_k and prev_k > 80.0)
+        else:
+            sto_hook_confirmed = False
         sto_tangled = abs(sto_k_val - sto_d_val) < 1.5
 
         # 5. Moving Averages (EMA 3, SMA 6)
@@ -361,10 +353,10 @@ class Orchestrator:
             ma_cross = "NONE"
         ma_cross_confirmed = (ma_cross != "NONE") or (ma_fast_val > ma_slow_val and bias == "BULLISH") or (ma_fast_val < ma_slow_val and bias == "BEARISH")
 
-        # 6. MACD (15, 35, 9) - Nemesis V.2 p.38 / p.50
-        ema15 = close_series.ewm(span=15, adjust=False).mean()
-        ema35 = close_series.ewm(span=35, adjust=False).mean()
-        macd_line = ema15 - ema35
+        # 6. MACD (12, 26, 9)
+        ema12 = close_series.ewm(span=12, adjust=False).mean()
+        ema26 = close_series.ewm(span=26, adjust=False).mean()
+        macd_line = ema12 - ema26
         signal_line = macd_line.ewm(span=9, adjust=False).mean()
         hist = macd_line - signal_line
 
@@ -434,7 +426,7 @@ class Orchestrator:
         else:
             pa_pattern = "NONE"
 
-        # 10. Divergence (Nemesis V.2 p.50: STO and RSI Divergence)
+        # 10. Divergence
         div_alert = "NONE"
         div_type = "NONE"
         div_source = "NONE"
@@ -446,39 +438,14 @@ class Orchestrator:
             sto_last = sto_k_val
             sto_prev_low = sto_k_s.iloc[-15:-5].min()
             sto_prev_high = sto_k_s.iloc[-15:-5].max()
-            rsi_last = rsi_val
-            rsi_prev_low = rsi_s.iloc[-15:-5].min()
-            rsi_prev_high = rsi_s.iloc[-15:-5].max()
-
-            sto_bull = (c_last < c_prev_low and sto_last > sto_prev_low)
-            sto_bear = (c_last > c_prev_high and sto_last < sto_prev_high)
-            rsi_bull = (c_last < c_prev_low and rsi_last > rsi_prev_low)
-            rsi_bear = (c_last > c_prev_high and rsi_last < rsi_prev_high)
-
-            if sto_bull and rsi_bull:
-                div_alert = "STO_RSI_BULLISH"
-                div_type = "REGULAR"
-                div_source = "STO_AND_RSI"
-            elif sto_bull:
+            if c_last < c_prev_low and sto_last > sto_prev_low:
                 div_alert = "STO_BULLISH"
                 div_type = "REGULAR"
                 div_source = "STO"
-            elif rsi_bull:
-                div_alert = "RSI_BULLISH"
-                div_type = "REGULAR"
-                div_source = "RSI"
-            elif sto_bear and rsi_bear:
-                div_alert = "STO_RSI_BEARISH"
-                div_type = "REGULAR"
-                div_source = "STO_AND_RSI"
-            elif sto_bear:
+            elif c_last > c_prev_high and sto_last < sto_prev_high:
                 div_alert = "STO_BEARISH"
                 div_type = "REGULAR"
                 div_source = "STO"
-            elif rsi_bear:
-                div_alert = "RSI_BEARISH"
-                div_type = "REGULAR"
-                div_source = "RSI"
 
         # 11. M1 Grid
         m1_last = m1.iloc[-1]
@@ -743,6 +710,9 @@ class Orchestrator:
             elif 16 <= h < 21: return "NY_AFTERNOON"
             else:             return "SYDNEY_OPEN"
 
+        # ── NEMESIS E-BOOK context (N-1/N-2/N-8) — FIX 2026-09-27 ──
+        nemesis_ctx = self._calculate_nemesis_context(candles_dict.get('S30'), candles_dict.get('M1'), pip_scale)
+
         supplementary_data = {
             'meta': {
                 'timestamp': p.get('timestamp', datetime.now().isoformat()),
@@ -771,6 +741,7 @@ class Orchestrator:
             'supplementary_engines': p.get('supplementary_engines', {}),
             'recent_ai_memory': list(self.ai_memory),
             'believe': p.get('believe'),
+            'nemesis_ctx': nemesis_ctx,
             'ap_confirmation': p.get('ap_confirmation'),
             'ns_confirmation': p.get('ns_confirmation'),
             'extreme_believe': p.get('extreme_believe'),
@@ -1017,7 +988,7 @@ class Orchestrator:
         low = pd.to_numeric(df["low"], errors="coerce")
         # Believe contract: BB(20,2), Stochastic(13,10,3), and MA(3,6).
         ema3 = close.ewm(span=3, adjust=False).mean()
-        ema6 = close.rolling(6).mean()
+        ema6 = close.ewm(span=6, adjust=False).mean()
         ema20 = close.ewm(span=20, adjust=False).mean()
         bollinger_percent = assemble_bollinger_percent(
             close=float(s30_bollinger_base["close"]),
@@ -1034,7 +1005,7 @@ class Orchestrator:
         rsi = 100 - (100 / (1 + rs))
         if pd.isna(rsi.iloc[-1]):
             raise ValueError("FAIL-FAST: RSI is NaN - neutral substitution is forbidden")
-        macd = close.ewm(span=15, adjust=False).mean() - close.ewm(span=35, adjust=False).mean()
+        macd = close.ewm(span=12, adjust=False).mean() - close.ewm(span=26, adjust=False).mean()
         macd_signal = macd.ewm(span=9, adjust=False).mean()
         def last(series):
             if pd.isna(series.iloc[-1]):
@@ -1151,6 +1122,68 @@ class Orchestrator:
             "timeframes": per_tf,
         }
 
+    @staticmethod
+    def _calculate_nemesis_context(s30: pd.DataFrame, m1: pd.DataFrame, pip_scale: float) -> Dict[str, Any]:
+        """NEMESIS E-BOOK context (FIX 2026-09-27): N-1 gray 15-min window, N-8 avoid-candle,
+        N-2 EUF(Engulfing) M1 support/resistance with 3-test degradation (บทที่ 2)."""
+        if s30 is None or len(s30) < 31 or m1 is None or len(m1) < 30:
+            raise ValueError("FAIL-FAST: insufficient candles for NEMESIS context")
+        o = pd.to_numeric(s30["open"], errors="coerce"); c = pd.to_numeric(s30["close"], errors="coerce")
+        h = pd.to_numeric(s30["high"], errors="coerce"); lo = pd.to_numeric(s30["low"], errors="coerce")
+        body = (c - o).abs(); rng = h - lo
+        gray = (body < rng * 0.05) | (c == o)                 # same rule as is_gray (:277)
+        gray_window_15m = bool(gray.tail(30).any())           # 30 x S30 = 15 minutes
+        # N-8: previous candle must not be gray / body:wick 1:1 / single long wick (น.10)
+        po, pc = float(o.iloc[-2]), float(c.iloc[-2])
+        ph, pl = float(h.iloc[-2]), float(lo.iloc[-2])
+        p_body = abs(pc - po); p_rng = ph - pl
+        p_uw = ph - max(po, pc); p_lw = min(po, pc) - pl
+        p_gray = p_body < p_rng * 0.05 or pc == po
+        p_one_to_one = p_rng > 0 and abs(p_body - (p_rng - p_body)) <= p_rng * 0.10
+        p_long_wick = p_rng > 0 and max(p_uw, p_lw) >= p_rng * 0.50 and p_body <= p_rng * 0.30
+        prev_candle_bad = bool(p_gray or p_one_to_one or p_long_wick)
+        # N-2: EUF levels on M1 (RG DOWN = resistance, GR UP = support) + test count
+        mo = pd.to_numeric(m1["open"], errors="coerce"); mc = pd.to_numeric(m1["close"], errors="coerce")
+        mh = pd.to_numeric(m1["high"], errors="coerce"); ml = pd.to_numeric(m1["low"], errors="coerce")
+        mb = (mc - mo).abs()
+        start = max(1, len(m1) - 120)
+        levels = []
+        for i in range(start, len(m1) - 1):
+            prev_bull = mc.iloc[i - 1] > mo.iloc[i - 1]; prev_bear = mc.iloc[i - 1] < mo.iloc[i - 1]
+            cur_bull = mc.iloc[i] > mo.iloc[i]; cur_bear = mc.iloc[i] < mo.iloc[i]
+            bigger = mb.iloc[i] > mb.iloc[i - 1]
+            if cur_bull and prev_bear and bigger and mc.iloc[i] > mh.iloc[i - 1]:
+                levels.append(("support", float(ml.iloc[i]), i))        # GR UP
+            elif cur_bear and prev_bull and bigger and mc.iloc[i] < ml.iloc[i - 1]:
+                levels.append(("resistance", float(mh.iloc[i]), i))     # RG DOWN
+        price = float(c.iloc[-1])
+        enriched = []
+        for kind, lp, idx in levels:
+            tests = int(sum(1 for j in range(idx + 1, len(m1)) if ml.iloc[j] <= lp <= mh.iloc[j]))
+            enriched.append({"kind": kind, "price": lp, "tests": tests, "fresh": tests < 3})
+        def _block(direction: str) -> bool:
+            near = 1.0 * (0.01 if pip_scale == 100.0 else 0.0001)  # 1.0 pip in price units
+            for e in enriched:
+                if not e["fresh"]:
+                    continue
+                if direction == "CALL" and e["kind"] == "resistance" and 0 < e["price"] - price < near:
+                    return True
+                if direction == "PUT" and e["kind"] == "support" and 0 < price - e["price"] < near:
+                    return True
+            return False
+        fresh_in_dir = [e for e in enriched if e["fresh"] and
+                        ((e["kind"] == "resistance" and e["price"] > price) or
+                         (e["kind"] == "support" and e["price"] < price))]
+        nearest_tests = min((e["tests"] for e in fresh_in_dir), default=0)
+        return {
+            "gray_window_15m": gray_window_15m,
+            "prev_candle_bad": prev_candle_bad,
+            "sr_block_call": _block("CALL"),
+            "sr_block_put": _block("PUT"),
+            "sr_nearest_fresh_tests": int(nearest_tests),
+            "euf_levels": len(enriched),
+        }
+
     def _enrich_believe_analysis(self, payload: dict) -> dict:
         """Build Believe from S30 entry, M1 trigger, and M5 context."""
         s30 = payload.get("s30", {}) or {}
@@ -1173,8 +1206,8 @@ class Orchestrator:
         # Believe is evaluated in the configured roles:
         # S30 entry, M1 trigger, M5 context.
         bb_pct_b = _num(s30.get("bb_percent_b"))
-        if not np.isfinite(bb_pct_b):
-            raise ValueError(f"FAIL-FAST: S30 %B is NaN/inf ({bb_pct_b})")
+        if not (0 <= bb_pct_b <= 1):
+            raise ValueError(f"FAIL-FAST: S30 %B out of [0,1] ({bb_pct_b:.4f}) - clamping is forbidden")
 
         stoch_k = _num(s30.get("stoch_k"))
         stoch_d = _num(s30.get("stoch_d"))
@@ -1681,8 +1714,6 @@ class Orchestrator:
         app(f"  believe_sto_cross: {('UP' if sto_state.get('kd_crossed') and believe.get('trigger_bias') in ('BULLISH', 'UP', 'UPTREND') else 'DOWN' if sto_state.get('kd_crossed') and believe.get('trigger_bias') in ('BEARISH', 'DOWN', 'DOWNTREND') else 'NONE')}")
         app(f"  believe_sto_hook_confirmed: {_fmt_bool(sto_state.get('hook_confirmed', False))}")
         app(f"  believe_sto_cross_50: {_fmt_bool(sto_state.get('crossed_50', False))}")
-        app(f"  believe_ma_fast: {_fmt_num(believe.get('indicators_raw', {}).get('ema3', ''))}")
-        app(f"  believe_ma_slow: {_fmt_num(believe.get('indicators_raw', {}).get('sma6', ''))}")
         app(f"  believe_ma_cross: {_req_nested(trigger, 'ma_crossover', 'cross_direction')}")
         app(f"  believe_ma_cross_confirmed: {_fmt_bool(_req_nested(trigger, 'ma_crossover', 'is_confirmed_bar_close'))}")
         app(f"  believe_risk_grid_block: {_fmt_bool(_req_nested(grid, 'blocked'))}")
@@ -1693,9 +1724,14 @@ class Orchestrator:
         app(f"  ap_signal: {_req_nested(supp, 'ap_confirmation', 'signal')}")
         app(f"  ns_signal: {_req_nested(supp, 'ns_confirmation', 'signal')}")
         conditions = believe.get("decision_conditions", {}) or {}
-        app(f"  believe_entry_s30_bb_touch: {_req_nested(conditions, 'entry_s30_bb_touch')}")
         app(f"  believe_trigger_m1_direction_aligned: {_fmt_bool(_req_nested(conditions, 'trigger_m1_direction_aligned'))}")
         app(f"  believe_context_m5_direction_aligned: {_fmt_bool(_req_nested(conditions, 'context_m5_direction_aligned'))}")
+        nctx = supp.get("nemesis_ctx", {}) or {}
+        app(f"  believe_risk_gray_window: {_fmt_bool(nctx.get('gray_window_15m', False))}")
+        app(f"  believe_risk_prev_candle_bad: {_fmt_bool(nctx.get('prev_candle_bad', False))}")
+        app(f"  believe_sr_block_call: {_fmt_bool(nctx.get('sr_block_call', False))}")
+        app(f"  believe_sr_block_put: {_fmt_bool(nctx.get('sr_block_put', False))}")
+        app(f"  believe_sr_nearest_fresh_tests: {int(nctx.get('sr_nearest_fresh_tests', 0))}")
 
         # Strategies payloads stay within the documented 99-line SSD contract.
         # Keep every field consumed by Believe modules; verbose engine diagnostics

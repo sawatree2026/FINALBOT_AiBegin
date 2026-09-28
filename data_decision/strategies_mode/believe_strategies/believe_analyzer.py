@@ -1,6 +1,6 @@
-"""Disk-backed Believe strategy analyzer (Nemesis V.1 & V.2).
+"""Disk-backed Believe strategy analyzer.
 
-The analyzer reads the immutable evaluation payload itself. It never receives
+The analyzer reads the immutable evaluation payload itself.  It never receives
 an in-memory payload from Part 2.
 """
 
@@ -20,7 +20,6 @@ from . import (
     support_resistance,
 )
 
-
 def _read_fields(payload_path: str) -> Dict[str, str]:
     if not isinstance(payload_path, str) or not payload_path.strip():
         raise ValueError("FAIL-FAST: Believe payload path must be a non-empty string")
@@ -31,21 +30,22 @@ def _read_fields(payload_path: str) -> Dict[str, str]:
         raise ValueError(
             f"FAIL-FAST: Believe payload must contain at least 10 lines, got {len(lines)}"
         )
-    for raw_line in lines:
+    for line_number, raw_line in enumerate(lines, start=1):
         line = raw_line.strip()
-        if not line or ":" not in line:
+        if not line:
+            continue
+        if ":" not in line:
             continue
         key, value = line.split(":", 1)
         normalized_key = key.strip().lower()
-        if normalized_key:
-            fields[normalized_key] = value.strip().strip("'\"")
+        if not normalized_key:
+            continue
+        fields[normalized_key] = value.strip().strip("'\"")
 
+    # Alias compatibility for single-pass 78-line payload
     aliases = {
         "bb_percent_b": "believe_bb_percent_b",
-        "bb_touch": "believe_bb_touch",
         "bb_percent_touch": "believe_bb_touch",
-        "bb_touch_low": "believe_bb_touch_low",
-        "bb_touch_high": "believe_bb_touch_high",
         "sto_k": "believe_sto_k",
         "sto_d": "believe_sto_d",
         "sto_zone": "believe_sto_zone",
@@ -59,56 +59,39 @@ def _read_fields(payload_path: str) -> Dict[str, str]:
         "ma_cross_confirmed": "believe_ma_cross_confirmed",
         "grid_block_ahead": "believe_risk_grid_block",
         "gray_candle_present": "believe_risk_gray_candle",
-        "macd": "s30_macd",
-        "macd_signal": "s30_macd_signal",
-        "macd_histogram": "s30_macd_histogram",
-        "rsi": "s30_rsi",
-        "divergence_alert": "m5_pa_divergence_alert",
-        "pa_pattern": "m5_pa_pattern",
-        "sr_type": "m5_pa_sr_interaction",
     }
     for src, dst in aliases.items():
         if src in fields and dst not in fields:
             fields[dst] = fields[src]
 
+    # Defaults for required fields if missing
     defaults = {
         "id": payload_path.rsplit("\\", 1)[-1].rsplit("/", 1)[-1].rsplit(".", 1)[0],
         "s30_bias": fields.get("bias", "WAIT"),
-        "m1_bias": "WAIT",
-        "m5_bias": "WAIT",
-        "ap_signal": "NEUTRAL",
-        "ns_signal": "NEUTRAL",
-        "m5_pa_divergence_alert": fields.get("divergence_alert", "NONE"),
-        "m5_pa_pattern": fields.get("pa_pattern", "NONE"),
-        "m5_pa_last_candle_bias": fields.get("bias", "NEUTRAL"),
-        "m5_pa_sr_interaction": fields.get("sr_type", "NONE"),
-        "s30_rsi": fields.get("s30_rsi", fields.get("rsi", "50.0")),
-        "s30_macd": fields.get("s30_macd", fields.get("macd", "0.0")),
+        "m1_bias": fields.get("bias", "WAIT"),
+        "m5_bias": fields.get("bias", "WAIT"),
         "believe_direction": (
             "CALL" if fields.get("believe_ma_cross") in {"UP", "BULLISH", "CALL", "GOLDEN_CROSS"}
             else "PUT" if fields.get("believe_ma_cross") in {"DOWN", "BEARISH", "PUT", "DEATH_CROSS"}
             else "WAIT"
         ),
-        "believe_risk_grid_block": fields.get("grid_block_ahead", "FALSE"),
-        "believe_risk_gray_candle": fields.get("gray_candle_present", "FALSE"),
-        "believe_risk_sto_tangled": fields.get("sto_tangled", "FALSE"),
-        "believe_risk_trap_alert": "NONE",
-        "believe_risk_room_to_run_clear": str(fields.get("grid_block_ahead", "FALSE").upper() not in {"TRUE", "1", "YES"}),
-        "believe_bb_touch_low": "TRUE" if str(fields.get("believe_bb_touch", "")).upper() in {"LOWER", "LOWER_0", "LOWER_BAND"} else "FALSE",
-        "believe_bb_touch_high": "TRUE" if str(fields.get("believe_bb_touch", "")).upper() in {"UPPER", "UPPER_1", "UPPER_BAND"} else "FALSE",
+        # FIX 2026-09-26 (Audit F-3): ลบค่าประดิษฐ์ที่ปกปิดข้อมูลขาดทั้งหมด
+        # (believe_confidence="HIGH", dl_risk_level="LOW", m5_trend_type="TRENDING", s30_rsi="50.0" ฯลฯ)
+        # ฟิลด์เหล่านี้ถูก Part 2 emit ลง payload 99 บรรทัดอยู่แล้ว -> ย้ายไปบังคับใน required แทน (fail-fast)
+        "believe_risk_room_to_run_clear": str(fields.get("believe_risk_grid_block", "FALSE").upper() not in {"TRUE", "1", "YES"}),
     }
     for k, v in defaults.items():
-        if k not in fields or not str(fields[k]).strip():
+        if k not in fields or not fields[k].strip():
             fields[k] = v
 
     return fields
 
 
 def _direction(value: Any) -> Optional[str]:
-    text = str(value or "").strip().upper()
-    if text in {"UP", "UPTREND", "BULLISH", "CALL", "BUY", "LONG", "GOLDEN_CROSS"}:
+    text = str(value).strip().upper()
+    if text in {"UP", "UPTREND", "BULLISH", "CALL", "BUY", "LONG"}:
         return "CALL"
-    if text in {"DOWN", "DOWNTREND", "BEARISH", "PUT", "SELL", "SHORT", "DEATH_CROSS"}:
+    if text in {"DOWN", "DOWNTREND", "BEARISH", "PUT", "SELL", "SHORT"}:
         return "PUT"
     if text in {"WAIT", "NONE", "NEUTRAL"}:
         return "WAIT"
@@ -116,9 +99,9 @@ def _direction(value: Any) -> Optional[str]:
 
 
 def _required_direction(fields: Dict[str, str], key: str) -> str:
-    direction = _direction(fields.get(key, "WAIT"))
+    direction = _direction(fields[key])
     if direction is None:
-        raise ValueError(f"Invalid Believe payload direction for {key}: {fields.get(key)!r}")
+        raise ValueError(f"Invalid Believe payload direction for {key}: {fields[key]!r}")
     return direction
 
 
@@ -126,7 +109,7 @@ def _bool(value: Any) -> bool:
     text = str(value or "").strip().upper()
     if text in {"TRUE", "1", "YES", "Y", "PASS", "PASSED"}:
         return True
-    if text in {"FALSE", "0", "NO", "N", "FAIL", "FAILED", ""}:
+    if text in {"FALSE", "0", "NO", "N", "FAIL", "FAILED"}:
         return False
     raise ValueError(f"Invalid boolean Believe payload value: {value!r}")
 
@@ -140,14 +123,21 @@ def _number(value: Any) -> Optional[float]:
 
 def _require_fields(fields: Dict[str, str]) -> None:
     required = (
-        "id", "believe_direction",
+        "id", "s30_bias", "believe_direction",
         "believe_bb_percent_b", "believe_bb_touch",
         "believe_sto_k", "believe_sto_d", "believe_sto_zone",
         "believe_sto_cross", "believe_sto_hook_confirmed",
         "believe_ma_cross", "believe_ma_cross_confirmed",
         "believe_risk_grid_block",
+        # FIX 2026-09-27: setup-window touch events ตาม E-BOOK V2 p.37/p.49
+        "believe_bb_touch_low", "believe_bb_touch_high",
+        "believe_sto_touch_low", "believe_sto_touch_high",
+        "believe_sto_emerged_up", "believe_sto_emerged_dn",
+        # FIX 2026-09-27: N-1/N-2/N-8 ตาม E-BOOK (เทา 15 นาที / แท่งต้องเลี่ยง / แนว EUF)
+        "believe_risk_gray_window", "believe_risk_prev_candle_bad",
+        "believe_sr_block_call", "believe_sr_block_put", "believe_sr_nearest_fresh_tests",
     )
-    missing = [key for key in required if key not in fields or not str(fields[key]).strip()]
+    missing = [key for key in required if key not in fields or not fields[key].strip()]
     if missing:
         raise ValueError(
             "Required Believe payload fields missing or empty: "
@@ -167,12 +157,18 @@ def _is_core_moving_average(fields: Dict[str, str], action: str) -> bool:
     return moving_average.evaluate(fields, action)
 
 
+def _matches_action(value: Any, action: str) -> bool:
+    direction = _direction(value)
+    return direction == action
+
+
 def _secondary_conditions(fields: Dict[str, str], action: str) -> Dict[str, bool]:
     """Evaluate documentary confirmations without replacing Believe's core."""
     return {
         "price_action": price_action.evaluate(fields, action),
         "grid_clear": grid.evaluate(fields, action),
         "support_resistance_clear": support_resistance.evaluate(fields, action),
+        # Keep the legacy aggregate field for downstream consumers.
         "grid_and_sr_clear": (
             grid.evaluate(fields, action)
             and support_resistance.evaluate(fields, action)
@@ -189,17 +185,30 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
     """Evaluate the complete disk-backed Believe rule set."""
     fields = _read_fields(payload_path)
     _require_fields(fields)
-    s30 = fields.get("s30_bias", "WAIT")
+    s30 = _required_direction(fields, "s30_bias")
+    m1 = _required_direction(fields, "m1_bias")
+    m5 = _required_direction(fields, "m5_bias")
     believe = _required_direction(fields, "believe_direction")
+    # WAIT is a valid canonical strategy result; it must never be replaced
+    # with a direction inferred from another field.
     candidate = believe if believe in {"CALL", "PUT"} else "WAIT"
-    directions_aligned = candidate in {"CALL", "PUT"}
-
+    directions_aligned = (
+        candidate in {"CALL", "PUT"}
+        and s30 == candidate
+        and m1 == candidate
+        and m5 == candidate
+    )
     core = {
-        "bollinger_band": _is_core_bollinger(fields, candidate) if candidate in {"CALL", "PUT"} else False,
-        "stochastic": _is_core_stochastic(fields, candidate) if candidate in {"CALL", "PUT"} else False,
-        "moving_average": _is_core_moving_average(fields, candidate) if candidate in {"CALL", "PUT"} else False,
+        "bollinger_band": _is_core_bollinger(fields, candidate)
+        if candidate in {"CALL", "PUT"}
+        else False,
+        "stochastic": _is_core_stochastic(fields, candidate)
+        if candidate in {"CALL", "PUT"}
+        else False,
+        "moving_average": _is_core_moving_average(fields, candidate)
+        if candidate in {"CALL", "PUT"}
+        else False,
     }
-
     secondary = (
         _secondary_conditions(fields, candidate)
         if candidate in {"CALL", "PUT"}
@@ -215,97 +224,95 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
             "ns_aligned": False,
         }
     )
-
+    sr_block = (
+        _bool(fields["believe_sr_block_call"]) if candidate == "CALL"
+        else _bool(fields["believe_sr_block_put"]) if candidate == "PUT"
+        else False
+    )
     filters = {
-        "grid_block": _bool(fields.get("believe_risk_grid_block", False)) is True,
-        "gray_candle": _bool(fields.get("believe_risk_gray_candle", False)) is True,
-        "stoch_tangled": _bool(fields.get("believe_risk_sto_tangled", False)) is True,
-        "trap": str(fields.get("believe_risk_trap_alert", "NONE")).upper() not in {"", "NONE", "FALSE", "NO"},
-        "room_to_run": _bool(fields.get("believe_risk_room_to_run_clear", True)),
+        "grid_block": _bool(fields["believe_risk_grid_block"]) is True,
+        "gray_candle": _bool(fields["believe_risk_gray_candle"]) is True,
+        # N-1 (E-BOOK): ห้ามมีแท่งเทาในระยะ 15 นาที
+        "gray_window_15m": _bool(fields["believe_risk_gray_window"]) is True,
+        # N-8 (E-BOOK น.10): แท่งก่อนหน้าต้องไม่ใช่ เทา / เนื้อ:ไส้ 1:1 / ไส้ยาวเดี่ยว
+        "prev_candle_bad": _bool(fields["believe_risk_prev_candle_bad"]) is True,
+        # N-2 (E-BOOK บทที่ 2): แนว EUF สด (เทส <3) ขวางข้างหน้าใกล้ๆ = ห้ามเข้า
+        "sr_block_ahead": sr_block,
+        "stoch_tangled": _bool(fields["believe_risk_sto_tangled"]) is True,
+        "trap": str(fields["believe_risk_trap_alert"]).upper()
+        not in {"", "NONE", "FALSE", "NO"},
+        "room_to_run": _bool(fields["believe_risk_room_to_run_clear"]),
     }
     filters_passed = not any(
-        (filters["grid_block"], filters["gray_candle"], filters["stoch_tangled"], filters["trap"])
+        (
+            filters["grid_block"], filters["gray_candle"], filters["gray_window_15m"],
+            filters["prev_candle_bad"], filters["sr_block_ahead"],
+            filters["stoch_tangled"], filters["trap"],
+        )
     ) and filters["room_to_run"] is not False
-
-    # 1. Extreme Combination (Nemesis V.2 p.50-52)
-    # Primary driver: Divergence + MACD 0-line alignment, then trigger with Believe (STO + MA)
-    div_alert = str(fields.get("divergence_alert", "NONE")).upper()
-    has_bullish_div = ("BULLISH" in div_alert or "STO_BULLISH" in div_alert or "RSI_BULLISH" in div_alert)
-    has_bearish_div = ("BEARISH" in div_alert or "STO_BEARISH" in div_alert or "RSI_BEARISH" in div_alert)
-    has_divergence = (has_bullish_div and candidate == "CALL") or (has_bearish_div and candidate == "PUT")
-
-    macd_val = _number(fields.get("macd", fields.get("s30_macd", 0.0))) or 0.0
-    macd_zero_aligned = (macd_val <= 0.0002 if candidate == "CALL" else macd_val >= -0.0002)
-
-    is_extreme = (
-        directions_aligned
-        and filters_passed
-        and has_divergence
-        and macd_zero_aligned
-        and core["stochastic"]
-        and core["moving_average"]
+    # AP/NS, MACD, RSI, divergence, and price action are confirmations and
+    # diagnostics; Believe's entry contract is BB + STO + MA plus risk filters.
+    action = (
+        candidate
+        if directions_aligned and all(core.values()) and filters_passed
+        else "WAIT"
+    )
+    # EXTREME (NEMESIS V2 p.50): divergence นำ + MACD ถูกฝั่งเทียบเส้น 0 (AP/NS caution #2)
+    _macd_s30 = _number(fields["s30_macd"])
+    extreme_active = bool(
+        action != "WAIT"
+        and secondary["divergence_aligned"]
+        and ((action == "CALL" and _macd_s30 < 0) or (action == "PUT" and _macd_s30 > 0))
     )
 
-    # 2. Pure Believe (Nemesis V.2 p.37, 49)
-    # Core: BB% 0/1 touch + STO 10/90 reversal + MA crossover + Risk Filters
-    is_pure = (
-        directions_aligned
-        and filters_passed
-        and all(core.values())
+    confidence = (
+        max(
+            {"HIGH": 85.0, "MEDIUM": 70.0}.get(str(fields["believe_confidence"]).upper(), 60.0),
+            85.0 if extreme_active else 0.0,
+        )
+        if action != "WAIT"
+        else 0.0
     )
-
-    if is_extreme:
-        action = candidate
-        engine_used = "STRATEGY_BELIEVE_EXTREME"
-        confidence = 88.0
-        reason_th = f"Believe Extreme confirmed: Divergence ({div_alert}) + MACD 0-line + Believe trigger (MA/STO) ({action})"
-    elif is_pure:
-        action = candidate
-        engine_used = "STRATEGY_BELIEVE_PURE"
-        confidence = 75.0
-        reason_th = f"Believe Pure confirmed: BB% touch (1/0) + STO 10/90 + MA EMA3/SMA6 cross ({action})"
-    else:
-        action = "WAIT"
-        engine_used = "STRATEGY_BELIEVE"
-        confidence = 0.0
-        reason_th = "WAIT: Conditions not met for Believe Pure (BB 0/1 + STO 10/90 + MA) or Extreme (Divergence + MACD + Believe)"
-
-    failed = [name for name, passed in core.items() if not passed]
-    if not is_extreme:
-        if not has_divergence:
-            failed.append("divergence_extreme")
-        if not macd_zero_aligned:
-            failed.append("macd_zero_line_extreme")
+    failed = [
+        name for name, passed in core.items() if not passed
+    ]
+    failed.extend(
+        name for name, passed in secondary.items() if not passed
+    )
     if not directions_aligned:
         failed.append("timeframe_alignment")
     if not filters_passed:
         failed.append("risk_filters")
 
-    payload_id = fields.get("id") or payload_path.rsplit("\\", 1)[-1].rsplit("/", 1)[-1].rsplit(".", 1)[0]
     return {
-        "ID": payload_id,
+        "ID": fields["id"] if "id" in fields and fields["id"].strip() else payload_path.rsplit("\\", 1)[-1].rsplit("/", 1)[-1].rsplit(".", 1)[0],
         "symbol": symbol,
         "action": action,
         "expiry_minutes": 3,
         "confidence_score": confidence,
-        "engine_used": engine_used,
-        "believe_status": fields.get("believe_status", "ACTIVE"),
+        "engine_used": "STRATEGY_BELIEVE",
+        "believe_status": fields["believe_status"],
         "believe_direction": believe or "WAIT",
         "s30_direction": s30 or "UNKNOWN",
-        "m1_direction": fields.get("m1_bias", "UNKNOWN"),
-        "m5_direction": fields.get("m5_bias", "UNKNOWN"),
-        "m1_bias": fields.get("m1_bias", "UNKNOWN"),
-        "m5_bias": fields.get("m5_bias", "UNKNOWN"),
-        "m5_regime": fields.get("m5_trend_type", "UNKNOWN"),
-        "m1_adx": _number(fields.get("m1_adx", 25.0)),
-        "risk_level": fields.get("dl_risk_level", "LOW"),
-        "data_quality": fields.get("m5_quality", "HIGH"),
-        "extreme_believe_active": is_extreme,
-        "pure_believe_active": is_pure,
+        "m1_direction": m1 or "UNKNOWN",
+        "m5_direction": m5 or "UNKNOWN",
+        "m1_bias": fields["m1_bias"],
+        "m5_bias": fields["m5_bias"],
+        "m5_regime": fields["m5_trend_type"],
+        "m1_adx": _number(fields["m1_adx"]),
+        "risk_level": fields["dl_risk_level"],
+        "data_quality": fields["m5_quality"],
+        "extreme_believe_active": extreme_active,
         "core_conditions": core,
         "secondary_conditions": secondary,
         "risk_filters": filters,
         "conditions_met": action != "WAIT",
         "failed_conditions": failed,
-        "reason_th": reason_th,
+        "reason_th": (
+            f"Believe core confirmed: Bollinger Band + Stochastic + Moving Average; "
+            f"S30/M1/M5 aligned ({action})"
+            if action != "WAIT"
+            else "WAIT: Believe requires BB, Stochastic reversal/cross, moving-average confirmation, "
+            "aligned S30/M1/M5, and clear risk filters"
+        ),
     }

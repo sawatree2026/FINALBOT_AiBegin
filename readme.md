@@ -189,11 +189,14 @@ main.py / runner.py
 > (10 แท่ง S30 ≈ 5 นาที) ตามคำว่า "แตะ**ก่อน**เสมอ" — ไม่ใช่ค่าขณะเข้า ซึ่งดีดกลับมากลางแถบแล้ว
 > · คงต่างเล่มเพียง BB period **20 vs 41** (น.38) — ประเด็นเปิด F-4 · MA ช้า = **SMA 6** ตรงเล่มแล้ว
 
-### Risk filters (บังคับทุกข้อ)
-1. ห้ามมีเส้นกริด (S/R) ขวางข้างหน้า (`believe_risk_grid_block`)
-2. ห้ามมีแท่งเทียนสีเทา/โดจิ (`believe_risk_gray_candle`)
-3. STO ห้ามพันกัน (`believe_risk_sto_tangled`)
-4. (เพิ่มในโค้ด) ไม่มี trap alert · room-to-run ผ่าน
+### Risk filters (บังคับทุกข้อ — ตรงตำรา V2 p.23/26/37 + บท 1-2)
+1. ห้ามมีเส้นกริดขวางข้างหน้า (`believe_risk_grid_block`)
+2. ห้ามมีแท่งสีเทา/โดจิแท่งปัจจุบัน (`believe_risk_gray_candle`)
+3. **ห้ามมีแท่งสีเทาในระยะ 15 นาที** (30 แท่ง S30) (`believe_risk_gray_window`) — AP/NS caution #3
+4. **แท่งก่อนหน้าต้องไม่ใช่แท่งต้องห้าม** (เทา/โดจิ · เนื้อ:ไส้ 1:1 · ไส้ยาวเดี่ยว) (`believe_risk_prev_candle_bad`) — บท 1.2
+5. **ห้ามมีแนว EUF สด (<3 ครั้งเทส) ขวางข้างหน้าในทิศที่จะเข้า** (`believe_sr_block_call/put`) — บท 2.1/2.2
+6. STO ห้ามพันกัน (`believe_risk_sto_tangled`)
+7. (เพิ่มในโค้ด) ไม่มี trap alert · room-to-run ผ่าน
 
 ### Multi-TF alignment
 `S30 == M1 == M5 == candidate` มิฉะนั้น `WAIT` · secondary conditions

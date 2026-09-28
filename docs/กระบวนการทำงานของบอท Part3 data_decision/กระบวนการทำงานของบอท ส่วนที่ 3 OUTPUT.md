@@ -62,7 +62,7 @@ data_decision/
 ## 💎 เส้นทาง strategies → Believe (NEMESIS)
 
 ### สัญญา payload ที่ analyzer ตรวจ (สถานะ ณ commit `a179f32`)
-**Pre-check 19 fields** (`_require_fields`): `id, s30_bias, believe_direction,
+**Pre-check 24 fields** (`_require_fields`): `id, s30_bias, believe_direction,
 believe_bb_percent_b, believe_bb_touch, believe_sto_k/d/zone/cross/hook_confirmed,
 believe_ma_cross, believe_ma_cross_confirmed, believe_risk_grid_block` +
 **setup-window touch events 6 ตัว** (`believe_bb_touch_low/high`, `believe_sto_touch_low/high`,
@@ -82,7 +82,9 @@ believe_ma_cross, believe_ma_cross_confirmed, believe_risk_grid_block` +
 candidate   = believe_direction (CALL/PUT) มิฉะนั้น WAIT   # WAIT เป็นผลถูกต้อง ไม่ถูกแทนด้วยทิศอื่น
 aligned     = s30 == m1 == m5 == candidate
 core        = bollinger_percent AND stochastic AND moving_average      # ต้องผ่านครบ
-filters     = ไม่ grid_block · ไม่ gray_candle · ไม่ stoch_tangled · ไม่ trap · room_to_run ไม่ False
+filters     = ไม่ grid_block · ไม่ gray_candle · **ไม่ gray_window_15m** (N-1)
+              · ไม่ prev_candle_bad (N-8) · ไม่ sr_block_ahead (N-2: แนว EUF สด <3 เทส ขวางทิศ)
+              · ไม่ stoch_tangled · ไม่ trap · room_to_run ไม่ False
 action      = candidate ถ้า (aligned AND core ครบ AND filters ผ่าน) มิฉะนั้น WAIT
 confidence  = HIGH→85 · MEDIUM→70 · อื่น→60   (WAIT→0)
 expiry      = 3 นาที  (strategies)   # ⚠️ ต่างจาก readme เก่าที่เขียน 5 — ดู DOC_AUDIT M-8
