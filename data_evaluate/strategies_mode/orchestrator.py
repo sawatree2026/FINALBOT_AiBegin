@@ -986,16 +986,22 @@ class Orchestrator:
         close = pd.to_numeric(df["close"], errors="coerce")
         high = pd.to_numeric(df["high"], errors="coerce")
         low = pd.to_numeric(df["low"], errors="coerce")
-        # Believe contract: BB(20,2), Stochastic(13,10,3), and MA(3,6).
+        # Believe contract: BB(41,2) per E-BOOK V2 p.38 (บอสเคาะ N-3), Stochastic(13,10,3), MA(3,6).
         ema3 = close.ewm(span=3, adjust=False).mean()
         ema6 = close.ewm(span=6, adjust=False).mean()
         ema20 = close.ewm(span=20, adjust=False).mean()
+        # N-3 (บอสเคาะ 2026-09-27): Believe ใช้ BB(41,2) ตาม E-BOOK V2 น.38
+        # (คำนวณเองจากแท่ง S30 ในฟังก์ชันนี้ = แหล่งเดียว ไม่ใช้ base 20 ของ engine)
+        _bb_mid = close.rolling(41).mean()
+        _bb_std = close.rolling(41).std(ddof=0)
+        if pd.isna(_bb_mid.iloc[-1]) or pd.isna(_bb_std.iloc[-1]) or _bb_std.iloc[-1] == 0:
+            raise ValueError("FAIL-FAST: BB(41,2) is NaN/flat - insufficient S30 candles")
         bollinger_percent = assemble_bollinger_percent(
-            close=float(s30_bollinger_base["close"]),
-            middle=float(s30_bollinger_base["middle"]),
-            std=float(s30_bollinger_base["std"]),
-            period=int(s30_bollinger_base["period"]),
-            std_dev=float(s30_bollinger_base["std_dev"]),
+            close=float(close.iloc[-1]),
+            middle=float(_bb_mid.iloc[-1]),
+            std=float(_bb_std.iloc[-1]),
+            period=41,
+            std_dev=2.0,
         )
         stochastic = assemble_stochastic(s30_stochastic_base)
         delta = close.diff()
@@ -1026,8 +1032,8 @@ class Orchestrator:
         _high13 = high.rolling(13).max()
         _raw_k = (close - _low13) / (_high13 - _low13).replace(0, np.nan) * 100
         _k_s = _raw_k.rolling(10).mean()
-        _mid = close.rolling(20).mean()
-        _sd = close.rolling(20).std(ddof=0)
+        _mid = close.rolling(41).mean()   # N-3: หน้าต่างแตะ BB ใช้ period เดียวกับ Believe (41)
+        _sd = close.rolling(41).std(ddof=0)
         _pb_s = (close - _mid) / (2 * _sd).replace(0, np.nan)
         _k_w = _k_s.tail(_win).dropna()
         _pb_w = _pb_s.tail(_win).dropna()
@@ -1721,7 +1727,13 @@ class Orchestrator:
         app(f"  believe_trigger_timeframe: {believe.get('trigger_timeframe', 'M1')}")
         app(f"  believe_context_timeframe: {believe.get('context_timeframe', 'M5')}")
         app(f"  believe_bb_percent_b: {_fmt_num(believe.get('indicators_raw', {}).get('bb_pct_b', ''))}")
-        app(f"  believe_bb_touch: {'LOWER' if bb_state.get('touched_lower_0') else 'UPPER' if bb_state.get('touched_upper_1') else 'NONE'}")
+        _bb_raw = believe.get('indicators_raw', {}).get('bb_pct_b', '')
+        try:
+            _bbv = float(_bb_raw)
+            _bb_touch = "LOWER" if _bbv <= 0.0 else ("UPPER" if _bbv >= 1.0 else "NONE")
+        except (TypeError, ValueError):
+            _bb_touch = "NONE"
+        app(f"  believe_bb_touch: {_bb_touch}")
         app(f"  believe_bb_touch_low: {_fmt_bool(s30_indicators.get('bb_touch_low', False))}")
         app(f"  believe_bb_touch_high: {_fmt_bool(s30_indicators.get('bb_touch_high', False))}")
         app(f"  believe_sto_touch_low: {_fmt_bool(s30_indicators.get('sto_touch_low', False))}")

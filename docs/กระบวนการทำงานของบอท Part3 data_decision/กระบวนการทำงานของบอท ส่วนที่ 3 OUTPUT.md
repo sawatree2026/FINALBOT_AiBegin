@@ -89,7 +89,7 @@ action      = candidate ถ้า (aligned AND core ครบ AND filters ผ่
 confidence  = HIGH→85 · MEDIUM→70 · อื่น→60   (WAIT→0)
 expiry      = 5 นาที  (F-11: คืน contract เดิม ทั้ง payload/analyzer/gate)
 ```
-- **core #1 BB %B (p.37/p.49):** CALL ผ่านเมื่อ **แตะเส้น 0 ในหน้าต่าง setup 10 แท่ง S30** (`believe_bb_touch_low`) หรือแตะขณะนั้น · PUT กลับด้าน
+- **core #1 BB %B (p.37/p.49, period 41,2σ ตาม น.38):** CALL ผ่านเมื่อ **แตะเส้น 0 ในหน้าต่าง setup 10 แท่ง S30** (`believe_bb_touch_low`) หรือ `%B ≤ 0` ขณะนั้น · PUT กลับด้าน
 - **core #2 STO (p.37):** ต้อง **แตะ 10/90 ในหน้าต่าง setup** + **โผล่ออกมา/หักหัว** + **%K ข้าม 50** และไม่ tangled (ขาดข้อใด = ไม่ผ่าน)
 - **core #3 MA:** `believe_ma_cross` ∈ {GOLDEN_CROSS/UP/…} และ `believe_ma_cross_confirmed = TRUE`
   (เส้นเร็ว EMA 3 · เส้นช้า **SMA 6** — ตรงตาม E-BOOK V2 น.38 ตั้งแต่ commit `a179f32`)

@@ -1,5 +1,5 @@
 instrument { name = "Bollinger Bands %B", overlay = false, icon = "indicators:BB" }
-period = input (20, "front.period", input.integer,  1)
+period = input (41, "front.period", input.integer,  1)   # N-3: บอสเคาะ 41 ตาม E-BOOK V2 น.38
 devs   = input (2, "front.newind.stddev", input.integer, 1)
 overbought = input (1, "front.overbought", input.double, -2, 2, 0.1, false)
 oversold = input (0, "front.oversold", input.double, -2, 2, 0.1, false)
