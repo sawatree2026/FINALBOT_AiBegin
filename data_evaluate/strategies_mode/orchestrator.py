@@ -291,16 +291,17 @@ class Orchestrator:
         bb_width_val = bb_upper_val - bb_lower_val
         bb_pct_b = (c - bb_lower_val) / (bb_width_val + 1e-9)
 
-        recent_h_3 = high_series.tail(3)
-        recent_l_3 = low_series.tail(3)
-        recent_c_3 = close_series.tail(3)
-        recent_upper_3 = (bb_mid_s + bb_std_dev * bb_std_s).tail(3)
-        recent_lower_3 = (bb_mid_s - bb_std_dev * bb_std_s).tail(3)
+        recent_win = min(10, len(close_series))
+        recent_h = high_series.tail(recent_win)
+        recent_l = low_series.tail(recent_win)
+        recent_c = close_series.tail(recent_win)
+        recent_upper = (bb_mid_s + bb_std_dev * bb_std_s).tail(recent_win)
+        recent_lower = (bb_mid_s - bb_std_dev * bb_std_s).tail(recent_win)
 
         bb_touch = "NONE"
-        if (recent_h_3 >= recent_upper_3).any() or (recent_c_3 >= recent_upper_3).any() or bb_pct_b >= 1.0:
+        if (recent_h >= recent_upper).any() or (recent_c >= recent_upper).any() or bb_pct_b >= 1.0:
             bb_touch = "UPPER"
-        elif (recent_l_3 <= recent_lower_3).any() or (recent_c_3 <= recent_lower_3).any() or bb_pct_b <= 0.0:
+        elif (recent_l <= recent_lower).any() or (recent_c <= recent_lower).any() or bb_pct_b <= 0.0:
             bb_touch = "LOWER"
         elif abs(c - bb_middle_val) < (bb_width_val * 0.05):
             bb_touch = "MIDDLE"
@@ -1016,7 +1017,7 @@ class Orchestrator:
         low = pd.to_numeric(df["low"], errors="coerce")
         # Believe contract: BB(20,2), Stochastic(13,10,3), and MA(3,6).
         ema3 = close.ewm(span=3, adjust=False).mean()
-        ema6 = close.ewm(span=6, adjust=False).mean()
+        ema6 = close.rolling(6).mean()
         ema20 = close.ewm(span=20, adjust=False).mean()
         bollinger_percent = assemble_bollinger_percent(
             close=float(s30_bollinger_base["close"]),
@@ -1033,7 +1034,7 @@ class Orchestrator:
         rsi = 100 - (100 / (1 + rs))
         if pd.isna(rsi.iloc[-1]):
             raise ValueError("FAIL-FAST: RSI is NaN - neutral substitution is forbidden")
-        macd = close.ewm(span=12, adjust=False).mean() - close.ewm(span=26, adjust=False).mean()
+        macd = close.ewm(span=15, adjust=False).mean() - close.ewm(span=35, adjust=False).mean()
         macd_signal = macd.ewm(span=9, adjust=False).mean()
         def last(series):
             if pd.isna(series.iloc[-1]):

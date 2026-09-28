@@ -659,3 +659,83 @@ Traceback (most recent call last):
   File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
     raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
 FileNotFoundError: FAIL-FAST: CSV file not found for USDCAD-OTC M5 at data_base\strategies_mode\output_feed\USDCAD-OTC\USDCAD-OTC_M5.csv
+2026-09-27 20:21:13,126 | ERROR    | [Orchestrator] Evaluation failed for USDTHB-OTC: name 'recent_h_3' is not defined
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 229, in process_cycle
+    payload = self._calculate_single_pass(symbol, candles_dict)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 302, in _calculate_single_pass
+    if (recent_h_3 >= recent_upper_3).any() or (recent_c_3 >= recent_upper_3).any() or bb_pct_b >= 1.0:
+        ^^^^^^^^^^
+NameError: name 'recent_h_3' is not defined. Did you mean: 'recent_h'?
+2026-09-27 20:21:13,141 | ERROR    | [Orchestrator] Evaluation failed for NZDUSD-OTC: name 'recent_h_3' is not defined
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 229, in process_cycle
+    payload = self._calculate_single_pass(symbol, candles_dict)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 302, in _calculate_single_pass
+    if (recent_h_3 >= recent_upper_3).any() or (recent_c_3 >= recent_upper_3).any() or bb_pct_b >= 1.0:
+        ^^^^^^^^^^
+NameError: name 'recent_h_3' is not defined. Did you mean: 'recent_h'?
+2026-09-27 20:21:13,143 | ERROR    | [Orchestrator] Evaluation failed for EURCHF-OTC: name 'recent_h_3' is not defined
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 229, in process_cycle
+    payload = self._calculate_single_pass(symbol, candles_dict)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 302, in _calculate_single_pass
+    if (recent_h_3 >= recent_upper_3).any() or (recent_c_3 >= recent_upper_3).any() or bb_pct_b >= 1.0:
+        ^^^^^^^^^^
+NameError: name 'recent_h_3' is not defined. Did you mean: 'recent_h'?
+2026-09-27 20:21:13,144 | ERROR    | [Orchestrator] Evaluation failed for GBPUSD-OTC: name 'recent_h_3' is not defined
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 229, in process_cycle
+    payload = self._calculate_single_pass(symbol, candles_dict)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 302, in _calculate_single_pass
+    if (recent_h_3 >= recent_upper_3).any() or (recent_c_3 >= recent_upper_3).any() or bb_pct_b >= 1.0:
+        ^^^^^^^^^^
+NameError: name 'recent_h_3' is not defined. Did you mean: 'recent_h'?

@@ -9430,3 +9430,6 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'data
 2026-09-27 15:52:35,556 | WARNING  | [DataAdapter] Ingest for EURUSD-OTC returned no price: Warmup check failed after update
 2026-09-27 15:52:36,600 | WARNING  | [GBPUSD-OTC] Insufficient M5 data in RAM: has 0, required >= 250
 2026-09-27 15:52:36,602 | WARNING  | [DataAdapter] Ingest for GBPUSD-OTC returned no price: Warmup check failed after update
+2026-09-28 09:10:02,681 | WARNING  | [BrokerExecutor] Binary/Turbo Route rejected (Attempt 1/2) -> Symbol: USDJPY-OTC, Action: PUT, Reason: Cannot purchase an option (the asset is not available at the moment).
+2026-09-28 09:10:03,466 | WARNING  | [BrokerExecutor] Binary/Turbo Route rejected (Attempt 2/2) -> Symbol: USDJPY-OTC, Action: PUT, Reason: Cannot purchase an option (the asset is not available at the moment).
+2026-09-28 09:10:03,466 | WARNING  | [ExecutorManager] Broker order rejected for USDJPY-OTC: Cannot purchase an option (the asset is not available at the moment).

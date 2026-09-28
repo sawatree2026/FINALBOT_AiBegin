@@ -44,6 +44,8 @@ def _read_fields(payload_path: str) -> Dict[str, str]:
         "bb_percent_b": "believe_bb_percent_b",
         "bb_touch": "believe_bb_touch",
         "bb_percent_touch": "believe_bb_touch",
+        "bb_touch_low": "believe_bb_touch_low",
+        "bb_touch_high": "believe_bb_touch_high",
         "sto_k": "believe_sto_k",
         "sto_d": "believe_sto_d",
         "sto_zone": "believe_sto_zone",
@@ -92,6 +94,8 @@ def _read_fields(payload_path: str) -> Dict[str, str]:
         "believe_risk_sto_tangled": fields.get("sto_tangled", "FALSE"),
         "believe_risk_trap_alert": "NONE",
         "believe_risk_room_to_run_clear": str(fields.get("grid_block_ahead", "FALSE").upper() not in {"TRUE", "1", "YES"}),
+        "believe_bb_touch_low": "TRUE" if str(fields.get("believe_bb_touch", "")).upper() in {"LOWER", "LOWER_0", "LOWER_BAND"} else "FALSE",
+        "believe_bb_touch_high": "TRUE" if str(fields.get("believe_bb_touch", "")).upper() in {"UPPER", "UPPER_1", "UPPER_BAND"} else "FALSE",
     }
     for k, v in defaults.items():
         if k not in fields or not str(fields[k]).strip():
