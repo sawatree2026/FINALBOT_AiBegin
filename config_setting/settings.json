@@ -14,7 +14,8 @@
     "max_daily_trades": 200,
     "max_concurrent_orders": 100,
     "max_consecutive_losses": 100,
-    "cooldown_minutes": 5
+    "cooldown_minutes": 5,
+    "stake_percent": 1.5
   },
   "ml_mode": {
     "enabled": true,

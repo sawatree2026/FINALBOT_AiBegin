@@ -71,7 +71,7 @@ class ExecutionGate:
             rejection_reasons.append("No trade signal")
         elif action not in ("CALL", "PUT"):
             rejection_reasons.append(f"Invalid signal ({action})")
-        expected_expiry = 3 if is_strategies else 5
+        expected_expiry = 5  # FIX F-11: contract เดิมของระบบ = 5 นาทีทุกโหมด
         if expiry_minutes != expected_expiry:
             rejection_reasons.append(f"Expiry must be {expected_expiry} minutes (received {raw_expiry!r})")
         if action in ("CALL", "PUT"):

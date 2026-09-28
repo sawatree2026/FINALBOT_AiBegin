@@ -62,7 +62,7 @@ data_decision/
 ## 💎 เส้นทาง strategies → Believe (NEMESIS)
 
 ### สัญญา payload ที่ analyzer ตรวจ (สถานะ ณ commit `a179f32`)
-**Pre-check 24 fields** (`_require_fields`): `id, s30_bias, believe_direction,
+**Pre-check 25 fields** (`_require_fields`): `id, s30_bias, believe_direction,
 believe_bb_percent_b, believe_bb_touch, believe_sto_k/d/zone/cross/hook_confirmed,
 believe_ma_cross, believe_ma_cross_confirmed, believe_risk_grid_block` +
 **setup-window touch events 6 ตัว** (`believe_bb_touch_low/high`, `believe_sto_touch_low/high`,
@@ -87,7 +87,7 @@ filters     = ไม่ grid_block · ไม่ gray_candle · **ไม่ gray_
               · ไม่ stoch_tangled · ไม่ trap · room_to_run ไม่ False
 action      = candidate ถ้า (aligned AND core ครบ AND filters ผ่าน) มิฉะนั้น WAIT
 confidence  = HIGH→85 · MEDIUM→70 · อื่น→60   (WAIT→0)
-expiry      = 3 นาที  (strategies)   # ⚠️ ต่างจาก readme เก่าที่เขียน 5 — ดู DOC_AUDIT M-8
+expiry      = 5 นาที  (F-11: คืน contract เดิม ทั้ง payload/analyzer/gate)
 ```
 - **core #1 BB %B (p.37/p.49):** CALL ผ่านเมื่อ **แตะเส้น 0 ในหน้าต่าง setup 10 แท่ง S30** (`believe_bb_touch_low`) หรือแตะขณะนั้น · PUT กลับด้าน
 - **core #2 STO (p.37):** ต้อง **แตะ 10/90 ในหน้าต่าง setup** + **โผล่ออกมา/หักหัว** + **%K ข้าม 50** และไม่ tangled (ขาดข้อใด = ไม่ผ่าน)

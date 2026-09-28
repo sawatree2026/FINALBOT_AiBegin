@@ -174,8 +174,9 @@ main.py / runner.py
 | รายการ | ค่าจริงในโค้ด |
 |:---|:---|
 | Candle TF | **S30** = Entry · **M1** = Trigger · **M5** = Context |
-| Expiry / ถือครอง | **3 นาที** (strategies) · gate บังคับค่านี้ · ai/ml = 5 นาที |
+| Expiry / ถือครอง | **5 นาที** ทุกโหมด (gate บังคับ) — คืนค่าตาม contract เดิม (F-11 แก้ 2026-09-27) |
 | รอบวิเคราะห์ | ทุก S30 boundary (30 วินาที) |
+| ขนาดไม้ | `stake_percent` = **% ของ balance** (โค้ด clamp 1-3% ตามบทที่ 4) · ตั้ง 0 = ใช้ fixed stake |
 
 ### Indicators (core 3 ตัว — ต้องผ่านครบ)
 
@@ -197,6 +198,10 @@ main.py / runner.py
 5. **ห้ามมีแนว EUF สด (<3 ครั้งเทส) ขวางข้างหน้าในทิศที่จะเข้า** (`believe_sr_block_call/put`) — บท 2.1/2.2
 6. STO ห้ามพันกัน (`believe_risk_sto_tangled`)
 7. (เพิ่มในโค้ด) ไม่มี trap alert · room-to-run ผ่าน
+
+### Confirmations เพิ่มเติมตามเล่ม (ไม่บังคับเข้า)
+- **Fractal H/L (พ.54):** L ยกตัว = hint CALL · H ลด = hint PUT → `believe_fractal_hint`
+- **Follow-candle (น.10):** แท่งก่อนหน้าตัวหนา (≥60% ของ range) ไส้สั้น (≤20%) → `believe_follow_candle_dir`
 
 ### Multi-TF alignment
 `S30 == M1 == M5 == candidate` มิฉะนั้น `WAIT` · secondary conditions

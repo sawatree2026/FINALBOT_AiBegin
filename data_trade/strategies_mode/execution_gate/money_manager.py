@@ -34,6 +34,9 @@ class MoneyManager:
         
         # Native Risk Limits from config_setting/settings.json
         self.stake_per_trade: float = float(acc_cfg.get("stake_per_trade", self.DEFAULT_STAKE_PER_TRADE))
+        # FIX N-6 (E-BOOK บทที่ 4): โหมด stake เป็น % ของ balance (บังคับอยู่ในกรอบ 1-3%)
+        raw_pct = float(acc_cfg.get("stake_percent", 0.0))
+        self.stake_percent: float = min(max(raw_pct, 1.0), 3.0) if raw_pct > 0 else 0.0
         self.max_daily_profit: float = float(acc_cfg.get("max_daily_profit", self.DEFAULT_MAX_DAILY_PROFIT))
         self.max_daily_loss: float = float(acc_cfg.get("max_daily_loss", self.DEFAULT_MAX_DAILY_LOSS))
         self.max_daily_trades: int = int(acc_cfg.get("max_daily_trades", self.DEFAULT_MAX_DAILY_TRADES))
@@ -181,8 +184,12 @@ class MoneyManager:
 
         return True, "RISK_GATES_PASSED"
 
-    def get_stake(self, symbol: str = "") -> float:
-        """Returns the configured fixed stake for the order."""
+    def get_stake(self, symbol: str = "", balance: Optional[float] = None) -> float:
+        """Stake ต่อไม้: ถ้าตั้ง stake_percent ไว้ใช้ % ของ balance (clamp 1-3% ตามเล่ม)
+        มิเช่นนั้นใช้ fixed stake เดิม"""
+        if self.stake_percent > 0 and balance is not None:
+            pct_stake = round(float(balance) * self.stake_percent / 100.0, 2)
+            return max(1.0, min(pct_stake, float(balance) * 3.0 / 100.0))
         return float(self.stake_per_trade)
 
     def register_open_trade(self, order_id: str, symbol: str) -> None:

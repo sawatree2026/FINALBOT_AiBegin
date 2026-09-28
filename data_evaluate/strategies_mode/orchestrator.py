@@ -485,7 +485,7 @@ class Orchestrator:
             f"  symbol: {symbol}",
             f"  session: {session}",
             f"  mode: strategies",
-            f"  expiry_minutes: 3",
+            f"  expiry_minutes: 5",
             f"  holding_period: 3m",
             "",
             "s30:",
@@ -1175,7 +1175,27 @@ class Orchestrator:
                         ((e["kind"] == "resistance" and e["price"] > price) or
                          (e["kind"] == "support" and e["price"] < price))]
         nearest_tests = min((e["tests"] for e in fresh_in_dir), default=0)
+        # N-4 (E-BOOK V2 p.54): fractal pivots (2 ซ้าย / 2 ขวา) บน S30 → H/L ยกตัว = แรงหมด
+        hh = h.values; ll = lo.values
+        piv_hi = [i for i in range(2, len(hh) - 2)
+                  if hh[i] >= hh[i-1] and hh[i] >= hh[i-2] and hh[i] >= hh[i+1] and hh[i] >= hh[i+2]]
+        piv_lo = [i for i in range(2, len(ll) - 2)
+                  if ll[i] <= ll[i-1] and ll[i] <= ll[i-2] and ll[i] <= ll[i+1] and ll[i] <= ll[i+2]]
+        fractal_hint = "NONE"
+        if len(piv_lo) >= 2 and ll[piv_lo[-1]] > ll[piv_lo[-2]]:
+            fractal_hint = "CALL"   # L ยกตัวขึ้น = แรงขายหมด (เทรนลงกำลังกลับตัว)
+        elif len(piv_hi) >= 2 and hh[piv_hi[-1]] < hh[piv_hi[-2]]:
+            fractal_hint = "PUT"    # H ลดลง = แรงซื้อหมด (เทรนขึ้นกำลังกลับตัว)
+        # N-5 (E-BOOK V2 น.10): follow-candle = แท่งก่อนหน้าชนะเด็ดขาด ตัวหนา ไส้สั้น
+        p_body_r = p_body / p_rng if p_rng > 0 else 0.0
+        p_wick_r = max(p_uw, p_lw) / p_rng if p_rng > 0 else 1.0
+        follow_dir = "NONE"
+        if p_body_r >= 0.6 and p_wick_r <= 0.2:
+            follow_dir = "CALL" if pc > po else ("PUT" if pc < po else "NONE")
+
         return {
+            "fractal_hint": fractal_hint,
+            "follow_candle_dir": follow_dir,
             "gray_window_15m": gray_window_15m,
             "prev_candle_bad": prev_candle_bad,
             "sr_block_call": _block("CALL"),
@@ -1731,7 +1751,8 @@ class Orchestrator:
         app(f"  believe_risk_prev_candle_bad: {_fmt_bool(nctx.get('prev_candle_bad', False))}")
         app(f"  believe_sr_block_call: {_fmt_bool(nctx.get('sr_block_call', False))}")
         app(f"  believe_sr_block_put: {_fmt_bool(nctx.get('sr_block_put', False))}")
-        app(f"  believe_sr_nearest_fresh_tests: {int(nctx.get('sr_nearest_fresh_tests', 0))}")
+        app(f"  believe_fractal_hint: {nctx.get('fractal_hint', 'NONE')}")
+        app(f"  believe_follow_candle_dir: {nctx.get('follow_candle_dir', 'NONE')}")
 
         # Strategies payloads stay within the documented 99-line SSD contract.
         # Keep every field consumed by Believe modules; verbose engine diagnostics

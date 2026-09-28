@@ -643,7 +643,7 @@ class ExecutorManager:
         # ── Step 5: ยิงออเดอร์ผ่าน BrokerExecutor ────────────────────────────
         order_data = None
         if should_execute_order:
-            stake = self.money_manager.get_stake(symbol)
+            stake = self.money_manager.get_stake(symbol, balance=balance)
 
             try:
                 order_data = self.broker_executor.execute_order(

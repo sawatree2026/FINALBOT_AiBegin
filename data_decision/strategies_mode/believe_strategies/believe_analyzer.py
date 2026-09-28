@@ -135,7 +135,8 @@ def _require_fields(fields: Dict[str, str]) -> None:
         "believe_sto_emerged_up", "believe_sto_emerged_dn",
         # FIX 2026-09-27: N-1/N-2/N-8 ตาม E-BOOK (เทา 15 นาที / แท่งต้องเลี่ยง / แนว EUF)
         "believe_risk_gray_window", "believe_risk_prev_candle_bad",
-        "believe_sr_block_call", "believe_sr_block_put", "believe_sr_nearest_fresh_tests",
+        "believe_sr_block_call", "believe_sr_block_put",
+        "believe_fractal_hint", "believe_follow_candle_dir",
     )
     missing = [key for key in required if key not in fields or not fields[key].strip()]
     if missing:
@@ -178,6 +179,9 @@ def _secondary_conditions(fields: Dict[str, str], action: str) -> Dict[str, bool
         "rsi_safe": rsi.evaluate(fields, action),
         "ap_aligned": ap.evaluate(fields, action),
         "ns_aligned": ns.evaluate(fields, action),
+        # N-4 (p.54) / N-5 (น.10): confirmation ตามตำรา — ไม่บังคับเข้า
+        "fractal_aligned": text(fields, "believe_fractal_hint") == action,
+        "follow_aligned": text(fields, "believe_follow_candle_dir") == action,
     }
 
 
@@ -288,7 +292,7 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
         "ID": fields["id"] if "id" in fields and fields["id"].strip() else payload_path.rsplit("\\", 1)[-1].rsplit("/", 1)[-1].rsplit(".", 1)[0],
         "symbol": symbol,
         "action": action,
-        "expiry_minutes": 3,
+        "expiry_minutes": 5,
         "confidence_score": confidence,
         "engine_used": "STRATEGY_BELIEVE",
         "believe_status": fields["believe_status"],
