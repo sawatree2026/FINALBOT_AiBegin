@@ -60,7 +60,7 @@ data_trade/
 | `MIN_ADX` | 20.0 |
 | `MIN_DATA_QUALITY` | 50.0 |
 | `min_confidence` | `ai_mode.min_confidence` → fallback `ml_mode.min_confidence` → 55.0 (clamp 0-100) |
-| `expected_expiry` | **3 นาที ถ้า strategies_mode · 5 นาที ถ้าโหมดอื่น** |
+| `expected_expiry` | **5 นาที ทุกโหมด** (F-11 แก้ 2026-09-27) |
 
 **เงื่อนไขปฏิเสธ (16 ข้อ):** WAIT/invalid action · expiry ไม่ตรง expected · confidence ต่ำกว่าเกณฑ์ ·
 Gemini/Chronos disagreement · HTF direction หาย · M5 direction หาย · M5 regime หาย · ADX หาย/ต่ำกว่า 20 ·
@@ -78,6 +78,7 @@ risk หาย/สูง (HIGH,CRITICAL,EXTREME) · ข้อมูล STALE/qua
 4 แพ้ติดกันถึงโควตา + cooldown (TZ +07) · 5 แตะ daily SL · 6 แตะ daily TP · 7 balance < stake
 → ผ่านครบคืน `RISK_GATES_PASSED`
 
+ขนาดไม้: ถ้า `stake_percent` > 0 ใช้ **% ของ balance จริง clamp 1-3% ตาม E-BOOK บทที่ 4** (เช่น 1.5% ของ $10,000 = $150) · มิเช่นนั้น fixed
 ค่าจาก `settings.json → account`: `stake_per_trade 35` · `max_daily_loss 500` · `max_daily_profit 1000` ·
 `max_daily_trades 200` · `max_concurrent_orders 100` · `max_consecutive_losses 100` · `cooldown_minutes 5`
 (default ในโค้ดอนุรักษ์นิยมกว่า: 20/3/3)

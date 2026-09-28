@@ -93,7 +93,8 @@ expiry      = 5 นาที  (F-11: คืน contract เดิม ทั้�
 - **core #2 STO (p.37):** ต้อง **แตะ 10/90 ในหน้าต่าง setup** + **โผล่ออกมา/หักหัว** + **%K ข้าม 50** และไม่ tangled (ขาดข้อใด = ไม่ผ่าน)
 - **core #3 MA:** `believe_ma_cross` ∈ {GOLDEN_CROSS/UP/…} และ `believe_ma_cross_confirmed = TRUE`
   (เส้นเร็ว EMA 3 · เส้นช้า **SMA 6** — ตรงตาม E-BOOK V2 น.38 ตั้งแต่ commit `a179f32`)
-- secondary (price_action, grid_clear, support_resistance_clear, divergence, macd, rsi, ap, ns) = **confirmation/วินิจฉัยเท่านั้น ไม่บังคับเข้า**
+- secondary (price_action, grid_clear, support_resistance_clear, divergence, macd, rsi, ap, ns,
+  **fractal_aligned (พ.54), follow_aligned (น.10)**) = **confirmation/วินิจฉัยเท่านั้น ไม่บังคับเข้า**
 
 ### Decision JSON (ตัวอย่างฟิลด์)
 `ID, symbol, action, expiry_minutes, confidence_score, engine_used="STRATEGY_BELIEVE",
