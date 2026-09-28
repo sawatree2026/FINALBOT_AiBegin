@@ -1034,7 +1034,9 @@ class Orchestrator:
         _k_s = _raw_k.rolling(10).mean()
         _mid = close.rolling(41).mean()   # N-3: หน้าต่างแตะ BB ใช้ period เดียวกับ Believe (41)
         _sd = close.rolling(41).std(ddof=0)
-        _pb_s = (close - _mid) / (2 * _sd).replace(0, np.nan)
+        _upper = _mid + (2 * _sd)
+        _lower = _mid - (2 * _sd)
+        _pb_s = (close - _lower) / (_upper - _lower).replace(0, np.nan) # สูตร BB% จริง: 0=ขอบล่าง, 1=ขอบบน, 0.5=กลาง
         _k_w = _k_s.tail(_win).dropna()
         _pb_w = _pb_s.tail(_win).dropna()
         if len(_k_w) < _win or len(_pb_w) < _win:
@@ -1320,13 +1322,16 @@ class Orchestrator:
             bullish_score += 0.05
             bearish_score += 0.05
 
-        bullish_signal = bullish_score >= 0.60 and bullish_structure
-        bearish_signal = bearish_score >= 0.60 and bearish_structure
-        if bullish_signal and bearish_signal:
-            bullish_signal = bullish_score > bearish_score
-            bearish_signal = bearish_score > bullish_score
+        # ปลดล็อกระบบคะแนนและใช้ข้อมูลตั้งต้นจากหน้าต่าง setup (10 แท่ง) 
+        # เพื่อเปิดทางให้ Part 3 ทำงานต่อ
+        bullish_signal = bullish_structure and (bb_touch_low or sto_touch_low)
+        bearish_signal = bearish_structure and (bb_touch_high or sto_touch_high)
 
-        signal_direction = "BUY" if bullish_signal else "SELL" if bearish_signal else "WAIT"
+        if bullish_signal and bearish_signal:
+            bullish_signal = False
+            bearish_signal = False
+
+        signal_direction = "CALL" if bullish_signal else "PUT" if bearish_signal else "WAIT"
         extreme_confirmed = max(bullish_score, bearish_score) >= 0.75 and (bullish_signal or bearish_signal)
 
         believe_payload = {
