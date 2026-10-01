@@ -31,16 +31,22 @@ class DecisionManager:
     def process_latest(self, symbols: Iterable[str]) -> list[str]:
         processed = []
         for symbol in symbols:
-            payload_path = self._latest_payload(symbol)
-            if not payload_path:
-                raise FileNotFoundError(
-                    f"FAIL-FAST: No current evaluation payload for {symbol}"
+            try:
+                payload_path = self._latest_payload(symbol)
+                if not payload_path:
+                    raise FileNotFoundError(
+                        f"No current evaluation payload for {symbol}"
+                    )
+                if payload_path in self._processed:
+                    continue
+                self.process_payload_file(symbol, payload_path)
+                self._processed.add(payload_path)
+                processed.append(symbol)
+            except Exception:
+                logger.exception(
+                    "[DecisionManager] Decision failed for %s; skipping symbol",
+                    symbol,
                 )
-            if payload_path in self._processed:
-                continue
-            self.process_payload_file(symbol, payload_path)
-            self._processed.add(payload_path)
-            processed.append(symbol)
         return processed
 
     def process_payload_file(self, symbol: str, payload_path: str) -> None:

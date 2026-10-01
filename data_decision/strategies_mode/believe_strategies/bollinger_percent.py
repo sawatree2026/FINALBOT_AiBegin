@@ -26,10 +26,9 @@ def evaluate(fields: Dict[str, str], action: str) -> bool:
     touch_high = has_touch_high or touch in {"UPPER", "UPPER_1", "UPPER_BAND"}
 
     # Nemesis Believe Rule (E-Book 3.5):
-    # CALL: BB% แตะเส้น 0 (Lower Band) ก่อนเสมอ หรืออยู่ในโซนกลับตัวขอบล่าง (%B <= 0.20)
-    # PUT: BB% แตะเส้น 1 (Upper Band) ก่อนเสมอ หรืออยู่ในโซนกลับตัวขอบบน (%B >= 0.80)
+    # PROJECT_STATE: CALL <= 0.10 and PUT >= 0.90.
     if action == "CALL":
-        return touch_low or percent_b <= 0.20
+        return touch_low or percent_b <= 0.10
     if action == "PUT":
-        return touch_high or percent_b >= 0.80
+        return touch_high or percent_b >= 0.90
     return False

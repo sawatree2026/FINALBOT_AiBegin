@@ -739,3 +739,131 @@ Traceback (most recent call last):
     if (recent_h_3 >= recent_upper_3).any() or (recent_c_3 >= recent_upper_3).any() or bb_pct_b >= 1.0:
         ^^^^^^^^^^
 NameError: name 'recent_h_3' is not defined. Did you mean: 'recent_h'?
+2026-09-28 15:56:01,860 | ERROR    | [Orchestrator] Evaluation failed for EURGBP: FAIL-FAST: CSV file not found for EURGBP M5 at data_base\strategies_mode\output_feed\EURGBP\EURGBP_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for EURGBP M5 at data_base\strategies_mode\output_feed\EURGBP\EURGBP_M5.csv
+2026-09-28 15:56:01,869 | ERROR    | [Orchestrator] Evaluation failed for EURJPY: FAIL-FAST: CSV file not found for EURJPY M5 at data_base\strategies_mode\output_feed\EURJPY\EURJPY_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for EURJPY M5 at data_base\strategies_mode\output_feed\EURJPY\EURJPY_M5.csv
+2026-09-28 15:56:01,870 | ERROR    | [Orchestrator] Evaluation failed for GBPJPY: FAIL-FAST: CSV file not found for GBPJPY M5 at data_base\strategies_mode\output_feed\GBPJPY\GBPJPY_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for GBPJPY M5 at data_base\strategies_mode\output_feed\GBPJPY\GBPJPY_M5.csv
+2026-09-28 15:56:01,870 | ERROR    | [Orchestrator] Evaluation failed for USDJPY: FAIL-FAST: CSV file not found for USDJPY M5 at data_base\strategies_mode\output_feed\USDJPY\USDJPY_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for USDJPY M5 at data_base\strategies_mode\output_feed\USDJPY\USDJPY_M5.csv
+2026-09-28 15:59:43,258 | ERROR    | [Orchestrator] Evaluation failed for EURGBP: FAIL-FAST: CSV file not found for EURGBP M5 at data_base\strategies_mode\output_feed\EURGBP\EURGBP_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for EURGBP M5 at data_base\strategies_mode\output_feed\EURGBP\EURGBP_M5.csv
+2026-09-28 15:59:43,271 | ERROR    | [Orchestrator] Evaluation failed for USDJPY: FAIL-FAST: CSV file not found for USDJPY M5 at data_base\strategies_mode\output_feed\USDJPY\USDJPY_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for USDJPY M5 at data_base\strategies_mode\output_feed\USDJPY\USDJPY_M5.csv
+2026-09-28 15:59:43,272 | ERROR    | [Orchestrator] Evaluation failed for EURJPY: FAIL-FAST: CSV file not found for EURJPY M5 at data_base\strategies_mode\output_feed\EURJPY\EURJPY_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for EURJPY M5 at data_base\strategies_mode\output_feed\EURJPY\EURJPY_M5.csv
+2026-09-28 15:59:43,272 | ERROR    | [Orchestrator] Evaluation failed for GBPAUD: FAIL-FAST: CSV file not found for GBPAUD M5 at data_base\strategies_mode\output_feed\GBPAUD\GBPAUD_M5.csv
+Traceback (most recent call last):
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 168, in evaluate_cycle
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\BUSOLOVE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\FINALBOT_AiBegin\data_evaluate\strategies_mode\orchestrator.py", line 209, in process_cycle
+    raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
+FileNotFoundError: FAIL-FAST: CSV file not found for GBPAUD M5 at data_base\strategies_mode\output_feed\GBPAUD\GBPAUD_M5.csv

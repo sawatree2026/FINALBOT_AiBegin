@@ -141,7 +141,7 @@ class Orchestrator:
         if len(self.ai_memory) > 5:
             self.ai_memory.pop(0)
 
-    def evaluate_cycle(self, symbols: List[str]) -> None:
+    def evaluate_cycle(self, symbols: List[str]) -> List[str]:
         """
         Commander method: Evaluate all symbols concurrently from disk CSV.
         Reads CSV, computes indicators & 5 engines, writes 100-line prompt payload,
@@ -184,6 +184,7 @@ class Orchestrator:
         ConsoleUI.show_payload_export(ready_symbols, failed_symbols)
 
         # Part 3 reads the persisted payload files independently from SSD.
+        return ready_symbols
 
     def process_cycle(
         self,
@@ -203,7 +204,7 @@ class Orchestrator:
         if not os.path.isdir(base_dir) and os.path.isdir(os.path.join("data_base", "strategies_mode", "output_feed")):
             base_dir = os.path.join("data_base", "strategies_mode", "output_feed")
         candles_dict = {}
-        for tf in ["S30", "M1", "M5", "M15"]:
+        for tf in ["S30", "M1", "M15"]:
             file_path = os.path.join(base_dir, symbol, f"{symbol}_{tf}.csv")
             if not os.path.exists(file_path):
                 raise FileNotFoundError(f"FAIL-FAST: CSV file not found for {symbol} {tf} at {file_path}")
@@ -242,7 +243,8 @@ class Orchestrator:
     ) -> Dict[str, Any]:
         s30 = candles_dict['S30']
         m1 = candles_dict['M1']
-        m15 = candles_dict.get('M15')
+        if len(s30) < 41:
+            raise ValueError("FAIL-FAST: S30 requires at least 41 candles for Believe BB(41,2)")
 
         is_jpy = "JPY" in symbol.upper()
         pip_scale = 100.0 if is_jpy else 10000.0
@@ -276,7 +278,7 @@ class Orchestrator:
         is_doji = (body_range / candle_range) < 0.10
         is_gray = body_range < (candle_range * 0.05) or (c == o)
 
-        # 3. BB(41, 2.0)
+        # Believe uses BB(41,2) as specified in the repository's Nemesis source.
         close_series = s30['close'].astype(float)
         high_series = s30['high'].astype(float)
         low_series = s30['low'].astype(float)
@@ -291,19 +293,25 @@ class Orchestrator:
         bb_width_val = bb_upper_val - bb_lower_val
         bb_pct_b = (c - bb_lower_val) / (bb_width_val + 1e-9)
 
+        bb_lower_s = bb_mid_s - bb_std_dev * bb_std_s
+        bb_upper_s = bb_mid_s + bb_std_dev * bb_std_s
+        bb_width_s = bb_upper_s - bb_lower_s
+        bb_pct_s = (close_series - bb_lower_s) / (bb_width_s + 1e-9)
+        recent_bb_10 = bb_pct_s.tail(10)
+
         bb_touch = "NONE"
-        if h >= bb_upper_val or c >= bb_upper_val:
+        if (recent_bb_10 >= 1.0).any():
             bb_touch = "UPPER"
-        elif l <= bb_lower_val or c <= bb_lower_val:
+        elif (recent_bb_10 <= 0.0).any():
             bb_touch = "LOWER"
         elif abs(c - bb_middle_val) < (bb_width_val * 0.05):
             bb_touch = "MIDDLE"
 
-        # 4. Stochastic (14, 3, 3)
-        low_min = low_series.rolling(14).min()
-        high_max = high_series.rolling(14).max()
+        # Believe STO parameters follow the project strategy contract: 13-10-3.
+        low_min = low_series.rolling(13).min()
+        high_max = high_series.rolling(13).max()
         raw_k = 100.0 * (close_series - low_min) / (high_max - low_min + 1e-9)
-        sto_k_s = raw_k.rolling(3).mean()
+        sto_k_s = raw_k.rolling(10).mean()
         sto_d_s = sto_k_s.rolling(3).mean()
 
         sto_k_val = round(float(sto_k_s.iloc[-1]), 2)
@@ -329,12 +337,18 @@ class Orchestrator:
         else:
             sto_cross = "NONE"
 
-        sto_cross_50 = (prev_k < 50.0 and sto_k_val >= 50.0) or (prev_k > 50.0 and sto_k_val <= 50.0)
-        if len(sto_k_s) >= 3:
-            p2_k = float(sto_k_s.iloc[-3])
-            sto_hook_confirmed = (p2_k > prev_k and sto_k_val > prev_k and prev_k < 20.0) or (p2_k < prev_k and sto_k_val < prev_k and prev_k > 80.0)
-        else:
-            sto_hook_confirmed = False
+        sto_cross_50_direction = (
+            "UP" if prev_k < 50.0 <= sto_k_val
+            else "DOWN" if prev_k > 50.0 >= sto_k_val
+            else "NONE"
+        )
+        sto_cross_50 = sto_cross_50_direction != "NONE"
+        recent_k_10 = sto_k_s.tail(10)
+        sto_touch_low = bool((recent_k_10 <= 10.0).any())
+        sto_touch_high = bool((recent_k_10 >= 90.0).any())
+        sto_hook_up = sto_touch_low and sto_k_val > prev_k
+        sto_hook_down = sto_touch_high and sto_k_val < prev_k
+        sto_hook_confirmed = sto_hook_up or sto_hook_down
         sto_tangled = abs(sto_k_val - sto_d_val) < 1.5
 
         # 5. Moving Averages (EMA 3, SMA 6)
@@ -447,6 +461,15 @@ class Orchestrator:
                 div_type = "REGULAR"
                 div_source = "STO"
 
+        # 10.1 AP / NS & Extreme Believe Context
+        bullish_sig = (macd_val > 0 and macd_val > macd_sig_val and rsi_val > 50 and sto_k_val > 50)
+        bearish_sig = (macd_val < 0 and macd_val < macd_sig_val and rsi_val < 50 and sto_k_val < 50)
+        ap_signal = "AP_BULLISH" if bullish_sig else "AP_BEARISH" if bearish_sig else "AP_NEUTRAL"
+        ns_bull = bullish_sig and abs(rsi_val - 50) < 20 and abs(sto_k_val - 50) < 20
+        ns_bear = bearish_sig and abs(rsi_val - 50) < 20 and abs(sto_k_val - 50) < 20
+        ns_signal = "NS_BULLISH" if ns_bull else "NS_BEARISH" if ns_bear else "NS_NEUTRAL"
+        extreme_active = (ap_signal != "AP_NEUTRAL" or ns_signal != "NS_NEUTRAL") and (div_alert != "NONE")
+
         # 11. M1 Grid
         m1_last = m1.iloc[-1]
         m1_c = round(float(m1_last['close']), decimals)
@@ -457,25 +480,23 @@ class Orchestrator:
         grid_dist_below_pips = round((m1_c - grid_below) * pip_scale, 1)
         grid_block_ahead = (bias == "BULLISH" and grid_dist_above_pips < 1.0) or (bias == "BEARISH" and grid_dist_below_pips < 1.0)
         grid_breakout_confirmed = (m1_c >= grid_above or m1_c <= grid_below)
+        nemesis_context = self._calculate_nemesis_context(s30, m1, pip_scale)
 
-        # 12. M15 Window
-        if m15 is not None and not m15.empty:
-            window_candles = m15.tail(15)
-            doji_cnt = 0
-            gray_cnt = 0
-            for _, w_row in window_candles.iterrows():
-                w_o, w_h, w_l, w_c = float(w_row['open']), float(w_row['high']), float(w_row['low']), float(w_row['close'])
-                w_rng = max(w_h - w_l, 1e-9)
-                w_bdy = abs(w_c - w_o)
-                if (w_bdy / w_rng) < 0.10:
-                    doji_cnt += 1
-                if w_bdy < (w_rng * 0.05) or (w_c == w_o):
-                    gray_cnt += 1
-            doji_present = doji_cnt > 0
-            gray_present = gray_cnt > 0
-            win_clear = (doji_cnt == 0 and gray_cnt == 0)
-        else:
-            raise ValueError(f"[DataEvaluate] FAIL-FAST: {symbol} has missing or insufficient M15 candles for m15_window")
+        # Thirty completed S30 candles represent the documented 15-minute filter.
+        window_candles = s30.tail(30)
+        doji_cnt = 0
+        gray_cnt = 0
+        for _, w_row in window_candles.iterrows():
+            w_o, w_h, w_l, w_c = float(w_row['open']), float(w_row['high']), float(w_row['low']), float(w_row['close'])
+            w_rng = max(w_h - w_l, 1e-9)
+            w_bdy = abs(w_c - w_o)
+            if (w_bdy / w_rng) < 0.10:
+                doji_cnt += 1
+            if w_bdy < (w_rng * 0.05) or (w_c == w_o):
+                gray_cnt += 1
+        doji_present = doji_cnt > 0
+        gray_present = gray_cnt > 0
+        win_clear = (doji_cnt == 0 and gray_cnt == 0)
 
         bool_str = lambda b: "TRUE" if b else "FALSE"
         raw_lines = [
@@ -486,7 +507,7 @@ class Orchestrator:
             f"  session: {session}",
             f"  mode: strategies",
             f"  expiry_minutes: 5",
-            f"  holding_period: 3m",
+            f"  holding_period: 5m",
             "",
             "s30:",
             f"  open: {o:.{decimals}f}",
@@ -511,7 +532,10 @@ class Orchestrator:
             f"  sto_zone: {sto_zone}",
             f"  sto_cross: {sto_cross}",
             f"  sto_cross_50: {bool_str(sto_cross_50)}",
+            f"  sto_cross_50_direction: {sto_cross_50_direction}",
             f"  sto_hook_confirmed: {bool_str(sto_hook_confirmed)}",
+            f"  sto_touch_low: {bool_str(sto_touch_low)}",
+            f"  sto_touch_high: {bool_str(sto_touch_high)}",
             f"  sto_tangled: {bool_str(sto_tangled)}",
             f"  ma_fast: {ma_fast_val:.{decimals}f}",
             f"  ma_slow: {ma_slow_val:.{decimals}f}",
@@ -532,6 +556,9 @@ class Orchestrator:
             f"  sr_tested_count: {sr_tested_count}",
             f"  sr_quality: {sr_quality}",
             f"  sr_block_ahead: {bool_str(sr_block_ahead)}",
+            f"  sr_block_call: {bool_str(nemesis_context['sr_block_call'])}",
+            f"  sr_block_put: {bool_str(nemesis_context['sr_block_put'])}",
+            f"  prev_candle_bad: {bool_str(nemesis_context['prev_candle_bad'])}",
             f"  pa_pattern: {pa_pattern}",
             f"  pa_body_strength: {pa_body_strength:.2f}",
             f"  pa_doji: {bool_str(pa_doji)}",
@@ -540,6 +567,8 @@ class Orchestrator:
             f"  divergence_type: {div_type}",
             f"  divergence_source: {div_source}",
             f"  divergence_peak: {div_peak}",
+            f"  ap_signal: {ap_signal}",
+            f"  ns_signal: {ns_signal}",
             "",
             "m1:",
             f"  grid_timeframe: M1",
@@ -555,7 +584,7 @@ class Orchestrator:
             f"  doji_count: {doji_cnt}",
             f"  gray_candle_count: {gray_cnt}",
             f"  doji_present: {bool_str(doji_present)}",
-            f"  gray_candle_present: {bool_str(gray_present)}",
+            f"  gray_candle_present: {bool_str(nemesis_context['gray_window_15m'])}",
             f"  window_clear: {bool_str(win_clear)}",
         ]
         raw_text = "\n".join(raw_lines)
@@ -825,19 +854,19 @@ class Orchestrator:
         Executes 10 supplementary engines in strict compliance with AGENTS.md.
         No silent failures, strict type checking, and defensive validation.
         """
-        if not isinstance(candles_dict, dict) or 'M5' not in candles_dict:
-            raise ValueError("[SupplementaryEngines] FAIL-FAST: candles_dict missing 'M5'")
+        if not isinstance(candles_dict, dict) or 'M15' not in candles_dict:
+            raise ValueError("[SupplementaryEngines] FAIL-FAST: candles_dict missing 'M15'")
 
-        df_m5 = candles_dict['M5']
-        if not isinstance(df_m5, pd.DataFrame) or df_m5.empty:
-            raise ValueError("[SupplementaryEngines] FAIL-FAST: df_m5 is not a valid non-empty DataFrame")
+        df_m15 = candles_dict['M15']
+        if not isinstance(df_m15, pd.DataFrame) or df_m15.empty:
+            raise ValueError("[SupplementaryEngines] FAIL-FAST: df_m15 is not a valid non-empty DataFrame")
 
         # 1. Execute 4 independent DataFrame-based engines in parallel
         supp_tasks = {
-            'ms': (self.market_structure_engine.analyze, (df_m5,)),
-            'mp': (self.market_pressure_analyzer.analyze, (df_m5,)),
-            'liq': (self.liquidity_engine.analyze, (df_m5,)),
-            'noise': (self.noise_detector.analyze, (df_m5,))
+            'ms': (self.market_structure_engine.analyze, (df_m15,)),
+            'mp': (self.market_pressure_analyzer.analyze, (df_m15,)),
+            'liq': (self.liquidity_engine.analyze, (df_m15,)),
+            'noise': (self.noise_detector.analyze, (df_m15,))
         }
         supp_results = {}
         with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
@@ -988,7 +1017,7 @@ class Orchestrator:
         low = pd.to_numeric(df["low"], errors="coerce")
         # Believe contract: BB(41,2) per E-BOOK V2 p.38 (บอสเคาะ N-3), Stochastic(13,10,3), MA(3,6).
         ema3 = close.ewm(span=3, adjust=False).mean()
-        ema6 = close.ewm(span=6, adjust=False).mean()
+        sma6 = close.rolling(window=6).mean()
         ema20 = close.ewm(span=20, adjust=False).mean()
         # N-3 (บอสเคาะ 2026-09-27): Believe ใช้ BB(41,2) ตาม E-BOOK V2 น.38
         # (คำนวณเองจากแท่ง S30 ในฟังก์ชันนี้ = แหล่งเดียว ไม่ใช้ base 20 ของ engine)
@@ -1017,8 +1046,8 @@ class Orchestrator:
             if pd.isna(series.iloc[-1]):
                 raise ValueError("FAIL-FAST: indicator value is NaN - default substitution is forbidden")
             return float(series.iloc[-1])
-        prev_fast, prev_slow = ema3.iloc[-2], ema6.iloc[-2]
-        curr_fast, curr_slow = ema3.iloc[-1], ema6.iloc[-1]
+        prev_fast, prev_slow = ema3.iloc[-2], sma6.iloc[-2]
+        curr_fast, curr_slow = ema3.iloc[-1], sma6.iloc[-1]
         golden_cross = prev_fast <= prev_slow and curr_fast > curr_slow
         death_cross = prev_fast >= prev_slow and curr_fast < curr_slow
         adx_s30 = StructuralMetrics.calc_adx(high, low, close, 14)
@@ -1052,10 +1081,10 @@ class Orchestrator:
         return {
             "bias": "BULLISH" if last(close) >= last(ema20) else "BEARISH",
             "ema3": last(ema3),
-            "ema6": last(ema6),
+            "ema6": last(sma6),
             # Legacy aliases remain in the payload for existing consumers.
             "ema5": last(ema3),
-            "ema10": last(ema6),
+            "ema10": last(sma6),
             "ema20": last(ema20),
             "bb_upper": round(bollinger_percent.upper, 6),
             "bb_middle": round(bollinger_percent.middle, 6),
@@ -1215,7 +1244,7 @@ class Orchestrator:
     def _enrich_believe_analysis(self, payload: dict) -> dict:
         """Build Believe from S30 entry, M1 trigger, and M5 context."""
         s30 = payload.get("s30", {}) or {}
-        m5 = payload.get("m5", {}) or {}
+        m15 = payload.get("m15", {}) or {}
         m1 = payload.get("m1", {}) or {}
         price_action = payload.get("price_action", {}) or {}
         market_state = payload.get("market_state_full", {}) or {}
@@ -1244,7 +1273,7 @@ class Orchestrator:
         ema_slow = _num(s30.get("ema10"))
         ema20 = _num(s30.get("ema20"))
         trigger_direction = str(m1.get("bias") or "").upper()
-        context_direction = str(m5.get("bias") or "").upper()
+        context_direction = str(m15.get("bias") or "").upper()
 
         ma_fast_above_slow = ema_fast >= ema_slow
         ma_fast_above_20 = ema_fast >= ema20
@@ -1374,10 +1403,10 @@ class Orchestrator:
                 }
             },
             "market_structure_fractals": {
-                "prev_high": float(market_state.get("prev_high") or m5.get("resistance") or close),
-                "current_high": float(market_state.get("current_high") or m5.get("resistance") or close),
-                "prev_low": float(market_state.get("prev_low") or m5.get("support") or close),
-                "current_low": float(market_state.get("current_low") or m5.get("support") or close),
+                "prev_high": float(market_state.get("prev_high") or m15.get("resistance") or close),
+                "current_high": float(market_state.get("current_high") or m15.get("resistance") or close),
+                "prev_low": float(market_state.get("prev_low") or m15.get("support") or close),
+                "current_low": float(market_state.get("current_low") or m15.get("support") or close),
                 "high_state": "HIGHER_HIGH" if bullish_structure else "LOWER_HIGH",
                 "low_state": "HIGHER_LOW" if bullish_structure else "LOWER_LOW",
                 "structure_shift": "BULLISH_SHIFT" if bullish_structure else "BEARISH_SHIFT" if bearish_structure else "NEUTRAL",

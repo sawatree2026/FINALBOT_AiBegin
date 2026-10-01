@@ -1,3 +1,4 @@
 {
-  "python.defaultInterpreterPath": "C:\\Users\\BUSOLOVE\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+  "python.defaultInterpreterPath": "C:\\Users\\BUSOLOVE\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "chat.permissions.default": "autoApprove"
 }

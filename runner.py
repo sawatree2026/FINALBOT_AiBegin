@@ -311,11 +311,28 @@ class DataFeedRunner:
             )
 
             evaluate_started = time.perf_counter()
-            self.orchestrator.evaluate_cycle(ready_symbols)
+            evaluation_result = self.orchestrator.evaluate_cycle(ready_symbols)
+            evaluated_symbols = (
+                list(evaluation_result or [])
+                if self.active_mode == "strategies_mode"
+                else ready_symbols
+            )
             evaluate_elapsed = time.perf_counter() - evaluate_started
+            if not evaluated_symbols:
+                logger.warning(
+                    "[DataFeedRunner] Evaluation produced no payloads; "
+                    "skipping decision/trade for this cycle"
+                )
+                return
             decision_started = time.perf_counter()
-            self.decision_manager.process_latest(ready_symbols)
-            self.executor_manager.process_decision_files(ready_symbols)
+            decision_symbols = self.decision_manager.process_latest(evaluated_symbols)
+            if not decision_symbols:
+                logger.warning(
+                    "[DataFeedRunner] Decision produced no decisions; "
+                    "skipping trade for this cycle"
+                )
+                return
+            self.executor_manager.process_decision_files(decision_symbols)
             logger.info(
                 "[DataFeedRunner] Evaluation/decision/trade complete: %.3fs/%.3fs; cycle_total=%.3fs",
                 evaluate_elapsed,
@@ -351,10 +368,12 @@ class DataFeedRunner:
                 time.sleep(sleep_seconds)
 
             except KeyboardInterrupt:
+                logger.info("[DataFeedRunner] KeyboardInterrupt received, stopping...")
                 graceful_exit()
             except Exception as e:
                 logger.exception(f"[DataFeedRunner] Error in runner execution loop: {e}")
-                graceful_exit()
+                time.sleep(5)
+                continue
 
 
 # Alias for compatibility with main.py
