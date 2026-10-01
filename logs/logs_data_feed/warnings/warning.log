@@ -9552,3 +9552,200 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'data
 2026-09-28 17:59:37,641 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
 2026-09-28 18:00:09,909 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
 2026-09-28 18:00:37,807 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:29:42,649 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:30:19,606 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:30:32,219 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:31:07,955 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:32:48,318 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:33:01,915 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:33:44,104 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:34:08,711 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:34:37,531 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:35:08,869 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:35:37,626 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:36:08,973 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:36:37,502 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:37:08,964 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:37:37,663 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:38:09,193 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:38:31,958 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:39:07,855 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:39:31,944 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:40:07,859 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:40:32,028 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:41:07,844 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:41:31,994 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:42:13,330 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:42:32,081 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:43:13,512 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:43:37,621 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:44:08,770 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:44:37,600 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:45:15,575 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:45:37,599 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:46:09,248 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:46:37,625 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:47:09,145 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:47:43,194 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:48:13,313 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:48:32,043 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:49:07,724 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:49:31,914 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:50:07,816 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:50:32,033 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:51:13,286 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:51:31,901 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:52:07,720 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-28 18:52:37,652 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:42:24,450 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:42:32,117 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:43:13,218 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:43:32,022 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:44:13,625 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:44:32,154 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:45:19,901 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:45:31,953 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:46:13,601 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:46:32,019 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:47:13,516 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:47:31,966 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:48:13,464 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:48:32,015 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:49:13,536 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:49:32,062 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:50:13,556 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:50:32,001 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:51:13,578 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:51:32,038 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:52:13,478 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:52:32,053 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:53:13,495 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:53:31,943 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:54:13,532 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:54:32,035 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:55:13,466 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:55:32,049 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:56:13,707 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:56:32,048 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:57:13,458 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:57:31,971 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:58:13,543 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:58:31,931 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:59:13,530 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 08:59:32,140 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:00:13,594 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:00:32,038 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:01:13,490 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:01:32,002 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:02:13,367 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:15:48,335 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:16:02,001 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:16:48,437 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:17:02,011 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:17:43,472 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:18:02,161 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:18:43,558 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:19:02,138 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:19:43,634 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:20:01,994 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:20:43,838 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:21:02,083 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:21:43,376 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:22:02,161 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:22:43,369 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:23:02,047 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:23:43,445 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:24:02,050 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:24:43,697 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:25:02,013 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:25:43,827 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:26:02,041 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:26:43,491 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:27:02,052 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:27:43,457 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:28:02,055 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:28:43,620 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:29:01,984 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:29:43,468 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:30:01,987 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:30:48,941 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:31:02,071 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:31:43,527 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:32:01,999 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:32:43,735 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:33:01,984 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:33:44,017 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:34:02,030 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:34:43,321 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:35:02,050 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:35:43,570 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:36:01,998 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:36:43,660 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:37:02,090 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:37:43,459 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:38:01,996 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:38:43,579 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:39:01,989 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:39:43,809 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:40:02,153 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:40:43,892 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:41:01,988 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:41:44,426 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:42:02,047 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:42:43,538 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:43:01,960 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:43:43,581 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:44:01,955 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:44:43,314 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 09:45:01,950 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 11:11:32,087 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 11:34:33,296 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 11:52:32,097 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 13:33:03,992 | WARNING  | [DataAdapter] Ingest for AUDUSD returned no price: Zero Tolerance: update failed for AUDUSD: FAIL-FAST: Data gap detected in candles for S30 AUDUSD (780.0s > 150s)
+2026-09-29 13:33:04,969 | WARNING  | [DataAdapter] Ingest for GBPAUD returned no price: Zero Tolerance: update failed for GBPAUD: FAIL-FAST: Data gap detected in candles for S30 GBPAUD (780.0s > 150s)
+2026-09-29 13:33:06,252 | WARNING  | [DataAdapter] Ingest for NZDUSD returned no price: Zero Tolerance: update failed for NZDUSD: FAIL-FAST: Data gap detected in candles for S30 NZDUSD (780.0s > 150s)
+2026-09-29 13:33:06,674 | WARNING  | [DataAdapter] Ingest for AUDJPY returned no price: Zero Tolerance: update failed for AUDJPY: FAIL-FAST: Data gap detected in candles for S30 AUDJPY (780.0s > 150s)
+2026-09-29 13:58:25,752 | WARNING  | [DataAdapter] Ingest for AUDUSD returned no price: Zero Tolerance: update failed for AUDUSD: FAIL-FAST: Data gap detected in candles for S30 AUDUSD (2460.0s > 150s)
+2026-09-29 13:58:26,302 | WARNING  | [DataAdapter] Ingest for GBPAUD returned no price: Zero Tolerance: update failed for GBPAUD: FAIL-FAST: Data gap detected in candles for S30 GBPAUD (2460.0s > 150s)
+2026-09-29 13:58:27,679 | WARNING  | [DataAdapter] Ingest for NZDUSD returned no price: Zero Tolerance: update failed for NZDUSD: FAIL-FAST: Data gap detected in candles for S30 NZDUSD (2460.0s > 150s)
+2026-09-29 13:58:28,085 | WARNING  | [DataAdapter] Ingest for AUDJPY returned no price: Zero Tolerance: update failed for AUDJPY: FAIL-FAST: Data gap detected in candles for S30 AUDJPY (2460.0s > 150s)
+2026-09-29 14:01:32,049 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 14:16:34,410 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 14:22:32,094 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 14:52:32,089 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 15:01:27,629 | WARNING  | [BrokerExecutor] Binary/Turbo Route rejected (Attempt 1/2) -> Symbol: GBPJPY-op, Action: PUT, Reason: Unknown broker rejection
+2026-09-29 15:01:33,554 | WARNING  | [BrokerExecutor] Binary/Turbo Route rejected (Attempt 2/2) -> Symbol: GBPJPY-op, Action: PUT, Reason: Unknown broker rejection
+2026-09-29 15:01:38,890 | WARNING  | [BrokerExecutor] Binary/Turbo Route rejected (Attempt 1/2) -> Symbol: GBPJPY, Action: PUT, Reason: Unknown broker rejection
+2026-09-29 15:01:44,840 | WARNING  | [BrokerExecutor] Binary/Turbo Route rejected (Attempt 2/2) -> Symbol: GBPJPY, Action: PUT, Reason: Unknown broker rejection
+2026-09-29 15:01:45,545 | WARNING  | [ExecutorManager] Broker order rejected for GBPJPY: Unknown broker rejection
+2026-09-29 15:06:32,097 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 15:19:02,122 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 15:35:02,170 | WARNING  | [DataAdapter] S30 AUDJPY: Data gap detected, auto-healing with fresh full candles from broker
+2026-09-29 15:35:03,300 | WARNING  | [DataAdapter] S30 GBPJPY: Data gap detected, auto-healing with fresh full candles from broker
+2026-09-29 15:35:03,568 | WARNING  | [DataAdapter] S30 EURJPY: Data gap detected, auto-healing with fresh full candles from broker
+2026-09-29 15:35:04,262 | WARNING  | [DataAdapter] S30 USDJPY: Data gap detected, auto-healing with fresh full candles from broker
+2026-09-29 15:35:13,104 | WARNING  | [DataAdapter] Ingest for AUDJPY returned no price: Zero Tolerance: update failed for AUDJPY: REST fetch timed out for AUDJPY after 8s
+2026-09-29 15:35:17,525 | WARNING  | [DataAdapter] Ingest for GBPJPY returned no price: Zero Tolerance: update failed for GBPJPY: REST fetch failed for GBPJPY: Cannot acquire candle lock for GBPJPY within 8s
+2026-09-29 15:35:18,017 | WARNING  | [DataAdapter] Ingest for EURJPY returned no price: Zero Tolerance: update failed for EURJPY: REST fetch timed out for EURJPY after 8s
+2026-09-29 15:35:18,301 | WARNING  | [DataAdapter] Ingest for USDJPY returned no price: Zero Tolerance: update failed for USDJPY: REST fetch failed for USDJPY: Cannot acquire candle lock for USDJPY within 8s
+2026-09-29 16:08:32,064 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 16:21:32,447 | WARNING  | [DataAdapter] S30 GBPUSD: Data gap detected, auto-healing with fresh full candles from broker
+2026-09-29 16:21:33,855 | WARNING  | [DataAdapter] S30 EURUSD: Data gap detected, auto-healing with fresh full candles from broker
+2026-09-29 16:21:34,187 | WARNING  | [DataAdapter] S30 EURJPY: Data gap detected, auto-healing with fresh full candles from broker
+2026-09-29 16:21:35,147 | WARNING  | [DataAdapter] S30 AUDJPY: Data gap detected, auto-healing with fresh full candles from broker
+2026-09-29 16:21:41,478 | WARNING  | [DataAdapter] Ingest for GBPUSD returned no price: Zero Tolerance: update failed for GBPUSD: REST fetch timed out for GBPUSD after 8s
+2026-09-29 16:21:46,865 | WARNING  | [DataAdapter] Ingest for EURUSD returned no price: Zero Tolerance: update failed for EURUSD: REST fetch timed out for EURUSD after 8s
+2026-09-29 16:21:47,164 | WARNING  | [DataAdapter] Ingest for EURJPY returned no price: Zero Tolerance: update failed for EURJPY: REST fetch timed out for EURJPY after 8s
+2026-09-29 16:21:47,697 | WARNING  | [DataAdapter] Ingest for AUDJPY returned no price: Zero Tolerance: update failed for AUDJPY: REST fetch failed for AUDJPY: Cannot acquire candle lock for AUDJPY within 8s
+2026-09-29 16:49:13,982 | WARNING  | [DataAdapter] S30 GBPUSD: Data gap detected, auto-healing with fresh full candles from broker
+2026-09-29 16:49:14,742 | WARNING  | [DataAdapter] S30 EURUSD: Data gap detected, auto-healing with fresh full candles from broker
+2026-09-29 16:49:15,702 | WARNING  | [DataAdapter] S30 EURJPY: Data gap detected, auto-healing with fresh full candles from broker
+2026-09-29 16:49:15,940 | WARNING  | [DataAdapter] S30 AUDJPY: Data gap detected, auto-healing with fresh full candles from broker
+2026-09-29 16:49:24,684 | WARNING  | [DataAdapter] Ingest for GBPUSD returned no price: Zero Tolerance: update failed for GBPUSD: REST fetch timed out for GBPUSD after 8s
+2026-09-29 16:49:26,281 | WARNING  | [DataAdapter] Ingest for EURUSD returned no price: Zero Tolerance: update failed for EURUSD: REST fetch timed out for EURUSD after 8s
+2026-09-29 16:49:29,004 | WARNING  | [DataAdapter] Ingest for EURJPY returned no price: Zero Tolerance: update failed for EURJPY: REST fetch timed out for EURJPY after 8s
+2026-09-29 16:49:29,779 | WARNING  | [DataAdapter] Ingest for AUDJPY returned no price: Zero Tolerance: update failed for AUDJPY: REST fetch timed out for AUDJPY after 8s
+2026-09-29 18:29:31,861 | WARNING  | [DataFeedRunner] Decision produced no decisions; skipping trade for this cycle
+2026-09-29 19:31:45,549 | WARNING  | [DataAdapter] Ingest for NZDUSD returned no price: Zero Tolerance: update failed for NZDUSD: Cannot acquire lock for stream NZDUSD within 8s
+2026-09-29 19:31:46,547 | WARNING  | [DataAdapter] Ingest for EURUSD returned no price: Zero Tolerance: update failed for EURUSD: Cannot acquire lock for stream EURUSD within 8s
+2026-09-29 19:31:47,067 | WARNING  | [DataAdapter] Ingest for AUDUSD returned no price: Zero Tolerance: update failed for AUDUSD: Cannot acquire lock for stream AUDUSD within 8s

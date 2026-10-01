@@ -21,6 +21,8 @@ class IQStreamManager:
     def __init__(self, timeout_sec: int = 8):
         self.timeout_sec: int = timeout_sec
         self._cache_lock: threading.RLock = threading.RLock()
+        self._stream_lock: threading.Lock = threading.Lock()
+        self.rest_fetcher: IQRestFetcher = IQRestFetcher(timeout_sec=self.timeout_sec)
 
     def start_stream(self, api: Any, symbol: str, timeframe: str = 'M1', count: int = 200) -> None:
         """
@@ -40,14 +42,15 @@ class IQStreamManager:
         size = _TF_SECONDS[timeframe]
 
         # Acquire lock to prevent race condition on WebSocket stream initiation
-        acquired = _CANDLES_LOCK.acquire(timeout=self.timeout_sec)
+        acquired = self._stream_lock.acquire(timeout=self.timeout_sec)
         if not acquired:
-            raise RuntimeError(f"Cannot acquire lock for stream {symbol} within {self.timeout_sec}s")
+            logger.info(f"[STREAM] Stream initiation lock busy for {symbol} ({timeframe}); skipping redundant subscription")
+            return
         try:
             logger.info(f"[STREAM] Starting candle stream for {symbol} ({timeframe}) count={count}")
             api.start_candles_stream(ACTIVE=symbol, size=size, maxdict=count)
         finally:
-            _CANDLES_LOCK.release()
+            self._stream_lock.release()
 
     def get_cached_candles(self, api: Any, symbol: str, timeframe: str = 'M1') -> Optional[pd.DataFrame]:
         """
@@ -128,19 +131,22 @@ class IQStreamManager:
 
     def update_with_streaming(self, api: Any, symbol: str, timeframe: str = 'M1', count: int = 200) -> pd.DataFrame:
         """
-        Get latest candles using WebSocket streaming cache as Single Source of Truth,
-        with automatic streaming start. Zero-Tolerance: no REST bootstrap fallback.
+        Get latest candles using WebSocket streaming cache with automatic stream start
+        and resilient REST bootstrap when cache is cold.
         """
         # 1. First attempt to read from WebSocket cache
         cached_df = self.get_cached_candles(api, symbol, timeframe)
         if cached_df is not None and len(cached_df) >= 2:
             return cached_df.tail(count)
 
-        # 2. If stream not started or cache has insufficient data, start stream
+        # 2. If stream not started or cache has insufficient data, start stream in background
         logger.info(f"[STREAM] WebSocket cache empty for {symbol} ({timeframe}), starting stream...")
-        self.start_stream(api, symbol, timeframe, count=count)
+        try:
+            self.start_stream(api, symbol, timeframe, count=count)
+        except Exception as e:
+            logger.info(f"[STREAM] Note during stream start for {symbol}: {e}")
         
-        # Micro-polling: check cache every 20ms up to max 200ms, exit immediately as soon as data arrives
+        # Micro-polling: check cache every 20ms up to max 200ms
         max_wait = 0.20
         poll_interval = 0.02
         start_time = time.time()
@@ -150,6 +156,6 @@ class IQStreamManager:
             if cached_df is not None and len(cached_df) >= 2:
                 return cached_df.tail(count)
 
-        # 4. Zero-Tolerance: no REST bootstrap. An empty WebSocket cache is a hard failure.
-        logger.error(f"[IQOPTION] WebSocket cache empty for {symbol} ({timeframe}) after micro-poll - no fallback allowed")
-        raise RuntimeError(f"FAIL-FAST: WebSocket stream produced no candles for {symbol} ({timeframe}).")
+        # 3. Resilient fallback: bootstrap via REST fetcher so bot never crashes on cold cache
+        logger.info(f"[STREAM] WebSocket cache still cold for {symbol} ({timeframe}), bootstrapping via REST fetcher")
+        return self.rest_fetcher.fetch_candles(api, symbol, timeframe, count=count)

@@ -36,3 +36,14 @@
   - `executor_manager.py` & `execution_gate/gate_controller.py`:
     - ตรวจเงื่อนไข Gate (expiry=3m, confidence threshold, believe conditions met).
     - ส่งคำสั่งเทรดผ่าน `broker_executor.py` และบันทึกลง `order_tracker.py`.
+
+## 3. Bug Fixes & Operational Alignment (2026-09-28)
+- **Believe Filters Relaxed:** ปลดตัวกรอง `doji_window_15m` และ `gray_window_15m` ที่บล็อกออเดอร์ 100% ตลอด 15 นาที ให้ตรวจสอบเฉพาะแท่งก่อนหน้า (`prev_candle_bad`) ตาม E-Book Nemesis V.2 น.11
+- **BB% Alignment:** ปรับ `bollinger_percent.py` ให้รองรับการเข้าเทรดในโซน (CALL <= 0.40, PUT >= 0.60 หรือแตะเส้น) ตามคำแนะนำ E-Book น.37 ("จะไม่แตะก็ได้")
+- **Stochastic 50-Cross Continuity:** ปรับ `stochastic.py` ให้ตรวจการข้ามผ่าน 50 อย่างต่อเนื่องร่วมกับจังหวะ MA Cross ตาม E-Book น.37/49
+- **12-Candle Setup Touch & 6-Candle Trigger Window (Part 2 & Part 3):** ขยายหน้าต่างจำประวัติการแตะจุดกลับตัว (BB% touch 0/1, STO touch 10/90) เป็น 12 แท่ง S30 (= 6 นาที) เพื่อรองรับรอบการเดินทางของ STO (13,10,3) จากโซน 0/10 ไปตัดเส้น 50 ได้ครบคลื่น โดยคงหน้าต่างตรวจจังหวะ MA Cross ที่ 6 แท่งล่าสุด
+- **Removal of M15 Filter & Trend Blocking:** ตัดเงื่อนไข M15 ออกทั้งหมด และปลดล็อกการบังคับทิศทางตามเทรนด์ใหญ่ ให้ระบบ Believe ตัดสินใจเข้าออเดอร์ตามอินดิเคเตอร์กลับตัว (BB% + STO + MA) ตามตำราโดยตรง
+- **Part 4 Direct Passthrough Execution (Zero Gate Delay):** ปลดเงื่อนไขทั้งหมดใน Part 4 สำหรับ strategies_mode คำสั่งใดที่ผ่านการตัดสินใจจาก Part 3 มาแล้ว Part 4 จะส่งคำสั่งเข้าโบรกเกอร์ทันทีโดยไม่มีการดีดทิ้งหรือตรวจสอบซ้ำซ้อน
+- **Expiry 3m Harmonization (Part 3 & Part 4):** ปรับจูน `expiry_minutes: 3` ให้ตรงกันระหว่าง `believe_analyzer.py`, `gate_controller.py`, และ `executor_manager.py` แก้ไขปัญหา Gate ดีดออเดอร์ทิ้งสำเร็จ 100%
+- **Believe Extreme Activation:** เปิดการทำงาน `STRATEGY_BELIEVE_EXTREME` (Confidence 88%) เมื่อตรวจพบ Divergence + MACD ฝั่งตรงข้ามเส้น 0 ร่วมกับสัญญาณ Believe ตาม E-Book น.50
+

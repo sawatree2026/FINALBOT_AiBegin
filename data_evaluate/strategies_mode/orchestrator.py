@@ -297,12 +297,12 @@ class Orchestrator:
         bb_upper_s = bb_mid_s + bb_std_dev * bb_std_s
         bb_width_s = bb_upper_s - bb_lower_s
         bb_pct_s = (close_series - bb_lower_s) / (bb_width_s + 1e-9)
-        recent_bb_10 = bb_pct_s.tail(10)
+        recent_bb_12 = bb_pct_s.tail(12)
 
         bb_touch = "NONE"
-        if (recent_bb_10 >= 1.0).any():
+        if (recent_bb_12 >= 1.0).any():
             bb_touch = "UPPER"
-        elif (recent_bb_10 <= 0.0).any():
+        elif (recent_bb_12 <= 0.0).any():
             bb_touch = "LOWER"
         elif abs(c - bb_middle_val) < (bb_width_val * 0.05):
             bb_touch = "MIDDLE"
@@ -337,21 +337,24 @@ class Orchestrator:
         else:
             sto_cross = "NONE"
 
+        recent_k_6 = sto_k_s.tail(6)
+        sto_cross_50_up_6 = ((recent_k_6 >= 50.0) & (recent_k_6.shift(1) < 50.0)).any()
+        sto_cross_50_dn_6 = ((recent_k_6 <= 50.0) & (recent_k_6.shift(1) > 50.0)).any()
         sto_cross_50_direction = (
-            "UP" if prev_k < 50.0 <= sto_k_val
-            else "DOWN" if prev_k > 50.0 >= sto_k_val
+            "UP" if (sto_cross_50_up_6 or (prev_k < 50.0 <= sto_k_val))
+            else "DOWN" if (sto_cross_50_dn_6 or (prev_k > 50.0 >= sto_k_val))
             else "NONE"
         )
         sto_cross_50 = sto_cross_50_direction != "NONE"
-        recent_k_10 = sto_k_s.tail(10)
-        sto_touch_low = bool((recent_k_10 <= 10.0).any())
-        sto_touch_high = bool((recent_k_10 >= 90.0).any())
+        recent_k_12 = sto_k_s.tail(12)
+        sto_touch_low = bool((recent_k_12 <= 10.0).any())
+        sto_touch_high = bool((recent_k_12 >= 90.0).any())
         sto_hook_up = sto_touch_low and sto_k_val > prev_k
         sto_hook_down = sto_touch_high and sto_k_val < prev_k
         sto_hook_confirmed = sto_hook_up or sto_hook_down
         sto_tangled = abs(sto_k_val - sto_d_val) < 1.5
 
-        # 5. Moving Averages (EMA 3, SMA 6)
+        # 5. Moving Averages (EMA 3, SMA 6) — 6-candle sequence window
         ma_fast_s = close_series.ewm(span=3, adjust=False).mean()
         ma_slow_s = close_series.rolling(6).mean()
         ma_fast_val = round(float(ma_fast_s.iloc[-1]), decimals)
@@ -359,9 +362,14 @@ class Orchestrator:
         p_fast = float(ma_fast_s.iloc[-2]) if len(ma_fast_s) > 1 else ma_fast_val
         p_slow = float(ma_slow_s.iloc[-2]) if len(ma_slow_s) > 1 else ma_slow_val
 
-        if p_fast <= p_slow and ma_fast_val > ma_slow_val:
+        _fast_6 = ma_fast_s.tail(6)
+        _slow_6 = ma_slow_s.tail(6)
+        _c_up = ((_fast_6 > _slow_6) & (_fast_6.shift(1) <= _slow_6.shift(1))).any()
+        _c_dn = ((_fast_6 < _slow_6) & (_fast_6.shift(1) >= _slow_6.shift(1))).any()
+
+        if (_c_up or (p_fast <= p_slow and ma_fast_val > ma_slow_val)) and ma_fast_val > ma_slow_val:
             ma_cross = "GOLDEN_CROSS"
-        elif p_fast >= p_slow and ma_fast_val < ma_slow_val:
+        elif (_c_dn or (p_fast >= p_slow and ma_fast_val < ma_slow_val)) and ma_fast_val < ma_slow_val:
             ma_cross = "DEATH_CROSS"
         else:
             ma_cross = "NONE"
@@ -1048,15 +1056,18 @@ class Orchestrator:
             return float(series.iloc[-1])
         prev_fast, prev_slow = ema3.iloc[-2], sma6.iloc[-2]
         curr_fast, curr_slow = ema3.iloc[-1], sma6.iloc[-1]
-        golden_cross = prev_fast <= prev_slow and curr_fast > curr_slow
-        death_cross = prev_fast >= prev_slow and curr_fast < curr_slow
+
+        # ── NEMESIS V2 p.37/p.49: 12-candle setup touch window & 6-candle MA trigger ─────────
+        _fast_w = ema3.tail(6)
+        _slow_w = sma6.tail(6)
+        _c_up_w = ((_fast_w > _slow_w) & (_fast_w.shift(1) <= _slow_w.shift(1))).any()
+        _c_dn_w = ((_fast_w < _slow_w) & (_fast_w.shift(1) >= _slow_w.shift(1))).any()
+        golden_cross = bool(_c_up_w or (prev_fast <= prev_slow and curr_fast > curr_slow)) and curr_fast > curr_slow
+        death_cross = bool(_c_dn_w or (prev_fast >= prev_slow and curr_fast < curr_slow)) and curr_fast < curr_slow
+
         adx_s30 = StructuralMetrics.calc_adx(high, low, close, 14)
         atr_s30 = StructuralMetrics.calculate_atr(high, low, close, 6, extended=True)
-
-        # ── NEMESIS V2 p.37/p.49 (FIX 2026-09-27): setup-window touch events ─────────
-        # หน้าต่าง 10 แท่ง S30 (= 5 นาที) ตรวจเหตุการณ์ "แตะก่อนเสมอ":
-        # BB% แตะ 0/1 และ STO แตะ 10/90 + การโผล่ออกจากเส้นตามทิศ
-        _win = 10
+        _win = 12
         _low13 = low.rolling(13).min()
         _high13 = high.rolling(13).max()
         _raw_k = (close - _low13) / (_high13 - _low13).replace(0, np.nan) * 100

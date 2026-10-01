@@ -671,9 +671,17 @@ class ExecutorManager:
 
             if not order_data or order_data.get("status") != "SUCCESS":
                 error = order_data.get("error") if order_data else "empty broker response"
-                raise RuntimeError(
-                    f"FAIL-FAST: Broker rejected order for {symbol}: {error}"
-                )
+                logger.warning(f"[ExecutorManager] Broker order rejected for {symbol}: {error}. Continuing loop.")
+                return {
+                    "symbol": symbol,
+                    "action": action,
+                    "expiry_minutes": expiry_minutes,
+                    "confidence_score": confidence_score,
+                    "reason": f"Rejected by broker: {error}",
+                    "should_execute": should_execute_order,
+                    "order_executed": False,
+                    "order_data": order_data,
+                }
 
             # เมื่อยิงสำเร็จ ให้ลงทะเบียนเข้า OrderTracker ทันที และแสดงผลบน Console UI
             if order_data and order_data.get("status") == "SUCCESS":

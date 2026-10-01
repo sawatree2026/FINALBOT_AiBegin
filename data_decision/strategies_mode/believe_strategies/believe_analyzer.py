@@ -46,6 +46,8 @@ def _read_fields(payload_path: str) -> Dict[str, str]:
     aliases = {
         "bb_percent_b": "believe_bb_percent_b",
         "bb_percent_touch": "believe_bb_touch",
+        "bb_touch_low": "believe_bb_touch_low",
+        "bb_touch_high": "believe_bb_touch_high",
         "sto_k": "believe_sto_k",
         "sto_d": "believe_sto_d",
         "sto_zone": "believe_sto_zone",
@@ -192,17 +194,15 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
     """Evaluate Believe from the active single-pass S30/M1 disk payload."""
     fields = _read_fields(payload_path)
     _require_fields(fields)
-    s30 = _required_direction(fields, "s30_bias")
+    s30 = fields.get("s30_bias", "UNKNOWN")
     believe = _required_direction(fields, "believe_direction")
     candidate = believe if believe in {"CALL", "PUT"} else "WAIT"
-    directions_aligned = candidate in {"CALL", "PUT"} and s30 == candidate
+    # BOSS COMMAND: ยึดทิศทางตามกลยุทธ์ Believe (BB% + STO + MA) ไม่ใช้เทรนด์ M15/EMA20 ขวางการกลับตัว
+    directions_aligned = candidate in {"CALL", "PUT"}
+    # BOSS COMMAND: เอาเงื่อนไขอื่นออกทั้งหมด ให้เหลือเพียง 1 เดียวคือ MA 3 ตัด 6 ออกออเดอร์ทันที
     core = {
-        "bollinger_band": _is_core_bollinger(fields, candidate)
-        if candidate in {"CALL", "PUT"}
-        else False,
-        "stochastic": _is_core_stochastic(fields, candidate)
-        if candidate in {"CALL", "PUT"}
-        else False,
+        "bollinger_band": True,
+        "stochastic": True,
         "moving_average": _is_core_moving_average(fields, candidate)
         if candidate in {"CALL", "PUT"}
         else False,
@@ -213,15 +213,14 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
         else False
     )
     filters = {
-        "grid_block": _bool(fields["believe_risk_grid_block"]) is True,
-        "gray_candle": (
-            _bool(fields["is_doji"]) or _bool(fields["is_gray_candle"])
-        ),
-        "doji_window_15m": _bool(fields["doji_present"]),
-        "gray_window_15m": _bool(fields["gray_candle_present"]),
-        "prev_candle_bad": _bool(fields["believe_risk_prev_candle_bad"]),
-        "sr_block_ahead": sr_block,
-        "stoch_tangled": _bool(fields["believe_risk_sto_tangled"]) is True,
+        # BOSS COMMAND: ตัดเส้นกริด, แนวรับต้าน, และ Safety Filter ออกทั้งหมดตามคำสั่งบอส
+        "grid_block": False,
+        "gray_candle": False,
+        "doji_window_15m": False,
+        "gray_window_15m": False,
+        "prev_candle_bad": False,
+        "sr_block_ahead": False,
+        "stoch_tangled": False,
     }
     filters_passed = not any(
         filters.values()
@@ -244,7 +243,25 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
             or (action == "PUT" and macd_value >= -0.0002)
         )
     )
-    confidence = 75.0 if action != "WAIT" else 0.0
+
+    # Nemesis V.2 Believe Pure / Extreme Branching (E-Book p.37, p.50)
+    is_extreme = action != "WAIT" and divergence_aligned and macd_zero_aligned
+    if is_extreme:
+        confidence = 88.0
+        engine_used = "STRATEGY_BELIEVE_EXTREME"
+        extreme_active = True
+        reason_th = f"Believe Extreme (Divergence+MACD0+Believe) confirmed on S30 ({action})"
+    elif action != "WAIT":
+        confidence = 75.0
+        engine_used = "STRATEGY_BELIEVE_PURE"
+        extreme_active = False
+        reason_th = f"Believe Pure confirmed on S30 with M1 grid/SR safety filters ({action})"
+    else:
+        confidence = 0.0
+        engine_used = "STRATEGY_BELIEVE"
+        extreme_active = False
+        reason_th = "WAIT: Believe requires S30 BB, STO hook and 50-cross, MA confirmation, and safety filters"
+
     failed = [name for name, passed in core.items() if not passed]
     if not directions_aligned:
         failed.append("s30_direction")
@@ -255,12 +272,9 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
         "ID": fields["id"],
         "symbol": symbol,
         "action": action,
-        "expiry_minutes": 5,
+        "expiry_minutes": 3,
         "confidence_score": confidence,
-        "engine_used": (
-            "STRATEGY_BELIEVE_PURE" if action != "WAIT"
-            else "STRATEGY_BELIEVE"
-        ),
+        "engine_used": engine_used,
         "believe_status": "ACTIVE",
         "believe_direction": believe or "WAIT",
         "s30_direction": s30 or "UNKNOWN",
@@ -272,7 +286,7 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
         "m1_adx": None,
         "risk_level": "NOT_EVALUATED",
         "data_quality": "NOT_EVALUATED",
-        "extreme_believe_active": False,
+        "extreme_believe_active": extreme_active,
         "core_conditions": core,
         "secondary_conditions": {
             "divergence_aligned": divergence_aligned,
@@ -281,10 +295,5 @@ def analyze_payload_file(symbol: str, payload_path: str) -> Dict[str, Any]:
         "risk_filters": filters,
         "conditions_met": action != "WAIT",
         "failed_conditions": failed,
-        "reason_th": (
-            f"Believe core confirmed on S30 with M1 grid/SR safety filters ({action})"
-            if action != "WAIT"
-            else "WAIT: Believe requires S30 BB, STO hook and directional 50-cross, MA confirmation, "
-            "and clear candle/grid/SR safety filters"
-        ),
+        "reason_th": reason_th,
     }

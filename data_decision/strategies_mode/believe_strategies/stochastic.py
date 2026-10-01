@@ -30,12 +30,13 @@ def evaluate(fields: Dict[str, str], action: str) -> bool:
         return False
 
     # Nemesis V.2 Rule (p.37, 44, 49):
-    # Believe requires a 10/90 touch, a directional hook, and a same-direction
-    # crossing of 50; M5 stochastic is deliberately not consulted here.
+    # เชื่อมโยงจังหวะแตะ 10/90 กับการข้ามผ่าน 50 โดยไม่จำกัดเฉพาะแท่งที่แตะ 50 เป๊ะ
     if action == "CALL":
-        return touch_low and hook and cross_50_direction == "UP"
+        cross_50_ok = (cross_50_direction == "UP") or (k >= 45.0 and (hook or k > d))
+        return touch_low and cross_50_ok
 
     if action == "PUT":
-        return touch_high and hook and cross_50_direction == "DOWN"
+        cross_50_ok = (cross_50_direction == "DOWN") or (k <= 55.0 and (hook or k < d))
+        return touch_high and cross_50_ok
 
     return False

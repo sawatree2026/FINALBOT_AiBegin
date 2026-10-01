@@ -99,13 +99,27 @@ class IQRestFetcher:
             elif isinstance(end_time, (int, float)):
                 end_timestamp = float(end_time)
 
-        # REST HTTP request bounded by hard per-call timeout
+        # REST HTTP request bounded by hard per-call timeout without busy-spin
         def _fetch():
             acquired = _CANDLES_LOCK.acquire(timeout=self.timeout_sec)
             if not acquired:
                 raise RuntimeError(f"Cannot acquire candle lock for {symbol} within {self.timeout_sec}s")
             try:
-                return api.get_candles(symbol, size, count, end_timestamp)
+                import iqoptionapi.constants as OP_code
+                inner = getattr(api, "api", api)
+                if symbol in OP_code.ACTIVES and hasattr(inner, "getcandles") and hasattr(inner, "candles"):
+                    active_id = OP_code.ACTIVES[symbol]
+                    inner.candles.candles_data = None
+                    inner.getcandles(active_id, size, count, int(end_timestamp))
+                    start_t = time.time()
+                    poll_limit = max(2.0, self.timeout_sec - 1.0)
+                    while time.time() - start_t < poll_limit:
+                        data = inner.candles.candles_data
+                        if data is not None:
+                            return data
+                        time.sleep(0.05)
+                    raise TimeoutError(f"Candles fetch timed out for {symbol} after {poll_limit}s")
+                raise ValueError(f"Asset {symbol} not supported or API invalid")
             finally:
                 _CANDLES_LOCK.release()
 

@@ -145,41 +145,9 @@ class MoneyManager:
         if symbol and symbol in self.active_symbols:
             return False, f"คู่เงิน {symbol} กำลังมีออเดอร์ทำงานอยู่ (ห้ามยิงซ้ำในคู่เงินเดียวกันค่ะ)"
 
-        # เงื่อนไขที่ 2: จำกัดจำนวนไม้พร้อมกันสูงสุด (Max Concurrent Orders)
-        if len(self.active_orders) >= self.max_concurrent_orders:
-            return False, f"จำนวนออเดอร์พร้อมกันเต็มโควตา ({len(self.active_orders)}/{self.max_concurrent_orders} ไม้)"
-
-        # เงื่อนไขที่ 3: จำกัดจำนวนไม้เทรดสูงสุดต่อวัน (Max Daily Trades)
-        total_trades = self.daily_trades + len(self.active_orders)
-        if total_trades >= self.max_daily_trades:
-            return False, f"จำนวนไม้เทรดวันนี้เต็มโควตาสูงสุดแล้ว ({total_trades}/{self.max_daily_trades} ไม้)"
-
-        # เงื่อนไขที่ 4: ตรวจสอบการแพ้ติดต่อกันและช่วงพักการเทรด (Max Consecutive Losses & Cooldown)
-        if self.consecutive_losses >= self.max_consecutive_losses:
-            if self.cooldown_minutes > 0 and self.last_loss_time is not None:
-                tz_thailand = timezone(timedelta(hours=7))
-                now = datetime.now(tz_thailand)
-                last_time = self.last_loss_time
-                if last_time.tzinfo is None:
-                    last_time = last_time.replace(tzinfo=tz_thailand)
-                elapsed_seconds = (now - last_time).total_seconds()
-                cooldown_seconds = self.cooldown_minutes * 60.0
-                if elapsed_seconds < cooldown_seconds:
-                    remaining_min = (cooldown_seconds - elapsed_seconds) / 60.0
-                    return False, f"อยู่ในช่วงพักการเทรดหลังแพ้ติดกัน ({self.consecutive_losses}/{self.max_consecutive_losses} ครั้ง, เหลือเวลา Cooldown {remaining_min:.1f} นาที)"
-            else:
-                return False, f"แพ้ติดต่อกันเต็มโควตาสูงสุด ({self.consecutive_losses}/{self.max_consecutive_losses} ครั้ง)"
-
-        # เงื่อนไขที่ 5: ตรวจ Stop Loss - SL รายวัน
-        if self.daily_pnl <= -abs(self.max_daily_loss):
-            return False, f"แตะขีดจำกัดขาดทุนรายวัน (SL) ({self.daily_pnl:.2f}/-{self.max_daily_loss:.2f} THB)"
-
-        # เงื่อนไขที่ 6: ตรวจ Take Profit - TP รายวัน
-        if self.daily_pnl >= abs(self.max_daily_profit):
-            return False, f"แตะเป้าหมายกำไรรายวัน (TP) ({self.daily_pnl:.2f}/+{self.max_daily_profit:.2f} THB)"
-
-        # เงื่อนไขที่ 7: ตรวจยอดเงิน Balance
-        if balance < self.stake_per_trade:
+        # BOSS COMMAND: ตัดการจำกัดกำไร, ขาดทุน, จำนวนออเดอร์, และแพ้ชนะออกทั้งหมด
+        # ตรวจยอดเงิน Balance ขั้นต่ำ
+        if balance is not None and balance < self.stake_per_trade:
             return False, f"ยอดเงินคงเหลือไม่เพียงพอ ({balance:.2f} < {self.stake_per_trade:.2f} THB)"
 
         return True, "RISK_GATES_PASSED"

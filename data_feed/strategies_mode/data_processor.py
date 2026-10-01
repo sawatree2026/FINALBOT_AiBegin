@@ -217,15 +217,22 @@ def process_candle_refresh(symbol: str, broker_epoch: float,
             fresh = data_source.get_candles(symbol, timeframe, fetch_count, end_time=broker_epoch)
         
         if fresh is not None and not fresh.empty:
-            # Merge data and retain buffer
-            store_dict[symbol] = merge_candles(
-                store_dict[symbol], fresh,
-                gap_threshold=gap_threshold,
-                label=f"{timeframe} {symbol}",
-                timeframe=timeframe,
-                max_candles=max_candles + 10,
-                validator=validator
-            )
+            # Merge data and retain buffer (Auto-heal on DataGapError)
+            try:
+                store_dict[symbol] = merge_candles(
+                    store_dict[symbol], fresh,
+                    gap_threshold=gap_threshold,
+                    label=f"{timeframe} {symbol}",
+                    timeframe=timeframe,
+                    max_candles=max_candles + 10,
+                    validator=validator
+                )
+            except DataGapError:
+                logger.warning(f"[DataAdapter] {timeframe} {symbol}: Data gap detected, auto-healing with fresh full candles from broker")
+                full_fresh = data_source.get_candles(symbol, timeframe, max_candles + 10, end_time=broker_epoch)
+                if full_fresh is None or full_fresh.empty or len(full_fresh) < 2:
+                    raise
+                store_dict[symbol] = DataValidator.ensure_utc_datetime_index(full_fresh)
             last_block_dict[symbol] = block
             block_changed = True
         else:

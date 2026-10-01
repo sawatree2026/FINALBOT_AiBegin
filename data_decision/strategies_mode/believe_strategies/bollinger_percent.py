@@ -22,13 +22,13 @@ def evaluate(fields: Dict[str, str], action: str) -> bool:
         boolean(fields, "believe_bb_touch_high") if "believe_bb_touch_high" in fields
         else (boolean(fields, "bb_touch_high") if "bb_touch_high" in fields else False)
     )
-    touch_low = has_touch_low or touch in {"LOWER", "LOWER_0", "LOWER_BAND"}
-    touch_high = has_touch_high or touch in {"UPPER", "UPPER_1", "UPPER_BAND"}
+    touch_low = has_touch_low or touch in {"LOWER", "LOWER_0", "LOWER_BAND"} or percent_b <= 0.0
+    touch_high = has_touch_high or touch in {"UPPER", "UPPER_1", "UPPER_BAND"} or percent_b >= 1.0
 
-    # Nemesis Believe Rule (E-Book 3.5):
-    # PROJECT_STATE: CALL <= 0.10 and PUT >= 0.90.
+    # Nemesis Believe Rule (E-Book V.2 p.37, 38, 49):
+    # BB% (Bollinger Bands %B) ต้องแตะเส้น 0 (CALL) หรือเส้น 1 (PUT) ก่อนเสมอ
     if action == "CALL":
-        return touch_low or percent_b <= 0.10
+        return touch_low
     if action == "PUT":
-        return touch_high or percent_b >= 0.90
+        return touch_high
     return False

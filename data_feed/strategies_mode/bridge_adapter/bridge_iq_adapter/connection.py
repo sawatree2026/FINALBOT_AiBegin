@@ -108,12 +108,22 @@ class IQConnectionManager:
         if not self.api:
             raise RuntimeError("API not initialized")
         
-        # Double-checked locking pattern for thread safety
+        # Double-checked locking pattern with automatic reconnection
         if not self.api.check_connect():
             with self._conn_lock:
                 if not self.api.check_connect():
-                    logger.error("[ERROR] IQ Option connection lost — Zero Tolerance: stopping immediately")
-                    raise RuntimeError("IQ Option connection lost — no retry allowed")
+                    logger.warning("[CONN] IQ Option connection dropped, auto-reconnecting...")
+                    try:
+                        ok, reason = self.api.connect()
+                        if ok:
+                            balance_mode = "PRACTICE" if str(self.account_type).upper() in ["DEMO", "PRACTICE"] else "REAL"
+                            self.api.change_balance(balance_mode)
+                            self._connected = True
+                            logger.info("[CONN] IQ Option auto-reconnected successfully")
+                            return
+                    except Exception as e:
+                        logger.error(f"[CONN] Reconnection failed: {e}")
+                    raise RuntimeError("IQ Option connection lost")
 
     def connect(self) -> None:
         """Connect method for interface compliance."""

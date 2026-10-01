@@ -60,18 +60,42 @@ class ExecutionGate:
         ).strip()
         engine_used = str(ai_decision.get("engine_used", "AI_ENGINE"))
         agreement_valid = bool(ai_decision.get("agreement_valid", True))
-        evidence = self._extract_evidence(payload, ai_decision)
-        # BOSS: in strategies_mode the higher-timeframe context is M5 (M15 is disabled).
         is_strategies = str(ai_decision.get("mode", "")).lower().startswith("strategies")
-        htf_direction = evidence["m5_direction"] if is_strategies else evidence["m15_direction"]
-        htf_label = "M5" if is_strategies else "M15"
+
+        # BOSS COMMAND: ใน strategies_mode ไม่ใช้ M15 และไม่มีเงื่อนไขขวางใน Part 4 (Part 3 สั่งยิง = ยิงทันที 100%)
+        if is_strategies:
+            if action in ("CALL", "PUT"):
+                return {
+                    "approved": True,
+                    "action": action,
+                    "confidence_score": confidence_score,
+                    "expiry_minutes": expiry_minutes,
+                    "reason": reason_th or f"Direct pass-through execution for strategies_mode ({action})",
+                    "rejections": [],
+                    "agreement_valid": True,
+                    "policy_version": self.POLICY_VERSION,
+                }
+            return {
+                "approved": False,
+                "action": "WAIT",
+                "confidence_score": 0.0,
+                "expiry_minutes": expiry_minutes,
+                "reason": reason_th or "WAIT: No trade signal from Part 3",
+                "rejections": ["No trade signal"],
+                "agreement_valid": True,
+                "policy_version": self.POLICY_VERSION,
+            }
+
+        evidence = self._extract_evidence(payload, ai_decision)
+        htf_direction = evidence["m15_direction"]
+        htf_label = "M15"
         rejection_reasons: List[str] = []
 
         if action == "WAIT":
             rejection_reasons.append("No trade signal")
         elif action not in ("CALL", "PUT"):
             rejection_reasons.append(f"Invalid signal ({action})")
-        expected_expiry = 5  # FIX F-11: contract เดิมของระบบ = 5 นาทีทุกโหมด
+        expected_expiry = 3 if is_strategies else 5
         if expiry_minutes != expected_expiry:
             rejection_reasons.append(f"Expiry must be {expected_expiry} minutes (received {raw_expiry!r})")
         if action in ("CALL", "PUT"):

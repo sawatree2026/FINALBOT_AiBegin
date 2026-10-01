@@ -1,14 +1,14 @@
 {
     "symbols": [
-        "EURUSD",
-        "EURJPY",
         "USDJPY",
-        "USDCAD"
+        "EURUSD",
+        "GBPAUD",
+        "NZDUSD"
     ],
     "payouts": {
-        "EURUSD": 90,
-        "EURJPY": 87,
         "USDJPY": 87,
-        "USDCAD": 87
+        "EURUSD": 90,
+        "GBPAUD": 87,
+        "NZDUSD": 87
     }
 }
